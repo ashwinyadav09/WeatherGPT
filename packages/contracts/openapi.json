@@ -1,0 +1,1179 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WeatherGPT API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/healthz": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Healthz",
+        "operationId": "healthz_healthz_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Healthz Healthz Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "tags": [
+          "monitoring"
+        ],
+        "summary": "Metrics",
+        "operationId": "metrics_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/sources": {
+      "get": {
+        "tags": [
+          "sources"
+        ],
+        "summary": "List Sources",
+        "operationId": "list_sources_v1_sources_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response List Sources V1 Sources Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/status": {
+      "get": {
+        "tags": [
+          "status"
+        ],
+        "summary": "System Status",
+        "operationId": "system_status_v1_status_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response System Status V1 Status Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chat": {
+      "post": {
+        "tags": [
+          "chat"
+        ],
+        "summary": "Chat Endpoint",
+        "operationId": "chat_endpoint_v1_chat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/transcribe": {
+      "post": {
+        "tags": [
+          "voice"
+        ],
+        "summary": "Transcribe Audio",
+        "operationId": "transcribe_audio_v1_voice_transcribe_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_transcribe_audio_v1_voice_transcribe_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Transcribe Audio V1 Voice Transcribe Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/voice/speak": {
+      "post": {
+        "tags": [
+          "voice"
+        ],
+        "summary": "Speak Text",
+        "operationId": "speak_text_v1_voice_speak_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpeakRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/advisory": {
+      "get": {
+        "tags": [
+          "advisory"
+        ],
+        "summary": "Get Advisories",
+        "operationId": "get_advisories_v1_advisory_get",
+        "parameters": [
+          {
+            "name": "place_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Place Id"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "heat",
+              "title": "Domain"
+            }
+          },
+          {
+            "name": "crop",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Crop"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Advisories V1 Advisory Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/alerts": {
+      "get": {
+        "tags": [
+          "alerts"
+        ],
+        "summary": "Get Alerts",
+        "operationId": "get_alerts_v1_alerts_get",
+        "parameters": [
+          {
+            "name": "place_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter alerts by place",
+              "title": "Place Id"
+            },
+            "description": "Filter alerts by place"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AlertModel"
+                  },
+                  "title": "Response Get Alerts V1 Alerts Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/climate": {
+      "get": {
+        "tags": [
+          "climate"
+        ],
+        "summary": "Get Climate",
+        "operationId": "get_climate_v1_climate_get",
+        "parameters": [
+          {
+            "name": "place_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Place Id"
+            }
+          },
+          {
+            "name": "var",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "temperature",
+              "title": "Var"
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "2026-05",
+              "title": "Period"
+            }
+          },
+          {
+            "name": "stat",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "anomaly",
+              "title": "Stat"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Climate V1 Climate Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/forecast": {
+      "get": {
+        "tags": [
+          "forecast"
+        ],
+        "summary": "Get Forecast",
+        "operationId": "get_forecast_v1_forecast_get",
+        "parameters": [
+          {
+            "name": "place_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Place ID",
+              "title": "Place Id"
+            },
+            "description": "Place ID"
+          },
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Forecast window",
+              "default": "24h",
+              "title": "Window"
+            },
+            "description": "Forecast window"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EvidencePacket"
+                  },
+                  "title": "Response Get Forecast V1 Forecast Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/places/search": {
+      "get": {
+        "tags": [
+          "places"
+        ],
+        "summary": "Search Places",
+        "operationId": "search_places_v1_places_search_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Place name query",
+              "title": "Q"
+            },
+            "description": "Place name query"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Language code",
+              "default": "en",
+              "title": "Lang"
+            },
+            "description": "Language code"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PlaceModel"
+                  },
+                  "title": "Response Search Places V1 Places Search Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/places/resolve": {
+      "post": {
+        "tags": [
+          "places"
+        ],
+        "summary": "Resolve Places",
+        "operationId": "resolve_places_v1_places_resolve_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResolveRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Resolve Places V1 Places Resolve Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/places/{place_id}": {
+      "get": {
+        "tags": [
+          "places"
+        ],
+        "summary": "Get Place",
+        "operationId": "get_place_v1_places__place_id__get",
+        "parameters": [
+          {
+            "name": "place_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Place Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaceModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AlertModel": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "sender": {
+            "type": "string",
+            "title": "Sender"
+          },
+          "sent": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Sent"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "msg_type": {
+            "type": "string",
+            "title": "Msg Type"
+          },
+          "hazard": {
+            "type": "string",
+            "title": "Hazard"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "Extreme",
+              "Severe",
+              "Moderate",
+              "Minor",
+              "Unknown"
+            ],
+            "title": "Severity"
+          },
+          "urgency": {
+            "type": "string",
+            "enum": [
+              "Immediate",
+              "Expected",
+              "Future",
+              "Past",
+              "Unknown"
+            ],
+            "title": "Urgency"
+          },
+          "certainty": {
+            "type": "string",
+            "enum": [
+              "Observed",
+              "Likely",
+              "Possible",
+              "Unlikely",
+              "Unknown"
+            ],
+            "title": "Certainty"
+          },
+          "onset": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Onset"
+          },
+          "expires": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Expires"
+          },
+          "areas": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Areas"
+          },
+          "text_by_language": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Text By Language"
+          },
+          "source_url": {
+            "type": "string",
+            "title": "Source Url"
+          },
+          "authority_tier": {
+            "type": "integer",
+            "title": "Authority Tier",
+            "default": 1
+          },
+          "level": {
+            "type": "string",
+            "enum": [
+              "green",
+              "yellow",
+              "orange",
+              "red"
+            ],
+            "title": "Level"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "sender",
+          "sent",
+          "status",
+          "msg_type",
+          "hazard",
+          "severity",
+          "urgency",
+          "certainty",
+          "onset",
+          "expires",
+          "areas",
+          "text_by_language",
+          "source_url",
+          "level"
+        ],
+        "title": "AlertModel"
+      },
+      "Body_transcribe_audio_v1_voice_transcribe_post": {
+        "properties": {
+          "audio": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "Audio"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "default": "hi"
+          }
+        },
+        "type": "object",
+        "required": [
+          "audio"
+        ],
+        "title": "Body_transcribe_audio_v1_voice_transcribe_post"
+      },
+      "ChatRequest": {
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "default": "auto"
+          },
+          "place_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Place Id"
+          },
+          "client_tz": {
+            "type": "string",
+            "title": "Client Tz",
+            "default": "Asia/Kolkata"
+          },
+          "stream": {
+            "type": "boolean",
+            "title": "Stream",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "session_id",
+          "text"
+        ],
+        "title": "ChatRequest"
+      },
+      "EvidencePacket": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "authority_tier": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "title": "Authority Tier"
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "live",
+              "live-recorded",
+              "documented-sample",
+              "spec-only",
+              "synthetic"
+            ],
+            "title": "Provenance"
+          },
+          "issued_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Issued At"
+          },
+          "valid_from": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Valid From"
+          },
+          "valid_to": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Valid To"
+          },
+          "place": {
+            "$ref": "#/components/schemas/PlaceReference"
+          },
+          "values": {
+            "items": {
+              "$ref": "#/components/schemas/ValueItem"
+            },
+            "type": "array",
+            "title": "Values"
+          },
+          "uncertainty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Uncertainty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "attribution": {
+            "type": "string",
+            "title": "Attribution"
+          },
+          "fetched_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Fetched At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "source",
+          "authority_tier",
+          "provenance",
+          "issued_at",
+          "valid_from",
+          "valid_to",
+          "place",
+          "values",
+          "attribution"
+        ],
+        "title": "EvidencePacket"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "PlaceModel": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "district",
+              "block",
+              "gp",
+              "village",
+              "station",
+              "point"
+            ],
+            "title": "Kind"
+          },
+          "names": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Names"
+          },
+          "lat": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Lat"
+          },
+          "lon": {
+            "type": "number",
+            "maximum": 180.0,
+            "minimum": -180.0,
+            "title": "Lon"
+          },
+          "elevation": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Elevation"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State"
+          },
+          "district": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "District"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "names",
+          "lat",
+          "lon"
+        ],
+        "title": "PlaceModel"
+      },
+      "PlaceReference": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "lat": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Lat"
+          },
+          "lon": {
+            "type": "number",
+            "maximum": 180.0,
+            "minimum": -180.0,
+            "title": "Lon"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "lat",
+          "lon"
+        ],
+        "title": "PlaceReference"
+      },
+      "ResolveRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "default": "en"
+          },
+          "hint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hint"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "ResolveRequest"
+      },
+      "SpeakRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "language": {
+            "type": "string",
+            "title": "Language",
+            "default": "hi"
+          },
+          "voice": {
+            "type": "string",
+            "title": "Voice",
+            "default": "female"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "SpeakRequest"
+      },
+      "Uncertainty": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "value"
+        ],
+        "title": "Uncertainty"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "ValueItem": {
+        "properties": {
+          "variable": {
+            "type": "string",
+            "title": "Variable"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "step": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Step"
+          }
+        },
+        "type": "object",
+        "required": [
+          "variable",
+          "value",
+          "unit"
+        ],
+        "title": "ValueItem"
+      }
+    }
+  }
+}

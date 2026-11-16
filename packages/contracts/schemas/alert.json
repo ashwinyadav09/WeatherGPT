@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://weathergpt.in/schemas/alert.json",
+  "title": "Alert",
+  "description": "Standardized relay alert matching CAP protocol",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "sender": { "type": "string" },
+    "sent": { "type": "string", "format": "date-time" },
+    "status": { "type": "string" },
+    "msg_type": { "type": "string" },
+    "hazard": { "type": "string" },
+    "severity": {
+      "type": "string",
+      "enum": ["Extreme", "Severe", "Moderate", "Minor", "Unknown"]
+    },
+    "urgency": {
+      "type": "string",
+      "enum": ["Immediate", "Expected", "Future", "Past", "Unknown"]
+    },
+    "certainty": {
+      "type": "string",
+      "enum": ["Observed", "Likely", "Possible", "Unlikely", "Unknown"]
+    },
+    "onset": { "type": "string", "format": "date-time" },
+    "expires": { "type": "string", "format": "date-time" },
+    "areas": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "text_by_language": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "source_url": { "type": "string" },
+    "authority_tier": { "type": "integer", "default": 1 },
+    "level": {
+      "type": "string",
+      "enum": ["green", "yellow", "orange", "red"]
+    }
+  },
+  "required": [
+    "id",
+    "sender",
+    "sent",
+    "status",
+    "msg_type",
+    "hazard",
+    "severity",
+    "urgency",
+    "certainty",
+    "onset",
+    "expires",
+    "areas",
+    "text_by_language",
+    "source_url",
+    "authority_tier",
+    "level"
+  ],
+  "additionalProperties": false
+}

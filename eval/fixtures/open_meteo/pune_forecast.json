@@ -1,0 +1,33 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://open-meteo.com/en/docs",
+  "_recorded_at": "2026-11-10T05:30:00Z",
+  "latitude": 18.52,
+  "longitude": 73.86,
+  "generationtime_ms": 0.12,
+  "utc_offset_seconds": 19800,
+  "timezone": "Asia/Kolkata",
+  "timezone_abbreviation": "IST",
+  "elevation": 560.0,
+  "current": {
+    "time": "2026-11-10T11:00",
+    "interval": 900,
+    "temperature_2m": 29.4,
+    "precipitation": 0.0
+  },
+  "daily": {
+    "time": [
+      "2026-11-10",
+      "2026-11-11",
+      "2026-11-12",
+      "2026-11-13",
+      "2026-11-14",
+      "2026-11-15",
+      "2026-11-16"
+    ],
+    "temperature_2m_max": [31.2, 31.5, 30.8, 30.1, 29.8, 30.0, 30.5],
+    "temperature_2m_min": [18.2, 18.5, 17.9, 17.5, 17.2, 17.8, 18.0],
+    "precipitation_sum": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+    "precipitation_probability_max": [0, 0, 5, 0, 0, 0, 0]
+  }
+}

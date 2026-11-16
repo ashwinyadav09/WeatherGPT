@@ -1,24 +1,24 @@
 # Owners are requested as reviewers automatically. The first owner is the folder's owner, the second the usual reviewer.
 # Replace the placeholders by running scripts/github/bootstrap.py (it reads team/members.csv).
 # Later lines override earlier ones.
-*                                          @GH_ASHWIN
-/services/api/app/conversation/            @GH_ASHWIN @GH_PRADEEP
-/services/api/app/gateways/llm/            @GH_ASHWIN @GH_PRADEEP
-/services/api/app/evidence/                @GH_ASHWIN @GH_AMAN
-/services/api/app/modules/forecast/        @GH_ASHWIN @GH_AMAN
-/services/api/app/modules/alerts/          @GH_AMAN @GH_ASHWIN
-/services/api/app/modules/climate/         @GH_AMAN @GH_ASHWIN
-/services/api/app/modules/location/        @GH_PRADEEP @GH_ASHWIN
-/services/api/app/modules/advisory/        @GH_PRADEEP @GH_ASHWIN
-/services/api/app/gateways/speech/         @GH_PRADEEP @GH_ASHWIN
-/services/ingest/                          @GH_AMAN @GH_ASHWIN
-/ml/                                       @GH_AMAN @GH_ASHWIN
-/eval/fixtures/                            @GH_AMAN @GH_ASHWIN
-/apps/web/                                 @GH_PRADEEP @GH_ASHWIN
-/apps/web/src/features/alerts/             @GH_AMAN @GH_PRADEEP
-/seeds/i18n/                               @GH_PRADEEP @GH_ASHWIN
-/packages/contracts/                       @GH_ASHWIN @GH_AMAN @GH_PRADEEP
-/scripts/                                  @GH_ASHWIN @GH_AMAN
-/infra/                                    @GH_ASHWIN @GH_AMAN
-/.github/                                  @GH_ASHWIN @GH_AMAN
-/docs/adr/                                 @GH_ASHWIN @GH_AMAN @GH_PRADEEP
+*                                          @ashwinyadav09
+/services/api/app/conversation/            @ashwinyadav09 @PradeepChhaba
+/services/api/app/gateways/llm/            @ashwinyadav09 @PradeepChhaba
+/services/api/app/evidence/                @ashwinyadav09 @xyz0kRATOS
+/services/api/app/modules/forecast/        @ashwinyadav09 @xyz0kRATOS
+/services/api/app/modules/alerts/          @xyz0kRATOS @ashwinyadav09
+/services/api/app/modules/climate/         @xyz0kRATOS @ashwinyadav09
+/services/api/app/modules/location/        @PradeepChhaba @ashwinyadav09
+/services/api/app/modules/advisory/        @PradeepChhaba @ashwinyadav09
+/services/api/app/gateways/speech/         @PradeepChhaba @ashwinyadav09
+/services/ingest/                          @xyz0kRATOS @ashwinyadav09
+/ml/                                       @xyz0kRATOS @ashwinyadav09
+/eval/fixtures/                            @xyz0kRATOS @ashwinyadav09
+/apps/web/                                 @PradeepChhaba @ashwinyadav09
+/apps/web/src/features/alerts/             @xyz0kRATOS @PradeepChhaba
+/seeds/i18n/                               @PradeepChhaba @ashwinyadav09
+/packages/contracts/                       @ashwinyadav09 @xyz0kRATOS @PradeepChhaba
+/scripts/                                  @ashwinyadav09 @xyz0kRATOS
+/infra/                                    @ashwinyadav09 @xyz0kRATOS
+/.github/                                  @ashwinyadav09 @xyz0kRATOS
+/docs/adr/                                 @ashwinyadav09 @xyz0kRATOS @PradeepChhaba

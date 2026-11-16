@@ -1,0 +1,40 @@
+sources:
+  - id: open_meteo.forecast
+    name: Open-Meteo Weather Forecast API
+    base_url: https://api.open-meteo.com/v1/forecast
+    authority_tier: 5
+    ttl_seconds: 1800
+    rate_limit: "10000/day"
+    attribution: "Weather data by Open-Meteo.com (CC BY 4.0)"
+    licence_note: "CC BY 4.0, non-commercial use"
+    enabled: true
+
+  - id: open_meteo.geocoding
+    name: Open-Meteo Geocoding API
+    base_url: https://geocoding-api.open-meteo.com/v1/search
+    authority_tier: 5
+    ttl_seconds: 2592000
+    rate_limit: "10000/day"
+    attribution: "Geocoding by Open-Meteo.com (CC BY 4.0)"
+    licence_note: "CC BY 4.0"
+    enabled: true
+
+  - id: sachet.cap
+    name: NDMA SACHET Alert Feed
+    base_url: https://sachet.ndma.gov.in/cap_public_website/rss
+    authority_tier: 1
+    ttl_seconds: 120
+    rate_limit: "60/hour"
+    attribution: "National Disaster Management Authority (NDMA) SACHET"
+    licence_note: "Public safety feed, relay as issued"
+    enabled: true
+
+  - id: imd.city_forecast
+    name: IMD City Forecast
+    base_url: https://api.imd.gov.in
+    authority_tier: 2
+    ttl_seconds: 900
+    rate_limit: "unknown"
+    attribution: "India Meteorological Department (IMD), Ministry of Earth Sciences"
+    licence_note: "Government data, non-commercial public interest"
+    enabled: false # Controlled by IMD_ENABLED env var

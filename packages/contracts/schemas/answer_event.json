@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://weathergpt.in/schemas/answer_event.json",
+  "title": "AnswerEvent",
+  "description": "Server-sent event in the /v1/chat stream",
+  "type": "object",
+  "properties": {
+    "event": {
+      "type": "string",
+      "enum": ["meta", "token", "evidence", "card", "done", "error"]
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "required": ["event", "data"],
+  "additionalProperties": false
+}
