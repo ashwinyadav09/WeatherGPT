@@ -1,0 +1,53 @@
+# Draft glossary (Hindi). Needs a native-speaker sign-off (human step). Keys match glossary.en.yaml.
+terms:
+  temperature: तापमान
+  humidity: नमी
+  rain: बारिश
+  rainfall: वर्षा
+  thunderstorm: गरज-चमक के साथ बारिश
+  lightning: आकाशीय बिजली
+  hailstorm: ओलावृष्टि
+  heat_wave: लू
+  cold_wave: शीत लहर
+  cyclone: चक्रवात
+  flood: बाढ़
+  fog: कोहरा
+  wind: हवा
+  gust: तेज़ झोंके
+  visibility: दृश्यता
+  forecast: पूर्वानुमान
+  nowcast: तात्कालिक पूर्वानुमान (अगले कुछ घंटों का)
+  warning: चेतावनी
+  alert: अलर्ट
+  heavy_rain: भारी बारिश
+  very_heavy_rain: बहुत भारी बारिश
+  extremely_heavy_rain: अत्यंत भारी बारिश
+  dust_storm: धूल भरी आंधी
+  high_waves: ऊंची लहरें
+  flash_flood: अचानक बाढ़
+  drought: सूखा
+  tsunami: सुनामी
+  storm_surge: तूफ़ानी लहरें
+  strong_wind: तेज़ हवा
+levels:
+  green: {color: हरा, meaning: कोई चेतावनी नहीं}
+  yellow: {color: पीला, meaning: सतर्क रहें}
+  orange: {color: नारंगी, meaning: तैयार रहें}
+  red: {color: लाल, meaning: कार्रवाई करें}
+time:
+  today: आज
+  tomorrow: कल
+  day_after_tomorrow: परसों
+  this_week: इस हफ़्ते
+  morning: सुबह
+  afternoon: दोपहर
+  evening: शाम
+  night: रात
+units:
+  celsius: डिग्री सेल्सियस
+  mm: मिलीमीटर
+  kmh: किलोमीटर प्रति घंटा
+  percent: प्रतिशत
+crops:
+  wheat: गेहूं
+  rice: धान

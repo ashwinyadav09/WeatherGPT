@@ -1,0 +1,30 @@
+name: Contract checks
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run live contract checks
+        env:
+          IMD_API_KEY: ${{ secrets.IMD_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          if [ -f scripts/dev.py ]; then
+            python scripts/dev.py contract-checks
+          else
+            echo "scripts/dev.py not found yet"
+          fi

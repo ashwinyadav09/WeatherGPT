@@ -1,0 +1,81 @@
+# Tool definitions for the agent loop. Every tool returns evidence packets. Descriptions are written for the model.
+tools:
+  - name: resolve_place
+    description: Turn a place name, in any supported language or script, into place records. Call this first whenever the user names a place. Returns ranked places and whether the name is ambiguous.
+    parameters:
+      type: object
+      properties:
+        text: {type: string, description: The place as the user wrote or said it}
+        language: {type: string, description: Language code such as hi or en}
+        hint: {type: string, description: Optional state or district to narrow the search}
+      required: [text]
+  - name: get_current
+    description: Current conditions at a place from the best available source.
+    parameters:
+      type: object
+      properties:
+        place_id: {type: string}
+      required: [place_id]
+  - name: get_forecast
+    description: Forecast values for a place and time window. Returns evidence packets from the best available sources, ranked by the authority ladder.
+    parameters:
+      type: object
+      properties:
+        place_id: {type: string}
+        start: {type: string, description: ISO 8601 UTC start}
+        end: {type: string, description: ISO 8601 UTC end}
+        variables:
+          type: array
+          items: {type: string, enum: [temperature, rain, rain_probability, wind, humidity]}
+      required: [place_id, start, end]
+  - name: get_alerts
+    description: Active official alerts that cover a place. The app shows alerts as issued; use this to know whether any exist and how severe they are.
+    parameters:
+      type: object
+      properties:
+        place_id: {type: string}
+      required: [place_id]
+  - name: get_climate_stat
+    description: A climate statistic for a place and period against a stated baseline. Always names the dataset, period and resolution.
+    parameters:
+      type: object
+      properties:
+        place_id: {type: string}
+        variable: {type: string, enum: [rain, temperature]}
+        period: {type: string, description: For example 2026-05 or 2026-05-01/2026-05-31}
+        statistic: {type: string, enum: [anomaly, percentile, normal, days_above_threshold, trend]}
+        baseline: {type: string, description: For example 1991-2020}
+        threshold: {type: number}
+      required: [place_id, variable, period, statistic]
+  - name: get_advisory
+    description: Official guidance cards and, when available, agromet advice for a place. Returns cited text only.
+    parameters:
+      type: object
+      properties:
+        place_id: {type: string}
+        domain: {type: string, enum: [heat, cold, agro, marine]}
+        crop: {type: string}
+        stage: {type: string}
+      required: [place_id, domain]
+  - name: get_aviation_wx
+    description: Decoded METAR and TAF for an aerodrome, with the raw text. Informational only.
+    parameters:
+      type: object
+      properties:
+        icao: {type: string, description: Four-letter ICAO code such as VIDP}
+      required: [icao]
+  - name: get_marine
+    description: Sea and coastal bulletins and fishermen warnings for a coastal area.
+    parameters:
+      type: object
+      properties:
+        area: {type: string}
+      required: [area]
+  - name: explain_term
+    description: Explain a weather term, alert colour or unit in the user's language using the glossary.
+    parameters:
+      type: object
+      properties:
+        term: {type: string}
+        language: {type: string}
+      required: [term]

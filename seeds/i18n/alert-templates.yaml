@@ -1,0 +1,29 @@
+# Draft templates. A native-speaker sign-off per language is required before release (human step).
+# Build alert text from these templates plus glossary terms (hazard names, level colours). The LLM is never involved.
+# Keep wording close to official IMD and NDMA phrasing.
+en:
+  headline: "{level_color} alert: {hazard} in {place}"
+  body: "{sender} has issued a {level_color} alert for {hazard} in {place}, valid from {valid_from} to {valid_to}."
+  meaning:
+    green: "No warning."
+    yellow: "Stay aware."
+    orange: "Be prepared."
+    red: "Take action."
+  source_line: "Official alert from {sender}, relayed via {channel}. Issued {issued_at}."
+  update_prefix: "Updated: "
+  cancel: "All clear: the {hazard} alert for {place} has been cancelled."
+  advice_header: "What officials advise"
+  advice_fallback: "Follow instructions from your local authorities."
+hi:
+  headline: "{level_color} अलर्ट: {place} में {hazard}"
+  body: "{sender} ने {place} में {hazard} का {level_color} अलर्ट जारी किया है। यह {valid_from} से {valid_to} तक मान्य है।"
+  meaning:
+    green: "कोई चेतावनी नहीं।"
+    yellow: "सतर्क रहें।"
+    orange: "तैयार रहें।"
+    red: "कार्रवाई करें।"
+  source_line: "{sender} का आधिकारिक अलर्ट, {channel} के माध्यम से। जारी: {issued_at}।"
+  update_prefix: "अपडेट: "
+  cancel: "सब सामान्य: {place} में {hazard} का अलर्ट रद्द कर दिया गया है।"
+  advice_header: "अधिकारियों की सलाह"
+  advice_fallback: "अपने स्थानीय प्रशासन के निर्देशों का पालन करें।"

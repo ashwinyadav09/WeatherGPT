@@ -1,0 +1,4 @@
+name,github,role,areas
+ashwin,ashwinyadav09,lead and integrator,"conversation core; LLM gateway; evidence; IMD and Open-Meteo forecast adapters; scripts; infra; CI; ADRs; reviews and merges; IMD key"
+aman,xyz0kRATOS,data alerts climate and ML,"ingest worker; alerts; model-data adapters; climate; ML training; fixtures; real-time showcase"
+pradeep,,web voice and languages,"web app; places; speech gateway; advisories; i18n; PWA; UI"

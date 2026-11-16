@@ -1,0 +1,16 @@
+# Probability of precipitation to plain words. Prefer IMD's own categories where they exist.
+probability_bands:
+  - {min: 0, max: 10, phrase: very unlikely}
+  - {min: 10, max: 30, phrase: unlikely}
+  - {min: 30, max: 60, phrase: possible}
+  - {min: 60, max: 80, phrase: likely}
+  - {min: 80, max: 100, phrase: very likely}
+# IMD rainfall classes in mm per 24 hours (verify against IMD's glossary before release).
+rainfall_categories:
+  very_light: {min: 0.1, max: 2.4, phrase: very light rain}
+  light: {min: 2.5, max: 15.5, phrase: light rain}
+  moderate: {min: 15.6, max: 64.4, phrase: moderate rain}
+  heavy: {min: 64.5, max: 115.5, phrase: heavy rain}
+  very_heavy: {min: 115.6, max: 204.4, phrase: very heavy rain}
+  extremely_heavy: {min: 204.5, max: null, phrase: extremely heavy rain}
+long_lead_rule: Beyond day 5 give a range or a tendency, not a single value.

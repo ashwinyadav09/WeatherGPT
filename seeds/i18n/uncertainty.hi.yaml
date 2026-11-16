@@ -1,0 +1,15 @@
+# Draft (Hindi). Needs a native-speaker sign-off (human step).
+probability_bands:
+  - {min: 0, max: 10, phrase: बहुत कम संभावना}
+  - {min: 10, max: 30, phrase: कम संभावना}
+  - {min: 30, max: 60, phrase: संभावना है}
+  - {min: 60, max: 80, phrase: काफ़ी संभावना}
+  - {min: 80, max: 100, phrase: बहुत अधिक संभावना}
+rainfall_categories:
+  very_light: {min: 0.1, max: 2.4, phrase: बहुत हल्की बारिश}
+  light: {min: 2.5, max: 15.5, phrase: हल्की बारिश}
+  moderate: {min: 15.6, max: 64.4, phrase: मध्यम बारिश}
+  heavy: {min: 64.5, max: 115.5, phrase: भारी बारिश}
+  very_heavy: {min: 115.6, max: 204.4, phrase: बहुत भारी बारिश}
+  extremely_heavy: {min: 204.5, max: null, phrase: अत्यंत भारी बारिश}
+long_lead_rule: पाँच दिन से आगे एक सीमा या रुझान बताएं, एक निश्चित मान नहीं।

@@ -1,0 +1,36 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Data and build output
+data/
+*.zarr/
+*.grib
+*.grib2
+*.grd
+node_modules/
+dist/
+build/
+coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
+playwright-report/
+test-results/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local agent state
+.scratch/weathergpt/pr/
+.scratch/weathergpt/standups/*.local.md

@@ -1,0 +1,24 @@
+# Owners are requested as reviewers automatically. The first owner is the folder's owner, the second the usual reviewer.
+# Replace the placeholders by running scripts/github/bootstrap.py (it reads team/members.csv).
+# Later lines override earlier ones.
+*                                          @GH_ASHWIN
+/services/api/app/conversation/            @GH_ASHWIN @GH_PRADEEP
+/services/api/app/gateways/llm/            @GH_ASHWIN @GH_PRADEEP
+/services/api/app/evidence/                @GH_ASHWIN @GH_AMAN
+/services/api/app/modules/forecast/        @GH_ASHWIN @GH_AMAN
+/services/api/app/modules/alerts/          @GH_AMAN @GH_ASHWIN
+/services/api/app/modules/climate/         @GH_AMAN @GH_ASHWIN
+/services/api/app/modules/location/        @GH_PRADEEP @GH_ASHWIN
+/services/api/app/modules/advisory/        @GH_PRADEEP @GH_ASHWIN
+/services/api/app/gateways/speech/         @GH_PRADEEP @GH_ASHWIN
+/services/ingest/                          @GH_AMAN @GH_ASHWIN
+/ml/                                       @GH_AMAN @GH_ASHWIN
+/eval/fixtures/                            @GH_AMAN @GH_ASHWIN
+/apps/web/                                 @GH_PRADEEP @GH_ASHWIN
+/apps/web/src/features/alerts/             @GH_AMAN @GH_PRADEEP
+/seeds/i18n/                               @GH_PRADEEP @GH_ASHWIN
+/packages/contracts/                       @GH_ASHWIN @GH_AMAN @GH_PRADEEP
+/scripts/                                  @GH_ASHWIN @GH_AMAN
+/infra/                                    @GH_ASHWIN @GH_AMAN
+/.github/                                  @GH_ASHWIN @GH_AMAN
+/docs/adr/                                 @GH_ASHWIN @GH_AMAN @GH_PRADEEP

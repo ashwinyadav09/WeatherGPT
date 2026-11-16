@@ -1,0 +1,21 @@
+# Glossary
+
+- **Place**: a resolved location (district, block, gram panchayat, station or GPS point) with an id, names in several scripts and coordinates.
+- **Evidence packet**: the one data shape every tool returns: id, source, authority tier, issue time, validity window, place, values with units, uncertainty, attribution, fetch time.
+- **Authority ladder**: the order in which sources win when they overlap: official warning, official forecast, national model, global model, aggregator, LLM narrative.
+- **Authority tier**: a source's rung on the ladder (1 = official warning ... 5 = aggregator).
+- **Official alert**: a warning issued by IMD, CWC, INCOIS or a state disaster authority and carried by SACHET or the IMD APIs.
+- **Model guidance**: output from a numerical or AI model that WeatherGPT ingests itself; never styled as an official alert.
+- **Relay-only**: alerts are shown as issued; WeatherGPT never writes or escalates a warning.
+- **CAP**: Common Alerting Protocol 1.2, the XML format SACHET uses.
+- **SACHET**: NDMA's CAP-based national alert system; its RSS feeds are WeatherGPT's alert source of record.
+- **Nowcast**: IMD's short-range (hours) district or station forecast.
+- **Gram panchayat (GP)**: the village-level local government unit; IMD publishes GP-level forecasts.
+- **Adapter**: code that turns one external system into WeatherGPT's internal shape.
+- **Seam**: a place where behaviour can be swapped or observed without editing in place; real when two adapters exist.
+- **Grounding verifier**: checks every number and unit in an answer against its evidence packets.
+- **Golden set**: curated question-and-answer cases per language and archetype, with expected values from fixtures.
+- **Tier A / B / C language**: A is voice in and out; B is voice in and text out; C is text and vetted alert templates.
+- **Tracer bullet / slice**: a thin end-to-end path through every layer that can be demoed on its own.
+- **Frontier**: the tickets whose blockers are all done.
+- **Red / green**: the failing test observed before the code that makes it pass.

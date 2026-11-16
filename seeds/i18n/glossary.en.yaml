@@ -1,0 +1,53 @@
+# Draft glossary (English). Keys are shared with every language file.
+terms:
+  temperature: temperature
+  humidity: humidity
+  rain: rain
+  rainfall: rainfall
+  thunderstorm: thunderstorm with rain
+  lightning: lightning
+  hailstorm: hailstorm
+  heat_wave: heat wave
+  cold_wave: cold wave
+  cyclone: cyclone
+  flood: flood
+  fog: fog
+  wind: wind
+  gust: gust
+  visibility: visibility
+  forecast: forecast
+  nowcast: nowcast (forecast for the next few hours)
+  warning: warning
+  alert: alert
+  heavy_rain: heavy rain
+  very_heavy_rain: very heavy rain
+  extremely_heavy_rain: extremely heavy rain
+  dust_storm: dust storm
+  high_waves: high waves
+  flash_flood: flash flood
+  drought: drought
+  tsunami: tsunami
+  storm_surge: storm surge
+  strong_wind: strong wind
+levels:
+  green: {color: green, meaning: No warning}
+  yellow: {color: yellow, meaning: Stay aware}
+  orange: {color: orange, meaning: Be prepared}
+  red: {color: red, meaning: Take action}
+time:
+  today: today
+  tomorrow: tomorrow
+  day_after_tomorrow: the day after tomorrow
+  this_week: this week
+  morning: morning
+  afternoon: afternoon
+  evening: evening
+  night: night
+units:
+  celsius: degrees Celsius
+  mm: millimetres
+  kmh: kilometres per hour
+  percent: percent
+crops:
+  wheat: wheat
+  rice: rice
