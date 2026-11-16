@@ -1,0 +1,28 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://sachet.ndma.gov.in",
+  "id": "urn:oid:2.49.0.1.356.1.1.2026.11.10.1",
+  "sender": "NDMA-SACHET",
+  "sent": "2026-11-17T06:00:00Z",
+  "status": "Actual",
+  "msg_type": "Alert",
+  "hazard": "Thunderstorm",
+  "severity": "Moderate",
+  "urgency": "Expected",
+  "certainty": "Likely",
+  "onset": "2026-11-17T08:00:00Z",
+  "expires": "2026-12-31T23:59:59Z",
+  "areas": [
+    {
+      "areaDesc": "Pune District",
+      "polygon": "18.52,73.85 18.60,73.90 18.45,73.95 18.52,73.85"
+    }
+  ],
+  "text_by_language": {
+    "en": "Moderate thunderstorm with gusty winds expected in Pune district.",
+    "hi": "पुणे जिले में तेज हवाओं के साथ मध्यम गरज-चमक की संभावना।"
+  },
+  "source_url": "https://sachet.ndma.gov.in/cap_public_website/alert_123.xml",
+  "authority_tier": 1,
+  "level": "yellow"
+}

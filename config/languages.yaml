@@ -1,0 +1,48 @@
+languages:
+  - code: en
+    native_name: English
+    english_name: English
+    tier: 1
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: true
+
+  - code: hi
+    native_name: हिन्दी
+    english_name: Hindi
+    tier: 1
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: true
+
+  - code: bn
+    native_name: বাংলা
+    english_name: Bengali
+    tier: 2
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false
+
+  - code: mr
+    native_name: मराठी
+    english_name: Marathi
+    tier: 2
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false
+
+  - code: te
+    native_name: తెలుగు
+    english_name: Telugu
+    tier: 2
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false
+
+  - code: ta
+    native_name: தமிழ்
+    english_name: Tamil
+    tier: 2
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false

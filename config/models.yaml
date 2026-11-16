@@ -1,0 +1,15 @@
+# Model selection configuration
+# Written initially for ticket 01a; prompt X updates this after ticket 02
+models:
+  provider: groq
+  base_url_env: GROQ_BASE_URL
+  api_key_env: GROQ_API_KEY
+  main_model: llama-3.3-70b-versatile
+  fast_model: llama-3.1-8b-instant
+  selection_notes: "Initial baseline configuration. Supports tool calling on Groq."
+  fallback:
+    provider: openrouter
+    base_url_env: OPENROUTER_BASE_URL
+    api_key_env: OPENROUTER_API_KEY
+    main_model: meta-llama/llama-3.3-70b-instruct
+    fast_model: meta-llama/llama-3.1-8b-instruct

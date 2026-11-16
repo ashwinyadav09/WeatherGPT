@@ -1,0 +1,10 @@
+- id: dummy-rain-tomorrow-pune-en-001
+  language: en
+  archetype: forecast
+  now: "2026-11-17T05:30:00Z"
+  question: Will it rain tomorrow in Pune?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
