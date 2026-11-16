@@ -24,6 +24,7 @@ __pycache__/
 venv/
 playwright-report/
 test-results/
+eval/results/
 
 # Editors and OS
 .idea/
