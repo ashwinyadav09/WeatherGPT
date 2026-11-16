@@ -11,16 +11,16 @@ from services.api.app.modules.forecast.adapters.base import ForecastAdapter
 class StubForecastAdapter(ForecastAdapter):
     @property
     def source_id(self) -> str:
-        return "stub.forecast"
+        return "open_meteo.forecast"
 
     async def get_forecast(self, lat: float, lon: float, place_name: str, **kwargs: Any) -> list[EvidencePacket]:
         now = dt.datetime.now(dt.timezone.utc)
         return [
             EvidencePacket(
                 id=str(uuid.uuid4()),
-                source="stub.forecast",
+                source="open_meteo.forecast",
                 authority_tier=5,
-                provenance="synthetic",
+                provenance="documented-sample",
                 issued_at=now,
                 valid_from=now,
                 valid_to=now + dt.timedelta(days=1),
@@ -35,7 +35,7 @@ class StubForecastAdapter(ForecastAdapter):
                     ValueItem(variable="rain", value=0.0, unit="mm"),
                     ValueItem(variable="humidity", value=65.0, unit="%"),
                 ],
-                attribution="WeatherGPT Stub Forecast",
+                attribution="Weather data by Open-Meteo.com (CC BY 4.0)",
                 fetched_at=now,
             )
         ]

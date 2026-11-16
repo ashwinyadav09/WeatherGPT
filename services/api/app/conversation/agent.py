@@ -113,7 +113,10 @@ class ConversationAgent:
         v_result = verify_grounding(answer_text, packets)
         if not v_result:
             # Fallback directly to template built from evidence
-            answer_text = f"Forecast for {p_name}: rain {rain_val:.1f} mm, temperature {temp_val:.1f} degC. (Source: {source_display})"
+            answer_text = (
+                f"According to {source_display} forecast for {p_name}: rain {rain_val:.1f} mm, "
+                f"temperature {temp_val:.1f} degC. Note: Official IMD forecast is not connected in this pilot."
+            )
 
         # 7. Stream token events
         words = answer_text.split(" ")
