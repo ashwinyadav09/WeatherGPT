@@ -5,7 +5,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
 | 01c | Web shell | in-review | Web shell completed, CI green, PR body in .scratch/weathergpt/pr/ticket-01c-web-shell.md |
-| 03 | Places real people say | todo | |
+| 03 | Places real people say | in-progress | Building LocationResolver, Indic/transliteration normalization, 200+ golden cases, ambiguity handling |
 | 20 | Website experience (PWA, offline, data saver, sharing, privacy) | todo | |
 | 06 | Voice v1 (Hindi) | todo | |
 | 10 | Advisories v1 (guidance cards) | todo | |

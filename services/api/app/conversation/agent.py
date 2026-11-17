@@ -60,22 +60,23 @@ class ConversationAgent:
             lang = detect_language(req.text)
 
         # 2. Resolve place and get forecast evidence
-        from services.api.app.modules.location.resolver import SEED_PLACES
-        place = None
-        p_name = "Pune"
-        for sp in SEED_PLACES:
-            if any(n.lower() in req.text.lower() for n in sp.names.values()):
-                place = sp
-                p_name = sp.names.get(lang, sp.names.get("en", sp.id.title()))
-                break
+        resolved = await self.location_resolver.resolve(req.text, language=lang)
+        if resolved.get("ambiguous") and resolved.get("clarification_question"):
+            clarify_q = str(resolved["clarification_question"])
+            yield {
+                "event": "card",
+                "data": {
+                    "headline": "Clarification needed" if lang != "hi" else "स्थान स्पष्ट करें",
+                    "source_line": "WeatherGPT Location Resolver",
+                    "caveat": clarify_q,
+                },
+            }
+            yield {"event": "token", "data": {"text": clarify_q}}
+            yield {"event": "done", "data": {}}
+            return
 
-        if not place:
-            resolved = await self.location_resolver.resolve(req.text, language=lang)
-            places_raw = resolved.get("places", [])
-            places: list[Any] = places_raw if isinstance(places_raw, list) else []
-            place = places[0] if places else None
-            p_name = place.names.get(lang, place.names.get("en", "Pune")) if place else "Pune"
-
+        place = resolved.get("resolved_place")
+        p_name = place.names.get(lang, place.names.get("en", "Pune")) if place else "Pune"
         lat = place.lat if place else 18.5204
         lon = place.lon if place else 73.8567
 

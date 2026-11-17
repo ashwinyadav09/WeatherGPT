@@ -31,6 +31,12 @@ async def resolve_places(body: ResolveRequest) -> Any:
     return await _resolver.resolve(text=body.text, language=body.language, hint=body.hint)
 
 
+@router.get("/saved", response_model=list[PlaceModel])
+async def get_saved_places() -> Any:
+    from services.api.app.modules.location.resolver import DEFAULT_SAVED_PLACES
+    return list(DEFAULT_SAVED_PLACES.values())
+
+
 @router.get("/{place_id}", response_model=PlaceModel)
 async def get_place(place_id: str) -> Any:
     place = await _resolver.get_by_id(place_id)
