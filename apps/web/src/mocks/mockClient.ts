@@ -34,6 +34,39 @@ export const handleMockRequest = async (
     });
   }
 
+  // /v1/voice/transcribe
+  if (urlStr.includes('/v1/voice/transcribe') && method === 'POST') {
+    return new Response(
+      JSON.stringify({
+        text: 'कल पुणे में बारिश होगी क्या?',
+        language: 'hi',
+        confidence: 0.95,
+        provider: 'mock',
+      }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  }
+
+  // /v1/voice/speak
+  if (urlStr.includes('/v1/voice/speak') && method === 'POST') {
+    // Generate minimal valid RIFF WAV bytes
+    const header = new Uint8Array([
+      0x52, 0x49, 0x46, 0x46, 0x24, 0x00, 0x00, 0x00,
+      0x57, 0x41, 0x56, 0x45, 0x66, 0x6d, 0x74, 0x20,
+      0x10, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00,
+      0x80, 0x3e, 0x00, 0x00, 0x00, 0x7d, 0x00, 0x00,
+      0x02, 0x00, 0x10, 0x00, 0x64, 0x61, 0x74, 0x61,
+      0x00, 0x00, 0x00, 0x00,
+    ]);
+    return new Response(header, {
+      status: 200,
+      headers: { 'Content-Type': 'audio/wav' },
+    });
+  }
+
   // /v1/chat or /v1/conversation/message mock streaming response
   if (urlStr.includes('/v1/chat') && method === 'POST') {
     let bodyObj: { text?: string; language?: string } = {};

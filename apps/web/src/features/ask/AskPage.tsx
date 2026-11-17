@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { MicButton } from '../../components/MicButton';
+import { BrowserAudioRecorder } from '../../utils/audioRecorder';
 import { AnswerCard, AnswerCardData, EvidencePacket } from './AnswerCard';
 
 export const AskPage: React.FC = () => {
@@ -7,7 +9,18 @@ export const AskPage: React.FC = () => {
   const [language, setLanguage] = useState<'en' | 'hi'>('en');
   const [answers, setAnswers] = useState<AnswerCardData[]>([]);
   const [loading, setLoading] = useState(false);
-  const [recording, setRecording] = useState(false);
+
+  // Voice recording state
+  const [isListening, setIsListening] = useState(false);
+  const [isProcessingVoice, setIsProcessingVoice] = useState(false);
+  const [volumeLevel, setVolumeLevel] = useState(0);
+  const [recordingSeconds, setRecordingSeconds] = useState(0);
+  const [liveTranscript, setLiveTranscript] = useState('');
+  const [voiceError, setVoiceError] = useState<string | null>(null);
+
+  const recorderRef = useRef<BrowserAudioRecorder | null>(null);
+  const timerRef = useRef<number | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const suggestions = [
     'Will it rain tomorrow in Pune?',
@@ -15,11 +28,25 @@ export const AskPage: React.FC = () => {
     'कल पुणे में बारिश होगी क्या?',
   ];
 
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (recorderRef.current) {
+        recorderRef.current.cancel();
+      }
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
+
   const handleAsk = async (queryText: string) => {
     const q = queryText.trim();
     if (!q || loading) return;
 
     setLoading(true);
+    setVoiceError(null);
+    setLiveTranscript('');
     const cardId = `ans_${Date.now()}`;
     const newCard: AnswerCardData = {
       id: cardId,
@@ -56,6 +83,8 @@ export const AskPage: React.FC = () => {
       let keyValues: Record<string, string> | undefined;
       let sourceLine = '';
       let caveat = '';
+      let actions: string[] | undefined;
+      let needsConfirmation = false;
 
       while (true) {
         const { value, done } = await reader.read();
@@ -82,6 +111,8 @@ export const AskPage: React.FC = () => {
                 keyValues = data.key_values;
                 sourceLine = data.source_line;
                 caveat = data.caveat;
+                actions = data.actions;
+                needsConfirmation = !!data.needs_confirmation;
               }
 
               // Update the active card in state
@@ -95,18 +126,20 @@ export const AskPage: React.FC = () => {
                         keyValues: keyValues || c.keyValues,
                         sourceLine: sourceLine || c.sourceLine,
                         caveat: caveat || c.caveat,
+                        actions: actions || c.actions,
+                        needsConfirmation: needsConfirmation ?? c.needsConfirmation,
                         evidencePackets: gatheredPackets,
                       }
                     : c
                 )
               );
             } catch {
-              // Ignore parse error on partial chunks
+              // Ignore partial chunk parse error
             }
           }
         }
       }
-    } catch (err) {
+    } catch {
       setAnswers((prev) =>
         prev.map((c) =>
           c.id === cardId
@@ -123,29 +156,92 @@ export const AskPage: React.FC = () => {
     }
   };
 
-  const toggleMic = () => {
-    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
-      alert('Speech recognition is not supported in this browser. Please type your query.');
-      return;
+  const startRecording = async () => {
+    if (isListening || isProcessingVoice) return;
+    setVoiceError(null);
+    setLiveTranscript(language === 'hi' ? 'सुन रहे हैं... बोलिए' : 'Listening... speak now');
+    setRecordingSeconds(0);
+
+    try {
+      const recorder = new BrowserAudioRecorder({
+        onVolumeChange: (vol) => setVolumeLevel(vol),
+        onError: (err) => {
+          setVoiceError(err.message);
+          stopRecording();
+        },
+      });
+      recorderRef.current = recorder;
+      await recorder.start();
+      setIsListening(true);
+
+      timerRef.current = window.setInterval(() => {
+        setRecordingSeconds((s) => s + 1);
+      }, 1000);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Could not access microphone.';
+      setVoiceError(`Microphone error: ${msg}. Please type your question.`);
+      setIsListening(false);
+      setLiveTranscript('');
+      inputRef.current?.focus();
+    }
+  };
+
+  const stopRecording = async () => {
+    if (!isListening || !recorderRef.current) return;
+
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
     }
 
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    recognition.lang = language === 'hi' ? 'hi-IN' : 'en-IN';
-    recognition.interimResults = false;
+    setIsListening(false);
+    setIsProcessingVoice(true);
+    setLiveTranscript(language === 'hi' ? 'पहचान रहे हैं...' : 'Transcribing voice...');
 
-    if (!recording) {
-      recognition.start();
-      setRecording(true);
-      recognition.onresult = (event: any) => {
-        const transcript = event.results[0][0].transcript;
-        setRecording(false);
-        handleAsk(transcript);
-      };
-      recognition.onerror = () => setRecording(false);
-      recognition.onend = () => setRecording(false);
+    try {
+      const audioWavBlob = await recorderRef.current.stop();
+      recorderRef.current = null;
+
+      // Send audio to /v1/voice/transcribe
+      const formData = new FormData();
+      formData.append('audio', audioWavBlob, 'recording.wav');
+      formData.append('language', language);
+
+      const resp = await fetch('/v1/voice/transcribe', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!resp.ok) {
+        throw new Error(`Speech service returned ${resp.status}`);
+      }
+
+      const resJson = await resp.json();
+      const transcribedText = resJson.text?.trim() || '';
+
+      if (transcribedText) {
+        setLiveTranscript(`"${transcribedText}"`);
+        handleAsk(transcribedText);
+      } else {
+        setLiveTranscript('');
+        setVoiceError(language === 'hi' ? 'आवाज़ सुनाई नहीं दी, कृपया दोबारा बोलें या लिखकर पूछें।' : 'No speech detected. Please speak again or type.');
+      }
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Transcription failed';
+      setVoiceError(`${msg}. Falling back to typing.`);
+      setLiveTranscript('');
+      inputRef.current?.focus();
+    } finally {
+      setIsProcessingVoice(false);
+      setVolumeLevel(0);
+    }
+  };
+
+  const toggleRecording = () => {
+    if (isListening) {
+      stopRecording();
     } else {
-      setRecording(false);
+      startRecording();
     }
   };
 
@@ -195,6 +291,31 @@ export const AskPage: React.FC = () => {
         ))}
       </div>
 
+      {/* Voice Error Notice */}
+      {voiceError && (
+        <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-800 rounded-xl text-xs flex items-center justify-between">
+          <span>{voiceError}</span>
+          <button
+            type="button"
+            onClick={() => setVoiceError(null)}
+            className="font-bold text-red-700 hover:text-red-900 ml-2"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
+      {/* Live Voice Transcript Banner */}
+      {liveTranscript && (
+        <div
+          className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-xl text-sm font-medium text-blue-900 flex items-center gap-2 shadow-sm animate-fade-in"
+          aria-live="polite"
+        >
+          <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-ping" />
+          <span>{liveTranscript}</span>
+        </div>
+      )}
+
       {/* Answer Cards Thread */}
       <main className="space-y-4">
         {answers.length === 0 && (
@@ -205,12 +326,17 @@ export const AskPage: React.FC = () => {
               </svg>
             </div>
             <p className="text-base font-medium">Ask any question about weather across India</p>
-            <p className="text-xs text-slate-400 mt-1">E.g., "Will it rain tomorrow in Pune?"</p>
+            <p className="text-xs text-slate-400 mt-1">E.g., "Will it rain tomorrow in Pune?" or tap the microphone</p>
           </div>
         )}
 
         {answers.map((card) => (
-          <AnswerCard key={card.id} data={card} />
+          <AnswerCard
+            key={card.id}
+            data={card}
+            language={language}
+            onActionClick={(actionText) => handleAsk(actionText)}
+          />
         ))}
       </main>
 
@@ -224,34 +350,39 @@ export const AskPage: React.FC = () => {
           className="max-w-column mx-auto flex items-center gap-2 bg-white rounded-2xl shadow-lg border border-slate-200 p-1.5"
         >
           <input
+            ref={inputRef}
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder={language === 'hi' ? 'अपना प्रश्न पूछें...' : 'Type your question...'}
-            disabled={loading}
+            placeholder={language === 'hi' ? 'अपना प्रश्न पूछें या माइक दबाएं...' : 'Type or hold mic to speak...'}
+            disabled={loading || isListening || isProcessingVoice}
             className="flex-1 px-3 py-2 text-base rounded-xl outline-none text-slate-900 placeholder:text-slate-400 bg-transparent min-h-[48px]"
           />
 
-          {/* Voice Input Microphone Button */}
-          <button
-            type="button"
-            onClick={toggleMic}
-            className={`w-12 h-12 rounded-xl flex items-center justify-center transition flex-shrink-0 ${
-              recording
-                ? 'bg-red-600 text-white animate-pulse'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-            }`}
-            aria-label={recording ? 'Stop recording voice' : 'Speak question'}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-            </svg>
-          </button>
+          {/* Voice Input Push-to-Talk MicButton */}
+          <MicButton
+            isListening={isListening}
+            isProcessing={isProcessingVoice}
+            volumeLevel={volumeLevel}
+            recordingSeconds={recordingSeconds}
+            onClick={toggleRecording}
+            onPointerDown={(e) => {
+              // Push to talk on pointer hold
+              if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
+                startRecording();
+              }
+            }}
+            onPointerUp={() => {
+              if (isListening) {
+                stopRecording();
+              }
+            }}
+          />
 
           {/* Send Button */}
           <button
             type="submit"
-            disabled={!question.trim() || loading}
+            disabled={!question.trim() || loading || isListening || isProcessingVoice}
             className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-blue-700 transition flex-shrink-0"
             aria-label="Send question"
           >

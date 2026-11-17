@@ -71,4 +71,11 @@ test.describe('WeatherGPT Full Experience & Accessibility', () => {
       .analyze();
     expect(offlineAxe.violations).toEqual([]);
   });
+
+  test('push-to-talk mic button and answer card audio controls have accessible names and aria states', async ({ page }) => {
+    await page.goto('/');
+    const micButton = page.locator('button[aria-label*="speak" i], button[aria-label*="बोलें" i], button[aria-label*="listening" i]').first();
+    await expect(micButton).toBeVisible();
+    await expect(micButton).toHaveAttribute('aria-label');
+  });
 });

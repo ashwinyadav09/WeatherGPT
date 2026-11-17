@@ -38,6 +38,7 @@ class ConversationAgent:
         self.llm = llm or LLMGateway()
         self.forecast_service = forecast_service or ForecastService()
         self.location_resolver = location_resolver or LocationResolver()
+        self.pending_clarifications: dict[str, dict[str, Any]] = {}
 
     async def run_chat(self, req: ChatRequest) -> AsyncGenerator[dict[str, Any], None]:
         start_time = time.time()
@@ -59,23 +60,63 @@ class ConversationAgent:
         if not lang or lang == "auto":
             lang = detect_language(req.text)
 
-        # 2. Resolve place and get forecast evidence
-        resolved = await self.location_resolver.resolve(req.text, language=lang)
-        if resolved.get("ambiguous") and resolved.get("clarification_question"):
-            clarify_q = str(resolved["clarification_question"])
-            yield {
-                "event": "card",
-                "data": {
-                    "headline": "Clarification needed" if lang != "hi" else "स्थान स्पष्ट करें",
-                    "source_line": "WeatherGPT Location Resolver",
-                    "caveat": clarify_q,
-                },
-            }
-            yield {"event": "token", "data": {"text": clarify_q}}
-            yield {"event": "done", "data": {}}
-            return
+        clean_text = req.text.strip().lower()
 
-        place = resolved.get("resolved_place")
+        # Check for confirmation/denial of pending place clarification
+        confirmed_place = None
+        if req.session_id in self.pending_clarifications:
+            pending = self.pending_clarifications[req.session_id]
+            if clean_text in ("हाँ", "हां", "yes", "sahi", "सही", "ha", "haan", "yep", "sure", "correct"):
+                confirmed_place = pending["place"]
+                del self.pending_clarifications[req.session_id]
+            elif clean_text in ("नहीं", "ना", "no", "nahi", "nahin", "wrong", "गलत"):
+                del self.pending_clarifications[req.session_id]
+                prompt_msg = (
+                    "कृपया अपने जिले या राज्य का नाम बताएं।"
+                    if lang == "hi"
+                    else "Please specify your district or state name."
+                )
+                yield {
+                    "event": "card",
+                    "data": {
+                        "headline": "स्थान स्पष्ट करें" if lang == "hi" else "Location needed",
+                        "source_line": "WeatherGPT Location Resolver",
+                        "caveat": prompt_msg,
+                    },
+                }
+                yield {"event": "token", "data": {"text": prompt_msg}}
+                yield {"event": "done", "data": {}}
+                return
+
+        # 2. Resolve place and get forecast evidence
+        if confirmed_place:
+            place = confirmed_place
+        else:
+            resolved = await self.location_resolver.resolve(req.text, language=lang)
+            if resolved.get("ambiguous") and resolved.get("clarification_question"):
+                clarify_q = str(resolved["clarification_question"])
+                cand_place = resolved.get("resolved_place")
+                self.pending_clarifications[req.session_id] = {
+                    "place": cand_place,
+                    "places": resolved.get("places", []),
+                    "language": lang,
+                }
+                actions = ["हाँ", "नहीं"] if lang == "hi" else ["Yes", "No"]
+                yield {
+                    "event": "card",
+                    "data": {
+                        "headline": "Clarification needed" if lang != "hi" else "स्थान स्पष्ट करें",
+                        "source_line": "WeatherGPT Location Resolver",
+                        "caveat": clarify_q,
+                        "actions": actions,
+                        "needs_confirmation": True,
+                    },
+                }
+                yield {"event": "token", "data": {"text": clarify_q}}
+                yield {"event": "done", "data": {}}
+                return
+
+            place = resolved.get("resolved_place")
         p_name = place.names.get(lang, place.names.get("en", "Pune")) if place else "Pune"
         lat = place.lat if place else 18.5204
         lon = place.lon if place else 73.8567
