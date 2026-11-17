@@ -4,7 +4,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
-| 01c | Web shell | in-progress | Building Vite/React web shell, design tokens, components, i18n, mock API |
+| 01c | Web shell | in-review | Web shell completed, CI green, PR body in .scratch/weathergpt/pr/ticket-01c-web-shell.md |
 | 03 | Places real people say | todo | |
 | 20 | Website experience (PWA, offline, data saver, sharing, privacy) | todo | |
 | 06 | Voice v1 (Hindi) | todo | |
@@ -15,8 +15,9 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 
 ## Assumptions
 
-None yet.
+- Mock API server and client fallback provide local contract responses for offline development and testing.
 
 ## Human-only steps open
 
-None yet.
+- Native-speaker sign-off for Hindi UI text in seeds/i18n and apps/web/src/i18n/locales/hi.json.
+- Open PR for ticket/01c-web-shell on GitHub when gh CLI / remote access is available.

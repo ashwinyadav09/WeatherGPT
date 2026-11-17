@@ -7,7 +7,7 @@ Each person edits only their own ledger in `.scratch/weathergpt/progress/<name>.
 |---|---|---|---|---|---|---|
 | 01a | Platform skeleton | ashwin | aman | 0 | done | Merged in PR #25 |
 | 01b | Fixtures and spikes | aman | ashwin | 0 | done | Merged in PR #40 |
-| 01c | Web shell | pradeep | ashwin | 0 | in-progress | Building Vite/React web shell, design tokens, components, i18n, mock API |
+| 01c | Web shell | pradeep | ashwin | 0 | in-review | Web shell completed, CI green, PR body in .scratch/weathergpt/pr/ticket-01c-web-shell.md |
 | 02 | Will it rain tomorrow? | ashwin | pradeep | 1 | done | Merged in PR #26 |
 | 03 | Places real people say | pradeep | ashwin | 1 | todo |  |
 | 05 | Alerts v1 | aman | ashwin | 1 | done | Merged in PR #40 |
@@ -36,4 +36,4 @@ Each person edits only their own ledger in `.scratch/weathergpt/progress/<name>.
 |---|---|
 | aman | done: 8 |
 | ashwin | done: 6, waits for the imd key: 2 |
-| pradeep | in-progress: 1, todo: 6, waits for the imd key: 1 |
+| pradeep | in-review: 1, todo: 6, waits for the imd key: 1 |
