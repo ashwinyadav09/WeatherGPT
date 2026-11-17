@@ -14,6 +14,7 @@ from prometheus_client import CONTENT_TYPE_LATEST, Counter, Histogram, generate_
 
 from services.api.app.config import settings
 from services.api.app.licence import get_licence_register
+from services.api.app.modules.status.service import status_tracker
 
 logger = structlog.get_logger()
 
@@ -104,17 +105,10 @@ async def list_sources() -> Any:
 
 @app.get("/v1/status", tags=["status"])
 async def system_status() -> Any:
-    return {
-        "imd_connected": settings.imd_enabled,
-        "primary_forecast_source": settings.forecast_primary,
-        "sources_freshness": {
-            "open_meteo": "fresh",
-            "sachet": "polling_active",
-            "imd": "not_connected" if not settings.imd_enabled else "connected",
-        },
-        "last_ingest": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "alert_latency_p95_sec": 12.4,
-    }
+    report = status_tracker.get_status_report()
+    report["imd_connected"] = settings.imd_enabled
+    report["primary_forecast_source"] = settings.forecast_primary
+    return report
 
 
 def discover_and_mount_routers(target_app: FastAPI) -> None:
