@@ -93,6 +93,36 @@ async def get_audit_log(token: str = Depends(verify_admin_token)) -> dict[str, A
     return {"entries": admin_service.get_audit_log()}
 
 
+@router.get("/costs")
+async def get_costs(token: str = Depends(verify_admin_token)) -> dict[str, Any]:
+    return {
+        "currency": "USD",
+        "text_queries": {
+            "fast_role_model": "llama-3.1-8b-instant (Groq)",
+            "fast_role_cost_per_1k": 0.0301,
+            "main_role_model": "llama-3.3-70b-versatile (Groq)",
+            "main_role_cost_per_1k": 0.3406,
+            "blended_cost_per_1k": 0.0922,
+        },
+        "voice_session": {
+            "asr_provider": "Bhashini / Sarvam Saaras v3",
+            "asr_cost_per_minute": 0.0025,
+            "tts_provider": "Bhashini / Sarvam Bulbul v3",
+            "tts_cost_per_minute": 0.0030,
+            "total_voice_cost_per_minute": 0.0055,
+        },
+        "data_sources": {
+            "open_meteo": "Free tier (under 10k calls/day, CC BY 4.0)",
+            "ndma_sachet": "Public non-commercial CAP feed ($0.00)",
+            "imd": "Public interest pilot non-commercial ($0.00)",
+        },
+        "estimated_monthly_run_rate_usd": {
+            "10k_daily_users": 27.66,
+            "100k_daily_users": 276.60,
+        },
+    }
+
+
 @router.post("/rollback")
 async def rollback(
     req: RollbackRequest,

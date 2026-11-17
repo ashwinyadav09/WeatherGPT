@@ -1,0 +1,37 @@
+# Blue-Green Zero-Downtime Deployment Strategy for WeatherGPT
+
+## Concept
+1. **Blue Environment**: Active live deployment serving production users.
+2. **Green Environment**: New release deployment deployed alongside Blue in the same Kubernetes cluster.
+3. Automated smoke tests and health checks run against Green via internal testing ingress.
+4. When all health checks, database migrations, and seam evaluations pass, the Service selector is updated from `version: blue` to `version: green`.
+5. Instant cutover with zero downtime; instant rollback capability if metrics degrade.
+
+## Step-by-Step Execution
+
+### 1. Deploy Green Release
+```bash
+# Apply new Green deployment with updated container image
+kubectl apply -f infra/k8s/deployment-green.yaml
+kubectl rollout status deployment/weathergpt-api-green -n weathergpt --timeout=120s
+```
+
+### 2. Verify Green Health
+```bash
+# Run acceptance test suite against green pod
+kubectl exec -it deployment/weathergpt-api-green -n weathergpt -- python scripts/dev.py acceptance
+```
+
+### 3. Switch Service Traffic (Cutover)
+```bash
+# Patch service selector to point to green
+kubectl patch service weathergpt-api-svc -n weathergpt -p '{"spec":{"selector":{"version":"green"}}}'
+kubectl patch service weathergpt-web-svc -n weathergpt -p '{"spec":{"selector":{"version":"green"}}}'
+```
+
+### 4. Rollback Plan (If Error Rate Exceeds 0.1%)
+```bash
+# Instant revert to blue in < 1 second
+kubectl patch service weathergpt-api-svc -n weathergpt -p '{"spec":{"selector":{"version":"blue"}}}'
+kubectl patch service weathergpt-web-svc -n weathergpt -p '{"spec":{"selector":{"version":"blue"}}}'
+```

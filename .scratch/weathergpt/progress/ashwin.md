@@ -7,10 +7,10 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | 01a | Platform skeleton | done | Merged in PR #25 |
 | 02 | Will it rain tomorrow? | done | Merged in PR #26 |
 | 04 | Hindi text | done | Merged in PR #29 |
-| 21 | Admin console | in-review | PR pending |
+| 21 | Admin console | done | Merged in PR #30 |
 | 17 | IMD forecasts live (after the IMD key arrives) | waits for the IMD key | |
 | 18 | IMD warnings and nowcasts live (after the IMD key arrives) | waits for the IMD key | |
-| 12 | Hardening | todo | |
+| 12 | Hardening | in-review | PR pending |
 | 22 | Demo, docs and deployment pack | todo | |
 
 ## Assumptions

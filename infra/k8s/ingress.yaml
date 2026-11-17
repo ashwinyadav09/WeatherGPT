@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: weathergpt-ingress
+  namespace: weathergpt
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+spec:
+  tls:
+    - hosts:
+        - weathergpt.in
+        - api.weathergpt.in
+      secretName: weathergpt-tls
+  rules:
+    - host: weathergpt.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: weathergpt-web-svc
+                port:
+                  number: 80
+    - host: api.weathergpt.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: weathergpt-api-svc
+                port:
+                  number: 8000
