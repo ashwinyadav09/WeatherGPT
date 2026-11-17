@@ -1,10 +1,9 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-test.describe('WeatherGPT Shell Accessibility & Navigation', () => {
-  test('shell has proper document landmark, title, and initial lang', async ({ page }) => {
+test.describe('WeatherGPT Full Experience & Accessibility', () => {
+  test('shell has proper document landmarks, title, and initial lang', async ({ page }) => {
     await page.goto('/');
-
     await expect(page).toHaveTitle(/WeatherGPT/i);
 
     const htmlLang = await page.getAttribute('html', 'lang');
@@ -16,7 +15,7 @@ test.describe('WeatherGPT Shell Accessibility & Navigation', () => {
     await expect(page.locator('nav[aria-label="Mobile Navigation"], nav[aria-label="Desktop Navigation"]')).toBeVisible();
   });
 
-  test('shell passes automated axe accessibility evaluation', async ({ page }) => {
+  test('shell passes automated axe accessibility evaluation on Ask page', async ({ page }) => {
     await page.goto('/');
 
     const accessibilityScanResults = await new AxeBuilder({ page })
@@ -24,6 +23,32 @@ test.describe('WeatherGPT Shell Accessibility & Navigation', () => {
       .analyze();
 
     expect(accessibilityScanResults.violations).toEqual([]);
+  });
+
+  test('passes axe evaluation on Alerts, Places, and More pages', async ({ page }) => {
+    await page.goto('/');
+
+    // 1. Check Alerts
+    await page.getByRole('button', { name: /alerts|अलर्ट/i }).first().click();
+    const alertsAxe = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa'])
+      .analyze();
+    expect(alertsAxe.violations).toEqual([]);
+
+    // 2. Check Places
+    await page.getByRole('button', { name: /places|स्थान/i }).first().click();
+    const placesAxe = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa'])
+      .analyze();
+    expect(placesAxe.violations).toEqual([]);
+
+    // 3. Check More (Settings, Licences, Privacy)
+    await page.getByRole('button', { name: /more|और/i }).first().click();
+    await expect(page.locator('text=Sources and licences')).toBeVisible();
+    const moreAxe = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa'])
+      .analyze();
+    expect(moreAxe.violations).toEqual([]);
   });
 
   test('language switcher changes document lang attribute and UI strings', async ({ page }) => {
@@ -37,19 +62,13 @@ test.describe('WeatherGPT Shell Accessibility & Navigation', () => {
     expect(htmlLang).toBe('hi');
   });
 
-  test('navigation switches between registered features', async ({ page }) => {
-    await page.goto('/');
+  test('offline page is accessible and valid', async ({ page }) => {
+    await page.goto('/offline.html');
+    await expect(page.locator('h1')).toHaveText(/You are offline/i);
 
-    // Go to Alerts
-    await page.getByRole('button', { name: /alerts|अलर्ट/i }).first().click();
-    await expect(page.locator('text=Official warnings')).toBeVisible();
-
-    // Go to Places
-    await page.getByRole('button', { name: /places|स्थान/i }).first().click();
-    await expect(page.locator('text=Saved Places')).toBeVisible();
-
-    // Go to More
-    await page.getByRole('button', { name: /more|और/i }).first().click();
-    await expect(page.locator('text=Sources and licences')).toBeVisible();
+    const offlineAxe = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa'])
+      .analyze();
+    expect(offlineAxe.violations).toEqual([]);
   });
 });

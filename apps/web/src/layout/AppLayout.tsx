@@ -3,6 +3,7 @@ import { Header } from './Header';
 import { Navigation } from './Navigation';
 import { loadRegisteredFeatures, getNavRoutes } from '../features/registry';
 import { useTranslation } from '../i18n/LanguageContext';
+import { FirstRunLanguagePicker } from '../features/onboarding/FirstRunLanguagePicker';
 
 export const AppLayout: React.FC = () => {
   const { registerTranslations } = useTranslation();
@@ -49,6 +50,9 @@ export const AppLayout: React.FC = () => {
       <main className="flex-1 w-full" id="main-content">
         <ActiveComponent />
       </main>
+
+      {/* First-run voice-accessible language picker */}
+      <FirstRunLanguagePicker />
     </div>
   );
 };

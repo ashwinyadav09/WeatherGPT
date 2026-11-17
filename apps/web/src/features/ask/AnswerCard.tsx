@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ShareModal } from '../share/ShareModal';
 
 export interface EvidencePacket {
   id: string;
@@ -42,6 +43,7 @@ interface AnswerCardProps {
 export const AnswerCard: React.FC<AnswerCardProps> = ({ data }) => {
   const [showEvidence, setShowEvidence] = useState(false);
   const [speaking, setSpeaking] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
 
   const handleListen = () => {
     if ('speechSynthesis' in window) {
@@ -58,21 +60,8 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({ data }) => {
     }
   };
 
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'WeatherGPT Update',
-          text: data.text,
-          url: window.location.href,
-        });
-      } catch {
-        // User cancelled or share failed
-      }
-    } else {
-      await navigator.clipboard.writeText(data.text);
-      alert('Answer copied to clipboard!');
-    }
+  const handleShare = () => {
+    setIsShareOpen(true);
   };
 
   return (
@@ -161,7 +150,7 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({ data }) => {
       </div>
 
       {/* Expandable Evidence Packet Viewer */}
-      {showEvidence && (
+          {showEvidence && (
         <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-2">
           <h4 className="font-semibold text-slate-700">Underlying Evidence Packets</h4>
           {data.evidencePackets && data.evidencePackets.length > 0 ? (
@@ -187,6 +176,20 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({ data }) => {
           )}
         </div>
       )}
+
+      {/* Share Modal Dialog with Link & Image Card */}
+      <ShareModal
+        isOpen={isShareOpen}
+        onClose={() => setIsShareOpen(false)}
+        data={{
+          headline: data.headline || 'Weather Forecast',
+          keyNumber: data.keyValues ? Object.values(data.keyValues).join(' • ') : '',
+          placeName: data.evidencePackets?.[0]?.place?.name || 'Local Area',
+          sourceLine: data.sourceLine || 'Open-Meteo (model data)',
+          issuedAt: data.timestamp,
+          caveat: data.caveat,
+        }}
+      />
     </article>
   );
 };
