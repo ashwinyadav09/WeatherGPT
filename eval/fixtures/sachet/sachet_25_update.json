@@ -1,0 +1,29 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794723722587028",
+  "_recorded_at": "2026-11-17T16:39:25.433127+00:00",
+  "id": "urn:oid:2.49.0.1.356.sachet.IN.1794723722587028.28",
+  "sender": "Rajasthan-SDMA",
+  "sent": "2026-11-15T12:19:17+05:30",
+  "status": "Actual",
+  "msg_type": "Update",
+  "hazard": "Thunderstorm with Lightning",
+  "severity": "Moderate",
+  "urgency": "Expected",
+  "certainty": "Possible",
+  "onset": "2026-11-15T12:19:17+05:30",
+  "expires": "2026-11-16T11:49:00+05:30",
+  "areas": [
+    {
+      "areaDesc": "7 districts of Rajasthan",
+      "polygon": ""
+    }
+  ],
+  "text_by_language": {
+    "en": "Thunderstorm with Lightning/Gusty winds speed 30-40 kmph is likely to occur at isolated places over Alwar, Bharatpur, Deeg, Jhunjhunu, Khairthal-Tijara, Kotputli-Behror, Sikar in next 24 hours.",
+    "hi": "Thunderstorm with Lightning: Thunderstorm with Lightning/Gusty winds speed 30-40 kmph is likely to occur at isolated places over Alwar, Bharatpur, Deeg, Jhunjhunu, Khairthal-Tijara, Kotputli-Behror, Sikar in next 24 hours."
+  },
+  "source_url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794723722587028",
+  "authority_tier": 1,
+  "level": "yellow"
+}

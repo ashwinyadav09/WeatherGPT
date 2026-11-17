@@ -1,0 +1,41 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://aviationweather.gov/api/data/metar?ids=VOMM&format=json",
+  "_recorded_at": "2026-11-17T16:40:15.747537+00:00",
+  "station": "VOMM",
+  "name": "Chennai International Airport",
+  "data": [
+    {
+      "icaoId": "VOMM",
+      "receiptTime": "2026-11-17T16:32:40.222Z",
+      "obsTime": 1794933000,
+      "reportTime": "2026-11-17T16:30:00.000Z",
+      "temp": 27,
+      "dewp": 25,
+      "wdir": 20,
+      "wspd": 4,
+      "visib": 1.86,
+      "altim": 1012,
+      "qcField": 16,
+      "wxString": "BR",
+      "metarType": "METAR",
+      "rawOb": "METAR VOMM 171630Z 02004KT 3000 BR FEW020 SCT100 27/25 Q1012 NOSIG",
+      "lat": 12.994,
+      "lon": 80.18,
+      "elev": 7,
+      "name": "Chennai Intl, TN, IN",
+      "cover": "SCT",
+      "clouds": [
+        {
+          "cover": "FEW",
+          "base": 2000
+        },
+        {
+          "cover": "SCT",
+          "base": 10000
+        }
+      ],
+      "fltCat": "IFR"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794808686215038",
+  "_recorded_at": "2026-11-17T16:39:25.433127+00:00",
+  "id": "urn:oid:2.49.0.1.356.sachet.IN.1794808686215038.38",
+  "sender": "Andaman-and-Nicobar-SDMA",
+  "sent": "2026-11-16T11:33:57+05:30",
+  "status": "Actual",
+  "msg_type": "Update",
+  "hazard": "Squally",
+  "severity": "Extreme",
+  "urgency": "Immediate",
+  "certainty": "Likely",
+  "onset": "2026-11-16T11:33:57+05:30",
+  "expires": "2026-11-16T16:21:00+05:30",
+  "areas": [
+    {
+      "areaDesc": "Nicobars,North And Middle Andaman,South Andamans districts of Andaman and Nicobar Islands",
+      "polygon": ""
+    }
+  ],
+  "text_by_language": {
+    "en": "Squally weather with strong surface wind 40-50 Kmph gusting to 60 kmph very likely along and off  Andaman and Nicobar coast. Sea conditions are very likely to be  rough. Fishermen are advised not to venture into the Andaman sea till 16-11-2026.",
+    "hi": "Squally: Squally weather with strong surface wind 40-50 Kmph gusting to 60 kmph very likely along and off  Andaman and Nicobar coast. Sea conditions are very likely to be  rough. Fishermen are advised not to venture into the Andaman sea till 16-11-2026."
+  },
+  "source_url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794808686215038",
+  "authority_tier": 1,
+  "level": "red"
+}

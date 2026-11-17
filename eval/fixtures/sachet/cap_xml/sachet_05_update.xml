@@ -1,0 +1,87 @@
+<cap:alert xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2">
+<cap:identifier>IN-1794808686215038_38</cap:identifier>
+<cap:sender>Andaman-and-Nicobar-SDMA</cap:sender>
+<cap:sent>2026-11-16T11:33:57+05:30</cap:sent>
+<cap:status>Actual</cap:status>
+<cap:msgType>Update</cap:msgType>
+<cap:scope>Public</cap:scope>
+<cap:restriction/>
+<cap:addresses/>
+<cap:note/>
+<cap:references>IMD-Kolkata,IN-1794808686215038_45,2026-11-16T11:27:41+05:30</cap:references>
+<cap:incidents/>
+<cap:info>
+<cap:language>en-IN</cap:language>
+<cap:category>Met</cap:category>
+<cap:event>Squally</cap:event>
+<cap:urgency>Immediate</cap:urgency>
+<cap:severity>Extreme</cap:severity>
+<cap:certainty>Likely</cap:certainty>
+<cap:audience>1</cap:audience>
+<cap:effective>2026-11-16T11:26:00+05:30</cap:effective>
+<cap:onset>2026-11-16T11:33:57+05:30</cap:onset>
+<cap:expires>2026-11-16T16:21:00+05:30</cap:expires>
+<cap:headline>Squally weather with strong surface wind 40-50 Kmph gusting to 60 kmph very likely along and off  Andaman and Nicobar coast. Sea conditions are very likely to be  rough. Fishermen are advised not to venture into the Andaman sea till 16-11-2026.</cap:headline>
+<cap:description/>
+<cap:instruction/>
+<cap:contact/>
+<cap:parameter>
+<cap:valueName>Polygon URL</cap:valueName>
+<cap:value>https://sachet.ndma.gov.in/cap_public_website/FetchPolygonXMLFile?identifier=1794808686215038</cap:value>
+</cap:parameter>
+<cap:area>
+<cap:areaDesc>Nicobars,North And Middle Andaman,South Andamans districts of Andaman and Nicobar Islands</cap:areaDesc>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>603</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>602</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>632</cap:value>
+</cap:geocode>
+<cap:altitude>0</cap:altitude>
+<cap:ceiling>0</cap:ceiling>
+</cap:area>
+</cap:info>
+<cap:info>
+<cap:language>HI</cap:language>
+<cap:category>Met</cap:category>
+<cap:event>Squally</cap:event>
+<cap:urgency>Immediate</cap:urgency>
+<cap:severity>Extreme</cap:severity>
+<cap:certainty>Likely</cap:certainty>
+<cap:audience>1</cap:audience>
+<cap:effective>2026-11-16T11:26:00+05:30</cap:effective>
+<cap:onset>2026-11-16T11:33:57+05:30</cap:onset>
+<cap:expires>2026-11-16T16:21:00+05:30</cap:expires>
+<cap:headline>अंडमान और निकोबार तट पर और उसके आसपास 40-60 किमी/घंटे  की रफ्तार से हवा चलने तथा समुद्र की स्थितियाँ उग्र होने की सम्भावना है। मछुआरों को सलाह दी जाती है कि वे 16 नवंबर तक समुद्र में न जाएं।</cap:headline>
+<cap:description/>
+<cap:instruction/>
+<cap:contact/>
+<cap:parameter>
+<cap:valueName>Polygon URL</cap:valueName>
+<cap:value>https://sachet.ndma.gov.in/cap_public_website/FetchPolygonXMLFile?identifier=1794808686215038</cap:value>
+</cap:parameter>
+<cap:area>
+<cap:areaDesc>Nicobars,North And Middle Andaman,South Andamans districts of Andaman and Nicobar Islands</cap:areaDesc>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>603</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>602</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>632</cap:value>
+</cap:geocode>
+<cap:altitude>0</cap:altitude>
+<cap:ceiling>0</cap:ceiling>
+</cap:area>
+</cap:info>
+</cap:alert>

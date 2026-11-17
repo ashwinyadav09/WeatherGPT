@@ -1,0 +1,187 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://aviationweather.gov/api/data/taf?ids=VOMM&format=json",
+  "_recorded_at": "2026-11-17T16:40:15.747537+00:00",
+  "station": "VOMM",
+  "name": "Chennai International Airport",
+  "data": [
+    {
+      "icaoId": "VOMM",
+      "dbPopTime": "2026-11-17T11:08:15.245Z",
+      "bulletinTime": "2026-11-17T11:00:00.000Z",
+      "issueTime": "2026-11-17T11:00:00.000Z",
+      "validTimeFrom": 1794916800,
+      "validTimeTo": 1795024800,
+      "rawTAF": "TAF VOMM 171100Z 1712/1818 36010KT 3000 BR SCT015 BKN080 BECMG 1800/1801 1500 BR BECMG 1803/1804 3000 BR BECMG 1806/1807 5000 HZ BECMG 1815/1816 3000 BR",
+      "mostRecent": 1,
+      "remarks": "",
+      "lat": 12.994,
+      "lon": 80.18,
+      "elev": 7,
+      "prior": 1,
+      "name": "Chennai Intl",
+      "fcsts": [
+        {
+          "timeFrom": 1794916800,
+          "timeTo": 1794960000,
+          "timeBec": null,
+          "fcstChange": null,
+          "probability": null,
+          "wdir": 360,
+          "wspd": 10,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 1.86,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "BR",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "SCT",
+              "base": 1500,
+              "type": null
+            },
+            {
+              "cover": "BKN",
+              "base": 8000,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1794960000,
+          "timeTo": 1794970800,
+          "timeBec": 1794963600,
+          "fcstChange": "BECMG",
+          "probability": null,
+          "wdir": 360,
+          "wspd": 10,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 0.93,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "BR",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "SCT",
+              "base": 1500,
+              "type": null
+            },
+            {
+              "cover": "BKN",
+              "base": 8000,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1794970800,
+          "timeTo": 1794981600,
+          "timeBec": 1794974400,
+          "fcstChange": "BECMG",
+          "probability": null,
+          "wdir": 360,
+          "wspd": 10,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 1.86,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "BR",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "SCT",
+              "base": 1500,
+              "type": null
+            },
+            {
+              "cover": "BKN",
+              "base": 8000,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1794981600,
+          "timeTo": 1795014000,
+          "timeBec": 1794985200,
+          "fcstChange": "BECMG",
+          "probability": null,
+          "wdir": 360,
+          "wspd": 10,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 3.11,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "HZ",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "SCT",
+              "base": 1500,
+              "type": null
+            },
+            {
+              "cover": "BKN",
+              "base": 8000,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1795014000,
+          "timeTo": 1795024800,
+          "timeBec": 1795017600,
+          "fcstChange": "BECMG",
+          "probability": null,
+          "wdir": 360,
+          "wspd": 10,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 1.86,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "BR",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "SCT",
+              "base": 1500,
+              "type": null
+            },
+            {
+              "cover": "BKN",
+              "base": 8000,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        }
+      ]
+    }
+  ]
+}

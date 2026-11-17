@@ -1,0 +1,63 @@
+<cap:alert xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2">
+<cap:identifier>IN-1794728982581009_9</cap:identifier>
+<cap:sender>Uttarakhand-SDMA</cap:sender>
+<cap:sent>2026-11-15T13:30:48+05:30</cap:sent>
+<cap:status>Actual</cap:status>
+<cap:msgType>Update</cap:msgType>
+<cap:scope>Public</cap:scope>
+<cap:restriction/>
+<cap:addresses/>
+<cap:note/>
+<cap:references>IMD-Dehradun,IN-1794728982581009_65,2026-11-15T13:19:13+05:30</cap:references>
+<cap:incidents/>
+<cap:info>
+<cap:language>en-IN</cap:language>
+<cap:category>Met</cap:category>
+<cap:event>Thunderstorm with Lightning</cap:event>
+<cap:urgency>Expected</cap:urgency>
+<cap:severity>Moderate</cap:severity>
+<cap:certainty>Possible</cap:certainty>
+<cap:audience>1</cap:audience>
+<cap:effective>2026-11-15T13:10:00+05:30</cap:effective>
+<cap:onset>2026-11-15T13:30:48+05:30</cap:onset>
+<cap:expires>2026-11-15T16:10:00+05:30</cap:expires>
+<cap:headline>[2026/11/15 13:10] Thunderstorm with Lightning/light to moderate  rain/snowfall (3000 meter and above)/gusty wind (30-40KMPH) is likely to occur at isolated places over Chamoli, Rudraprayag, Tehri Garhwal, Uttarkashi in next 3 hours.</cap:headline>
+<cap:description/>
+<cap:instruction>Please follow SDMA guidelines.</cap:instruction>
+<cap:contact/>
+<cap:parameter>
+<cap:valueName>Polygon URL</cap:valueName>
+<cap:value>https://sachet.ndma.gov.in/cap_public_website/FetchPolygonXMLFile?identifier=1794728982581009</cap:value>
+</cap:parameter>
+<cap:area>
+<cap:areaDesc>ISOLATED PLACES OF RUDRAPRAYAG,UTTARKASHI,TEHRI AND CHAMOLI</cap:areaDesc>
+<cap:altitude>0</cap:altitude>
+<cap:ceiling>0</cap:ceiling>
+</cap:area>
+</cap:info>
+<cap:info>
+<cap:language>HI</cap:language>
+<cap:category>Met</cap:category>
+<cap:event>Thunderstorm with Lightning</cap:event>
+<cap:urgency>Expected</cap:urgency>
+<cap:severity>Moderate</cap:severity>
+<cap:certainty>Possible</cap:certainty>
+<cap:audience>1</cap:audience>
+<cap:effective>2026-11-15T13:10:00+05:30</cap:effective>
+<cap:onset>2026-11-15T13:30:48+05:30</cap:onset>
+<cap:expires>2026-11-15T16:10:00+05:30</cap:expires>
+<cap:headline>[2026/11/15 13:10आपके क्षेत्र  में कहीं-कहीं गर्जन के साथ आकाशीय बिजली चमकने /झोंकेदार हवाएं (30-40 KMPH /हल्की से मध्यम वर्षा  /बर्फ़बारी (3000 मीटर व उससे अधिक ) क्षेत्रो में  की संभावना है |</cap:headline>
+<cap:description/>
+<cap:instruction>Please follow SDMA guidelines.</cap:instruction>
+<cap:contact/>
+<cap:parameter>
+<cap:valueName>Polygon URL</cap:valueName>
+<cap:value>https://sachet.ndma.gov.in/cap_public_website/FetchPolygonXMLFile?identifier=1794728982581009</cap:value>
+</cap:parameter>
+<cap:area>
+<cap:areaDesc>ISOLATED PLACES OF RUDRAPRAYAG,UTTARKASHI,TEHRI AND CHAMOLI</cap:areaDesc>
+<cap:altitude>0</cap:altitude>
+<cap:ceiling>0</cap:ceiling>
+</cap:area>
+</cap:info>
+</cap:alert>

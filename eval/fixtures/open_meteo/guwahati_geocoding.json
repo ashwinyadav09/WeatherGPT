@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "id": 1271476,
+      "name": "गुवाहाटी",
+      "latitude": 26.1844,
+      "longitude": 91.7458,
+      "elevation": 59.0,
+      "feature_code": "PPL",
+      "country_code": "IN",
+      "admin1_id": 1278253,
+      "admin2_id": 9747984,
+      "admin3_id": 12684855,
+      "timezone": "Asia/Kolkata",
+      "population": 962334,
+      "country_id": 1269750,
+      "country": "भारत",
+      "admin1": "असम",
+      "admin2": "Kamrup Metropolitan",
+      "admin3": "Guwahati"
+    }
+  ],
+  "generationtime_ms": 0.1834631,
+  "_provenance": "live-recorded",
+  "_source": "https://geocoding-api.open-meteo.com/v1/search?name=Guwahati&language=hi&count=5",
+  "_recorded_at": "2026-11-17T16:39:38.532242+00:00",
+  "_place": {
+    "slug": "guwahati",
+    "name": "Guwahati",
+    "name_hi": "गुवाहाटी",
+    "lat": 26.1445,
+    "lon": 91.7362
+  }
+}

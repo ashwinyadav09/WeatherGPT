@@ -1,0 +1,81 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://aviationweather.gov/api/data/taf?ids=VABB&format=json",
+  "_recorded_at": "2026-11-17T16:40:15.747537+00:00",
+  "station": "VABB",
+  "name": "Mumbai Chhatrapati Shivaji Airport",
+  "data": [
+    {
+      "icaoId": "VABB",
+      "dbPopTime": "2026-11-17T13:48:28.516Z",
+      "bulletinTime": "2026-11-17T14:00:00.000Z",
+      "issueTime": "2026-11-17T14:00:00.000Z",
+      "validTimeFrom": 1794927600,
+      "validTimeTo": 1794960000,
+      "rawTAF": "TAF VABB 171400Z 1715/1724 05005KT 2500 HZ FU FEW100 BECMG 1722/1724 VRB03KT 2000 HZ FU",
+      "mostRecent": 1,
+      "remarks": "",
+      "lat": 19.1,
+      "lon": 72.859,
+      "elev": 14,
+      "prior": 0,
+      "name": "Mumbai/Shivaji Intl",
+      "fcsts": [
+        {
+          "timeFrom": 1794927600,
+          "timeTo": 1794952800,
+          "timeBec": null,
+          "fcstChange": null,
+          "probability": null,
+          "wdir": 50,
+          "wspd": 5,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 1.55,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "HZ FU",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "FEW",
+              "base": 10000,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1794952800,
+          "timeTo": 1794960000,
+          "timeBec": 1794960000,
+          "fcstChange": "BECMG",
+          "probability": null,
+          "wdir": "VRB",
+          "wspd": 3,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 1.24,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "HZ FU",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "FEW",
+              "base": 10000,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://aviationweather.gov/api/data/taf?ids=VOBL&format=json",
+  "_recorded_at": "2026-11-17T16:40:15.747537+00:00",
+  "station": "VOBL",
+  "name": "Bengaluru Kempegowda Airport",
+  "data": [
+    {
+      "icaoId": "VOBL",
+      "dbPopTime": "2026-11-17T13:54:27.416Z",
+      "bulletinTime": "2026-11-17T14:00:00.000Z",
+      "issueTime": "2026-11-17T14:00:00.000Z",
+      "validTimeFrom": 1794927600,
+      "validTimeTo": 1794960000,
+      "rawTAF": "TAF VOBL 171400Z 1715/1724 05005KT 6000 FEW012 BECMG 1718/1720 5000 BR TEMPO 1722/1724 3000 BR",
+      "mostRecent": 1,
+      "remarks": "",
+      "lat": 13.205,
+      "lon": 77.704,
+      "elev": 908,
+      "prior": 2,
+      "name": "Bangaluru Intl",
+      "fcsts": [
+        {
+          "timeFrom": 1794927600,
+          "timeTo": 1794938400,
+          "timeBec": null,
+          "fcstChange": null,
+          "probability": null,
+          "wdir": 50,
+          "wspd": 5,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 3.73,
+          "altim": null,
+          "vertVis": null,
+          "wxString": null,
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "FEW",
+              "base": 1200,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1794938400,
+          "timeTo": 1794960000,
+          "timeBec": 1794945600,
+          "fcstChange": "BECMG",
+          "probability": null,
+          "wdir": 50,
+          "wspd": 5,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 3.11,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "BR",
+          "notDecoded": null,
+          "clouds": [
+            {
+              "cover": "FEW",
+              "base": 1200,
+              "type": null
+            }
+          ],
+          "icgTurb": [],
+          "temp": []
+        },
+        {
+          "timeFrom": 1794952800,
+          "timeTo": 1794960000,
+          "timeBec": null,
+          "fcstChange": "TEMPO",
+          "probability": null,
+          "wdir": null,
+          "wspd": null,
+          "wgst": null,
+          "wshearHgt": null,
+          "wshearDir": null,
+          "wshearSpd": null,
+          "visib": 1.86,
+          "altim": null,
+          "vertVis": null,
+          "wxString": "BR",
+          "notDecoded": null,
+          "clouds": [],
+          "icgTurb": [],
+          "temp": []
+        }
+      ]
+    }
+  ]
+}

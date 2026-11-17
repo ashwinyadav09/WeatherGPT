@@ -1,0 +1,12 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html#sea-area-bulletin",
+  "_recorded_at": "2026-11-17T06:00:00Z",
+  "sea_area": "EAST CENTRAL ARABIAN SEA",
+  "bulletin_time": "2026-11-17 12:00 UTC",
+  "synoptic_situation": "Trough of low pressure at mean sea level over south Konkan.",
+  "wind": "Northwesterly to Westerly 15 to 20 knots gusting to 25 knots in showers.",
+  "weather": "Fairly widespread rain or thundershowers.",
+  "visibility": "Moderate becoming poor in rain.",
+  "sea_condition": "Moderate."
+}

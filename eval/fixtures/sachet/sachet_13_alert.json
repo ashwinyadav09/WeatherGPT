@@ -1,0 +1,29 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794772193063007",
+  "_recorded_at": "2026-11-17T16:39:25.433127+00:00",
+  "id": "urn:oid:2.49.0.1.356.sachet.IN.1794772193063007.43",
+  "sender": "IMD-Chennai",
+  "sent": "2026-11-16T01:19:24+05:30",
+  "status": "Actual",
+  "msg_type": "Alert",
+  "hazard": "Light Rain",
+  "severity": "Moderate",
+  "urgency": "Expected",
+  "certainty": "Possible",
+  "onset": "2026-11-16T01:19:53+05:30",
+  "expires": "2026-11-16T04:00:00+05:30",
+  "areas": [
+    {
+      "areaDesc": "Ariyalur, Cuddalore, Namakkal, Perambalur, Salem, Thanjavur, Thiruvarur, Tiruchirappalli, Viluppuram districts of Tamil Nadu",
+      "polygon": ""
+    }
+  ],
+  "text_by_language": {
+    "en": "Light to moderate Rain is likely to occur at isolated places over Ariyalur, Cuddalore, Namakkal, Perambalur, Salem, Thanjavur, Thiruvarur, Tiruchirappalli, Viluppuram in next 3 hours.",
+    "hi": "Light Rain: Light to moderate Rain is likely to occur at isolated places over Ariyalur, Cuddalore, Namakkal, Perambalur, Salem, Thanjavur, Thiruvarur, Tiruchirappalli, Viluppuram in next 3 hours."
+  },
+  "source_url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794772193063007",
+  "authority_tier": 1,
+  "level": "yellow"
+}
