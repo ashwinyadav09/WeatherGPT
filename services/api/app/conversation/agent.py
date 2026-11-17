@@ -111,7 +111,12 @@ class ConversationAgent:
             source_display = "Official IMD"
 
         if lang == "hi":
+            from services.api.app.modules.admin.service import admin_service
+            g_terms = admin_service.get_glossary("hi").get("terms", {})
+            rain_word = g_terms.get("rain", "बारिश")
             rf_phrase = get_hindi_rainfall_phrase(rain_val)
+            if rain_word != "बारिश" and "बारिश" in rf_phrase:
+                rf_phrase = rf_phrase.replace("बारिश", rain_word)
             rain_phrase = f"{rf_phrase} ({rain_val:.1f} मिमी)"
             answer_text = (
                 f"{source_display} पूर्वानुमान के अनुसार कल {p_name} में {rain_phrase} की संभावना है "
