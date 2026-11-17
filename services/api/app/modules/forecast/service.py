@@ -5,6 +5,7 @@ from typing import Any
 from services.api.app.config import settings
 from services.api.app.evidence.models import EvidencePacket
 from services.api.app.modules.forecast.adapters.base import ForecastAdapter
+from services.api.app.modules.forecast.adapters.imd_city import IMDCityForecastAdapter
 from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
 from services.api.app.modules.forecast.adapters.stub import StubForecastAdapter
 
@@ -19,6 +20,9 @@ class ForecastService:
         for src in settings.sources:
             if src.id == "open_meteo.forecast" and src.enabled:
                 self.adapters[src.id] = OpenMeteoForecastAdapter(base_url=src.base_url)
+            elif src.id == "imd.city_forecast" and src.enabled:
+                self.adapters[src.id] = IMDCityForecastAdapter(base_url=src.base_url)
+
         # Always have stub adapter available as fallback
         self.adapters["stub.forecast"] = StubForecastAdapter()
 
@@ -33,7 +37,14 @@ class ForecastService:
         place_name: str = "Pune",
         **kwargs: Any,
     ) -> list[EvidencePacket]:
-        primary = "open_meteo.forecast" if "open_meteo.forecast" in self.adapters else "stub.forecast"
+        # Authority ladder: IMD (tier 2) > Open-Meteo (tier 5) > Stub
+        if settings.imd_enabled and "imd.city_forecast" in self.adapters:
+            primary = "imd.city_forecast"
+        elif "open_meteo.forecast" in self.adapters:
+            primary = "open_meteo.forecast"
+        else:
+            primary = "stub.forecast"
+
         adapter = self.adapters.get(primary, self.adapters["stub.forecast"])
         try:
             return await adapter.get_forecast(lat=lat, lon=lon, place_name=place_name, **kwargs)

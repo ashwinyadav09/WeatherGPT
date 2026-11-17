@@ -1,0 +1,300 @@
+# 30 Golden Set cases for 'Will it rain tomorrow?' question type
+- id: rain-tomorrow-pune-001
+  language: en
+  archetype: forecast
+  question: Will it rain tomorrow in Pune?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-mumbai-002
+  language: en
+  archetype: forecast
+  question: Is it going to rain tomorrow in Mumbai?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-delhi-003
+  language: en
+  archetype: forecast
+  question: Any rain expected in Delhi tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-bengaluru-004
+  language: en
+  archetype: forecast
+  question: Do I need an umbrella in Bengaluru tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-chennai-005
+  language: en
+  archetype: forecast
+  question: Tomorrow rain forecast for Chennai
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-kolkata-006
+  language: en
+  archetype: forecast
+  question: Will there be rainfall in Kolkata tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-hyderabad-007
+  language: en
+  archetype: forecast
+  question: Will it rain in Hyderabad tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-ahmedabad-008
+  language: en
+  archetype: forecast
+  question: Is rain predicted for Ahmedabad tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-jaipur-009
+  language: en
+  archetype: forecast
+  question: Rain tomorrow in Jaipur?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-lucknow-010
+  language: en
+  archetype: forecast
+  question: Will Lucknow see rain tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-patna-011
+  language: en
+  archetype: forecast
+  question: Is it likely to rain tomorrow in Patna?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-bhopal-012
+  language: en
+  archetype: forecast
+  question: What is tomorrow's rain forecast for Bhopal?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-nagpur-013
+  language: en
+  archetype: forecast
+  question: Will it rain tomorrow in Nagpur?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-chandigarh-014
+  language: en
+  archetype: forecast
+  question: Should I carry an umbrella tomorrow in Chandigarh?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-surat-015
+  language: en
+  archetype: forecast
+  question: Rain expected tomorrow in Surat?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-kochi-016
+  language: en
+  archetype: forecast
+  question: Will Kochi get rain tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-guwahati-017
+  language: en
+  archetype: forecast
+  question: Any rain showers tomorrow in Guwahati?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-shimla-018
+  language: en
+  archetype: forecast
+  question: Will it rain in Shimla tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-srinagar-019
+  language: en
+  archetype: forecast
+  question: Precipitation expected tomorrow in Srinagar?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-dehradun-020
+  language: en
+  archetype: forecast
+  question: Is it raining tomorrow in Dehradun?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-varanasi-021
+  language: en
+  archetype: forecast
+  question: Will it rain tomorrow in Varanasi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-indore-022
+  language: en
+  archetype: forecast
+  question: Rain chance in Indore tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-visakhapatnam-023
+  language: en
+  archetype: forecast
+  question: Will Visakhapatnam get rain tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-agra-024
+  language: en
+  archetype: forecast
+  question: Any rain predicted in Agra tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-ludhiana-025
+  language: en
+  archetype: forecast
+  question: Will it rain tomorrow in Ludhiana?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-nashik-026
+  language: en
+  archetype: forecast
+  question: Tomorrow rain forecast in Nashik?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-vadodara-027
+  language: en
+  archetype: forecast
+  question: Is rain expected tomorrow in Vadodara?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-rajkot-028
+  language: en
+  archetype: forecast
+  question: Will Rajkot receive rain tomorrow?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-coimbatore-029
+  language: en
+  archetype: forecast
+  question: Rain chance tomorrow in Coimbatore?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-madurai-030
+  language: en
+  archetype: forecast
+  question: Will it rain tomorrow in Madurai?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
