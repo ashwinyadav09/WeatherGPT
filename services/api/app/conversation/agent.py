@@ -15,6 +15,7 @@ from services.api.app.conversation.i18n import (
 from services.api.app.conversation.verifier import verify_grounding
 from services.api.app.evidence.models import EvidencePacket
 from services.api.app.gateways.llm.gateway import LLMGateway
+from services.api.app.modules.advisory.engine import AdvisoryEngine
 from services.api.app.modules.forecast.service import ForecastService
 from services.api.app.modules.location.resolver import LocationResolver
 
@@ -34,10 +35,12 @@ class ConversationAgent:
         llm: LLMGateway | None = None,
         forecast_service: ForecastService | None = None,
         location_resolver: LocationResolver | None = None,
+        advisory_engine: AdvisoryEngine | None = None,
     ) -> None:
         self.llm = llm or LLMGateway()
         self.forecast_service = forecast_service or ForecastService()
         self.location_resolver = location_resolver or LocationResolver()
+        self.advisory_engine = advisory_engine or AdvisoryEngine()
         self.pending_clarifications: dict[str, dict[str, Any]] = {}
 
     async def run_chat(self, req: ChatRequest) -> AsyncGenerator[dict[str, Any], None]:
@@ -59,6 +62,42 @@ class ConversationAgent:
         lang = req.language
         if not lang or lang == "auto":
             lang = detect_language(req.text)
+
+        # Safety Check 1: Evacuate-or-stay questions
+        if AdvisoryEngine.is_evacuation_query(req.text):
+            redirect = AdvisoryEngine.get_evacuation_redirect(lang)
+            yield {
+                "event": "card",
+                "data": {
+                    "headline": redirect["headline"],
+                    "source_line": redirect["source_line"],
+                    "caveat": "Official Safety Directive: Local authorities decide evacuation",
+                    "style": "guidance-card",
+                    "actions": ["112 (Emergency)", "1077 (Disaster)"],
+                },
+            }
+            yield {"event": "token", "data": {"text": redirect["text"]}}
+            latency_ms = int((time.time() - start_time) * 1000)
+            yield {"event": "done", "data": {"latency_ms": latency_ms}}
+            return
+
+        # Safety Check 2: Pesticide dose questions
+        if AdvisoryEngine.is_pesticide_dose_query(req.text):
+            redirect = AdvisoryEngine.get_pesticide_redirect(lang)
+            yield {
+                "event": "card",
+                "data": {
+                    "headline": redirect["headline"],
+                    "source_line": redirect["source_line"],
+                    "caveat": "Safety Policy: Chemical dosages not prescribed",
+                    "style": "guidance-card",
+                    "actions": ["1800-180-1551 (Kisan Call Centre)"],
+                },
+            }
+            yield {"event": "token", "data": {"text": redirect["text"]}}
+            latency_ms = int((time.time() - start_time) * 1000)
+            yield {"event": "done", "data": {"latency_ms": latency_ms}}
+            return
 
         clean_text = req.text.strip().lower()
 
@@ -219,15 +258,26 @@ class ConversationAgent:
             caveat = "Official IMD forecast is not connected"
             actions = ["View Hourly", "Set Alert"]
 
+        # Check for active official warnings and attach guidance cards if applicable
+        active_guidance = await self.advisory_engine.get_advisory(
+            place_id=place.id if place else "pune",
+            domain="heat_wave" if temp_val >= 35 else "cold_wave",
+            language=lang,
+        )
+
+        card_data: dict[str, Any] = {
+            "headline": headline,
+            "key_values": key_values,
+            "source_line": f"Data: {source_display} (CC BY 4.0)",
+            "caveat": caveat,
+            "actions": actions,
+        }
+        if active_guidance:
+            card_data["guidance_cards"] = active_guidance
+
         yield {
             "event": "card",
-            "data": {
-                "headline": headline,
-                "key_values": key_values,
-                "source_line": f"Data: {source_display} (CC BY 4.0)",
-                "caveat": caveat,
-                "actions": actions,
-            },
+            "data": card_data,
         }
 
         # 9. Stream done event

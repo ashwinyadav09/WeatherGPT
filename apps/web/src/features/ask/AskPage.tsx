@@ -85,6 +85,7 @@ export const AskPage: React.FC = () => {
       let caveat = '';
       let actions: string[] | undefined;
       let needsConfirmation = false;
+      let guidanceCards: any[] | undefined;
 
       while (true) {
         const { value, done } = await reader.read();
@@ -113,6 +114,7 @@ export const AskPage: React.FC = () => {
                 caveat = data.caveat;
                 actions = data.actions;
                 needsConfirmation = !!data.needs_confirmation;
+                guidanceCards = data.guidance_cards;
               }
 
               // Update the active card in state
@@ -128,6 +130,7 @@ export const AskPage: React.FC = () => {
                         caveat: caveat || c.caveat,
                         actions: actions || c.actions,
                         needsConfirmation: needsConfirmation ?? c.needsConfirmation,
+                        guidanceCards: guidanceCards || c.guidanceCards,
                         evidencePackets: gatheredPackets,
                       }
                     : c

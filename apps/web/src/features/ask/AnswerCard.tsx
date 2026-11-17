@@ -24,6 +24,17 @@ export interface EvidencePacket {
   fetched_at: string;
 }
 
+export interface GuidanceCard {
+  id: string;
+  hazard: string;
+  title: string;
+  items: string[];
+  source_title: string;
+  source_url: string;
+  retrieved_on?: string;
+  reviewed?: boolean;
+}
+
 export interface AnswerCardData {
   id: string;
   question: string;
@@ -34,6 +45,7 @@ export interface AnswerCardData {
   caveat?: string;
   actions?: string[];
   needsConfirmation?: boolean;
+  guidanceCards?: GuidanceCard[];
   evidencePackets?: EvidencePacket[];
   timestamp: string;
 }
@@ -199,6 +211,45 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({
       <p className="text-base text-slate-800 leading-relaxed mb-3">
         {data.text}
       </p>
+
+      {/* Official Guidance Cards (Drawn from NDMA/IMD library with neutral dashed border per docs/ui-spec.md) */}
+      {data.guidanceCards && data.guidanceCards.length > 0 && (
+        <div className="my-3 space-y-3">
+          {data.guidanceCards.map((gc) => (
+            <div
+              key={gc.id}
+              className="border-2 border-dashed border-slate-300 bg-slate-50 rounded-xl p-4 text-xs space-y-2 text-slate-800"
+            >
+              <div className="flex items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                <span className="font-bold text-sm text-slate-900">{gc.title}</span>
+                <span className="px-2 py-0.5 rounded bg-slate-200 text-slate-700 text-[10px] uppercase font-semibold">
+                  Official Guidance
+                </span>
+              </div>
+              <ul className="list-disc list-inside space-y-1 text-slate-700">
+                {gc.items.map((item, idx) => (
+                  <li key={idx} className="leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-2 border-t border-slate-200 text-[11px] text-slate-500 flex items-center justify-between">
+                <span>Source: {gc.source_title}</span>
+                {gc.source_url && (
+                  <a
+                    href={gc.source_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    View Official Document
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Place Confirmation & Action Buttons if clarification needed */}
       {data.actions && data.actions.length > 0 && (

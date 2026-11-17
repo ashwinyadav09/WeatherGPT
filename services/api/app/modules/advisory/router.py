@@ -13,7 +13,7 @@ _engine = AdvisoryEngine()
 @router.get("")
 async def get_advisories(
     place_id: str = Query(...),
-    domain: str = Query("heat"),
-    crop: str | None = Query(None),
+    domain: str = Query("heat_wave"),
+    language: str = Query("en"),
 ) -> Any:
-    return await _engine.get_advisory(place_id=place_id, domain=domain, crop=crop)
+    return await _engine.get_advisory(place_id=place_id, domain=domain, language=language)
