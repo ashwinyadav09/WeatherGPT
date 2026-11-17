@@ -1,0 +1,31 @@
+{
+  "_provenance": "documented-sample",
+  "station": "VOBL",
+  "name": "Kempegowda International Airport, Bengaluru",
+  "runways": [
+    {"ident": "09L/27R", "heading": 92, "reciprocal_heading": 272, "length_ft": 13123},
+    {"ident": "09R/27L", "heading": 92, "reciprocal_heading": 272, "length_ft": 13123}
+  ],
+  "metar": {
+    "raw": "METAR VOBL 171200Z 08008KT 6000 NSC 26/18 Q1016 NOSIG=",
+    "station": "VOBL",
+    "time_utc": "2026-11-17T12:00:00Z",
+    "wind_dir_degrees": 80,
+    "wind_speed_kt": 8,
+    "wind_gust_kt": null,
+    "visibility_meters": 6000,
+    "weather": "Nil significant weather",
+    "clouds": [{"cover": "NSC", "base_ft": null}],
+    "ceiling_ft": null,
+    "temperature_c": 26.0,
+    "dewpoint_c": 18.0,
+    "qnh_hpa": 1016.0
+  },
+  "taf": {
+    "raw": "TAF VOBL 171100Z 1712/1818 09010KT 6000 SCT025 BKN090=",
+    "station": "VOBL",
+    "valid_from": "2026-11-17T12:00:00Z",
+    "valid_to": "2026-11-18T18:00:00Z",
+    "forecast_summary": "Wind 090/10kt with 6000m visibility and scattered clouds at 2500ft."
+  }
+}

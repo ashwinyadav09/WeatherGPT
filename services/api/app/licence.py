@@ -40,6 +40,13 @@ LICENCE_REGISTER: list[LicenceEntry] = [
         limits="Open data policy",
         attribution_text="European Centre for Medium-Range Weather Forecasts (ECMWF)",
     ),
+    LicenceEntry(
+        source_id="aviationweather.gov",
+        name="AviationWeather.gov (NOAA / NWS)",
+        terms="Public domain US government data, non-briefing situational awareness",
+        limits="Under 100 requests/minute and 1 request/minute per station endpoint",
+        attribution_text="Aviation weather observations and forecasts by AviationWeather.gov / NOAA",
+    ),
 ]
 
 

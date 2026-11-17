@@ -117,3 +117,15 @@ def test_web_shell_mock_chat_events_contract_conformance():
         },
     }
     validate_schema("answer_event", card_event)
+
+
+def test_aviation_and_smart_city_features_exist():
+    assert (WEB_ROOT / "src" / "features" / "aviation" / "feature.ts").exists()
+    assert (WEB_ROOT / "src" / "features" / "aviation" / "AviationPage.tsx").exists()
+    assert (WEB_ROOT / "src" / "features" / "smartcity" / "feature.ts").exists()
+    assert (WEB_ROOT / "src" / "features" / "smartcity" / "SmartCityPage.tsx").exists()
+
+    av_content = (WEB_ROOT / "src" / "features" / "aviation" / "AviationPage.tsx").read_text(encoding="utf-8")
+    assert "INFORMATIONAL ONLY" in av_content
+    assert "NOT AN OFFICIAL PRE-FLIGHT BRIEFING" in av_content
+    assert "Crosswind" in av_content

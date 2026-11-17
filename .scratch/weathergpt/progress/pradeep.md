@@ -11,7 +11,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | 10 | Advisories v1 (guidance cards) | in-review | Curated NDMA/IMD heat & cold wave library, warning-only display, pesticide dose refusal, evacuation redirects complete. CI green. PR body in .scratch/weathergpt/pr/ticket-10-advisories-v1.md |
 | 11 | Language waves 2 and 3 | in-review | Marathi, Bengali, Telugu, Tamil wave 2 & wave 3 staging; back-translated alert templates; glossaries; 300-case golden sets at 100% accuracy; /admin/languages dashboard; CI green. PR body in .scratch/weathergpt/pr/ticket-11-language-waves-2-and-3.md |
 | 19 | Agromet and marine advisories (after the IMD key arrives) | waits for the IMD key | |
-| 14 | Aviation and smart-city read-only modules | todo | |
+| 14 | Aviation and smart-city read-only modules | in-review | Decoded METAR/TAF with mandatory non-briefing banner; flight category & crosswind computed with worked examples; AviationWeather.gov rate limiting & caching; smart-city threshold webhooks with cooldown & delivery audit. CI green. PR body in .scratch/weathergpt/pr/ticket-14-aviation-smart-city.md |
 
 ## Assumptions
 
@@ -28,3 +28,4 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - Open PR for ticket/06-voice-v1-hindi on GitHub when gh CLI / remote access is available.
 - Open PR for ticket/10-advisories-v1 on GitHub when gh CLI / remote access is available.
 - Open PR for ticket/11-language-waves-2-and-3 on GitHub when gh CLI / remote access is available.
+- Open PR for ticket/14-aviation-smart-city on GitHub when gh CLI / remote access is available.

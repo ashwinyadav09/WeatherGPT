@@ -1,0 +1,34 @@
+{
+  "_provenance": "documented-sample",
+  "station": "VABB",
+  "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai",
+  "runways": [
+    {"ident": "09/27", "heading": 90, "reciprocal_heading": 270, "length_ft": 11302},
+    {"ident": "14/32", "heading": 140, "reciprocal_heading": 320, "length_ft": 9744}
+  ],
+  "metar": {
+    "raw": "METAR VABB 171200Z 24016G24KT 3000 -RA BKN015 OVC030 29/25 Q1008 TEMPO 1500 TSRA=",
+    "station": "VABB",
+    "time_utc": "2026-11-17T12:00:00Z",
+    "wind_dir_degrees": 240,
+    "wind_speed_kt": 16,
+    "wind_gust_kt": 24,
+    "visibility_meters": 3000,
+    "weather": "-RA (Light Rain)",
+    "clouds": [
+      {"cover": "BKN", "base_ft": 1500},
+      {"cover": "OVC", "base_ft": 3000}
+    ],
+    "ceiling_ft": 1500,
+    "temperature_c": 29.0,
+    "dewpoint_c": 25.0,
+    "qnh_hpa": 1008.0
+  },
+  "taf": {
+    "raw": "TAF VABB 171100Z 1712/1818 24015KT 4000 -RA SCT018 BKN080 TEMPO 1714/1718 2000 TSRA BKN010 FEW025CB=",
+    "station": "VABB",
+    "valid_from": "2026-11-17T12:00:00Z",
+    "valid_to": "2026-11-18T18:00:00Z",
+    "forecast_summary": "Wind 240/15kt with light rain, tempo thunderstorms with rain reducing visibility to 2000m."
+  }
+}
