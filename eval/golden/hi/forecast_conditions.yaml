@@ -1,0 +1,1200 @@
+- id: hi-conditions-001
+  language: hi
+  archetype: forecast
+  question: कल पुणे में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-002
+  language: hi
+  archetype: forecast
+  question: कल मुंबई में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-003
+  language: hi
+  archetype: forecast
+  question: कल दिल्ली में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-004
+  language: hi
+  archetype: forecast
+  question: कल बेंगलुरु में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-005
+  language: hi
+  archetype: forecast
+  question: कल चेन्नई में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-006
+  language: hi
+  archetype: forecast
+  question: कल कोलकाता में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-007
+  language: hi
+  archetype: forecast
+  question: कल अहमदाबाद में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-008
+  language: hi
+  archetype: forecast
+  question: कल जयपुर में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-009
+  language: hi
+  archetype: forecast
+  question: कल लखनऊ में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-010
+  language: hi
+  archetype: forecast
+  question: कल पटना में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-011
+  language: hi
+  archetype: forecast
+  question: कल हैदराबाद में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-012
+  language: hi
+  archetype: forecast
+  question: कल चंडीगढ़ में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-013
+  language: hi
+  archetype: forecast
+  question: कल भोपाल में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-014
+  language: hi
+  archetype: forecast
+  question: कल इंदौर में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-015
+  language: hi
+  archetype: forecast
+  question: कल नागपुर में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-016
+  language: hi
+  archetype: forecast
+  question: कल वाराणसी में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-017
+  language: hi
+  archetype: forecast
+  question: कल आगरा में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-018
+  language: hi
+  archetype: forecast
+  question: कल सूरत में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-019
+  language: hi
+  archetype: forecast
+  question: कल कोच्चि में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-020
+  language: hi
+  archetype: forecast
+  question: कल देहरादून में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-021
+  language: hi
+  archetype: forecast
+  question: कल गुवाहाटी में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-022
+  language: hi
+  archetype: forecast
+  question: कल शिमला में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-023
+  language: hi
+  archetype: forecast
+  question: कल श्रीनगर में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-024
+  language: hi
+  archetype: forecast
+  question: कल राँची में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-025
+  language: hi
+  archetype: forecast
+  question: कल भुवनेश्वर में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-026
+  language: hi
+  archetype: forecast
+  question: कल अमृतसर में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-027
+  language: hi
+  archetype: forecast
+  question: कल विशाखापट्टनम में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-028
+  language: hi
+  archetype: forecast
+  question: कल कानपुर में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-029
+  language: hi
+  archetype: forecast
+  question: कल तिरुवनंतपुरम में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-030
+  language: hi
+  archetype: forecast
+  question: कल वडोदरा में मौसम कैसा रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-031
+  language: hi
+  archetype: forecast
+  question: पुणे में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-032
+  language: hi
+  archetype: forecast
+  question: मुंबई में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-033
+  language: hi
+  archetype: forecast
+  question: दिल्ली में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-034
+  language: hi
+  archetype: forecast
+  question: बेंगलुरु में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-035
+  language: hi
+  archetype: forecast
+  question: चेन्नई में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-036
+  language: hi
+  archetype: forecast
+  question: कोलकाता में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-037
+  language: hi
+  archetype: forecast
+  question: अहमदाबाद में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-038
+  language: hi
+  archetype: forecast
+  question: जयपुर में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-039
+  language: hi
+  archetype: forecast
+  question: लखनऊ में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-040
+  language: hi
+  archetype: forecast
+  question: पटना में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-041
+  language: hi
+  archetype: forecast
+  question: हैदराबाद में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-042
+  language: hi
+  archetype: forecast
+  question: चंडीगढ़ में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-043
+  language: hi
+  archetype: forecast
+  question: भोपाल में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-044
+  language: hi
+  archetype: forecast
+  question: इंदौर में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-045
+  language: hi
+  archetype: forecast
+  question: नागपुर में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-046
+  language: hi
+  archetype: forecast
+  question: वाराणसी में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-047
+  language: hi
+  archetype: forecast
+  question: आगरा में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-048
+  language: hi
+  archetype: forecast
+  question: सूरत में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-049
+  language: hi
+  archetype: forecast
+  question: कोच्चि में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-050
+  language: hi
+  archetype: forecast
+  question: देहरादून में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-051
+  language: hi
+  archetype: forecast
+  question: गुवाहाटी में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-052
+  language: hi
+  archetype: forecast
+  question: शिमला में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-053
+  language: hi
+  archetype: forecast
+  question: श्रीनगर में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-054
+  language: hi
+  archetype: forecast
+  question: राँची में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-055
+  language: hi
+  archetype: forecast
+  question: भुवनेश्वर में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-056
+  language: hi
+  archetype: forecast
+  question: अमृतसर में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-057
+  language: hi
+  archetype: forecast
+  question: विशाखापट्टनम में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-058
+  language: hi
+  archetype: forecast
+  question: कानपुर में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-059
+  language: hi
+  archetype: forecast
+  question: तिरुवनंतपुरम में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-060
+  language: hi
+  archetype: forecast
+  question: वडोदरा में कल का तापमान कितना रहने का अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-061
+  language: hi
+  archetype: forecast
+  question: Pune me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-062
+  language: hi
+  archetype: forecast
+  question: Mumbai me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-063
+  language: hi
+  archetype: forecast
+  question: Delhi me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-064
+  language: hi
+  archetype: forecast
+  question: Bengaluru me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-065
+  language: hi
+  archetype: forecast
+  question: Chennai me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-066
+  language: hi
+  archetype: forecast
+  question: Kolkata me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-067
+  language: hi
+  archetype: forecast
+  question: Ahmedabad me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-068
+  language: hi
+  archetype: forecast
+  question: Jaipur me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-069
+  language: hi
+  archetype: forecast
+  question: Lucknow me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-070
+  language: hi
+  archetype: forecast
+  question: Patna me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-071
+  language: hi
+  archetype: forecast
+  question: Hyderabad me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-072
+  language: hi
+  archetype: forecast
+  question: Chandigarh me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-073
+  language: hi
+  archetype: forecast
+  question: Bhopal me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-074
+  language: hi
+  archetype: forecast
+  question: Indore me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-075
+  language: hi
+  archetype: forecast
+  question: Nagpur me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-076
+  language: hi
+  archetype: forecast
+  question: Varanasi me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-077
+  language: hi
+  archetype: forecast
+  question: Agra me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-078
+  language: hi
+  archetype: forecast
+  question: Surat me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-079
+  language: hi
+  archetype: forecast
+  question: Kochi me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-080
+  language: hi
+  archetype: forecast
+  question: Dehradun me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-081
+  language: hi
+  archetype: forecast
+  question: Guwahati me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-082
+  language: hi
+  archetype: forecast
+  question: Shimla me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-083
+  language: hi
+  archetype: forecast
+  question: Srinagar me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-084
+  language: hi
+  archetype: forecast
+  question: Ranchi me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-085
+  language: hi
+  archetype: forecast
+  question: Bhubaneswar me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-086
+  language: hi
+  archetype: forecast
+  question: Amritsar me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-087
+  language: hi
+  archetype: forecast
+  question: Visakhapatnam me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-088
+  language: hi
+  archetype: forecast
+  question: Kanpur me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-089
+  language: hi
+  archetype: forecast
+  question: Thiruvananthapuram me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-090
+  language: hi
+  archetype: forecast
+  question: Vadodara me kal weather kaisa rahega?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-091
+  language: hi
+  archetype: forecast
+  question: कल पुणे में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-092
+  language: hi
+  archetype: forecast
+  question: कल मुंबई में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-093
+  language: hi
+  archetype: forecast
+  question: कल दिल्ली में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-094
+  language: hi
+  archetype: forecast
+  question: कल बेंगलुरु में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-095
+  language: hi
+  archetype: forecast
+  question: कल चेन्नई में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-096
+  language: hi
+  archetype: forecast
+  question: कल कोलकाता में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-097
+  language: hi
+  archetype: forecast
+  question: कल अहमदाबाद में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-098
+  language: hi
+  archetype: forecast
+  question: कल जयपुर में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-099
+  language: hi
+  archetype: forecast
+  question: कल लखनऊ में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-conditions-100
+  language: hi
+  archetype: forecast
+  question: कल पटना में गर्मी ज्यादा रहेगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false

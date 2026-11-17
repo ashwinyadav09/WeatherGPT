@@ -73,3 +73,36 @@ def test_grounding_verifier_adversarial_tampering():
     assert bool(res) is False
     assert any("15" in r for r in res.reasons)
     assert any("38" in r for r in res.reasons)
+
+
+def test_grounding_verifier_devanagari_numerals():
+    packet = make_packet(temp=28.5, rain=5.0)
+    # २८.५ (28.5) and ५.० (5.0) in Devanagari numerals
+    hindi_text = "कल पुणे में ५.० मिलीमीटर बारिश और २८.५ डिग्री तापमान रहेगा।"
+    res = verify_grounding(hindi_text, [packet])
+    assert bool(res) is True
+    assert len(res.reasons) == 0
+
+
+def test_grounding_verifier_devanagari_hallucinated():
+    packet = make_packet(temp=28.5, rain=5.0)
+    # ७५ (75) is ungrounded in Devanagari
+    hindi_text = "कल पुणे में ७५ मिलीमीटर भारी बारिश होगी।"
+    res = verify_grounding(hindi_text, [packet])
+    assert bool(res) is False
+    assert any("75" in r for r in res.reasons)
+
+
+def test_grounding_verifier_hindi_forbidden_words():
+    packet = make_packet(temp=28.5, rain=0.0)
+    hindi_text_guarantee = "कल पुणे में बारिश न होने की पक्की गारंटी है।"
+    res_guarantee = verify_grounding(hindi_text_guarantee, [packet])
+    assert bool(res_guarantee) is False
+    assert any("गारंटी" in r for r in res_guarantee.reasons)
+
+    hindi_text_evac = "मौसम खराब है, तुरंत खाली करें।"
+    res_evac = verify_grounding(hindi_text_evac, [packet])
+    assert bool(res_evac) is False
+    assert any("खाली करें" in r or "evacuate" in r.lower() for r in res_evac.reasons)
+
+

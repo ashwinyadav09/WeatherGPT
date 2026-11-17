@@ -19,6 +19,12 @@ FORBIDDEN_WORDS = [
     "definitely will not rain",
     "you should evacuate",
     "you must evacuate",
+    "evacuate",
+    "गारंटी",
+    "पक्की गारंटी",
+    "खाली करें",
+    "तुरंत खाली करें",
+    "निकासी",
 ]
 
 

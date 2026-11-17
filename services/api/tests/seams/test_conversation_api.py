@@ -59,3 +59,38 @@ async def test_conversation_api_stream_seam():
         done_events = [e for e in events if e[0] == "done"]
         assert len(done_events) == 1
         assert "latency_ms" in done_events[0][1]
+
+
+@pytest.mark.asyncio
+async def test_conversation_api_hindi_stream_seam():
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
+        payload = {
+            "session_id": "test_session_hi_1",
+            "text": "क्या कल पुणे में बारिश होगी?",
+            "language": "auto",
+            "client_tz": "Asia/Kolkata",
+            "stream": True,
+        }
+        resp = await client.post("/v1/chat", json=payload)
+        assert resp.status_code == 200
+        assert "text/event-stream" in resp.headers["content-type"]
+
+        lines = [line.strip() for line in resp.text.splitlines() if line.strip()]
+        events = []
+        current_event = None
+        for line in lines:
+            if line.startswith("event: "):
+                current_event = line.replace("event: ", "").strip()
+            elif line.startswith("data: ") and current_event:
+                data = json.loads(line.replace("data: ", "").strip())
+                events.append((current_event, data))
+                current_event = None
+
+        token_events = [e for e in events if e[0] == "token"]
+        answer_text = "".join(e[1]["text"] for e in token_events)
+
+        # Must be in Hindi and contain weather terms
+        assert any(term in answer_text for term in ["बारिश", "वर्षा", "पूर्वानुमान", "संभावना"])
+        assert "Open-Meteo" in answer_text
+        assert "कनेक्ट नहीं" in answer_text or "not connected" in answer_text.lower()
+
