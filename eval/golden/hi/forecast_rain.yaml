@@ -1,0 +1,300 @@
+# 30 Golden Set cases in Hindi for 'Will it rain tomorrow?' question type
+- id: rain-tomorrow-pune-hi-001
+  language: hi
+  archetype: forecast
+  question: क्या कल पुणे में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-mumbai-hi-002
+  language: hi
+  archetype: forecast
+  question: क्या कल मुंबई में बारिश की संभावना है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-delhi-hi-003
+  language: hi
+  archetype: forecast
+  question: दिल्ली में कल बारिश होगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-bengaluru-hi-004
+  language: hi
+  archetype: forecast
+  question: क्या मुझे कल बेंगलुरु में छाता ले जाना चाहिए?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-chennai-hi-005
+  language: hi
+  archetype: forecast
+  question: चेन्नई के लिए कल का मौसम कैसा रहेगा? क्या बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-kolkata-hi-006
+  language: hi
+  archetype: forecast
+  question: कल कोलकाता में बारिश का पूर्वानुमान क्या है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-ahmedabad-hi-007
+  language: hi
+  archetype: forecast
+  question: क्या कल अहमदाबाद में पानी बरसेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-jaipur-hi-008
+  language: hi
+  archetype: forecast
+  question: कल जयपुर में बारिश के आसार हैं क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-lucknow-hi-009
+  language: hi
+  archetype: forecast
+  question: लखनऊ में कल बारिश का क्या हाल रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-patna-hi-010
+  language: hi
+  archetype: forecast
+  question: क्या कल पटना में वर्षा होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-hyderabad-hi-011
+  language: hi
+  archetype: forecast
+  question: हैदराबाद में कल बारिश की क्या उम्मीद है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-chandigarh-hi-012
+  language: hi
+  archetype: forecast
+  question: क्या कल चंडीगढ़ में बारिश होने वाली है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-bhopal-hi-013
+  language: hi
+  archetype: forecast
+  question: भोपाल में कल मौसम कैसा रहेगा, क्या बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-indore-hi-014
+  language: hi
+  archetype: forecast
+  question: इंदौर में कल बारिश की क्या संभावना है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-nagpur-hi-015
+  language: hi
+  archetype: forecast
+  question: क्या नागपुर में कल बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-varanasi-hi-016
+  language: hi
+  archetype: forecast
+  question: वाराणसी में कल क्या बारिश हो सकती है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-agra-hi-017
+  language: hi
+  archetype: forecast
+  question: आगरा में कल बारिश के क्या आसार हैं?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-surat-hi-018
+  language: hi
+  archetype: forecast
+  question: क्या कल सूरत में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-kochi-hi-019
+  language: hi
+  archetype: forecast
+  question: कोच्चि में कल का बारिश का पूर्वानुमान बताएं
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-dehradun-hi-020
+  language: hi
+  archetype: forecast
+  question: देहरादून में कल बारिश होगी या नहीं?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-guwahati-hi-021
+  language: hi
+  archetype: forecast
+  question: क्या गुवाहाटी में कल बारिश का कोई अनुमान है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-shimla-hi-022
+  language: hi
+  archetype: forecast
+  question: शिमला में कल बारिश होगी क्या?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-srinagar-hi-023
+  language: hi
+  archetype: forecast
+  question: श्रीनगर में कल बारिश या बूंदाबांदी होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-ranchi-hi-024
+  language: hi
+  archetype: forecast
+  question: क्या कल रांची में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-bhubaneswar-hi-025
+  language: hi
+  archetype: forecast
+  question: भुवनेश्वर में कल बारिश की क्या संभावना है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-amritsar-hi-026
+  language: hi
+  archetype: forecast
+  question: अमृतसर में कल क्या बारिश हो सकती है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-visakhapatnam-hi-027
+  language: hi
+  archetype: forecast
+  question: विशाखापट्टनम में कल बारिश का क्या हाल रहेगा?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-kanpur-hi-028
+  language: hi
+  archetype: forecast
+  question: कानपुर में कल क्या बारिश होने के आसार हैं?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-thiruvananthapuram-hi-029
+  language: hi
+  archetype: forecast
+  question: क्या तिरुवनंतपुरम में कल बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
+
+- id: rain-tomorrow-vadodara-hi-030
+  language: hi
+  archetype: forecast
+  question: वडोदरा में कल बारिश की क्या उम्मीद है?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not: [evacuate, guaranteed]
+    refusal: false
