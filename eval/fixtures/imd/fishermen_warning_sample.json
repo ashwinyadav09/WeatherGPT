@@ -1,9 +1,0 @@
-{
-  "_provenance": "documented-sample",
-  "_source": "https://api.imd.gov.in/public/api_reference.html#fishermen-warning",
-  "_recorded_at": "2026-11-17T06:00:00Z",
-  "coast": "North Maharashtra Coast",
-  "valid_for": "Next 5 days",
-  "warning_issued": "No warning for fishermen along North Maharashtra coast for days 1 to 5.",
-  "deep_sea_warning": "Fishermen advised not to venture into Andaman Sea and adjoining Southeast Bay of Bengal on Day 1."
-}
