@@ -5,7 +5,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
 | 01b | Fixtures and spikes | in-review | PR body saved to .scratch/weathergpt/pr/ticket-01b-fixtures-and-spikes.md; human-only: open PR on GitHub (gh not installed) |
-| 05 | Alerts v1 | todo | |
+| 05 | Alerts v1 | in-progress | pre-work: based on 01b branch; blocked on 01c merge before full integration |
 | 07 | Model plane | todo | |
 | 08 | Real-time integration showcase | todo | |
 | 09 | Climate questions | todo | |
