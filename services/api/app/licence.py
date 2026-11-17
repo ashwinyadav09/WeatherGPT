@@ -47,6 +47,20 @@ LICENCE_REGISTER: list[LicenceEntry] = [
         limits="Under 100 requests/minute and 1 request/minute per station endpoint",
         attribution_text="Aviation weather observations and forecasts by AviationWeather.gov / NOAA",
     ),
+    LicenceEntry(
+        source_id="imd.agromet",
+        name="IMD Gramin Krishi Mausam Sewa (GKMS)",
+        terms="Government of India public agro-meteorological advisories in collaboration with ICAR",
+        limits="Cached 15m; non-commercial public-interest use",
+        attribution_text="Gramin Krishi Mausam Sewa (GKMS), India Meteorological Department (IMD) / ICAR",
+    ),
+    LicenceEntry(
+        source_id="incois.marine",
+        name="IMD Marine Weather & INCOIS Ocean Services",
+        terms="Government of India public coastal and marine safety advisories",
+        limits="Cached 15m; non-commercial public-interest use",
+        attribution_text="India Meteorological Department (IMD) & Indian National Centre for Ocean Information Services (INCOIS)",
+    ),
 ]
 
 

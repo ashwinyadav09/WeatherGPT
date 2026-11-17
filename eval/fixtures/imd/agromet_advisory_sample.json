@@ -1,0 +1,256 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html#agromet",
+  "bulletin_type": "District Agromet Advisory Bulletin",
+  "organization": "Gramin Krishi Mausam Sewa (GKMS), India Meteorological Department (IMD) in collaboration with ICAR",
+  "issue_date": "2026-11-17",
+  "valid_until": "2026-11-21",
+  "districts": {
+    "ludhiana": {
+      "district_name": "Ludhiana",
+      "state": "Punjab",
+      "crops": {
+        "wheat": {
+          "crop_name": "Wheat",
+          "crop_name_hi": "गेहूं",
+          "stages": {
+            "sowing": {
+              "stage_name": "Sowing / Seedling",
+              "stage_name_hi": "बुवाई एवं अंकुरण",
+              "advisory_en": "Optimum sowing window is active. Treat seed with approved Trichoderma or carbendazim prior to sowing. Ensure optimal soil moisture before drilling seed. Do not apply heavy pre-sowing irrigation if rainfall is predicted.",
+              "advisory_hi": "गेहूं की बुवाई का उपयुक्त समय चल रहा है। बुवाई से पूर्व बीज को अनुशंसित ट्राइकोडर्मा से उपचारित करें। बुवाई के समय खेत में पर्याप्त नमी का ध्यान रखें। यदि वर्षा का पूर्वानुमान हो तो पलेवा सिंचाई स्थगित करें।",
+              "recommended_actions": [
+                "Maintain optimal seeding depth of 4-5 cm",
+                "Ensure proper field drainage"
+              ]
+            },
+            "crown_root_initiation": {
+              "stage_name": "Crown Root Initiation (CRI)",
+              "stage_name_hi": "शीर्ष जड़ विकास (CRI अवस्था)",
+              "advisory_en": "Apply first irrigation at 20-25 days after sowing (CRI stage) if soil is dry. Broadcast top-dress nitrogen fertilizer immediately following light irrigation. Avoid water stagnation.",
+              "advisory_hi": "बुवाई के 20-25 दिन बाद (CRI अवस्था) पहली हल्की सिंचाई करें। सिंचाई के पश्चात अनुशंसित मात्रा में यूरिया का छिड़काव करें। खेत में जलभराव न होने दें।",
+              "recommended_actions": [
+                "First irrigation at 21 days",
+                "Hand weed or light hoeing"
+              ]
+            },
+            "vegetative": {
+              "stage_name": "Vegetative / Tillering",
+              "stage_name_hi": "कल्ले निकलने की अवस्था (वानस्पतिक)",
+              "advisory_en": "Monitor field for yellow rust symptoms on lower leaves due to current humidity. Avoid excess moisture in fields. For nutrient deficiencies, spray 2% potassium nitrate (13:0:45) on clear mornings.",
+              "advisory_hi": "नमी अधिक रहने के कारण निचली पत्तियों पर पीला रतुआ (येलो रस्ट) के लक्षणों की निगरानी करें। खेत में अत्यधिक नमी न रहने दें। पोषक तत्वों के संतुलन हेतु 2% पोटाशियम नाइट्रेट का छिड़काव करें।",
+              "recommended_actions": [
+                "Inspect field twice a week",
+                "Drain excess standing water"
+              ]
+            },
+            "flowering": {
+              "stage_name": "Flowering / Heading",
+              "stage_name_hi": "फूल आने एवं बाली निकलने की अवस्था",
+              "advisory_en": "Maintain adequate soil moisture during flowering stage to prevent floret sterility. Suspend irrigation during forecasted windy conditions (>15 kmph) to avoid lodging.",
+              "advisory_hi": "फूल आने की अवस्था में खेत में नमी बनाए रखें जिससे दाना बनने में रुकावट न हो। तेज हवाओं (>15 किमी/घंटा) के पूर्वानुमान के समय फसल को गिरने (लॉजिंग) से बचाने के लिए सिंचाई न करें।",
+              "recommended_actions": [
+                "Maintain uniform soil moisture",
+                "Delay irrigation during high winds"
+              ]
+            },
+            "grain_filling": {
+              "stage_name": "Grain Filling / Milking",
+              "stage_name_hi": "दूधिया एवं दाना भराव की अवस्था",
+              "advisory_en": "Provide light irrigation at grain filling stage. Rising daytime temperatures may cause terminal heat stress; light evening sprinkler irrigation can alleviate thermal load.",
+              "advisory_hi": "दाना भराव की अवस्था में हल्की सिंचाई आवश्यक है। दोपहर के बढ़ते तापमान से दाने सिकुड़ने से बचाने के लिए शाम के समय हल्की सिंचाई लाभप्रद रहती है।",
+              "recommended_actions": [
+                "Light evening irrigation",
+                "Protect against terminal heat"
+              ]
+            },
+            "maturity": {
+              "stage_name": "Maturity / Harvesting",
+              "stage_name_hi": "परिपक्वता एवं कटाई",
+              "advisory_en": "Stop all irrigation. Harvest crop when moisture content is below 14% and weather is clear. Store harvested grain in clean, moisture-free storage bins.",
+              "advisory_hi": "सिंचाई पूरी तरह बंद कर दें। जब दानों में नमी 14% से कम हो तथा मौसम साफ हो, तब कटाई करें। कटाई के बाद अनाज को साफ एवं सूखे स्थान पर सुरक्षित रखें।",
+              "recommended_actions": [
+                "Harvest in dry sunny weather",
+                "Store at <14% moisture"
+              ]
+            }
+          }
+        },
+        "rice": {
+          "crop_name": "Rice / Paddy",
+          "crop_name_hi": "धान",
+          "stages": {
+            "nursery": {
+              "stage_name": "Nursery / Sowing",
+              "stage_name_hi": "नर्सरी एवं अंकुरण",
+              "advisory_en": "Prepare raised nursery beds. Ensure proper drainage to prevent waterlogging during unseasonal rains. Keep seedbeds moist but not submerged.",
+              "advisory_hi": "उठी हुई क्यारियों में नर्सरी तैयार करें। बेमौसम बारिश की स्थिति में नर्सरी से अतिरिक्त पानी निकालने की व्यवस्था रखें। क्यारियों में नमी रखें परंतु जलभराव न होने दें।",
+              "recommended_actions": [
+                "Raised seedbeds",
+                "Seed treatment with bio-fungicide"
+              ]
+            },
+            "transplanting": {
+              "stage_name": "Transplanting",
+              "stage_name_hi": "रोपाई",
+              "advisory_en": "Transplant 20-25 days old seedlings with 2-3 seedlings per hill. Maintain 2-3 cm shallow water level in fields for first week to encourage root establishment.",
+              "advisory_hi": "20-25 दिन के पौधों की रोपाई करें (प्रति स्थान 2-3 पौधे)। रोपाई के प्रथम सप्ताह में जड़ों के जमाव के लिए खेत में 2-3 सेमी उथला पानी बनाए रखें।",
+              "recommended_actions": [
+                "Plant 2-3 seedlings per hill",
+                "Maintain shallow water depth"
+              ]
+            },
+            "tillering": {
+              "stage_name": "Tillering / Vegetative",
+              "stage_name_hi": "कल्ले फूटने की अवस्था",
+              "advisory_en": "Maintain 3-5 cm standing water. Top-dress nitrogen in splits. Perform mechanical weeding or manual rogueing. Drain excess water before heavy forecast showers.",
+              "advisory_hi": "खेत में 3-5 सेमी पानी बनाए रखें। नाइट्रोजन की संस्तुत मात्रा दें। खरपतवार नियंत्रण हेतु निराई-गुड़ाई करें। भारी बारिश के पूर्वानुमान से पूर्व अतिरिक्त पानी निकालें।",
+              "recommended_actions": [
+                "Split nitrogen top-dressing",
+                "Monitor for stem borer"
+              ]
+            },
+            "flowering": {
+              "stage_name": "Panicle Initiation & Flowering",
+              "stage_name_hi": "बाली निकलने एवं पुष्पन की अवस्था",
+              "advisory_en": "Critical stage for moisture: do not let the field dry out. Avoid spraying any substances during active anthesis (9:00 AM to 12:00 PM).",
+              "advisory_hi": "यह अवस्था नमी के प्रति अत्यंत संवेदनशील है; खेत में पानी की कमी न होने दें। सुबह 9 से 12 बजे परागण के समय किसी भी प्रकार का छिड़काव न करें।",
+              "recommended_actions": [
+                "Continuous 4-5 cm water depth",
+                "No spraying during morning anthesis"
+              ]
+            },
+            "maturity": {
+              "stage_name": "Maturity / Harvesting",
+              "stage_name_hi": "परिपक्वता एवं कटाई",
+              "advisory_en": "Drain water completely from the field 10-14 days before harvest. Harvest crop when 80-85% grains turn golden yellow on dry sunny days.",
+              "advisory_hi": "कटाई से 10-14 दिन पूर्व खेत से पानी पूरी तरह निकाल दें। जब 80-85% बालियां सुनहरी हो जाएं, तब साफ मौसम में कटाई करें।",
+              "recommended_actions": [
+                "Drain field 10 days before harvest",
+                "Harvest when 85% grains are golden"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "karnal": {
+      "district_name": "Karnal",
+      "state": "Haryana",
+      "crops": {
+        "wheat": {
+          "crop_name": "Wheat",
+          "crop_name_hi": "गेहूं",
+          "stages": {
+            "sowing": {
+              "stage_name": "Sowing / Seedling",
+              "stage_name_hi": "बुवाई एवं अंकुरण",
+              "advisory_en": "Sow timely wheat varieties with zero-tillage seed drill to conserve soil moisture. Treat seed prior to sowing.",
+              "advisory_hi": "मिट्टी की नमी संरक्षण के लिए जीरो-टिलेज सीड ड्रिल से गेहूं की समय पर बुवाई करें। बुवाई से पूर्व बीज उपचार अवश्य करें।",
+              "recommended_actions": ["Zero-till sowing", "Seed treatment"]
+            },
+            "vegetative": {
+              "stage_name": "Vegetative / Tillering",
+              "stage_name_hi": "कल्ले निकलने की अवस्था",
+              "advisory_en": "Light irrigation followed by weed control. If aphid population crosses threshold (>10 aphids per earhead), consult local KVK.",
+              "advisory_hi": "हल्की सिंचाई के बाद खरपतवार नियंत्रण करें। यदि माहू (एफिड) का प्रकोप दिखे तो नजदीकी कृषि विज्ञान केंद्र से सलाह लें।",
+              "recommended_actions": ["Field inspection", "Consult KVK for pest guidance"]
+            },
+            "flowering": {
+              "stage_name": "Flowering / Heading",
+              "stage_name_hi": "फूल आने की अवस्था",
+              "advisory_en": "Ensure soil moisture is maintained. Cease irrigation if IMD forecasts squally winds (>20 kmph).",
+              "advisory_hi": "खेत में नमी बनाए रखें। यदि तेज हवा का पूर्वानुमान हो तो सिंचाई रोक दें।",
+              "recommended_actions": ["Maintain soil moisture", "Suspend irrigation during winds"]
+            }
+          }
+        },
+        "rice": {
+          "crop_name": "Rice / Paddy",
+          "crop_name_hi": "धान",
+          "stages": {
+            "tillering": {
+              "stage_name": "Tillering / Vegetative",
+              "stage_name_hi": "कल्ले फूटने की अवस्था",
+              "advisory_en": "Maintain standing water of 4 cm. Watch for sheath blight and leaf folder pests.",
+              "advisory_hi": "खेत में 4 सेमी पानी बनाकर रखें। शीथ ब्लाइट और पत्ता लपेटक कीट के प्रकोप की निगरानी करें।",
+              "recommended_actions": ["Water management", "Pest monitoring"]
+            },
+            "maturity": {
+              "stage_name": "Maturity / Harvesting",
+              "stage_name_hi": "परिपक्वता एवं कटाई",
+              "advisory_en": "Drain field 10 days before harvesting. Dry harvested paddy under sun before bagging.",
+              "advisory_hi": "कटाई से 10 दिन पहले पानी निकालें। धान की बोरियों में भरने से पहले धूप में अच्छी तरह सुखाएं।",
+              "recommended_actions": ["Field drainage", "Sun drying"]
+            }
+          }
+        }
+      }
+    },
+    "varanasi": {
+      "district_name": "Varanasi",
+      "state": "Uttar Pradesh",
+      "crops": {
+        "wheat": {
+          "crop_name": "Wheat",
+          "crop_name_hi": "गेहूं",
+          "stages": {
+            "sowing": {
+              "stage_name": "Sowing / Seedling",
+              "stage_name_hi": "बुवाई एवं अंकुरण",
+              "advisory_en": "Complete sowing of certified wheat seed. Apply recommended basal dose of NPK at final ploughing.",
+              "advisory_hi": "प्रमाणित गेहूं बीज की बुवाई पूर्ण करें। अंतिम जुताई के समय NPK की संस्तुत बेसल खुराक डालें।",
+              "recommended_actions": ["Certified seed use", "Basal fertilizer application"]
+            },
+            "crown_root_initiation": {
+              "stage_name": "Crown Root Initiation (CRI)",
+              "stage_name_hi": "CRI अवस्था",
+              "advisory_en": "First irrigation at 21 days is mandatory for root development. Avoid ponding.",
+              "advisory_hi": "जड़ विकास के लिए 21 दिन पर प्रथम सिंचाई अनिवार्य है। जलभराव न होने दें।",
+              "recommended_actions": ["Mandatory 21-day irrigation", "Drain excess water"]
+            }
+          }
+        },
+        "rice": {
+          "crop_name": "Rice / Paddy",
+          "crop_name_hi": "धान",
+          "stages": {
+            "flowering": {
+              "stage_name": "Flowering / Heading",
+              "stage_name_hi": "बाली निकलने एवं पुष्पन",
+              "advisory_en": "Ensure fields do not experience moisture deficit. Watch for Gundhi bug infestation during milking stage.",
+              "advisory_hi": "खेत में जल की कमी न होने दें। दूधिया अवस्था में गंधी बग (कीट) के प्रकोप पर नजर रखें।",
+              "recommended_actions": ["Maintain water level", "Inspect for Gundhi bug"]
+            }
+          }
+        }
+      }
+    },
+    "burdwan": {
+      "district_name": "Burdwan (Purba Bardhaman)",
+      "state": "West Bengal",
+      "crops": {
+        "rice": {
+          "crop_name": "Rice (Aman / Boro)",
+          "crop_name_hi": "धान (अमन/बोरो)",
+          "stages": {
+            "transplanting": {
+              "stage_name": "Transplanting",
+              "stage_name_hi": "रोपाई",
+              "advisory_en": "Transplant seedlings at 20x15 cm spacing. Keep 2-3 cm standing water in field.",
+              "advisory_hi": "20x15 सेमी की दूरी पर रोपाई करें। खेत में 2-3 सेमी पानी बनाए रखें।",
+              "recommended_actions": ["Line transplanting", "Water depth management"]
+            },
+            "maturity": {
+              "stage_name": "Maturity / Harvesting",
+              "stage_name_hi": "कटाई",
+              "advisory_en": "Drain standing water. Harvest mature crops before impending cloudy or rain spell.",
+              "advisory_hi": "खेत से पानी निकालें। वर्षा या बादलों के पूर्वानुमान से पहले पकी फसल की कटाई करें।",
+              "recommended_actions": ["Timely harvest", "Drain water"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

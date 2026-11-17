@@ -160,6 +160,87 @@ class ConversationAgent:
         lat = place.lat if place else 18.5204
         lon = place.lon if place else 73.8567
 
+        # 2b. Check for Marine / Coastal query
+        marine_terms = ["marine", "coastal bulletin", "fishermen warning", "sea condition", "समुद्र", "तटीय बुलेटिन", "मछुआरे", "मछुआरों", "लहरें"]
+        if any(k in req.text.lower() for k in marine_terms):
+            target_area = place.id if place else req.text
+            marine_data = await self.advisory_engine.marine_adapter.get_marine_bulletin(area=target_area, language=lang)
+            fw = marine_data.get("fishermen_warning", {})
+            w_text = fw.get("warning_hi" if lang == "hi" else "warning_en", "")
+            banner_txt = marine_data.get("safety_banner", {}).get("text_hi" if lang == "hi" else "text_en", "")
+            marine_card_data = {
+                "headline": f"Coastal Bulletin: {marine_data.get('area_name')}" if lang != "hi" else f"तटीय बुलेटिन: {marine_data.get('area_name')}",
+                "key_values": {
+                    "Sea Condition": marine_data.get("sea_condition", "Moderate"),
+                    "Wind": marine_data.get("wind", ""),
+                    "Weather": marine_data.get("weather", ""),
+                },
+                "source_line": f"Source: {marine_data.get('source')} (Official Warning)",
+                "caveat": banner_txt,
+                "style": "guidance-card",
+                "actions": ["Official IMD Marine Bulletin", "INCOIS Advisories"],
+                "marine_data": marine_data,
+            }
+            yield {"event": "card", "data": marine_card_data}
+            ans_text = f"{marine_card_data['headline']} - {marine_data.get('weather')}. {w_text} {banner_txt}"
+            yield {"event": "token", "data": {"text": ans_text}}
+            latency_ms = int((time.time() - start_time) * 1000)
+            yield {"event": "done", "data": {"latency_ms": latency_ms}}
+            return
+
+        # 2c. Check for Agromet / Farming query (Wheat / Rice / Crops)
+        agro_terms = ["agromet", "wheat", "rice", "paddy", "गेहूं", "धान", "फसल", "crop", "sowing", "बुवाई", "कटाई", "रोपाई", "kheti", "कृषि"]
+        if any(k in req.text.lower() for k in agro_terms):
+            target_district = place.names.get("en", place.id) if place else "Ludhiana"
+            crop = "rice" if any(r in req.text.lower() for r in ["rice", "paddy", "धान", "चावल", "dhan"]) else "wheat"
+            agro_data = await self.advisory_engine.agromet_adapter.get_agromet_advisory(
+                district=target_district,
+                crop=crop,
+                stage=req.text,
+                language=lang,
+                query_text=req.text,
+            )
+            if agro_data.get("status") == "refused_pesticide_dose":
+                redirect = agro_data["redirect"]
+                yield {
+                    "event": "card",
+                    "data": {
+                        "headline": redirect["headline"],
+                        "source_line": redirect["source_line"],
+                        "caveat": "Safety Policy: Chemical dosages not prescribed",
+                        "style": "guidance-card",
+                        "actions": ["1800-180-1551 (Kisan Call Centre)"],
+                    },
+                }
+                yield {"event": "token", "data": {"text": redirect["text"]}}
+                latency_ms = int((time.time() - start_time) * 1000)
+                yield {"event": "done", "data": {"latency_ms": latency_ms}}
+                return
+
+            agro_card_data = {
+                "headline": (
+                    f"IMD Agromet: {agro_data.get('crop_display')} ({agro_data.get('stage_display')})"
+                    if lang != "hi"
+                    else f"मौसम कृषि सलाह: {agro_data.get('crop_display')} ({agro_data.get('stage_display')})"
+                ),
+                "key_values": {
+                    "District": agro_data.get("district", ""),
+                    "Crop": agro_data.get("crop_display", ""),
+                    "Stage": agro_data.get("stage_display", ""),
+                },
+                "source_line": f"Source: {agro_data.get('source')} | Issued: {agro_data.get('issue_date')}",
+                "caveat": agro_data.get("safety_note", ""),
+                "style": "guidance-card",
+                "actions": ["KVK Guidance", "1800-180-1551 (Kisan Call Centre)"],
+                "agromet_data": agro_data,
+            }
+            yield {"event": "card", "data": agro_card_data}
+            ans_text = f"{agro_data.get('advisory_text', '')} {agro_data.get('safety_note', '')}"
+            yield {"event": "token", "data": {"text": ans_text}}
+            latency_ms = int((time.time() - start_time) * 1000)
+            yield {"event": "done", "data": {"latency_ms": latency_ms}}
+            return
+
         # 3. Fetch evidence packets
         packets: list[EvidencePacket] = await self.forecast_service.get_forecast(
             place_id=place.id if place else "pune",

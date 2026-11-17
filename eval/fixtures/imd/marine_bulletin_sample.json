@@ -1,0 +1,130 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html#marine",
+  "bulletin_type": "Coastal Weather Bulletin and Fishermen Warning",
+  "organization": "Cyclone Warning Division / Marine Weather Services, India Meteorological Department (IMD) in collaboration with INCOIS",
+  "issue_time": "2026-11-17T12:00:00+05:30",
+  "valid_until": "2026-11-18T12:00:00+05:30",
+  "safety_banner": {
+    "text_en": "SAFETY NOTICE: For official navigation, port, and high-seas operations, refer directly to official IMD / INCOIS marine bulletins. Fishermen are strictly advised to adhere to official coastal authority warnings before venturing into the sea.",
+    "text_hi": "सुरक्षा सूचना: आधिकारिक नौवहन, बंदरगाह और समुद्री संचालन के लिए केवल भारतीय मौसम विज्ञान विभाग (IMD) एवं INCOIS के आधिकारिक बुलेटिन देखें। मछुआरों को समुद्र में जाने से पहले तटीय प्रशासन की चेतावनियों का अनिवार्य रूप से पालन करने की सलाह दी जाती है।",
+    "authority": "India Meteorological Department (IMD) & INCOIS",
+    "type": "informational-safety-notice"
+  },
+  "areas": {
+    "konkan_goa": {
+      "area_id": "konkan_goa",
+      "area_name": "Konkan-Goa Coast",
+      "area_name_hi": "कोंकण-गोवा तट",
+      "sea_area": "North East Arabian Sea",
+      "weather": "Generally cloudy sky with light to moderate rain or thundershowers",
+      "weather_hi": "आमतौर पर बादल छाए रहेंगे तथा हल्की से मध्यम बारिश या गरज के साथ बौछारें पड़ने की संभावना है",
+      "visibility": "4 to 6 km, reducing to 2 km in rain",
+      "wind": "Westerly to Southwesterly 20 to 25 knots gusting to 35 knots",
+      "sea_condition": "Rough to Very Rough",
+      "port_warning": "Local Cautionary Signal No. LC-III hoisted at Mumbai, Mormugao, and Ratnagiri ports",
+      "fishermen_warning": {
+        "status": "warning_active",
+        "level": "red",
+        "warning_en": "Fishermen are advised NOT to venture into Maharashtra-Goa coast and adjoining Eastcentral Arabian Sea during next 24 hours due to squally weather and rough seas.",
+        "warning_hi": "मछुआरों को सलाह दी जाती है कि वे अगले 24 घंटों के दौरान तूफानी मौसम और अशांत समुद्र के कारण महाराष्ट्र-गोवा तट और आसपास के पूर्वी-मध्य अरब सागर में न जाएं।",
+        "squall_speed_kmph": "45-55 gusting to 65 kmph"
+      }
+    },
+    "north_gujarat": {
+      "area_id": "north_gujarat",
+      "area_name": "North Gujarat Coast",
+      "area_name_hi": "उत्तरी गुजरात तट",
+      "sea_area": "North Arabian Sea",
+      "weather": "Fair to partly cloudy sky. Dry weather likely over sea area.",
+      "weather_hi": "मौसम मुख्यतः साफ से आंशिक रूप से बादल छाए रहने की संभावना।",
+      "visibility": "Good, >8 km",
+      "wind": "Northwesterly 10 to 15 knots",
+      "sea_condition": "Slight",
+      "port_warning": "No warning signal hoisted",
+      "fishermen_warning": {
+        "status": "no_warning",
+        "level": "green",
+        "warning_en": "No fishermen warning for North Gujarat coast. Sea conditions favorable for normal fishing operations.",
+        "warning_hi": "उत्तरी गुजरात तट के लिए कोई चेतावनी नहीं है। समुद्र की स्थिति सामान्य मत्स्य पालन के अनुकूल है।",
+        "squall_speed_kmph": null
+      }
+    },
+    "south_gujarat": {
+      "area_id": "south_gujarat",
+      "area_name": "South Gujarat Coast",
+      "area_name_hi": "दक्षिणी गुजरात तट",
+      "sea_area": "Northeast Arabian Sea",
+      "weather": "Partly cloudy sky with light showers at isolated places.",
+      "weather_hi": "आंशिक बादल छाए रहेंगे, कुछ स्थानों पर हल्की फुहारें संभव।",
+      "visibility": "Moderate to good, 6 to 8 km",
+      "wind": "Northwesterly to Westerly 15 to 20 knots",
+      "sea_condition": "Moderate",
+      "port_warning": "No warning signal hoisted",
+      "fishermen_warning": {
+        "status": "watch",
+        "level": "yellow",
+        "warning_en": "Fishermen are advised to exercise caution while venturing into Gulf of Khambhat due to moderate to rough sea swells.",
+        "warning_hi": "खंभात की खाड़ी में जाने वाले मछुआरों को मध्यम से तेज लहरों के कारण सावधानी बरतने की सलाह दी जाती है।",
+        "squall_speed_kmph": "35-45 kmph"
+      }
+    },
+    "tamil_nadu": {
+      "area_id": "tamil_nadu",
+      "area_name": "Tamil Nadu and Puducherry Coast",
+      "area_name_hi": "तमिलनाडु एवं पुडुचेरी तट",
+      "sea_area": "Southwest Bay of Bengal & Gulf of Mannar",
+      "weather": "Cloudy sky with fairly widespread moderate rain with isolated heavy falls",
+      "weather_hi": "बादल छाए रहेंगे, कई स्थानों पर मध्यम वर्षा तथा कुछ स्थानों पर भारी वर्षा की संभावना है",
+      "visibility": "Moderate, 4 to 6 km",
+      "wind": "Northeasterly 25 to 30 knots gusting to 40 knots",
+      "sea_condition": "Rough to Very Rough",
+      "port_warning": "Distant Cautionary Signal No. DC-I hoisted at Chennai and Ennore ports",
+      "fishermen_warning": {
+        "status": "warning_active",
+        "level": "orange",
+        "warning_en": "Fishermen are advised NOT to venture into Gulf of Mannar, Comorin area, and along & off Tamil Nadu coast during next 48 hours due to squally winds.",
+        "warning_hi": "मछुआरों को सलाह दी जाती है कि वे अगले 48 घंटों के दौरान मन्नार की खाड़ी और तमिलनाडु तट पर समुद्र में न जाएं।",
+        "squall_speed_kmph": "40-50 gusting to 60 kmph"
+      }
+    },
+    "west_bengal": {
+      "area_id": "west_bengal",
+      "area_name": "West Bengal Coast",
+      "area_name_hi": "पश्चिम बंगाल तट",
+      "sea_area": "North Bay of Bengal",
+      "weather": "Mainly clear to partly cloudy sky.",
+      "weather_hi": "मौसम मुख्यतः साफ से आंशिक रूप से बादल रहने की संभावना।",
+      "visibility": "Good, >8 km",
+      "wind": "Northerly to Northeasterly 10 to 15 knots",
+      "sea_condition": "Slight to Moderate",
+      "port_warning": "No warning signal hoisted",
+      "fishermen_warning": {
+        "status": "no_warning",
+        "level": "green",
+        "warning_en": "No fishermen warning for West Bengal coast. Sea conditions safe for regular operations.",
+        "warning_hi": "पश्चिम बंगाल तट के लिए कोई चेतावनी नहीं है। समुद्र सुरक्षित स्थिति में है।",
+        "squall_speed_kmph": null
+      }
+    },
+    "kerala": {
+      "area_id": "kerala",
+      "area_name": "Kerala and Lakshadweep Coast",
+      "area_name_hi": "केरल एवं लक्षद्वीप तट",
+      "sea_area": "Southeast Arabian Sea",
+      "weather": "Scattered rain or thundershowers",
+      "weather_hi": "गरज के साथ छिटपुट बारिश की संभावना",
+      "visibility": "Moderate, 5 to 7 km",
+      "wind": "Northwesterly 15 to 20 knots",
+      "sea_condition": "Moderate",
+      "port_warning": "No warning signal hoisted",
+      "fishermen_warning": {
+        "status": "watch",
+        "level": "yellow",
+        "warning_en": "Fishermen are advised to be cautious while operating near Lakshadweep area due to occasional wind gusts.",
+        "warning_hi": "लक्षद्वीप क्षेत्र के पास मछुआरों को तेज हवा के झोंकों के प्रति सतर्क रहने की सलाह दी जाती है।",
+        "squall_speed_kmph": "35-45 kmph"
+      }
+    }
+  }
+}

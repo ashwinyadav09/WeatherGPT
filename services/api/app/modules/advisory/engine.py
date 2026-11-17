@@ -7,6 +7,8 @@ from typing import Any
 import structlog
 import yaml
 
+from services.api.app.modules.advisory.agromet import AgrometAdapter
+from services.api.app.modules.advisory.marine import MarineAdapter
 from services.api.app.modules.alerts.engine import AlertEngine
 
 logger = structlog.get_logger()
@@ -28,8 +30,15 @@ PESTICIDE_PATTERNS = [
 class AdvisoryEngine:
     """Advisory Engine for official NDMA/IMD heat and cold wave guidance, with safety redirects."""
 
-    def __init__(self, alert_engine: AlertEngine | None = None) -> None:
+    def __init__(
+        self,
+        alert_engine: AlertEngine | None = None,
+        agromet_adapter: AgrometAdapter | None = None,
+        marine_adapter: MarineAdapter | None = None,
+    ) -> None:
         self.alert_engine = alert_engine or AlertEngine()
+        self.agromet_adapter = agromet_adapter or AgrometAdapter()
+        self.marine_adapter = marine_adapter or MarineAdapter()
         self._guidance_cache: dict[str, dict[str, Any]] = {}
         self._load_guidance_library()
 
@@ -61,11 +70,68 @@ class AdvisoryEngine:
         domain: str = "heat_wave",
         language: str = "en",
         force_check_warnings: bool = True,
+        crop: str = "wheat",
+        stage: str = "sowing",
     ) -> list[dict[str, Any]]:
         """Returns official guidance cards.
 
-        Cards appear ONLY when official warnings apply.
+        Cards appear ONLY when official warnings apply for heat/cold.
+        Agro and marine domains return specialized advisory cards.
         """
+        # Handle agro domain
+        if "agro" in domain.lower() or "farm" in domain.lower():
+            agro_res = await self.agromet_adapter.get_agromet_advisory(
+                district=place_id,
+                crop=crop,
+                stage=stage,
+                language=language,
+            )
+            card = {
+                "id": f"agromet_{place_id}_{crop}_{stage}_{language}",
+                "hazard": "agromet",
+                "domain": "agro",
+                "place_id": place_id,
+                "title": f"IMD Agromet Advisory: {agro_res.get('crop_display', crop.title())} ({agro_res.get('stage_display', stage.title())})",
+                "items": [agro_res.get("advisory_text", "")] + [f"Action: {a}" for a in agro_res.get("recommended_actions", [])],
+                "source_title": agro_res.get("source", "Gramin Krishi Mausam Sewa (GKMS) / IMD"),
+                "source_url": "https://agromet.imd.gov.in",
+                "retrieved_on": agro_res.get("issue_date", "2026-11-17"),
+                "reviewed": True,
+                "reviewed_by": "ashwin",
+                "style": "guidance-card",
+                "agromet_data": agro_res,
+            }
+            return [card]
+
+        # Handle marine domain
+        if "marine" in domain.lower() or "sea" in domain.lower() or "coastal" in domain.lower():
+            marine_res = await self.marine_adapter.get_marine_bulletin(
+                area=place_id,
+                language=language,
+            )
+            fw = marine_res.get("fishermen_warning", {})
+            card = {
+                "id": f"marine_{place_id}_{language}",
+                "hazard": "marine",
+                "domain": "marine",
+                "place_id": place_id,
+                "title": f"IMD Coastal Bulletin: {marine_res.get('area_name', place_id.title())}",
+                "items": [
+                    f"Weather: {marine_res.get('weather', '')}",
+                    f"Wind: {marine_res.get('wind', '')}",
+                    f"Sea Condition: {marine_res.get('sea_condition', '')}",
+                    f"Fishermen Warning: {fw.get('warning_hi' if language == 'hi' else 'warning_en', '')}",
+                ],
+                "source_title": marine_res.get("source", "IMD Marine Weather / INCOIS"),
+                "source_url": "https://mausam.imd.gov.in",
+                "retrieved_on": marine_res.get("issue_time", "2026-11-17"),
+                "reviewed": True,
+                "reviewed_by": "ashwin",
+                "style": "guidance-card",
+                "marine_data": marine_res,
+            }
+            return [card]
+
         # Normalize domain to hazard key
         hazard_key = "heat_wave" if "heat" in domain.lower() else ("cold_wave" if "cold" in domain.lower() else domain.lower())
 
