@@ -1,0 +1,74 @@
+version: "3.8"
+
+services:
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: weathergpt-caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+      - web
+
+  api:
+    image: ghcr.io/ashwinyadav09/weathergpt-api:latest
+    container_name: weathergpt-api
+    restart: always
+    env_file:
+      - .env.production
+    environment:
+      - ENV=production
+      - DATABASE_URL=postgresql+asyncpg://weathergpt:${DB_PASSWORD}@db:5432/weathergpt
+      - REDIS_URL=redis://redis:6379/0
+      - IMD_ENABLED=false
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  web:
+    image: ghcr.io/ashwinyadav09/weathergpt-web:latest
+    container_name: weathergpt-web
+    restart: always
+
+  db:
+    image: postgis/postgis:16-3.4-alpine
+    container_name: weathergpt-db
+    restart: always
+    environment:
+      POSTGRES_USER: weathergpt
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: weathergpt
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weathergpt -d weathergpt"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: weathergpt-redis
+    restart: always
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  redis_data:
+  caddy_data:
+  caddy_config:

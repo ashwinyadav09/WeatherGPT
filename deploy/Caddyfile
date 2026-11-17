@@ -1,0 +1,28 @@
+weathergpt.in {
+    encode gzip zstd
+
+    # Route /v1 API calls to the FastAPI backend
+    handle /v1/* {
+        reverse_proxy api:8000
+    }
+
+    # Route /healthz and /metrics
+    handle /healthz {
+        reverse_proxy api:8000
+    }
+    handle /metrics {
+        reverse_proxy api:8000
+    }
+
+    # Route everything else to the static Web PWA
+    handle {
+        reverse_proxy web:80
+    }
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+}

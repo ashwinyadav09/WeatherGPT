@@ -208,6 +208,537 @@
         }
       }
     },
+    "/v1/admin/glossary/{lang}": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Get Glossary",
+        "operationId": "get_glossary_v1_admin_glossary__lang__get",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Lang"
+            }
+          },
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Glossary V1 Admin Glossary  Lang  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Update Glossary",
+        "operationId": "update_glossary_v1_admin_glossary__lang__post",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Lang"
+            }
+          },
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateGlossaryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Update Glossary V1 Admin Glossary  Lang  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/templates/{lang}": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Get Templates",
+        "operationId": "get_templates_v1_admin_templates__lang__get",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Lang"
+            }
+          },
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Templates V1 Admin Templates  Lang  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Update Template",
+        "operationId": "update_template_v1_admin_templates__lang__post",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Lang"
+            }
+          },
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTemplateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Update Template V1 Admin Templates  Lang  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/audit": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Get Audit Log",
+        "operationId": "get_audit_log_v1_admin_audit_get",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Audit Log V1 Admin Audit Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/costs": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Get Costs",
+        "operationId": "get_costs_v1_admin_costs_get",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Costs V1 Admin Costs Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/rollback": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Rollback",
+        "operationId": "rollback_v1_admin_rollback_post",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RollbackRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Rollback V1 Admin Rollback Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/advisory": {
       "get": {
         "tags": [
@@ -605,6 +1136,94 @@
           }
         }
       }
+    },
+    "/v1/privacy/consent": {
+      "get": {
+        "tags": [
+          "privacy"
+        ],
+        "summary": "Get Consent Notice",
+        "operationId": "get_consent_notice_v1_privacy_consent_get",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en",
+              "title": "Lang"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Consent Notice V1 Privacy Consent Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/privacy/delete-data": {
+      "post": {
+        "tags": [
+          "privacy"
+        ],
+        "summary": "Delete User Data",
+        "operationId": "delete_user_data_v1_privacy_delete_data_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteDataRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Delete User Data V1 Privacy Delete Data Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -796,6 +1415,34 @@
           "text"
         ],
         "title": "ChatRequest"
+      },
+      "DeleteDataRequest": {
+        "properties": {
+          "session_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Session Id"
+          },
+          "user_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "User Id"
+          }
+        },
+        "type": "object",
+        "title": "DeleteDataRequest"
       },
       "EvidencePacket": {
         "properties": {
@@ -1039,6 +1686,38 @@
         ],
         "title": "ResolveRequest"
       },
+      "RollbackRequest": {
+        "properties": {
+          "editor": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Editor"
+          },
+          "target": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Target"
+          },
+          "language": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Language"
+          },
+          "target_version": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Target Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "editor",
+          "target",
+          "language",
+          "target_version"
+        ],
+        "title": "RollbackRequest"
+      },
       "SpeakRequest": {
         "properties": {
           "text": {
@@ -1086,6 +1765,67 @@
           "value"
         ],
         "title": "Uncertainty"
+      },
+      "UpdateGlossaryRequest": {
+        "properties": {
+          "editor": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Editor"
+          },
+          "terms": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "minProperties": 1,
+            "title": "Terms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "editor",
+          "terms"
+        ],
+        "title": "UpdateGlossaryRequest"
+      },
+      "UpdateTemplateRequest": {
+        "properties": {
+          "editor": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Editor"
+          },
+          "reviewer": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Reviewer"
+          },
+          "hazard": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Hazard"
+          },
+          "severity": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Severity"
+          },
+          "template_text": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Template Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "editor",
+          "reviewer",
+          "hazard",
+          "severity",
+          "template_text"
+        ],
+        "title": "UpdateTemplateRequest"
       },
       "ValidationError": {
         "properties": {
