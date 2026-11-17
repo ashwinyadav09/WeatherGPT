@@ -1,0 +1,3300 @@
+- id: bn-forecast-0001
+  language: bn
+  archetype: forecast
+  question: কাল কলকাতা-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0002
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0003
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0004
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0005
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0006
+  language: bn
+  archetype: forecast
+  question: কাল কলকাতা-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0007
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0008
+  language: bn
+  archetype: forecast
+  question: কাল কলকাতা-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0009
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0010
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0011
+  language: bn
+  archetype: forecast
+  question: কাল শিলিগুড়ি-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0012
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0013
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0014
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0015
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0016
+  language: bn
+  archetype: forecast
+  question: কাল শিলিগুড়ি-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0017
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0018
+  language: bn
+  archetype: forecast
+  question: কাল শিলিগুড়ি-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0019
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0020
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0021
+  language: bn
+  archetype: forecast
+  question: কাল হাওড়া-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0022
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0023
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0024
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0025
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0026
+  language: bn
+  archetype: forecast
+  question: কাল হাওড়া-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0027
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0028
+  language: bn
+  archetype: forecast
+  question: কাল হাওড়া-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0029
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0030
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0031
+  language: bn
+  archetype: forecast
+  question: কাল দার্জিলিং-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0032
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0033
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0034
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0035
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0036
+  language: bn
+  archetype: forecast
+  question: কাল দার্জিলিং-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0037
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0038
+  language: bn
+  archetype: forecast
+  question: কাল দার্জিলিং-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0039
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0040
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0041
+  language: bn
+  archetype: forecast
+  question: কাল আসানসোল-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0042
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0043
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0044
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0045
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0046
+  language: bn
+  archetype: forecast
+  question: কাল আসানসোল-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0047
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0048
+  language: bn
+  archetype: forecast
+  question: কাল আসানসোল-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0049
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0050
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0051
+  language: bn
+  archetype: forecast
+  question: কাল দুর্গাপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0052
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0053
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0054
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0055
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0056
+  language: bn
+  archetype: forecast
+  question: কাল দুর্গাপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0057
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0058
+  language: bn
+  archetype: forecast
+  question: কাল দুর্গাপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0059
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0060
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0061
+  language: bn
+  archetype: forecast
+  question: কাল মালদা-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0062
+  language: bn
+  archetype: forecast
+  question: মালদা-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0063
+  language: bn
+  archetype: forecast
+  question: মালদা-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0064
+  language: bn
+  archetype: forecast
+  question: মালদা-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0065
+  language: bn
+  archetype: forecast
+  question: মালদা-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0066
+  language: bn
+  archetype: forecast
+  question: কাল মালদা-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0067
+  language: bn
+  archetype: forecast
+  question: মালদা-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0068
+  language: bn
+  archetype: forecast
+  question: কাল মালদা-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0069
+  language: bn
+  archetype: forecast
+  question: মালদা-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0070
+  language: bn
+  archetype: forecast
+  question: মালদা-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0071
+  language: bn
+  archetype: forecast
+  question: কাল মুর্শিদাবাদ-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0072
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0073
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0074
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0075
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0076
+  language: bn
+  archetype: forecast
+  question: কাল মুর্শিদাবাদ-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0077
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0078
+  language: bn
+  archetype: forecast
+  question: কাল মুর্শিদাবাদ-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0079
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0080
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0081
+  language: bn
+  archetype: forecast
+  question: কাল বর্ধমান-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0082
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0083
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0084
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0085
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0086
+  language: bn
+  archetype: forecast
+  question: কাল বর্ধমান-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0087
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0088
+  language: bn
+  archetype: forecast
+  question: কাল বর্ধমান-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0089
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0090
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0091
+  language: bn
+  archetype: forecast
+  question: কাল খড়গপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0092
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0093
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0094
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0095
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0096
+  language: bn
+  archetype: forecast
+  question: কাল খড়গপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0097
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0098
+  language: bn
+  archetype: forecast
+  question: কাল খড়গপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0099
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0100
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0101
+  language: bn
+  archetype: forecast
+  question: কাল মেদিনীপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0102
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0103
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0104
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0105
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0106
+  language: bn
+  archetype: forecast
+  question: কাল মেদিনীপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0107
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0108
+  language: bn
+  archetype: forecast
+  question: কাল মেদিনীপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0109
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0110
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0111
+  language: bn
+  archetype: forecast
+  question: কাল জলপাইগুড়ি-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0112
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0113
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0114
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0115
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0116
+  language: bn
+  archetype: forecast
+  question: কাল জলপাইগুড়ি-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0117
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0118
+  language: bn
+  archetype: forecast
+  question: কাল জলপাইগুড়ি-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0119
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0120
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0121
+  language: bn
+  archetype: forecast
+  question: কাল বহরমপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0122
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0123
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0124
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0125
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0126
+  language: bn
+  archetype: forecast
+  question: কাল বহরমপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0127
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0128
+  language: bn
+  archetype: forecast
+  question: কাল বহরমপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0129
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0130
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0131
+  language: bn
+  archetype: forecast
+  question: কাল শান্তিনিকেতন-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0132
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0133
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0134
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0135
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0136
+  language: bn
+  archetype: forecast
+  question: কাল শান্তিনিকেতন-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0137
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0138
+  language: bn
+  archetype: forecast
+  question: কাল শান্তিনিকেতন-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0139
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0140
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0141
+  language: bn
+  archetype: forecast
+  question: কাল কৃষ্ণনগর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0142
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0143
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0144
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0145
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0146
+  language: bn
+  archetype: forecast
+  question: কাল কৃষ্ণনগর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0147
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0148
+  language: bn
+  archetype: forecast
+  question: কাল কৃষ্ণনগর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0149
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0150
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0151
+  language: bn
+  archetype: forecast
+  question: কাল কলকাতা-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0152
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0153
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0154
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0155
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0156
+  language: bn
+  archetype: forecast
+  question: কাল কলকাতা-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0157
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0158
+  language: bn
+  archetype: forecast
+  question: কাল কলকাতা-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0159
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0160
+  language: bn
+  archetype: forecast
+  question: কলকাতা-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0161
+  language: bn
+  archetype: forecast
+  question: কাল শিলিগুড়ি-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0162
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0163
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0164
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0165
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0166
+  language: bn
+  archetype: forecast
+  question: কাল শিলিগুড়ি-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0167
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0168
+  language: bn
+  archetype: forecast
+  question: কাল শিলিগুড়ি-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0169
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0170
+  language: bn
+  archetype: forecast
+  question: শিলিগুড়ি-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0171
+  language: bn
+  archetype: forecast
+  question: কাল হাওড়া-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0172
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0173
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0174
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0175
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0176
+  language: bn
+  archetype: forecast
+  question: কাল হাওড়া-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0177
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0178
+  language: bn
+  archetype: forecast
+  question: কাল হাওড়া-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0179
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0180
+  language: bn
+  archetype: forecast
+  question: হাওড়া-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0181
+  language: bn
+  archetype: forecast
+  question: কাল দার্জিলিং-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0182
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0183
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0184
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0185
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0186
+  language: bn
+  archetype: forecast
+  question: কাল দার্জিলিং-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0187
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0188
+  language: bn
+  archetype: forecast
+  question: কাল দার্জিলিং-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0189
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0190
+  language: bn
+  archetype: forecast
+  question: দার্জিলিং-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0191
+  language: bn
+  archetype: forecast
+  question: কাল আসানসোল-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0192
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0193
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0194
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0195
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0196
+  language: bn
+  archetype: forecast
+  question: কাল আসানসোল-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0197
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0198
+  language: bn
+  archetype: forecast
+  question: কাল আসানসোল-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0199
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0200
+  language: bn
+  archetype: forecast
+  question: আসানসোল-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0201
+  language: bn
+  archetype: forecast
+  question: কাল দুর্গাপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0202
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0203
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0204
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0205
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0206
+  language: bn
+  archetype: forecast
+  question: কাল দুর্গাপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0207
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0208
+  language: bn
+  archetype: forecast
+  question: কাল দুর্গাপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0209
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0210
+  language: bn
+  archetype: forecast
+  question: দুর্গাপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0211
+  language: bn
+  archetype: forecast
+  question: কাল মালদা-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0212
+  language: bn
+  archetype: forecast
+  question: মালদা-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0213
+  language: bn
+  archetype: forecast
+  question: মালদা-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0214
+  language: bn
+  archetype: forecast
+  question: মালদা-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0215
+  language: bn
+  archetype: forecast
+  question: মালদা-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0216
+  language: bn
+  archetype: forecast
+  question: কাল মালদা-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0217
+  language: bn
+  archetype: forecast
+  question: মালদা-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0218
+  language: bn
+  archetype: forecast
+  question: কাল মালদা-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0219
+  language: bn
+  archetype: forecast
+  question: মালদা-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0220
+  language: bn
+  archetype: forecast
+  question: মালদা-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0221
+  language: bn
+  archetype: forecast
+  question: কাল মুর্শিদাবাদ-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0222
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0223
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0224
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0225
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0226
+  language: bn
+  archetype: forecast
+  question: কাল মুর্শিদাবাদ-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0227
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0228
+  language: bn
+  archetype: forecast
+  question: কাল মুর্শিদাবাদ-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0229
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0230
+  language: bn
+  archetype: forecast
+  question: মুর্শিদাবাদ-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0231
+  language: bn
+  archetype: forecast
+  question: কাল বর্ধমান-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0232
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0233
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0234
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0235
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0236
+  language: bn
+  archetype: forecast
+  question: কাল বর্ধমান-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0237
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0238
+  language: bn
+  archetype: forecast
+  question: কাল বর্ধমান-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0239
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0240
+  language: bn
+  archetype: forecast
+  question: বর্ধমান-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0241
+  language: bn
+  archetype: forecast
+  question: কাল খড়গপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0242
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0243
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0244
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0245
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0246
+  language: bn
+  archetype: forecast
+  question: কাল খড়গপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0247
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0248
+  language: bn
+  archetype: forecast
+  question: কাল খড়গপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0249
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0250
+  language: bn
+  archetype: forecast
+  question: খড়গপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0251
+  language: bn
+  archetype: forecast
+  question: কাল মেদিনীপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0252
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0253
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0254
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0255
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0256
+  language: bn
+  archetype: forecast
+  question: কাল মেদিনীপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0257
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0258
+  language: bn
+  archetype: forecast
+  question: কাল মেদিনীপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0259
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0260
+  language: bn
+  archetype: forecast
+  question: মেদিনীপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0261
+  language: bn
+  archetype: forecast
+  question: কাল জলপাইগুড়ি-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0262
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0263
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0264
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0265
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0266
+  language: bn
+  archetype: forecast
+  question: কাল জলপাইগুড়ি-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0267
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0268
+  language: bn
+  archetype: forecast
+  question: কাল জলপাইগুড়ি-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0269
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0270
+  language: bn
+  archetype: forecast
+  question: জলপাইগুড়ি-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0271
+  language: bn
+  archetype: forecast
+  question: কাল বহরমপুর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0272
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0273
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0274
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0275
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0276
+  language: bn
+  archetype: forecast
+  question: কাল বহরমপুর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0277
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0278
+  language: bn
+  archetype: forecast
+  question: কাল বহরমপুর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0279
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0280
+  language: bn
+  archetype: forecast
+  question: বহরমপুর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0281
+  language: bn
+  archetype: forecast
+  question: কাল শান্তিনিকেতন-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0282
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0283
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0284
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0285
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0286
+  language: bn
+  archetype: forecast
+  question: কাল শান্তিনিকেতন-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0287
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0288
+  language: bn
+  archetype: forecast
+  question: কাল শান্তিনিকেতন-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0289
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0290
+  language: bn
+  archetype: forecast
+  question: শান্তিনিকেতন-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0291
+  language: bn
+  archetype: forecast
+  question: কাল কৃষ্ণনগর-এ কি বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0292
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এর কালকের আবহাওয়া কেমন থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0293
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ কালকের তাপমাত্রা কত হবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0294
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ কি কাল ভারী বৃষ্টির সম্ভাবনা আছে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0295
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ কৃষিকাজের জন্য কালকের আবহাওয়া কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0296
+  language: bn
+  archetype: forecast
+  question: কাল কৃষ্ণনগর-এ ছাতা লাগবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0297
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এর আবহাওয়ার পূর্বাভাস কী?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0298
+  language: bn
+  archetype: forecast
+  question: কাল কৃষ্ণনগর-এ কি গরম বেশি থাকবে?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0299
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এ আগামী ২৪ ঘণ্টায় বৃষ্টি হবে কি?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: bn-forecast-0300
+  language: bn
+  archetype: forecast
+  question: কৃষ্ণনগর-এর আগামীকালের বৃষ্টির সম্ভাবনা কেমন?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false

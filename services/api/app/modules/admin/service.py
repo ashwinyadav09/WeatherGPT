@@ -201,5 +201,58 @@ class AdminService:
     def get_audit_log(self) -> list[dict[str, Any]]:
         return self.audit_log
 
+    def get_language_dashboard(self) -> dict[str, Any]:
+        """Returns per-language status and latest evaluation quality metrics."""
+        import json
+
+        lang_config_path = ROOT / "config" / "languages.yaml"
+        languages_meta = []
+        if lang_config_path.exists():
+            try:
+                with lang_config_path.open("r", encoding="utf-8") as f:
+                    data = yaml.safe_load(f) or {}
+                    languages_meta = data.get("languages", [])
+            except Exception:
+                pass
+
+        eval_dir = ROOT / "eval" / "results"
+        latest_evals: dict[str, dict[str, Any]] = {}
+        if eval_dir.exists():
+            for report in sorted(eval_dir.glob("*.json")):
+                try:
+                    with report.open("r", encoding="utf-8") as f:
+                        ev_data = json.load(f)
+                        l_code = ev_data.get("language")
+                        if l_code:
+                            latest_evals[l_code] = {
+                                "total": ev_data.get("total", 0),
+                                "passed": ev_data.get("passed", 0),
+                                "accuracy": ev_data.get("accuracy", 1.0),
+                                "timestamp": ev_data.get("timestamp"),
+                            }
+                except Exception:
+                    pass
+
+        dashboard = []
+        for item in languages_meta:
+            code = item["code"]
+            ev = latest_evals.get(code, {})
+            dashboard.append({
+                "code": code,
+                "name": item.get("native_name", code),
+                "english_name": item.get("english_name", code),
+                "tier": item.get("tier", 2),
+                "enabled": item.get("enabled", False),
+                "asr_provider": item.get("asr_provider", "bhashini"),
+                "tts_provider": item.get("tts_provider", "bhashini"),
+                "eval_total": ev.get("total", 0),
+                "eval_passed": ev.get("passed", 0),
+                "eval_accuracy": ev.get("accuracy", 0.0),
+                "last_evaluated": ev.get("timestamp"),
+                "native_signoff_status": "signed-off" if code in ("en", "hi") else "draft-pending-human-signoff",
+            })
+
+        return {"languages": dashboard, "generated_at": dt.datetime.now(dt.timezone.utc).isoformat()}
+
 
 admin_service = AdminService()

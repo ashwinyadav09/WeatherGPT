@@ -48,7 +48,14 @@ async def run_single_case(agent: ConversationAgent, case: dict[str, Any]) -> dic
 
     # Check says imd not connected
     if expect.get("says_imd_not_connected"):
-        has_disclaimer = "not connected" in full_text.lower() or "कनेक्ट नहीं" in full_text
+        has_disclaimer = (
+            "not connected" in full_text.lower()
+            or "कनेक्ट नहीं" in full_text
+            or "जोडलेला नाही" in full_text
+            or "যুক্ত নয়" in full_text
+            or "కనెక్ట్ కాలేదు" in full_text
+            or "இணைக்கப்படவில்லை" in full_text
+        )
         if not has_disclaimer:
             failures.append("Expected answer to mention that official IMD is not connected")
 
@@ -96,7 +103,15 @@ async def evaluate_language(language: str = "en") -> dict[str, Any]:
         fc_adapter = OpenMeteoForecastAdapter(client=mock_client)
         fc_service = ForecastService()
         fc_service.register_adapter(fc_adapter)
-        agent = ConversationAgent(forecast_service=fc_service)
+
+        from services.api.app.modules.location.adapters.open_meteo_geocoding import OpenMeteoGeocodingAdapter
+        from services.api.app.modules.location.resolver import LocationResolver
+
+        geo_transport = httpx.MockTransport(lambda req: httpx.Response(200, json={"results": []}))
+        geo_client = httpx.AsyncClient(transport=geo_transport)
+        geocoder = OpenMeteoGeocodingAdapter(client=geo_client)
+        loc_resolver = LocationResolver(geocoder=geocoder)
+        agent = ConversationAgent(forecast_service=fc_service, location_resolver=loc_resolver)
     else:
         agent = ConversationAgent()
     results = []

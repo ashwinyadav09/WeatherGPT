@@ -6,18 +6,31 @@ from services.api.app.evidence.models import PlaceModel
 
 
 class OpenMeteoGeocodingAdapter:
-    def __init__(self, base_url: str = "https://geocoding-api.open-meteo.com/v1/search") -> None:
+    def __init__(
+        self,
+        base_url: str = "https://geocoding-api.open-meteo.com/v1/search",
+        client: httpx.AsyncClient | None = None,
+    ) -> None:
         self.base_url = base_url
+        self._client = client
 
     async def search(self, query: str, language: str = "en", count: int = 5) -> list[PlaceModel]:
         params: dict[str, str | int] = {"name": query, "count": count, "language": language}
-        async with httpx.AsyncClient(timeout=5.0) as client:
+        if self._client:
             try:
-                resp = await client.get(self.base_url, params=params)
+                resp = await self._client.get(self.base_url, params=params)
                 resp.raise_for_status()
                 data = resp.json()
             except Exception:
                 return []
+        else:
+            async with httpx.AsyncClient(timeout=5.0) as client:
+                try:
+                    resp = await client.get(self.base_url, params=params)
+                    resp.raise_for_status()
+                    data = resp.json()
+                except Exception:
+                    return []
 
         results: list[PlaceModel] = []
         for r in data.get("results", []):

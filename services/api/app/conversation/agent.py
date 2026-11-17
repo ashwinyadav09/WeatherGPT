@@ -211,6 +211,26 @@ class ConversationAgent:
                     f"{source_display} पूर्वानुमान: {p_name} में कल बारिश {rain_val:.1f} मिमी, तापमान {temp_val:.1f} डिग्री रहेगा। "
                     "कृपया ध्यान दें कि आधिकारिक आईएमडी (IMD) पूर्वानुमान इस पायलट में अभी सीधे कनेक्ट नहीं है।"
                 )
+        elif lang == "mr":
+            answer_text = (
+                f"{source_display} हवामान अंदाजानुसार उद्या {p_name} मध्ये पाऊस {rain_val:.1f} मिमी आणि तापमान {temp_val:.1f} अंश सेल्सिअस राहण्याची शक्यता आहे। "
+                "कृपया लक्षात घ्या की अधिकृत आयएमडी (IMD) अंदाज या पायलटमध्ये अद्याप थेट जोडलेला नाही (not connected)."
+            )
+        elif lang == "bn":
+            answer_text = (
+                f"{source_display} পূর্বাভাস অনুযায়ী আগামীকাল {p_name}-এ বৃষ্টিপাত {rain_val:.1f} মিমি এবং তাপমাত্রা {temp_val:.1f} ডিগ্রি সেলসিয়াস হতে পারে। "
+                "অনুগ্রহ করে মনে রাখবেন যে সরকারি আইএমডি (IMD) পূর্বাভাস এই পাইলটে সরাসরি যুক্ত নয় (not connected)।"
+            )
+        elif lang == "te":
+            answer_text = (
+                f"{source_display} సూచన ప్రకారం రేపు {p_name} లో వర్షం {rain_val:.1f} మి.మీ మరియు ఉష్ణోగ్రత {temp_val:.1f} డిగ్రీల సెల్సియస్ ఉండే అవకాశం ఉంది. "
+                "గమనిక: అధికారిక IMD సూచన ఈ పైలట్‌లో ఇంకా కనెక్ట్ కాలేదు (not connected)."
+            )
+        elif lang == "ta":
+            answer_text = (
+                f"{source_display} வானிலை முன்னறிவிப்பின்படி நாளை {p_name} இல் மழை {rain_val:.1f} மிமீ மற்றும் வெப்பநிலை {temp_val:.1f} டிகிரி செல்சியஸ் பதிவாக வாய்ப்புள்ளது. "
+                "குறிப்பு: அதிகாரப்பூர்வ IMD முன்னறிவிப்பு இந்த பைலட்டில் நேரடியாக இணைக்கப்படவில்லை (not connected)."
+            )
         else:
             answer_text = (
                 f"According to {source_display} forecast, tomorrow in {p_name} expects {rain_val:.1f} mm rain and a temperature of {temp_val:.1f} degC. "
@@ -249,6 +269,38 @@ class ConversationAgent:
             }
             caveat = "आधिकारिक आईएमडी पूर्वानुमान कनेक्ट नहीं है"
             actions = ["प्रति घंटा देखें", "अलर्ट सेट करें"]
+        elif lang == "mr":
+            headline = f"{p_name} हवामान अंदाज"
+            key_values = {
+                "पाऊस": f"{rain_val:.1f} मिमी",
+                "तापमान": f"{temp_val:.1f} अंश सेल्सिअस",
+            }
+            caveat = "अधिकृत आयएमडी अंदाज थेट जोडलेला नाही"
+            actions = ["तासनिहाय अंदाज", "इशारे पहा"]
+        elif lang == "bn":
+            headline = f"{p_name}-এর আবহাওয়া"
+            key_values = {
+                "বৃষ্টি": f"{rain_val:.1f} মিমি",
+                "तापমাত্রা": f"{temp_val:.1f} ডিগ্রি সেলসিয়াস",
+            }
+            caveat = "সরকারি আইएमডি পূর্বাভাস সংযুক্ত নয়"
+            actions = ["ঘণ্টায় পূর্বাভাস", "সতর্কতা দেখুন"]
+        elif lang == "te":
+            headline = f"{p_name} వాతావరణ సమాచారం"
+            key_values = {
+                "వర్షం": f"{rain_val:.1f} మి.మీ",
+                "ఉష్ణోగ్రత": f"{temp_val:.1f} డిగ్రీలు",
+            }
+            caveat = "అధికారిక IMD సూచన ఇంకా కనెక్ట్ కాలేదు"
+            actions = ["గంటల వారీ సమాచారం", "హెచ్చరికలు"]
+        elif lang == "ta":
+            headline = f"{p_name} வானிலை முன்னறிவிப்பு"
+            key_values = {
+                "மழை": f"{rain_val:.1f} மிமீ",
+                "வெப்பநிலை": f"{temp_val:.1f} டிகிரி செல்சியஸ்",
+            }
+            caveat = "அதிகாரப்பூர்வ IMD முன்னறிவிப்பு இணைக்கப்படவில்லை"
+            actions = ["மணிநேர முன்னறிவிப்பு", "எச்சரிக்கைகள்"]
         else:
             headline = f"Weather in {p_name}"
             key_values = {
