@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { AskPage } from './features/ask/AskPage';
+import { AdminPage } from './features/admin/AdminPage';
 
 export const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'ask' | 'alerts' | 'places' | 'more'>('ask');
+  const [activeTab, setActiveTab] = useState<'ask' | 'alerts' | 'places' | 'more' | 'admin'>('ask');
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
@@ -21,12 +22,22 @@ export const App: React.FC = () => {
             <p className="text-sm">Manage Home, Farm, Work locations.</p>
           </div>
         )}
+        {activeTab === 'admin' && <AdminPage />}
         {activeTab === 'more' && (
           <div className="max-w-column mx-auto px-4 py-8 text-slate-700">
             <h2 className="text-xl font-bold text-slate-900 mb-4">About WeatherGPT</h2>
             <p className="text-sm text-slate-600 mb-4 leading-relaxed">
               A grounded, multilingual, voice-first weather assistant for India. A non-commercial, public-interest pilot.
             </p>
+            <div className="mb-4">
+              <button
+                type="button"
+                onClick={() => setActiveTab('admin')}
+                className="text-xs bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold px-3 py-1.5 rounded-lg transition-colors"
+              >
+                Open Admin Console
+              </button>
+            </div>
             <div className="border-t border-slate-200 pt-4 text-xs text-slate-500 space-y-2">
               <p>Sources: Open-Meteo (CC BY 4.0), IMD (official data), NDMA SACHET.</p>
               <p>© WeatherGPT Public Pilot. No ads, no commercial use.</p>
