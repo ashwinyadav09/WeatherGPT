@@ -1,24 +1,130 @@
-# WeatherGPT
+# WeatherGPT 🌦️
 
-A grounded, multilingual, voice-first weather assistant for India: a non-commercial, public-interest website (progressive web app). Three people build it through GitHub, each with their own Antigravity agent: Ashwin (lead), Aman and Pradeep. This repository is the complete starting project: specification, tickets, rules, skills, prompts, seeds, team workflow and GitHub setup. The agents write the code.
+A grounded, multilingual, voice-first weather assistant for India.
+A non-commercial, public-interest pilot delivered as a progressive web app (PWA) with no native app dependencies.
 
-## Start
-1. **Ashwin, once:** follow `docs/github-setup.md` (create the repo, push this folder, fill `team/members.csv`, run `python scripts/github/bootstrap.py`).
-2. **Everyone:** clone the repo, install Docker, Python 3.12, Node.js 20+ and ffmpeg, copy `.env.example` to `.env` and fill in your keys (never paste keys into chat), run `python scripts/dev.py doctor`.
-3. In Antigravity, let routine terminal commands run without asking (sandbox on). Paste your kickoff prompt from `team/prompts/<name>.md`. It works autonomously: ticket after ticket, pull requests, CI, self-repair, ledger.
-4. If a session stops, paste Prompt B from `docs/antigravity-prompts.md`. Other situational prompts (CI red, merge conflict, review, standup, IMD key arrived, final repair, demo pack) are in the same file.
+The LLM explains. Tools supply facts. Official warnings are relayed as issued.
 
-## What is inside
-- `docs/AUTOPILOT.md`: the manual each agent follows. `docs/team.md`: roles, ownership, branches, reviews. `docs/github-setup.md`: one-time GitHub setup.
-- `docs/architecture.md`, `docs/integration-notes.md`, `docs/ui-spec.md`, `docs/eval-and-acceptance.md`, `docs/troubleshooting.md`: the references agents read before they act.
-- `docs/api-keys.md`, `.env.example`, `docs/ml-plan.md`: keys and models. `docs/adr/`: nine decisions. `GLOSSARY.md`.
-- `.scratch/weathergpt/SPEC.md`, `issues/` (22 tickets and `ORDER.md`), `progress/` (one ledger per person; `PROGRESS.md` is generated).
-- `AGENTS.md`, `.agents/rules/`, `.agents/skills/`: always-on rules and repeatable procedures.
-- `seeds/`: starting prompts, tool definitions, glossary, alert templates, UI strings, example golden cases.
-- `team/`: members, assignments, status (IMD key flag), kickoff prompts. `.github/`: CI, templates, CODEOWNERS. `scripts/`: task runner and GitHub bootstrap.
+---
 
-## Human-only steps (agents cannot do these)
-- IMD API key: applied for and pending; when it arrives, Ashwin sets `imd_key_available: yes` in `team/status.md` through a pull request and runs Prompt C.
-- Keys: Bhashini, and Groq or OpenRouter model IDs in `.env`.
-- Native-speaker sign-off for Hindi and every new language; a domain reviewer for advisories; consent and privacy wording.
-- Opening pull requests when `gh` is not set up; production deployment approval.
+## 🏛️ Architecture & The Authority Ladder
+
+Every number in WeatherGPT is backed by an **evidence packet** (source, authority tier, issue time, validity window, place, units, uncertainty, and attribution).
+Answers strictly follow the **Authority Ladder**:
+
+```
+Official Warning (Tier 1: IMD / NDMA SACHET)
+       ▲
+Official Forecast (Tier 2: IMD City / District)
+       ▲
+National Model (Tier 3: NCMRWF / IITM)
+       ▲
+Global Model Guidance (Tier 4: ECMWF IFS / NOAA GFS)
+       ▲
+Aggregator / Fallback (Tier 5: Open-Meteo)
+```
+
+The LLM narrates and translates; **it adds no facts**. If the grounding verifier detects an ungrounded number or hallucination, it immediately falls back to a deterministic template constructed directly from the evidence packets.
+
+```mermaid
+flowchart TD
+    User([User: Web PWA / Voice]) <--> API[FastAPI Gateway]
+    API <--> Conv[Conversation Engine & Verifier]
+    Conv <--> Resolver[Location Resolver: 30+ Seed Places & Geocoding]
+    Conv <--> Forecast[Forecast Service]
+    Conv <--> Grounding[Grounding Verifier]
+    Forecast --> OpenMeteo[Open-Meteo Adapter: CC BY 4.0]
+    Forecast --> IMD[IMD Adapter: Flagged Off until Key Arrives]
+    API <--> Alerts[Alert Pipeline: NDMA SACHET CAP 1.2]
+    API <--> Admin[Admin Console: Glossary & Template Audit]
+    API <--> Privacy[DPDP Act Privacy & Data Deletion]
+    API <--> DB[(PostgreSQL + PostGIS)]
+    API <--> Redis[(Redis Queue & Cache)]
+```
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.12+
+- Git
+- Docker Desktop or Docker Engine
+- Node.js 18+ (for Web frontend build)
+
+### 1. Verify Prerequisites
+```bash
+python scripts/dev.py doctor
+```
+
+### 2. Run Test Suite
+```bash
+python scripts/dev.py test
+```
+
+### 3. Run Lint & Static Analysis
+```bash
+python scripts/dev.py lint
+```
+
+### 4. Run Golden-Set Evaluations
+```bash
+# English golden set (30 cases)
+python scripts/dev.py eval --lang en
+
+# Hindi golden set (300 cases across 30+ Indian cities)
+python scripts/dev.py eval --lang hi
+```
+
+### 5. Run Full Acceptance Gates
+```bash
+python scripts/dev.py acceptance
+```
+
+### 6. Interactive Scripted Demo
+```bash
+python scripts/dev.py demo
+```
+
+---
+
+## 📁 Repository Structure
+```
+├── apps/
+│   └── web/                   # React 18 + TypeScript + Tailwind CSS PWA
+├── config/
+│   ├── models.yaml            # Groq & OpenRouter model selection configs
+│   ├── sources.yaml           # External data sources & authority tiers
+│   └── languages.yaml         # Multilingual tier configurations
+├── deploy/                    # Production deployment pack (Compose + Caddy TLS)
+├── docs/
+│   ├── architecture.md        # Architectural decisions and data flows
+│   ├── runbook.md             # Operator runbook (restarts, outages, backups)
+│   ├── privacy-dpdp.md        # DPDP Act 2023 compliance checklist
+│   └── accessibility-audit.md # WCAG 2.2 AA audit
+├── eval/
+│   ├── golden/                # Golden test sets (en/ and hi/)
+│   ├── fixtures/              # Recorded test fixtures (Open-Meteo, SACHET, IMD)
+│   └── results/               # Acceptance reports and evaluation outputs
+├── infra/
+│   └── k8s/                   # Kubernetes manifests & Blue-Green deployment strategy
+├── packages/
+│   └── contracts/             # Shared JSON Schemas & OpenAPI specifications
+├── seeds/                     # Vetted seeds: glossaries, uncertainty, alert templates
+├── services/
+│   └── api/                   # FastAPI backend, modules, adapters, conversation core
+└── scripts/
+    ├── dev.py                 # Cross-platform developer CLI runner
+    └── tasks/                 # Individual task scripts
+```
+
+---
+
+## 📜 Licences & Non-Commercial Notice
+WeatherGPT is a non-commercial, public-interest research pilot. It contains no advertisements, paid subscription tiers, or resale of source weather data.
+
+All data sources are properly attributed:
+- **Open-Meteo**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+- **NDMA SACHET**: National Disaster Management Authority, Government of India (Open CAP 1.2 Feed)
+- **ECMWF Open Data**: CC BY 4.0
+- **OpenStreetMap**: Open Data Commons Open Database License (ODbL)
