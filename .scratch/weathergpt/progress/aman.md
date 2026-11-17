@@ -5,7 +5,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
 | 01b | Fixtures and spikes | in-review | PR body saved to .scratch/weathergpt/pr/ticket-01b-fixtures-and-spikes.md; human-only: open PR on GitHub (gh not installed) |
-| 05 | Alerts v1 | in-progress | pre-work: based on 01b branch; blocked on 01c merge before full integration |
+| 05 | Alerts v1 | in-review | PR body saved to .scratch/weathergpt/pr/ticket-05-alerts-v1.md; human-only: open PR on GitHub (gh not installed) |
 | 07 | Model plane | todo | |
 | 08 | Real-time integration showcase | todo | |
 | 09 | Climate questions | todo | |
@@ -23,3 +23,5 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 ## Human-only steps open
 
 - **01b**: Open pull request on GitHub at https://github.com/ashwinyadav09/WeatherGPT/pull/new/ticket/01b-fixtures-and-spikes (gh CLI not installed). PR body is at .scratch/weathergpt/pr/ticket-01b-fixtures-and-spikes.md. Reviewer: ashwin.
+- **05**: Open pull request on GitHub at https://github.com/ashwinyadav09/WeatherGPT/pull/new/ticket/05-alerts-v1 (gh CLI not installed). PR body is at .scratch/weathergpt/pr/ticket-05-alerts-v1.md. Reviewer: ashwin.
+- **05**: Native-speaker sign-off for Hindi alert templates in seeds/i18n/alert-templates.yaml.
