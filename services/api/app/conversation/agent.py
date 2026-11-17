@@ -7,6 +7,11 @@ from typing import Any, AsyncGenerator
 
 from pydantic import BaseModel
 
+from services.api.app.conversation.i18n import (
+    check_hindi_glossary,
+    detect_language,
+    get_hindi_rainfall_phrase,
+)
 from services.api.app.conversation.verifier import verify_grounding
 from services.api.app.evidence.models import EvidencePacket
 from services.api.app.gateways.llm.gateway import LLMGateway
@@ -49,6 +54,11 @@ class ConversationAgent:
             },
         }
 
+        # Determine language (auto-detect if auto or not provided)
+        lang = req.language
+        if not lang or lang == "auto":
+            lang = detect_language(req.text)
+
         # 2. Resolve place and get forecast evidence
         from services.api.app.modules.location.resolver import SEED_PLACES
         place = None
@@ -56,15 +66,15 @@ class ConversationAgent:
         for sp in SEED_PLACES:
             if any(n.lower() in req.text.lower() for n in sp.names.values()):
                 place = sp
-                p_name = sp.names.get("en", sp.id.title())
+                p_name = sp.names.get(lang, sp.names.get("en", sp.id.title()))
                 break
 
         if not place:
-            resolved = await self.location_resolver.resolve(req.text, language="en" if req.language == "auto" else req.language)
+            resolved = await self.location_resolver.resolve(req.text, language=lang)
             places_raw = resolved.get("places", [])
             places: list[Any] = places_raw if isinstance(places_raw, list) else []
             place = places[0] if places else None
-            p_name = place.names.get("en", "Pune") if place else "Pune"
+            p_name = place.names.get(lang, place.names.get("en", "Pune")) if place else "Pune"
 
         lat = place.lat if place else 18.5204
         lon = place.lon if place else 73.8567
@@ -100,11 +110,21 @@ class ConversationAgent:
         else:
             source_display = "Official IMD"
 
-        if req.language == "hi":
+        if lang == "hi":
+            rf_phrase = get_hindi_rainfall_phrase(rain_val)
+            rain_phrase = f"{rf_phrase} ({rain_val:.1f} मिमी)"
             answer_text = (
-                f"{source_display} के अनुसार कल {p_name} में {rain_val:.1f} मिमी बारिश की संभावना है और तापमान {temp_val:.1f} डिग्री रहेगा। "
+                f"{source_display} पूर्वानुमान के अनुसार कल {p_name} में {rain_phrase} की संभावना है "
+                f"और तापमान {temp_val:.1f} डिग्री रहेगा। "
                 "कृपया ध्यान दें कि आधिकारिक आईएमडी (IMD) पूर्वानुमान इस पायलट में अभी सीधे कनेक्ट नहीं है।"
             )
+            # Run glossary check
+            glossary_res = check_hindi_glossary(answer_text)
+            if not glossary_res.is_valid:
+                answer_text = (
+                    f"{source_display} पूर्वानुमान: {p_name} में कल बारिश {rain_val:.1f} मिमी, तापमान {temp_val:.1f} डिग्री रहेगा। "
+                    "कृपया ध्यान दें कि आधिकारिक आईएमडी (IMD) पूर्वानुमान इस पायलट में अभी सीधे कनेक्ट नहीं है।"
+                )
         else:
             answer_text = (
                 f"According to {source_display} forecast, tomorrow in {p_name} expects {rain_val:.1f} mm rain and a temperature of {temp_val:.1f} degC. "
@@ -115,10 +135,16 @@ class ConversationAgent:
         v_result = verify_grounding(answer_text, packets)
         if not v_result:
             # Fallback directly to template built from evidence
-            answer_text = (
-                f"According to {source_display} forecast for {p_name}: rain {rain_val:.1f} mm, "
-                f"temperature {temp_val:.1f} degC. Note: Official IMD forecast is not connected in this pilot."
-            )
+            if lang == "hi":
+                answer_text = (
+                    f"{source_display} पूर्वानुमान: {p_name} में कल बारिश {rain_val:.1f} मिमी, तापमान {temp_val:.1f} डिग्री रहेगा। "
+                    "कृपया ध्यान दें कि आधिकारिक आईएमडी (IMD) पूर्वानुमान इस पायलट में अभी सीधे कनेक्ट नहीं है।"
+                )
+            else:
+                answer_text = (
+                    f"According to {source_display} forecast for {p_name}: rain {rain_val:.1f} mm, "
+                    f"temperature {temp_val:.1f} degC. Note: Official IMD forecast is not connected in this pilot."
+                )
 
         # 7. Stream token events
         words = answer_text.split(" ")
@@ -129,17 +155,31 @@ class ConversationAgent:
             }
 
         # 8. Stream card event
+        if lang == "hi":
+            headline = f"{p_name} का मौसम"
+            key_values = {
+                "बारिश": f"{rain_val:.1f} मिमी",
+                "तापमान": f"{temp_val:.1f} डिग्री",
+            }
+            caveat = "आधिकारिक आईएमडी पूर्वानुमान कनेक्ट नहीं है"
+            actions = ["प्रति घंटा देखें", "अलर्ट सेट करें"]
+        else:
+            headline = f"Weather in {p_name}"
+            key_values = {
+                "Rain": f"{rain_val:.1f} mm",
+                "Temperature": f"{temp_val:.1f} degC",
+            }
+            caveat = "Official IMD forecast is not connected"
+            actions = ["View Hourly", "Set Alert"]
+
         yield {
             "event": "card",
             "data": {
-                "headline": f"Weather in {p_name}",
-                "key_values": {
-                    "Rain": f"{rain_val:.1f} mm",
-                    "Temperature": f"{temp_val:.1f} degC",
-                },
+                "headline": headline,
+                "key_values": key_values,
                 "source_line": f"Data: {source_display} (CC BY 4.0)",
-                "caveat": "Official IMD forecast is not connected",
-                "actions": ["View Hourly", "Set Alert"],
+                "caveat": caveat,
+                "actions": actions,
             },
         }
 

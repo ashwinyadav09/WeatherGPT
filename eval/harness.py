@@ -48,7 +48,8 @@ async def run_single_case(agent: ConversationAgent, case: dict[str, Any]) -> dic
 
     # Check says imd not connected
     if expect.get("says_imd_not_connected"):
-        if "not connected" not in full_text.lower():
+        has_disclaimer = "not connected" in full_text.lower() or "कनेक्ट नहीं" in full_text
+        if not has_disclaimer:
             failures.append("Expected answer to mention that official IMD is not connected")
 
     # Check must_not

@@ -1,0 +1,1200 @@
+- id: hi-codemixed-001
+  language: hi
+  archetype: forecast
+  question: Kya kal Pune me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-002
+  language: hi
+  archetype: forecast
+  question: Kya kal Mumbai me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-003
+  language: hi
+  archetype: forecast
+  question: Kya kal Delhi me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-004
+  language: hi
+  archetype: forecast
+  question: Kya kal Bengaluru me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-005
+  language: hi
+  archetype: forecast
+  question: Kya kal Chennai me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-006
+  language: hi
+  archetype: forecast
+  question: Kya kal Kolkata me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-007
+  language: hi
+  archetype: forecast
+  question: Kya kal Ahmedabad me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-008
+  language: hi
+  archetype: forecast
+  question: Kya kal Jaipur me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-009
+  language: hi
+  archetype: forecast
+  question: Kya kal Lucknow me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-010
+  language: hi
+  archetype: forecast
+  question: Kya kal Patna me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-011
+  language: hi
+  archetype: forecast
+  question: Kya kal Hyderabad me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-012
+  language: hi
+  archetype: forecast
+  question: Kya kal Chandigarh me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-013
+  language: hi
+  archetype: forecast
+  question: Kya kal Bhopal me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-014
+  language: hi
+  archetype: forecast
+  question: Kya kal Indore me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-015
+  language: hi
+  archetype: forecast
+  question: Kya kal Nagpur me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-016
+  language: hi
+  archetype: forecast
+  question: Kya kal Varanasi me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-017
+  language: hi
+  archetype: forecast
+  question: Kya kal Agra me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-018
+  language: hi
+  archetype: forecast
+  question: Kya kal Surat me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-019
+  language: hi
+  archetype: forecast
+  question: Kya kal Kochi me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-020
+  language: hi
+  archetype: forecast
+  question: Kya kal Dehradun me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-021
+  language: hi
+  archetype: forecast
+  question: Kya kal Guwahati me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-022
+  language: hi
+  archetype: forecast
+  question: Kya kal Shimla me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-023
+  language: hi
+  archetype: forecast
+  question: Kya kal Srinagar me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-024
+  language: hi
+  archetype: forecast
+  question: Kya kal Ranchi me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-025
+  language: hi
+  archetype: forecast
+  question: Kya kal Bhubaneswar me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-026
+  language: hi
+  archetype: forecast
+  question: Kya kal Amritsar me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-027
+  language: hi
+  archetype: forecast
+  question: Kya kal Visakhapatnam me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-028
+  language: hi
+  archetype: forecast
+  question: Kya kal Kanpur me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-029
+  language: hi
+  archetype: forecast
+  question: Kya kal Thiruvananthapuram me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-030
+  language: hi
+  archetype: forecast
+  question: Kya kal Vadodara me barish hogi?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-031
+  language: hi
+  archetype: forecast
+  question: Pune me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-032
+  language: hi
+  archetype: forecast
+  question: Mumbai me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-033
+  language: hi
+  archetype: forecast
+  question: Delhi me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-034
+  language: hi
+  archetype: forecast
+  question: Bengaluru me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-035
+  language: hi
+  archetype: forecast
+  question: Chennai me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-036
+  language: hi
+  archetype: forecast
+  question: Kolkata me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-037
+  language: hi
+  archetype: forecast
+  question: Ahmedabad me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-038
+  language: hi
+  archetype: forecast
+  question: Jaipur me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-039
+  language: hi
+  archetype: forecast
+  question: Lucknow me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-040
+  language: hi
+  archetype: forecast
+  question: Patna me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-041
+  language: hi
+  archetype: forecast
+  question: Hyderabad me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-042
+  language: hi
+  archetype: forecast
+  question: Chandigarh me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-043
+  language: hi
+  archetype: forecast
+  question: Bhopal me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-044
+  language: hi
+  archetype: forecast
+  question: Indore me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-045
+  language: hi
+  archetype: forecast
+  question: Nagpur me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-046
+  language: hi
+  archetype: forecast
+  question: Varanasi me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-047
+  language: hi
+  archetype: forecast
+  question: Agra me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-048
+  language: hi
+  archetype: forecast
+  question: Surat me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-049
+  language: hi
+  archetype: forecast
+  question: Kochi me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-050
+  language: hi
+  archetype: forecast
+  question: Dehradun me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-051
+  language: hi
+  archetype: forecast
+  question: Guwahati me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-052
+  language: hi
+  archetype: forecast
+  question: Shimla me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-053
+  language: hi
+  archetype: forecast
+  question: Srinagar me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-054
+  language: hi
+  archetype: forecast
+  question: Ranchi me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-055
+  language: hi
+  archetype: forecast
+  question: Bhubaneswar me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-056
+  language: hi
+  archetype: forecast
+  question: Amritsar me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-057
+  language: hi
+  archetype: forecast
+  question: Visakhapatnam me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-058
+  language: hi
+  archetype: forecast
+  question: Kanpur me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-059
+  language: hi
+  archetype: forecast
+  question: Thiruvananthapuram me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-060
+  language: hi
+  archetype: forecast
+  question: Vadodara me kal rain expect kar sakte hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-061
+  language: hi
+  archetype: forecast
+  question: Will it rain in Pune tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-062
+  language: hi
+  archetype: forecast
+  question: Will it rain in Mumbai tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-063
+  language: hi
+  archetype: forecast
+  question: Will it rain in Delhi tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-064
+  language: hi
+  archetype: forecast
+  question: Will it rain in Bengaluru tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-065
+  language: hi
+  archetype: forecast
+  question: Will it rain in Chennai tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-066
+  language: hi
+  archetype: forecast
+  question: Will it rain in Kolkata tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-067
+  language: hi
+  archetype: forecast
+  question: Will it rain in Ahmedabad tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-068
+  language: hi
+  archetype: forecast
+  question: Will it rain in Jaipur tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-069
+  language: hi
+  archetype: forecast
+  question: Will it rain in Lucknow tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-070
+  language: hi
+  archetype: forecast
+  question: Will it rain in Patna tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-071
+  language: hi
+  archetype: forecast
+  question: Will it rain in Hyderabad tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-072
+  language: hi
+  archetype: forecast
+  question: Will it rain in Chandigarh tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-073
+  language: hi
+  archetype: forecast
+  question: Will it rain in Bhopal tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-074
+  language: hi
+  archetype: forecast
+  question: Will it rain in Indore tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-075
+  language: hi
+  archetype: forecast
+  question: Will it rain in Nagpur tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-076
+  language: hi
+  archetype: forecast
+  question: Will it rain in Varanasi tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-077
+  language: hi
+  archetype: forecast
+  question: Will it rain in Agra tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-078
+  language: hi
+  archetype: forecast
+  question: Will it rain in Surat tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-079
+  language: hi
+  archetype: forecast
+  question: Will it rain in Kochi tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-080
+  language: hi
+  archetype: forecast
+  question: Will it rain in Dehradun tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-081
+  language: hi
+  archetype: forecast
+  question: Will it rain in Guwahati tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-082
+  language: hi
+  archetype: forecast
+  question: Will it rain in Shimla tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-083
+  language: hi
+  archetype: forecast
+  question: Will it rain in Srinagar tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-084
+  language: hi
+  archetype: forecast
+  question: Will it rain in Ranchi tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-085
+  language: hi
+  archetype: forecast
+  question: Will it rain in Bhubaneswar tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-086
+  language: hi
+  archetype: forecast
+  question: Will it rain in Amritsar tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-087
+  language: hi
+  archetype: forecast
+  question: Will it rain in Visakhapatnam tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-088
+  language: hi
+  archetype: forecast
+  question: Will it rain in Kanpur tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-089
+  language: hi
+  archetype: forecast
+  question: Will it rain in Thiruvananthapuram tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-090
+  language: hi
+  archetype: forecast
+  question: Will it rain in Vadodara tomorrow kya?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-091
+  language: hi
+  archetype: forecast
+  question: Pune me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-092
+  language: hi
+  archetype: forecast
+  question: Mumbai me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-093
+  language: hi
+  archetype: forecast
+  question: Delhi me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-094
+  language: hi
+  archetype: forecast
+  question: Bengaluru me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-095
+  language: hi
+  archetype: forecast
+  question: Chennai me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-096
+  language: hi
+  archetype: forecast
+  question: Kolkata me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-097
+  language: hi
+  archetype: forecast
+  question: Ahmedabad me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-098
+  language: hi
+  archetype: forecast
+  question: Jaipur me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-099
+  language: hi
+  archetype: forecast
+  question: Lucknow me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false
+- id: hi-codemixed-100
+  language: hi
+  archetype: forecast
+  question: Patna me kal barish ke kitne chance hain?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    - गारंटी
+    refusal: false

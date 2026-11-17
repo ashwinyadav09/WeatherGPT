@@ -315,7 +315,7 @@ class LocationResolver:
         q_lower = query.lower().strip()
         matched = [
             p for p in SEED_PLACES
-            if any(q_lower in name.lower() for name in p.names.values())
+            if any(name.lower() in q_lower or q_lower in name.lower() for name in p.names.values())
         ]
         if matched:
             return matched
