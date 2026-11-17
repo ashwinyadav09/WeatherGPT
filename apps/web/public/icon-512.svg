@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#1B7F3B"/>
+  <path d="M130 320 C130 270, 185 230, 250 230 C305 230, 350 255, 365 295 C390 295, 415 315, 415 345 C415 378, 390 400, 365 400 L145 400 C110 400, 95 375, 95 345 C95 320, 110 295, 130 295 Z" fill="#FFFFFF"/>
+  <circle cx="335" cy="190" r="60" fill="#F2C200"/>
+  <text x="256" y="465" font-family="system-ui, sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF" text-anchor="middle">WeatherGPT</text>
+</svg>

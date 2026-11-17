@@ -4,7 +4,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
-| 01c | Web shell | todo | |
+| 01c | Web shell | in-progress | Building Vite/React web shell, design tokens, components, i18n, mock API |
 | 03 | Places real people say | todo | |
 | 20 | Website experience (PWA, offline, data saver, sharing, privacy) | todo | |
 | 06 | Voice v1 (Hindi) | todo | |
