@@ -1,0 +1,10 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html#highway-nowcast",
+  "_recorded_at": "2026-11-17T06:00:00Z",
+  "highway_no": "NH-48",
+  "stretch": "Mumbai - Pune Expressway",
+  "issue_time": "2026-11-17 14:00 IST",
+  "valid_until": "2026-11-17 18:00 IST",
+  "condition": "Light rain and wet surface near Khandala Ghat. Caution advised due to slippery road."
+}

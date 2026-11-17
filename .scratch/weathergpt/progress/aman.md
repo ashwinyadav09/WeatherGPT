@@ -4,7 +4,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
-| 01b | Fixtures and spikes | todo | |
+| 01b | Fixtures and spikes | in-progress | |
 | 05 | Alerts v1 | todo | |
 | 07 | Model plane | todo | |
 | 08 | Real-time integration showcase | todo | |

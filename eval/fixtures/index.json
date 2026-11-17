@@ -1,0 +1,722 @@
+[
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/alert_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://sachet.ndma.gov.in",
+    "hazard": "Thunderstorm",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_01_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794853111405010",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_02_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794850780088010",
+    "hazard": "Thunderstorm with Lightning",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_03_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794833494909010",
+    "hazard": "Light Thunderstorms",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_04_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794822213748010",
+    "hazard": "Light Thunderstorms",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_05_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794808686215038",
+    "hazard": "Squally",
+    "level": "red"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_06_alert.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794805423229008",
+    "hazard": "SDMA Alert",
+    "level": "orange"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_07_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794791850683041",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_08_alert.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794791847032007",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_09_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794782079959007",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_10_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794781934911010",
+    "hazard": "Light Thunderstorms",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_11_alert.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794781980746007",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_12_alert.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794777328423007",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_13_alert.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794772193063007",
+    "hazard": "Light Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_14_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794745524167009",
+    "hazard": "Thunderstorm with Lightning",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_15_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794740880003009",
+    "hazard": "Thunderstorm with Lightning",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_16_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794738483089041",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_17_alert.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794738481839007",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_18_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794735414687009",
+    "hazard": "Thunderstorm with Lightning",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_19_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794728982581009",
+    "hazard": "Thunderstorm with Lightning",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_20_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794728723301009",
+    "hazard": "Thunderstorm with Lightning",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_21_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794728624051041",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_22_alert.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794728622884007",
+    "hazard": "Moderate Rain",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_23_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794725545573028",
+    "hazard": "Thunderstorm",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_24_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794726140255038",
+    "hazard": "Squally",
+    "level": "red"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_25_update.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794723722587028",
+    "hazard": "Thunderstorm with Lightning",
+    "level": "yellow"
+  },
+  {
+    "source": "sachet",
+    "file": "eval/fixtures/sachet/sachet_synthetic_cyclone.json",
+    "provenance": "synthetic",
+    "date": "2026-11-17T16:39:25.433127+00:00",
+    "url": "https://sachet.ndma.gov.in (modelled on IMD RSMC New Delhi tropical cyclone bulletin structure)",
+    "hazard": "Very Severe Cyclonic Storm",
+    "level": "red"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/bengaluru_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=12.9716&longitude=77.5946&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/bengaluru_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=12.9716&longitude=77.5946&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/bengaluru_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Bengaluru&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/chennai_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=13.0827&longitude=80.2707&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/chennai_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=13.0827&longitude=80.2707&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/chennai_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Chennai&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/delhi_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=28.6139&longitude=77.209&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/delhi_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=28.6139&longitude=77.209&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/delhi_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Delhi&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/guwahati_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=26.1445&longitude=91.7362&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/guwahati_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=26.1445&longitude=91.7362&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/guwahati_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Guwahati&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/hyderabad_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=17.385&longitude=78.4867&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/hyderabad_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=17.385&longitude=78.4867&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/hyderabad_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Hyderabad&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/jaipur_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=26.9124&longitude=75.7873&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/jaipur_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=26.9124&longitude=75.7873&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/jaipur_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Jaipur&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/kolkata_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=22.5726&longitude=88.3639&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/kolkata_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=22.5726&longitude=88.3639&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/kolkata_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Kolkata&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/mumbai_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=19.076&longitude=72.8777&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/mumbai_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=19.076&longitude=72.8777&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/mumbai_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Mumbai&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/pune_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=18.5204&longitude=73.8567&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/pune_forecast.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-10T05:30:00Z",
+    "url": "https://open-meteo.com/en/docs"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/pune_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Pune&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/shimla_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=31.1048&longitude=77.1734&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/shimla_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=31.1048&longitude=77.1734&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/shimla_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Shimla&language=hi&count=5"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/varanasi_archive.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=25.3176&longitude=82.9739&start_date=2026-10-01&end_date=2026-10-07&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Asia%2FKolkata"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/varanasi_forecast.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://api.open-meteo.com/v1/forecast?latitude=25.3176&longitude=82.9739&hourly=temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,precipitation&timezone=Asia%2FKolkata&forecast_days=10"
+  },
+  {
+    "source": "open_meteo",
+    "file": "eval/fixtures/open_meteo/varanasi_geocoding.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:39:38.532242+00:00",
+    "url": "https://geocoding-api.open-meteo.com/v1/search?name=Varanasi&language=hi&count=5"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vabb_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/metar?ids=VABB&format=json",
+    "station": "VABB"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vabb_taf.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/taf?ids=VABB&format=json",
+    "station": "VABB"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vecc_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/metar?ids=VECC&format=json",
+    "station": "VECC"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vecc_taf.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/taf?ids=VECC&format=json",
+    "station": "VECC"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vidp_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/metar?ids=VIDP&format=json",
+    "station": "VIDP"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vidp_taf.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/taf?ids=VIDP&format=json",
+    "station": "VIDP"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vobl_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/metar?ids=VOBL&format=json",
+    "station": "VOBL"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vobl_taf.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/taf?ids=VOBL&format=json",
+    "station": "VOBL"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vomm_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/metar?ids=VOMM&format=json",
+    "station": "VOMM"
+  },
+  {
+    "source": "aviationweather",
+    "file": "eval/fixtures/aviation/vomm_taf.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://aviationweather.gov/api/data/taf?ids=VOMM&format=json",
+    "station": "VOMM"
+  },
+  {
+    "source": "iem",
+    "file": "eval/fixtures/iem/vabb_iem_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=VABB&data=tmpf&data=relh&data=sknt&data=drct&year1=2026&month1=11&day1=1&year2=2026&month2=11&day2=5&tz=Etc/UTC&format=onlycomma",
+    "station": "VABB"
+  },
+  {
+    "source": "iem",
+    "file": "eval/fixtures/iem/vecc_iem_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=VECC&data=tmpf&data=relh&data=sknt&data=drct&year1=2026&month1=11&day1=1&year2=2026&month2=11&day2=5&tz=Etc/UTC&format=onlycomma",
+    "station": "VECC"
+  },
+  {
+    "source": "iem",
+    "file": "eval/fixtures/iem/vidp_iem_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=VIDP&data=tmpf&data=relh&data=sknt&data=drct&year1=2026&month1=11&day1=1&year2=2026&month2=11&day2=5&tz=Etc/UTC&format=onlycomma",
+    "station": "VIDP"
+  },
+  {
+    "source": "iem",
+    "file": "eval/fixtures/iem/vobl_iem_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=VOBL&data=tmpf&data=relh&data=sknt&data=drct&year1=2026&month1=11&day1=1&year2=2026&month2=11&day2=5&tz=Etc/UTC&format=onlycomma",
+    "station": "VOBL"
+  },
+  {
+    "source": "iem",
+    "file": "eval/fixtures/iem/vomm_iem_metar.json",
+    "provenance": "live-recorded",
+    "date": "2026-11-17T16:40:15.747537+00:00",
+    "url": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py?station=VOMM&data=tmpf&data=relh&data=sknt&data=drct&year1=2026&month1=11&day1=1&year2=2026&month2=11&day2=5&tz=Etc/UTC&format=onlycomma",
+    "station": "VOMM"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/agromet_advisory_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#agromet"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/arg_observation_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#arg-data"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/aws_observation_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#aws-data"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/city_forecast_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17",
+    "url": "https://api.imd.gov.in/public/api_reference.html"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/current_weather_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#current-weather"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/cyclone_track_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#cyclone-track"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/fishermen_warning_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#fishermen-warning"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/highway_nowcast_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#highway-nowcast"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/mausamgram_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#mausamgram"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/nowcast_district_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#nowcast-district"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/nowcast_station_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#nowcast-station"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/port_warning_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#port-warning"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/river_basin_qpf_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#river-basin-qpf"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/sea_area_bulletin_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#sea-area-bulletin"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/seasonal_forecast_sample.json",
+    "provenance": "spec-only",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#seasonal-forecast"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/sun_moon_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#sun-moon"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/warnings_district_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#district-warnings"
+  },
+  {
+    "source": "imd",
+    "file": "eval/fixtures/imd/warnings_subdivision_sample.json",
+    "provenance": "documented-sample",
+    "date": "2026-11-17T06:00:00Z",
+    "url": "https://api.imd.gov.in/public/api_reference.html#subdivision-warnings"
+  }
+]

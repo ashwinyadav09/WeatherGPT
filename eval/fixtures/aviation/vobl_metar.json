@@ -1,0 +1,31 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://aviationweather.gov/api/data/metar?ids=VOBL&format=json",
+  "_recorded_at": "2026-11-17T16:40:15.747537+00:00",
+  "station": "VOBL",
+  "name": "Bengaluru Kempegowda Airport",
+  "data": [
+    {
+      "icaoId": "VOBL",
+      "receiptTime": "2026-11-17T16:32:12.148Z",
+      "obsTime": 1794933000,
+      "reportTime": "2026-11-17T16:30:00.000Z",
+      "temp": 20,
+      "dewp": 12,
+      "wdir": 60,
+      "wspd": 4,
+      "visib": 3.73,
+      "altim": 1018,
+      "qcField": 16,
+      "metarType": "METAR",
+      "rawOb": "METAR VOBL 171630Z 06004KT 6000 NSC 20/12 Q1018 NOSIG",
+      "lat": 13.205,
+      "lon": 77.704,
+      "elev": 908,
+      "name": "Bangaluru Intl, KA, IN",
+      "cover": "CLR",
+      "clouds": [],
+      "fltCat": "MVFR"
+    }
+  ]
+}

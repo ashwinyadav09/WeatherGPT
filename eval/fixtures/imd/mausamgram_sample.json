@@ -1,0 +1,39 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html#mausamgram",
+  "_recorded_at": "2026-11-17T06:00:00Z",
+  "lat": 18.52,
+  "lon": 73.86,
+  "model": "WRF-IMD 3km",
+  "run_time": "2026-11-17T00:00:00Z",
+  "steps": [
+    {
+      "step_hour": 3,
+      "valid_utc": "2026-11-17T03:00:00Z",
+      "temp_2m": 24.1,
+      "rain_accum_mm": 0.0,
+      "rh": 72
+    },
+    {
+      "step_hour": 6,
+      "valid_utc": "2026-11-17T06:00:00Z",
+      "temp_2m": 28.5,
+      "rain_accum_mm": 0.0,
+      "rh": 55
+    },
+    {
+      "step_hour": 9,
+      "valid_utc": "2026-11-17T09:00:00Z",
+      "temp_2m": 29.8,
+      "rain_accum_mm": 0.2,
+      "rh": 50
+    },
+    {
+      "step_hour": 12,
+      "valid_utc": "2026-11-17T12:00:00Z",
+      "temp_2m": 26.4,
+      "rain_accum_mm": 1.8,
+      "rh": 68
+    }
+  ]
+}

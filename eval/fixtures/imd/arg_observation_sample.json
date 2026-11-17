@@ -1,0 +1,11 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html#arg-data",
+  "_recorded_at": "2026-11-17T06:00:00Z",
+  "station_id": "ARG_HAVELI",
+  "station_name": "HAVELI",
+  "district": "PUNE",
+  "timestamp_utc": "2026-11-17T08:30:00Z",
+  "rainfall_today_mm": 1.5,
+  "battery_v": 12.4
+}

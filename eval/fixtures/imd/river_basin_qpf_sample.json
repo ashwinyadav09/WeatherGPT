@@ -1,0 +1,11 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html#river-basin-qpf",
+  "_recorded_at": "2026-11-17T06:00:00Z",
+  "basin_name": "KRISHNA",
+  "sub_basin": "UPPER KRISHNA",
+  "issue_date": "2026-11-17",
+  "qpf_day1": "0.1 - 10.0 mm",
+  "qpf_day2": "0.0 mm",
+  "qpf_day3": "0.0 mm"
+}

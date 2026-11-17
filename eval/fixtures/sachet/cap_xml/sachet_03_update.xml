@@ -1,0 +1,78 @@
+<cap:alert xmlns:cap="urn:oasis:names:tc:emergency:cap:1.2">
+<cap:identifier>IN-1794833494909010_10</cap:identifier>
+<cap:sender>Assam-SDMA</cap:sender>
+<cap:sent>2026-11-16T18:24:17+05:30</cap:sent>
+<cap:status>Actual</cap:status>
+<cap:msgType>Update</cap:msgType>
+<cap:scope>Public</cap:scope>
+<cap:restriction/>
+<cap:addresses/>
+<cap:note/>
+<cap:references>IMD-Guwahati,IN-1794833494909010_44,2026-11-16T18:21:05+05:30</cap:references>
+<cap:incidents/>
+<cap:info>
+<cap:language>en-IN</cap:language>
+<cap:category>Met</cap:category>
+<cap:event>Light Thunderstorms</cap:event>
+<cap:urgency>Expected</cap:urgency>
+<cap:severity>Moderate</cap:severity>
+<cap:certainty>Likely</cap:certainty>
+<cap:audience>1</cap:audience>
+<cap:effective>2026-11-16T18:19:00+05:30</cap:effective>
+<cap:onset>2026-11-16T18:24:17+05:30</cap:onset>
+<cap:expires>2026-11-16T21:19:00+05:30</cap:expires>
+<cap:headline>IMD Guwahati has issued forecast for Light Thunderstorms and light to moderate rain which is very likely to occur at many places over Baksa, Biswanath, Chirang, Dhemaji, Dibrugarh, Lakhimpur, Sonitpur, Tamulpur, Tinsukia and Udalguri in next 3 hours. Issued in Public Interest by ASDMA.</cap:headline>
+<cap:description/>
+<cap:instruction/>
+<cap:contact/>
+<cap:parameter>
+<cap:valueName>Polygon URL</cap:valueName>
+<cap:value>https://sachet.ndma.gov.in/cap_public_website/FetchPolygonXMLFile?identifier=1794833494909010</cap:value>
+</cap:parameter>
+<cap:area>
+<cap:areaDesc>10 districts of Assam</cap:areaDesc>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>284</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>616</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>295</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>302</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>617</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>612</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>705</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>756</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>286</cap:value>
+</cap:geocode>
+<cap:geocode>
+<cap:valueName>LGD District Code</cap:valueName>
+<cap:value>301</cap:value>
+</cap:geocode>
+<cap:altitude>0</cap:altitude>
+<cap:ceiling>0</cap:ceiling>
+</cap:area>
+</cap:info>
+</cap:alert>

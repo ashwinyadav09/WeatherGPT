@@ -1,0 +1,29 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794850780088010",
+  "_recorded_at": "2026-11-17T16:39:25.433127+00:00",
+  "id": "urn:oid:2.49.0.1.356.sachet.IN.1794850780088010.10",
+  "sender": "Assam-SDMA",
+  "sent": "2026-11-16T23:12:48+05:30",
+  "status": "Actual",
+  "msg_type": "Update",
+  "hazard": "Thunderstorm with Lightning",
+  "severity": "Moderate",
+  "urgency": "Expected",
+  "certainty": "Likely",
+  "onset": "2026-11-16T23:12:48+05:30",
+  "expires": "2026-11-17T02:04:00+05:30",
+  "areas": [
+    {
+      "areaDesc": "Kamrup,Kamrup Metropolitan districts of Assam",
+      "polygon": ""
+    }
+  ],
+  "text_by_language": {
+    "en": "IMD Guwahati has issued forecast for Thunderstorm with Lightning which is very likely to occur at a few places over Kamrup and Kamrup Metropolitan in next 3 hours. Issued in Public Interest by ASDMA.",
+    "hi": "Thunderstorm with Lightning: IMD Guwahati has issued forecast for Thunderstorm with Lightning which is very likely to occur at a few places over Kamrup and Kamrup Metropolitan in next 3 hours. Issued in Public Interest by ASDMA."
+  },
+  "source_url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1794850780088010",
+  "authority_tier": 1,
+  "level": "yellow"
+}

@@ -1,0 +1,41 @@
+{
+  "_provenance": "live-recorded",
+  "_source": "https://aviationweather.gov/api/data/metar?ids=VECC&format=json",
+  "_recorded_at": "2026-11-17T16:40:15.747537+00:00",
+  "station": "VECC",
+  "name": "Kolkata Netaji Subhash Chandra Bose Airport",
+  "data": [
+    {
+      "icaoId": "VECC",
+      "receiptTime": "2026-11-17T16:31:31.625Z",
+      "obsTime": 1794933000,
+      "reportTime": "2026-11-17T16:30:00.000Z",
+      "temp": 25,
+      "dewp": 16,
+      "wdir": 20,
+      "wspd": 7,
+      "visib": 1.49,
+      "altim": 1016,
+      "qcField": 16,
+      "wxString": "HZ",
+      "metarType": "METAR",
+      "rawOb": "METAR VECC 171630Z 02007KT 2400 HZ SCT020 SCT100 25/16 Q1016 NOSIG",
+      "lat": 22.651,
+      "lon": 88.445,
+      "elev": 11,
+      "name": "Kolkata/Bose Intl, WB, IN",
+      "cover": "SCT",
+      "clouds": [
+        {
+          "cover": "SCT",
+          "base": 2000
+        },
+        {
+          "cover": "SCT",
+          "base": 10000
+        }
+      ],
+      "fltCat": "IFR"
+    }
+  ]
+}
