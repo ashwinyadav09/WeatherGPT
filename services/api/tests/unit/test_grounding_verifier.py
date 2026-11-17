@@ -61,3 +61,15 @@ def test_grounding_verifier_no_evidence_with_numbers():
     text = "It will rain 25 mm."
     res = verify_grounding(text, [])
     assert bool(res) is False
+
+
+def test_grounding_verifier_adversarial_tampering():
+    # Evidence says rain is 5.0 mm and temp is 28.5 degC
+    packet = make_packet(temp=28.5, rain=5.0)
+
+    # Adversarial tampering: subtly altered numbers (e.g. 15.0 mm instead of 5.0 mm, 38 degC instead of 28.5 degC)
+    adversarial_answer = "According to Open-Meteo, tomorrow in Pune expects 15.0 mm heavy rain and a high of 38.0 degC."
+    res = verify_grounding(adversarial_answer, [packet])
+    assert bool(res) is False
+    assert any("15" in r for r in res.reasons)
+    assert any("38" in r for r in res.reasons)

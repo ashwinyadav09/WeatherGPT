@@ -80,7 +80,24 @@ async def evaluate_language(language: str = "en") -> dict[str, Any]:
             if isinstance(data, list):
                 cases.extend(data)
 
-    agent = ConversationAgent()
+    # Use recorded fixture in evaluation harness for deterministic, fast offline evaluation
+    fixture_path = ROOT / "eval" / "fixtures" / "open_meteo" / "pune_forecast.json"
+    if fixture_path.exists():
+        with fixture_path.open("r", encoding="utf-8") as f:
+            fix_data = json.load(f)
+        import httpx
+
+        from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
+        from services.api.app.modules.forecast.service import ForecastService
+
+        transport = httpx.MockTransport(lambda req: httpx.Response(200, json=fix_data))
+        mock_client = httpx.AsyncClient(transport=transport)
+        fc_adapter = OpenMeteoForecastAdapter(client=mock_client)
+        fc_service = ForecastService()
+        fc_service.register_adapter(fc_adapter)
+        agent = ConversationAgent(forecast_service=fc_service)
+    else:
+        agent = ConversationAgent()
     results = []
     for c in cases:
         res = await run_single_case(agent, c)

@@ -4,8 +4,8 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
-| 01a | Platform skeleton | in-review | PR #25 |
-| 02 | Will it rain tomorrow? | todo | |
+| 01a | Platform skeleton | done | Merged in PR #25 |
+| 02 | Will it rain tomorrow? | in-progress | |
 | 04 | Hindi text | todo | |
 | 21 | Admin console | todo | |
 | 17 | IMD forecasts live (after the IMD key arrives) | waits for the IMD key | |

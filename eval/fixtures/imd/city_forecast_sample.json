@@ -1,0 +1,27 @@
+{
+  "_provenance": "documented-sample",
+  "_source": "https://api.imd.gov.in/public/api_reference.html",
+  "Station_Name": "PUNE",
+  "State": "MAHARASHTRA",
+  "Latitude": 18.5204,
+  "Longitude": 73.8567,
+  "Date": "2026-11-17",
+  "Forecast": [
+    {
+      "Date": "2026-11-18",
+      "Max_Temp": "31.0",
+      "Min_Temp": "18.0",
+      "Weather_Code": "1",
+      "Weather_Desc": "Partly cloudy sky",
+      "Rainfall_mm": "0.0"
+    },
+    {
+      "Date": "2026-11-19",
+      "Max_Temp": "30.5",
+      "Min_Temp": "18.5",
+      "Weather_Code": "2",
+      "Weather_Desc": "Generally cloudy sky with light rain",
+      "Rainfall_mm": "2.5"
+    }
+  ]
+}

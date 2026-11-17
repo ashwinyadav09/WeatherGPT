@@ -50,22 +50,24 @@ class ConversationAgent:
         }
 
         # 2. Resolve place and get forecast evidence
-        place_name = req.text
-        if "Pune" in req.text or "पुणे" in req.text:
-            place_name = "Pune"
-        elif "Nagpur" in req.text or "नागपुर" in req.text:
-            place_name = "Nagpur"
-        elif "Delhi" in req.text or "दिल्ली" in req.text:
-            place_name = "Delhi"
+        from services.api.app.modules.location.resolver import SEED_PLACES
+        place = None
+        p_name = "Pune"
+        for sp in SEED_PLACES:
+            if any(n.lower() in req.text.lower() for n in sp.names.values()):
+                place = sp
+                p_name = sp.names.get("en", sp.id.title())
+                break
 
-        resolved = await self.location_resolver.resolve(place_name, language="en" if req.language == "auto" else req.language)
-        places_raw = resolved.get("places", [])
-        places: list[Any] = places_raw if isinstance(places_raw, list) else []
-        place = places[0] if places else None
+        if not place:
+            resolved = await self.location_resolver.resolve(req.text, language="en" if req.language == "auto" else req.language)
+            places_raw = resolved.get("places", [])
+            places: list[Any] = places_raw if isinstance(places_raw, list) else []
+            place = places[0] if places else None
+            p_name = place.names.get("en", "Pune") if place else "Pune"
 
         lat = place.lat if place else 18.5204
         lon = place.lon if place else 73.8567
-        p_name = place.names.get("en", "Pune") if place else "Pune"
 
         # 3. Fetch evidence packets
         packets: list[EvidencePacket] = await self.forecast_service.get_forecast(
