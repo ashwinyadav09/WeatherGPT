@@ -11,7 +11,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | 17 | IMD forecasts live (after the IMD key arrives) | waits for the IMD key | |
 | 18 | IMD warnings and nowcasts live (after the IMD key arrives) | waits for the IMD key | |
 | 12 | Hardening | done | Merged in PR #31 |
-| 22 | Demo, docs and deployment pack | in-review | PR pending |
+| 22 | Demo, docs and deployment pack | done | Merged in PR #32 |
 
 ## Assumptions
 
