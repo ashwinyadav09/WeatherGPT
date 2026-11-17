@@ -4,24 +4,29 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 
 | Ticket | Title | Status | Notes |
 |---|---|---|---|
-| 01b | Fixtures and spikes | in-review | PR body saved to .scratch/weathergpt/pr/ticket-01b-fixtures-and-spikes.md; human-only: open PR on GitHub (gh not installed) |
-| 05 | Alerts v1 | in-review | PR body saved to .scratch/weathergpt/pr/ticket-05-alerts-v1.md; human-only: open PR on GitHub (gh not installed) |
-| 07 | Model plane | todo | |
-| 08 | Real-time integration showcase | todo | |
-| 09 | Climate questions | todo | |
-| 15 | Intent and slot model (optional ML training) | todo | |
-| 16 | Point-forecast bias correction (optional ML training) | todo | |
-| 13 | Extra channels (after a cost check) | todo | |
+| 01b | Fixtures and spikes | in-review | PR body at .scratch/weathergpt/pr/ticket-01b-fixtures-and-spikes.md |
+| 05 | Alerts v1 | in-review | PR body at .scratch/weathergpt/pr/ticket-05-alerts-v1.md |
+| 07 | Model plane | in-review | PR body at .scratch/weathergpt/pr/ticket-07-model-plane.md |
+| 08 | Real-time integration showcase | in-review | PR body at .scratch/weathergpt/pr/ticket-08-real-time-integration-showcase.md |
+| 09 | Climate questions | in-review | PR body at .scratch/weathergpt/pr/ticket-09-climate-questions.md |
+| 15 | Intent and slot model (optional ML training) | in-review | PR body at .scratch/weathergpt/pr/ticket-15-intent-and-slot-model.md |
+| 16 | Point-forecast bias correction (optional ML training) | in-review | PR body at .scratch/weathergpt/pr/ticket-16-point-forecast-bias-correction.md |
+| 13 | Extra channels (after a cost check) | in-review | PR body at .scratch/weathergpt/pr/ticket-13-extra-channels.md |
 
 ## Assumptions
 
-- Bhashini key not yet approved; no Bhashini fixtures in 01b.
-- Open-Meteo pune_forecast.json (original documented-sample) preserved to keep existing seam test; 11 live city forecasts in separate files.
-- IEM temperatures are Fahrenheit — adapters must convert.
-- IMD colour-code inversion documented in NOTES.md; adapters to normalize.
+- Operating with IMD key pending (ADR 0007).
+- gh CLI not installed; PR bodies generated in `.scratch/weathergpt/pr/` and tracked for human review.
+- Selected Telegram Bot API for extra channel due to zero marginal cost, privacy compliance, and avoidance of commercial TRAI DLT registration.
 
 ## Human-only steps open
 
-- **01b**: Open pull request on GitHub at https://github.com/ashwinyadav09/WeatherGPT/pull/new/ticket/01b-fixtures-and-spikes (gh CLI not installed). PR body is at .scratch/weathergpt/pr/ticket-01b-fixtures-and-spikes.md. Reviewer: ashwin.
-- **05**: Open pull request on GitHub at https://github.com/ashwinyadav09/WeatherGPT/pull/new/ticket/05-alerts-v1 (gh CLI not installed). PR body is at .scratch/weathergpt/pr/ticket-05-alerts-v1.md. Reviewer: ashwin.
-- **05**: Native-speaker sign-off for Hindi alert templates in seeds/i18n/alert-templates.yaml.
+- Review and merge PRs:
+  - `ticket/01b-fixtures-and-spikes`
+  - `ticket/05-alerts-v1`
+  - `ticket/07-model-plane`
+  - `ticket/08-real-time-integration-showcase`
+  - `ticket/09-climate-questions`
+  - `ticket/15-intent-and-slot-model`
+  - `ticket/16-point-forecast-bias-correction`
+  - `ticket/13-extra-channels`
