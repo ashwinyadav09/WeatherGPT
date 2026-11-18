@@ -1,0 +1,783 @@
+version: '1.0'
+language: hi
+total_cases: 110
+description: Consented and field-like Hindi weather speech test set for WER, PNER,
+  and NER
+utterances:
+- id: utt_001
+  text: कल पुणे में बारिश होगी क्या?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: &id001 []
+- id: utt_002
+  text: पुणे में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: &id002
+  - 28
+- id: utt_003
+  text: क्या पुणे में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: wind
+  expected_numbers: &id003
+  - 20
+- id: utt_004
+  text: पुणे में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: &id004
+  - 32
+- id: utt_005
+  text: पुणे में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: &id005
+  - 3
+- id: utt_006
+  text: धान की बुवाई के लिए पुणे में 15 मिमी बारिश कब होगी?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: &id006
+  - 15
+- id: utt_007
+  text: पुणे में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: &id007
+  - 22
+- id: utt_008
+  text: क्या पुणे में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: पुणे
+  expected_place_en: pune
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: &id008
+  - 40
+- id: utt_009
+  text: कल बारामती में बारिश होगी क्या?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_010
+  text: बारामती में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_011
+  text: क्या बारामती में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: wind
+  expected_numbers: *id003
+- id: utt_012
+  text: बारामती में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_013
+  text: बारामती में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_014
+  text: धान की बुवाई के लिए बारामती में 15 मिमी बारिश कब होगी?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_015
+  text: बारामती में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_016
+  text: क्या बारामती में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: बारामती
+  expected_place_en: baramati
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_017
+  text: कल मुंबई में बारिश होगी क्या?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_018
+  text: मुंबई में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_019
+  text: क्या मुंबई में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: wind
+  expected_numbers: *id003
+- id: utt_020
+  text: मुंबई में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_021
+  text: मुंबई में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_022
+  text: धान की बुवाई के लिए मुंबई में 15 मिमी बारिश कब होगी?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_023
+  text: मुंबई में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_024
+  text: क्या मुंबई में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_025
+  text: कल नागपुर में बारिश होगी क्या?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_026
+  text: नागपुर में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_027
+  text: क्या नागपुर में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: wind
+  expected_numbers: *id003
+- id: utt_028
+  text: नागपुर में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_029
+  text: नागपुर में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_030
+  text: धान की बुवाई के लिए नागपुर में 15 मिमी बारिश कब होगी?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_031
+  text: नागपुर में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_032
+  text: क्या नागपुर में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: नागपुर
+  expected_place_en: nagpur
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_033
+  text: कल नासिक में बारिश होगी क्या?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_034
+  text: नासिक में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_035
+  text: क्या नासिक में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: wind
+  expected_numbers: *id003
+- id: utt_036
+  text: नासिक में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_037
+  text: नासिक में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_038
+  text: धान की बुवाई के लिए नासिक में 15 मिमी बारिश कब होगी?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_039
+  text: नासिक में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_040
+  text: क्या नासिक में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: नासिक
+  expected_place_en: nashik
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_041
+  text: कल सोलापुर में बारिश होगी क्या?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_042
+  text: सोलापुर में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_043
+  text: क्या सोलापुर में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: wind
+  expected_numbers: *id003
+- id: utt_044
+  text: सोलापुर में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_045
+  text: सोलापुर में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_046
+  text: धान की बुवाई के लिए सोलापुर में 15 मिमी बारिश कब होगी?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_047
+  text: सोलापुर में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_048
+  text: क्या सोलापुर में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: सोलापुर
+  expected_place_en: solapur
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_049
+  text: कल कोल्हापुर में बारिश होगी क्या?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_050
+  text: कोल्हापुर में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_051
+  text: क्या कोल्हापुर में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: wind
+  expected_numbers: *id003
+- id: utt_052
+  text: कोल्हापुर में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_053
+  text: कोल्हापुर में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_054
+  text: धान की बुवाई के लिए कोल्हापुर में 15 मिमी बारिश कब होगी?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_055
+  text: कोल्हापुर में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_056
+  text: क्या कोल्हापुर में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: कोल्हापुर
+  expected_place_en: kolhapur
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_057
+  text: कल औरंगाबाद में बारिश होगी क्या?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_058
+  text: औरंगाबाद में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_059
+  text: क्या औरंगाबाद में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: wind
+  expected_numbers: *id003
+- id: utt_060
+  text: औरंगाबाद में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_061
+  text: औरंगाबाद में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_062
+  text: धान की बुवाई के लिए औरंगाबाद में 15 मिमी बारिश कब होगी?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_063
+  text: औरंगाबाद में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_064
+  text: क्या औरंगाबाद में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: औरंगाबाद
+  expected_place_en: aurangabad
+  state: Maharashtra
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_065
+  text: कल लखनऊ में बारिश होगी क्या?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_066
+  text: लखनऊ में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_067
+  text: क्या लखनऊ में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: wind
+  expected_numbers: *id003
+- id: utt_068
+  text: लखनऊ में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_069
+  text: लखनऊ में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_070
+  text: धान की बुवाई के लिए लखनऊ में 15 मिमी बारिश कब होगी?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_071
+  text: लखनऊ में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_072
+  text: क्या लखनऊ में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: लखनऊ
+  expected_place_en: lucknow
+  state: Uttar Pradesh
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_073
+  text: कल वाराणसी में बारिश होगी क्या?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_074
+  text: वाराणसी में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_075
+  text: क्या वाराणसी में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: wind
+  expected_numbers: *id003
+- id: utt_076
+  text: वाराणसी में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_077
+  text: वाराणसी में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_078
+  text: धान की बुवाई के लिए वाराणसी में 15 मिमी बारिश कब होगी?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_079
+  text: वाराणसी में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_080
+  text: क्या वाराणसी में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: वाराणसी
+  expected_place_en: varanasi
+  state: Uttar Pradesh
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_081
+  text: कल प्रयागराज में बारिश होगी क्या?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_082
+  text: प्रयागराज में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_083
+  text: क्या प्रयागराज में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: wind
+  expected_numbers: *id003
+- id: utt_084
+  text: प्रयागराज में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_085
+  text: प्रयागराज में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_086
+  text: धान की बुवाई के लिए प्रयागराज में 15 मिमी बारिश कब होगी?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_087
+  text: प्रयागराज में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_088
+  text: क्या प्रयागराज में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: प्रयागराज
+  expected_place_en: prayagraj
+  state: Uttar Pradesh
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_089
+  text: कल कानपुर में बारिश होगी क्या?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_090
+  text: कानपुर में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_091
+  text: क्या कानपुर में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: wind
+  expected_numbers: *id003
+- id: utt_092
+  text: कानपुर में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_093
+  text: कानपुर में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_094
+  text: धान की बुवाई के लिए कानपुर में 15 मिमी बारिश कब होगी?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_095
+  text: कानपुर में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_096
+  text: क्या कानपुर में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: कानपुर
+  expected_place_en: kanpur
+  state: Uttar Pradesh
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_097
+  text: कल गोरखपुर में बारिश होगी क्या?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_098
+  text: गोरखपुर में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_099
+  text: क्या गोरखपुर में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: wind
+  expected_numbers: *id003
+- id: utt_100
+  text: गोरखपुर में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_101
+  text: गोरखपुर में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_102
+  text: धान की बुवाई के लिए गोरखपुर में 15 मिमी बारिश कब होगी?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id006
+- id: utt_103
+  text: गोरखपुर में गेहूं की फसल के लिए तापमान 22 डिग्री सही है क्या?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id007
+- id: utt_104
+  text: क्या गोरखपुर में आज 40 डिग्री से ज्यादा गर्मी पड़ेगी?
+  expected_place: गोरखपुर
+  expected_place_en: gorakhpur
+  state: Uttar Pradesh
+  domain: heatwave
+  expected_numbers: *id008
+- id: utt_105
+  text: कल सीतापुर में बारिश होगी क्या?
+  expected_place: सीतापुर
+  expected_place_en: sitapur
+  state: Uttar Pradesh
+  domain: rainfall
+  expected_numbers: *id001
+- id: utt_106
+  text: सीतापुर में आज का तापमान 28 डिग्री रहेगा क्या?
+  expected_place: सीतापुर
+  expected_place_en: sitapur
+  state: Uttar Pradesh
+  domain: temperature
+  expected_numbers: *id002
+- id: utt_107
+  text: क्या सीतापुर में कल 20 किमी प्रति घंटा की रफ्तार से हवा चलेगी?
+  expected_place: सीतापुर
+  expected_place_en: sitapur
+  state: Uttar Pradesh
+  domain: wind
+  expected_numbers: *id003
+- id: utt_108
+  text: सीतापुर में 32 डिग्री तापमान और भारी बारिश की संभावना है क्या?
+  expected_place: सीतापुर
+  expected_place_en: sitapur
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id004
+- id: utt_109
+  text: सीतापुर में अगले 3 दिनों में मौसम कैसा रहेगा?
+  expected_place: सीतापुर
+  expected_place_en: sitapur
+  state: Uttar Pradesh
+  domain: forecast
+  expected_numbers: *id005
+- id: utt_110
+  text: धान की बुवाई के लिए सीतापुर में 15 मिमी बारिश कब होगी?
+  expected_place: सीतापुर
+  expected_place_en: sitapur
+  state: Uttar Pradesh
+  domain: agromet
+  expected_numbers: *id006

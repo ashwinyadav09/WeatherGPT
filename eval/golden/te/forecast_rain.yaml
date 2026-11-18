@@ -1,0 +1,3300 @@
+- id: te-forecast-0001
+  language: te
+  archetype: forecast
+  question: రేపు హైదరాబాద్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0002
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0003
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0004
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0005
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0006
+  language: te
+  archetype: forecast
+  question: రేపు హైదరాబాద్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0007
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0008
+  language: te
+  archetype: forecast
+  question: రేపు హైదరాబాద్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0009
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0010
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0011
+  language: te
+  archetype: forecast
+  question: రేపు విశాఖపట్నం లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0012
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0013
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0014
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0015
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0016
+  language: te
+  archetype: forecast
+  question: రేపు విశాఖపట్నం లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0017
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0018
+  language: te
+  archetype: forecast
+  question: రేపు విశాఖపట్నం లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0019
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0020
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0021
+  language: te
+  archetype: forecast
+  question: రేపు విజయవాడ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0022
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0023
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0024
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0025
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0026
+  language: te
+  archetype: forecast
+  question: రేపు విజయవాడ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0027
+  language: te
+  archetype: forecast
+  question: విజయవాడ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0028
+  language: te
+  archetype: forecast
+  question: రేపు విజయవాడ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0029
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0030
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0031
+  language: te
+  archetype: forecast
+  question: రేపు గుంటూరు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0032
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0033
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0034
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0035
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0036
+  language: te
+  archetype: forecast
+  question: రేపు గుంటూరు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0037
+  language: te
+  archetype: forecast
+  question: గుంటూరు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0038
+  language: te
+  archetype: forecast
+  question: రేపు గుంటూరు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0039
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0040
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0041
+  language: te
+  archetype: forecast
+  question: రేపు వరంగల్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0042
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0043
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0044
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0045
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0046
+  language: te
+  archetype: forecast
+  question: రేపు వరంగల్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0047
+  language: te
+  archetype: forecast
+  question: వరంగల్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0048
+  language: te
+  archetype: forecast
+  question: రేపు వరంగల్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0049
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0050
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0051
+  language: te
+  archetype: forecast
+  question: రేపు తిరుపతి లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0052
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0053
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0054
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0055
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0056
+  language: te
+  archetype: forecast
+  question: రేపు తిరుపతి లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0057
+  language: te
+  archetype: forecast
+  question: తిరుపతి వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0058
+  language: te
+  archetype: forecast
+  question: రేపు తిరుపతి లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0059
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0060
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0061
+  language: te
+  archetype: forecast
+  question: రేపు కర్నూలు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0062
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0063
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0064
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0065
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0066
+  language: te
+  archetype: forecast
+  question: రేపు కర్నూలు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0067
+  language: te
+  archetype: forecast
+  question: కర్నూలు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0068
+  language: te
+  archetype: forecast
+  question: రేపు కర్నూలు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0069
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0070
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0071
+  language: te
+  archetype: forecast
+  question: రేపు నెల్లూరు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0072
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0073
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0074
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0075
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0076
+  language: te
+  archetype: forecast
+  question: రేపు నెల్లూరు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0077
+  language: te
+  archetype: forecast
+  question: నెల్లూరు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0078
+  language: te
+  archetype: forecast
+  question: రేపు నెల్లూరు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0079
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0080
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0081
+  language: te
+  archetype: forecast
+  question: రేపు రాజమండ్రి లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0082
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0083
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0084
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0085
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0086
+  language: te
+  archetype: forecast
+  question: రేపు రాజమండ్రి లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0087
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0088
+  language: te
+  archetype: forecast
+  question: రేపు రాజమండ్రి లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0089
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0090
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0091
+  language: te
+  archetype: forecast
+  question: రేపు కరీంనగర్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0092
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0093
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0094
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0095
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0096
+  language: te
+  archetype: forecast
+  question: రేపు కరీంనగర్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0097
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0098
+  language: te
+  archetype: forecast
+  question: రేపు కరీంనగర్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0099
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0100
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0101
+  language: te
+  archetype: forecast
+  question: రేపు కడప లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0102
+  language: te
+  archetype: forecast
+  question: కడప లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0103
+  language: te
+  archetype: forecast
+  question: కడప లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0104
+  language: te
+  archetype: forecast
+  question: కడప లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0105
+  language: te
+  archetype: forecast
+  question: కడప లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0106
+  language: te
+  archetype: forecast
+  question: రేపు కడప లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0107
+  language: te
+  archetype: forecast
+  question: కడప వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0108
+  language: te
+  archetype: forecast
+  question: రేపు కడప లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0109
+  language: te
+  archetype: forecast
+  question: కడప లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0110
+  language: te
+  archetype: forecast
+  question: కడప లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0111
+  language: te
+  archetype: forecast
+  question: రేపు నిజామాబాద్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0112
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0113
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0114
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0115
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0116
+  language: te
+  archetype: forecast
+  question: రేపు నిజామాబాద్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0117
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0118
+  language: te
+  archetype: forecast
+  question: రేపు నిజామాబాద్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0119
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0120
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0121
+  language: te
+  archetype: forecast
+  question: రేపు ఖమ్మం లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0122
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0123
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0124
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0125
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0126
+  language: te
+  archetype: forecast
+  question: రేపు ఖమ్మం లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0127
+  language: te
+  archetype: forecast
+  question: ఖమ్మం వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0128
+  language: te
+  archetype: forecast
+  question: రేపు ఖమ్మం లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0129
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0130
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0131
+  language: te
+  archetype: forecast
+  question: రేపు అనంతపురం లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0132
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0133
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0134
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0135
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0136
+  language: te
+  archetype: forecast
+  question: రేపు అనంతపురం లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0137
+  language: te
+  archetype: forecast
+  question: అనంతపురం వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0138
+  language: te
+  archetype: forecast
+  question: రేపు అనంతపురం లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0139
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0140
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0141
+  language: te
+  archetype: forecast
+  question: రేపు ఏలూరు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0142
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0143
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0144
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0145
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0146
+  language: te
+  archetype: forecast
+  question: రేపు ఏలూరు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0147
+  language: te
+  archetype: forecast
+  question: ఏలూరు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0148
+  language: te
+  archetype: forecast
+  question: రేపు ఏలూరు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0149
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0150
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0151
+  language: te
+  archetype: forecast
+  question: రేపు హైదరాబాద్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0152
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0153
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0154
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0155
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0156
+  language: te
+  archetype: forecast
+  question: రేపు హైదరాబాద్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0157
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0158
+  language: te
+  archetype: forecast
+  question: రేపు హైదరాబాద్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0159
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0160
+  language: te
+  archetype: forecast
+  question: హైదరాబాద్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0161
+  language: te
+  archetype: forecast
+  question: రేపు విశాఖపట్నం లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0162
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0163
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0164
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0165
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0166
+  language: te
+  archetype: forecast
+  question: రేపు విశాఖపట్నం లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0167
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0168
+  language: te
+  archetype: forecast
+  question: రేపు విశాఖపట్నం లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0169
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0170
+  language: te
+  archetype: forecast
+  question: విశాఖపట్నం లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0171
+  language: te
+  archetype: forecast
+  question: రేపు విజయవాడ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0172
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0173
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0174
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0175
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0176
+  language: te
+  archetype: forecast
+  question: రేపు విజయవాడ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0177
+  language: te
+  archetype: forecast
+  question: విజయవాడ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0178
+  language: te
+  archetype: forecast
+  question: రేపు విజయవాడ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0179
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0180
+  language: te
+  archetype: forecast
+  question: విజయవాడ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0181
+  language: te
+  archetype: forecast
+  question: రేపు గుంటూరు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0182
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0183
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0184
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0185
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0186
+  language: te
+  archetype: forecast
+  question: రేపు గుంటూరు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0187
+  language: te
+  archetype: forecast
+  question: గుంటూరు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0188
+  language: te
+  archetype: forecast
+  question: రేపు గుంటూరు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0189
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0190
+  language: te
+  archetype: forecast
+  question: గుంటూరు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0191
+  language: te
+  archetype: forecast
+  question: రేపు వరంగల్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0192
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0193
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0194
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0195
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0196
+  language: te
+  archetype: forecast
+  question: రేపు వరంగల్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0197
+  language: te
+  archetype: forecast
+  question: వరంగల్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0198
+  language: te
+  archetype: forecast
+  question: రేపు వరంగల్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0199
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0200
+  language: te
+  archetype: forecast
+  question: వరంగల్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0201
+  language: te
+  archetype: forecast
+  question: రేపు తిరుపతి లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0202
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0203
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0204
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0205
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0206
+  language: te
+  archetype: forecast
+  question: రేపు తిరుపతి లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0207
+  language: te
+  archetype: forecast
+  question: తిరుపతి వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0208
+  language: te
+  archetype: forecast
+  question: రేపు తిరుపతి లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0209
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0210
+  language: te
+  archetype: forecast
+  question: తిరుపతి లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0211
+  language: te
+  archetype: forecast
+  question: రేపు కర్నూలు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0212
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0213
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0214
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0215
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0216
+  language: te
+  archetype: forecast
+  question: రేపు కర్నూలు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0217
+  language: te
+  archetype: forecast
+  question: కర్నూలు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0218
+  language: te
+  archetype: forecast
+  question: రేపు కర్నూలు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0219
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0220
+  language: te
+  archetype: forecast
+  question: కర్నూలు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0221
+  language: te
+  archetype: forecast
+  question: రేపు నెల్లూరు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0222
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0223
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0224
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0225
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0226
+  language: te
+  archetype: forecast
+  question: రేపు నెల్లూరు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0227
+  language: te
+  archetype: forecast
+  question: నెల్లూరు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0228
+  language: te
+  archetype: forecast
+  question: రేపు నెల్లూరు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0229
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0230
+  language: te
+  archetype: forecast
+  question: నెల్లూరు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0231
+  language: te
+  archetype: forecast
+  question: రేపు రాజమండ్రి లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0232
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0233
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0234
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0235
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0236
+  language: te
+  archetype: forecast
+  question: రేపు రాజమండ్రి లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0237
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0238
+  language: te
+  archetype: forecast
+  question: రేపు రాజమండ్రి లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0239
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0240
+  language: te
+  archetype: forecast
+  question: రాజమండ్రి లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0241
+  language: te
+  archetype: forecast
+  question: రేపు కరీంనగర్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0242
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0243
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0244
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0245
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0246
+  language: te
+  archetype: forecast
+  question: రేపు కరీంనగర్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0247
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0248
+  language: te
+  archetype: forecast
+  question: రేపు కరీంనగర్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0249
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0250
+  language: te
+  archetype: forecast
+  question: కరీంనగర్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0251
+  language: te
+  archetype: forecast
+  question: రేపు కడప లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0252
+  language: te
+  archetype: forecast
+  question: కడప లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0253
+  language: te
+  archetype: forecast
+  question: కడప లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0254
+  language: te
+  archetype: forecast
+  question: కడప లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0255
+  language: te
+  archetype: forecast
+  question: కడప లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0256
+  language: te
+  archetype: forecast
+  question: రేపు కడప లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0257
+  language: te
+  archetype: forecast
+  question: కడప వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0258
+  language: te
+  archetype: forecast
+  question: రేపు కడప లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0259
+  language: te
+  archetype: forecast
+  question: కడప లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0260
+  language: te
+  archetype: forecast
+  question: కడప లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0261
+  language: te
+  archetype: forecast
+  question: రేపు నిజామాబాద్ లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0262
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0263
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0264
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0265
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0266
+  language: te
+  archetype: forecast
+  question: రేపు నిజామాబాద్ లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0267
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0268
+  language: te
+  archetype: forecast
+  question: రేపు నిజామాబాద్ లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0269
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0270
+  language: te
+  archetype: forecast
+  question: నిజామాబాద్ లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0271
+  language: te
+  archetype: forecast
+  question: రేపు ఖమ్మం లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0272
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0273
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0274
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0275
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0276
+  language: te
+  archetype: forecast
+  question: రేపు ఖమ్మం లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0277
+  language: te
+  archetype: forecast
+  question: ఖమ్మం వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0278
+  language: te
+  archetype: forecast
+  question: రేపు ఖమ్మం లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0279
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0280
+  language: te
+  archetype: forecast
+  question: ఖమ్మం లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0281
+  language: te
+  archetype: forecast
+  question: రేపు అనంతపురం లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0282
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0283
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0284
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0285
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0286
+  language: te
+  archetype: forecast
+  question: రేపు అనంతపురం లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0287
+  language: te
+  archetype: forecast
+  question: అనంతపురం వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0288
+  language: te
+  archetype: forecast
+  question: రేపు అనంతపురం లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0289
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0290
+  language: te
+  archetype: forecast
+  question: అనంతపురం లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0291
+  language: te
+  archetype: forecast
+  question: రేపు ఏలూరు లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0292
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపటి వాతావరణం ఎలా ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0293
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపటి ఉష్ణోగ్రత ఎంత ఉండవచ్చు?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0294
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపు భారీ వర్షం కురిసే అవకాశం ఉందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0295
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో వ్యవసాయానికి రేపటి వాతావరణం ఎలా ఉంది?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0296
+  language: te
+  archetype: forecast
+  question: రేపు ఏలూరు లో గొడుగు అవసరమా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0297
+  language: te
+  archetype: forecast
+  question: ఏలూరు వాతావరణ సమాచారం ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0298
+  language: te
+  archetype: forecast
+  question: రేపు ఏలూరు లో ఎండ తీవ్రత ఎక్కువగా ఉంటుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0299
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రాబోయే 24 గంటల్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: te-forecast-0300
+  language: te
+  archetype: forecast
+  question: ఏలూరు లో రేపటి వర్ష సూచన ఏమిటి?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false

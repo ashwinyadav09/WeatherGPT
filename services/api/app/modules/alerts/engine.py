@@ -149,7 +149,14 @@ class AlertEngine:
         active = [a for a in self._alerts.values() if a.expires > now]
         if place_id:
             # Filter by place if applicable
-            return [a for a in active if any(place_id.lower() in area.get("areaDesc", "").lower() for area in a.areas)]
+            return [
+                a
+                for a in active
+                if any(
+                    place_id.lower() in (area.get("areaDesc") or area.get("area_desc") or "").lower()
+                    for area in a.areas
+                )
+            ]
         return active
 
     def ingest_sample_alert(self, alert: AlertModel, references: str | None = None) -> None:
@@ -195,8 +202,9 @@ class AlertEngine:
                         break
 
                 # District fallback
-                if district and area.get("areaDesc"):
-                    desc = area["areaDesc"].lower()
+                area_desc = area.get("areaDesc") or area.get("area_desc")
+                if district and area_desc:
+                    desc = area_desc.lower()
                     d_lower = district.lower()
                     if d_lower in desc or desc in d_lower:
                         hit = True

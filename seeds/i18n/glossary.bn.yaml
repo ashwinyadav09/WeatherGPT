@@ -1,0 +1,53 @@
+# Draft glossary (Bengali). Needs native-speaker sign-off (human step). Keys match glossary.en.yaml.
+terms:
+  temperature: তাপমাত্রা
+  humidity: আর্দ্রতা
+  rain: বৃষ্টি
+  rainfall: বৃষ্টিপাত
+  thunderstorm: বজ্রবিদ্যুৎসহ বৃষ্টি
+  lightning: বজ্রপাত
+  hailstorm: শিলাবৃষ্টি
+  heat_wave: তাপপ্রবাহ
+  cold_wave: শৈত্যপ্রবাহ
+  cyclone: ঘূর্ণিঝড়
+  flood: বন্যা
+  fog: কুয়াশা
+  wind: বাতাস
+  gust: দমকা হাওয়া
+  visibility: দৃশ্যমানতা
+  forecast: আবহাওয়ার পূর্বাভাস
+  nowcast: তাৎক্ষণিক পূর্বাভাস (পরবর্তী কয়েক ঘণ্টার জন্য)
+  warning: সতর্কবার্তা
+  alert: সতর্কতা
+  heavy_rain: ভারী বৃষ্টি
+  very_heavy_rain: অতি ভারী বৃষ্টি
+  extremely_heavy_rain: অত্যন্ত ভারী বৃষ্টি
+  dust_storm: ধূলিঝড়
+  high_waves: উত্তাল ঢেউ
+  flash_flood: আকস্মিক বন্যা
+  drought: খরা
+  tsunami: সুনামি
+  storm_surge: জলোচ্ছ্বাস
+  strong_wind: প্রবল বাতাস
+levels:
+  green: {color: সবুজ, meaning: কোনো সতর্কবার্তা নেই}
+  yellow: {color: হলুদ, meaning: সজাগ থাকুন}
+  orange: {color: কমলা, meaning: প্রস্তুত থাকুন}
+  red: {color: লাল, meaning: পদক্ষেপ গ্রহণ করুন}
+time:
+  today: আজ
+  tomorrow: কাল
+  day_after_tomorrow: পরশু
+  this_week: এই সপ্তাহে
+  morning: সকাল
+  afternoon: দুপুর
+  evening: বিকেল
+  night: রাত
+units:
+  celsius: ডিগ্রি সেলসিয়াস
+  mm: মিলিমিটার
+  kmh: কিলোমিটার প্রতি ঘণ্টা
+  percent: শতাংশ
+crops:
+  wheat: গম
+  rice: ধান

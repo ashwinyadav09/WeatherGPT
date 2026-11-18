@@ -1,0 +1,53 @@
+# Draft glossary (Tamil). Needs native-speaker sign-off (human step). Keys match glossary.en.yaml.
+terms:
+  temperature: வெப்பநிலை
+  humidity: ஈரப்பதம்
+  rain: மழை
+  rainfall: மழைப்பொழிவு
+  thunderstorm: இடி மின்னலுடன் கூடிய மழை
+  lightning: மின்னல்
+  hailstorm: ஆலங்கட்டி மழை
+  heat_wave: வெப்ப அலை
+  cold_wave: குளிர் அலை
+  cyclone: புயல்
+  flood: வெள்ளம்
+  fog: பனிமூட்டம்
+  wind: காற்று
+  gust: பலத்த காற்று
+  visibility: தெரிவுநிலை
+  forecast: வானிலை முன்னறிவிப்பு
+  nowcast: உடனடி வானிலை முன்னறிவிப்பு (அடுத்த சில மணிநேரங்களுக்கு)
+  warning: எச்சரிக்கை
+  alert: விழிப்புணர்வு எச்சரிக்கை
+  heavy_rain: கனமழை
+  very_heavy_rain: மிகக் கனமழை
+  extremely_heavy_rain: அதீத கனமழை
+  dust_storm: புழுதிப் புயல்
+  high_waves: உயரமான அலைகள்
+  flash_flood: திடீர் வெள்ளம்
+  drought: வறட்சி
+  tsunami: சுனாமி
+  storm_surge: புயல் அலை எழுச்சி
+  strong_wind: பலத்த காற்று
+levels:
+  green: {color: பச்சை, meaning: எச்சரிக்கை ஏதுமில்லை}
+  yellow: {color: மஞ்சள், meaning: விழிப்புடன் இருங்கள்}
+  orange: {color: ஆரஞ்சு, meaning: தயாராக இருங்கள்}
+  red: {color: சிவப்பு, meaning: உடனடி நடவடிக்கை எடுங்கள்}
+time:
+  today: இன்று
+  tomorrow: நாளை
+  day_after_tomorrow: நாளை மறுநாள்
+  this_week: இந்த வாரம்
+  morning: காலை
+  afternoon: மதியம்
+  evening: மாலை
+  night: இரவு
+units:
+  celsius: டிகிரி செல்சியஸ்
+  mm: மில்லிமீட்டர்
+  kmh: கிலோமீட்டர்/மணி
+  percent: சதவீதம்
+crops:
+  wheat: கோதுமை
+  rice: நெல்

@@ -46,3 +46,43 @@ languages:
     asr_provider: bhashini
     tts_provider: bhashini
     enabled: false
+
+  - code: gu
+    native_name: ગુજરાતી
+    english_name: Gujarati
+    tier: 3
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false
+
+  - code: kn
+    native_name: ಕನ್ನಡ
+    english_name: Kannada
+    tier: 3
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false
+
+  - code: ml
+    native_name: മലയാളം
+    english_name: Malayalam
+    tier: 3
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false
+
+  - code: pa
+    native_name: ਪੰਜਾਬੀ
+    english_name: Punjabi
+    tier: 3
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false
+
+  - code: or
+    native_name: ଓଡ଼ିଆ
+    english_name: Odia
+    tier: 3
+    asr_provider: bhashini
+    tts_provider: bhashini
+    enabled: false

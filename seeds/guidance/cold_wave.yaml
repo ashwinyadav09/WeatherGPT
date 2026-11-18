@@ -1,0 +1,29 @@
+hazard: cold_wave
+reviewed_by: ashwin
+reviewed_date: "2026-11-17"
+source_title: "NDMA Cold Wave Safety - National Disaster Management Authority"
+source_url: "https://ndma.gov.in/Governance/Guidelines/cold-wave"
+retrieved_on: "2026-11-17"
+reviewed: true
+
+entries:
+  en:
+    id: "ndma_guidance_cold_wave_en"
+    title: "Official Cold Wave Safety Guidance (NDMA & IMD)"
+    items:
+      - "Wear multiple layers of loose, warm, lightweight clothing instead of a single heavy garment."
+      - "Cover head, neck, hands, and feet properly, as maximum body heat is lost from these areas."
+      - "Ensure adequate ventilation when using charcoal burners (angithi) or gas heaters to prevent deadly carbon monoxide poisoning."
+      - "Protect elderly persons, infants, and patients with asthma or heart conditions from prolonged exposure to cold winds."
+      - "Drink warm fluids like soups, warm milk, or herbal teas to help maintain body temperature."
+      - "Provide dry bedding and protected shelter for cattle, domestic animals, and pets during severe cold nights."
+  hi:
+    id: "ndma_guidance_cold_wave_hi"
+    title: "आधिकारिक शीतलहर (कोल्ड वेव) सुरक्षा सलाह (एनडीएमए और आईएमडी)"
+    items:
+      - "एक भारी कपड़े के बजाय ढीले, हल्के और कई परतों वाले गर्म कपड़े पहनें।"
+      - "सिर, गर्दन, हाथ और पैरों को अच्छी तरह से ढकें, क्योंकि इन्हीं अंगों से शरीर की गर्मी सबसे तेजी से निकलती है।"
+      - "कमरे में अंगीठी, हीटर या कोयला जलाते समय कमरे में वेंटिलेशन (हवा का निकास) अवश्य रखें ताकि कार्बन मोनोऑक्साइड गैस का खतरा न हो।"
+      - "बुजुर्गों, शिशुओं और सांस या दिल के मरीजों को ठंडी हवा के सीधे संपर्क से बचाएं।"
+      - "गर्म पेय जैसे सूप, गर्म दूध या चाय का सेवन करें जिससे शरीर का तापमान बना रहे।"
+      - "शीतलहर के दौरान मवेशियों और पालतू जानवरों को ठंड से बचाने के लिए सूखे बिछावन और सुरक्षित बाड़े की व्यवस्था करें।"

@@ -1,0 +1,31 @@
+hazard: heat_wave
+reviewed_by: ashwin
+reviewed_date: "2026-11-17"
+source_title: "NDMA National Guidelines for Preparation of Action Plan - Prevention and Management of Heat Wave"
+source_url: "https://ndma.gov.in/Governance/Guidelines/heat-wave"
+retrieved_on: "2026-11-17"
+reviewed: true
+
+entries:
+  en:
+    id: "ndma_guidance_heat_wave_en"
+    title: "Official Heat Wave Safety Guidance (NDMA & IMD)"
+    items:
+      - "Drink sufficient water frequently, even if not feeling thirsty. Use ORS, coconut water, or homemade lemon water."
+      - "Wear lightweight, loose-fitting, light-coloured, breathable cotton clothes."
+      - "Avoid strenuous physical activity outdoors during peak heat hours between 12:00 PM and 3:00 PM."
+      - "Cover your head with a cloth, hat, or umbrella when stepping outside under direct sunlight."
+      - "Keep children, elderly family members, pregnant women, and pets in cool, well-ventilated, shaded areas."
+      - "Never leave children or pets inside closed parked vehicles, even for a few minutes."
+      - "If someone shows signs of heat stroke (high fever, confusion, dizziness), move them to shade, apply cool wet towels, and seek immediate medical care."
+  hi:
+    id: "ndma_guidance_heat_wave_hi"
+    title: "आधिकारिक लू (हीटवेव) सुरक्षा सलाह (एनडीएमए और आईएमडी)"
+    items:
+      - "प्यास न लगने पर भी बार-बार पर्याप्त पानी पिएं। ओआरएस, नींबू पानी, या छाछ का सेवन करें।"
+      - "हल्के रंग के, ढीले और सूती कपड़े पहनें।"
+      - "दोपहर 12:00 बजे से 3:00 बजे के बीच धूप में भारी शारीरिक काम करने से बचें।"
+      - "धूप में बाहर निकलते समय सिर को सूती कपड़े, टोपी या छाते से ढक कर रखें।"
+      - "बच्चों, बुजुर्गों, गर्भवती महिलाओं और पालतू जानवरों को ठंडे और हवादार स्थानों पर रखें।"
+      - "खड़े वाहनों में बच्चों या पालतू जानवरों को कभी भी बंद न छोड़ें।"
+      - "यदि किसी को लू लगने के लक्षण (तेज बुखार, चक्कर, बेहोशी) दिखें, तो तुरंत छाया में लाएं, ठंडे गीले कपड़े से पोछें और डॉक्टर से संपर्क करें।"
