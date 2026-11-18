@@ -18,8 +18,10 @@ def telegram_adapter() -> TelegramChannelAdapter:
 
 def test_channel_cost_check_report():
     root = Path(__file__).resolve().parents[4]
-    doc_path = root / "Docs" / "channel-cost-check.md"
-    assert doc_path.exists(), "Docs/channel-cost-check.md must exist"
+    doc_path = root / "docs" / "channel-cost-check.md"
+    if not doc_path.exists():
+        doc_path = root / "Docs" / "channel-cost-check.md"
+    assert doc_path.exists(), "docs/channel-cost-check.md must exist"
 
     text = doc_path.read_text(encoding="utf-8")
     assert "Telegram" in text
