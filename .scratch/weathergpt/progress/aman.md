@@ -11,7 +11,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | 09 | Climate questions | done | Merged in PR #37 |
 | 15 | Intent and slot model (optional ML training) | done | Merged in PR #38 |
 | 16 | Point-forecast bias correction (optional ML training) | done | Merged in PR #39 |
-| 13 | Extra channels (after a cost check) | done | Merged in PR #40 |
+| 13 | Extra channels (after a cost check) | done | Merged in PR #40; CI fix in PR #51 |
 
 ## Assumptions
 
