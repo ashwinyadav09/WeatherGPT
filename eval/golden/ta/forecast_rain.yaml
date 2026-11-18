@@ -1,0 +1,3300 @@
+- id: ta-forecast-0001
+  language: ta
+  archetype: forecast
+  question: நாளை சென்னை இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0002
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0003
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0004
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0005
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0006
+  language: ta
+  archetype: forecast
+  question: நாளை சென்னை இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0007
+  language: ta
+  archetype: forecast
+  question: சென்னை வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0008
+  language: ta
+  archetype: forecast
+  question: நாளை சென்னை இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0009
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0010
+  language: ta
+  archetype: forecast
+  question: சென்னை நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0011
+  language: ta
+  archetype: forecast
+  question: நாளை கோயம்புத்தூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0012
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0013
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0014
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0015
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0016
+  language: ta
+  archetype: forecast
+  question: நாளை கோயம்புத்தூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0017
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0018
+  language: ta
+  archetype: forecast
+  question: நாளை கோயம்புத்தூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0019
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0020
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0021
+  language: ta
+  archetype: forecast
+  question: நாளை மதுரை இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0022
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0023
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0024
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0025
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0026
+  language: ta
+  archetype: forecast
+  question: நாளை மதுரை இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0027
+  language: ta
+  archetype: forecast
+  question: மதுரை வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0028
+  language: ta
+  archetype: forecast
+  question: நாளை மதுரை இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0029
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0030
+  language: ta
+  archetype: forecast
+  question: மதுரை நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0031
+  language: ta
+  archetype: forecast
+  question: நாளை திருச்சிராப்பள்ளி இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0032
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0033
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0034
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0035
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0036
+  language: ta
+  archetype: forecast
+  question: நாளை திருச்சிராப்பள்ளி இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0037
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0038
+  language: ta
+  archetype: forecast
+  question: நாளை திருச்சிராப்பள்ளி இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0039
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0040
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0041
+  language: ta
+  archetype: forecast
+  question: நாளை சேலம் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0042
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0043
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0044
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0045
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0046
+  language: ta
+  archetype: forecast
+  question: நாளை சேலம் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0047
+  language: ta
+  archetype: forecast
+  question: சேலம் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0048
+  language: ta
+  archetype: forecast
+  question: நாளை சேலம் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0049
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0050
+  language: ta
+  archetype: forecast
+  question: சேலம் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0051
+  language: ta
+  archetype: forecast
+  question: நாளை திருநெல்வேலி இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0052
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0053
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0054
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0055
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0056
+  language: ta
+  archetype: forecast
+  question: நாளை திருநெல்வேலி இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0057
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0058
+  language: ta
+  archetype: forecast
+  question: நாளை திருநெல்வேலி இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0059
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0060
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0061
+  language: ta
+  archetype: forecast
+  question: நாளை திருப்பூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0062
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0063
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0064
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0065
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0066
+  language: ta
+  archetype: forecast
+  question: நாளை திருப்பூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0067
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0068
+  language: ta
+  archetype: forecast
+  question: நாளை திருப்பூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0069
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0070
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0071
+  language: ta
+  archetype: forecast
+  question: நாளை வேலூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0072
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0073
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0074
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0075
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0076
+  language: ta
+  archetype: forecast
+  question: நாளை வேலூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0077
+  language: ta
+  archetype: forecast
+  question: வேலூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0078
+  language: ta
+  archetype: forecast
+  question: நாளை வேலூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0079
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0080
+  language: ta
+  archetype: forecast
+  question: வேலூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0081
+  language: ta
+  archetype: forecast
+  question: நாளை ஈரோடு இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0082
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0083
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0084
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0085
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0086
+  language: ta
+  archetype: forecast
+  question: நாளை ஈரோடு இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0087
+  language: ta
+  archetype: forecast
+  question: ஈரோடு வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0088
+  language: ta
+  archetype: forecast
+  question: நாளை ஈரோடு இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0089
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0090
+  language: ta
+  archetype: forecast
+  question: ஈரோடு நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0091
+  language: ta
+  archetype: forecast
+  question: நாளை தூத்துக்குடி இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0092
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0093
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0094
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0095
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0096
+  language: ta
+  archetype: forecast
+  question: நாளை தூத்துக்குடி இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0097
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0098
+  language: ta
+  archetype: forecast
+  question: நாளை தூத்துக்குடி இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0099
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0100
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0101
+  language: ta
+  archetype: forecast
+  question: நாளை திண்டுக்கல் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0102
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0103
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0104
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0105
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0106
+  language: ta
+  archetype: forecast
+  question: நாளை திண்டுக்கல் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0107
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0108
+  language: ta
+  archetype: forecast
+  question: நாளை திண்டுக்கல் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0109
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0110
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0111
+  language: ta
+  archetype: forecast
+  question: நாளை தஞ்சாவூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0112
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0113
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0114
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0115
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0116
+  language: ta
+  archetype: forecast
+  question: நாளை தஞ்சாவூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0117
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0118
+  language: ta
+  archetype: forecast
+  question: நாளை தஞ்சாவூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0119
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0120
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0121
+  language: ta
+  archetype: forecast
+  question: நாளை நாகர்கோவில் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0122
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0123
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0124
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0125
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0126
+  language: ta
+  archetype: forecast
+  question: நாளை நாகர்கோவில் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0127
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0128
+  language: ta
+  archetype: forecast
+  question: நாளை நாகர்கோவில் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0129
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0130
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0131
+  language: ta
+  archetype: forecast
+  question: நாளை காஞ்சிபுரம் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0132
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0133
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0134
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0135
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0136
+  language: ta
+  archetype: forecast
+  question: நாளை காஞ்சிபுரம் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0137
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0138
+  language: ta
+  archetype: forecast
+  question: நாளை காஞ்சிபுரம் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0139
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0140
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0141
+  language: ta
+  archetype: forecast
+  question: நாளை கடலூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0142
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0143
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0144
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0145
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0146
+  language: ta
+  archetype: forecast
+  question: நாளை கடலூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0147
+  language: ta
+  archetype: forecast
+  question: கடலூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0148
+  language: ta
+  archetype: forecast
+  question: நாளை கடலூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0149
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0150
+  language: ta
+  archetype: forecast
+  question: கடலூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0151
+  language: ta
+  archetype: forecast
+  question: நாளை சென்னை இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0152
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0153
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0154
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0155
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0156
+  language: ta
+  archetype: forecast
+  question: நாளை சென்னை இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0157
+  language: ta
+  archetype: forecast
+  question: சென்னை வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0158
+  language: ta
+  archetype: forecast
+  question: நாளை சென்னை இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0159
+  language: ta
+  archetype: forecast
+  question: சென்னை இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0160
+  language: ta
+  archetype: forecast
+  question: சென்னை நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0161
+  language: ta
+  archetype: forecast
+  question: நாளை கோயம்புத்தூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0162
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0163
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0164
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0165
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0166
+  language: ta
+  archetype: forecast
+  question: நாளை கோயம்புத்தூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0167
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0168
+  language: ta
+  archetype: forecast
+  question: நாளை கோயம்புத்தூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0169
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0170
+  language: ta
+  archetype: forecast
+  question: கோயம்புத்தூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0171
+  language: ta
+  archetype: forecast
+  question: நாளை மதுரை இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0172
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0173
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0174
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0175
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0176
+  language: ta
+  archetype: forecast
+  question: நாளை மதுரை இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0177
+  language: ta
+  archetype: forecast
+  question: மதுரை வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0178
+  language: ta
+  archetype: forecast
+  question: நாளை மதுரை இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0179
+  language: ta
+  archetype: forecast
+  question: மதுரை இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0180
+  language: ta
+  archetype: forecast
+  question: மதுரை நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0181
+  language: ta
+  archetype: forecast
+  question: நாளை திருச்சிராப்பள்ளி இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0182
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0183
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0184
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0185
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0186
+  language: ta
+  archetype: forecast
+  question: நாளை திருச்சிராப்பள்ளி இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0187
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0188
+  language: ta
+  archetype: forecast
+  question: நாளை திருச்சிராப்பள்ளி இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0189
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0190
+  language: ta
+  archetype: forecast
+  question: திருச்சிராப்பள்ளி நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0191
+  language: ta
+  archetype: forecast
+  question: நாளை சேலம் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0192
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0193
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0194
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0195
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0196
+  language: ta
+  archetype: forecast
+  question: நாளை சேலம் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0197
+  language: ta
+  archetype: forecast
+  question: சேலம் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0198
+  language: ta
+  archetype: forecast
+  question: நாளை சேலம் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0199
+  language: ta
+  archetype: forecast
+  question: சேலம் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0200
+  language: ta
+  archetype: forecast
+  question: சேலம் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0201
+  language: ta
+  archetype: forecast
+  question: நாளை திருநெல்வேலி இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0202
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0203
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0204
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0205
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0206
+  language: ta
+  archetype: forecast
+  question: நாளை திருநெல்வேலி இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0207
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0208
+  language: ta
+  archetype: forecast
+  question: நாளை திருநெல்வேலி இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0209
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0210
+  language: ta
+  archetype: forecast
+  question: திருநெல்வேலி நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0211
+  language: ta
+  archetype: forecast
+  question: நாளை திருப்பூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0212
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0213
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0214
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0215
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0216
+  language: ta
+  archetype: forecast
+  question: நாளை திருப்பூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0217
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0218
+  language: ta
+  archetype: forecast
+  question: நாளை திருப்பூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0219
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0220
+  language: ta
+  archetype: forecast
+  question: திருப்பூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0221
+  language: ta
+  archetype: forecast
+  question: நாளை வேலூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0222
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0223
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0224
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0225
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0226
+  language: ta
+  archetype: forecast
+  question: நாளை வேலூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0227
+  language: ta
+  archetype: forecast
+  question: வேலூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0228
+  language: ta
+  archetype: forecast
+  question: நாளை வேலூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0229
+  language: ta
+  archetype: forecast
+  question: வேலூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0230
+  language: ta
+  archetype: forecast
+  question: வேலூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0231
+  language: ta
+  archetype: forecast
+  question: நாளை ஈரோடு இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0232
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0233
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0234
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0235
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0236
+  language: ta
+  archetype: forecast
+  question: நாளை ஈரோடு இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0237
+  language: ta
+  archetype: forecast
+  question: ஈரோடு வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0238
+  language: ta
+  archetype: forecast
+  question: நாளை ஈரோடு இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0239
+  language: ta
+  archetype: forecast
+  question: ஈரோடு இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0240
+  language: ta
+  archetype: forecast
+  question: ஈரோடு நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0241
+  language: ta
+  archetype: forecast
+  question: நாளை தூத்துக்குடி இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0242
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0243
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0244
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0245
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0246
+  language: ta
+  archetype: forecast
+  question: நாளை தூத்துக்குடி இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0247
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0248
+  language: ta
+  archetype: forecast
+  question: நாளை தூத்துக்குடி இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0249
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0250
+  language: ta
+  archetype: forecast
+  question: தூத்துக்குடி நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0251
+  language: ta
+  archetype: forecast
+  question: நாளை திண்டுக்கல் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0252
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0253
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0254
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0255
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0256
+  language: ta
+  archetype: forecast
+  question: நாளை திண்டுக்கல் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0257
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0258
+  language: ta
+  archetype: forecast
+  question: நாளை திண்டுக்கல் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0259
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0260
+  language: ta
+  archetype: forecast
+  question: திண்டுக்கல் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0261
+  language: ta
+  archetype: forecast
+  question: நாளை தஞ்சாவூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0262
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0263
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0264
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0265
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0266
+  language: ta
+  archetype: forecast
+  question: நாளை தஞ்சாவூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0267
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0268
+  language: ta
+  archetype: forecast
+  question: நாளை தஞ்சாவூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0269
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0270
+  language: ta
+  archetype: forecast
+  question: தஞ்சாவூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0271
+  language: ta
+  archetype: forecast
+  question: நாளை நாகர்கோவில் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0272
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0273
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0274
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0275
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0276
+  language: ta
+  archetype: forecast
+  question: நாளை நாகர்கோவில் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0277
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0278
+  language: ta
+  archetype: forecast
+  question: நாளை நாகர்கோவில் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0279
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0280
+  language: ta
+  archetype: forecast
+  question: நாகர்கோவில் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0281
+  language: ta
+  archetype: forecast
+  question: நாளை காஞ்சிபுரம் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0282
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0283
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0284
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0285
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0286
+  language: ta
+  archetype: forecast
+  question: நாளை காஞ்சிபுரம் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0287
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0288
+  language: ta
+  archetype: forecast
+  question: நாளை காஞ்சிபுரம் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0289
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0290
+  language: ta
+  archetype: forecast
+  question: காஞ்சிபுரம் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0291
+  language: ta
+  archetype: forecast
+  question: நாளை கடலூர் இல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0292
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் நாளைய வானிலை எப்படி இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0293
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் நாளைய வெப்பநிலை எவ்வளவு இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0294
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் நாளை கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0295
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் விவசாயத்திற்கு நாளைய வானிலை உகந்ததா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0296
+  language: ta
+  archetype: forecast
+  question: நாளை கடலூர் இல் குடை தேவையா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0297
+  language: ta
+  archetype: forecast
+  question: கடலூர் வானிலை முன்னறிவிப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0298
+  language: ta
+  archetype: forecast
+  question: நாளை கடலூர் இல் வெயில் அதிகமாக இருக்குமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0299
+  language: ta
+  archetype: forecast
+  question: கடலூர் இல் அடுத்த 24 மணி நேரத்தில் மழை வருமா?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: ta-forecast-0300
+  language: ta
+  archetype: forecast
+  question: கடலூர் நாளைய மழை வாய்ப்பு என்ன?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false

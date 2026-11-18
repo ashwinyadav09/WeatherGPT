@@ -1,0 +1,53 @@
+# Draft glossary (Marathi). Needs native-speaker sign-off (human step). Keys match glossary.en.yaml.
+terms:
+  temperature: तापमान
+  humidity: आर्द्रता
+  rain: पाऊस
+  rainfall: पर्जन्यवृष्टी
+  thunderstorm: विजांच्या कडकडाटासह पाऊस
+  lightning: वीज
+  hailstorm: गारपीट
+  heat_wave: उष्णतेची लाट
+  cold_wave: थंडीची लाट
+  cyclone: चक्रीवादळ
+  flood: पूर
+  fog: धुके
+  wind: वारा
+  gust: सोसाट्याचा वारा
+  visibility: दृश्यमानता
+  forecast: हवामान अंदाज
+  nowcast: तात्काळ हवामान अंदाज (पुढील काही तासांचा)
+  warning: इशारा
+  alert: सतर्कतेचा इशारा
+  heavy_rain: मुसळधार पाऊस
+  very_heavy_rain: अतिमुसळधार पाऊस
+  extremely_heavy_rain: अत्यंत मुसळधार पाऊस
+  dust_storm: धुळीचे वादळ
+  high_waves: उंच लाटा
+  flash_flood: अचानक आलेला पूर
+  drought: दुष्काळ
+  tsunami: त्सुनामी
+  storm_surge: वादळी लाटा
+  strong_wind: जोरदार वारा
+levels:
+  green: {color: हिरवा, meaning: कोणतीही चेतावणी नाही}
+  yellow: {color: पिवळा, meaning: दक्ष राहा}
+  orange: {color: नारंगी, meaning: तयार राहा}
+  red: {color: लाल, meaning: तातडीने कृती करा}
+time:
+  today: आज
+  tomorrow: उद्या
+  day_after_tomorrow: परवा
+  this_week: या आठवड्यात
+  morning: सकाळ
+  afternoon: दुपार
+  evening: संध्याकाळ
+  night: रात्र
+units:
+  celsius: अंश सेल्सिअस
+  mm: मिलिमीटर
+  kmh: किलोमीटर प्रति तास
+  percent: टक्के
+crops:
+  wheat: गहू
+  rice: भात

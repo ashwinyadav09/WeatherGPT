@@ -1,0 +1,3300 @@
+- id: mr-forecast-0001
+  language: mr
+  archetype: forecast
+  question: उद्या पुणे मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0002
+  language: mr
+  archetype: forecast
+  question: पुणे मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0003
+  language: mr
+  archetype: forecast
+  question: पुणे चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0004
+  language: mr
+  archetype: forecast
+  question: काय पुणे मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0005
+  language: mr
+  archetype: forecast
+  question: पुणे मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0006
+  language: mr
+  archetype: forecast
+  question: उद्या पुणे मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0007
+  language: mr
+  archetype: forecast
+  question: पुणे चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0008
+  language: mr
+  archetype: forecast
+  question: उद्या पुणे मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0009
+  language: mr
+  archetype: forecast
+  question: पुणे मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0010
+  language: mr
+  archetype: forecast
+  question: पुणे चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0011
+  language: mr
+  archetype: forecast
+  question: उद्या मुंबई मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0012
+  language: mr
+  archetype: forecast
+  question: मुंबई मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0013
+  language: mr
+  archetype: forecast
+  question: मुंबई चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0014
+  language: mr
+  archetype: forecast
+  question: काय मुंबई मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0015
+  language: mr
+  archetype: forecast
+  question: मुंबई मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0016
+  language: mr
+  archetype: forecast
+  question: उद्या मुंबई मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0017
+  language: mr
+  archetype: forecast
+  question: मुंबई चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0018
+  language: mr
+  archetype: forecast
+  question: उद्या मुंबई मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0019
+  language: mr
+  archetype: forecast
+  question: मुंबई मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0020
+  language: mr
+  archetype: forecast
+  question: मुंबई चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0021
+  language: mr
+  archetype: forecast
+  question: उद्या नागपूर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0022
+  language: mr
+  archetype: forecast
+  question: नागपूर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0023
+  language: mr
+  archetype: forecast
+  question: नागपूर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0024
+  language: mr
+  archetype: forecast
+  question: काय नागपूर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0025
+  language: mr
+  archetype: forecast
+  question: नागपूर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0026
+  language: mr
+  archetype: forecast
+  question: उद्या नागपूर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0027
+  language: mr
+  archetype: forecast
+  question: नागपूर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0028
+  language: mr
+  archetype: forecast
+  question: उद्या नागपूर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0029
+  language: mr
+  archetype: forecast
+  question: नागपूर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0030
+  language: mr
+  archetype: forecast
+  question: नागपूर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0031
+  language: mr
+  archetype: forecast
+  question: उद्या नाशिक मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0032
+  language: mr
+  archetype: forecast
+  question: नाशिक मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0033
+  language: mr
+  archetype: forecast
+  question: नाशिक चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0034
+  language: mr
+  archetype: forecast
+  question: काय नाशिक मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0035
+  language: mr
+  archetype: forecast
+  question: नाशिक मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0036
+  language: mr
+  archetype: forecast
+  question: उद्या नाशिक मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0037
+  language: mr
+  archetype: forecast
+  question: नाशिक चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0038
+  language: mr
+  archetype: forecast
+  question: उद्या नाशिक मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0039
+  language: mr
+  archetype: forecast
+  question: नाशिक मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0040
+  language: mr
+  archetype: forecast
+  question: नाशिक चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0041
+  language: mr
+  archetype: forecast
+  question: उद्या ठाणे मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0042
+  language: mr
+  archetype: forecast
+  question: ठाणे मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0043
+  language: mr
+  archetype: forecast
+  question: ठाणे चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0044
+  language: mr
+  archetype: forecast
+  question: काय ठाणे मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0045
+  language: mr
+  archetype: forecast
+  question: ठाणे मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0046
+  language: mr
+  archetype: forecast
+  question: उद्या ठाणे मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0047
+  language: mr
+  archetype: forecast
+  question: ठाणे चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0048
+  language: mr
+  archetype: forecast
+  question: उद्या ठाणे मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0049
+  language: mr
+  archetype: forecast
+  question: ठाणे मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0050
+  language: mr
+  archetype: forecast
+  question: ठाणे चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0051
+  language: mr
+  archetype: forecast
+  question: उद्या सोलापूर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0052
+  language: mr
+  archetype: forecast
+  question: सोलापूर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0053
+  language: mr
+  archetype: forecast
+  question: सोलापूर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0054
+  language: mr
+  archetype: forecast
+  question: काय सोलापूर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0055
+  language: mr
+  archetype: forecast
+  question: सोलापूर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0056
+  language: mr
+  archetype: forecast
+  question: उद्या सोलापूर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0057
+  language: mr
+  archetype: forecast
+  question: सोलापूर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0058
+  language: mr
+  archetype: forecast
+  question: उद्या सोलापूर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0059
+  language: mr
+  archetype: forecast
+  question: सोलापूर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0060
+  language: mr
+  archetype: forecast
+  question: सोलापूर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0061
+  language: mr
+  archetype: forecast
+  question: उद्या कोल्हापूर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0062
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0063
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0064
+  language: mr
+  archetype: forecast
+  question: काय कोल्हापूर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0065
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0066
+  language: mr
+  archetype: forecast
+  question: उद्या कोल्हापूर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0067
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0068
+  language: mr
+  archetype: forecast
+  question: उद्या कोल्हापूर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0069
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0070
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0071
+  language: mr
+  archetype: forecast
+  question: उद्या सांगली मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0072
+  language: mr
+  archetype: forecast
+  question: सांगली मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0073
+  language: mr
+  archetype: forecast
+  question: सांगली चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0074
+  language: mr
+  archetype: forecast
+  question: काय सांगली मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0075
+  language: mr
+  archetype: forecast
+  question: सांगली मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0076
+  language: mr
+  archetype: forecast
+  question: उद्या सांगली मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0077
+  language: mr
+  archetype: forecast
+  question: सांगली चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0078
+  language: mr
+  archetype: forecast
+  question: उद्या सांगली मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0079
+  language: mr
+  archetype: forecast
+  question: सांगली मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0080
+  language: mr
+  archetype: forecast
+  question: सांगली चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0081
+  language: mr
+  archetype: forecast
+  question: उद्या बारामती मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0082
+  language: mr
+  archetype: forecast
+  question: बारामती मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0083
+  language: mr
+  archetype: forecast
+  question: बारामती चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0084
+  language: mr
+  archetype: forecast
+  question: काय बारामती मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0085
+  language: mr
+  archetype: forecast
+  question: बारामती मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0086
+  language: mr
+  archetype: forecast
+  question: उद्या बारामती मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0087
+  language: mr
+  archetype: forecast
+  question: बारामती चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0088
+  language: mr
+  archetype: forecast
+  question: उद्या बारामती मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0089
+  language: mr
+  archetype: forecast
+  question: बारामती मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0090
+  language: mr
+  archetype: forecast
+  question: बारामती चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0091
+  language: mr
+  archetype: forecast
+  question: उद्या सातारा मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0092
+  language: mr
+  archetype: forecast
+  question: सातारा मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0093
+  language: mr
+  archetype: forecast
+  question: सातारा चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0094
+  language: mr
+  archetype: forecast
+  question: काय सातारा मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0095
+  language: mr
+  archetype: forecast
+  question: सातारा मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0096
+  language: mr
+  archetype: forecast
+  question: उद्या सातारा मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0097
+  language: mr
+  archetype: forecast
+  question: सातारा चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0098
+  language: mr
+  archetype: forecast
+  question: उद्या सातारा मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0099
+  language: mr
+  archetype: forecast
+  question: सातारा मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0100
+  language: mr
+  archetype: forecast
+  question: सातारा चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0101
+  language: mr
+  archetype: forecast
+  question: उद्या अमरावती मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0102
+  language: mr
+  archetype: forecast
+  question: अमरावती मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0103
+  language: mr
+  archetype: forecast
+  question: अमरावती चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0104
+  language: mr
+  archetype: forecast
+  question: काय अमरावती मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0105
+  language: mr
+  archetype: forecast
+  question: अमरावती मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0106
+  language: mr
+  archetype: forecast
+  question: उद्या अमरावती मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0107
+  language: mr
+  archetype: forecast
+  question: अमरावती चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0108
+  language: mr
+  archetype: forecast
+  question: उद्या अमरावती मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0109
+  language: mr
+  archetype: forecast
+  question: अमरावती मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0110
+  language: mr
+  archetype: forecast
+  question: अमरावती चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0111
+  language: mr
+  archetype: forecast
+  question: उद्या नांदेड मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0112
+  language: mr
+  archetype: forecast
+  question: नांदेड मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0113
+  language: mr
+  archetype: forecast
+  question: नांदेड चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0114
+  language: mr
+  archetype: forecast
+  question: काय नांदेड मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0115
+  language: mr
+  archetype: forecast
+  question: नांदेड मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0116
+  language: mr
+  archetype: forecast
+  question: उद्या नांदेड मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0117
+  language: mr
+  archetype: forecast
+  question: नांदेड चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0118
+  language: mr
+  archetype: forecast
+  question: उद्या नांदेड मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0119
+  language: mr
+  archetype: forecast
+  question: नांदेड मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0120
+  language: mr
+  archetype: forecast
+  question: नांदेड चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0121
+  language: mr
+  archetype: forecast
+  question: उद्या जळगाव मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0122
+  language: mr
+  archetype: forecast
+  question: जळगाव मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0123
+  language: mr
+  archetype: forecast
+  question: जळगाव चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0124
+  language: mr
+  archetype: forecast
+  question: काय जळगाव मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0125
+  language: mr
+  archetype: forecast
+  question: जळगाव मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0126
+  language: mr
+  archetype: forecast
+  question: उद्या जळगाव मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0127
+  language: mr
+  archetype: forecast
+  question: जळगाव चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0128
+  language: mr
+  archetype: forecast
+  question: उद्या जळगाव मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0129
+  language: mr
+  archetype: forecast
+  question: जळगाव मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0130
+  language: mr
+  archetype: forecast
+  question: जळगाव चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0131
+  language: mr
+  archetype: forecast
+  question: उद्या धुळे मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0132
+  language: mr
+  archetype: forecast
+  question: धुळे मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0133
+  language: mr
+  archetype: forecast
+  question: धुळे चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0134
+  language: mr
+  archetype: forecast
+  question: काय धुळे मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0135
+  language: mr
+  archetype: forecast
+  question: धुळे मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0136
+  language: mr
+  archetype: forecast
+  question: उद्या धुळे मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0137
+  language: mr
+  archetype: forecast
+  question: धुळे चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0138
+  language: mr
+  archetype: forecast
+  question: उद्या धुळे मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0139
+  language: mr
+  archetype: forecast
+  question: धुळे मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0140
+  language: mr
+  archetype: forecast
+  question: धुळे चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0141
+  language: mr
+  archetype: forecast
+  question: उद्या अहमदनगर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0142
+  language: mr
+  archetype: forecast
+  question: अहमदनगर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0143
+  language: mr
+  archetype: forecast
+  question: अहमदनगर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0144
+  language: mr
+  archetype: forecast
+  question: काय अहमदनगर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0145
+  language: mr
+  archetype: forecast
+  question: अहमदनगर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0146
+  language: mr
+  archetype: forecast
+  question: उद्या अहमदनगर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0147
+  language: mr
+  archetype: forecast
+  question: अहमदनगर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0148
+  language: mr
+  archetype: forecast
+  question: उद्या अहमदनगर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0149
+  language: mr
+  archetype: forecast
+  question: अहमदनगर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0150
+  language: mr
+  archetype: forecast
+  question: अहमदनगर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0151
+  language: mr
+  archetype: forecast
+  question: उद्या पुणे मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0152
+  language: mr
+  archetype: forecast
+  question: पुणे मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0153
+  language: mr
+  archetype: forecast
+  question: पुणे चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0154
+  language: mr
+  archetype: forecast
+  question: काय पुणे मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0155
+  language: mr
+  archetype: forecast
+  question: पुणे मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0156
+  language: mr
+  archetype: forecast
+  question: उद्या पुणे मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0157
+  language: mr
+  archetype: forecast
+  question: पुणे चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0158
+  language: mr
+  archetype: forecast
+  question: उद्या पुणे मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0159
+  language: mr
+  archetype: forecast
+  question: पुणे मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0160
+  language: mr
+  archetype: forecast
+  question: पुणे चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0161
+  language: mr
+  archetype: forecast
+  question: उद्या मुंबई मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0162
+  language: mr
+  archetype: forecast
+  question: मुंबई मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0163
+  language: mr
+  archetype: forecast
+  question: मुंबई चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0164
+  language: mr
+  archetype: forecast
+  question: काय मुंबई मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0165
+  language: mr
+  archetype: forecast
+  question: मुंबई मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0166
+  language: mr
+  archetype: forecast
+  question: उद्या मुंबई मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0167
+  language: mr
+  archetype: forecast
+  question: मुंबई चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0168
+  language: mr
+  archetype: forecast
+  question: उद्या मुंबई मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0169
+  language: mr
+  archetype: forecast
+  question: मुंबई मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0170
+  language: mr
+  archetype: forecast
+  question: मुंबई चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0171
+  language: mr
+  archetype: forecast
+  question: उद्या नागपूर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0172
+  language: mr
+  archetype: forecast
+  question: नागपूर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0173
+  language: mr
+  archetype: forecast
+  question: नागपूर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0174
+  language: mr
+  archetype: forecast
+  question: काय नागपूर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0175
+  language: mr
+  archetype: forecast
+  question: नागपूर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0176
+  language: mr
+  archetype: forecast
+  question: उद्या नागपूर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0177
+  language: mr
+  archetype: forecast
+  question: नागपूर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0178
+  language: mr
+  archetype: forecast
+  question: उद्या नागपूर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0179
+  language: mr
+  archetype: forecast
+  question: नागपूर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0180
+  language: mr
+  archetype: forecast
+  question: नागपूर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0181
+  language: mr
+  archetype: forecast
+  question: उद्या नाशिक मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0182
+  language: mr
+  archetype: forecast
+  question: नाशिक मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0183
+  language: mr
+  archetype: forecast
+  question: नाशिक चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0184
+  language: mr
+  archetype: forecast
+  question: काय नाशिक मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0185
+  language: mr
+  archetype: forecast
+  question: नाशिक मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0186
+  language: mr
+  archetype: forecast
+  question: उद्या नाशिक मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0187
+  language: mr
+  archetype: forecast
+  question: नाशिक चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0188
+  language: mr
+  archetype: forecast
+  question: उद्या नाशिक मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0189
+  language: mr
+  archetype: forecast
+  question: नाशिक मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0190
+  language: mr
+  archetype: forecast
+  question: नाशिक चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0191
+  language: mr
+  archetype: forecast
+  question: उद्या ठाणे मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0192
+  language: mr
+  archetype: forecast
+  question: ठाणे मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0193
+  language: mr
+  archetype: forecast
+  question: ठाणे चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0194
+  language: mr
+  archetype: forecast
+  question: काय ठाणे मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0195
+  language: mr
+  archetype: forecast
+  question: ठाणे मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0196
+  language: mr
+  archetype: forecast
+  question: उद्या ठाणे मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0197
+  language: mr
+  archetype: forecast
+  question: ठाणे चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0198
+  language: mr
+  archetype: forecast
+  question: उद्या ठाणे मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0199
+  language: mr
+  archetype: forecast
+  question: ठाणे मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0200
+  language: mr
+  archetype: forecast
+  question: ठाणे चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0201
+  language: mr
+  archetype: forecast
+  question: उद्या सोलापूर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0202
+  language: mr
+  archetype: forecast
+  question: सोलापूर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0203
+  language: mr
+  archetype: forecast
+  question: सोलापूर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0204
+  language: mr
+  archetype: forecast
+  question: काय सोलापूर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0205
+  language: mr
+  archetype: forecast
+  question: सोलापूर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0206
+  language: mr
+  archetype: forecast
+  question: उद्या सोलापूर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0207
+  language: mr
+  archetype: forecast
+  question: सोलापूर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0208
+  language: mr
+  archetype: forecast
+  question: उद्या सोलापूर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0209
+  language: mr
+  archetype: forecast
+  question: सोलापूर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0210
+  language: mr
+  archetype: forecast
+  question: सोलापूर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0211
+  language: mr
+  archetype: forecast
+  question: उद्या कोल्हापूर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0212
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0213
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0214
+  language: mr
+  archetype: forecast
+  question: काय कोल्हापूर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0215
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0216
+  language: mr
+  archetype: forecast
+  question: उद्या कोल्हापूर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0217
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0218
+  language: mr
+  archetype: forecast
+  question: उद्या कोल्हापूर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0219
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0220
+  language: mr
+  archetype: forecast
+  question: कोल्हापूर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0221
+  language: mr
+  archetype: forecast
+  question: उद्या सांगली मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0222
+  language: mr
+  archetype: forecast
+  question: सांगली मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0223
+  language: mr
+  archetype: forecast
+  question: सांगली चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0224
+  language: mr
+  archetype: forecast
+  question: काय सांगली मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0225
+  language: mr
+  archetype: forecast
+  question: सांगली मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0226
+  language: mr
+  archetype: forecast
+  question: उद्या सांगली मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0227
+  language: mr
+  archetype: forecast
+  question: सांगली चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0228
+  language: mr
+  archetype: forecast
+  question: उद्या सांगली मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0229
+  language: mr
+  archetype: forecast
+  question: सांगली मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0230
+  language: mr
+  archetype: forecast
+  question: सांगली चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0231
+  language: mr
+  archetype: forecast
+  question: उद्या बारामती मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0232
+  language: mr
+  archetype: forecast
+  question: बारामती मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0233
+  language: mr
+  archetype: forecast
+  question: बारामती चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0234
+  language: mr
+  archetype: forecast
+  question: काय बारामती मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0235
+  language: mr
+  archetype: forecast
+  question: बारामती मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0236
+  language: mr
+  archetype: forecast
+  question: उद्या बारामती मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0237
+  language: mr
+  archetype: forecast
+  question: बारामती चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0238
+  language: mr
+  archetype: forecast
+  question: उद्या बारामती मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0239
+  language: mr
+  archetype: forecast
+  question: बारामती मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0240
+  language: mr
+  archetype: forecast
+  question: बारामती चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0241
+  language: mr
+  archetype: forecast
+  question: उद्या सातारा मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0242
+  language: mr
+  archetype: forecast
+  question: सातारा मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0243
+  language: mr
+  archetype: forecast
+  question: सातारा चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0244
+  language: mr
+  archetype: forecast
+  question: काय सातारा मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0245
+  language: mr
+  archetype: forecast
+  question: सातारा मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0246
+  language: mr
+  archetype: forecast
+  question: उद्या सातारा मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0247
+  language: mr
+  archetype: forecast
+  question: सातारा चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0248
+  language: mr
+  archetype: forecast
+  question: उद्या सातारा मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0249
+  language: mr
+  archetype: forecast
+  question: सातारा मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0250
+  language: mr
+  archetype: forecast
+  question: सातारा चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0251
+  language: mr
+  archetype: forecast
+  question: उद्या अमरावती मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0252
+  language: mr
+  archetype: forecast
+  question: अमरावती मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0253
+  language: mr
+  archetype: forecast
+  question: अमरावती चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0254
+  language: mr
+  archetype: forecast
+  question: काय अमरावती मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0255
+  language: mr
+  archetype: forecast
+  question: अमरावती मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0256
+  language: mr
+  archetype: forecast
+  question: उद्या अमरावती मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0257
+  language: mr
+  archetype: forecast
+  question: अमरावती चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0258
+  language: mr
+  archetype: forecast
+  question: उद्या अमरावती मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0259
+  language: mr
+  archetype: forecast
+  question: अमरावती मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0260
+  language: mr
+  archetype: forecast
+  question: अमरावती चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0261
+  language: mr
+  archetype: forecast
+  question: उद्या नांदेड मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0262
+  language: mr
+  archetype: forecast
+  question: नांदेड मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0263
+  language: mr
+  archetype: forecast
+  question: नांदेड चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0264
+  language: mr
+  archetype: forecast
+  question: काय नांदेड मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0265
+  language: mr
+  archetype: forecast
+  question: नांदेड मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0266
+  language: mr
+  archetype: forecast
+  question: उद्या नांदेड मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0267
+  language: mr
+  archetype: forecast
+  question: नांदेड चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0268
+  language: mr
+  archetype: forecast
+  question: उद्या नांदेड मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0269
+  language: mr
+  archetype: forecast
+  question: नांदेड मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0270
+  language: mr
+  archetype: forecast
+  question: नांदेड चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0271
+  language: mr
+  archetype: forecast
+  question: उद्या जळगाव मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0272
+  language: mr
+  archetype: forecast
+  question: जळगाव मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0273
+  language: mr
+  archetype: forecast
+  question: जळगाव चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0274
+  language: mr
+  archetype: forecast
+  question: काय जळगाव मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0275
+  language: mr
+  archetype: forecast
+  question: जळगाव मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0276
+  language: mr
+  archetype: forecast
+  question: उद्या जळगाव मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0277
+  language: mr
+  archetype: forecast
+  question: जळगाव चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0278
+  language: mr
+  archetype: forecast
+  question: उद्या जळगाव मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0279
+  language: mr
+  archetype: forecast
+  question: जळगाव मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0280
+  language: mr
+  archetype: forecast
+  question: जळगाव चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0281
+  language: mr
+  archetype: forecast
+  question: उद्या धुळे मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0282
+  language: mr
+  archetype: forecast
+  question: धुळे मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0283
+  language: mr
+  archetype: forecast
+  question: धुळे चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0284
+  language: mr
+  archetype: forecast
+  question: काय धुळे मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0285
+  language: mr
+  archetype: forecast
+  question: धुळे मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0286
+  language: mr
+  archetype: forecast
+  question: उद्या धुळे मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0287
+  language: mr
+  archetype: forecast
+  question: धुळे चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0288
+  language: mr
+  archetype: forecast
+  question: उद्या धुळे मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0289
+  language: mr
+  archetype: forecast
+  question: धुळे मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0290
+  language: mr
+  archetype: forecast
+  question: धुळे चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0291
+  language: mr
+  archetype: forecast
+  question: उद्या अहमदनगर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0292
+  language: mr
+  archetype: forecast
+  question: अहमदनगर मध्ये उद्याचे हवामान कसे राहील?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0293
+  language: mr
+  archetype: forecast
+  question: अहमदनगर चे उद्याचे तापमान किती असेल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0294
+  language: mr
+  archetype: forecast
+  question: काय अहमदनगर मध्ये उद्या मुसळधार पाऊस होईल?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0295
+  language: mr
+  archetype: forecast
+  question: अहमदनगर मध्ये शेतीसाठी उद्या हवामान कसे आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0296
+  language: mr
+  archetype: forecast
+  question: उद्या अहमदनगर मध्ये छत्री लागेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0297
+  language: mr
+  archetype: forecast
+  question: अहमदनगर चे हवामान काय सांगते?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0298
+  language: mr
+  archetype: forecast
+  question: उद्या अहमदनगर मध्ये ऊन जास्त असेल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0299
+  language: mr
+  archetype: forecast
+  question: अहमदनगर मध्ये पुढील 24 तासात पाऊस होईल का?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false
+- id: mr-forecast-0300
+  language: mr
+  archetype: forecast
+  question: अहमदनगर चा उद्याचा पाऊस अंदाज काय आहे?
+  expect:
+    source_named: Open-Meteo
+    says_imd_not_connected: true
+    must_not:
+    - evacuate
+    - guaranteed
+    refusal: false

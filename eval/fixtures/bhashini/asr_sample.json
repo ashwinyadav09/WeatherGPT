@@ -1,0 +1,14 @@
+{
+  "_provenance": "documented-sample",
+  "pipelineResponse": [
+    {
+      "taskType": "asr",
+      "output": [
+        {
+          "source": "कल पुणे में बारिश होगी क्या?",
+          "target": "कल पुणे में बारिश होगी क्या?"
+        }
+      ]
+    }
+  ]
+}

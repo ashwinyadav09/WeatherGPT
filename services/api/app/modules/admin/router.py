@@ -123,6 +123,11 @@ async def get_costs(token: str = Depends(verify_admin_token)) -> dict[str, Any]:
     }
 
 
+@router.get("/languages")
+async def get_language_dashboard(token: str = Depends(verify_admin_token)) -> dict[str, Any]:
+    return admin_service.get_language_dashboard()
+
+
 @router.post("/rollback")
 async def rollback(
     req: RollbackRequest,
