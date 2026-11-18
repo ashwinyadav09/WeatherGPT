@@ -1,0 +1,53 @@
+# Draft glossary (Telugu). Needs native-speaker sign-off (human step). Keys match glossary.en.yaml.
+terms:
+  temperature: ఉష్ణోగ్రత
+  humidity: తేమ
+  rain: వర్షం
+  rainfall: వర్షపాతం
+  thunderstorm: ఉరుములతో కూడిన వర్షం
+  lightning: పిడుగుపాటు
+  hailstorm: వడగళ్ల వాన
+  heat_wave: వడగాడ్పులు
+  cold_wave: శీతల గాలులు
+  cyclone: తుఫాను
+  flood: వరద
+  fog: పొగమంచు
+  wind: గాలి
+  gust: ఈదురు గాలులు
+  visibility: దృశ్యమానత
+  forecast: వాతావరణ సూచన
+  nowcast: తక్షణ వాతావరణ సమాచారం (రాబోయే కొన్ని గంటల కోసం)
+  warning: హెచ్చరిక
+  alert: అప్రమత్తత
+  heavy_rain: భారీ వర్షం
+  very_heavy_rain: అతి భారీ వర్షం
+  extremely_heavy_rain: అత్యంత భారీ వర్షం
+  dust_storm: ధూళి తుఫాను
+  high_waves: ఎత్తైన అలలు
+  flash_flood: ఆకస్మిక వరద
+  drought: కరువు
+  tsunami: సునామీ
+  storm_surge: సముద్రపు అలల ఉధృతి
+  strong_wind: బలమైన గాలి
+levels:
+  green: {color: ఆకుపచ్చ, meaning: ఎటువంటి హెచ్చరిక లేదు}
+  yellow: {color: పసుపు, meaning: అప్రమత్తంగా ఉండండి}
+  orange: {color: నారింజ, meaning: సిద్ధంగా ఉండండి}
+  red: {color: ఎరుపు, meaning: చర్యలు తీసుకోండి}
+time:
+  today: ఈ రోజు
+  tomorrow: రేపు
+  day_after_tomorrow: ఎల్లుండి
+  this_week: ఈ వారం
+  morning: ఉదయం
+  afternoon: మధ్యాహ్నం
+  evening: సాయంత్రం
+  night: రాత్రి
+units:
+  celsius: డిగ్రీల సెల్సియస్
+  mm: మిల్లీమీటర్లు
+  kmh: కిలోమీటర్లు ప్రతి గంటకు
+  percent: శాతం
+crops:
+  wheat: గోధుమ
+  rice: వరి

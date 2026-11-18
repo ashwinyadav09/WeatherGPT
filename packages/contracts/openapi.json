@@ -662,6 +662,73 @@
         }
       }
     },
+    "/v1/admin/languages": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "summary": "Get Language Dashboard",
+        "operationId": "get_language_dashboard_v1_admin_languages_get",
+        "parameters": [
+          {
+            "name": "X-Admin-Token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Admin-Token"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Language Dashboard V1 Admin Languages Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/admin/rollback": {
       "post": {
         "tags": [
@@ -762,8 +829,18 @@
             "required": false,
             "schema": {
               "type": "string",
-              "default": "heat",
+              "default": "heat_wave",
               "title": "Domain"
+            }
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en",
+              "title": "Language"
             }
           },
           {
@@ -771,15 +848,19 @@
             "in": "query",
             "required": false,
             "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
+              "type": "string",
+              "default": "wheat",
               "title": "Crop"
+            }
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "sowing",
+              "title": "Stage"
             }
           }
         ],
@@ -790,6 +871,143 @@
               "application/json": {
                 "schema": {
                   "title": "Response Get Advisories V1 Advisory Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/advisory/agromet": {
+      "get": {
+        "tags": [
+          "advisory"
+        ],
+        "summary": "Get Agromet Advisory",
+        "description": "IMD Gramin Krishi Mausam Sewa (GKMS) district agromet advisory for wheat and rice.",
+        "operationId": "get_agromet_advisory_v1_advisory_agromet_get",
+        "parameters": [
+          {
+            "name": "district",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "District"
+            }
+          },
+          {
+            "name": "crop",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "wheat",
+              "title": "Crop"
+            }
+          },
+          {
+            "name": "stage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "sowing",
+              "title": "Stage"
+            }
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en",
+              "title": "Language"
+            }
+          },
+          {
+            "name": "query_text",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "",
+              "title": "Query Text"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Agromet Advisory V1 Advisory Agromet Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/advisory/marine": {
+      "get": {
+        "tags": [
+          "advisory"
+        ],
+        "summary": "Get Marine Bulletin",
+        "description": "IMD / INCOIS coastal weather bulletin, sea condition, and fishermen warning.",
+        "operationId": "get_marine_bulletin_v1_advisory_marine_get",
+        "parameters": [
+          {
+            "name": "area",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "konkan_goa",
+              "title": "Area"
+            }
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en",
+              "title": "Language"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Get Marine Bulletin V1 Advisory Marine Get"
                 }
               }
             }
@@ -832,6 +1050,60 @@
               "title": "Place Id"
             },
             "description": "Filter alerts by place"
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Latitude for polygon matching",
+              "title": "Lat"
+            },
+            "description": "Latitude for polygon matching"
+          },
+          {
+            "name": "lon",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Longitude for polygon matching",
+              "title": "Lon"
+            },
+            "description": "Longitude for polygon matching"
+          },
+          {
+            "name": "district",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "District name for fallback matching",
+              "title": "District"
+            },
+            "description": "District name for fallback matching"
           }
         ],
         "responses": {
@@ -845,6 +1117,337 @@
                     "$ref": "#/components/schemas/AlertModel"
                   },
                   "title": "Response Get Alerts V1 Alerts Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/push/subscribe": {
+      "post": {
+        "tags": [
+          "alerts"
+        ],
+        "summary": "Subscribe Push",
+        "operationId": "subscribe_push_v1_push_subscribe_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PushSubscriptionModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Subscribe Push V1 Push Subscribe Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "alerts"
+        ],
+        "summary": "Unsubscribe Push",
+        "operationId": "unsubscribe_push_v1_push_subscribe_delete",
+        "parameters": [
+          {
+            "name": "endpoint",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Push subscription endpoint URL to delete",
+              "title": "Endpoint"
+            },
+            "description": "Push subscription endpoint URL to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Unsubscribe Push V1 Push Subscribe Delete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/aviation/metar": {
+      "get": {
+        "tags": [
+          "aviation"
+        ],
+        "summary": "Get Metar",
+        "description": "Returns decoded METAR alongside raw text, flight category, and mandatory non-briefing banner.",
+        "operationId": "get_metar_v1_aviation_metar_get",
+        "parameters": [
+          {
+            "name": "station",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 4,
+              "description": "4-letter ICAO station code",
+              "title": "Station"
+            },
+            "description": "4-letter ICAO station code"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecodedMetar"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/aviation/taf": {
+      "get": {
+        "tags": [
+          "aviation"
+        ],
+        "summary": "Get Taf",
+        "description": "Returns decoded TAF alongside raw text and mandatory non-briefing banner.",
+        "operationId": "get_taf_v1_aviation_taf_get",
+        "parameters": [
+          {
+            "name": "station",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 4,
+              "description": "4-letter ICAO station code",
+              "title": "Station"
+            },
+            "description": "4-letter ICAO station code"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecodedTaf"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/aviation/overview": {
+      "get": {
+        "tags": [
+          "aviation"
+        ],
+        "summary": "Get Overview",
+        "description": "Returns full aerodrome overview: decoded METAR, TAF, crosswind calculations across all runways, and recommendations.",
+        "operationId": "get_overview_v1_aviation_overview_get",
+        "parameters": [
+          {
+            "name": "station",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 4,
+              "maxLength": 4,
+              "description": "4-letter ICAO station code",
+              "title": "Station"
+            },
+            "description": "4-letter ICAO station code"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AerodromeOverview"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/aviation/crosswind": {
+      "get": {
+        "tags": [
+          "aviation"
+        ],
+        "summary": "Get Crosswind",
+        "description": "Computes exact crosswind, headwind/tailwind components, and crosswind component side.",
+        "operationId": "get_crosswind_v1_aviation_crosswind_get",
+        "parameters": [
+          {
+            "name": "runway_heading",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 360,
+              "minimum": 0,
+              "description": "Runway magnetic heading in degrees",
+              "title": "Runway Heading"
+            },
+            "description": "Runway magnetic heading in degrees"
+          },
+          {
+            "name": "wind_dir",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 360,
+              "minimum": 0,
+              "description": "Wind direction in degrees",
+              "title": "Wind Dir"
+            },
+            "description": "Wind direction in degrees"
+          },
+          {
+            "name": "wind_speed",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Wind speed in knots",
+              "title": "Wind Speed"
+            },
+            "description": "Wind speed in knots"
+          },
+          {
+            "name": "wind_gust",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Wind gust in knots",
+              "title": "Wind Gust"
+            },
+            "description": "Wind gust in knots"
+          },
+          {
+            "name": "runway_name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Runway identifier label",
+              "default": "RWY 09",
+              "title": "Runway Name"
+            },
+            "description": "Runway identifier label"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WindCalculation"
                 }
               }
             }
@@ -876,8 +1479,10 @@
             "required": true,
             "schema": {
               "type": "string",
+              "description": "Place identifier or name",
               "title": "Place Id"
-            }
+            },
+            "description": "Place identifier or name"
           },
           {
             "name": "var",
@@ -885,9 +1490,11 @@
             "required": false,
             "schema": {
               "type": "string",
+              "description": "Climate variable (temperature, rain)",
               "default": "temperature",
               "title": "Var"
-            }
+            },
+            "description": "Climate variable (temperature, rain)"
           },
           {
             "name": "period",
@@ -895,9 +1502,11 @@
             "required": false,
             "schema": {
               "type": "string",
+              "description": "Period string (e.g. 2026-05 or 1991-2020)",
               "default": "2026-05",
               "title": "Period"
-            }
+            },
+            "description": "Period string (e.g. 2026-05 or 1991-2020)"
           },
           {
             "name": "stat",
@@ -905,9 +1514,41 @@
             "required": false,
             "schema": {
               "type": "string",
+              "description": "Statistic (normal, anomaly, percentile, days_above_threshold, trend)",
               "default": "anomaly",
               "title": "Stat"
-            }
+            },
+            "description": "Statistic (normal, anomaly, percentile, days_above_threshold, trend)"
+          },
+          {
+            "name": "threshold",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional threshold value for counts",
+              "title": "Threshold"
+            },
+            "description": "Optional threshold value for counts"
+          },
+          {
+            "name": "baseline",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Baseline normal period",
+              "default": "1991-2020",
+              "title": "Baseline"
+            },
+            "description": "Baseline normal period"
           }
         ],
         "responses": {
@@ -1095,6 +1736,31 @@
         }
       }
     },
+    "/v1/places/saved": {
+      "get": {
+        "tags": [
+          "places"
+        ],
+        "summary": "Get Saved Places",
+        "operationId": "get_saved_places_v1_places_saved_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PlaceModel"
+                  },
+                  "type": "array",
+                  "title": "Response Get Saved Places V1 Places Saved Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/places/{place_id}": {
       "get": {
         "tags": [
@@ -1224,10 +1890,375 @@
           }
         }
       }
+    },
+    "/v1/smart-city/subscriptions": {
+      "post": {
+        "tags": [
+          "smart-city"
+        ],
+        "summary": "Create Subscription",
+        "description": "Subscribes a smart city operator or dashboard to threshold alerts delivered via webhook.",
+        "operationId": "create_subscription_v1_smart_city_subscriptions_post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubscriptionCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ThresholdSubscription"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "smart-city"
+        ],
+        "summary": "List Subscriptions",
+        "description": "Lists active smart-city threshold webhook subscriptions.",
+        "operationId": "list_subscriptions_v1_smart_city_subscriptions_get",
+        "parameters": [
+          {
+            "name": "place_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by place ID",
+              "title": "Place Id"
+            },
+            "description": "Filter by place ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ThresholdSubscription"
+                  },
+                  "title": "Response List Subscriptions V1 Smart City Subscriptions Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/smart-city/subscriptions/{sub_id}": {
+      "delete": {
+        "tags": [
+          "smart-city"
+        ],
+        "summary": "Delete Subscription",
+        "description": "Cancels a threshold webhook subscription.",
+        "operationId": "delete_subscription_v1_smart_city_subscriptions__sub_id__delete",
+        "parameters": [
+          {
+            "name": "sub_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Sub Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Delete Subscription V1 Smart City Subscriptions  Sub Id  Delete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/smart-city/evaluate": {
+      "post": {
+        "tags": [
+          "smart-city"
+        ],
+        "summary": "Evaluate Sensor Readings",
+        "description": "Evaluates incoming city weather/sensor observations against subscriptions and dispatches webhooks.",
+        "operationId": "evaluate_sensor_readings_v1_smart_city_evaluate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensorObservation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Evaluate Sensor Readings V1 Smart City Evaluate Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/smart-city/deliveries": {
+      "get": {
+        "tags": [
+          "smart-city"
+        ],
+        "summary": "Get Deliveries",
+        "description": "Retrieves smart-city webhook delivery audit logs.",
+        "operationId": "get_deliveries_v1_smart_city_deliveries_get",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 500,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WebhookDeliveryLog"
+                  },
+                  "title": "Response Get Deliveries V1 Smart City Deliveries Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/smart-city/heat-index": {
+      "get": {
+        "tags": [
+          "smart-city"
+        ],
+        "summary": "Calculate Heat Index",
+        "description": "Computes Heat Index based on ambient temperature and relative humidity.",
+        "operationId": "calculate_heat_index_v1_smart_city_heat_index_get",
+        "parameters": [
+          {
+            "name": "temp_c",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 60,
+              "minimum": -20,
+              "description": "Ambient temperature in degC",
+              "title": "Temp C"
+            },
+            "description": "Ambient temperature in degC"
+          },
+          {
+            "name": "rh_pct",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 100,
+              "minimum": 0,
+              "description": "Relative humidity in percentage",
+              "title": "Rh Pct"
+            },
+            "description": "Relative humidity in percentage"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Calculate Heat Index V1 Smart City Heat Index Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AerodromeOverview": {
+        "properties": {
+          "station": {
+            "type": "string",
+            "title": "Station"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "metar": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DecodedMetar"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "taf": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DecodedTaf"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "runways": {
+            "items": {
+              "$ref": "#/components/schemas/RunwayInfo"
+            },
+            "type": "array",
+            "title": "Runways"
+          },
+          "wind_calculations": {
+            "items": {
+              "$ref": "#/components/schemas/WindCalculation"
+            },
+            "type": "array",
+            "title": "Wind Calculations"
+          },
+          "primary_runway_recommendation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Runway Recommendation"
+          },
+          "banner": {
+            "type": "string",
+            "title": "Banner",
+            "default": "INFORMATIONAL ONLY: WeatherGPT aviation data is for situational awareness only and DOES NOT constitute an official pre-flight briefing. Pilots must obtain an official briefing from IMD / AAI / DGCA approved channels before flight."
+          }
+        },
+        "type": "object",
+        "required": [
+          "station",
+          "name"
+        ],
+        "title": "AerodromeOverview"
+      },
       "AlertModel": {
         "properties": {
           "id": {
@@ -1415,6 +2446,231 @@
           "text"
         ],
         "title": "ChatRequest"
+      },
+      "CloudLayer": {
+        "properties": {
+          "cover": {
+            "type": "string",
+            "title": "Cover"
+          },
+          "base_ft": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Base Ft"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cover"
+        ],
+        "title": "CloudLayer"
+      },
+      "DecodedMetar": {
+        "properties": {
+          "station": {
+            "type": "string",
+            "title": "Station"
+          },
+          "raw": {
+            "type": "string",
+            "title": "Raw"
+          },
+          "observation_time_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observation Time Utc"
+          },
+          "observation_time_ist": {
+            "type": "string",
+            "title": "Observation Time Ist"
+          },
+          "flight_category": {
+            "type": "string",
+            "enum": [
+              "VFR",
+              "MVFR",
+              "IFR",
+              "LIFR"
+            ],
+            "title": "Flight Category"
+          },
+          "wind_dir": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wind Dir"
+          },
+          "wind_speed_kt": {
+            "type": "number",
+            "title": "Wind Speed Kt"
+          },
+          "wind_gust_kt": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wind Gust Kt"
+          },
+          "visibility_meters": {
+            "type": "integer",
+            "title": "Visibility Meters"
+          },
+          "weather_conditions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Weather Conditions"
+          },
+          "clouds": {
+            "items": {
+              "$ref": "#/components/schemas/CloudLayer"
+            },
+            "type": "array",
+            "title": "Clouds"
+          },
+          "ceiling_ft": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ceiling Ft"
+          },
+          "temperature_c": {
+            "type": "number",
+            "title": "Temperature C"
+          },
+          "dewpoint_c": {
+            "type": "number",
+            "title": "Dewpoint C"
+          },
+          "qnh_hpa": {
+            "type": "number",
+            "title": "Qnh Hpa"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "AviationWeather.gov / NOAA"
+          },
+          "is_cached": {
+            "type": "boolean",
+            "title": "Is Cached",
+            "default": false
+          },
+          "fetched_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Fetched At"
+          },
+          "banner": {
+            "type": "string",
+            "title": "Banner",
+            "default": "INFORMATIONAL ONLY: WeatherGPT aviation data is for situational awareness only and DOES NOT constitute an official pre-flight briefing. Pilots must obtain an official briefing from IMD / AAI / DGCA approved channels before flight."
+          }
+        },
+        "type": "object",
+        "required": [
+          "station",
+          "raw",
+          "observation_time_utc",
+          "observation_time_ist",
+          "flight_category",
+          "wind_dir",
+          "wind_speed_kt",
+          "visibility_meters",
+          "temperature_c",
+          "dewpoint_c",
+          "qnh_hpa"
+        ],
+        "title": "DecodedMetar"
+      },
+      "DecodedTaf": {
+        "properties": {
+          "station": {
+            "type": "string",
+            "title": "Station"
+          },
+          "raw": {
+            "type": "string",
+            "title": "Raw"
+          },
+          "issue_time_utc": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Issue Time Utc"
+          },
+          "valid_from": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Valid From"
+          },
+          "valid_to": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Valid To"
+          },
+          "periods": {
+            "items": {
+              "$ref": "#/components/schemas/TafPeriod"
+            },
+            "type": "array",
+            "title": "Periods"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source",
+            "default": "AviationWeather.gov / NOAA"
+          },
+          "is_cached": {
+            "type": "boolean",
+            "title": "Is Cached",
+            "default": false
+          },
+          "fetched_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Fetched At"
+          },
+          "banner": {
+            "type": "string",
+            "title": "Banner",
+            "default": "INFORMATIONAL ONLY: WeatherGPT aviation data is for situational awareness only and DOES NOT constitute an official pre-flight briefing. Pilots must obtain an official briefing from IMD / AAI / DGCA approved channels before flight."
+          }
+        },
+        "type": "object",
+        "required": [
+          "station",
+          "raw",
+          "issue_time_utc",
+          "valid_from",
+          "valid_to",
+          "summary"
+        ],
+        "title": "DecodedTaf"
       },
       "DeleteDataRequest": {
         "properties": {
@@ -1657,6 +2913,89 @@
         ],
         "title": "PlaceReference"
       },
+      "PushKeys": {
+        "properties": {
+          "p256dh": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P256Dh"
+          },
+          "auth": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Auth"
+          }
+        },
+        "type": "object",
+        "title": "PushKeys"
+      },
+      "PushSubscriptionModel": {
+        "properties": {
+          "endpoint": {
+            "type": "string",
+            "title": "Endpoint"
+          },
+          "keys": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PushKeys"
+              },
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              }
+            ],
+            "title": "Keys"
+          },
+          "places": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Places"
+          },
+          "severities": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Severities"
+          },
+          "quiet_hours": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quiet Hours"
+          }
+        },
+        "type": "object",
+        "required": [
+          "endpoint"
+        ],
+        "title": "PushSubscriptionModel"
+      },
       "ResolveRequest": {
         "properties": {
           "text": {
@@ -1718,6 +3057,89 @@
         ],
         "title": "RollbackRequest"
       },
+      "RunwayInfo": {
+        "properties": {
+          "ident": {
+            "type": "string",
+            "title": "Ident"
+          },
+          "heading": {
+            "type": "integer",
+            "maximum": 360.0,
+            "minimum": 0.0,
+            "title": "Heading"
+          },
+          "reciprocal_heading": {
+            "type": "integer",
+            "maximum": 360.0,
+            "minimum": 0.0,
+            "title": "Reciprocal Heading"
+          },
+          "length_ft": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Length Ft"
+          }
+        },
+        "type": "object",
+        "required": [
+          "ident",
+          "heading",
+          "reciprocal_heading"
+        ],
+        "title": "RunwayInfo"
+      },
+      "SensorObservation": {
+        "properties": {
+          "place_id": {
+            "type": "string",
+            "title": "Place Id"
+          },
+          "temperature_c": {
+            "type": "number",
+            "title": "Temperature C"
+          },
+          "relative_humidity_pct": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Relative Humidity Pct"
+          },
+          "rain_rate_mm_hr": {
+            "type": "number",
+            "title": "Rain Rate Mm Hr",
+            "default": 0.0
+          },
+          "lightning_detected": {
+            "type": "boolean",
+            "title": "Lightning Detected",
+            "default": false
+          },
+          "wind_gust_kmh": {
+            "type": "number",
+            "title": "Wind Gust Kmh",
+            "default": 0.0
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp"
+          }
+        },
+        "type": "object",
+        "required": [
+          "place_id",
+          "temperature_c",
+          "relative_humidity_pct"
+        ],
+        "title": "SensorObservation"
+      },
       "SpeakRequest": {
         "properties": {
           "text": {
@@ -1740,6 +3162,261 @@
           "text"
         ],
         "title": "SpeakRequest"
+      },
+      "SubscriptionCreateRequest": {
+        "properties": {
+          "subscriber_name": {
+            "type": "string",
+            "minLength": 2,
+            "title": "Subscriber Name",
+            "description": "Name of municipal or smart-city entity"
+          },
+          "place_id": {
+            "type": "string",
+            "minLength": 2,
+            "title": "Place Id",
+            "description": "Target city/place identifier"
+          },
+          "webhook_url": {
+            "type": "string",
+            "minLength": 8,
+            "title": "Webhook Url",
+            "description": "Target webhook URL (HTTPS/HTTP)"
+          },
+          "secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Secret",
+            "description": "Shared secret for HMAC-SHA256 signature verification"
+          },
+          "thresholds": {
+            "$ref": "#/components/schemas/ThresholdConfig"
+          },
+          "cooldown_minutes": {
+            "type": "integer",
+            "maximum": 1440.0,
+            "minimum": 1.0,
+            "title": "Cooldown Minutes",
+            "description": "Minimum quiet time between successive alerts to prevent flooding",
+            "default": 15
+          }
+        },
+        "type": "object",
+        "required": [
+          "subscriber_name",
+          "place_id",
+          "webhook_url",
+          "thresholds"
+        ],
+        "title": "SubscriptionCreateRequest"
+      },
+      "TafPeriod": {
+        "properties": {
+          "change_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Change Type"
+          },
+          "valid_from": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Valid From"
+          },
+          "valid_to": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Valid To"
+          },
+          "wind_dir": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wind Dir"
+          },
+          "wind_speed_kt": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wind Speed Kt"
+          },
+          "visibility_meters": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Visibility Meters"
+          },
+          "weather_conditions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Weather Conditions"
+          },
+          "clouds": {
+            "items": {
+              "$ref": "#/components/schemas/CloudLayer"
+            },
+            "type": "array",
+            "title": "Clouds"
+          }
+        },
+        "type": "object",
+        "required": [
+          "valid_from",
+          "valid_to"
+        ],
+        "title": "TafPeriod"
+      },
+      "ThresholdConfig": {
+        "properties": {
+          "heat_index_c": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Heat Index C",
+            "description": "Trigger alert if Heat Index >= threshold in degC"
+          },
+          "rain_rate_mm_hr": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rain Rate Mm Hr",
+            "description": "Trigger alert if rain intensity >= threshold in mm/hr"
+          },
+          "lightning_warning": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lightning Warning",
+            "description": "Trigger alert if lightning/thunderstorm detected"
+          },
+          "wind_gust_kmh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wind Gust Kmh",
+            "description": "Trigger alert if wind gust >= threshold in km/h"
+          }
+        },
+        "type": "object",
+        "title": "ThresholdConfig"
+      },
+      "ThresholdSubscription": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "subscriber_name": {
+            "type": "string",
+            "title": "Subscriber Name"
+          },
+          "place_id": {
+            "type": "string",
+            "title": "Place Id"
+          },
+          "webhook_url": {
+            "type": "string",
+            "title": "Webhook Url"
+          },
+          "secret": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Secret"
+          },
+          "thresholds": {
+            "$ref": "#/components/schemas/ThresholdConfig"
+          },
+          "cooldown_minutes": {
+            "type": "integer",
+            "title": "Cooldown Minutes"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "last_triggered_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Triggered At"
+          },
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "subscriber_name",
+          "place_id",
+          "webhook_url",
+          "thresholds",
+          "cooldown_minutes"
+        ],
+        "title": "ThresholdSubscription"
       },
       "Uncertainty": {
         "properties": {
@@ -1913,6 +3590,161 @@
           "unit"
         ],
         "title": "ValueItem"
+      },
+      "WebhookDeliveryLog": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "subscription_id": {
+            "type": "string",
+            "title": "Subscription Id"
+          },
+          "subscriber_name": {
+            "type": "string",
+            "title": "Subscriber Name"
+          },
+          "place_id": {
+            "type": "string",
+            "title": "Place Id"
+          },
+          "webhook_url": {
+            "type": "string",
+            "title": "Webhook Url"
+          },
+          "triggered_thresholds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Triggered Thresholds"
+          },
+          "dispatched_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Dispatched At"
+          },
+          "status_code": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status Code"
+          },
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "latency_ms": {
+            "type": "integer",
+            "title": "Latency Ms"
+          },
+          "payload": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Payload"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "subscription_id",
+          "subscriber_name",
+          "place_id",
+          "webhook_url",
+          "triggered_thresholds",
+          "success",
+          "latency_ms",
+          "payload"
+        ],
+        "title": "WebhookDeliveryLog"
+      },
+      "WindCalculation": {
+        "properties": {
+          "runway": {
+            "type": "string",
+            "title": "Runway"
+          },
+          "runway_heading": {
+            "type": "integer",
+            "title": "Runway Heading"
+          },
+          "wind_direction": {
+            "type": "integer",
+            "title": "Wind Direction"
+          },
+          "wind_speed_kt": {
+            "type": "number",
+            "title": "Wind Speed Kt"
+          },
+          "wind_gust_kt": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wind Gust Kt"
+          },
+          "relative_angle": {
+            "type": "integer",
+            "title": "Relative Angle"
+          },
+          "crosswind_kt": {
+            "type": "number",
+            "title": "Crosswind Kt"
+          },
+          "crosswind_component_side": {
+            "type": "string",
+            "enum": [
+              "left",
+              "right",
+              "head",
+              "tail",
+              "calm"
+            ],
+            "title": "Crosswind Component Side"
+          },
+          "headwind_kt": {
+            "type": "number",
+            "title": "Headwind Kt"
+          },
+          "is_tailwind": {
+            "type": "boolean",
+            "title": "Is Tailwind"
+          }
+        },
+        "type": "object",
+        "required": [
+          "runway",
+          "runway_heading",
+          "wind_direction",
+          "wind_speed_kt",
+          "relative_angle",
+          "crosswind_kt",
+          "crosswind_component_side",
+          "headwind_kt",
+          "is_tailwind"
+        ],
+        "title": "WindCalculation"
       }
     }
   }

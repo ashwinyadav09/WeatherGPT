@@ -27,3 +27,67 @@ hi:
   cancel: "सब सामान्य: {place} में {hazard} का अलर्ट रद्द कर दिया गया है।"
   advice_header: "अधिकारियों की सलाह"
   advice_fallback: "अपने स्थानीय प्रशासन के निर्देशों का पालन करें।"
+
+mr:
+  # Back-translation: "{level_color} alert: {hazard} in {place}"
+  headline: "{level_color} इशारा: {place} मध्ये {hazard}"
+  # Back-translation: "{sender} has issued a {level_color} alert for {hazard} in {place}. Valid from {valid_from} to {valid_to}."
+  body: "{sender} ने {place} मध्ये {hazard} चा {level_color} इशारा जारी केला आहे. हा {valid_from} ते {valid_to} पर्यंत वैध आहे."
+  meaning:
+    green: "कोणतीही चेतावणी नाही."
+    yellow: "दक्ष राहा."
+    orange: "तयार राहा."
+    red: "तातडीने कृती करा."
+  source_line: "{sender} चा अधिकृत इशारा, {channel} द्वारे. जारी: {issued_at}."
+  update_prefix: "अपडेट: "
+  cancel: "सर्व पूर्ववत: {place} मधील {hazard} चा इशारा रद्द करण्यात आला आहे."
+  advice_header: "अधिकाऱ्यांचा सल्ला"
+  advice_fallback: "स्थानिक प्रशासनाच्या सूचनांचे पालन करा."
+
+bn:
+  # Back-translation: "{level_color} alert: {hazard} in {place}"
+  headline: "{level_color} সতর্কতা: {place}-এ {hazard}"
+  # Back-translation: "{sender} has issued a {level_color} alert for {hazard} in {place}. Valid from {valid_from} to {valid_to}."
+  body: "{sender} {place}-এ {hazard}-এর জন্য একটি {level_color} সতর্কতা জারি করেছে। এটি {valid_from} থেকে {valid_to} পর্যন্ত কার্যকর।"
+  meaning:
+    green: "কোনো সতর্কবার্তা নেই।"
+    yellow: "সজাগ থাকুন।"
+    orange: "প্রস্তুত থাকুন।"
+    red: "পদক্ষেপ গ্রহণ করুন।"
+  source_line: "{sender}-এর সরকারি সতর্কতা, {channel}-এর মাধ্যমে। জারির সময়: {issued_at}।"
+  update_prefix: "আপডেট: "
+  cancel: "পরিস্থিতি স্বাভাবিক: {place}-এ {hazard}-এর সতর্কতা প্রত্যাহার করা হয়েছে।"
+  advice_header: "প্রশাসনের নির্দেশাবলী"
+  advice_fallback: "স্থানীয় প্রশাসনের নির্দেশ মেনে চলুন।"
+
+te:
+  # Back-translation: "{level_color} alert: {hazard} in {place}"
+  headline: "{level_color} హెచ్చరిక: {place} లో {hazard}"
+  # Back-translation: "{sender} has issued a {level_color} alert for {hazard} in {place}. Valid from {valid_from} to {valid_to}."
+  body: "{sender} {place} లో {hazard} కొరకు {level_color} హెచ్చరికను జారీ చేసింది. ఇది {valid_from} నుండి {valid_to} వరకు చెల్లుబాటు అవుతుంది."
+  meaning:
+    green: "ఎటువంటి హెచ్చరిక లేదు."
+    yellow: "అప్రమత్తంగా ఉండండి."
+    orange: "సిద్ధంగా ఉండండి."
+    red: "చర్యలు తీసుకోండి."
+  source_line: "{sender} అధికారిక హెచ్చరిక, {channel} ద్వారా. జారీ: {issued_at}."
+  update_prefix: "తాజా సమాచారం: "
+  cancel: "పరిస్థితి సాధారణం: {place} లో {hazard} హెచ్చరిక ఉపసంహరించబడింది."
+  advice_header: "అధికారుల సలహా"
+  advice_fallback: "మీ స్థానిక అధికారుల సూచనలను పాటించండి."
+
+ta:
+  # Back-translation: "{level_color} alert: {hazard} in {place}"
+  headline: "{level_color} எச்சரிக்கை: {place} இல் {hazard}"
+  # Back-translation: "{sender} has issued a {level_color} alert for {hazard} in {place}. Valid from {valid_from} to {valid_to}."
+  body: "{sender} {place} இல் {hazard} க்கான {level_color} எச்சரிக்கையை விடுத்துள்ளது. இது {valid_from} முதல் {valid_to} வரை செல்லுபடியாகும்."
+  meaning:
+    green: "எச்சரிக்கை ஏதுமில்லை."
+    yellow: "விழிப்புடன் இருங்கள்."
+    orange: "தயாராக இருங்கள்."
+    red: "உடனடி நடவடிக்கை எடுங்கள்."
+  source_line: "{sender} அதிகாரப்பூர்வ எச்சரிக்கை, {channel} வழியாக. வெளியிடப்பட்டது: {issued_at}."
+  update_prefix: "புதுப்பிப்பு: "
+  cancel: "இயல்பு நிலை திரும்பியது: {place} இல் {hazard} எச்சரிக்கை ரத்து செய்யப்பட்டுள்ளது."
+  advice_header: "அதிகாரிகளின் வழிகாட்டுதல்"
+  advice_fallback: "உள்ளூர் நிர்வாகத்தின் வழிமுறைகளைப் பின்பற்றவும்."

@@ -135,3 +135,15 @@ async def test_admin_glossary_changes_take_effect_without_restart():
         assert resp.status_code == 200
         assert "बरसात" in resp.text
 
+
+@pytest.mark.asyncio
+async def test_admin_language_quality_dashboard():
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
+        resp = await client.get("/v1/admin/languages", headers=ADMIN_HEADER)
+        assert resp.status_code == 200
+        data = resp.json()
+        assert "languages" in data
+        codes = [item["code"] for item in data["languages"]]
+        for code in ["en", "hi", "bn", "mr", "te", "ta"]:
+            assert code in codes
+

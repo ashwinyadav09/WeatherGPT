@@ -1,0 +1,32 @@
+{
+  "_provenance": "documented-sample",
+  "station": "VIDP",
+  "name": "Indira Gandhi International Airport, Delhi",
+  "runways": [
+    {"ident": "09/27", "heading": 90, "reciprocal_heading": 270, "length_ft": 9229},
+    {"ident": "10/28", "heading": 100, "reciprocal_heading": 280, "length_ft": 12500},
+    {"ident": "11/29", "heading": 110, "reciprocal_heading": 290, "length_ft": 14534}
+  ],
+  "metar": {
+    "raw": "METAR VIDP 171200Z 27014KT 4000 HZ NSC 28/14 Q1012 NOSIG=",
+    "station": "VIDP",
+    "time_utc": "2026-11-17T12:00:00Z",
+    "wind_dir_degrees": 270,
+    "wind_speed_kt": 14,
+    "wind_gust_kt": null,
+    "visibility_meters": 4000,
+    "weather": "HZ (Haze)",
+    "clouds": [{"cover": "NSC", "base_ft": null}],
+    "ceiling_ft": null,
+    "temperature_c": 28.0,
+    "dewpoint_c": 14.0,
+    "qnh_hpa": 1012.0
+  },
+  "taf": {
+    "raw": "TAF VIDP 171130Z 1712/1818 27010KT 5000 HZ NSC BECMG 1718/1720 00000KT 3000 BR NSC TEMPO 1722/1802 1200 BCFG BECMG 1803/1805 10005KT 4000 HZ NSC=",
+    "station": "VIDP",
+    "valid_from": "2026-11-17T12:00:00Z",
+    "valid_to": "2026-11-18T18:00:00Z",
+    "forecast_summary": "Initial wind 270/10kt with 5000m HZ, calm with mist (BR) overnight, tempo fog patches (BCFG) near dawn."
+  }
+}
