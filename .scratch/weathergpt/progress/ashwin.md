@@ -19,7 +19,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R0.5 | Speech: Sarvam primary, no canned transcripts | done | Merged in PR #56 |
 | R1.1 | Provider registry | done | Merged in PR #57 |
 | R1.2 | Translation gateway | done | Merged in PR #58 |
-| R1.3 | Languages | in-review | Seven Tier-1 languages enabled, Odia templates & glossary added, UI strings created, script & stopword detection verified |
+| R1.3 | Languages | done | Merged in PR #59 |
 
 ## Assumptions
 
