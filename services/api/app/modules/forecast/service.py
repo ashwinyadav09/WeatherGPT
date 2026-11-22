@@ -2,51 +2,37 @@ from __future__ import annotations
 
 from typing import Any
 
-from services.api.app.config import settings
 from services.api.app.evidence.models import EvidencePacket
 from services.api.app.modules.forecast.adapters.base import ForecastAdapter
-from services.api.app.modules.forecast.adapters.imd_city import IMDCityForecastAdapter
-from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
-from services.api.app.modules.forecast.adapters.stub import StubForecastAdapter
+from services.api.app.registry import FailoverForecastProvider, registry
 
 
 class ForecastService:
-    def __init__(self) -> None:
+    def __init__(self, provider: ForecastAdapter | None = None) -> None:
         self.adapters: dict[str, ForecastAdapter] = {}
-        self._register_default_adapters()
-
-    def _register_default_adapters(self) -> None:
-        # Register adapters based on settings / sources.yaml
-        for src in settings.sources:
-            if src.id == "open_meteo.forecast" and src.enabled:
-                self.adapters[src.id] = OpenMeteoForecastAdapter(base_url=src.base_url)
-            elif src.id == "imd.city_forecast" and src.enabled:
-                self.adapters[src.id] = IMDCityForecastAdapter(base_url=src.base_url)
-
-        # Always have stub adapter available as fallback
-        self.adapters["stub.forecast"] = StubForecastAdapter()
+        if provider:
+            self.provider = provider
+            self.adapters[getattr(provider, "source_id", "custom")] = provider
+        else:
+            available = registry.get_available_forecast_providers()
+            for p in available:
+                self.adapters[getattr(p, "source_id", type(p).__name__)] = p
+            self.provider = FailoverForecastProvider(available)
 
     def register_adapter(self, adapter: ForecastAdapter) -> None:
         self.adapters[adapter.source_id] = adapter
+        # Re-wrap provider with the newly registered adapter as primary
+        other_adapters = [p for s_id, p in self.adapters.items() if s_id != adapter.source_id]
+        self.provider = FailoverForecastProvider([adapter] + other_adapters)
 
     async def get_forecast(
         self,
-        place_id: str,
+        place_id: str = "pune",
         lat: float = 18.5204,
         lon: float = 73.8567,
         place_name: str = "Pune",
         **kwargs: Any,
     ) -> list[EvidencePacket]:
-        # Authority ladder: IMD (tier 2) > Open-Meteo (tier 5) > Stub
-        if settings.imd_enabled and "imd.city_forecast" in self.adapters:
-            primary = "imd.city_forecast"
-        elif "open_meteo.forecast" in self.adapters:
-            primary = "open_meteo.forecast"
-        else:
-            primary = "stub.forecast"
-
-        adapter = self.adapters.get(primary, self.adapters["stub.forecast"])
-        try:
-            return await adapter.get_forecast(lat=lat, lon=lon, place_name=place_name, **kwargs)
-        except Exception:
-            return await self.adapters["stub.forecast"].get_forecast(lat=lat, lon=lon, place_name=place_name, **kwargs)
+        return await self.provider.get_forecast(
+            lat=lat, lon=lon, place_name=place_name, place_id=place_id, **kwargs
+        )

@@ -4,13 +4,13 @@ import re
 from typing import Any
 
 from services.api.app.evidence.models import PlaceModel
-from services.api.app.modules.location.adapters.open_meteo_geocoding import OpenMeteoGeocodingAdapter
 from services.api.app.modules.location.data import INDIA_PLACES, PLACES_BY_ID
 from services.api.app.modules.location.normalization import (
     CANONICAL_ALIASES,
     extract_potential_place_tokens,
     normalize_text,
 )
+from services.api.app.registry import get_geocoding_adapter
 
 # Export SEED_PLACES for backward compatibility
 SEED_PLACES = INDIA_PLACES
@@ -81,8 +81,8 @@ DEFAULT_SAVED_PLACES: dict[str, PlaceModel] = {
 
 
 class LocationResolver:
-    def __init__(self, geocoder: OpenMeteoGeocodingAdapter | None = None) -> None:
-        self.geocoder = geocoder or OpenMeteoGeocodingAdapter()
+    def __init__(self, geocoder: Any | None = None) -> None:
+        self.geocoder = geocoder or get_geocoding_adapter()
 
     async def search(self, query: str, language: str = "en") -> list[PlaceModel]:
         """Search places by text query, using local database and alias expansion."""

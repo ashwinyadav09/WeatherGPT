@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent
 CONFIG_DIR = ROOT / "config"
@@ -58,7 +58,34 @@ class Settings(BaseModel):
     imd_enabled: bool = Field(default_factory=lambda: os.getenv("IMD_ENABLED", "false").lower() in ("true", "1", "yes"))
     agromet_fixture_enabled: bool = Field(default_factory=lambda: os.getenv("AGROMET_FIXTURE_ENABLED", "false").lower() in ("true", "1", "yes"))
     forecast_primary: str = Field(default_factory=lambda: os.getenv("FORECAST_PRIMARY", "open-meteo"))
+    forecast_providers: list[str] = Field(
+        default_factory=lambda: [p.strip() for p in os.getenv("FORECAST_PROVIDERS", "open_meteo").split(",") if p.strip()]
+    )
+    alert_providers: list[str] = Field(
+        default_factory=lambda: [p.strip() for p in os.getenv("ALERT_PROVIDERS", "sachet").split(",") if p.strip()]
+    )
+    translation_providers: list[str] = Field(
+        default_factory=lambda: [p.strip() for p in os.getenv("TRANSLATION_PROVIDERS", "sarvam,llm").split(",") if p.strip()]
+    )
+    speech_providers: list[str] = Field(
+        default_factory=lambda: [p.strip() for p in os.getenv("SPEECH_PROVIDERS", "sarvam").split(",") if p.strip()]
+    )
+    voice_enabled: bool = Field(
+        default_factory=lambda: os.getenv("VOICE_ENABLED", "true").lower() in ("true", "1", "yes")
+    )
     sarvam_api_key: str = Field(default_factory=lambda: os.getenv("SARVAM_API_KEY", ""))
+    imd_api_key: str = Field(default_factory=lambda: os.getenv("IMD_API_KEY", ""))
+
+    @field_validator(
+        "forecast_providers", "alert_providers", "translation_providers", "speech_providers", mode="before"
+    )
+    @classmethod
+    def _parse_comma_list(cls, v: Any) -> list[str]:
+        if isinstance(v, str):
+            return [item.strip() for item in v.split(",") if item.strip()]
+        if isinstance(v, (list, tuple)):
+            return [str(item).strip() for item in v if str(item).strip()]
+        return []
 
     sources: list[SourceConfig] = Field(default_factory=list)
     models: ModelRoleConfig | None = None
