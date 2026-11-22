@@ -12,7 +12,7 @@ Three people work on it through GitHub: Ashwin (lead), Aman and Pradeep, each wi
 - Go *red* first: write the failing test, then the code. Take expected values from recorded fixtures or hand-checked examples.
 - Keep keys in environment variables, never in the repository or in chat.
 - Keep the product free of ads, payments and resale of source data.
-- Treat IMD as optional until `team/status.md` says its key is available: keep IMD adapters behind a flag, label every fixture's provenance, name the real source in each answer.
+- IMD is out of scope; adapters dormant behind `IMD_ENABLED` flag (ADR 0011). Name the source that really answered (e.g., "Open-Meteo (global model)"). See `.scratch/weathergpt/REMEDIATION_PLAN.md` for all remaining work.
 - Work for one named person: `docs/AUTOPILOT.md` is your operating manual. Decide, don't ask; repair your own errors.
 
 ## Read before you act
