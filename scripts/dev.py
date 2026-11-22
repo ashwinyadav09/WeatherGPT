@@ -39,7 +39,7 @@ ISSUES = SCRATCH / "issues"
 LEDGERS = SCRATCH / "progress"
 PROGRESS = SCRATCH / "PROGRESS.md"
 TASKS = ROOT / "scripts" / "tasks"
-TICKET_ID = r"\d{2}[a-c]?"
+TICKET_ID = r"(\d{2}[a-c]?|R\d+(?:\.\d+)?)"
 
 
 def say(msg: str = "") -> None:
@@ -237,6 +237,10 @@ def ticket_titles() -> dict:
         first = p.read_text(encoding="utf-8").splitlines()[0] if p.stat().st_size else ""
         t = re.sub(rf"^#\s*{TICKET_ID}:\s*", "", first).strip()
         titles[m.group(1)] = t or p.stem
+    rem_plan = SCRATCH / "REMEDIATION_PLAN.md"
+    if rem_plan.exists():
+        for m in re.finditer(r"\*\*(R\d+(?:\.\d+)?)\s+([^*]+)\*\*", rem_plan.read_text(encoding="utf-8")):
+            titles[m.group(1)] = m.group(2).strip()
     return titles
 
 

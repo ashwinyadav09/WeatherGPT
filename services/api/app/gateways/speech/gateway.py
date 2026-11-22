@@ -5,8 +5,8 @@ from typing import Any
 
 import structlog
 
-from services.api.app.gateways.speech.adapters.sarvam import SarvamSpeechAdapter
 from services.api.app.gateways.speech.exceptions import ProviderNotConfigured
+from services.api.app.registry import get_speech_adapter
 
 logger = structlog.get_logger()
 
@@ -24,7 +24,7 @@ class SpeechGateway:
         primary_adapter: Any | None = None,
         fallback_adapter: Any | None = None,
     ) -> None:
-        self.primary_adapter = primary_adapter or SarvamSpeechAdapter()
+        self.primary_adapter = primary_adapter or get_speech_adapter()
         self.fallback_adapter = fallback_adapter
 
     def is_live(self) -> bool:
