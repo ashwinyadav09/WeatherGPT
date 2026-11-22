@@ -24,7 +24,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.2 | LLM gateway upgrade | done | Merged in PR #61 |
 | R2.3 | Orchestrator | done | Merged in PR #62 |
 | R2.4 | Trace event | done | Merged in PR #63 |
-| R3.5 | RAG advisory engine | in-review | PR pending |
+| R3.5 | RAG advisory engine | done | Merged in PR #64 |
 
 ## Assumptions
 
