@@ -251,7 +251,7 @@ class LocationResolver:
                             matched.append(p)
                         break
 
-        # If still no match, fallback to geocoder or default Pune
+        # If still no match, fallback to geocoder
         if not matched:
             try:
                 geocoded = await self.geocoder.search(query=clean_text, language=language)
@@ -260,10 +260,10 @@ class LocationResolver:
             except Exception:
                 pass
 
-        resolved = matched[0] if matched else PLACES_BY_ID["pune"]
+        resolved = matched[0] if matched else None
 
         return {
-            "places": matched or [resolved],
+            "places": matched,
             "ambiguous": len(matched) > 1 and matched[0].kind == matched[1].kind,
             "clarification_question": None,
             "resolved_place": resolved,

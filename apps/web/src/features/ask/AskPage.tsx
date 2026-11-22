@@ -5,7 +5,17 @@ import { AnswerCard, AnswerCardData, EvidencePacket } from './AnswerCard';
 
 export const AskPage: React.FC = () => {
   const [question, setQuestion] = useState('');
-  const [selectedPlace] = useState('Pune');
+  const [selectedPlace, setSelectedPlace] = useState<string>(() => {
+    try {
+      const active = localStorage.getItem('weathergpt_active_place_id');
+      if (active) {
+        return active.replace('saved_', '').toLowerCase();
+      }
+    } catch {
+      // fallback
+    }
+    return 'pune';
+  });
   const [language, setLanguage] = useState<'en' | 'hi'>('en');
   const [answers, setAnswers] = useState<AnswerCardData[]>([]);
   const [loading, setLoading] = useState(false);
@@ -67,6 +77,7 @@ export const AskPage: React.FC = () => {
         body: JSON.stringify({
           session_id: 'web_session',
           text: q,
+          place_id: selectedPlace ? selectedPlace.toLowerCase() : undefined,
           language: language,
           stream: true,
         }),
@@ -257,7 +268,27 @@ export const AskPage: React.FC = () => {
             <svg className="w-3.5 h-3.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
             </svg>
-            <span>Place: {selectedPlace}</span>
+            <label htmlFor="place-select" className="sr-only">Select location</label>
+            <select
+              id="place-select"
+              value={selectedPlace}
+              onChange={(e) => {
+                setSelectedPlace(e.target.value);
+                localStorage.setItem('weathergpt_active_place_id', e.target.value);
+              }}
+              className="bg-transparent border-none text-xs font-semibold text-slate-700 focus:outline-none cursor-pointer capitalize"
+            >
+              <option value="pune">Pune</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">Delhi</option>
+              <option value="bengaluru">Bengaluru</option>
+              <option value="chennai">Chennai</option>
+              <option value="kolkata">Kolkata</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="ahmedabad">Ahmedabad</option>
+              <option value="jaipur">Jaipur</option>
+              <option value="lucknow">Lucknow</option>
+            </select>
           </div>
         </div>
 

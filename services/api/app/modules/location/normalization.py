@@ -44,6 +44,8 @@ CANONICAL_ALIASES: dict[str, str] = {
     # Hindi / Devanagari transliterations
     "पुना": "pune",
     "पुणे": "pune",
+    "पुण्यात": "pune",
+    "पुण्यामध्ये": "pune",
     "बम्बई": "mumbai",
     "मुंबई": "mumbai",
     "बैंगलोर": "bengaluru",
@@ -53,6 +55,8 @@ CANONICAL_ALIASES: dict[str, str] = {
     "कोलकाता": "kolkata",
     "मद्रास": "chennai",
     "चेन्नई": "chennai",
+    "बड़ौदा": "vadodara",
+    "वडोदरा": "vadodara",
     "बनारस": "varanasi",
     "काशी": "varanasi",
     "वाराणसी": "varanasi",

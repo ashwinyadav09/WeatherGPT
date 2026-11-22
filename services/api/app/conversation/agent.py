@@ -130,6 +130,12 @@ class ConversationAgent:
         # 2. Resolve place and get forecast evidence
         if confirmed_place:
             place = confirmed_place
+        elif req.place_id:
+            from services.api.app.modules.location.data import PLACES_BY_ID
+            place = PLACES_BY_ID.get(req.place_id.lower())
+            if not place:
+                resolved_p = await self.location_resolver.resolve(req.place_id, language=lang)
+                place = resolved_p.get("resolved_place")
         else:
             resolved = await self.location_resolver.resolve(req.text, language=lang)
             if resolved.get("ambiguous") and resolved.get("clarification_question"):
@@ -156,9 +162,6 @@ class ConversationAgent:
                 return
 
             place = resolved.get("resolved_place")
-        p_name = place.names.get(lang, place.names.get("en", "Pune")) if place else "Pune"
-        lat = place.lat if place else 18.5204
-        lon = place.lon if place else 73.8567
 
         # 2b. Check for Marine / Coastal query
         marine_terms = ["marine", "coastal bulletin", "fishermen warning", "sea condition", "समुद्र", "तटीय बुलेटिन", "मछुआरे", "मछुआरों", "लहरें"]
@@ -241,6 +244,28 @@ class ConversationAgent:
             yield {"event": "done", "data": {"latency_ms": latency_ms}}
             return
 
+        if not place:
+            prompt_msg = (
+                "कृपया अपने शहर या जिले का नाम बताएं।"
+                if lang == "hi"
+                else "Please specify your city or district."
+            )
+            yield {
+                "event": "card",
+                "data": {
+                    "headline": "स्थान स्पष्ट करें" if lang == "hi" else "Location needed",
+                    "source_line": "WeatherGPT Location Resolver",
+                    "caveat": prompt_msg,
+                },
+            }
+            yield {"event": "token", "data": {"text": prompt_msg}}
+            yield {"event": "done", "data": {}}
+            return
+
+        p_name = place.names.get(lang, place.names.get("en", place.id))
+        lat = place.lat
+        lon = place.lon
+
         # 3. Fetch evidence packets
         packets: list[EvidencePacket] = await self.forecast_service.get_forecast(
             place_id=place.id if place else "pune",
@@ -256,21 +281,83 @@ class ConversationAgent:
                 "data": packet.model_dump(mode="json"),
             }
 
-        # 5. Formulate answer text
-        rain_val = 0.0
-        temp_val = 28.5
+        # 5. Formulate answer text based on requested day
+        tomorrow_keywords = ["tomorrow", "कल", "उद्या", "আগামীকাল", "কাল", "రేపు", "நாளை"]
+        today_keywords = ["today", "आज", "এখন", "ఈ రోజు", "నేడు", "இன்று"]
+
+        weekday_map = {
+            "monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
+            "friday": 4, "saturday": 5, "sunday": 6,
+            "सोमवार": 0, "मंगलवार": 1, "बुधवार": 2, "गुरुवार": 3,
+            "शुक्रवार": 4, "शनिवार": 5, "रविवार": 6,
+        }
+
+        target_day_index = 1  # Default for forecast queries is tomorrow (day 1)
+        lowered_text = req.text.lower()
+        if any(kw in lowered_text for kw in today_keywords):
+            target_day_index = 0
+        elif any(kw in lowered_text for kw in tomorrow_keywords):
+            target_day_index = 1
+        else:
+            for wday_name, wday_num in weekday_map.items():
+                if wday_name in lowered_text:
+                    current_wday = now.weekday()
+                    offset = (wday_num - current_wday) % 7
+                    target_day_index = offset
+                    break
+
+        rain_val: float | None = None
+        temp_val: float | None = None
+
+        # Look for daily packet matching target_day_index
+        day_packet = None
         for p in packets:
             for val in p.values:
-                if val.variable == "rain" and isinstance(val.value, (int, float)):
+                if val.step == target_day_index:
+                    day_packet = p
+                    break
+            if day_packet:
+                break
+
+        if day_packet:
+            for val in day_packet.values:
+                if val.variable in ("rain_sum", "rain") and isinstance(val.value, (int, float)):
                     rain_val = float(val.value)
-                elif val.variable == "temperature" and isinstance(val.value, (int, float)):
+                elif val.variable in ("tmax", "temperature") and isinstance(val.value, (int, float)):
                     temp_val = float(val.value)
+        else:
+            # Fallback for single/legacy/current packet
+            for p in packets:
+                for val in p.values:
+                    if val.variable in ("rain_sum", "rain") and isinstance(val.value, (int, float)):
+                        rain_val = float(val.value)
+                    elif val.variable in ("tmax", "temperature") and isinstance(val.value, (int, float)):
+                        temp_val = float(val.value)
 
         source_name = packets[0].source if packets else "Open-Meteo"
         if "open_meteo" in source_name:
             source_display = "Open-Meteo"
         else:
             source_display = "Official IMD"
+
+        if rain_val is None or temp_val is None:
+            # No defaults! Say data is unavailable
+            msg = (
+                f"{source_display} पूर्वानुमान: {p_name} के लिए डेटा उपलब्ध नहीं है।"
+                if lang == "hi"
+                else f"According to {source_display}, weather forecast data is currently unavailable for {p_name}."
+            )
+            yield {
+                "event": "card",
+                "data": {
+                    "headline": f"{p_name} Weather" if lang != "hi" else f"{p_name} मौसम",
+                    "source_line": f"Data: {source_display} (CC BY 4.0)",
+                    "caveat": msg,
+                },
+            }
+            yield {"event": "token", "data": {"text": msg}}
+            yield {"event": "done", "data": {}}
+            return
 
         if lang == "hi":
             from services.api.app.modules.admin.service import admin_service
