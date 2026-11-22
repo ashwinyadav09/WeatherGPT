@@ -25,6 +25,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.3 | Orchestrator | done | Merged in PR #62 |
 | R2.4 | Trace event | done | Merged in PR #63 |
 | R3.5 | RAG advisory engine | done | Merged in PR #64 |
+| R5 | Real alert ingest | in-progress | Poller with ETag/If-Modified-Since, Shapely point-in-polygon, deduplication, DB persistence, and freshness measurement |
 
 ## Assumptions
 
@@ -41,6 +42,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R2.3: Orchestrator routes deterministically when safety pre-guard or intent confidence exceeds threshold, calls tools returning evidence packets, verifies numeric claims against evidence, and falls back to template on grounding failure; maintains session memory with 15-minute TTL.
 - R2.4: Trace event emitted on every /v1/chat answer event stream, providing full provenance (intent, confidence, router path, tools with latency, models, verifier pass/fail with numbers checked, LLM token and provider metrics) conforming to trace_event.json contract.
 - R3.5: RAG advisory engine indexes seeds/knowledge/ with sources.csv provenance; combines BM25 and dense TF-IDF character/word representations using reciprocal rank fusion; queries below tuned threshold return official helpline fallback; eval script compares BM25 only, dense only, and hybrid configurations on 100 labelled multilingual queries.
+- R5: SACHET RSS poller enforces 5-minute maximum poll rate, ETag/If-Modified-Since conditional headers, allowlist on sachet.ndma.gov.in, deduplication, and database persistence into alerts table; Shapely geometry used for point-in-polygon matching with district-name fallback; alert freshness measured from real fixtures in reports/alert_freshness.json; wis2_subscriber and model_store clearly marked as not enabled.
 
 ## Human-only steps open
 

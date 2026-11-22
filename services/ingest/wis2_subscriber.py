@@ -1,3 +1,8 @@
+"""NOT ENABLED: WIS2 subscriber is not wired into the production stack.
+
+Retained for architectural reference only. Ingest of official warnings is
+handled exclusively by the SACHET RSS/CAP poller.
+"""
 from __future__ import annotations
 
 import datetime as dt
