@@ -25,7 +25,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.3 | Orchestrator | done | Merged in PR #62 |
 | R2.4 | Trace event | done | Merged in PR #63 |
 | R3.5 | RAG advisory engine | done | Merged in PR #64 |
-| R5 | Real alert ingest | in-progress | Poller with ETag/If-Modified-Since, Shapely point-in-polygon, deduplication, DB persistence, and freshness measurement |
+| R5 | Real alert ingest | done | Merged in PR #65 |
 
 ## Assumptions
 
