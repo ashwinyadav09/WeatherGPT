@@ -21,7 +21,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R1.2 | Translation gateway | done | Merged in PR #58 |
 | R1.3 | Languages | done | Merged in PR #59 |
 | R2.1 | Tools | done | Merged in PR #60 |
-| R2.2 | LLM gateway upgrade | in-review | Tool calling, streaming SSE, Groq->OpenRouter fallback, retry with jitter, and token/latency instrumentation |
+| R2.2 | LLM gateway upgrade | done | Merged in PR #61 |
 
 ## Assumptions
 
