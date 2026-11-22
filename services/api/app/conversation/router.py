@@ -5,10 +5,10 @@ import json
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 
-from services.api.app.conversation.agent import ChatRequest, ConversationAgent
+from services.api.app.agent.orchestrator import ChatRequest, Orchestrator
 
 router = APIRouter(prefix="/chat", tags=["chat"])
-_agent = ConversationAgent()
+_agent = Orchestrator()
 
 
 @router.post("")

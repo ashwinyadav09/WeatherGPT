@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://weathergpt.in/schemas/trace_event.json",
+  "title": "TraceEventData",
+  "description": "Trace payload for How This Answer Was Made event",
+  "type": "object",
+  "properties": {
+    "intent": {"type": "string"},
+    "confidence": {"type": "number"},
+    "router_path": {"type": "string"},
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "args": {"type": ["object", "string"]},
+          "latency_ms": {"type": "integer"},
+          "source": {"type": "string"},
+          "provenance": {"type": "string"}
+        },
+        "required": ["name", "latency_ms"]
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "version": {"type": "string"},
+          "used": {"type": "boolean"}
+        },
+        "required": ["id"]
+      }
+    },
+    "verifier": {
+      "type": "object",
+      "properties": {
+        "passed": {"type": "boolean"},
+        "checked_numbers": {"type": "array"},
+        "failures": {"type": "array"},
+        "fallback_used": {"type": "boolean"}
+      },
+      "required": ["passed"]
+    },
+    "llm": {
+      "type": "object",
+      "properties": {
+        "provider": {"type": "string"},
+        "model": {"type": "string"},
+        "tokens_in": {"type": "integer"},
+        "tokens_out": {"type": "integer"}
+      }
+    }
+  },
+  "required": ["intent", "router_path"]
+}

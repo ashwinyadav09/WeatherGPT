@@ -38,7 +38,7 @@ class OpenMeteoForecastAdapter(ForecastAdapter):
         except Exception:
             # Fall back to recorded fixture for offline/CI environments
             fixture_path = (
-                Path(__file__).resolve().parent.parent.parent.parent.parent.parent
+                Path(__file__).resolve().parents[6]
                 / "eval"
                 / "fixtures"
                 / "open_meteo"
