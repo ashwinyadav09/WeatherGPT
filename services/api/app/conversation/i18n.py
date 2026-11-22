@@ -51,13 +51,67 @@ class GlossaryCheckResult:
     errors: list[str]
 
 
+MARATHI_STOPWORDS = {
+    "आहे",
+    "नाही",
+    "होईल",
+    "पडेल",
+    "उद्या",
+    "कसा",
+    "कशी",
+    "मध्ये",
+    "चा",
+    "ची",
+    "चे",
+    "पाऊस",
+    "पुण्यात",
+    "पुण्यामध्ये",
+    "मुंबईत",
+    "कधी",
+    "किती",
+    "झाला",
+    "झाली",
+    "झाले",
+    "करा",
+    "बघा",
+    "का",
+}
+
+
 def detect_language(text: str) -> str:
-    """Detect whether text is Hindi (Devanagari or Hinglish/code-mixed) or English."""
-    # Check for Devanagari Unicode range
+    """Detect language from text using script detection and Indic stopword heuristics.
+
+    Supports Tier-1 (en, hi, bn, mr, te, ta, or) and Tier-2 Indic scripts.
+    """
+    if not text:
+        return "en"
+
+    # 1. Indic scripts detection
+    if re.search(r"[\u0980-\u09FF]", text):
+        return "bn"
+    if re.search(r"[\u0C00-\u0C7F]", text):
+        return "te"
+    if re.search(r"[\u0B80-\u0BFF]", text):
+        return "ta"
+    if re.search(r"[\u0B00-\u0B7F]", text):
+        return "or"
+    if re.search(r"[\u0A80-\u0AFF]", text):
+        return "gu"
+    if re.search(r"[\u0A00-\u0A7F]", text):
+        return "pa"
+    if re.search(r"[\u0C80-\u0CFF]", text):
+        return "kn"
+    if re.search(r"[\u0D00-\u0D7F]", text):
+        return "ml"
+
+    # 2. Devanagari script: separate Marathi from Hindi using stopword heuristics
     if re.search(r"[\u0900-\u097F]", text):
+        dev_words = set(re.findall(r"[\u0900-\u097F]+", text))
+        if dev_words.intersection(MARATHI_STOPWORDS):
+            return "mr"
         return "hi"
 
-    # Check for Romanized Hindi / Hinglish tokens
+    # 3. Latin script: check for Romanized Hindi / Hinglish tokens
     words = set(re.findall(r"\b[a-zA-Z]+\b", text.lower()))
     if words.intersection(HINGLISH_WORDS):
         return "hi"

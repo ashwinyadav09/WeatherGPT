@@ -75,6 +75,14 @@ CANONICAL_ALIASES: dict[str, str] = {
     "मैसुरु": "mysuru",
     "त्रिवेंद्रम": "thiruvananthapuram",
     "तिरुवनंतपुरम": "thiruvananthapuram",
+
+    # Odia transliterations & inflections
+    "ଭୁବନେଶ୍ୱର": "bhubaneswar",
+    "ଭୁବନେଶ୍ୱରରେ": "bhubaneswar",
+    "ପୁରୀ": "puri",
+    "ପୁରୀରେ": "puri",
+    "କଟକ": "cuttack",
+    "କଟକରେ": "cuttack",
 }
 
 # Stopwords and query fillers commonly spoken in English, Hindi, and Marathi

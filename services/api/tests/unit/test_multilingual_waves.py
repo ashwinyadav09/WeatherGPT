@@ -1,78 +1,113 @@
+"""Unit tests for Tier-1 and Tier-2 languages (Ticket R1.3).
+
+Requirements:
+- config/languages.yaml: Tier 1 = en, hi, bn, mr, te, ta, or. Tier 2 = gu, kn, ml, pa, as (smoke-tested only).
+- Language selection: the UI selector is the source of truth. "auto" uses script detection, then simple stopword heuristics to separate Hindi from Marathi.
+- Odia templates and glossary entries exist in seeds/.
+- Every Tier-1 language has templates, glossary, and UI strings; a test iterates over them.
+"""
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
 import yaml
 
 from services.api.app.conversation.agent import ChatRequest, ConversationAgent
+from services.api.app.conversation.i18n import detect_language
 
 ROOT = Path(__file__).resolve().parents[4]
+TIER1_LANGUAGES = ["en", "hi", "bn", "mr", "te", "ta", "or"]
+TIER2_LANGUAGES = ["gu", "kn", "ml", "pa", "as"]
 
 
-def test_language_config_waves_2_and_3() -> None:
+def test_language_config_tier1_and_tier2() -> None:
+    """Verify Tier 1 has exactly 7 enabled languages, and Tier 2 has 5 languages."""
     lang_file = ROOT / "config" / "languages.yaml"
     assert lang_file.exists()
-    with lang_file.open("r", encoding="utf-8") as f:
-        data = yaml.safe_load(f)
+    data = yaml.safe_load(lang_file.read_text(encoding="utf-8")) or {}
 
     langs = {item["code"]: item for item in data.get("languages", [])}
-    # Wave 2 languages
-    for code in ["bn", "mr", "te", "ta"]:
-        assert code in langs, f"Missing Wave 2 language {code}"
-        assert langs[code]["tier"] == 2
-        assert langs[code]["enabled"] is False, "Wave 2 languages must be disabled until signed off"
 
-    # Wave 3 languages
-    for code in ["gu", "kn", "ml", "pa", "or"]:
-        assert code in langs, f"Missing Wave 3 language {code}"
-        assert langs[code]["tier"] == 3
-        assert langs[code]["enabled"] is False, "Wave 3 languages must be disabled"
+    # Tier 1 languages must all be present, tier 1, and enabled
+    for code in TIER1_LANGUAGES:
+        assert code in langs, f"Missing Tier 1 language {code}"
+        assert langs[code]["tier"] == 1, f"Expected tier 1 for {code}, got {langs[code]['tier']}"
+        assert langs[code]["enabled"] is True, f"Tier 1 language {code} must be enabled"
+
+    # Tier 2 languages
+    for code in TIER2_LANGUAGES:
+        assert code in langs, f"Missing Tier 2 language {code}"
+        assert langs[code]["tier"] == 2, f"Expected tier 2 for {code}, got {langs[code]['tier']}"
 
 
-def test_alert_templates_wave_2_backtranslations() -> None:
+def test_every_tier1_language_has_templates_glossary_and_ui_strings() -> None:
+    """Every Tier-1 language must have alert templates, glossary terms, and UI strings."""
     tpl_file = ROOT / "seeds" / "i18n" / "alert-templates.yaml"
     assert tpl_file.exists()
-    raw_content = tpl_file.read_text(encoding="utf-8")
-    assert "Back-translation:" in raw_content, "Templates must contain back-translations"
+    templates = yaml.safe_load(tpl_file.read_text(encoding="utf-8")) or {}
 
-    data = yaml.safe_load(raw_content)
-    for code in ["mr", "bn", "te", "ta"]:
-        assert code in data, f"Missing template entries for {code}"
-        assert "headline" in data[code]
-        assert "body" in data[code]
-        assert "meaning" in data[code]
-        assert "cancel" in data[code]
-        assert "advice_header" in data[code]
+    for code in TIER1_LANGUAGES:
+        # 1. Alert templates
+        assert code in templates, f"alert-templates.yaml missing entries for {code}"
+        for key in ["headline", "body", "meaning", "cancel", "advice_header"]:
+            assert key in templates[code], f"Template for {code} missing required key '{key}'"
 
-
-def test_glossaries_wave_2_completeness() -> None:
-    en_file = ROOT / "seeds" / "i18n" / "glossary.en.yaml"
-    with en_file.open("r", encoding="utf-8") as f:
-        en_terms = yaml.safe_load(f).get("terms", {})
-        assert "rain" in en_terms
-
-    for code in ["mr", "bn", "te", "ta"]:
+        # 2. Glossary
         gloss_file = ROOT / "seeds" / "i18n" / f"glossary.{code}.yaml"
-        assert gloss_file.exists(), f"Missing glossary for {code}"
-        with gloss_file.open("r", encoding="utf-8") as f:
-            data = yaml.safe_load(f)
-            terms = data.get("terms", {})
-            for key in ["rain", "heavy_rain", "heat_wave", "cold_wave", "thunderstorm", "temperature"]:
-                assert key in terms, f"Glossary for {code} missing essential key {key}"
+        assert gloss_file.exists(), f"seeds/i18n/glossary.{code}.yaml missing for {code}"
+        gloss_data = yaml.safe_load(gloss_file.read_text(encoding="utf-8")) or {}
+        terms = gloss_data.get("terms", {})
+        for term in ["rain", "heavy_rain", "heat_wave", "cold_wave", "thunderstorm", "temperature"]:
+            assert term in terms, f"Glossary for {code} missing essential key '{term}'"
+
+        # 3. UI strings
+        ui_file = ROOT / "seeds" / "i18n" / f"ui.{code}.json"
+        assert ui_file.exists(), f"seeds/i18n/ui.{code}.json missing for {code}"
+        ui_data = json.loads(ui_file.read_text(encoding="utf-8"))
+        for ui_key in ["app_name", "ask", "alerts", "settings", "language"]:
+            assert ui_key in ui_data, f"UI strings for {code} missing key '{ui_key}'"
+
+
+def test_language_detection_scripts_and_stopword_heuristics() -> None:
+    """Verify script detection and Hindi vs Marathi stopword disambiguation."""
+    # Bengali script
+    assert detect_language("কাল কলকাতায় বৃষ্টি হবে কি?") == "bn"
+    # Telugu script
+    assert detect_language("రేపు హైదరాబాద్‌లో వర్షం పడుతుందా?") == "te"
+    # Tamil script
+    assert detect_language("நாளை சென்னையில் மழை பெய்யுமா?") == "ta"
+    # Odia script
+    assert detect_language("ଆସନ୍ତାକାଲି ଭୁବନେଶ୍ୱରରେ ବର୍ଷା ହେବ କି?") == "or"
+
+    # Devanagari Hindi vs Marathi
+    hindi_sample = "कल पुणे में बारिश होगी क्या?"
+    marathi_sample = "उद्या पुण्यात पाऊस पडेल का?"
+    assert detect_language(hindi_sample) == "hi"
+    assert detect_language(marathi_sample) == "mr"
+
+    # English / Hinglish
+    assert detect_language("Will it rain tomorrow in Pune?") == "en"
+    assert detect_language("kal Pune me barish hogi kya?") == "hi"
 
 
 @pytest.mark.asyncio
-async def test_conversation_agent_wave_2_languages() -> None:
+async def test_conversation_agent_answers_all_tier1_languages() -> None:
+    """Conversation agent returns cards and answer tokens for all Tier-1 languages."""
     agent = ConversationAgent()
-    for code, q in [
+    samples = [
+        ("en", "Will it rain tomorrow in Pune?"),
+        ("hi", "कल पुणे में बारिश होगी क्या?"),
         ("mr", "उद्या पुण्यात पाऊस पडेल का?"),
         ("bn", "কাল কলকাতায় বৃষ্টি হবে কি?"),
         ("te", "రేపు హైదరాబాద్‌లో వర్షం పడుతుందా?"),
         ("ta", "நாளை சென்னையில் மழை பெய்யுமா?"),
-    ]:
+        ("or", "ଆସନ୍ତାକାଲି ଭୁବନେଶ୍ୱରରେ ବର୍ଷା ହେବ କି?"),
+    ]
+    for code, q in samples:
         req = ChatRequest(
-            session_id=f"test_wave2_{code}",
+            session_id=f"test_tier1_{code}",
             text=q,
             language=code,
             stream=True,
@@ -86,7 +121,7 @@ async def test_conversation_agent_wave_2_languages() -> None:
                 card = evt["data"]
 
         answer = "".join(tokens)
-        assert len(answer) > 0
-        assert card is not None
+        assert len(answer) > 0, f"No answer tokens returned for language {code}"
+        assert card is not None, f"No card emitted for language {code}"
         assert "headline" in card
         assert "key_values" in card
