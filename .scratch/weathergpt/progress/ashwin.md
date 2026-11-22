@@ -20,6 +20,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R1.1 | Provider registry | done | Merged in PR #57 |
 | R1.2 | Translation gateway | done | Merged in PR #58 |
 | R1.3 | Languages | done | Merged in PR #59 |
+| R2.1 | Tools | in-review | Agent tools implemented in services/api/app/agent/tools.py with EvidencePacket returns and error shielding |
 
 ## Assumptions
 
@@ -31,6 +32,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R1.1: Provider registry is the sole application module importing concrete adapters; imd_city is excluded unless IMD_ENABLED is true and IMD_API_KEY is non-empty.
 - R1.2: Translation cache keys on sha256(text:src:tgt:glossary_version); placeholders preserve numeric evidence across Indic scripts; translate_static generates seeds/translations/<lang>.json for Tier-1 languages.
 - R1.3: Tier-1 languages: en, hi, bn, mr, te, ta, or; Tier-2: gu, kn, ml, pa, as; UI selector is authoritative with script & stopword auto-detect fallback.
+- R2.1: Tools return lists of EvidencePacket and shield LLM caller from raw provider exceptions by wrapping errors in structured evidence packets; schemas conform to OpenAI tool calling format.
 
 ## Human-only steps open
 
