@@ -33,15 +33,13 @@ async def test_open_meteo_adapter_conformance():
     adapter = OpenMeteoForecastAdapter(client=client)
     packets = await adapter.get_forecast(lat=18.52, lon=73.86, place_name="Pune")
 
-    assert len(packets) == 1
-    packet = packets[0]
-    data = packet.model_dump(mode="json")
-
-    # Strict conformance against Evidence Packet schema
-    validate_schema("evidence_packet", data)
-    assert data["source"] == "open_meteo.forecast"
-    assert data["authority_tier"] == 5
-    assert len(data["values"]) > 0
+    assert len(packets) >= 1
+    for packet in packets:
+        data = packet.model_dump(mode="json")
+        validate_schema("evidence_packet", data)
+        assert data["source"] == "open_meteo.forecast"
+        assert data["authority_tier"] == 5
+        assert len(data["values"]) > 0
 
 
 @pytest.mark.asyncio
