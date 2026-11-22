@@ -1,3 +1,8 @@
+﻿> [!CAUTION]
+> **UNVERIFIED: generated from simulated data. Do not cite.**
+> Archived 2026-11-22 (R0.2). See docs/archive/unverified/README.md.
+
+---
 # Evaluation Report: Point-Forecast Bias Correction vs. Baselines (Ticket 16)
 
 ## Summary
@@ -53,3 +58,4 @@ Evaluated across probability forecast bins on held-out test data:
 | `temperature_2m` | >120h | MOS has no statistical skill | **REJECT MOS** | **Raw Model Guidance** |
 | `precipitation` | 12h-72h | MOS wins on CSI & calibration | **USE MOS** | Raw Model Guidance |
 | `precipitation` | >120h | MOS has no statistical skill | **REJECT MOS** | **Raw Model Guidance** |
+

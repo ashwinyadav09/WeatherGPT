@@ -1,3 +1,8 @@
+﻿> [!CAUTION]
+> **UNVERIFIED: generated from simulated data. Do not cite.**
+> Archived 2026-11-22 (R0.2). See docs/archive/unverified/README.md.
+
+---
 # Model Card: Multilingual Weather Intent & Slot Classifier (`intent-multilingual-v1.0`)
 
 ## Model Details
@@ -29,3 +34,4 @@
 - **Intent Accuracy**: **97.14%** on held-out golden set (exceeds 95% threshold).
 - **Inference Latency**: **~0.01 ms** (vs 800–1,200 ms for cloud LLM call).
 - **Cost**: **$0.00** per 1,000 queries.
+

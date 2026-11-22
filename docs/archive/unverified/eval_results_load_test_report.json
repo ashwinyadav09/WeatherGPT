@@ -1,0 +1,32 @@
+﻿> [!CAUTION]
+> **UNVERIFIED: generated from simulated data. Do not cite.**
+> Archived 2026-11-22 (R0.2). See docs/archive/unverified/README.md.
+
+---
+{
+  "timestamp": "2026-11-17T07:40:08Z",
+  "all_targets_met": true,
+  "chat_benchmark": {
+    "concurrency": 10000,
+    "elapsed_sec": 0.35,
+    "requests_per_second": 28963.5,
+    "p50_latency_ms": 19.9,
+    "p95_latency_ms": 34.4,
+    "p99_latency_ms": 34.4,
+    "target_met": true
+  },
+  "voice_benchmark": {
+    "concurrency": 1000,
+    "elapsed_sec": 0.31,
+    "p50_first_audio_ms": 150.9,
+    "p95_first_audio_ms": 151.9,
+    "target_met": true
+  },
+  "alert_fanout_benchmark": {
+    "total_subscriptions": 1000000,
+    "elapsed_sec": 0.62,
+    "pushes_per_second": 1613714.0,
+    "budget_limit_sec": 300.0,
+    "target_met": true
+  }
+}

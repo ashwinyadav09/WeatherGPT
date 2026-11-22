@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
-"""Scalability and load test benchmark for WeatherGPT.
+"""Load test for WeatherGPT using real HTTP calls against the local stack.
 
-Evaluates:
-1. 10,000 simulated concurrent chat sessions (p50/p95 latency and throughput)
-2. 1,000 simulated concurrent voice streams (ASR/TTS streaming pipeline)
-3. 1,000,000 device alert push fan-out simulation within 5 minutes (300 seconds)
+Runs at 20, 50 and 100 concurrent users against /v1/chat.
+Requires the stack to be running (python scripts/dev.py up).
+
+Usage:
+    python scripts/tasks/load_test.py [--base-url URL] [--levels 20,50,100]
+
+If the stack is not reachable the report records NOT MEASURED and exits 0
+(so CI still passes; use acceptance --strict to gate on this).
 """
 from __future__ import annotations
 
 import asyncio
+import datetime as dt
 import json
+import os
+import platform
+import subprocess
+import sys
 import time
 from pathlib import Path
 from typing import Any
@@ -17,134 +26,154 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 RESULTS_DIR = ROOT / "eval" / "results"
 
+NOT_MEASURED = "NOT MEASURED"
 
-async def simulate_chat_load(concurrency: int = 10000) -> dict[str, Any]:
-    print(f"\n[1/3] Simulating {concurrency:,} concurrent chat sessions...")
-    start_time = time.time()
+DEFAULT_BASE_URL = os.environ.get("WEATHERGPT_BASE_URL", "http://localhost:8000")
+DEFAULT_LEVELS = [20, 50, 100]
 
-    # Simulate chunked execution of 10,000 requests
-    batch_size = 500
-    batches = concurrency // batch_size
-    latencies: list[float] = []
+SAMPLE_PAYLOAD = {
+    "query": "Will it rain tomorrow in Pune?",
+    "place_id": "pune",
+    "lang": "en",
+}
 
-    for _ in range(batches):
-        # Simulate asyncio task fan-out per batch
-        t0 = time.time()
-        await asyncio.sleep(0.015)  # Event loop I/O simulation
-        duration_ms = (time.time() - t0) * 1000 + 4.2  # Stub chat latency
-        latencies.extend([duration_ms] * batch_size)
 
-    elapsed_sec = time.time() - start_time
-    rps = concurrency / elapsed_sec if elapsed_sec > 0 else concurrency
+def git_sha() -> str:
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "--short", "HEAD"],
+            cwd=str(ROOT), stderr=subprocess.DEVNULL
+        ).decode().strip()
+    except Exception:
+        return "unknown"
 
-    latencies.sort()
-    p50 = latencies[int(len(latencies) * 0.50)]
-    p95 = latencies[int(len(latencies) * 0.95)]
-    p99 = latencies[int(len(latencies) * 0.99)]
 
-    print(f"  Completed {concurrency:,} requests in {elapsed_sec:.2f}s ({rps:.1f} req/s)")
-    print(f"  Latency: p50={p50:.1f}ms, p95={p95:.1f}ms, p99={p99:.1f}ms")
+def machine_spec() -> dict[str, str]:
+    return {
+        "platform": platform.platform(),
+        "processor": platform.processor() or "unknown",
+        "python": platform.python_version(),
+        "cpus": str(os.cpu_count()),
+    }
+
+
+async def probe_stack(base_url: str) -> bool:
+    """Return True if the stack responds to /health."""
+    try:
+        import httpx  # type: ignore[import-untyped]
+        async with httpx.AsyncClient(timeout=5.0) as client:
+            r = await client.get(f"{base_url}/health")
+            return r.status_code < 500
+    except Exception:
+        return False
+
+
+async def run_one_request(
+    client: Any, base_url: str, semaphore: asyncio.Semaphore
+) -> dict[str, Any]:
+    async with semaphore:
+        t0 = time.perf_counter()
+        try:
+            resp = await client.post(
+                f"{base_url}/v1/chat",
+                json=SAMPLE_PAYLOAD,
+                timeout=30.0,
+            )
+            elapsed_ms = (time.perf_counter() - t0) * 1000
+            return {"ok": resp.status_code < 400, "latency_ms": elapsed_ms, "status": resp.status_code}
+        except Exception as exc:
+            elapsed_ms = (time.perf_counter() - t0) * 1000
+            return {"ok": False, "latency_ms": elapsed_ms, "error": str(exc)}
+
+
+async def run_level(base_url: str, concurrency: int) -> dict[str, Any]:
+    """Run `concurrency` requests and return measured p50/p95."""
+    try:
+        import httpx  # type: ignore[import-untyped]
+    except ImportError:
+        return {"concurrency": concurrency, "measured": False, "reason": "httpx not installed"}
+
+    semaphore = asyncio.Semaphore(concurrency)
+    t_start = time.perf_counter()
+
+    async with httpx.AsyncClient() as client:
+        tasks = [run_one_request(client, base_url, semaphore) for _ in range(concurrency)]
+        outcomes = await asyncio.gather(*tasks)
+
+    elapsed_sec = time.perf_counter() - t_start
+    latencies = sorted(r["latency_ms"] for r in outcomes)
+    n = len(latencies)
+    ok_count = sum(1 for r in outcomes if r["ok"])
+
+    p50 = latencies[int(n * 0.50)] if n else 0
+    p95 = latencies[min(int(n * 0.95), n - 1)] if n else 0
+
+    rps = concurrency / elapsed_sec if elapsed_sec > 0 else 0
+
+    print(
+        f"  concurrency={concurrency}: {ok_count}/{concurrency} ok, "
+        f"p50={p50:.0f}ms, p95={p95:.0f}ms, {rps:.1f} req/s in {elapsed_sec:.1f}s"
+    )
 
     return {
         "concurrency": concurrency,
+        "n_requests": concurrency,
+        "n_ok": ok_count,
         "elapsed_sec": round(elapsed_sec, 2),
         "requests_per_second": round(rps, 1),
         "p50_latency_ms": round(p50, 1),
         "p95_latency_ms": round(p95, 1),
-        "p99_latency_ms": round(p99, 1),
-        "target_met": p95 < 1500.0,
+        "measured": True,
     }
 
 
-async def simulate_voice_load(concurrency: int = 1000) -> dict[str, Any]:
-    print(f"\n[2/3] Simulating {concurrency:,} concurrent voice streaming sessions...")
-    start_time = time.time()
+async def main(base_url: str, levels: list[int]) -> None:
+    print(f"WeatherGPT load test  —  target: {base_url}")
+    print(f"Machine: {machine_spec()}")
 
-    batch_size = 100
-    batches = concurrency // batch_size
-    stream_latencies: list[float] = []
+    stack_up = await probe_stack(base_url)
+    if not stack_up:
+        print(f"\nStack not reachable at {base_url}. Run 'python scripts/dev.py up' first.")
+        result = {
+            "schema_version": "1",
+            "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "git_sha": git_sha(),
+            "machine": machine_spec(),
+            "base_url": base_url,
+            "levels": [
+                {"concurrency": c, "measured": False, "reason": "stack not reachable"}
+                for c in levels
+            ],
+        }
+    else:
+        level_results = []
+        for level in levels:
+            print(f"\n  Running {level} concurrent users …")
+            res = await run_level(base_url, level)
+            level_results.append(res)
 
-    for _ in range(batches):
-        t0 = time.time()
-        await asyncio.sleep(0.02)
-        stream_ttft = (time.time() - t0) * 1000 + 120.0  # Simulated ASR first token
-        stream_latencies.extend([stream_ttft] * batch_size)
-
-    elapsed_sec = time.time() - start_time
-    stream_latencies.sort()
-    p50 = stream_latencies[int(len(stream_latencies) * 0.50)]
-    p95 = stream_latencies[int(len(stream_latencies) * 0.95)]
-
-    print(f"  Completed {concurrency:,} voice streams in {elapsed_sec:.2f}s")
-    print(f"  First audio latency: p50={p50:.1f}ms, p95={p95:.1f}ms (target <= 3,500ms)")
-
-    return {
-        "concurrency": concurrency,
-        "elapsed_sec": round(elapsed_sec, 2),
-        "p50_first_audio_ms": round(p50, 1),
-        "p95_first_audio_ms": round(p95, 1),
-        "target_met": p95 <= 3500.0,
-    }
-
-
-async def simulate_alert_fanout(total_subscriptions: int = 1000000) -> dict[str, Any]:
-    print(f"\n[3/3] Simulating alert push fan-out to {total_subscriptions:,} devices...")
-    start_time = time.time()
-
-    # Simulate fan-out via 20 parallel worker queues with batches of 50,000
-    chunk_size = 50000
-    num_chunks = total_subscriptions // chunk_size
-    chunk_latencies = []
-
-    for _ in range(num_chunks):
-        t0 = time.time()
-        await asyncio.sleep(0.025)  # redis queue & webpush batch dispatch simulation
-        chunk_latencies.append(time.time() - t0)
-
-    elapsed_sec = time.time() - start_time
-    rate = total_subscriptions / elapsed_sec if elapsed_sec > 0 else total_subscriptions
-
-    print(f"  Dispatched {total_subscriptions:,} push notifications in {elapsed_sec:.2f}s ({rate:,.0f} pushes/sec)")
-    print(f"  Fan-out completed within budget: {elapsed_sec:.2f}s < 300.0s (5 minutes)")
-
-    return {
-        "total_subscriptions": total_subscriptions,
-        "elapsed_sec": round(elapsed_sec, 2),
-        "pushes_per_second": round(rate, 1),
-        "budget_limit_sec": 300.0,
-        "target_met": elapsed_sec < 300.0,
-    }
-
-
-async def main() -> None:
-    print("=" * 60)
-    print("WeatherGPT Production Hardening Load Benchmark")
-    print("=" * 60)
-
-    chat_res = await simulate_chat_load(10000)
-    voice_res = await simulate_voice_load(1000)
-    push_res = await simulate_alert_fanout(1000000)
-
-    all_passed = chat_res["target_met"] and voice_res["target_met"] and push_res["target_met"]
-
-    report = {
-        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "all_targets_met": all_passed,
-        "chat_benchmark": chat_res,
-        "voice_benchmark": voice_res,
-        "alert_fanout_benchmark": push_res,
-    }
+        result = {
+            "schema_version": "1",
+            "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+            "git_sha": git_sha(),
+            "machine": machine_spec(),
+            "base_url": base_url,
+            "levels": level_results,
+        }
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     report_path = RESULTS_DIR / "load_test_report.json"
     with report_path.open("w", encoding="utf-8") as f:
-        json.dump(report, f, indent=2)
-
-    print("\n" + "=" * 60)
-    print(f"Report saved to {report_path}")
-    print(f"Overall Benchmark Status: {'✅ PASSED' if all_passed else '❌ FAILED'}")
-    print("=" * 60)
+        json.dump(result, f, indent=2)
+    print(f"\nWrote {report_path}")
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    base = DEFAULT_BASE_URL
+    lvls = DEFAULT_LEVELS
+    for arg in sys.argv[1:]:
+        if arg.startswith("--base-url="):
+            base = arg.split("=", 1)[1]
+        elif arg.startswith("--levels="):
+            lvls = [int(x) for x in arg.split("=", 1)[1].split(",")]
+    asyncio.run(main(base, lvls))
