@@ -58,6 +58,7 @@ class Settings(BaseModel):
     imd_enabled: bool = Field(default_factory=lambda: os.getenv("IMD_ENABLED", "false").lower() in ("true", "1", "yes"))
     agromet_fixture_enabled: bool = Field(default_factory=lambda: os.getenv("AGROMET_FIXTURE_ENABLED", "false").lower() in ("true", "1", "yes"))
     forecast_primary: str = Field(default_factory=lambda: os.getenv("FORECAST_PRIMARY", "open-meteo"))
+    sarvam_api_key: str = Field(default_factory=lambda: os.getenv("SARVAM_API_KEY", ""))
 
     sources: list[SourceConfig] = Field(default_factory=list)
     models: ModelRoleConfig | None = None

@@ -34,8 +34,35 @@ Facts for calling outside systems. Items marked (verify) were not confirmed and 
 - Cache the config response; refresh it on 401 or 403. Send 16 kHz mono WAV for ASR. Timeout 10 s, then fall back to Sarvam.
 - Language codes: hi, bn, ta, te, mr, gu, kn, ml, pa, or, en.
 
-## Sarvam (second speech provider and fallback LLM) (verify details at docs.sarvam.ai)
-- Base `https://api.sarvam.ai`, header `api-subscription-key`. Speech to text (Saaras v3) and text to speech (Bulbul v3, 11 languages, up to 2,500 characters a request) endpoints are in its docs.
+## Sarvam (primary speech provider and Indic AI) (ADR 0012, docs.sarvam.ai)
+- Base URL: `https://api.sarvam.ai`, auth header: `api-subscription-key: <SARVAM_API_KEY>`.
+- Speech-to-Text (ASR):
+  - Endpoint: `POST https://api.sarvam.ai/speech-to-text`
+  - Content-Type: `multipart/form-data`
+  - Parameters:
+    - `file`: WAV audio bytes (16 kHz 16-bit mono PCM recommended, formats: wav, mp3, aac, flac).
+    - `model`: `saaras:v3`
+    - `language_code`: BCP-47 with region subtag: `hi-IN`, `bn-IN`, `ta-IN`, `te-IN`, `mr-IN`, `gu-IN`, `kn-IN`, `ml-IN`, `pa-IN`, `od-IN`, `en-IN`, or `unknown`.
+  - Response: `{"transcript": str, "confidence": float, "words": [...]}`.
+- Text-to-Speech (TTS):
+  - Endpoint: `POST https://api.sarvam.ai/text-to-speech`
+  - Content-Type: `application/json`
+  - Parameters:
+    - `inputs`: list of text strings (max 2,500 characters per request).
+    - `target_language_code`: `hi-IN`, `bn-IN`, `ta-IN`, `te-IN`, `mr-IN`, `gu-IN`, `kn-IN`, `ml-IN`, `pa-IN`, `od-IN`, `en-IN`.
+    - `speaker`: `meera` (female default), `arvind` (male), `pavithra`, `amol`, `amartya`.
+    - `pitch`: 0 (-1.0 to 1.0).
+    - `pace`: 1.0 (0.5 to 2.0).
+    - `loudness`: 1.5 (0.5 to 2.0).
+    - `speech_sample_rate`: 16000 (options: 8000, 16000, 22050).
+    - `enable_preprocessing`: true.
+    - `model`: `bulbul:v3`.
+  - Response: `{"audios": ["<base64_encoded_audio>"]}`.
+- Translation:
+  - Endpoint: `POST https://api.sarvam.ai/translate`
+  - Content-Type: `application/json`
+  - Parameters: `input` (str), `source_language_code` (`en-IN`), `target_language_code` (`hi-IN`), `model` (`mayura:v1`), `mode` (`formal` or `code-mixed`).
+  - Response: `{"translated_text": str}`.
 
 ## Web Push
 - Generate a VAPID key pair once. The browser registers a service worker, asks permission (after explaining why), and sends its PushSubscription to POST /v1/push/subscribe. The worker sends with pywebpush; payload under about 4 KB; set a TTL and urgency high for red alerts.
