@@ -61,8 +61,9 @@ class MarineAdapter:
         fixture_path: Path | None = None,
         settings: Settings | None = None,
     ) -> None:
+        from services.api.app.config import settings as app_settings
         self.fixture_path = fixture_path or (FIXTURES_DIR / "marine_bulletin_sample.json")
-        self.settings = settings or Settings()
+        self.settings = settings or app_settings
         self._bulletin_cache: dict[str, Any] | None = None
         self._load_fixtures()
 
@@ -89,6 +90,19 @@ class MarineAdapter:
     ) -> dict[str, Any]:
         """Fetches coastal bulletin, sea condition and fishermen warning for a coastal sector."""
         norm_area = self.normalize_area(area)
+
+        # In default config (AGROMET_FIXTURE_ENABLED=false), never return fixture bulletins
+        if not self.settings.agromet_fixture_enabled:
+            return {
+                "status": "unavailable",
+                "area_id": norm_area,
+                "area_name": norm_area.replace("_", " ").title(),
+                "weather": "",
+                "message": "Official coastal bulletins are currently unavailable.",
+                "source": "Coastal Weather Services / INCOIS",
+                "authority_tier": 1,
+                "provenance": "spec-only",
+            }
 
         if not self._bulletin_cache:
             self._load_fixtures()

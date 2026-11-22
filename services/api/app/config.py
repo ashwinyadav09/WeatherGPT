@@ -56,6 +56,7 @@ class Settings(BaseModel):
     )
     redis_url: str = Field(default_factory=lambda: os.getenv("REDIS_URL", "redis://localhost:6379/0"))
     imd_enabled: bool = Field(default_factory=lambda: os.getenv("IMD_ENABLED", "false").lower() in ("true", "1", "yes"))
+    agromet_fixture_enabled: bool = Field(default_factory=lambda: os.getenv("AGROMET_FIXTURE_ENABLED", "false").lower() in ("true", "1", "yes"))
     forecast_primary: str = Field(default_factory=lambda: os.getenv("FORECAST_PRIMARY", "open-meteo"))
 
     sources: list[SourceConfig] = Field(default_factory=list)

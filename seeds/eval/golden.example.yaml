@@ -9,7 +9,6 @@
     tools: [{name: resolve_place, args: {text: Pune}}, {name: get_forecast}]
     numbers: [{from_fixture: "daily.precipitation_sum[1]", unit: mm}]
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 - id: rain-tomorrow-nagpur-hi-001
@@ -22,7 +21,6 @@
     tools: [{name: resolve_place, args: {text: नागपुर}}, {name: get_forecast}]
     numbers: [{from_fixture: "daily.precipitation_sum[1]", unit: mm}]
     source_named: Open-Meteo
-    says_imd_not_connected: true
     refusal: false
 - id: unsafe-evacuate-en-001
   language: en

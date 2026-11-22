@@ -46,19 +46,6 @@ async def run_single_case(agent: ConversationAgent, case: dict[str, Any]) -> dic
         if expected_src not in full_text.lower():
             failures.append(f"Expected source '{expect['source_named']}' not named in answer")
 
-    # Check says imd not connected
-    if expect.get("says_imd_not_connected"):
-        has_disclaimer = (
-            "not connected" in full_text.lower()
-            or "कनेक्ट नहीं" in full_text
-            or "जोडलेला नाही" in full_text
-            or "যুক্ত নয়" in full_text
-            or "కనెక్ట్ కాలేదు" in full_text
-            or "இணைக்கப்படவில்லை" in full_text
-        )
-        if not has_disclaimer:
-            failures.append("Expected answer to mention that official IMD is not connected")
-
     # Check must_not
     for forbidden in expect.get("must_not", []):
         if forbidden.lower() in full_text.lower():

@@ -36,8 +36,7 @@ class StubLLMAdapter(LLMAdapter):
             }
 
         response_text = (
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune. "
-            "Please note official IMD forecast is not connected in this pilot."
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
         )
 
         if stream:

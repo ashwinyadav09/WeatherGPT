@@ -15,7 +15,6 @@
   "valid_until": "Valid until",
   "official_alert": "Official alert",
   "model_guidance": "Model guidance",
-  "imd_not_connected": "Official IMD forecast is not connected yet",
   "no_alerts": "No official alerts for your places",
   "did_you_mean": "Did you mean {place}?",
   "yes": "Yes",

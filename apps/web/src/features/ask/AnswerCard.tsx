@@ -280,9 +280,11 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({
           <span className="font-semibold text-slate-600">Model guidance:</span>
           <span>{data.sourceLine || 'Data: Open-Meteo (CC BY 4.0)'}</span>
         </div>
-        <div className="text-amber-700 bg-amber-50 px-2 py-1 rounded inline-block">
-          {data.caveat || 'Official IMD forecast is not connected yet'}
-        </div>
+        {data.caveat && (
+          <div className="text-amber-700 bg-amber-50 px-2 py-1 rounded inline-block">
+            {data.caveat}
+          </div>
+        )}
       </div>
 
       {/* Action buttons */}
