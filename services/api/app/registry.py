@@ -213,23 +213,38 @@ class ProviderRegistry:
             return factory(self.settings)
         return OpenMeteoGeocodingAdapter()
 
+    def get_llm_gateway(self) -> Any:
+        """Return configured LLMGateway with Groq primary, OpenRouter fallback, and Stub fallback."""
+        from services.api.app.gateways.llm.gateway import LLMGateway
+
+        groq_key = os.getenv("GROQ_API_KEY", "")
+        openrouter_key = os.getenv("OPENROUTER_API_KEY", "")
+
+        main_model = self.settings.models.main_model if self.settings.models else "llama-3.3-70b-versatile"
+        fallback_model = (
+            self.settings.models.fallback.get("main_model", "meta-llama/llama-3.3-70b-instruct")
+            if self.settings.models and self.settings.models.fallback
+            else "meta-llama/llama-3.3-70b-instruct"
+        )
+
+        primary = OpenAICompatibleLLMAdapter(
+            base_url=os.getenv("GROQ_BASE_URL", "https://api.groq.com/openai/v1"),
+            api_key=groq_key,
+            model=main_model,
+            provider_name="groq",
+        )
+        fallback = OpenAICompatibleLLMAdapter(
+            base_url=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+            api_key=openrouter_key,
+            model=fallback_model,
+            provider_name="openrouter",
+        )
+        stub = StubLLMAdapter()
+        return LLMGateway(primary=primary, fallback=fallback, stub=stub)
+
     def get_llm_adapter(self) -> LLMAdapter:
         """Return configured LLM adapter."""
-        groq_key = os.getenv("GROQ_API_KEY")
-        openrouter_key = os.getenv("OPENROUTER_API_KEY")
-        if groq_key:
-            return OpenAICompatibleLLMAdapter(
-                base_url=os.getenv("GROQ_BASE_URL", "https://api.groq.com/openai/v1"),
-                api_key=groq_key,
-                model=self.settings.models.main_model if self.settings.models else "llama-3.3-70b-versatile",
-            )
-        elif openrouter_key:
-            return OpenAICompatibleLLMAdapter(
-                base_url=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
-                api_key=openrouter_key,
-                model=self.settings.models.main_model if self.settings.models else "meta-llama/llama-3.3-70b-instruct",
-            )
-        return StubLLMAdapter()
+        return self.get_llm_gateway()
 
     def get_translation_provider(self) -> TranslationGateway:
         """Return configured TranslationGateway with primary and fallback adapters."""
