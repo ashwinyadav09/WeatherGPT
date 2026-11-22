@@ -21,6 +21,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R1.2 | Translation gateway | done | Merged in PR #58 |
 | R1.3 | Languages | done | Merged in PR #59 |
 | R2.1 | Tools | done | Merged in PR #60 |
+| R2.2 | LLM gateway upgrade | in-review | Tool calling, streaming SSE, Groq->OpenRouter fallback, retry with jitter, and token/latency instrumentation |
 
 ## Assumptions
 
@@ -33,6 +34,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R1.2: Translation cache keys on sha256(text:src:tgt:glossary_version); placeholders preserve numeric evidence across Indic scripts; translate_static generates seeds/translations/<lang>.json for Tier-1 languages.
 - R1.3: Tier-1 languages: en, hi, bn, mr, te, ta, or; Tier-2: gu, kn, ml, pa, as; UI selector is authoritative with script & stopword auto-detect fallback.
 - R2.1: Tools return lists of EvidencePacket and shield LLM caller from raw provider exceptions by wrapping errors in structured evidence packets; schemas conform to OpenAI tool calling format.
+- R2.2: Fallback chain order is Groq primary -> OpenRouter fallback -> Stub fallback; transient 429/5xx trigger retries with exponential backoff and jitter before falling back.
 
 ## Human-only steps open
 
