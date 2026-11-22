@@ -31,7 +31,7 @@
           "version": {"type": "string"},
           "used": {"type": "boolean"}
         },
-        "required": ["id"]
+        "required": ["id", "version", "used"]
       }
     },
     "verifier": {
@@ -42,7 +42,7 @@
         "failures": {"type": "array"},
         "fallback_used": {"type": "boolean"}
       },
-      "required": ["passed"]
+      "required": ["passed", "checked_numbers", "failures"]
     },
     "llm": {
       "type": "object",
@@ -51,8 +51,17 @@
         "model": {"type": "string"},
         "tokens_in": {"type": "integer"},
         "tokens_out": {"type": "integer"}
-      }
+      },
+      "required": ["provider", "model", "tokens_in", "tokens_out"]
     }
   },
-  "required": ["intent", "router_path"]
+  "required": [
+    "intent",
+    "confidence",
+    "router_path",
+    "tools",
+    "models",
+    "verifier",
+    "llm"
+  ]
 }

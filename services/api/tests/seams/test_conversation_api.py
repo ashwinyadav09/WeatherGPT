@@ -55,6 +55,18 @@ async def test_conversation_api_stream_seam():
         assert len(card_events) == 1
         assert "headline" in card_events[0][1]
 
+        # Check trace event and validate against JSON schema (Ticket R2.4)
+        trace_events = [e for e in events if e[0] == "trace"]
+        assert len(trace_events) == 1
+        trace_data = trace_events[0][1]
+        validate_schema("trace_event", trace_data)
+        assert "intent" in trace_data
+        assert "router_path" in trace_data
+        assert "tools" in trace_data
+        assert "models" in trace_data
+        assert "verifier" in trace_data
+        assert "llm" in trace_data
+
         # Check done event
         done_events = [e for e in events if e[0] == "done"]
         assert len(done_events) == 1
@@ -94,4 +106,11 @@ async def test_conversation_api_hindi_stream_seam():
         assert "Open-Meteo" in answer_text
         assert "कनेक्ट नहीं" not in answer_text and "not connected" not in answer_text.lower()
         assert "IMD" not in answer_text and "आईएमडी" not in answer_text
+
+        # Check trace event in Hindi query
+        trace_events = [e for e in events if e[0] == "trace"]
+        assert len(trace_events) == 1
+        trace_data = trace_events[0][1]
+        validate_schema("trace_event", trace_data)
+        assert trace_data["intent"] == "forecast"
 

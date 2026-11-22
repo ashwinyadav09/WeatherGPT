@@ -23,6 +23,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.1 | Tools | done | Merged in PR #60 |
 | R2.2 | LLM gateway upgrade | done | Merged in PR #61 |
 | R2.3 | Orchestrator | done | Merged in PR #62 |
+| R2.4 | Trace event | in-review | PR pending |
 
 ## Assumptions
 
@@ -37,6 +38,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R2.1: Tools return lists of EvidencePacket and shield LLM caller from raw provider exceptions by wrapping errors in structured evidence packets; schemas conform to OpenAI tool calling format.
 - R2.2: Fallback chain order is Groq primary -> OpenRouter fallback -> Stub fallback; transient 429/5xx trigger retries with exponential backoff and jitter before falling back.
 - R2.3: Orchestrator routes deterministically when safety pre-guard or intent confidence exceeds threshold, calls tools returning evidence packets, verifies numeric claims against evidence, and falls back to template on grounding failure; maintains session memory with 15-minute TTL.
+- R2.4: Trace event emitted on every /v1/chat answer event stream, providing full provenance (intent, confidence, router path, tools with latency, models, verifier pass/fail with numbers checked, LLM token and provider metrics) conforming to trace_event.json contract.
 
 ## Human-only steps open
 

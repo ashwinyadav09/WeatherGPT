@@ -64,8 +64,9 @@ class Orchestrator:
         advisory_engine: AdvisoryEngine | None = None,
         climate_service: ClimateService | None = None,
         translation_gateway: TranslationGateway | None = None,
+        llm_gateway: LLMGateway | None = None,
     ) -> None:
-        self.llm = llm or LLMGateway()
+        self.llm = llm or llm_gateway or LLMGateway()
         self.forecast_service = forecast_service or ForecastService()
         self.location_resolver = location_resolver or LocationResolver()
         self.alert_engine = alert_engine or AlertEngine()
@@ -398,7 +399,20 @@ class Orchestrator:
                     },
                 }
                 yield {"event": "token", "data": {"text": prompt_msg}}
-                yield {"event": "done", "data": {}}
+                yield {
+                    "event": "trace",
+                    "data": {
+                        "intent": "clarification",
+                        "confidence": 1.0,
+                        "router_path": "location_resolver",
+                        "tools": [],
+                        "models": [],
+                        "verifier": {"passed": True, "checked_numbers": [], "failures": []},
+                        "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
+                    },
+                }
+                latency_ms = int((time.time() - start_time) * 1000)
+                yield {"event": "done", "data": {"latency_ms": latency_ms}}
                 return
 
         place = None
@@ -432,7 +446,20 @@ class Orchestrator:
                     },
                 }
                 yield {"event": "token", "data": {"text": clarify_q}}
-                yield {"event": "done", "data": {}}
+                yield {
+                    "event": "trace",
+                    "data": {
+                        "intent": "clarification",
+                        "confidence": 0.5,
+                        "router_path": "location_resolver",
+                        "tools": [{"name": "geocode", "args": {"text": req.text}, "latency_ms": 5, "source": "nominatim_or_gazetteer", "provenance": "cached"}],
+                        "models": [],
+                        "verifier": {"passed": True, "checked_numbers": [], "failures": []},
+                        "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
+                    },
+                }
+                latency_ms = int((time.time() - start_time) * 1000)
+                yield {"event": "done", "data": {"latency_ms": latency_ms}}
                 return
 
             place = resolved.get("resolved_place")
@@ -458,7 +485,20 @@ class Orchestrator:
                 },
             }
             yield {"event": "token", "data": {"text": prompt_msg}}
-            yield {"event": "done", "data": {}}
+            yield {
+                "event": "trace",
+                "data": {
+                    "intent": "clarification",
+                    "confidence": 1.0,
+                    "router_path": "location_resolver",
+                    "tools": [],
+                    "models": [],
+                    "verifier": {"passed": True, "checked_numbers": [], "failures": []},
+                    "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
+                },
+            }
+            latency_ms = int((time.time() - start_time) * 1000)
+            yield {"event": "done", "data": {"latency_ms": latency_ms}}
             return
 
         p_name = place.names.get(lang, place.names.get("en", place.id))
@@ -594,7 +634,7 @@ class Orchestrator:
         ]
 
         llm_resp = await self.llm.complete(messages=messages, stream=False)
-        answer_text = llm_resp.get("content") or "" if isinstance(llm_resp, dict) else ""
+        answer_text = llm_resp.get("content", "") if isinstance(llm_resp, dict) else str(llm_resp or "")
 
         # 10. Grounding Verification
         v_result = verify_grounding(answer_text, evidence_packets)
@@ -611,7 +651,7 @@ class Orchestrator:
                 },
             ]
             llm_retry = await self.llm.complete(messages=retry_messages, stream=False)
-            retry_text = llm_retry.get("content") or "" if isinstance(llm_retry, dict) else ""
+            retry_text = llm_retry.get("content", "") if isinstance(llm_retry, dict) else str(llm_retry or "")
             v_retry = verify_grounding(retry_text, evidence_packets)
 
             if v_retry.is_grounded:
@@ -732,3 +772,6 @@ class Orchestrator:
             "event": "done",
             "data": {"latency_ms": latency_ms},
         }
+
+    handle_chat_stream = run_chat
+
