@@ -21,6 +21,7 @@ export const AskPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   // Voice recording state
+  const [voiceAvailable, setVoiceAvailable] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isProcessingVoice, setIsProcessingVoice] = useState(false);
   const [volumeLevel, setVolumeLevel] = useState(0);
@@ -37,6 +38,20 @@ export const AskPage: React.FC = () => {
     'Is it going to rain tomorrow in Mumbai?',
     'कल पुणे में बारिश होगी क्या?',
   ];
+
+  // Check voice provider health on mount
+  useEffect(() => {
+    fetch('/v1/voice/health')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data && (data.status === 'ok' || data.configured === true)) {
+          setVoiceAvailable(true);
+        } else {
+          setVoiceAvailable(false);
+        }
+      })
+      .catch(() => setVoiceAvailable(false));
+  }, []);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -360,7 +375,11 @@ export const AskPage: React.FC = () => {
               </svg>
             </div>
             <p className="text-base font-medium">Ask any question about weather across India</p>
-            <p className="text-xs text-slate-400 mt-1">E.g., "Will it rain tomorrow in Pune?" or tap the microphone</p>
+            <p className="text-xs text-slate-400 mt-1">
+              {voiceAvailable
+                ? (language === 'hi' ? 'उदा. "कल पुणे में बारिश होगी क्या?" या माइक दबाएं' : 'E.g., "Will it rain tomorrow in Pune?" or tap the microphone')
+                : (language === 'hi' ? 'उदा. "कल पुणे में बारिश होगी क्या?"' : 'E.g., "Will it rain tomorrow in Pune?"')}
+            </p>
           </div>
         )}
 
@@ -388,30 +407,36 @@ export const AskPage: React.FC = () => {
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder={language === 'hi' ? 'अपना प्रश्न पूछें या माइक दबाएं...' : 'Type or hold mic to speak...'}
+            placeholder={
+              voiceAvailable
+                ? (language === 'hi' ? 'अपना प्रश्न पूछें या माइक दबाएं...' : 'Type or hold mic to speak...')
+                : (language === 'hi' ? 'अपना प्रश्न पूछें...' : 'Type your question...')
+            }
             disabled={loading || isListening || isProcessingVoice}
             className="flex-1 px-3 py-2 text-base rounded-xl outline-none text-slate-900 placeholder:text-slate-400 bg-transparent min-h-[48px]"
           />
 
-          {/* Voice Input Push-to-Talk MicButton */}
-          <MicButton
-            isListening={isListening}
-            isProcessing={isProcessingVoice}
-            volumeLevel={volumeLevel}
-            recordingSeconds={recordingSeconds}
-            onClick={toggleRecording}
-            onPointerDown={(e) => {
-              // Push to talk on pointer hold
-              if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
-                startRecording();
-              }
-            }}
-            onPointerUp={() => {
-              if (isListening) {
-                stopRecording();
-              }
-            }}
-          />
+          {/* Voice Input Push-to-Talk MicButton (only rendered when live voice provider configured) */}
+          {voiceAvailable && (
+            <MicButton
+              isListening={isListening}
+              isProcessing={isProcessingVoice}
+              volumeLevel={volumeLevel}
+              recordingSeconds={recordingSeconds}
+              onClick={toggleRecording}
+              onPointerDown={(e) => {
+                // Push to talk on pointer hold
+                if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
+                  startRecording();
+                }
+              }}
+              onPointerUp={() => {
+                if (isListening) {
+                  stopRecording();
+                }
+              }}
+            />
+          )}
 
           {/* Send Button */}
           <button

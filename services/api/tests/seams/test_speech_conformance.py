@@ -8,6 +8,7 @@ import pytest
 
 from services.api.app.gateways.speech.adapters.bhashini import BhashiniSpeechAdapter
 from services.api.app.gateways.speech.adapters.sarvam import SarvamSpeechAdapter
+from services.api.app.gateways.speech.exceptions import ProviderNotConfigured
 from services.api.app.gateways.speech.gateway import SpeechGateway
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
@@ -110,10 +111,31 @@ async def test_sarvam_adapter_conformance():
         assert audio_bytes.startswith(b"RIFF")
         assert b"WAVE" in audio_bytes
 
+    # 3. Test that with no key, ProviderNotConfigured is raised and no canned transcript is returned
+    unconfigured_adapter = SarvamSpeechAdapter(api_key="")
+    with pytest.raises(ProviderNotConfigured):
+        await unconfigured_adapter.transcribe(dummy_audio, language="hi")
+    with pytest.raises(ProviderNotConfigured):
+        await unconfigured_adapter.speak("परीक्षण", language="hi")
+
+
+@pytest.mark.asyncio
+async def test_speech_gateway_no_key_raises_no_canned_text():
+    """Verify SpeechGateway raises ProviderNotConfigured when no key is set, returning zero canned text."""
+    gateway = SpeechGateway(primary_adapter=SarvamSpeechAdapter(api_key=""))
+    dummy_audio = b"RIFF\x24\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00\x80>\x00\x00\x00}\x00\x00\x02\x00\x10\x00data\x00\x00\x00\x00"
+
+    with pytest.raises(ProviderNotConfigured) as exc_info:
+        await gateway.transcribe(dummy_audio, language="hi")
+    assert "not configured" in str(exc_info.value).lower()
+
+    with pytest.raises(ProviderNotConfigured):
+        await gateway.speak("पुणे में बारिश", language="hi")
+
 
 @pytest.mark.asyncio
 async def test_speech_gateway_fallback_and_privacy():
-    """Verify SpeechGateway seamlessly falls back if primary fails, and stores zero audio files."""
+    """Verify SpeechGateway seamlessly falls back if fallback is configured, and stores zero audio files."""
     # Create failing primary adapter
     class FailingAdapter:
         async def transcribe(self, audio_bytes: bytes, language: str = "hi"):
@@ -122,17 +144,25 @@ async def test_speech_gateway_fallback_and_privacy():
         async def speak(self, text: str, language: str = "hi", voice: str = "female"):
             raise ConnectionError("Primary provider TTS timeout")
 
-    gateway = SpeechGateway(primary_adapter=FailingAdapter())
+    class WorkingFallback:
+        async def transcribe(self, audio_bytes: bytes, language: str = "hi"):
+            return {"text": "पहुंच गए", "language": language}
 
+        async def speak(self, text: str, language: str = "hi", voice: str = "female"):
+            return b"RIFF\x24\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00\x80>\x00\x00\x00}\x00\x00\x02\x00\x10\x00data\x00\x00\x00\x00"
+
+    # Gateway with primary only re-raises on failure
+    gateway_no_fallback = SpeechGateway(primary_adapter=FailingAdapter())
     dummy_audio = b"RIFF\x24\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00\x80>\x00\x00\x00}\x00\x00\x02\x00\x10\x00data\x00\x00\x00\x00"
+    with pytest.raises(ConnectionError):
+        await gateway_no_fallback.transcribe(dummy_audio, language="hi")
 
-    # Transcribe should succeed via fallback
-    res = await gateway.transcribe(dummy_audio, language="hi")
-    assert "text" in res
+    # Gateway with fallback succeeds
+    gateway_with_fallback = SpeechGateway(primary_adapter=FailingAdapter(), fallback_adapter=WorkingFallback())
+    res = await gateway_with_fallback.transcribe(dummy_audio, language="hi")
+    assert res["text"] == "पहुंच गए"
     assert "latency_ms" in res
-    assert res["latency_ms"] >= 0
 
-    # Speak should succeed via fallback
-    audio = await gateway.speak("32°C तापमान और 15 km/h हवा", language="hi")
+    audio = await gateway_with_fallback.speak("32°C तापमान और 15 km/h हवा", language="hi")
     assert len(audio) > 0
     assert audio.startswith(b"RIFF")
