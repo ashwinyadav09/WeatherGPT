@@ -1,0 +1,152 @@
+﻿> [!CAUTION]
+> **UNVERIFIED: generated from simulated data. Do not cite.**
+> Archived 2026-11-22 (R0.2). See docs/archive/unverified/README.md.
+
+---
+{
+  "timestamp": "2026-11-17T06:45:00Z",
+  "selected_main": "llama-3.3-70b-versatile",
+  "selected_main_provider": "groq",
+  "selected_fast": "llama-3.1-8b-instant",
+  "selected_fast_provider": "groq",
+  "evaluations": [
+    {
+      "candidate": {
+        "model_id": "llama-3.3-70b-versatile",
+        "role": "main",
+        "provider": "groq",
+        "input_cost_per_m": 0.59,
+        "output_cost_per_m": 0.79,
+        "benchmark_ttft_ms": 210.0,
+        "benchmark_throughput_tps": 285.0,
+        "supports_tool_calling": true,
+        "context_window": 128000
+      },
+      "total_cases_evaluated": 60,
+      "en_cases_count": 30,
+      "hi_cases_count": 30,
+      "groundedness_percent": 99.8,
+      "intent_accuracy_percent": 99.0,
+      "ttft_ms": 210.0,
+      "p50_latency_ms": 516.2,
+      "p95_latency_ms": 679.2,
+      "cost_per_1k_queries_usd": 0.3406,
+      "meets_acceptance_gates": true
+    },
+    {
+      "candidate": {
+        "model_id": "meta-llama/llama-3.3-70b-instruct",
+        "role": "main",
+        "provider": "openrouter",
+        "input_cost_per_m": 0.4,
+        "output_cost_per_m": 0.4,
+        "benchmark_ttft_ms": 520.0,
+        "benchmark_throughput_tps": 65.0,
+        "supports_tool_calling": true,
+        "context_window": 128000
+      },
+      "total_cases_evaluated": 60,
+      "en_cases_count": 30,
+      "hi_cases_count": 30,
+      "groundedness_percent": 99.8,
+      "intent_accuracy_percent": 99.0,
+      "ttft_ms": 520.0,
+      "p50_latency_ms": 1882.5,
+      "p95_latency_ms": 2476.9,
+      "cost_per_1k_queries_usd": 0.218,
+      "meets_acceptance_gates": true
+    },
+    {
+      "candidate": {
+        "model_id": "qwen/qwen-2.5-72b-instruct",
+        "role": "main",
+        "provider": "openrouter",
+        "input_cost_per_m": 0.35,
+        "output_cost_per_m": 0.4,
+        "benchmark_ttft_ms": 610.0,
+        "benchmark_throughput_tps": 55.0,
+        "supports_tool_calling": true,
+        "context_window": 128000
+      },
+      "total_cases_evaluated": 60,
+      "en_cases_count": 30,
+      "hi_cases_count": 30,
+      "groundedness_percent": 99.8,
+      "intent_accuracy_percent": 99.0,
+      "ttft_ms": 610.0,
+      "p50_latency_ms": 2220.4,
+      "p95_latency_ms": 2921.6,
+      "cost_per_1k_queries_usd": 0.1955,
+      "meets_acceptance_gates": true
+    },
+    {
+      "candidate": {
+        "model_id": "llama-3.1-8b-instant",
+        "role": "fast",
+        "provider": "groq",
+        "input_cost_per_m": 0.05,
+        "output_cost_per_m": 0.08,
+        "benchmark_ttft_ms": 95.0,
+        "benchmark_throughput_tps": 820.0,
+        "supports_tool_calling": true,
+        "context_window": 128000
+      },
+      "total_cases_evaluated": 60,
+      "en_cases_count": 30,
+      "hi_cases_count": 30,
+      "groundedness_percent": 98.2,
+      "intent_accuracy_percent": 96.5,
+      "ttft_ms": 95.0,
+      "p50_latency_ms": 200.3,
+      "p95_latency_ms": 263.6,
+      "cost_per_1k_queries_usd": 0.0301,
+      "meets_acceptance_gates": true
+    },
+    {
+      "candidate": {
+        "model_id": "meta-llama/llama-3.1-8b-instruct",
+        "role": "fast",
+        "provider": "openrouter",
+        "input_cost_per_m": 0.055,
+        "output_cost_per_m": 0.055,
+        "benchmark_ttft_ms": 340.0,
+        "benchmark_throughput_tps": 95.0,
+        "supports_tool_calling": true,
+        "context_window": 128000
+      },
+      "total_cases_evaluated": 60,
+      "en_cases_count": 30,
+      "hi_cases_count": 30,
+      "groundedness_percent": 98.2,
+      "intent_accuracy_percent": 96.5,
+      "ttft_ms": 340.0,
+      "p50_latency_ms": 1273.0,
+      "p95_latency_ms": 1675.0,
+      "cost_per_1k_queries_usd": 0.03,
+      "meets_acceptance_gates": true
+    },
+    {
+      "candidate": {
+        "model_id": "google/gemini-2.0-flash-lite-preview-02-05:free",
+        "role": "fast",
+        "provider": "openrouter",
+        "input_cost_per_m": 0.075,
+        "output_cost_per_m": 0.3,
+        "benchmark_ttft_ms": 260.0,
+        "benchmark_throughput_tps": 140.0,
+        "supports_tool_calling": true,
+        "context_window": 1048576
+      },
+      "total_cases_evaluated": 60,
+      "en_cases_count": 30,
+      "hi_cases_count": 30,
+      "groundedness_percent": 98.2,
+      "intent_accuracy_percent": 96.5,
+      "ttft_ms": 260.0,
+      "p50_latency_ms": 891.6,
+      "p95_latency_ms": 1173.2,
+      "cost_per_1k_queries_usd": 0.0622,
+      "meets_acceptance_gates": true
+    }
+  ]
+}

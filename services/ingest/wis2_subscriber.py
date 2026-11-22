@@ -21,6 +21,10 @@ class WIS2Message:
 class WIS2Subscriber:
     """Subscriber for WMO Information System 2.0 (WIS2) notification feeds.
 
+    NOT ENABLED: This subscriber is not wired into the production stack.
+    It remains in the repository for future reference. Do not instantiate
+    in production code; use the SACHET RSS poller instead.
+
     Listens to MQTT broker topics (e.g. origin/a/wis2/in-imd/#) or receives
     real-time notifications from a Global Broker.
     """
@@ -28,7 +32,8 @@ class WIS2Subscriber:
     def __init__(self, broker_host: str = "globalbroker.meteo.fr", port: int = 8883) -> None:
         self.broker_host = broker_host
         self.port = port
-        self._connected = True
+        # _connected starts False; set to True only after a real MQTT handshake.
+        self._connected = False
         self._started_at = dt.datetime.now(dt.timezone.utc)
         self._messages: list[WIS2Message] = []
         self._topics_subscribed = [
@@ -69,7 +74,7 @@ class WIS2Subscriber:
             "broker_host": self.broker_host,
             "connected": self._connected,
             "uptime_seconds": uptime_sec,
-            "uptime_pct": 99.95,
+            "uptime_pct": "NOT MEASURED",
             "messages_received": len(self._messages),
             "topics": self._topics_subscribed,
             "status": "healthy" if self._connected else "disconnected",

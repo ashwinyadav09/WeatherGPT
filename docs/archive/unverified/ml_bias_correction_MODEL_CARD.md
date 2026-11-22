@@ -1,3 +1,8 @@
+﻿> [!CAUTION]
+> **UNVERIFIED: generated from simulated data. Do not cite.**
+> Archived 2026-11-22 (R0.2). See docs/archive/unverified/README.md.
+
+---
 # Model Card: Point-Forecast Bias Correction (`mos-india-v1.0`)
 
 ## Model Details
@@ -26,3 +31,4 @@
 ## Features
 - **Temperature MOS**: Raw model 2m temperature (°C), day of year sine/cosine harmonics, station elevation (km), latitude, and lead time.
 - **Precipitation Calibration**: Raw model precipitation (mm), log-transformed precipitation, monsoon season indicator (June–September), and latitude.
+

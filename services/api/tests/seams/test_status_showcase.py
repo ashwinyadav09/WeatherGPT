@@ -32,7 +32,8 @@ async def test_status_endpoint_structure_and_freshness_targets():
 
 def test_wis2_subscriber_message_handling_and_uptime():
     subscriber = WIS2Subscriber(broker_host="globalbroker.meteo.fr")
-    assert subscriber.is_connected() is True
+    # WIS2Subscriber is NOT ENABLED; _connected starts False until a real MQTT handshake.
+    assert subscriber.is_connected() is False
 
     # Ingest a standard WIS2 notification message for India
     sample_wis2 = {
@@ -50,8 +51,10 @@ def test_wis2_subscriber_message_handling_and_uptime():
     assert subscriber.messages_received_count >= 1
 
     uptime_report = subscriber.get_uptime_report()
-    assert uptime_report["uptime_pct"] >= 99.0
-    assert uptime_report["status"] == "healthy"
+    # uptime_pct is NOT MEASURED (subscriber is not enabled; no live connection).
+    assert uptime_report["uptime_pct"] == "NOT MEASURED"
+    # status reflects the real connection state
+    assert uptime_report["status"] == "disconnected"
 
 
 def test_injected_delays_reflected_on_dashboard():

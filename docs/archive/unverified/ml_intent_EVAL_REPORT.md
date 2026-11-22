@@ -1,3 +1,8 @@
+﻿> [!CAUTION]
+> **UNVERIFIED: generated from simulated data. Do not cite.**
+> Archived 2026-11-22 (R0.2). See docs/archive/unverified/README.md.
+
+---
 # Evaluation Report: Multilingual Intent & Slot Classifier vs. LLM Baseline
 
 ## Summary
@@ -32,3 +37,4 @@ Ticket 15 evaluates `intent-multilingual-v1.0` against the cloud LLM-only baseli
 
 ## Conclusion & Shipping Recommendation
 `intent-multilingual-v1.0` matches the cloud baseline on intent classification accuracy (97.14% vs 96.57%) while reducing turn routing latency from ~850 ms to ~0.01 ms and eliminating routing LLM token costs entirely. The model meets all acceptance criteria and is recommended for deployment.
+
