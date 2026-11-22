@@ -23,7 +23,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.1 | Tools | done | Merged in PR #60 |
 | R2.2 | LLM gateway upgrade | done | Merged in PR #61 |
 | R2.3 | Orchestrator | done | Merged in PR #62 |
-| R2.4 | Trace event | in-review | PR pending |
+| R2.4 | Trace event | done | Merged in PR #63 |
 
 ## Assumptions
 
