@@ -234,6 +234,37 @@ export const MorePage: React.FC<MorePageProps> = ({ onOpenAdmin }) => {
             </div>
           </div>
 
+          {/* Voice Autoplay */}
+          <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+            <div>
+              <span className="font-semibold text-sm text-slate-800 dark:text-slate-200 block">
+                Voice Autoplay
+              </span>
+              <span className="text-xs text-slate-500">
+                Automatically play spoken response
+              </span>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={voiceAutoplay}
+              onClick={() => {
+                const next = !voiceAutoplay;
+                setVoiceAutoplay(next);
+                localStorage.setItem('weathergpt_voice_autoplay', String(next));
+              }}
+              className={`w-12 h-6 rounded-full transition-colors relative focus-visible:outline focus-visible:outline-3 focus-visible:outline-focus-ring ${
+                voiceAutoplay ? 'bg-blue-600' : 'bg-slate-300 dark:bg-slate-700'
+              }`}
+            >
+              <span
+                className={`w-4 h-4 rounded-full bg-white absolute top-1 transition-transform ${
+                  voiceAutoplay ? 'left-7' : 'left-1'
+                }`}
+              />
+            </button>
+          </div>
+
           {/* Data Saver Mode */}
           <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
             <div>

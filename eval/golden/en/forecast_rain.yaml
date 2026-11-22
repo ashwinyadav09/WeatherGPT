@@ -5,7 +5,6 @@
   question: Will it rain tomorrow in Pune?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -15,7 +14,6 @@
   question: Is it going to rain tomorrow in Mumbai?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -25,7 +23,6 @@
   question: Any rain expected in Delhi tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -35,7 +32,6 @@
   question: Do I need an umbrella in Bengaluru tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -45,7 +41,6 @@
   question: Tomorrow rain forecast for Chennai
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -55,7 +50,6 @@
   question: Will there be rainfall in Kolkata tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -65,7 +59,6 @@
   question: Will it rain in Hyderabad tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -75,7 +68,6 @@
   question: Is rain predicted for Ahmedabad tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -85,7 +77,6 @@
   question: Rain tomorrow in Jaipur?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -95,7 +86,6 @@
   question: Will Lucknow see rain tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -105,7 +95,6 @@
   question: Is it likely to rain tomorrow in Patna?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -115,7 +104,6 @@
   question: What is tomorrow's rain forecast for Bhopal?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -125,7 +113,6 @@
   question: Will it rain tomorrow in Nagpur?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -135,7 +122,6 @@
   question: Should I carry an umbrella tomorrow in Chandigarh?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -145,7 +131,6 @@
   question: Rain expected tomorrow in Surat?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -155,7 +140,6 @@
   question: Will Kochi get rain tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -165,7 +149,6 @@
   question: Any rain showers tomorrow in Guwahati?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -175,7 +158,6 @@
   question: Will it rain in Shimla tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -185,7 +167,6 @@
   question: Precipitation expected tomorrow in Srinagar?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -195,7 +176,6 @@
   question: Is it raining tomorrow in Dehradun?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -205,7 +185,6 @@
   question: Will it rain tomorrow in Varanasi?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -215,7 +194,6 @@
   question: Rain chance in Indore tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -225,7 +203,6 @@
   question: Will Visakhapatnam get rain tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -235,7 +212,6 @@
   question: Any rain predicted in Agra tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -245,7 +221,6 @@
   question: Will it rain tomorrow in Ludhiana?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -255,7 +230,6 @@
   question: Tomorrow rain forecast in Nashik?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -265,7 +239,6 @@
   question: Is rain expected tomorrow in Vadodara?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -275,7 +248,6 @@
   question: Will Rajkot receive rain tomorrow?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -285,7 +257,6 @@
   question: Rain chance tomorrow in Coimbatore?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false
 
@@ -295,6 +266,5 @@
   question: Will it rain tomorrow in Madurai?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not: [evacuate, guaranteed]
     refusal: false

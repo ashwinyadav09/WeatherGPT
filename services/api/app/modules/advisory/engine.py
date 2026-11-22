@@ -86,14 +86,16 @@ class AdvisoryEngine:
                 stage=stage,
                 language=language,
             )
+            if agro_res.get("status") == "unavailable":
+                return []
             card = {
                 "id": f"agromet_{place_id}_{crop}_{stage}_{language}",
                 "hazard": "agromet",
                 "domain": "agro",
                 "place_id": place_id,
-                "title": f"IMD Agromet Advisory: {agro_res.get('crop_display', crop.title())} ({agro_res.get('stage_display', stage.title())})",
+                "title": f"Agromet Advisory: {agro_res.get('crop_display', crop.title())} ({agro_res.get('stage_display', stage.title())})",
                 "items": [agro_res.get("advisory_text", "")] + [f"Action: {a}" for a in agro_res.get("recommended_actions", [])],
-                "source_title": agro_res.get("source", "Gramin Krishi Mausam Sewa (GKMS) / IMD"),
+                "source_title": agro_res.get("source", "Gramin Krishi Mausam Sewa (GKMS)"),
                 "source_url": "https://agromet.imd.gov.in",
                 "retrieved_on": agro_res.get("issue_date", "2026-11-17"),
                 "reviewed": True,
@@ -109,20 +111,22 @@ class AdvisoryEngine:
                 area=place_id,
                 language=language,
             )
+            if marine_res.get("status") == "unavailable":
+                return []
             fw = marine_res.get("fishermen_warning", {})
             card = {
                 "id": f"marine_{place_id}_{language}",
                 "hazard": "marine",
                 "domain": "marine",
                 "place_id": place_id,
-                "title": f"IMD Coastal Bulletin: {marine_res.get('area_name', place_id.title())}",
+                "title": f"Coastal Bulletin: {marine_res.get('area_name', place_id.title())}",
                 "items": [
                     f"Weather: {marine_res.get('weather', '')}",
                     f"Wind: {marine_res.get('wind', '')}",
                     f"Sea Condition: {marine_res.get('sea_condition', '')}",
                     f"Fishermen Warning: {fw.get('warning_hi' if language == 'hi' else 'warning_en', '')}",
                 ],
-                "source_title": marine_res.get("source", "IMD Marine Weather / INCOIS"),
+                "source_title": marine_res.get("source", "Coastal Weather / INCOIS"),
                 "source_url": "https://mausam.imd.gov.in",
                 "retrieved_on": marine_res.get("issue_time", "2026-11-17"),
                 "reviewed": True,

@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pytest
 
+from services.api.app.config import settings
 from services.api.app.conversation.agent import ChatRequest, ConversationAgent
 from services.api.app.modules.advisory.agromet import AgrometAdapter
 from services.api.app.modules.advisory.marine import MarineAdapter
@@ -41,54 +42,68 @@ def test_agromet_and_marine_fixtures_provenance():
 
 @pytest.mark.asyncio
 async def test_agromet_advisory_wheat_and_rice_stages():
-    """Verify farmer can query wheat or rice growth stages and receive cited IMD agromet advice."""
+    """Verify default returns unavailable, and when enabled returns cited agromet advice."""
     adapter = AgrometAdapter()
 
-    # 1. Wheat at Sowing stage in Ludhiana
-    res_wheat_sow = await adapter.get_agromet_advisory(
+    # 1. Default config: fixture disabled
+    assert not settings.agromet_fixture_enabled
+    res_def = await adapter.get_agromet_advisory(
         district="Ludhiana",
         crop="wheat",
         stage="sowing",
         language="en",
     )
-    assert res_wheat_sow["status"] == "success"
-    assert res_wheat_sow["crop"] == "wheat"
-    assert "sowing" in res_wheat_sow["stage"].lower()
-    assert "sowing window" in res_wheat_sow["advisory_text"].lower()
-    assert "India Meteorological Department (IMD)" in res_wheat_sow["source"]
-    assert "GKMS" in res_wheat_sow["source"] or "Gramin Krishi Mausam Sewa" in res_wheat_sow["source"]
+    assert res_def["status"] == "unavailable"
+    assert res_def["advisory_text"] == ""
 
-    # 2. Wheat at Crown Root Initiation (CRI) in Hindi
-    res_wheat_cri_hi = await adapter.get_agromet_advisory(
-        district="Ludhiana",
-        crop="गेहूं",
-        stage="CRI",
-        language="hi",
-    )
-    assert res_wheat_cri_hi["status"] == "success"
-    assert "सिंचाई" in res_wheat_cri_hi["advisory_text"]
-    assert "IMD" in res_wheat_cri_hi["source"] or "मौसम विज्ञान विभाग" in res_wheat_cri_hi["source"]
+    # 2. When fixture enabled
+    orig = settings.agromet_fixture_enabled
+    try:
+        settings.agromet_fixture_enabled = True
+        res_wheat_sow = await adapter.get_agromet_advisory(
+            district="Ludhiana",
+            crop="wheat",
+            stage="sowing",
+            language="en",
+        )
+        assert res_wheat_sow["status"] == "success"
+        assert res_wheat_sow["crop"] == "wheat"
+        assert "sowing" in res_wheat_sow["stage"].lower()
+        assert "sowing window" in res_wheat_sow["advisory_text"].lower()
+        assert "GKMS" in res_wheat_sow["source"] or "Gramin Krishi Mausam Sewa" in res_wheat_sow["source"]
 
-    # 3. Rice at Flowering stage in Varanasi
-    res_rice_flowering = await adapter.get_agromet_advisory(
-        district="Varanasi",
-        crop="rice",
-        stage="flowering",
-        language="en",
-    )
-    assert res_rice_flowering["status"] == "success"
-    assert res_rice_flowering["crop"] == "rice"
-    assert "moisture" in res_rice_flowering["advisory_text"].lower()
+        # Wheat at Crown Root Initiation (CRI) in Hindi
+        res_wheat_cri_hi = await adapter.get_agromet_advisory(
+            district="Ludhiana",
+            crop="गेहूं",
+            stage="CRI",
+            language="hi",
+        )
+        assert res_wheat_cri_hi["status"] == "success"
+        assert "सिंचाई" in res_wheat_cri_hi["advisory_text"]
 
-    # 4. Rice at Maturity/Harvesting stage in Burdwan
-    res_rice_harvest_hi = await adapter.get_agromet_advisory(
-        district="Burdwan",
-        crop="धान",
-        stage="कटाई",
-        language="hi",
-    )
-    assert res_rice_harvest_hi["status"] == "success"
-    assert ("कटाई" in res_rice_harvest_hi["advisory_text"] or "पानी" in res_rice_harvest_hi["advisory_text"])
+        # Rice at Flowering stage in Varanasi
+        res_rice_flowering = await adapter.get_agromet_advisory(
+            district="Varanasi",
+            crop="rice",
+            stage="flowering",
+            language="en",
+        )
+        assert res_rice_flowering["status"] == "success"
+        assert res_rice_flowering["crop"] == "rice"
+        assert "moisture" in res_rice_flowering["advisory_text"].lower()
+
+        # Rice at Maturity/Harvesting stage in Burdwan
+        res_rice_harvest_hi = await adapter.get_agromet_advisory(
+            district="Burdwan",
+            crop="धान",
+            stage="कटाई",
+            language="hi",
+        )
+        assert res_rice_harvest_hi["status"] == "success"
+        assert ("कटाई" in res_rice_harvest_hi["advisory_text"] or "पानी" in res_rice_harvest_hi["advisory_text"])
+    finally:
+        settings.agromet_fixture_enabled = orig
 
 
 @pytest.mark.asyncio
@@ -120,32 +135,43 @@ async def test_agromet_never_gives_pesticide_doses():
 
 @pytest.mark.asyncio
 async def test_marine_bulletin_and_fishermen_warnings():
-    """Verify coastal marine bulletins and fishermen warnings carry official safety notice."""
+    """Verify coastal marine bulletins return unavailable by default, and bulletin when enabled."""
     adapter = MarineAdapter()
 
-    # 1. Konkan-Goa coast (Active warning)
-    res_konkan = await adapter.get_marine_bulletin(area="konkan", language="en")
-    assert res_konkan["status"] == "success"
-    assert "Konkan-Goa" in res_konkan["area_name"]
-    assert res_konkan["sea_condition"] in ("Rough", "Very Rough", "Rough to Very Rough")
-    assert res_konkan["fishermen_warning"]["status"] == "warning_active"
-    assert "NOT to venture" in res_konkan["fishermen_warning"]["warning_en"]
-    # Check mandatory safety notice
-    assert "SAFETY NOTICE" in res_konkan["safety_banner"]["text_en"]
-    assert "INCOIS" in res_konkan["safety_banner"]["text_en"]
-    assert "IMD" in res_konkan["safety_banner"]["text_en"]
+    # 1. Default config: fixture disabled
+    assert not settings.agromet_fixture_enabled
+    res_def = await adapter.get_marine_bulletin(area="konkan", language="en")
+    assert res_def["status"] == "unavailable"
+    assert "Konkan" in res_def["area_name"]
 
-    # 2. North Gujarat coast (No warning)
-    res_gujarat = await adapter.get_marine_bulletin(area="north gujarat", language="hi")
-    assert res_gujarat["status"] == "success"
-    assert res_gujarat["fishermen_warning"]["status"] == "no_warning"
-    assert "सुरक्षा सूचना" in res_gujarat["safety_banner"]["text_hi"]
+    # 2. When fixture enabled
+    orig = settings.agromet_fixture_enabled
+    try:
+        settings.agromet_fixture_enabled = True
+        # Konkan-Goa coast (Active warning)
+        res_konkan = await adapter.get_marine_bulletin(area="konkan", language="en")
+        assert res_konkan["status"] == "success"
+        assert "Konkan-Goa" in res_konkan["area_name"]
+        assert res_konkan["sea_condition"] in ("Rough", "Very Rough", "Rough to Very Rough")
+        assert res_konkan["fishermen_warning"]["status"] == "warning_active"
+        assert "NOT to venture" in res_konkan["fishermen_warning"]["warning_en"]
+        # Check mandatory safety notice
+        assert "SAFETY NOTICE" in res_konkan["safety_banner"]["text_en"]
+        assert "INCOIS" in res_konkan["safety_banner"]["text_en"]
 
-    # 3. Tamil Nadu coast (Orange level warning)
-    res_tn = await adapter.get_marine_bulletin(area="tamil nadu", language="en")
-    assert res_tn["status"] == "success"
-    assert res_tn["fishermen_warning"]["level"] in ("orange", "red")
-    assert "Gulf of Mannar" in res_tn["fishermen_warning"]["warning_en"]
+        # North Gujarat coast (No warning)
+        res_gujarat = await adapter.get_marine_bulletin(area="north gujarat", language="hi")
+        assert res_gujarat["status"] == "success"
+        assert res_gujarat["fishermen_warning"]["status"] == "no_warning"
+        assert "सुरक्षा सूचना" in res_gujarat["safety_banner"]["text_hi"]
+
+        # Tamil Nadu coast (Orange level warning)
+        res_tn = await adapter.get_marine_bulletin(area="tamil nadu", language="en")
+        assert res_tn["status"] == "success"
+        assert res_tn["fishermen_warning"]["level"] in ("orange", "red")
+        assert "Gulf of Mannar" in res_tn["fishermen_warning"]["warning_en"]
+    finally:
+        settings.agromet_fixture_enabled = orig
 
 
 @pytest.mark.asyncio
@@ -158,6 +184,8 @@ async def test_conversation_scenario_wheat_farmer():
         language="en",
         stream=False,
     )
+
+    # 1. Default config: unavailable
     tokens: list[str] = []
     card_data: dict | None = None
     async for ev in agent.run_chat(req):
@@ -168,13 +196,31 @@ async def test_conversation_scenario_wheat_farmer():
 
     full_text = "".join(tokens)
     assert card_data is not None
-    assert "IMD Agromet" in card_data["headline"]
-    assert "Wheat" in card_data["headline"]
-    assert "Sowing" in card_data["headline"]
-    assert "GKMS" in card_data["source_line"] or "IMD" in card_data["source_line"]
-    assert "sowing window" in full_text.lower()
-    # Refusal reminder present
-    assert "1800-180-1551" in str(card_data)
+    assert "Agromet" in card_data["headline"]
+    assert "unavailable" in full_text.lower()
+    assert "IMD" not in full_text
+
+    # 2. When fixture enabled
+    orig = settings.agromet_fixture_enabled
+    try:
+        settings.agromet_fixture_enabled = True
+        tokens = []
+        card_data = None
+        async for ev in agent.run_chat(req):
+            if ev["event"] == "token":
+                tokens.append(ev["data"]["text"])
+            elif ev["event"] == "card":
+                card_data = ev["data"]
+
+        full_text = "".join(tokens)
+        assert card_data is not None
+        assert "Agromet" in card_data["headline"]
+        assert "Wheat" in card_data["headline"]
+        assert "Sowing" in card_data["headline"]
+        assert "sowing window" in full_text.lower()
+        assert "1800-180-1551" in str(card_data)
+    finally:
+        settings.agromet_fixture_enabled = orig
 
 
 @pytest.mark.asyncio
@@ -187,6 +233,8 @@ async def test_conversation_scenario_rice_farmer_hindi():
         language="hi",
         stream=False,
     )
+
+    # 1. Default config: unavailable
     tokens: list[str] = []
     card_data: dict | None = None
     async for ev in agent.run_chat(req):
@@ -197,9 +245,28 @@ async def test_conversation_scenario_rice_farmer_hindi():
 
     full_text = "".join(tokens)
     assert card_data is not None
-    assert "कृषि सलाह" in card_data["headline"] or "धान" in card_data["headline"]
-    assert "मौसम विज्ञान विभाग" in card_data["source_line"] or "IMD" in card_data["source_line"] or "GKMS" in card_data["source_line"]
-    assert len(full_text) > 10
+    assert "कृषि" in card_data["headline"]
+    assert "उपलब्ध नहीं" in full_text
+    assert "IMD" not in full_text and "आईएमडी" not in full_text
+
+    # 2. When fixture enabled
+    orig = settings.agromet_fixture_enabled
+    try:
+        settings.agromet_fixture_enabled = True
+        tokens = []
+        card_data = None
+        async for ev in agent.run_chat(req):
+            if ev["event"] == "token":
+                tokens.append(ev["data"]["text"])
+            elif ev["event"] == "card":
+                card_data = ev["data"]
+
+        full_text = "".join(tokens)
+        assert card_data is not None
+        assert "कृषि सलाह" in card_data["headline"] or "धान" in card_data["headline"]
+        assert len(full_text) > 10
+    finally:
+        settings.agromet_fixture_enabled = orig
 
 
 @pytest.mark.asyncio
@@ -212,6 +279,8 @@ async def test_conversation_scenario_coastal_fisherman_marine_warning():
         language="en",
         stream=False,
     )
+
+    # 1. Default config: unavailable
     tokens: list[str] = []
     card_data: dict | None = None
     async for ev in agent.run_chat(req):
@@ -223,8 +292,28 @@ async def test_conversation_scenario_coastal_fisherman_marine_warning():
     full_text = "".join(tokens)
     assert card_data is not None
     assert "Coastal Bulletin" in card_data["headline"]
-    assert "Konkan" in card_data["headline"]
-    assert "SAFETY NOTICE" in card_data["caveat"]
-    assert "INCOIS" in card_data["caveat"]
-    assert "NOT to venture" in full_text
+    assert "unavailable" in full_text.lower()
+    assert "IMD" not in full_text
+
+    # 2. When fixture enabled
+    orig = settings.agromet_fixture_enabled
+    try:
+        settings.agromet_fixture_enabled = True
+        tokens = []
+        card_data = None
+        async for ev in agent.run_chat(req):
+            if ev["event"] == "token":
+                tokens.append(ev["data"]["text"])
+            elif ev["event"] == "card":
+                card_data = ev["data"]
+
+        full_text = "".join(tokens)
+        assert card_data is not None
+        assert "Coastal Bulletin" in card_data["headline"]
+        assert "Konkan" in card_data["headline"]
+        assert "SAFETY NOTICE" in card_data["caveat"]
+        assert "INCOIS" in card_data["caveat"]
+        assert "NOT to venture" in full_text
+    finally:
+        settings.agromet_fixture_enabled = orig
 

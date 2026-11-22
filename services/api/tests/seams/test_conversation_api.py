@@ -92,5 +92,6 @@ async def test_conversation_api_hindi_stream_seam():
         # Must be in Hindi and contain weather terms
         assert any(term in answer_text for term in ["बारिश", "वर्षा", "पूर्वानुमान", "संभावना"])
         assert "Open-Meteo" in answer_text
-        assert "कनेक्ट नहीं" in answer_text or "not connected" in answer_text.lower()
+        assert "कनेक्ट नहीं" not in answer_text and "not connected" not in answer_text.lower()
+        assert "IMD" not in answer_text and "आईएमडी" not in answer_text
 

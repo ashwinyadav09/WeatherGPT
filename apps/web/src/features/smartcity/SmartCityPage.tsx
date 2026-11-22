@@ -145,6 +145,10 @@ export const SmartCityPage: React.FC = () => {
         </div>
       )}
 
+      {loading && (
+        <div className="text-xs text-slate-500 animate-pulse">Loading smart-city data...</div>
+      )}
+
       {/* Subscription Creation Form */}
       <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm space-y-4">
         <h2 className="text-base font-bold text-slate-800">Add Webhook Subscription</h2>

@@ -13,17 +13,23 @@ export const moreFeature: FeatureDefinition = {
       defaultLabel: 'More',
       navPosition: 'bottom',
       order: 40,
-      icon: ({ className = 'w-5 h-5', active }) => (
-        <svg
-          className={`${className} ${active ? 'text-blue-600' : 'text-slate-500'}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      ),
+      icon: ({ className = 'w-5 h-5', active }) =>
+        React.createElement(
+          'svg',
+          {
+            className: `${className} ${active ? 'text-blue-600' : 'text-slate-500'}`,
+            fill: 'none',
+            stroke: 'currentColor',
+            viewBox: '0 0 24 24',
+            'aria-hidden': 'true',
+          },
+          React.createElement('path', {
+            strokeLinecap: 'round',
+            strokeLinejoin: 'round',
+            strokeWidth: '2',
+            d: 'M4 6h16M4 12h16M4 18h16',
+          })
+        ),
       component: MorePage,
     },
   ],

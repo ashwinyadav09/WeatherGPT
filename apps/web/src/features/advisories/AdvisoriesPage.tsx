@@ -97,7 +97,7 @@ export const AdvisoriesPage: React.FC = () => {
           Official Advisories & Bulletins
         </h1>
         <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-          IMD Gramin Krishi Mausam Sewa (Agromet) & Coastal Marine Bulletins
+          Gramin Krishi Mausam Sewa (Agromet) & Coastal Marine Bulletins
         </p>
       </div>
 
@@ -185,12 +185,13 @@ export const AdvisoriesPage: React.FC = () => {
           {agroLoading ? (
             <div className="p-6 text-center text-slate-500">Loading agromet advisory...</div>
           ) : agroData ? (
-            <Card
-              headline={`${agroData.crop_display} Advisory - ${agroData.stage_display}`}
-              sourceLine={agroData.source}
-              caveat={agroData.safety_note}
-              style="guidance-card"
-            >
+            <Card variant="guidance">
+              <h3 className="font-semibold text-base text-slate-900 dark:text-white mb-1">
+                {`${agroData.crop_display} Advisory - ${agroData.stage_display}`}
+              </h3>
+              <p className="text-xs text-slate-500 mb-2">
+                {agroData.source} • {agroData.safety_note}
+              </p>
               <div className="space-y-3 mt-2 text-sm text-slate-700 dark:text-slate-300">
                 <p className="leading-relaxed">{agroData.advisory_text}</p>
                 {agroData.recommended_actions?.length > 0 && (
@@ -247,12 +248,13 @@ export const AdvisoriesPage: React.FC = () => {
               </div>
 
               {/* Bulletin Card */}
-              <Card
-                headline={`Coastal Bulletin: ${marineData.area_name}`}
-                sourceLine={marineData.source}
-                caveat="Official Marine Weather Bulletin | INCOIS Collaborative Product"
-                style="guidance-card"
-              >
+              <Card variant="guidance">
+                <h3 className="font-semibold text-base text-slate-900 dark:text-white mb-1">
+                  {`Coastal Bulletin: ${marineData.area_name}`}
+                </h3>
+                <p className="text-xs text-slate-500 mb-2">
+                  {marineData.source} • Official Marine Weather Bulletin | INCOIS Collaborative Product
+                </p>
                 <div className="space-y-3 mt-2 text-sm text-slate-700 dark:text-slate-300">
                   <div className="grid grid-cols-2 gap-3 text-xs">
                     <div className="p-2 bg-slate-50 dark:bg-slate-800 rounded">

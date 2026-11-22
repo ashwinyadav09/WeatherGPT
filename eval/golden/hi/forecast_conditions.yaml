@@ -4,7 +4,6 @@
   question: कल पुणे में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -16,7 +15,6 @@
   question: कल मुंबई में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -28,7 +26,6 @@
   question: कल दिल्ली में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -40,7 +37,6 @@
   question: कल बेंगलुरु में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -52,7 +48,6 @@
   question: कल चेन्नई में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -64,7 +59,6 @@
   question: कल कोलकाता में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -76,7 +70,6 @@
   question: कल अहमदाबाद में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -88,7 +81,6 @@
   question: कल जयपुर में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -100,7 +92,6 @@
   question: कल लखनऊ में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -112,7 +103,6 @@
   question: कल पटना में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -124,7 +114,6 @@
   question: कल हैदराबाद में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -136,7 +125,6 @@
   question: कल चंडीगढ़ में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -148,7 +136,6 @@
   question: कल भोपाल में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -160,7 +147,6 @@
   question: कल इंदौर में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -172,7 +158,6 @@
   question: कल नागपुर में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -184,7 +169,6 @@
   question: कल वाराणसी में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -196,7 +180,6 @@
   question: कल आगरा में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -208,7 +191,6 @@
   question: कल सूरत में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -220,7 +202,6 @@
   question: कल कोच्चि में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -232,7 +213,6 @@
   question: कल देहरादून में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -244,7 +224,6 @@
   question: कल गुवाहाटी में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -256,7 +235,6 @@
   question: कल शिमला में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -268,7 +246,6 @@
   question: कल श्रीनगर में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -280,7 +257,6 @@
   question: कल राँची में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -292,7 +268,6 @@
   question: कल भुवनेश्वर में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -304,7 +279,6 @@
   question: कल अमृतसर में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -316,7 +290,6 @@
   question: कल विशाखापट्टनम में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -328,7 +301,6 @@
   question: कल कानपुर में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -340,7 +312,6 @@
   question: कल तिरुवनंतपुरम में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -352,7 +323,6 @@
   question: कल वडोदरा में मौसम कैसा रहेगा?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -364,7 +334,6 @@
   question: पुणे में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -376,7 +345,6 @@
   question: मुंबई में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -388,7 +356,6 @@
   question: दिल्ली में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -400,7 +367,6 @@
   question: बेंगलुरु में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -412,7 +378,6 @@
   question: चेन्नई में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -424,7 +389,6 @@
   question: कोलकाता में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -436,7 +400,6 @@
   question: अहमदाबाद में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -448,7 +411,6 @@
   question: जयपुर में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -460,7 +422,6 @@
   question: लखनऊ में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -472,7 +433,6 @@
   question: पटना में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -484,7 +444,6 @@
   question: हैदराबाद में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -496,7 +455,6 @@
   question: चंडीगढ़ में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -508,7 +466,6 @@
   question: भोपाल में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -520,7 +477,6 @@
   question: इंदौर में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -532,7 +488,6 @@
   question: नागपुर में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -544,7 +499,6 @@
   question: वाराणसी में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -556,7 +510,6 @@
   question: आगरा में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -568,7 +521,6 @@
   question: सूरत में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -580,7 +532,6 @@
   question: कोच्चि में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -592,7 +543,6 @@
   question: देहरादून में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -604,7 +554,6 @@
   question: गुवाहाटी में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -616,7 +565,6 @@
   question: शिमला में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -628,7 +576,6 @@
   question: श्रीनगर में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -640,7 +587,6 @@
   question: राँची में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -652,7 +598,6 @@
   question: भुवनेश्वर में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -664,7 +609,6 @@
   question: अमृतसर में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -676,7 +620,6 @@
   question: विशाखापट्टनम में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -688,7 +631,6 @@
   question: कानपुर में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -700,7 +642,6 @@
   question: तिरुवनंतपुरम में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -712,7 +653,6 @@
   question: वडोदरा में कल का तापमान कितना रहने का अनुमान है?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -724,7 +664,6 @@
   question: Pune me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -736,7 +675,6 @@
   question: Mumbai me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -748,7 +686,6 @@
   question: Delhi me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -760,7 +697,6 @@
   question: Bengaluru me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -772,7 +708,6 @@
   question: Chennai me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -784,7 +719,6 @@
   question: Kolkata me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -796,7 +730,6 @@
   question: Ahmedabad me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -808,7 +741,6 @@
   question: Jaipur me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -820,7 +752,6 @@
   question: Lucknow me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -832,7 +763,6 @@
   question: Patna me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -844,7 +774,6 @@
   question: Hyderabad me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -856,7 +785,6 @@
   question: Chandigarh me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -868,7 +796,6 @@
   question: Bhopal me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -880,7 +807,6 @@
   question: Indore me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -892,7 +818,6 @@
   question: Nagpur me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -904,7 +829,6 @@
   question: Varanasi me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -916,7 +840,6 @@
   question: Agra me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -928,7 +851,6 @@
   question: Surat me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -940,7 +862,6 @@
   question: Kochi me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -952,7 +873,6 @@
   question: Dehradun me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -964,7 +884,6 @@
   question: Guwahati me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -976,7 +895,6 @@
   question: Shimla me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -988,7 +906,6 @@
   question: Srinagar me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1000,7 +917,6 @@
   question: Ranchi me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1012,7 +928,6 @@
   question: Bhubaneswar me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1024,7 +939,6 @@
   question: Amritsar me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1036,7 +950,6 @@
   question: Visakhapatnam me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1048,7 +961,6 @@
   question: Kanpur me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1060,7 +972,6 @@
   question: Thiruvananthapuram me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1072,7 +983,6 @@
   question: Vadodara me kal weather kaisa rahega?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1084,7 +994,6 @@
   question: कल पुणे में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1096,7 +1005,6 @@
   question: कल मुंबई में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1108,7 +1016,6 @@
   question: कल दिल्ली में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1120,7 +1027,6 @@
   question: कल बेंगलुरु में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1132,7 +1038,6 @@
   question: कल चेन्नई में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1144,7 +1049,6 @@
   question: कल कोलकाता में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1156,7 +1060,6 @@
   question: कल अहमदाबाद में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1168,7 +1071,6 @@
   question: कल जयपुर में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1180,7 +1082,6 @@
   question: कल लखनऊ में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed
@@ -1192,7 +1093,6 @@
   question: कल पटना में गर्मी ज्यादा रहेगी क्या?
   expect:
     source_named: Open-Meteo
-    says_imd_not_connected: true
     must_not:
     - evacuate
     - guaranteed

@@ -81,8 +81,9 @@ class AgrometAdapter:
         fixture_path: Path | None = None,
         settings: Settings | None = None,
     ) -> None:
+        from services.api.app.config import settings as app_settings
         self.fixture_path = fixture_path or (FIXTURES_DIR / "agromet_advisory_sample.json")
-        self.settings = settings or Settings()
+        self.settings = settings or app_settings
         self._bulletin_cache: dict[str, Any] | None = None
         self._load_fixtures()
 
@@ -152,18 +153,39 @@ class AgrometAdapter:
         norm_stage = self.normalize_stage(stage)
         norm_dist = self.normalize_district(district)
 
+        # In default config (AGROMET_FIXTURE_ENABLED=false), never return fixture advisories
+        if not self.settings.agromet_fixture_enabled:
+            return {
+                "status": "unavailable",
+                "district": district.title(),
+                "crop": norm_crop,
+                "stage": norm_stage,
+                "advisory_text": "",
+                "message": "Official agromet advisories are currently unavailable.",
+                "source": "Gramin Krishi Mausam Sewa",
+                "authority_tier": 2,
+                "provenance": "spec-only",
+            }
+
         if not self._bulletin_cache:
             self._load_fixtures()
 
         bulletin = self._bulletin_cache or {}
         districts = bulletin.get("districts", {})
 
-        # Find matching district or fall back gracefully to first available district
+        # Find matching district; strictly no fallback to Ludhiana or Burdwan
         dist_data = districts.get(norm_dist)
         if not dist_data:
-            # Fall back to ludhiana for wheat, burdwan for rice if not found
-            fallback_key = "ludhiana" if norm_crop == "wheat" else "burdwan"
-            dist_data = districts.get(fallback_key, next(iter(districts.values())) if districts else {})
+            return {
+                "status": "district_not_found",
+                "district": district.title(),
+                "crop": norm_crop,
+                "stage": norm_stage,
+                "advisory_text": f"No official agromet advisory found for district: {district.title()}.",
+                "source": bulletin.get("organization", "Gramin Krishi Mausam Sewa"),
+                "authority_tier": 2,
+                "provenance": bulletin.get("_provenance", "documented-sample"),
+            }
 
         crop_data = dist_data.get("crops", {}).get(norm_crop)
         if not crop_data:

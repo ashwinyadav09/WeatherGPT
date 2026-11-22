@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type NavPosition = 'bottom' | 'top' | 'both' | 'hidden';
+export type NavPosition = 'bottom' | 'top' | 'both' | 'more' | 'hidden';
 
 export interface FeatureRoute {
   id: string;

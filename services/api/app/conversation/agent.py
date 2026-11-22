@@ -168,6 +168,27 @@ class ConversationAgent:
         if any(k in req.text.lower() for k in marine_terms):
             target_area = place.id if place else req.text
             marine_data = await self.advisory_engine.marine_adapter.get_marine_bulletin(area=target_area, language=lang)
+            if marine_data.get("status") == "unavailable":
+                area_title = marine_data.get("area_name", target_area.replace("_", " ").title())
+                msg = (
+                    f"{area_title} के लिए तटीय मौसम बुलेटिन वर्तमान में उपलब्ध नहीं है।"
+                    if lang == "hi"
+                    else f"Coastal weather bulletins are currently unavailable for {area_title}."
+                )
+                yield {
+                    "event": "card",
+                    "data": {
+                        "headline": f"Coastal Bulletin: {area_title}" if lang != "hi" else f"तटीय बुलेटिन: {area_title}",
+                        "source_line": "Source: Coastal Weather Services",
+                        "caveat": msg,
+                        "actions": ["INCOIS Advisories"],
+                    },
+                }
+                yield {"event": "token", "data": {"text": msg}}
+                latency_ms = int((time.time() - start_time) * 1000)
+                yield {"event": "done", "data": {"latency_ms": latency_ms}}
+                return
+
             fw = marine_data.get("fishermen_warning", {})
             w_text = fw.get("warning_hi" if lang == "hi" else "warning_en", "")
             banner_txt = marine_data.get("safety_banner", {}).get("text_hi" if lang == "hi" else "text_en", "")
@@ -181,7 +202,7 @@ class ConversationAgent:
                 "source_line": f"Source: {marine_data.get('source')} (Official Warning)",
                 "caveat": banner_txt,
                 "style": "guidance-card",
-                "actions": ["Official IMD Marine Bulletin", "INCOIS Advisories"],
+                "actions": ["Marine Bulletin", "INCOIS Advisories"],
                 "marine_data": marine_data,
             }
             yield {"event": "card", "data": marine_card_data}
@@ -220,9 +241,29 @@ class ConversationAgent:
                 yield {"event": "done", "data": {"latency_ms": latency_ms}}
                 return
 
+            if agro_data.get("status") == "unavailable":
+                msg = (
+                    f"कृषि मौसम परामर्श {target_district} के लिए वर्तमान में उपलब्ध नहीं है।"
+                    if lang == "hi"
+                    else f"Agricultural weather advisories are currently unavailable for {target_district}."
+                )
+                yield {
+                    "event": "card",
+                    "data": {
+                        "headline": "Agromet Advisory" if lang != "hi" else "कृषि परामर्श",
+                        "source_line": "Source: Gramin Krishi Mausam Sewa",
+                        "caveat": msg,
+                        "actions": ["1800-180-1551 (Kisan Call Centre)"],
+                    },
+                }
+                yield {"event": "token", "data": {"text": msg}}
+                latency_ms = int((time.time() - start_time) * 1000)
+                yield {"event": "done", "data": {"latency_ms": latency_ms}}
+                return
+
             agro_card_data = {
                 "headline": (
-                    f"IMD Agromet: {agro_data.get('crop_display')} ({agro_data.get('stage_display')})"
+                    f"Agromet Advisory: {agro_data.get('crop_display')} ({agro_data.get('stage_display')})"
                     if lang != "hi"
                     else f"मौसम कृषि सलाह: {agro_data.get('crop_display')} ({agro_data.get('stage_display')})"
                 ),
@@ -334,11 +375,10 @@ class ConversationAgent:
                     elif val.variable in ("tmax", "temperature") and isinstance(val.value, (int, float)):
                         temp_val = float(val.value)
 
-        source_name = packets[0].source if packets else "Open-Meteo"
-        if "open_meteo" in source_name:
-            source_display = "Open-Meteo"
-        else:
-            source_display = "Official IMD"
+        source_display = "Open-Meteo"
+        issued_time_str = ""
+        if packets and packets[0].issued_at:
+            issued_time_str = packets[0].issued_at.strftime("%H:%M UTC")
 
         if rain_val is None or temp_val is None:
             # No defaults! Say data is unavailable
@@ -351,7 +391,7 @@ class ConversationAgent:
                 "event": "card",
                 "data": {
                     "headline": f"{p_name} Weather" if lang != "hi" else f"{p_name} मौसम",
-                    "source_line": f"Data: {source_display} (CC BY 4.0)",
+                    "source_line": f"Data: {source_display} (global model, CC BY 4.0)",
                     "caveat": msg,
                 },
             }
@@ -369,40 +409,33 @@ class ConversationAgent:
             rain_phrase = f"{rf_phrase} ({rain_val:.1f} मिमी)"
             answer_text = (
                 f"{source_display} पूर्वानुमान के अनुसार कल {p_name} में {rain_phrase} की संभावना है "
-                f"और तापमान {temp_val:.1f} डिग्री रहेगा। "
-                "कृपया ध्यान दें कि आधिकारिक आईएमडी (IMD) पूर्वानुमान इस पायलट में अभी सीधे कनेक्ट नहीं है।"
+                f"और तापमान {temp_val:.1f} डिग्री रहेगा।"
             )
             # Run glossary check
             glossary_res = check_hindi_glossary(answer_text)
             if not glossary_res.is_valid:
                 answer_text = (
-                    f"{source_display} पूर्वानुमान: {p_name} में कल बारिश {rain_val:.1f} मिमी, तापमान {temp_val:.1f} डिग्री रहेगा। "
-                    "कृपया ध्यान दें कि आधिकारिक आईएमडी (IMD) पूर्वानुमान इस पायलट में अभी सीधे कनेक्ट नहीं है।"
+                    f"{source_display} पूर्वानुमान: {p_name} में कल बारिश {rain_val:.1f} मिमी, तापमान {temp_val:.1f} डिग्री रहेगा।"
                 )
         elif lang == "mr":
             answer_text = (
-                f"{source_display} हवामान अंदाजानुसार उद्या {p_name} मध्ये पाऊस {rain_val:.1f} मिमी आणि तापमान {temp_val:.1f} अंश सेल्सिअस राहण्याची शक्यता आहे। "
-                "कृपया लक्षात घ्या की अधिकृत आयएमडी (IMD) अंदाज या पायलटमध्ये अद्याप थेट जोडलेला नाही (not connected)."
+                f"{source_display} हवामान अंदाजानुसार उद्या {p_name} मध्ये पाऊस {rain_val:.1f} मिमी आणि तापमान {temp_val:.1f} अंश सेल्सिअस राहण्याची शक्यता आहे।"
             )
         elif lang == "bn":
             answer_text = (
-                f"{source_display} পূর্বাভাস অনুযায়ী আগামীকাল {p_name}-এ বৃষ্টিপাত {rain_val:.1f} মিমি এবং তাপমাত্রা {temp_val:.1f} ডিগ্রি সেলসিয়াস হতে পারে। "
-                "অনুগ্রহ করে মনে রাখবেন যে সরকারি আইএমডি (IMD) পূর্বাভাস এই পাইলটে সরাসরি যুক্ত নয় (not connected)।"
+                f"{source_display} পূর্বাভাস অনুযায়ী আগামীকাল {p_name}-এ বৃষ্টিপাত {rain_val:.1f} মিমি এবং তাপমাত্রা {temp_val:.1f} ডিগ্রি সেলসিয়াস হতে পারে।"
             )
         elif lang == "te":
             answer_text = (
-                f"{source_display} సూచన ప్రకారం రేపు {p_name} లో వర్షం {rain_val:.1f} మి.మీ మరియు ఉష్ణోగ్రత {temp_val:.1f} డిగ్రీల సెల్సియస్ ఉండే అవకాశం ఉంది. "
-                "గమనిక: అధికారిక IMD సూచన ఈ పైలట్‌లో ఇంకా కనెక్ట్ కాలేదు (not connected)."
+                f"{source_display} సూచన ప్రకారం రేపు {p_name} లో వర్షం {rain_val:.1f} మి.మీ మరియు ఉష్ణోగ్రత {temp_val:.1f} డిగ్రీల సెల్సియస్ ఉండే అవకాశం ఉంది."
             )
         elif lang == "ta":
             answer_text = (
-                f"{source_display} வானிலை முன்னறிவிப்பின்படி நாளை {p_name} இல் மழை {rain_val:.1f} மிமீ மற்றும் வெப்பநிலை {temp_val:.1f} டிகிரி செல்சியஸ் பதிவாக வாய்ப்புள்ளது. "
-                "குறிப்பு: அதிகாரப்பூர்வ IMD முன்னறிவிப்பு இந்த பைலட்டில் நேரடியாக இணைக்கப்படவில்லை (not connected)."
+                f"{source_display} வானிலை முன்னறிவிப்பின்படி நாளை {p_name} இல் மழை {rain_val:.1f} மிமீ மற்றும் வெப்பநிலை {temp_val:.1f} டிகிரி செல்சியஸ் பதிவாக வாய்ப்புள்ளது."
             )
         else:
             answer_text = (
-                f"According to {source_display} forecast, tomorrow in {p_name} expects {rain_val:.1f} mm rain and a temperature of {temp_val:.1f} degC. "
-                "Note: Official IMD forecast is not connected in this pilot."
+                f"According to {source_display} forecast, tomorrow in {p_name} expects {rain_val:.1f} mm rain and a temperature of {temp_val:.1f} degC."
             )
 
         # 6. Verify grounding
@@ -411,13 +444,12 @@ class ConversationAgent:
             # Fallback directly to template built from evidence
             if lang == "hi":
                 answer_text = (
-                    f"{source_display} पूर्वानुमान: {p_name} में कल बारिश {rain_val:.1f} मिमी, तापमान {temp_val:.1f} डिग्री रहेगा। "
-                    "कृपया ध्यान दें कि आधिकारिक आईएमडी (IMD) पूर्वानुमान इस पायलट में अभी सीधे कनेक्ट नहीं है।"
+                    f"{source_display} पूर्वानुमान: {p_name} में कल बारिश {rain_val:.1f} मिमी, तापमान {temp_val:.1f} डिग्री रहेगा।"
                 )
             else:
                 answer_text = (
                     f"According to {source_display} forecast for {p_name}: rain {rain_val:.1f} mm, "
-                    f"temperature {temp_val:.1f} degC. Note: Official IMD forecast is not connected in this pilot."
+                    f"temperature {temp_val:.1f} degC."
                 )
 
         # 7. Stream token events
@@ -435,7 +467,7 @@ class ConversationAgent:
                 "बारिश": f"{rain_val:.1f} मिमी",
                 "तापमान": f"{temp_val:.1f} डिग्री",
             }
-            caveat = "आधिकारिक आईएमडी पूर्वानुमान कनेक्ट नहीं है"
+            caveat = ""
             actions = ["प्रति घंटा देखें", "अलर्ट सेट करें"]
         elif lang == "mr":
             headline = f"{p_name} हवामान अंदाज"
@@ -443,7 +475,7 @@ class ConversationAgent:
                 "पाऊस": f"{rain_val:.1f} मिमी",
                 "तापमान": f"{temp_val:.1f} अंश सेल्सिअस",
             }
-            caveat = "अधिकृत आयएमडी अंदाज थेट जोडलेला नाही"
+            caveat = ""
             actions = ["तासनिहाय अंदाज", "इशारे पहा"]
         elif lang == "bn":
             headline = f"{p_name}-এর আবহাওয়া"
@@ -451,7 +483,7 @@ class ConversationAgent:
                 "বৃষ্টি": f"{rain_val:.1f} মিমি",
                 "तापমাত্রা": f"{temp_val:.1f} ডিগ্রি সেলসিয়াস",
             }
-            caveat = "সরকারি আইएमডি পূর্বাভাস সংযুক্ত নয়"
+            caveat = ""
             actions = ["ঘণ্টায় পূর্বাভাস", "সতর্কতা দেখুন"]
         elif lang == "te":
             headline = f"{p_name} వాతావరణ సమాచారం"
@@ -459,7 +491,7 @@ class ConversationAgent:
                 "వర్షం": f"{rain_val:.1f} మి.మీ",
                 "ఉష్ణోగ్రత": f"{temp_val:.1f} డిగ్రీలు",
             }
-            caveat = "అధికారిక IMD సూచన ఇంకా కనెక్ట్ కాలేదు"
+            caveat = ""
             actions = ["గంటల వారీ సమాచారం", "హెచ్చరికలు"]
         elif lang == "ta":
             headline = f"{p_name} வானிலை முன்னறிவிப்பு"
@@ -467,7 +499,7 @@ class ConversationAgent:
                 "மழை": f"{rain_val:.1f} மிமீ",
                 "வெப்பநிலை": f"{temp_val:.1f} டிகிரி செல்சியஸ்",
             }
-            caveat = "அதிகாரப்பூர்வ IMD முன்னறிவிப்பு இணைக்கப்படவில்லை"
+            caveat = ""
             actions = ["மணிநேர முன்னறிவிப்பு", "எச்சரிக்கைகள்"]
         else:
             headline = f"Weather in {p_name}"
@@ -475,7 +507,7 @@ class ConversationAgent:
                 "Rain": f"{rain_val:.1f} mm",
                 "Temperature": f"{temp_val:.1f} degC",
             }
-            caveat = "Official IMD forecast is not connected"
+            caveat = ""
             actions = ["View Hourly", "Set Alert"]
 
         # Check for active official warnings and attach guidance cards if applicable
@@ -485,10 +517,14 @@ class ConversationAgent:
             language=lang,
         )
 
+        source_line = f"Data: {source_display} (global model, CC BY 4.0)"
+        if issued_time_str:
+            source_line += f", issued {issued_time_str}"
+
         card_data: dict[str, Any] = {
             "headline": headline,
             "key_values": key_values,
-            "source_line": f"Data: {source_display} (CC BY 4.0)",
+            "source_line": source_line,
             "caveat": caveat,
             "actions": actions,
         }

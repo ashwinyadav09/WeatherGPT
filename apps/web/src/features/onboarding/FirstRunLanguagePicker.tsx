@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation, LANGUAGES, SupportedLanguage } from '../../i18n/LanguageContext';
-import { Button } from '../../components/Button';
 
 const ONBOARDED_KEY = 'weathergpt_first_run_completed';
 

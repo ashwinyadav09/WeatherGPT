@@ -86,10 +86,8 @@ export const handleMockRequest = async (
       : ['Yes, ', 'rain ', 'is ', 'likely ', 'tomorrow ', 'in ', 'Pune. ', 'Expected ', 'precipitation ', 'is ', 'around ', '12 mm.'];
 
     const headline = isHindi ? 'कल पुणे में बारिश की संभावना' : 'Rain likely tomorrow in Pune';
-    const sourceLine = 'Source: Open-Meteo (model data) | issued 05:30 IST';
-    const caveat = isHindi
-      ? 'आधिकारिक IMD पूर्वानुमान अभी जुड़ा नहीं है'
-      : 'Official IMD forecast is not connected yet';
+    const sourceLine = 'Data: Open-Meteo (global model) | issued 05:30 IST';
+    const caveat = '';
 
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
