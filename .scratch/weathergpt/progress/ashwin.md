@@ -20,7 +20,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R1.1 | Provider registry | done | Merged in PR #57 |
 | R1.2 | Translation gateway | done | Merged in PR #58 |
 | R1.3 | Languages | done | Merged in PR #59 |
-| R2.1 | Tools | in-review | Agent tools implemented in services/api/app/agent/tools.py with EvidencePacket returns and error shielding |
+| R2.1 | Tools | done | Merged in PR #60 |
 
 ## Assumptions
 
