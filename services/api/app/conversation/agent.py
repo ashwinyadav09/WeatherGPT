@@ -323,8 +323,8 @@ class ConversationAgent:
             }
 
         # 5. Formulate answer text based on requested day
-        tomorrow_keywords = ["tomorrow", "कल", "उद्या", "আগামীকাল", "কাল", "రేపు", "நாளை"]
-        today_keywords = ["today", "आज", "এখন", "ఈ రోజు", "నేడు", "இன்று"]
+        tomorrow_keywords = ["tomorrow", "कल", "उद्या", "আগামীকাল", "কাল", "రేపు", "நாளை", "ଆସନ୍ତାକାଲି", "କାଲି"]
+        today_keywords = ["today", "आज", "এখন", "ఈ రోజు", "నేడు", "இன்று", "ଆଜି"]
 
         weekday_map = {
             "monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
@@ -432,6 +432,10 @@ class ConversationAgent:
         elif lang == "ta":
             answer_text = (
                 f"{source_display} வானிலை முன்னறிவிப்பின்படி நாளை {p_name} இல் மழை {rain_val:.1f} மிமீ மற்றும் வெப்பநிலை {temp_val:.1f} டிகிரி செல்சியஸ் பதிவாக வாய்ப்புள்ளது."
+            )
+        elif lang == "or":
+            answer_text = (
+                f"{source_display} ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି {p_name} ରେ ବର୍ଷା {rain_val:.1f} ମିମି ଏବଂ ତାପମାତ୍ରା {temp_val:.1f} ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ।"
             )
         else:
             answer_text = (

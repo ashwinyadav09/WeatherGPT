@@ -3,86 +3,94 @@ languages:
     native_name: English
     english_name: English
     tier: 1
-    asr_provider: bhashini
-    tts_provider: bhashini
+    asr_provider: sarvam
+    tts_provider: sarvam
     enabled: true
 
   - code: hi
     native_name: हिन्दी
     english_name: Hindi
     tier: 1
-    asr_provider: bhashini
-    tts_provider: bhashini
+    asr_provider: sarvam
+    tts_provider: sarvam
     enabled: true
 
   - code: bn
     native_name: বাংলা
     english_name: Bengali
-    tier: 2
-    asr_provider: bhashini
-    tts_provider: bhashini
-    enabled: false
+    tier: 1
+    asr_provider: sarvam
+    tts_provider: sarvam
+    enabled: true
 
   - code: mr
     native_name: मराठी
     english_name: Marathi
-    tier: 2
-    asr_provider: bhashini
-    tts_provider: bhashini
-    enabled: false
+    tier: 1
+    asr_provider: sarvam
+    tts_provider: sarvam
+    enabled: true
 
   - code: te
     native_name: తెలుగు
     english_name: Telugu
-    tier: 2
-    asr_provider: bhashini
-    tts_provider: bhashini
-    enabled: false
+    tier: 1
+    asr_provider: sarvam
+    tts_provider: sarvam
+    enabled: true
 
   - code: ta
     native_name: தமிழ்
     english_name: Tamil
-    tier: 2
-    asr_provider: bhashini
-    tts_provider: bhashini
-    enabled: false
+    tier: 1
+    asr_provider: sarvam
+    tts_provider: sarvam
+    enabled: true
+
+  - code: or
+    native_name: ଓଡ଼ିଆ
+    english_name: Odia
+    tier: 1
+    asr_provider: sarvam
+    tts_provider: sarvam
+    enabled: true
 
   - code: gu
     native_name: ગુજરાતી
     english_name: Gujarati
-    tier: 3
-    asr_provider: bhashini
-    tts_provider: bhashini
+    tier: 2
+    asr_provider: sarvam
+    tts_provider: sarvam
     enabled: false
 
   - code: kn
     native_name: ಕನ್ನಡ
     english_name: Kannada
-    tier: 3
-    asr_provider: bhashini
-    tts_provider: bhashini
+    tier: 2
+    asr_provider: sarvam
+    tts_provider: sarvam
     enabled: false
 
   - code: ml
     native_name: മലയാളം
     english_name: Malayalam
-    tier: 3
-    asr_provider: bhashini
-    tts_provider: bhashini
+    tier: 2
+    asr_provider: sarvam
+    tts_provider: sarvam
     enabled: false
 
   - code: pa
     native_name: ਪੰਜਾਬੀ
     english_name: Punjabi
-    tier: 3
-    asr_provider: bhashini
-    tts_provider: bhashini
+    tier: 2
+    asr_provider: sarvam
+    tts_provider: sarvam
     enabled: false
 
-  - code: or
-    native_name: ଓଡ଼ିଆ
-    english_name: Odia
-    tier: 3
-    asr_provider: bhashini
-    tts_provider: bhashini
+  - code: as
+    native_name: অসমীয়া
+    english_name: Assamese
+    tier: 2
+    asr_provider: sarvam
+    tts_provider: sarvam
     enabled: false

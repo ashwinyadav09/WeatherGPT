@@ -91,3 +91,19 @@ ta:
   cancel: "இயல்பு நிலை திரும்பியது: {place} இல் {hazard} எச்சரிக்கை ரத்து செய்யப்பட்டுள்ளது."
   advice_header: "அதிகாரிகளின் வழிகாட்டுதல்"
   advice_fallback: "உள்ளூர் நிர்வாகத்தின் வழிமுறைகளைப் பின்பற்றவும்."
+
+or:
+  # Back-translation: "{level_color} alert: {hazard} in {place}"
+  headline: "{level_color} ସତର୍କତା: {place} ରେ {hazard}"
+  # Back-translation: "{sender} has issued a {level_color} alert for {hazard} in {place}. Valid from {valid_from} to {valid_to}."
+  body: "{sender} {place} ରେ {hazard} ପାଇଁ {level_color} ସତର୍କତା ଜାରି କରିଛନ୍ତି। ଏହା {valid_from} ରୁ {valid_to} ପର୍ଯ୍ୟନ୍ତ ବୈଧ।"
+  meaning:
+    green: "କୌଣସି ଚେତାବନୀ ନାହିଁ।"
+    yellow: "ସତର୍କ ରୁହନ୍ତୁ।"
+    orange: "ପ୍ରସ୍ତୁତ ରୁହନ୍ତୁ।"
+    red: "କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ଗ୍ରହଣ କରନ୍ତୁ।"
+  source_line: "{sender} ର ଆଧିକାରିକ ସତର୍କତା, {channel} ମାଧ୍ୟମରେ। ଜାରି: {issued_at}।"
+  update_prefix: "ଅଦ୍ୟତନ: "
+  cancel: "ସବୁ ସ୍ୱାଭାବିକ: {place} ରେ {hazard} ସତର୍କତା ପ୍ରତ୍ୟାହାର କରାଯାଇଛି।"
+  advice_header: "ପ୍ରଶାସନର ପରାମର୍ଶ"
+  advice_fallback: "ସ୍ଥାନୀୟ ପ୍ରଶାସନର ନିର୍ଦ୍ଦେଶ ପାଳନ କରନ୍ତୁ।"

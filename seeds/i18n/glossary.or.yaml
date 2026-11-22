@@ -1,0 +1,50 @@
+# Draft glossary (Odia). Needs a native-speaker sign-off (human step). Keys match glossary.en.yaml.
+terms:
+  temperature: ତାପମାତ୍ରା
+  humidity: ଆର୍ଦ୍ରତା
+  rain: ବର୍ଷା
+  rainfall: ବୃଷ୍ଟିପାତ
+  thunderstorm: ଘଡ଼ଘଡ଼ି ସହ ବର୍ଷା
+  lightning: ବିଜୁଳି
+  hailstorm: କୁଆପଥର ମାଡ଼
+  heat_wave: ଗ୍ରୀଷ୍ମ ପ୍ରବାହ (ଅଂଶୁଘାତ)
+  cold_wave: ଶୀତ ଲହରୀ
+  cyclone: ବାତ୍ୟା (ଘୂର୍ଣ୍ଣିଝଡ଼)
+  flood: ବନ୍ୟା
+  fog: କୁହୁଡ଼ି
+  wind: ପବନ
+  gust: ଝଟକା ପବନ
+  visibility: ଦୃଶ୍ୟମାନତା
+  forecast: ପୂର୍ବାନୁମାନ
+  nowcast: ତାତ୍କାଳିକ ପୂର୍ବାନୁମାନ
+  warning: ଚେତାବନୀ
+  alert: ସତର୍କତା (ଆଲର୍ଟ)
+  heavy_rain: ପ୍ରବଳ ବର୍ଷା
+  very_heavy_rain: ଅତି ପ୍ରବଳ ବର୍ଷା
+  extremely_heavy_rain: ଅତ୍ୟନ୍ତ ପ୍ରବଳ ବର୍ଷା
+  dust_storm: ଧୂଳି ଝଡ଼
+  high_waves: ଉଚ୍ଚ ଜୁଆର
+  flash_flood: ଆକସ୍ମିକ ବନ୍ୟା
+  drought: ମରୁଡ଼ି
+  tsunami: ସୁନାମି
+  storm_surge: ସାମୁଦ୍ରିକ ଜୁଆର
+  strong_wind: ପ୍ରବଳ ପବନ
+levels:
+  green: {color: ସବୁଜ, meaning: କୌଣସି ଚେତାବନୀ ନାହିଁ}
+  yellow: {color: ହଳଦିଆ, meaning: ସତର୍କ ରୁହନ୍ତୁ}
+  orange: {color: କମଳା, meaning: ପ୍ରସ୍ତୁତ ରୁହନ୍ତୁ}
+  red: {color: ଲାଲ, meaning: କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ଗ୍ରହଣ କରନ୍ତୁ}
+time:
+  today: ଆଜି
+  tomorrow: ଆସନ୍ତାକାଲି
+  day_after_tomorrow: ପରଦିନ
+  this_week: ଏହି ସପ୍ତାହ
+  morning: ସକାଳ
+  afternoon: ମଧ୍ୟାହ୍ନ
+  evening: ସନ୍ଧ୍ୟା
+  night: ରାତି
+units:
+  celsius: ଡିଗ୍ରୀ ସେଲସିୟସ
+  mm: ମିଲିମିଟର
+  kmh: କିଲୋମିଟର ପ୍ରତି ଘଣ୍ଟା
+  percent: ପ୍ରତିଶତ
