@@ -287,8 +287,8 @@ class Orchestrator:
             yield {"event": "done", "data": {"latency_ms": latency_ms}}
             return
 
-        # 4c. Check for Agromet / Farming query (Wheat / Rice / Crops)
-        agro_terms = ["agromet", "wheat", "rice", "paddy", "गेहूं", "धान", "फसल", "crop", "sowing", "बुवाई", "कटाई", "रोपाई", "kheti", "कृषि"]
+        # 4c. Check for Agromet / Farming query (Wheat Sowing / Rice / Agromet)
+        agro_terms = ["agromet", "wheat sowing", "धान की फसल", "गेहूं की बुवाई"]
         if any(k in req.text.lower() for k in agro_terms):
             target_district = "Ludhiana"
             if req.place_id:
@@ -311,7 +311,7 @@ class Orchestrator:
                 msg = (
                     f"कृषि मौसम परामर्श {target_district} के लिए वर्तमान में उपलब्ध नहीं है।"
                     if lang == "hi"
-                    else f"Agricultural weather advisories are currently unavailable for {target_district}."
+                    else f"Agromet weather advisories are currently unavailable for {target_district}."
                 )
                 yield {
                     "event": "card",
@@ -516,7 +516,13 @@ class Orchestrator:
         # Check intent keywords
         is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
         is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
-        is_advisory = any(w in req.text.lower() for w in ["heat wave", "cold wave", "drinking water", "लू", "ठंड", "शीतलहर", "do's and don'ts"])
+        is_advisory = any(w in req.text.lower() for w in [
+            "heat wave", "cold wave", "drinking water", "लू", "ठंड", "शीतलहर", "do's and don'ts",
+            "advice", "guidance", "precaution", "what should i do", "safety", "उपाय", "सलाह", "बचाव",
+            "crop", "wheat", "rice", "paddy", "farming", "sowing", "irrigation", "फसल", "कृषि", "सिंचाई", "बुवाई", "kheti", "धान", "गेहूं",
+            "lightning", "बिजली", "आकाशीय बिजली", "तूफान", "thunderstorm",
+            "colour code", "yellow warning", "orange alert", "red warning", "कलर कोड",
+        ])
 
         if is_climate:
             intent = "climate_history"
@@ -661,7 +667,22 @@ class Orchestrator:
                 # Fall back to vetted deterministic template built directly from evidence
                 fallback_used = True
                 logger.warning("grounding_retry_failed_falling_back_to_template", extra={"reasons": v_retry.reasons})
-                if rain_val is not None and temp_val is not None:
+                if intent == "advisory":
+                    top_guidance = ""
+                    top_chunk_id = ""
+                    for p in evidence_packets:
+                        for v in p.values:
+                            if v.variable == "guidance" and not top_guidance:
+                                top_guidance = str(v.value)
+                            elif v.variable == "chunk_id" and not top_chunk_id:
+                                top_chunk_id = str(v.value)
+                    if top_chunk_id == "no_official_guidance":
+                        answer_text = top_guidance
+                    elif top_chunk_id:
+                        answer_text = f"[{top_chunk_id}] {top_guidance}"
+                    else:
+                        answer_text = top_guidance
+                elif rain_val is not None and temp_val is not None:
                     if lang == "hi":
                         rf_phrase = get_hindi_rainfall_phrase(rain_val)
                         answer_text = (
@@ -717,24 +738,38 @@ class Orchestrator:
             }
 
         # 12. Build and Stream Card Event
-        card_headline = f"{p_name} Weather" if lang != "hi" else f"{p_name} का मौसम"
-        key_values: dict[str, str] = {}
-        if rain_val is not None:
-            key_values["Rain" if lang != "hi" else "बारिश"] = f"{rain_val:.1f} mm" if lang != "hi" else f"{rain_val:.1f} मिमी"
-        if temp_val is not None:
-            key_values["Temperature" if lang != "hi" else "तापमान"] = f"{temp_val:.1f} degC" if lang != "hi" else f"{temp_val:.1f} डिग्री"
+        if intent == "advisory":
+            card_headline = f"{p_name} Advisory" if lang != "hi" else f"{p_name} मौसम व सुरक्षा सलाह"
+            first_val = evidence_packets[0].values[0].value if evidence_packets and evidence_packets[0].values else "Safety"
+            card_data: dict[str, Any] = {
+                "headline": card_headline,
+                "key_values": {
+                    "Topic" if lang != "hi" else "विषय": str(first_val),
+                    "Source" if lang != "hi" else "स्रोत": evidence_packets[0].source if evidence_packets else "Official Advisory",
+                },
+                "source_line": f"Source: {evidence_packets[0].source} ({evidence_packets[0].attribution})" if evidence_packets else "Official Safety Guidance",
+                "caveat": "Official Safety & Agriculture Guidance",
+                "actions": ["112 (Emergency)", "1077 (Disaster)", "1800-180-1551 (Kisan Call Centre)"],
+            }
+        else:
+            card_headline = f"{p_name} Weather" if lang != "hi" else f"{p_name} का मौसम"
+            key_values: dict[str, str] = {}
+            if rain_val is not None:
+                key_values["Rain" if lang != "hi" else "बारिश"] = f"{rain_val:.1f} mm" if lang != "hi" else f"{rain_val:.1f} मिमी"
+            if temp_val is not None:
+                key_values["Temperature" if lang != "hi" else "तापमान"] = f"{temp_val:.1f} degC" if lang != "hi" else f"{temp_val:.1f} डिग्री"
 
-        source_line = f"Data: {source_display} (global model, CC BY 4.0)"
-        if issued_time_str:
-            source_line += f", issued {issued_time_str}"
+            source_line = f"Data: {source_display} (global model, CC BY 4.0)"
+            if issued_time_str:
+                source_line += f", issued {issued_time_str}"
 
-        card_data: dict[str, Any] = {
-            "headline": card_headline,
-            "key_values": key_values,
-            "source_line": source_line,
-            "caveat": "",
-            "actions": ["View Hourly", "Set Alert"] if lang != "hi" else ["प्रति घंटा देखें", "अलर्ट सेट करें"],
-        }
+            card_data = {
+                "headline": card_headline,
+                "key_values": key_values,
+                "source_line": source_line,
+                "caveat": "",
+                "actions": ["View Hourly", "Set Alert"] if lang != "hi" else ["प्रति घंटा देखें", "अलर्ट सेट करें"],
+            }
         yield {
             "event": "card",
             "data": card_data,

@@ -18,6 +18,8 @@ def ensure_installed(package: str) -> None:
 def main() -> int:
     ensure_installed("pytest")
     ensure_installed("pytest_asyncio")
+    ensure_installed("numpy")
+    ensure_installed("rank_bm25")
 
     args = sys.argv[1:]
     target = args if args else ["services/api/tests"]
