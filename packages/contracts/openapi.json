@@ -128,6 +128,30 @@
         }
       }
     },
+    "/v1/voice/health": {
+      "get": {
+        "tags": [
+          "voice"
+        ],
+        "summary": "Voice Health",
+        "description": "Health check for voice provider status.",
+        "operationId": "voice_health_v1_voice_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Voice Health V1 Voice Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/voice/transcribe": {
       "post": {
         "tags": [

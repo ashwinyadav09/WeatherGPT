@@ -73,14 +73,14 @@ class LLMGateway(LLMAdapter):
                         async for chunk in gen:
                             yield chunk
                         metrics = getattr(p_inst, "last_call_metrics", None)
-                        if metrics:
+                        if isinstance(metrics, dict):
                             self.last_call_metrics = dict(metrics)
 
                     return _tracking_gen(res, provider)
 
                 # Non-streaming result dict
                 metrics = getattr(provider, "last_call_metrics", None)
-                if metrics:
+                if isinstance(metrics, dict):
                     self.last_call_metrics = dict(metrics)
                 elif isinstance(res, dict):
                     usage = res.get("usage", {})

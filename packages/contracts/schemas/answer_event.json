@@ -7,7 +7,7 @@
   "properties": {
     "event": {
       "type": "string",
-      "enum": ["meta", "token", "evidence", "card", "done", "error"]
+      "enum": ["meta", "token", "evidence", "card", "trace", "done", "error"]
     },
     "data": {
       "type": "object"

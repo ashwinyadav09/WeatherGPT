@@ -22,6 +22,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R1.3 | Languages | done | Merged in PR #59 |
 | R2.1 | Tools | done | Merged in PR #60 |
 | R2.2 | LLM gateway upgrade | done | Merged in PR #61 |
+| R2.3 | Orchestrator | in-review | PR pending |
 
 ## Assumptions
 
@@ -35,6 +36,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R1.3: Tier-1 languages: en, hi, bn, mr, te, ta, or; Tier-2: gu, kn, ml, pa, as; UI selector is authoritative with script & stopword auto-detect fallback.
 - R2.1: Tools return lists of EvidencePacket and shield LLM caller from raw provider exceptions by wrapping errors in structured evidence packets; schemas conform to OpenAI tool calling format.
 - R2.2: Fallback chain order is Groq primary -> OpenRouter fallback -> Stub fallback; transient 429/5xx trigger retries with exponential backoff and jitter before falling back.
+- R2.3: Orchestrator routes deterministically when safety pre-guard or intent confidence exceeds threshold, calls tools returning evidence packets, verifies numeric claims against evidence, and falls back to template on grounding failure; maintains session memory with 15-minute TTL.
 
 ## Human-only steps open
 
