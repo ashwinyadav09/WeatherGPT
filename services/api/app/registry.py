@@ -22,6 +22,10 @@ from services.api.app.gateways.llm.adapters.stub import StubLLMAdapter
 from services.api.app.gateways.speech.adapters.bhashini import BhashiniSpeechAdapter
 from services.api.app.gateways.speech.adapters.sarvam import SarvamSpeechAdapter
 from services.api.app.gateways.speech.adapters.stub import StubSpeechAdapter
+from services.api.app.gateways.translation.base import TranslationAdapter
+from services.api.app.gateways.translation.gateway import TranslationGateway
+from services.api.app.gateways.translation.llm_fallback import LLMTranslationAdapter
+from services.api.app.gateways.translation.sarvam import SarvamTranslationAdapter
 from services.api.app.modules.alerts.sachet_adapter import SachetCAPAdapter
 from services.api.app.modules.forecast.adapters.base import ForecastAdapter
 from services.api.app.modules.forecast.adapters.ecmwf import ECMWFAdapter
@@ -136,6 +140,17 @@ class ProviderRegistry:
             "open_meteo.geocoding": lambda s: OpenMeteoGeocodingAdapter(),
         }
 
+        self.translation_factories: dict[str, Callable[[Settings], TranslationAdapter]] = {
+            "sarvam": lambda s: SarvamTranslationAdapter(
+                api_key=s.sarvam_api_key or os.getenv("SARVAM_API_KEY", "")
+            ),
+            "sarvam.translation": lambda s: SarvamTranslationAdapter(
+                api_key=s.sarvam_api_key or os.getenv("SARVAM_API_KEY", "")
+            ),
+            "llm": lambda s: LLMTranslationAdapter(),
+            "llm.translation": lambda s: LLMTranslationAdapter(),
+        }
+
     def _is_forecast_provider_available(self, name: str) -> bool:
         norm = name.lower().replace("-", "_")
         # IMD is excluded unless IMD_ENABLED is true AND IMD_API_KEY exists
@@ -216,6 +231,21 @@ class ProviderRegistry:
             )
         return StubLLMAdapter()
 
+    def get_translation_provider(self) -> TranslationGateway:
+        """Return configured TranslationGateway with primary and fallback adapters."""
+        primary_name = self.settings.translation_providers[0] if self.settings.translation_providers else "sarvam"
+        fallback_name = (
+            self.settings.translation_providers[1]
+            if len(self.settings.translation_providers) > 1
+            else "llm"
+        )
+        primary_factory = self.translation_factories.get(primary_name) or self.translation_factories["sarvam"]
+        fallback_factory = self.translation_factories.get(fallback_name) or self.translation_factories["llm"]
+
+        primary = primary_factory(self.settings)
+        fallback = fallback_factory(self.settings)
+        return TranslationGateway(primary=primary, fallback=fallback)
+
 
 # Module-level default registry instance and helper accessors
 registry = ProviderRegistry()
@@ -255,3 +285,10 @@ def get_llm_adapter(settings: Settings | None = None) -> LLMAdapter:
     if settings:
         return ProviderRegistry(settings).get_llm_adapter()
     return registry.get_llm_adapter()
+
+
+def get_translation_provider(settings: Settings | None = None) -> TranslationGateway:
+    if settings:
+        return ProviderRegistry(settings).get_translation_provider()
+    return registry.get_translation_provider()
+

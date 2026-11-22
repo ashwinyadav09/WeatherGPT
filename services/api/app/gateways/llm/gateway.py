@@ -3,12 +3,16 @@ from __future__ import annotations
 from typing import Any, AsyncGenerator
 
 from services.api.app.gateways.llm.adapters.base import LLMAdapter
-from services.api.app.registry import get_llm_adapter
 
 
 class LLMGateway:
     def __init__(self, adapter: LLMAdapter | None = None) -> None:
-        self.adapter = adapter or get_llm_adapter()
+        if adapter:
+            self.adapter = adapter
+        else:
+            from services.api.app.registry import get_llm_adapter
+
+            self.adapter = get_llm_adapter()
 
     async def complete(
         self,

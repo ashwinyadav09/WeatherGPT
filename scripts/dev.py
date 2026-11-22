@@ -327,6 +327,7 @@ DELEGATED = {
     "acceptance": "run every acceptance gate",
     "contract-checks": "run live contract checks (needs keys)",
     "demo": "start the scripted demo",
+    "translate-static": "pre-translate static strings into seeds/translations/<lang>.json",
 }
 
 
