@@ -10,5 +10,5 @@ description: Every user-visible number comes from an evidence packet and is veri
 - Show source and issue time whenever the user asks where an answer comes from.
 - When an official forecast and model guidance disagree materially, show both and label each.
 - Say plainly when a source is stale or down, and name the fallback used.
-- Name the source that actually answered (for example Open-Meteo or IMD), and say so when an official IMD forecast is not connected.
-- Express uncertainty with the project's phrase map per language; prefer IMD's own categories over invented ones.
+- Name the source that actually answered (for example "Open-Meteo (global model), issued <time>"). Do not mention services that are not configured or not part of the product.
+- Express uncertainty with the project's phrase map per language.
