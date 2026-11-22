@@ -20,6 +20,10 @@ def main() -> int:
     ensure_installed("pytest_asyncio")
     ensure_installed("numpy")
     ensure_installed("rank_bm25")
+    ensure_installed("shapely")
+    ensure_installed("greenlet")
+    ensure_installed("aiosqlite")
+    ensure_installed("asyncpg")
 
     args = sys.argv[1:]
     target = args if args else ["services/api/tests"]

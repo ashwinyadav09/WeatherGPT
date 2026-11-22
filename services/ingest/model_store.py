@@ -1,3 +1,9 @@
+"""NOT ENABLED: Model store is dormant/not enabled in production.
+
+Global NWP forecasts for India are retrieved on demand through the Open-Meteo
+multi-model adapter. This module is retained for architectural reference only.
+Do not use in production workflows.
+"""
 from __future__ import annotations
 
 import datetime as dt
@@ -7,7 +13,7 @@ from typing import Any
 class ModelOutputStore:
     """In-memory and file-backed store for ingested GFS and ECMWF model fields.
 
-    Tracks model cycle, lead times, variables, and India bounding box (lat 6-38, lon 68-98).
+    NOT ENABLED: Out of scope for WeatherGPT pilot. Forecasts are served on-demand.
     """
 
     def __init__(self) -> None:

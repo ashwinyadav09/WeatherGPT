@@ -3,13 +3,24 @@ from __future__ import annotations
 import datetime as dt
 import logging
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import yaml
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
+from services.api.app.db.models import Alert
 from services.api.app.evidence.models import AlertModel
 
 logger = logging.getLogger(__name__)
+
+try:
+    from shapely.geometry import Point as ShapelyPoint
+    from shapely.geometry import Polygon as ShapelyPolygon
+
+    _HAS_SHAPELY = True
+except ImportError:
+    _HAS_SHAPELY = False
 
 ROOT = Path(__file__).resolve().parents[5]
 TEMPLATES_PATH = ROOT / "seeds" / "i18n" / "alert-templates.yaml"
@@ -49,6 +60,18 @@ def point_in_polygon(
     """Check if (lat, lon) is inside or on the boundary of polygon [(lat1, lon1), ...]."""
     if len(polygon) < 3:
         return False
+
+    if _HAS_SHAPELY:
+        try:
+            poly = ShapelyPolygon(polygon)
+            if not poly.is_valid:
+                poly = poly.buffer(0)
+            pt = ShapelyPoint(lat, lon)
+            if poly.contains(pt) or poly.touches(pt) or poly.distance(pt) <= tolerance:
+                return True
+            return False
+        except Exception:
+            pass
 
     n = len(polygon)
     # Check boundary first (with tolerance for border cases)
@@ -159,7 +182,8 @@ class AlertEngine:
             ]
         return active
 
-    def ingest_sample_alert(self, alert: AlertModel, references: str | None = None) -> None:
+    def ingest_alert(self, alert: AlertModel, references: str | None = None) -> None:
+        """Ingest an AlertModel with deduplication, Update and Cancel handling."""
         # Ignore Test and Exercise statuses
         if alert.status in ("Test", "Exercise", "Draft"):
             logger.info("Alert %s ignored in production (status: %s)", alert.id, alert.status)
@@ -181,6 +205,93 @@ class AlertEngine:
         self._alerts[alert.id] = alert
         if ref_id:
             self._references_map[alert.id] = ref_id
+
+    # Backward compatibility
+    ingest_sample_alert = ingest_alert
+
+    async def save_alert_to_db(self, alert: AlertModel, session: AsyncSession) -> None:
+        """Persist or upsert alert model into database alerts table."""
+        sent_dt = alert.sent if isinstance(alert.sent, dt.datetime) else dt.datetime.fromisoformat(str(alert.sent).replace("Z", "+00:00"))
+        onset_dt = alert.onset if isinstance(alert.onset, dt.datetime) else dt.datetime.fromisoformat(str(alert.onset).replace("Z", "+00:00"))
+        expires_dt = alert.expires if isinstance(alert.expires, dt.datetime) else dt.datetime.fromisoformat(str(alert.expires).replace("Z", "+00:00"))
+
+        if alert.msg_type == "Cancel":
+            res = await session.execute(select(Alert).where(Alert.id == alert.id))
+            existing = res.scalar_one_or_none()
+            if existing:
+                await session.delete(existing)
+                await session.commit()
+            return
+
+        res = await session.execute(select(Alert).where(Alert.id == alert.id))
+        record = res.scalar_one_or_none()
+        if record is None:
+            record = Alert(
+                id=alert.id,
+                sender=alert.sender,
+                sent=sent_dt,
+                status=alert.status,
+                msg_type=alert.msg_type,
+                hazard=alert.hazard,
+                severity=alert.severity,
+                urgency=alert.urgency,
+                certainty=alert.certainty,
+                onset=onset_dt,
+                expires=expires_dt,
+                level=alert.level,
+                source_url=alert.source_url,
+                authority_tier=alert.authority_tier,
+                text_by_language=alert.text_by_language or {},
+                areas=alert.areas or [],
+            )
+            session.add(record)
+        else:
+            record.sender = alert.sender
+            record.sent = sent_dt
+            record.status = alert.status
+            record.msg_type = alert.msg_type
+            record.hazard = alert.hazard
+            record.severity = alert.severity
+            record.urgency = alert.urgency
+            record.certainty = alert.certainty
+            record.onset = onset_dt
+            record.expires = expires_dt
+            record.level = alert.level
+            record.source_url = alert.source_url
+            record.authority_tier = alert.authority_tier
+            record.text_by_language = alert.text_by_language or {}
+            record.areas = alert.areas or []
+
+        await session.commit()
+
+    async def load_alerts_from_db(self, session: AsyncSession) -> int:
+        """Load unexpired alerts from database into engine."""
+        now = dt.datetime.now(dt.timezone.utc)
+        res = await session.execute(select(Alert).where(Alert.expires > now))
+        records = res.scalars().all()
+        count = 0
+        for rec in records:
+            model = AlertModel(
+                id=rec.id,
+                sender=rec.sender,
+                sent=rec.sent,
+                status=rec.status,
+                msg_type=rec.msg_type,
+                hazard=rec.hazard,
+                severity=cast(Any, rec.severity),
+                urgency=cast(Any, rec.urgency),
+                certainty=cast(Any, rec.certainty),
+                onset=rec.onset,
+                expires=rec.expires,
+                level=cast(Any, rec.level),
+                source_url=rec.source_url,
+                authority_tier=rec.authority_tier,
+                text_by_language=rec.text_by_language or {},
+                areas=rec.areas or [],
+            )
+            self.ingest_alert(model)
+            count += 1
+        return count
 
     def match_alerts(
         self, lat: float, lon: float, district: str | None = None
