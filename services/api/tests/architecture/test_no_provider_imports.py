@@ -26,6 +26,8 @@ CONCRETE_PROVIDER_CLASSES = {
     "OpenAICompatibleLLMAdapter",
     "StubLLMAdapter",
     "SachetCAPAdapter",
+    "SarvamTranslationAdapter",
+    "LLMTranslationAdapter",
 }
 
 

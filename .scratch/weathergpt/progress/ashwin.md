@@ -17,7 +17,8 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R0.3 | Fix agent correctness | done | Merged in PR #54 |
 | R0.4 | Remove IMD coupling and fixture-as-official | done | Merged in PR #55 |
 | R0.5 | Speech: Sarvam primary, no canned transcripts | done | Merged in PR #56 |
-| R1.1 | Provider registry | in-review | branch ticket/R1.1-provider-registry; 170 tests pass, architecture test passes; provider registry created, imd_city excluded unless flag and key present, failover with logging, FORECAST_PROVIDERS configurable |
+| R1.1 | Provider registry | done | Merged in PR #57 |
+| R1.2 | Translation gateway | in-review | branch ticket/R1.2-translation-gateway; 176 tests pass, architecture test passes; translation gateway with Sarvam primary, LLM fallback, disk-backed cache, number/unit protection, native digit normalisation, translate_static task |
 
 ## Assumptions
 
@@ -27,6 +28,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R0.4: In default config (AGROMET_FIXTURE_ENABLED=false), agent returns clean unavailable notice for agromet/marine without referencing IMD or returning fixture text.
 - R0.5: When SARVAM_API_KEY is not set, /v1/voice/* returns 503 and /v1/voice/health reports configured: false; web app hides mic button until configured.
 - R1.1: Provider registry is the sole application module importing concrete adapters; imd_city is excluded unless IMD_ENABLED is true and IMD_API_KEY is non-empty.
+- R1.2: Translation cache keys on sha256(text:src:tgt:glossary_version); placeholders preserve numeric evidence across Indic scripts; translate_static generates seeds/translations/<lang>.json for Tier-1 languages.
 
 ## Human-only steps open
 

@@ -1,0 +1,202 @@
+{
+  "language": "hi",
+  "generated_at": "2026-11-22T14:09:56.429599+00:00",
+  "status": "pending_human_review",
+  "human_review_required": true,
+  "ui": {
+    "app_name": "WeatherGPT",
+    "ask": "पूछें",
+    "ask_placeholder": "अपना सवाल लिखें",
+    "hold_to_speak": "बोलने के लिए दबाए रखें",
+    "listening": "सुन रहा हूँ...",
+    "processing": "जानकारी देख रहा हूँ...",
+    "listen": "सुनें",
+    "share": "साझा करें",
+    "helpful": "काम का",
+    "not_helpful": "काम का नहीं",
+    "why_this_answer": "यह जवाब क्यों?",
+    "source": "स्रोत",
+    "issued": "जारी",
+    "valid_until": "तक मान्य",
+    "official_alert": "आधिकारिक अलर्ट",
+    "model_guidance": "मॉडल का अनुमान",
+    "no_alerts": "आपके स्थानों के लिए कोई आधिकारिक अलर्ट नहीं है",
+    "did_you_mean": "क्या आपका मतलब {place} है?",
+    "yes": "हाँ",
+    "no": "नहीं",
+    "fetching": "आधिकारिक जानकारी ली जा रही है...",
+    "offline_notice": "आप ऑफ़लाइन हैं। यह आखिरी सहेजा गया जवाब है।",
+    "retry": "फिर कोशिश करें",
+    "alerts": "अलर्ट",
+    "places": "स्थान",
+    "more": "और",
+    "settings": "सेटिंग",
+    "language": "भाषा",
+    "privacy": "गोपनीयता और सहमति",
+    "delete_my_data": "मेरा डेटा हटाएं",
+    "sources_and_licences": "स्रोत और लाइसेंस",
+    "install": "होम स्क्रीन पर जोड़ें",
+    "status": "स्थिति",
+    "non_commercial": "एक गैर-व्यावसायिक जनहित परियोजना"
+  },
+  "templates": {
+    "headline": "{level_color} अलर्ट: {place} में {hazard}",
+    "body": "{sender} ने {place} में {hazard} का {level_color} अलर्ट जारी किया है। यह {valid_from} से {valid_to} तक मान्य है।",
+    "meaning": {
+      "green": "कोई चेतावनी नहीं।",
+      "yellow": "सतर्क रहें।",
+      "orange": "तैयार रहें।",
+      "red": "कार्रवाई करें।"
+    },
+    "source_line": "{sender} का आधिकारिक अलर्ट, {channel} के माध्यम से। जारी: {issued_at}।",
+    "update_prefix": "अपडेट: ",
+    "cancel": "सब सामान्य: {place} में {hazard} का अलर्ट रद्द कर दिया गया है।",
+    "advice_header": "अधिकारियों की सलाह",
+    "advice_fallback": "अपने स्थानीय प्रशासन के निर्देशों का पालन करें।"
+  },
+  "glossary": {
+    "terms": {
+      "temperature": "तापमान",
+      "humidity": "नमी",
+      "rain": "बारिश",
+      "rainfall": "वर्षा",
+      "thunderstorm": "गरज-चमक के साथ बारिश",
+      "lightning": "आकाशीय बिजली",
+      "hailstorm": "ओलावृष्टि",
+      "heat_wave": "लू",
+      "cold_wave": "शीत लहर",
+      "cyclone": "चक्रवात",
+      "flood": "बाढ़",
+      "fog": "कोहरा",
+      "wind": "हवा",
+      "gust": "तेज़ झोंके",
+      "visibility": "दृश्यता",
+      "forecast": "पूर्वानुमान",
+      "nowcast": "तात्कालिक पूर्वानुमान (अगले कुछ घंटों का)",
+      "warning": "चेतावनी",
+      "alert": "अलर्ट",
+      "heavy_rain": "भारी बारिश",
+      "very_heavy_rain": "बहुत भारी बारिश",
+      "extremely_heavy_rain": "अत्यंत भारी बारिश",
+      "dust_storm": "धूल भरी आंधी",
+      "high_waves": "ऊंची लहरें",
+      "flash_flood": "अचानक बाढ़",
+      "drought": "सूखा",
+      "tsunami": "सुनामी",
+      "storm_surge": "तूफ़ानी लहरें",
+      "strong_wind": "तेज़ हवा"
+    },
+    "levels": {
+      "green": {
+        "color": "हरा",
+        "meaning": "कोई चेतावनी नहीं"
+      },
+      "yellow": {
+        "color": "पीला",
+        "meaning": "सतर्क रहें"
+      },
+      "orange": {
+        "color": "नारंगी",
+        "meaning": "तैयार रहें"
+      },
+      "red": {
+        "color": "लाल",
+        "meaning": "कार्रवाई करें"
+      }
+    },
+    "time": {
+      "today": "आज",
+      "tomorrow": "कल",
+      "day_after_tomorrow": "परसों",
+      "this_week": "इस हफ़्ते",
+      "morning": "सुबह",
+      "afternoon": "दोपहर",
+      "evening": "शाम",
+      "night": "रात"
+    },
+    "units": {
+      "celsius": "डिग्री सेल्सियस",
+      "mm": "मिलीमीटर",
+      "kmh": "किलोमीटर प्रति घंटा",
+      "percent": "प्रतिशत"
+    },
+    "crops": {
+      "wheat": "गेहूं",
+      "rice": "धान"
+    }
+  },
+  "guidance": {
+    "cold_wave": {
+      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "reviewed": true,
+      "entries": {
+        "en": {
+          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "items": [
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+          ]
+        },
+        "hi": {
+          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "items": [
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+          ]
+        }
+      }
+    },
+    "heat_wave": {
+      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+      "reviewed": true,
+      "entries": {
+        "en": {
+          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "items": [
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+          ]
+        },
+        "hi": {
+          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "items": [
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+          ]
+        }
+      }
+    }
+  }
+}
