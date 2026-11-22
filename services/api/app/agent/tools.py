@@ -22,8 +22,6 @@ import uuid
 from pathlib import Path
 from typing import Any, Callable, Coroutine
 
-import yaml
-
 from services.api.app.evidence.models import EvidencePacket, PlaceReference, ValueItem
 from services.api.app.modules.alerts.engine import AlertEngine
 from services.api.app.modules.climate.service import ClimateService
@@ -437,68 +435,43 @@ async def search_knowledge(
 ) -> list[EvidencePacket]:
     """Search vetted safety advisories, NDMA guidelines, and weather definitions."""
     try:
-        norm_q = query.lower()
-        now = dt.datetime.now(dt.timezone.utc)
-        all_india_ref = PlaceReference(id="all_india", name="India", lat=20.5937, lon=78.9629)
+        from services.api.app.modules.advisory.rag import RagEngine
 
-        # 1. Match from seeds/guidance/*.yaml
-        matched_items: list[str] = []
-        topic = "general"
-        source_title = "NDMA National Guidelines"
+        rag = RagEngine.get_instance()
+        dict_packets = rag.search_as_evidence(query=query, lang=lang)
 
-        is_heat = any(w in norm_q for w in ["heat", "लू", "उष्ण", "ગરમી", "వేడి", "வெப்பம்", "ଗ୍ରୀଷ୍ମ"])
-        is_cold = any(w in norm_q for w in ["cold", "ठंड", "शीतलहर", "थंडी", "చలి", "குளிர்", "ଶୀତ"])
-
-        file_to_check: Path | None = None
-        if is_heat and (GUIDANCE_DIR / "heat_wave.yaml").exists():
-            file_to_check = GUIDANCE_DIR / "heat_wave.yaml"
-            topic = "heat_wave"
-        elif is_cold and (GUIDANCE_DIR / "cold_wave.yaml").exists():
-            file_to_check = GUIDANCE_DIR / "cold_wave.yaml"
-            topic = "cold_wave"
-
-        if file_to_check and file_to_check.exists():
-            with file_to_check.open("r", encoding="utf-8") as f:
-                data = yaml.safe_load(f) or {}
-                source_title = data.get("source_title", source_title)
-                entries = data.get("entries", {})
-                entry = entries.get(lang) or entries.get("en", {})
-                matched_items = entry.get("items", [])
-
-        if not matched_items:
-            # Fallback general guidelines
-            if lang == "hi":
-                matched_items = [
-                    "आपातकालीन स्थिति में तुरंत 112 (राष्ट्रीय आपातकाल) या 1077 (आपदा प्रबंधन) पर कॉल करें।",
-                    "आधिकारिक मौसम चेतावनियों के लिए एनडीएमए सचेत पोर्टल पर नजर रखें।",
-                ]
-            else:
-                matched_items = [
-                    "In case of extreme weather emergency, dial 112 (National Emergency) or 1077 (Disaster Management).",
-                    "Monitor official advisories issued by NDMA SACHET.",
-                ]
-
-        values = [
-            ValueItem(variable="topic", value=topic, unit="text"),
-            ValueItem(variable="guidance", value="\n".join(matched_items[:5]), unit="text"),
-            ValueItem(variable="helpline", value="112 (Emergency), 1077 (Disaster)", unit="text"),
-        ]
-
-        return [
-            EvidencePacket(
-                id=f"kb_{uuid.uuid4().hex[:10]}",
-                source="NDMA Official Guidelines",
-                authority_tier=1,
-                provenance="documented-sample",
-                issued_at=now,
-                valid_from=now,
-                valid_to=now + dt.timedelta(days=7),
-                place=all_india_ref,
-                values=values,
-                attribution=source_title,
-                fetched_at=now,
+        packets: list[EvidencePacket] = []
+        for dp in dict_packets:
+            pl_data = dp["place"]
+            pl_ref = PlaceReference(
+                id=pl_data.get("id", "all_india"),
+                name=pl_data.get("name", "India"),
+                lat=pl_data.get("lat", 20.5937),
+                lon=pl_data.get("lon", 78.9629),
             )
-        ]
+            val_items = [
+                ValueItem(variable=v["variable"], value=v["value"], unit=v.get("unit", "text"))
+                for v in dp["values"]
+            ]
+            pkt = EvidencePacket(
+                id=dp["id"],
+                source=dp["source"],
+                authority_tier=dp["authority_tier"],
+                provenance=dp["provenance"],
+                issued_at=dp["issued_at"],
+                valid_from=dp["valid_from"],
+                valid_to=dp["valid_to"],
+                place=pl_ref,
+                values=val_items,
+                attribution=dp["attribution"],
+                fetched_at=dp["fetched_at"],
+            )
+            packets.append(pkt)
+
+        return packets
+    except Exception as exc:
+        logger.warning("search_knowledge_tool_failed", extra={"query": query, "error": str(exc)})
+        return [_make_error_packet("search_knowledge", str(exc))]
     except Exception as exc:
         logger.warning("search_knowledge_tool_failed", extra={"query": query, "error": str(exc)})
         return [_make_error_packet("search_knowledge", str(exc))]

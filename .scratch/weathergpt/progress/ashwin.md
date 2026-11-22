@@ -24,6 +24,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.2 | LLM gateway upgrade | done | Merged in PR #61 |
 | R2.3 | Orchestrator | done | Merged in PR #62 |
 | R2.4 | Trace event | done | Merged in PR #63 |
+| R3.5 | RAG advisory engine | in-review | PR pending |
 
 ## Assumptions
 
@@ -39,6 +40,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R2.2: Fallback chain order is Groq primary -> OpenRouter fallback -> Stub fallback; transient 429/5xx trigger retries with exponential backoff and jitter before falling back.
 - R2.3: Orchestrator routes deterministically when safety pre-guard or intent confidence exceeds threshold, calls tools returning evidence packets, verifies numeric claims against evidence, and falls back to template on grounding failure; maintains session memory with 15-minute TTL.
 - R2.4: Trace event emitted on every /v1/chat answer event stream, providing full provenance (intent, confidence, router path, tools with latency, models, verifier pass/fail with numbers checked, LLM token and provider metrics) conforming to trace_event.json contract.
+- R3.5: RAG advisory engine indexes seeds/knowledge/ with sources.csv provenance; combines BM25 and dense TF-IDF character/word representations using reciprocal rank fusion; queries below tuned threshold return official helpline fallback; eval script compares BM25 only, dense only, and hybrid configurations on 100 labelled multilingual queries.
 
 ## Human-only steps open
 

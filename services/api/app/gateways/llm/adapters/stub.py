@@ -60,6 +60,33 @@ class StubLLMAdapter(LLMAdapter):
         if m_place:
             place = m_place.group(1).strip()
 
+        # Parse chunk_id and guidance from advisory evidence packets if present
+        m_chunk = re.search(r"'variable': 'chunk_id', 'value': '([^']+)'", user_msg)
+        m_guidance = re.search(r"'variable': 'guidance', 'value': '([^']+)'", user_msg)
+        if m_chunk and m_guidance:
+            cid = m_chunk.group(1)
+            guidance = m_guidance.group(1).replace("\\n", " ")
+            if cid == "no_official_guidance":
+                response_text = guidance
+            else:
+                if lang == "hi":
+                    response_text = f"[{cid}] आधिकारिक दिशानिर्देश: {guidance}"
+                else:
+                    response_text = f"[{cid}] Official guidance: {guidance}"
+
+            if stream:
+                async def _stream_adv():
+                    for word in response_text.split(" "):
+                        yield word + " "
+                return _stream_adv()
+
+            return {
+                "id": "stub_msg_1",
+                "role": "assistant",
+                "content": response_text,
+                "tool_calls": None,
+            }
+
         # Parse rain and temperature from evidence packets in user_msg if present
         rain_val = 0.0
         temp_val = 28.5
