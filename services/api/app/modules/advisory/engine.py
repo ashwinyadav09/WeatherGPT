@@ -22,7 +22,7 @@ EVACUATION_PATTERNS = [
 ]
 
 PESTICIDE_PATTERNS = [
-    re.compile(r"\b(?:pesticide\s+dose|insecticide\s+dose|fungicide\s+dose|spray\s+dose|chemical\s+dose|how\s+much\s+(?:pesticide|spray|insecticide))\b", re.IGNORECASE),
+    re.compile(r"\b(?:pesticide\s+dos(?:e|age)|insecticide\s+dos(?:e|age)|fungicide\s+dos(?:e|age)|spray\s+dos(?:e|age)|chemical\s+dos(?:e|age)|how\s+much\s+(?:pesticide|spray|insecticide|fungicide))\b", re.IGNORECASE),
     re.compile(r"(?:कीटनाशक\s*की\s*मात्रा|कितनी\s*दवा\s*छिड़क|कीटनाशक\s*का\s*डोज|दवा\s*का\s*छिड़काव\s*कितना)", re.IGNORECASE),
 ]
 
