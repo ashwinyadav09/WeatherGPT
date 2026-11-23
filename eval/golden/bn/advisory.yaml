@@ -1,0 +1,38 @@
+- id: bn-advisory-heatwave
+  language: bn
+  intent: advisory
+  question: তীব্র তাপদাহে কী কী সতর্কতা অবলম্বন করা উচিত?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: bn-advisory-coldwave
+  language: bn
+  intent: advisory
+  question: শৈত্যপ্রবাহের জন্য সরকারি নির্দেশিকা কী?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: bn-advisory-lightning
+  language: bn
+  intent: advisory
+  question: বজ্রপাতের সময় কী কী নিরাপত্তা নিয়ম মেনে চলা উচিত?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: bn-advisory-crop
+  language: bn
+  intent: advisory
+  question: প্রতিকূল আবহাওয়ায় ফসল সুরক্ষার জন্য কৃষি পরামর্শ কী?
+  expect:
+    source_named:
+    - ICAR
+    - GKMS
+    - NDMA
+    - IMD
+    refusal: false

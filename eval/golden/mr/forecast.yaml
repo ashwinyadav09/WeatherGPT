@@ -1,0 +1,176 @@
+- id: mr-forecast-delhi-001
+  language: mr
+  intent: forecast
+  place: Delhi
+  place_id: delhi
+  day: tomorrow
+  question: उद्या दिल्ली मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-mumbai-002
+  language: mr
+  intent: forecast
+  place: Mumbai
+  place_id: mumbai
+  day: tomorrow
+  question: उद्या मुंबई मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 34.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-bengaluru-003
+  language: mr
+  intent: forecast
+  place: Bengaluru
+  place_id: bengaluru
+  day: tomorrow
+  question: उद्या बंगळुरू मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-chennai-004
+  language: mr
+  intent: forecast
+  place: Chennai
+  place_id: chennai
+  day: tomorrow
+  question: उद्या चेन्नई मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-kolkata-005
+  language: mr
+  intent: forecast
+  place: Kolkata
+  place_id: kolkata
+  day: tomorrow
+  question: उद्या कोलकाता मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-hyderabad-006
+  language: mr
+  intent: forecast
+  place: Hyderabad
+  place_id: hyderabad
+  day: tomorrow
+  question: उद्या हैदराबाद मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-jaipur-007
+  language: mr
+  intent: forecast
+  place: Jaipur
+  place_id: jaipur
+  day: tomorrow
+  question: उद्या जयपूर मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-shimla-008
+  language: mr
+  intent: forecast
+  place: Shimla
+  place_id: shimla
+  day: tomorrow
+  question: उद्या शिमला मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 15.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-pune-009
+  language: mr
+  intent: forecast
+  place: Pune
+  place_id: pune
+  day: tomorrow
+  question: उद्या पुणे मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-guwahati-010
+  language: mr
+  intent: forecast
+  place: Guwahati
+  place_id: guwahati
+  day: tomorrow
+  question: उद्या गुवाहाटी मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-varanasi-011
+  language: mr
+  intent: forecast
+  place: Varanasi
+  place_id: varanasi
+  day: tomorrow
+  question: उद्या वाराणसी मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed

@@ -1,0 +1,176 @@
+- id: bn-forecast-delhi-001
+  language: bn
+  intent: forecast
+  place: Delhi
+  place_id: delhi
+  day: tomorrow
+  question: আগামীকাল কি দিল্লি-এ বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-mumbai-002
+  language: bn
+  intent: forecast
+  place: Mumbai
+  place_id: mumbai
+  day: tomorrow
+  question: আগামীকাল মুম্বই-এর তাপমাত্রা কত থাকবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 34.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-bengaluru-003
+  language: bn
+  intent: forecast
+  place: Bengaluru
+  place_id: bengaluru
+  day: tomorrow
+  question: আগামীকাল কি বেঙ্গালুরু-এ বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-chennai-004
+  language: bn
+  intent: forecast
+  place: Chennai
+  place_id: chennai
+  day: tomorrow
+  question: আগামীকাল চেন্নাই-এর তাপমাত্রা কত থাকবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-kolkata-005
+  language: bn
+  intent: forecast
+  place: Kolkata
+  place_id: kolkata
+  day: tomorrow
+  question: আগামীকাল কি কলকাতা-এ বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-hyderabad-006
+  language: bn
+  intent: forecast
+  place: Hyderabad
+  place_id: hyderabad
+  day: tomorrow
+  question: আগামীকাল হায়দ্রাবাদ-এর তাপমাত্রা কত থাকবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-jaipur-007
+  language: bn
+  intent: forecast
+  place: Jaipur
+  place_id: jaipur
+  day: tomorrow
+  question: আগামীকাল কি জয়পুর-এ বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-shimla-008
+  language: bn
+  intent: forecast
+  place: Shimla
+  place_id: shimla
+  day: tomorrow
+  question: আগামীকাল শিমলা-এর তাপমাত্রা কত থাকবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 15.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-pune-009
+  language: bn
+  intent: forecast
+  place: Pune
+  place_id: pune
+  day: tomorrow
+  question: আগামীকাল কি পুনে-এ বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-guwahati-010
+  language: bn
+  intent: forecast
+  place: Guwahati
+  place_id: guwahati
+  day: tomorrow
+  question: আগামীকাল গুয়াহাটি-এর তাপমাত্রা কত থাকবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: bn-forecast-varanasi-011
+  language: bn
+  intent: forecast
+  place: Varanasi
+  place_id: varanasi
+  day: tomorrow
+  question: আগামীকাল কি বারাণসী-এ বৃষ্টি হবে?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed

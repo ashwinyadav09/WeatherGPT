@@ -1,0 +1,176 @@
+- id: te-forecast-delhi-001
+  language: te
+  intent: forecast
+  place: Delhi
+  place_id: delhi
+  day: tomorrow
+  question: రేపు ఢిల్లీలో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-mumbai-002
+  language: te
+  intent: forecast
+  place: Mumbai
+  place_id: mumbai
+  day: tomorrow
+  question: రేపు ముంబైలో ఉష్ణోగ్రత ఎంత ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 34.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-bengaluru-003
+  language: te
+  intent: forecast
+  place: Bengaluru
+  place_id: bengaluru
+  day: tomorrow
+  question: రేపు బెంగళూరులో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-chennai-004
+  language: te
+  intent: forecast
+  place: Chennai
+  place_id: chennai
+  day: tomorrow
+  question: రేపు చెన్నైలో ఉష్ణోగ్రత ఎంత ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-kolkata-005
+  language: te
+  intent: forecast
+  place: Kolkata
+  place_id: kolkata
+  day: tomorrow
+  question: రేపు కోల్‌కతాలో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-hyderabad-006
+  language: te
+  intent: forecast
+  place: Hyderabad
+  place_id: hyderabad
+  day: tomorrow
+  question: రేపు హైదరాబాద్లో ఉష్ణోగ్రత ఎంత ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-jaipur-007
+  language: te
+  intent: forecast
+  place: Jaipur
+  place_id: jaipur
+  day: tomorrow
+  question: రేపు జైపూర్లో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-shimla-008
+  language: te
+  intent: forecast
+  place: Shimla
+  place_id: shimla
+  day: tomorrow
+  question: రేపు సిమ్లాలో ఉష్ణోగ్రత ఎంత ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 15.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-pune-009
+  language: te
+  intent: forecast
+  place: Pune
+  place_id: pune
+  day: tomorrow
+  question: రేపు పూణేలో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-guwahati-010
+  language: te
+  intent: forecast
+  place: Guwahati
+  place_id: guwahati
+  day: tomorrow
+  question: రేపు గౌహతిలో ఉష్ణోగ్రత ఎంత ఉంటుంది?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: te-forecast-varanasi-011
+  language: te
+  intent: forecast
+  place: Varanasi
+  place_id: varanasi
+  day: tomorrow
+  question: రేపు వారణాసిలో వర్షం పడుతుందా?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed

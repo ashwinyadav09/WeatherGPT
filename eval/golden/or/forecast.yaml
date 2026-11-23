@@ -1,0 +1,176 @@
+- id: or-forecast-delhi-001
+  language: or
+  intent: forecast
+  place: Delhi
+  place_id: delhi
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ଦିଲ୍ଲୀରେ ବର୍ଷା ହେବ କି?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-mumbai-002
+  language: or
+  intent: forecast
+  place: Mumbai
+  place_id: mumbai
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ମୁମ୍ବାଇରେ ତାପମାତ୍ରା କେତେ ରହିବ?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 34.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-bengaluru-003
+  language: or
+  intent: forecast
+  place: Bengaluru
+  place_id: bengaluru
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ବେଙ୍ଗାଲୁରୁରେ ବର୍ଷା ହେବ କି?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-chennai-004
+  language: or
+  intent: forecast
+  place: Chennai
+  place_id: chennai
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ଚେନ୍ନାଇରେ ତାପମାତ୍ରା କେତେ ରହିବ?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-kolkata-005
+  language: or
+  intent: forecast
+  place: Kolkata
+  place_id: kolkata
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି କୋଲକାତାରେ ବର୍ଷା ହେବ କି?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-hyderabad-006
+  language: or
+  intent: forecast
+  place: Hyderabad
+  place_id: hyderabad
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ହାଇଦ୍ରାବାଦରେ ତାପମାତ୍ରା କେତେ ରହିବ?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-jaipur-007
+  language: or
+  intent: forecast
+  place: Jaipur
+  place_id: jaipur
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ଜୟପୁରରେ ବର୍ଷା ହେବ କି?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-shimla-008
+  language: or
+  intent: forecast
+  place: Shimla
+  place_id: shimla
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ଶିମଲାରେ ତାପମାତ୍ରା କେତେ ରହିବ?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 15.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-pune-009
+  language: or
+  intent: forecast
+  place: Pune
+  place_id: pune
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ପୁଣେରେ ବର୍ଷା ହେବ କି?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-guwahati-010
+  language: or
+  intent: forecast
+  place: Guwahati
+  place_id: guwahati
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ଗୌହାଟୀରେ ତାପମାତ୍ରା କେତେ ରହିବ?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: or-forecast-varanasi-011
+  language: or
+  intent: forecast
+  place: Varanasi
+  place_id: varanasi
+  day: tomorrow
+  question: ଆସନ୍ତାକାଲି ବାରାଣାସୀରେ ବର୍ଷା ହେବ କି?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
