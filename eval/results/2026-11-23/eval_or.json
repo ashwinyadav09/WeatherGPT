@@ -1,0 +1,153 @@
+{
+  "timestamp": "2026-11-23T00:55:31.354119+00:00",
+  "language": "or",
+  "total": 18,
+  "passed": 18,
+  "accuracy": 1.0,
+  "cases": [
+    {
+      "id": "or-advisory-heatwave",
+      "passed": true,
+      "failures": [],
+      "answer": "[ndma_heatwave_01] ## Do's During Extreme Heat\n- Drink sufficient water and stay hydrated even if not thirsty. Carry drinking water when traveling.\n- Use Oral Rehydration Solution (ORS), homemade drinks like lassi, torani (rice water), lemon water, and buttermilk to stay hydrated.\n- Wear lightweight, light-coloured, loose, and porous cotton clothes. Cover your head using a cloth, hat, or umbrella.\n- Keep animals in shade and provide them plenty of drinking water.\n- If you feel faint, dizzy, or ill, see a doctor immediately or use a damp cloth on your head and neck.\n- In case of heat stroke, call emergency helpline 112 or disaster helpline 1077.\n- Key terms: लू, भीषण गर्मी, उष्माघात, बचाव के उपाय, پانی, వడదెబ్బ, வெப்ப அலை, ତାପ ପ୍ରବାହ, dehydration, ORS, shade, water. ",
+      "evidence_count": 2,
+      "has_card": true
+    },
+    {
+      "id": "or-advisory-coldwave",
+      "passed": true,
+      "failures": [],
+      "answer": "[ndma_coldwave_01] ## Do's During Cold Wave\n- Wear multiple layers of loose-fitting, lightweight, warm clothing rather than one thick layer.\n- Keep your head, neck, hands, and feet covered warmly with caps, mufflers, gloves, and woolen socks, as significant heat loss occurs from extremities.\n- Eat nutritious food rich in vitamin C and warm nutritious soups to maintain body heat and immunity.\n- Maintain adequate ventilation when using room heaters, coal stoves, or charcoal angithi to prevent dangerous carbon monoxide buildup.\n- Provide warm shelter, dry bedding, and clean water to pets and farm animals.\n- Key terms: ठंड, शीतलहर, कडाक्याची थंडी, শৈত্যপ্রবাহ, చలి తీవ్రत, குளிர்காலம், ଶୀତ ଲହରୀ, अंगीठी, कोयला चूल्हा, heaters, carbon monoxide, layers, warm clothes. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-advisory-lightning",
+      "passed": true,
+      "failures": [],
+      "answer": "[flood_cyclone_safety_02] ## Lightning and Thunderstorm Precautions\n- Follow the 30-30 lightning safety rule: If the time between seeing lightning and hearing thunder is less than 30 seconds, seek shelter inside a sturdy building or closed metal vehicle immediately.\n- Never take shelter under tall isolated trees, open metal sheds, tin roofs, or flagpoles during thunderstorms.\n- If caught in an open field with no shelter nearby, crouch low on the balls of your feet with hands on knees and head tucked down; minimize contact with the ground. Do not lie flat on the ground.\n- Discontinue mobile phone charging and unplug high-voltage electrical equipment during severe thunderstorms.\n- National Emergency Helpline: 112. Disaster Management Control Room: 1077.\n- Key terms: आकाशीय बिजली, तड़ित, विजा, বজ্রপাত, పిడుగుపాటు, இடி மின்னல், ବଜ୍ରପାତ, 30-30 rule, lightning, thunder, crouch, trees. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-advisory-crop",
+      "passed": true,
+      "failures": [],
+      "answer": "ଏହି ବିଷୟରେ କୌଣସି ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଉପଲବ୍ଧ ନାହିଁ। ସହାୟତା ପାଇଁ ୧୧୨ (ଜରୁରୀକାଳୀନ), ୧୦୭୭ (ବିପର୍ଯ୍ୟୟ ପରିଚାଳନା) କିମ୍ବା ୧୮୦୦-୧୮୦-୧୫୫୧ (କିଷାନ କଲ୍ ସେଣ୍ଟର) ରେ ଯୋଗାଯୋଗ କରନ୍ତୁ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-delhi-001",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Delhi ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 25.0 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-mumbai-002",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Mumbai ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 34.2 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-bengaluru-003",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Bengaluru ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 28.5 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-chennai-004",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Chennai ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 31.4 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-kolkata-005",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Kolkata ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 26.2 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-hyderabad-006",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Hyderabad ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 29.5 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-jaipur-007",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Jaipur ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 27.1 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-shimla-008",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Shimla ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 15.9 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-pune-009",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Pune ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 31.5 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-guwahati-010",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Guwahati ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 26.9 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-varanasi-011",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Varanasi ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 26.7 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-refusal-aviation",
+      "passed": true,
+      "failures": [],
+      "answer": "ବିମାନ ଚଳାଚଳ ପାଣିପାଗ ବିବରଣୀ (METAR/TAF) ଏହି ପାଇଲଟ୍ ପ୍ରକଳ୍ପରେ ସମର୍ଥିତ ନୁହେଁ। ବିମାନ ଯୋଜନା ପାଇଁ ଦୟାକରି ସରକାରୀ ବିମାନ ଚଳାଚଳ ପୋର୍ଟାଲ୍ ଦେଖନ୍ତୁ।",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "or-refusal-evac",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT ବ୍ୟକ୍ତିଗତ ଭାବେ ସ୍ଥାନ ଛାଡ଼ିବା କିମ୍ବା ରହିବା ପାଇଁ ନିର୍ଦ୍ଦେଶ ଦେଇପାରିବ ନାହିଁ। ଦୟାକରି ଜିଲ୍ଲା ବିପର୍ଯ୍ୟୟ ପରିଚାଳନା ପ୍ରାଧିକରଣ (DDMA) କିମ୍ବା ସ୍ଥାନୀୟ ପ୍ରଶାସନର ସରକାରୀ ନିର୍ଦ୍ଦେଶ ପାଳନ କରନ୍ତୁ। ଜରୁରୀ ସହାୟତା ପାଇଁ ୧୦୭୦ / ୧୦୭୭ କିମ୍ବା ୧୧୨ କୁ ଯୋଗାଯୋଗ କରନ୍ତୁ।",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "or-refusal-pesticide",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT ରାସାୟନିକ କୀଟନାଶକର ମାତ୍ରା ସୁପାରିଶ କରେ ନାହିଁ। ସଠିକ୍ ପରାମର୍ଶ ପାଇଁ ନିକଟସ୍ଥ କୃଷି ବିଜ୍ଞାନ କେନ୍ଦ୍ର (KVK) କିମ୍ବା କିଷାନ କଲ୍ ସେଣ୍ଟର ୧୮୦୦-୧୮୦-୧୫୫୧ ରେ ଯୋଗାଯୋଗ କରନ୍ତୁ।",
+      "evidence_count": 0,
+      "has_card": true
+    }
+  ]
+}

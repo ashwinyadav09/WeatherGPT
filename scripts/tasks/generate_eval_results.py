@@ -42,6 +42,13 @@ def get_latest_eval_file(lang: str) -> Path | None:
     matches = sorted(glob.glob(str(RESULTS_DIR / f"*_{lang}.json")))
     if matches:
         return Path(matches[-1])
+    # Also check existing dated subdirectories
+    if RESULTS_DIR.exists():
+        subdirs = sorted([d for d in RESULTS_DIR.iterdir() if d.is_dir() and d.name.startswith("202")], reverse=True)
+        for d in subdirs:
+            candidate = d / f"eval_{lang}.json"
+            if candidate.exists():
+                return candidate
     return None
 
 

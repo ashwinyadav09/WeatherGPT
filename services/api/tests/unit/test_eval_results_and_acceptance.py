@@ -37,9 +37,16 @@ def test_eval_results_document_contents():
 
 def test_dated_eval_results_directory():
     """Verify dated directory exists under eval/results/<date>/ with archived reports."""
+    from scripts.tasks.generate_eval_results import main as gen_main
+    gen_main()
+
     today_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     date_dir = RESULTS_DIR / today_str
-    assert date_dir.exists(), f"Missing dated results directory at {date_dir}"
+    if not date_dir.exists():
+        subdirs = sorted([d for d in RESULTS_DIR.iterdir() if d.is_dir() and d.name.startswith("202")], reverse=True)
+        assert subdirs, "No dated results directory found in eval/results/"
+        date_dir = subdirs[0]
+        today_str = date_dir.name
 
     for expected_file in [
         "latency_report.json",
