@@ -1,0 +1,155 @@
+version: '1.0'
+language: en
+total_cases: 25
+description: Consented and field-like English weather speech test set for WER, PNER, and NER
+utterances:
+- id: utt_en_001
+  text: Will it rain in Delhi tomorrow?
+  expected_place: Delhi
+  expected_place_en: delhi
+  domain: rainfall
+  expected_numbers: []
+- id: utt_en_002
+  text: What is the current temperature in Mumbai 31 degrees?
+  expected_place: Mumbai
+  expected_place_en: mumbai
+  domain: temperature
+  expected_numbers: [31]
+- id: utt_en_003
+  text: Is wind speed reaching 45 km per hour in Chennai?
+  expected_place: Chennai
+  expected_place_en: chennai
+  domain: wind
+  expected_numbers: [45]
+- id: utt_en_004
+  text: Show me 7 day weather forecast for Bengaluru.
+  expected_place: Bengaluru
+  expected_place_en: bengaluru
+  domain: forecast
+  expected_numbers: [7]
+- id: utt_en_005
+  text: Heavy rainfall alert of 65 mm in Kolkata today.
+  expected_place: Kolkata
+  expected_place_en: kolkata
+  domain: alerts
+  expected_numbers: [65]
+- id: utt_en_006
+  text: Is temperature falling below 12 degrees in Shimla tonight?
+  expected_place: Shimla
+  expected_place_en: shimla
+  domain: temperature
+  expected_numbers: [12]
+- id: utt_en_007
+  text: What is the humidity level in Hyderabad right now?
+  expected_place: Hyderabad
+  expected_place_en: hyderabad
+  domain: forecast
+  expected_numbers: []
+- id: utt_en_008
+  text: Will Pune receive 20 mm rain for sugarcane planting?
+  expected_place: Pune
+  expected_place_en: pune
+  domain: agromet
+  expected_numbers: [20]
+- id: utt_en_009
+  text: Heatwave warning for Jaipur with 42 degrees expected.
+  expected_place: Jaipur
+  expected_place_en: jaipur
+  domain: alerts
+  expected_numbers: [42]
+- id: utt_en_010
+  text: Clear skies forecast in Varanasi for the next 3 days.
+  expected_place: Varanasi
+  expected_place_en: varanasi
+  domain: forecast
+  expected_numbers: [3]
+- id: utt_en_011
+  text: Fog alert in Guwahati with visibility under 200 meters.
+  expected_place: Guwahati
+  expected_place_en: guwahati
+  domain: alerts
+  expected_numbers: [200]
+- id: utt_en_012
+  text: Maximum temperature in Patna reaching 38 degrees tomorrow.
+  expected_place: Patna
+  expected_place_en: patna
+  domain: temperature
+  expected_numbers: [38]
+- id: utt_en_013
+  text: Cyclone advisory for coastal Odisha near Puri with 80 km gusts.
+  expected_place: Puri
+  expected_place_en: puri
+  domain: alerts
+  expected_numbers: [80]
+- id: utt_en_014
+  text: Is it safe for spraying pesticide in Nashik today?
+  expected_place: Nashik
+  expected_place_en: nashik
+  domain: agromet
+  expected_numbers: []
+- id: utt_en_015
+  text: Expecting 15 mm rain in Lucknow during evening hours.
+  expected_place: Lucknow
+  expected_place_en: lucknow
+  domain: rainfall
+  expected_numbers: [15]
+- id: utt_en_016
+  text: Minimum night temperature of 8 degrees recorded in Chandigarh.
+  expected_place: Chandigarh
+  expected_place_en: chandigarh
+  domain: temperature
+  expected_numbers: [8]
+- id: utt_en_017
+  text: Cloud cover percentage over Bhopal tomorrow morning.
+  expected_place: Bhopal
+  expected_place_en: bhopal
+  domain: forecast
+  expected_numbers: []
+- id: utt_en_018
+  text: High tide alert of 4 meters in Kochi coastal area.
+  expected_place: Kochi
+  expected_place_en: kochi
+  domain: alerts
+  expected_numbers: [4]
+- id: utt_en_019
+  text: Severe thunderstorm warning in Ranchi for the next 24 hours.
+  expected_place: Ranchi
+  expected_place_en: ranchi
+  domain: alerts
+  expected_numbers: [24]
+- id: utt_en_020
+  text: Will monsoon advance into Ahmedabad within 2 days?
+  expected_place: Ahmedabad
+  expected_place_en: ahmedabad
+  domain: rainfall
+  expected_numbers: [2]
+- id: utt_en_021
+  text: Wind gusts over 50 km per hour reported in Visakhapatnam.
+  expected_place: Visakhapatnam
+  expected_place_en: visakhapatnam
+  domain: wind
+  expected_numbers: [50]
+- id: utt_en_022
+  text: Cold wave conditions in Amritsar with 5 degrees minimum.
+  expected_place: Amritsar
+  expected_place_en: amritsar
+  domain: alerts
+  expected_numbers: [5]
+- id: utt_en_023
+  text: Relative humidity at 85 percent in Thiruvananthapuram.
+  expected_place: Thiruvananthapuram
+  expected_place_en: thiruvananthapuram
+  domain: forecast
+  expected_numbers: [85]
+- id: utt_en_024
+  text: Rainfall forecast of 30 mm in Dehradun foothills.
+  expected_place: Dehradun
+  expected_place_en: dehradun
+  domain: rainfall
+  expected_numbers: [30]
+- id: utt_en_025
+  text: Will temperature rise above 40 degrees in Nagpur this week?
+  expected_place: Nagpur
+  expected_place_en: nagpur
+  domain: temperature
+  expected_numbers: [40]

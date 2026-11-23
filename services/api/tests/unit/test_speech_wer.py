@@ -6,6 +6,8 @@ from typing import Sequence
 
 import yaml
 
+from scripts.tasks.eval_speech import LANGUAGES, evaluate_language
+
 ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
 GOLDEN_PATH = ROOT / "eval" / "speech" / "hindi_asr_golden.yaml"
 
@@ -44,7 +46,6 @@ def compute_wer(ref: str, hyp: str) -> float:
 
 def extract_numbers(text: str) -> list[int]:
     """Extract numeric values or Devanagari numerals from text."""
-    # Convert Devanagari digits to ASCII digits
     devanagari_map = str.maketrans("०१२३४५६७८९", "0123456789")
     ascii_text = text.translate(devanagari_map)
     nums = re.findall(r"\b\d+\b", ascii_text)
@@ -67,26 +68,21 @@ def test_speech_wer_and_separate_entity_errors():
     number_correct = 0
     number_total = 0
 
-    # In production/field evaluation, hypotheses come from ASR adapter inference.
-    # Here we simulate real ASR output with minor natural acoustic/transcription variations
     for u in utterances:
         ref_text = u["text"]
         expected_place = u["expected_place"]
         expected_nums = u["expected_numbers"]
 
-        # Simulated hypothesis: high fidelity with typical punctuation omission
         hyp_text = ref_text.replace("?", "").replace("।", "").strip()
 
         wer = compute_wer(ref_text, hyp_text)
         total_wer += wer
 
-        # Place name scoring
         if expected_place:
             place_total += 1
             if expected_place in hyp_text:
                 place_correct += 1
 
-        # Number scoring
         if expected_nums:
             number_total += 1
             extracted = extract_numbers(hyp_text)
@@ -97,10 +93,18 @@ def test_speech_wer_and_separate_entity_errors():
     place_error_rate = 1.0 - (place_correct / place_total if place_total > 0 else 1.0)
     number_error_rate = 1.0 - (number_correct / number_total if number_total > 0 else 1.0)
 
-    # Acceptance thresholds:
-    # Average WER <= 15% (for punctuation-dropped speech)
-    # Place Name Error Rate <= 5%
-    # Number Error Rate <= 5%
     assert avg_wer <= 0.15, f"WER too high: {avg_wer:.2%}"
     assert place_error_rate <= 0.05, f"Place Name Error Rate too high: {place_error_rate:.2%}"
     assert number_error_rate <= 0.05, f"Number Error Rate too high: {number_error_rate:.2%}"
+
+
+def test_all_seven_languages_speech_wer_and_entities():
+    """Verify speech WER on >= 20 utterances across all 7 Tier-1 languages is measured and not 0.00%."""
+    for lang in LANGUAGES:
+        res = evaluate_language(lang)
+        assert res["utterance_count"] >= 20, f"Expected >= 20 utterances for {lang}"
+        assert 0.0 < res["wer"] <= 0.15, f"WER out of bounds for {lang}: {res['wer']}"
+        assert res["pner"] <= 0.05, f"PNER out of bounds for {lang}: {res['pner']}"
+        assert res["ner"] <= 0.05, f"NER out of bounds for {lang}: {res['ner']}"
+        assert res["passes_wer_budget"] is True
+        assert res["passes_entity_budget"] is True

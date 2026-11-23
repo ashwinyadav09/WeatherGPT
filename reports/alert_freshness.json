@@ -1,13 +1,13 @@
 {
-  "git_sha": "7276d34ba5e3c44c239622e3d3cf36e12ab9cff5",
-  "measured_at": "2026-11-22T16:36:42.246181+00:00",
+  "git_sha": "4a21ddc5d896c53ec891e9fcb3a412b693b4810d",
+  "measured_at": "2026-11-23T02:17:16.771829+00:00",
   "provenance": "replayed_real_fixtures",
   "fixtures_directory": "eval\\fixtures\\sachet",
   "count": 27,
-  "min_seconds": 470202.25,
-  "max_seconds": 640045.25,
-  "median_seconds": 588098.25,
-  "mean_seconds": 586161.91,
+  "min_seconds": 505036.77,
+  "max_seconds": 674879.77,
+  "median_seconds": 622932.77,
+  "mean_seconds": 620996.44,
   "alerts": [
     {
       "id": "urn:oid:2.49.0.1.356.1.1.2026.11.10.1",
@@ -17,7 +17,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-17T06:00:00+00:00",
-      "freshness_seconds": 470202.25
+      "freshness_seconds": 505036.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794853111405010.10",
@@ -27,7 +27,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T23:53:24+05:30",
-      "freshness_seconds": 511998.25
+      "freshness_seconds": 546832.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794850780088010.10",
@@ -37,7 +37,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T23:12:48+05:30",
-      "freshness_seconds": 514434.25
+      "freshness_seconds": 549268.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794833494909010.10",
@@ -47,7 +47,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T18:24:17+05:30",
-      "freshness_seconds": 531745.25
+      "freshness_seconds": 566579.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794822213748010.10",
@@ -57,7 +57,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T15:16:02+05:30",
-      "freshness_seconds": 543040.25
+      "freshness_seconds": 577874.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794808686215038.38",
@@ -67,7 +67,7 @@
       "severity": "Extreme",
       "level": "red",
       "sent": "2026-11-16T11:33:57+05:30",
-      "freshness_seconds": 556365.25
+      "freshness_seconds": 591199.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794805423229008.8",
@@ -77,7 +77,7 @@
       "severity": "Severe",
       "level": "orange",
       "sent": "2026-11-16T10:33:43+05:30",
-      "freshness_seconds": 559979.25
+      "freshness_seconds": 594813.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794791850683041.41",
@@ -87,7 +87,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T06:50:20+05:30",
-      "freshness_seconds": 573382.25
+      "freshness_seconds": 608216.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794791847032007.43",
@@ -97,7 +97,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T06:46:53+05:30",
-      "freshness_seconds": 573589.25
+      "freshness_seconds": 608423.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794782079959007.43",
@@ -107,7 +107,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T04:04:07+05:30",
-      "freshness_seconds": 583355.25
+      "freshness_seconds": 618189.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794781934911010.10",
@@ -117,7 +117,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T04:05:52+05:30",
-      "freshness_seconds": 583250.25
+      "freshness_seconds": 618084.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794781980746007.43",
@@ -127,7 +127,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T04:02:18+05:30",
-      "freshness_seconds": 583464.25
+      "freshness_seconds": 618298.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794777328423007.43",
@@ -137,7 +137,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T02:45:04+05:30",
-      "freshness_seconds": 588098.25
+      "freshness_seconds": 622932.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794772193063007.43",
@@ -147,7 +147,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-16T01:19:24+05:30",
-      "freshness_seconds": 593238.25
+      "freshness_seconds": 628072.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794745524167009.9",
@@ -157,7 +157,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T18:04:36+05:30",
-      "freshness_seconds": 619326.25
+      "freshness_seconds": 654160.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794740880003009.9",
@@ -167,7 +167,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T16:40:12+05:30",
-      "freshness_seconds": 624390.25
+      "freshness_seconds": 659224.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794738483089041.41",
@@ -177,7 +177,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T16:00:25+05:30",
-      "freshness_seconds": 626777.25
+      "freshness_seconds": 661611.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794738481839007.43",
@@ -187,7 +187,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T15:57:13+05:30",
-      "freshness_seconds": 626969.25
+      "freshness_seconds": 661803.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794735414687009.9",
@@ -197,7 +197,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T15:09:42+05:30",
-      "freshness_seconds": 629820.25
+      "freshness_seconds": 664654.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728982581009.9",
@@ -207,7 +207,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T13:30:48+05:30",
-      "freshness_seconds": 635754.25
+      "freshness_seconds": 670588.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728723301009.9",
@@ -217,7 +217,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T13:17:06+05:30",
-      "freshness_seconds": 636576.25
+      "freshness_seconds": 671410.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728624051041.41",
@@ -227,7 +227,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T13:15:55+05:30",
-      "freshness_seconds": 636647.25
+      "freshness_seconds": 671481.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728622884007.43",
@@ -237,7 +237,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T13:13:13+05:30",
-      "freshness_seconds": 636809.25
+      "freshness_seconds": 671643.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794725545573028.28",
@@ -247,7 +247,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T12:54:47+05:30",
-      "freshness_seconds": 637915.25
+      "freshness_seconds": 672749.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794726140255038.38",
@@ -257,7 +257,7 @@
       "severity": "Extreme",
       "level": "red",
       "sent": "2026-11-15T12:36:46+05:30",
-      "freshness_seconds": 638996.25
+      "freshness_seconds": 673830.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.IN.1794723722587028.28",
@@ -267,7 +267,7 @@
       "severity": "Moderate",
       "level": "yellow",
       "sent": "2026-11-15T12:19:17+05:30",
-      "freshness_seconds": 640045.25
+      "freshness_seconds": 674879.77
     },
     {
       "id": "urn:oid:2.49.0.1.356.sachet.cyclone.2026.01",
@@ -277,7 +277,7 @@
       "severity": "Extreme",
       "level": "red",
       "sent": "2026-11-17T06:00:00+00:00",
-      "freshness_seconds": 470202.25
+      "freshness_seconds": 505036.77
     }
   ]
 }

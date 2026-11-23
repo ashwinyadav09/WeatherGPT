@@ -18,12 +18,12 @@ WeatherGPT is designed to be fully accessible for all citizens across India, inc
 | **Target Size (Minimum)** | 2.5.8 (AA) | Minimum touch target size of 44x44px for touch interactions on Android devices | ✅ Pass |
 | **Live Regions** | 4.1.3 (AA) | Streaming answer tokens announced via `aria-live="polite"` container | ✅ Pass |
 
-## Screen Reader Verification Notes
-- **NVDA (Windows / Chrome)**:
-  - Verified navigation through heading shortcuts (`H`), button shortcuts (`B`), and reading order.
-  - Form controls have associated labels (`label htmlFor="..."`).
-- **TalkBack (Android / Chrome)**:
-  - Verified on budget Android smartphone (Chrome 120+, 4G mobile data).
-  - Touch navigation announces button roles and alert states accurately.
-- **Automated Axe-core scan**:
-  - 0 critical violations, 0 serious violations.
+## Automated Axe-core Scan
+Automated scan executed via `@axe-core/playwright` across core views (see `apps/web/tests/accessibility.spec.ts` and `reports/accessibility_report.json`):
+- **Core views audited**: Ask (`/`), Alerts (`/#alerts`), Places (`/#places`), More (`/#more`), Offline (`/offline.html`).
+- **Violations**: 0 critical, 0 serious, 0 moderate, 0 minor.
+
+## Manual Screen Reader Verification
+Per Section 2 (Truthfulness Rules) of `REMEDIATION_PLAN.md` and Rule R0.1, manual testing must never be simulated or estimated:
+- **NVDA (Windows / Chrome)**: `NOT MEASURED` (requires physical human verification on desktop screen-reader).
+- **TalkBack (Android / Chrome)**: `NOT MEASURED` (requires physical human verification on Android device).

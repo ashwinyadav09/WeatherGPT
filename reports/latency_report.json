@@ -1,0 +1,48 @@
+{
+  "git_sha": "4a21ddc",
+  "measured_at": "2026-11-23T01:38:36.125864+00:00",
+  "provenance": "real_queries_over_recorded_fixtures",
+  "total_queries": 300,
+  "queries_per_group": 100,
+  "budgets": {
+    "p50_budget_ms": 1500,
+    "p95_budget_ms": 3000
+  },
+  "overall": {
+    "ttft_p50_ms": 6.92,
+    "ttft_p95_ms": 32.1,
+    "total_p50_ms": 6.95,
+    "total_p95_ms": 32.14,
+    "p50_pass": true,
+    "p95_pass": true
+  },
+  "groups": {
+    "english": {
+      "count": 100,
+      "ttft_p50_ms": 3.13,
+      "ttft_p95_ms": 9.6,
+      "total_p50_ms": 3.16,
+      "total_p95_ms": 9.72,
+      "ttft_mean_ms": 3.95,
+      "total_mean_ms": 3.97
+    },
+    "hindi": {
+      "count": 100,
+      "ttft_p50_ms": 6.67,
+      "ttft_p95_ms": 9.44,
+      "total_p50_ms": 6.7,
+      "total_p95_ms": 9.47,
+      "ttft_mean_ms": 5.63,
+      "total_mean_ms": 5.67
+    },
+    "indic_regional": {
+      "count": 100,
+      "ttft_p50_ms": 21.34,
+      "ttft_p95_ms": 41.09,
+      "total_p50_ms": 21.38,
+      "total_p95_ms": 41.18,
+      "ttft_mean_ms": 23.03,
+      "total_mean_ms": 23.08
+    }
+  }
+}

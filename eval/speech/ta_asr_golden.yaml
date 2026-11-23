@@ -1,0 +1,155 @@
+version: '1.0'
+language: ta
+total_cases: 25
+description: Consented and field-like Tamil weather speech test set for WER, PNER, and NER
+utterances:
+- id: utt_ta_001
+  text: நாளை சென்னையில் மழை பெய்யுமா?
+  expected_place: சென்னை
+  expected_place_en: chennai
+  domain: rainfall
+  expected_numbers: []
+- id: utt_ta_002
+  text: கோயம்புத்தூரில் இன்றைய வெப்பநிலை 31 டிகிரி இருக்குமா?
+  expected_place: கோயம்புத்தூர்
+  expected_place_en: coimbatore
+  domain: temperature
+  expected_numbers: [31]
+- id: utt_ta_003
+  text: மதுரையில் நாளை 42 டிகிரி வெப்ப அலை எச்சரிக்கை விடுக்கப்பட்டுள்ளதா?
+  expected_place: மதுரை
+  expected_place_en: madurai
+  domain: alerts
+  expected_numbers: [42]
+- id: utt_ta_004
+  text: திருச்சியில் அடுத்த 3 நாட்களுக்கு வானிலை எப்படி இருக்கும்?
+  expected_place: திருச்சி
+  expected_place_en: tiruchirappalli
+  domain: forecast
+  expected_numbers: [3]
+- id: utt_ta_005
+  text: சேலத்தில் காற்றில் ஈரப்பதம் 75 சதவீதமாக பதிவாகியுள்ளதா?
+  expected_place: சேலம்
+  expected_place_en: salem
+  domain: forecast
+  expected_numbers: [75]
+- id: utt_ta_006
+  text: திருநெல்வேலியில் நெல் பயிருக்கு 25 மிமீ மழை கிடைக்குமா?
+  expected_place: திருநெல்வேலி
+  expected_place_en: tirunelveli
+  domain: agromet
+  expected_numbers: [25]
+- id: utt_ta_007
+  text: வேலூரில் நாளை மணிக்கு 35 கிமீ வேகத்தில் பலத்த காற்று வீசுமா?
+  expected_place: வேலூர்
+  expected_place_en: vellore
+  domain: wind
+  expected_numbers: [35]
+- id: utt_ta_008
+  text: தஞ்சாவூரில் சம்பா சாகுபடிக்கு உகந்த மழை எப்போது வரும்?
+  expected_place: தஞ்சாவூர்
+  expected_place_en: thanjavur
+  domain: agromet
+  expected_numbers: []
+- id: utt_ta_009
+  text: கன்னியாகுமரி கடலோரப் பகுதியில் 55 கிமீ வேகத்தில் புயல் காற்று எச்சரிக்கையா?
+  expected_place: கன்னியாகுமரி
+  expected_place_en: kanyakumari
+  domain: alerts
+  expected_numbers: [55]
+- id: utt_ta_010
+  text: திண்டுக்கல்லில் இரவு குறைந்தபட்ச வெப்பநிலை 18 டிகிரியாக குறையுமா?
+  expected_place: திண்டுக்கல்
+  expected_place_en: dindigul
+  domain: temperature
+  expected_numbers: [18]
+- id: utt_ta_011
+  text: ஈரோட்டில் மஞ்சள் பயிருக்கு உரம் இட இன்று வானிலை நல்லதா?
+  expected_place: ஈரோடு
+  expected_place_en: erode
+  domain: agromet
+  expected_numbers: []
+- id: utt_ta_012
+  text: தூத்துக்குடி துறைமுகத்தில் 3 எண் புயல் எச்சரிக்கைக் கூண்டு ஏற்றப்பட்டதா?
+  expected_place: தூத்துக்குடி
+  expected_place_en: tuticorin
+  domain: alerts
+  expected_numbers: [3]
+- id: utt_ta_013
+  text: திருப்பூர் பின்னலாடை உற்பத்தி பகுதிக்கு 10 மிமீ மழை வருமா?
+  expected_place: திருப்பூர்
+  expected_place_en: tiruppur
+  domain: rainfall
+  expected_numbers: [10]
+- id: utt_ta_014
+  text: நாகப்பட்டினத்தில் அடுத்த 24 மணி நேரத்தில் 70 மிமீ கனமழை பெய்ய வாய்ப்புள்ளதா?
+  expected_place: நாகப்பட்டினம்
+  expected_place_en: nagapattinam
+  domain: alerts
+  expected_numbers: [24, 70]
+- id: utt_ta_015
+  text: உதகமண்டலத்தில் இன்று இரவு உறைபனி மற்றும் 4 டிகிரி குளிர் நிலவுமா?
+  expected_place: உதகமண்டலம்
+  expected_place_en: ooty
+  domain: temperature
+  expected_numbers: [4]
+- id: utt_ta_016
+  text: கடலூரில் மீனவர்கள் கடலுக்குச் செல்ல வேண்டாம் என அறிவுறுத்தப்பட்டுள்ளதா?
+  expected_place: கடலூர்
+  expected_place_en: cuddalore
+  domain: alerts
+  expected_numbers: []
+- id: utt_ta_017
+  text: காஞ்சிபுரத்தில் நாளை பகல் வெப்பநிலை 36 டிகிரி வரை உயரக்கூடுமா?
+  expected_place: காஞ்சிபுரம்
+  expected_place_en: kanchipuram
+  domain: temperature
+  expected_numbers: [36]
+- id: utt_ta_018
+  text: காரைக்குடியில் நிலக்கடலை பயிருக்கு ஏற்ற ஈரப்பதம் உள்ளதா?
+  expected_place: காரைக்குடி
+  expected_place_en: karaikudi
+  domain: agromet
+  expected_numbers: []
+- id: utt_ta_019
+  text: தருமபுரியில் வானம் மேகமூட்டத்துடன் காணப்படுமா?
+  expected_place: தருமபுரி
+  expected_place_en: dharmapuri
+  domain: forecast
+  expected_numbers: []
+- id: utt_ta_020
+  text: சிவகாசியில் பட்டாசு தொழிற்சாலை பகுதிக்கு உலர் வானிலை நிலவுமா?
+  expected_place: சிவகாசி
+  expected_place_en: sivakasi
+  domain: forecast
+  expected_numbers: []
+- id: utt_ta_021
+  text: திருவண்ணாமலையில் கிரிவலப் பாதையில் 15 மிமீ சாரல் மழை பெய்யுமா?
+  expected_place: திருவண்ணாமலை
+  expected_place_en: tiruvannamalai
+  domain: rainfall
+  expected_numbers: [15]
+- id: utt_ta_022
+  text: ராமநாதபுரத்தில் மிளகாய் பயிர் பூச்சி மருந்து தெளிக்க தகுந்த நேரமா?
+  expected_place: ராமநாதபுரம்
+  expected_place_en: ramanathapuram
+  domain: agromet
+  expected_numbers: []
+- id: utt_ta_023
+  text: நாமக்கல்லில் கோழிப்பண்ணைகளுக்கு வெப்ப அழுத்தம் 38 டிகிரியை எட்டுமா?
+  expected_place: நாமக்கல்
+  expected_place_en: namakkal
+  domain: agromet
+  expected_numbers: [38]
+- id: utt_ta_024
+  text: கொடைக்கானலில் அதிகபட்ச வெப்பநிலை 20 டிகிரியைத் தாண்டுமா?
+  expected_place: கொடைக்கானல்
+  expected_place_en: kodaikanal
+  domain: temperature
+  expected_numbers: [20]
+- id: utt_ta_025
+  text: புதுக்கோட்டையில் அடுத்த 5 நாட்களுக்கு மழைப்பொழிவு இல்லாத நிலை நீடிக்குமா?
+  expected_place: புதுக்கோட்டை
+  expected_place_en: pudukkottai
+  domain: forecast
+  expected_numbers: [5]

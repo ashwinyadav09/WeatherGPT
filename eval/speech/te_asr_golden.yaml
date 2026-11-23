@@ -1,0 +1,155 @@
+version: '1.0'
+language: te
+total_cases: 25
+description: Consented and field-like Telugu weather speech test set for WER, PNER, and NER
+utterances:
+- id: utt_te_001
+  text: రేపు హైదరాబాద్‌లో వర్షం పడుతుందా?
+  expected_place: హైదరాబాద్
+  expected_place_en: hyderabad
+  domain: rainfall
+  expected_numbers: []
+- id: utt_te_002
+  text: విశాఖపట్నంలో ఈరోజు ఉష్ణోగ్రత 32 డిగ్రీలు ఉంటుందా?
+  expected_place: విశాఖపట్నం
+  expected_place_en: visakhapatnam
+  domain: temperature
+  expected_numbers: [32]
+- id: utt_te_003
+  text: విజయవాడలో రేపు గంటకు 40 కిమీ వేగంతో ఈదురుగాలులు వీస్తాయా?
+  expected_place: విజయవాడ
+  expected_place_en: vijayawada
+  domain: wind
+  expected_numbers: [40]
+- id: utt_te_004
+  text: గుంటూరులో రాబోయే 3 రోజుల వాతావరణ సమాచారం ఏమిటి?
+  expected_place: గుంటూరు
+  expected_place_en: guntur
+  domain: forecast
+  expected_numbers: [3]
+- id: utt_te_005
+  text: తిరుపతిలో 42 డిగ్రీల ఎండ తీవ్రతతో వడగాల్పుల హెచ్చరిక ఉందా?
+  expected_place: తిరుపతి
+  expected_place_en: tirupati
+  domain: alerts
+  expected_numbers: [42]
+- id: utt_te_006
+  text: వరంగల్‌లో పత్తి పంట కోసం 25 మిమీ వర్షం కురుస్తుందా?
+  expected_place: వరంగల్
+  expected_place_en: warangal
+  domain: agromet
+  expected_numbers: [25]
+- id: utt_te_007
+  text: కర్నూలులో రేపు రాత్రి ఉష్ణోగ్రత 16 డిగ్రీలకు పడిపోతుందా?
+  expected_place: కర్నూలు
+  expected_place_en: kurnool
+  domain: temperature
+  expected_numbers: [16]
+- id: utt_te_008
+  text: రాజమండ్రిలో వరి నాట్లకు సరిపడా తేమ ఎప్పుడు వస్తుంది?
+  expected_place: రాజమండ్రి
+  expected_place_en: rajahmundry
+  domain: agromet
+  expected_numbers: []
+- id: utt_te_009
+  text: నెల్లూరు తీరప్రాంతంలో సముద్ర అలల ఎత్తు 3 మీటర్లు ఉంటుందా?
+  expected_place: నెల్లూరు
+  expected_place_en: nellore
+  domain: alerts
+  expected_numbers: [3]
+- id: utt_te_010
+  text: అనంతపురంలో రేపు గరిష్ట ఉష్ణోగ్రత 39 డిగ్రీలు నమోదవుతుందా?
+  expected_place: అనంతపురం
+  expected_place_en: anantapur
+  domain: temperature
+  expected_numbers: [39]
+- id: utt_te_011
+  text: నిజామాబాద్‌లో రాబోయే 24 గంటల్లో ఉరుములతో కూడిన భారీ వర్షం పడుతుందా?
+  expected_place: నిజామాబాద్
+  expected_place_en: nizamabad
+  domain: alerts
+  expected_numbers: [24]
+- id: utt_te_012
+  text: కడపలో మిరప తోటల పై మందు పిచికారీ చేయడానికి నేడు వాతావరణం అనుకూలమా?
+  expected_place: కడప
+  expected_place_en: kadapa
+  domain: agromet
+  expected_numbers: []
+- id: utt_te_013
+  text: ఖమ్మంలో నేడు గాలిలో తేమ శాతం 80 కి చేరుకుంటుందా?
+  expected_place: ఖమ్మం
+  expected_place_en: khammam
+  domain: forecast
+  expected_numbers: [80]
+- id: utt_te_014
+  text: కాకినాడ పోర్టు వద్ద గంటకు 55 కిమీ వేగంతో గాలులు వీచే ప్రమాదం ఉందా?
+  expected_place: కాకినాడ
+  expected_place_en: kakinada
+  domain: alerts
+  expected_numbers: [55]
+- id: utt_te_015
+  text: కరీంనగర్‌లో రేపు 20 మిమీ చిరుజల్లులు పడే అవకాశం ఉందా?
+  expected_place: కరీంనగర్
+  expected_place_en: karimnagar
+  domain: rainfall
+  expected_numbers: [20]
+- id: utt_te_016
+  text: ఏలూరులో ఆకాశం మేఘావృతమై ఉంటుందా?
+  expected_place: ఏలూరు
+  expected_place_en: eluru
+  domain: forecast
+  expected_numbers: []
+- id: utt_te_017
+  text: మహబూబ్‌నగర్‌లో మొక్కజొన్న సాగుకు వర్షం ఎప్పుడు కురుస్తుంది?
+  expected_place: మహబూబ్‌నగర్
+  expected_place_en: mahbubnagar
+  domain: agromet
+  expected_numbers: []
+- id: utt_te_018
+  text: ఒంగోలులో రేపు కనిష్ట ఉష్ణోగ్రత 22 డిగ్రీలుగా నమోదు కావచ్చా?
+  expected_place: ఒంగోలు
+  expected_place_en: ongole
+  domain: temperature
+  expected_numbers: [22]
+- id: utt_te_019
+  text: మచిలీపట్నంలో మత్స్యకారులు సముద్రంలోకి వెళ్లవద్దని హెచ్చరిక జారీ చేశారా?
+  expected_place: మచిలీపట్నం
+  expected_place_en: machilipatnam
+  domain: alerts
+  expected_numbers: []
+- id: utt_te_020
+  text: నల్గొండలో రాబోయే 5 రోజుల్లో వాతావరణం పొడిగా ఉంటుందా?
+  expected_place: నల్గొండ
+  expected_place_en: nalgonda
+  domain: forecast
+  expected_numbers: [5]
+- id: utt_te_021
+  text: శ్రీకాకుళంలో 60 మిమీ వర్షపాతం నమోదయ్యే అవకాశం ఉందా?
+  expected_place: శ్రీకాకుళం
+  expected_place_en: srikakulam
+  domain: rainfall
+  expected_numbers: [60]
+- id: utt_te_022
+  text: ఆదిలాబాద్‌లో చలి తీవ్రత 9 డిగ్రీలకు పడిపోయిందా?
+  expected_place: ఆదిలాబాద్
+  expected_place_en: adilabad
+  domain: alerts
+  expected_numbers: [9]
+- id: utt_te_023
+  text: చిత్తూరులో మామిడి తోటల కోసం వాతావరణం ఎలా ఉంటుంది?
+  expected_place: చిత్తూరు
+  expected_place_en: chittoor
+  domain: agromet
+  expected_numbers: []
+- id: utt_te_024
+  text: భద్రాచలంలో గోదావరి నది పరివాహక ప్రాంతంలో భారీ వరద హెచ్చరిక ఉందా?
+  expected_place: భద్రాచలం
+  expected_place_en: bhadrachalam
+  domain: alerts
+  expected_numbers: []
+- id: utt_te_025
+  text: అమరావతిలో రేపు పగటి ఉష్ణోగ్రత 34 డిగ్రీలు ఉండవచ్చా?
+  expected_place: అమరావతి
+  expected_place_en: amaravati
+  domain: temperature
+  expected_numbers: [34]
