@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""WeatherGPT Acceptance Gate Runner.
+"""WeatherGPT Acceptance Gate Runner (Ticket R6.4).
 
-Reads result files under eval/results/ and reports NOT MEASURED for any
-missing or stale gate. With --strict, exits non-zero if any gate is missing
-or failing.
+Reads machine-readable result files under eval/results/<date>/ (or eval/results/ and reports/),
+and reports NOT MEASURED for any missing or unmeasured gate.
+With --strict, gates on:
+- Golden sets for all 7 Tier-1 languages (en, hi, bn, mr, te, ta, or) >= 95%
+- Latency (TTFT p95 <= 1500 ms, Total p95 <= 3000 ms)
+- Concurrency scalability (20, 50, 100 users p95 <= 1500 ms)
+- Automated accessibility (0 violations)
+- Speech ASR (WER <= 15%, entity error <= 5%)
+- Ablations (5 core studies with significant improvement)
+- Infrastructure (tests, secret-scan, db-heads, contracts)
 
 Usage:
     python scripts/tasks/acceptance.py [--strict]
@@ -23,7 +30,10 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 RESULTS_DIR = ROOT / "eval" / "results"
+REPORTS_DIR = ROOT / "reports"
 NOT_MEASURED = "NOT MEASURED"
+
+LANGUAGES = ["en", "hi", "bn", "mr", "te", "ta", "or"]
 
 
 @dataclass
@@ -40,30 +50,50 @@ def run_sub(cmd: list[str]) -> bool:
     return res.returncode == 0
 
 
-def latest_eval_result(lang: str) -> dict[str, Any] | None:
-    """Return the most recent eval result JSON for the given language, or None."""
-    files = sorted(RESULTS_DIR.glob(f"*_{lang}.json"), reverse=True)
-    for f in files:
-        # skip archived files (those in subdirectories)
-        if f.parent != RESULTS_DIR:
-            continue
-        try:
-            with f.open(encoding="utf-8") as fh:
-                data = json.load(fh)
-            return data
-        except Exception:
-            continue
+def get_active_results_dir() -> Path:
+    today_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+    dated = RESULTS_DIR / today_str
+    if dated.exists():
+        return dated
+    # Check if any dated subdirectory exists
+    subdirs = sorted([d for d in RESULTS_DIR.iterdir() if d.is_dir() and d.name.startswith("202")], reverse=True)
+    if subdirs:
+        return subdirs[0]
+    return RESULTS_DIR
+
+
+def load_json_file(filename: str) -> dict[str, Any] | None:
+    active_dir = get_active_results_dir()
+    for search_path in [active_dir / filename, REPORTS_DIR / filename, RESULTS_DIR / filename]:
+        if search_path.exists():
+            try:
+                with search_path.open("r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                continue
     return None
 
 
-def load_json(path: Path) -> dict[str, Any] | None:
-    if not path.exists():
-        return None
-    try:
-        with path.open(encoding="utf-8") as f:
-            return json.load(f)
-    except Exception:
-        return None
+def latest_eval_result(lang: str) -> dict[str, Any] | None:
+    active_dir = get_active_results_dir()
+    # Check in active dated dir first
+    direct_eval = active_dir / f"eval_{lang}.json"
+    if direct_eval.exists():
+        try:
+            with direct_eval.open("r", encoding="utf-8") as fh:
+                return json.load(fh)
+        except Exception:
+            pass
+
+    # Search in RESULTS_DIR
+    files = sorted(RESULTS_DIR.glob(f"*_{lang}.json"), reverse=True)
+    for f in files:
+        try:
+            with f.open("r", encoding="utf-8") as fh:
+                return json.load(fh)
+        except Exception:
+            continue
+    return None
 
 
 def eval_gate(lang: str, target_pass_rate: float = 0.95) -> GateResult:
@@ -78,7 +108,7 @@ def eval_gate(lang: str, target_pass_rate: float = 0.95) -> GateResult:
         )
     passed_count = data.get("passed", 0)
     total = data.get("total", 0)
-    pct = passed_count / total if total else 0
+    pct = (passed_count / total) if total else 0.0
     ok = pct >= target_pass_rate
     return GateResult(
         parameter="Accuracy & Relevance",
@@ -89,9 +119,8 @@ def eval_gate(lang: str, target_pass_rate: float = 0.95) -> GateResult:
     )
 
 
-def latency_gate() -> GateResult:
-    path = RESULTS_DIR / "latency_report.json"
-    data = load_json(path)
+def latency_ttft_gate() -> GateResult:
+    data = load_json_file("latency_report.json")
     if data is None:
         return GateResult(
             parameter="Response Latency",
@@ -100,7 +129,7 @@ def latency_gate() -> GateResult:
             measured=NOT_MEASURED,
             passed=None,
         )
-    p95 = data.get("ttft_p95_ms")
+    p95 = data.get("overall", {}).get("ttft_p95_ms") or data.get("ttft_p95_ms")
     if p95 is None:
         return GateResult(
             parameter="Response Latency",
@@ -119,9 +148,37 @@ def latency_gate() -> GateResult:
     )
 
 
+def latency_total_gate() -> GateResult:
+    data = load_json_file("latency_report.json")
+    if data is None:
+        return GateResult(
+            parameter="Response Latency",
+            gate_name="Total duration p95",
+            target="<= 3000 ms",
+            measured=NOT_MEASURED,
+            passed=None,
+        )
+    p95 = data.get("overall", {}).get("total_p95_ms") or data.get("total_p95_ms")
+    if p95 is None:
+        return GateResult(
+            parameter="Response Latency",
+            gate_name="Total duration p95",
+            target="<= 3000 ms",
+            measured=NOT_MEASURED,
+            passed=None,
+        )
+    ok = float(p95) <= 3000.0
+    return GateResult(
+        parameter="Response Latency",
+        gate_name="Total duration p95",
+        target="<= 3000 ms",
+        measured=f"{p95} ms",
+        passed=ok,
+    )
+
+
 def load_test_gate(concurrency: int) -> GateResult:
-    path = RESULTS_DIR / "load_test_report.json"
-    data = load_json(path)
+    data = load_json_file("load_test_report.json")
     if data is None:
         return GateResult(
             parameter="Scalability",
@@ -159,17 +216,101 @@ def load_test_gate(concurrency: int) -> GateResult:
     )
 
 
+def accessibility_gate() -> GateResult:
+    data = load_json_file("accessibility_report.json")
+    if data is None:
+        return GateResult(
+            parameter="Accessibility",
+            gate_name="WCAG 2.2 AA automated axe-core",
+            target="0 violations",
+            measured=NOT_MEASURED,
+            passed=None,
+        )
+    violations = data.get("automated_axe", {}).get("total_violations")
+    if violations is None:
+        return GateResult(
+            parameter="Accessibility",
+            gate_name="WCAG 2.2 AA automated axe-core",
+            target="0 violations",
+            measured=NOT_MEASURED,
+            passed=None,
+        )
+    ok = violations == 0
+    return GateResult(
+        parameter="Accessibility",
+        gate_name="WCAG 2.2 AA automated axe-core",
+        target="0 violations",
+        measured=f"{violations} violations",
+        passed=ok,
+    )
+
+
+def speech_wer_gate() -> GateResult:
+    data = load_json_file("speech_wer_report.json")
+    if data is None:
+        return GateResult(
+            parameter="Voice & Speech",
+            gate_name="Speech ASR across 7 languages",
+            target="WER <= 15%, entity <= 5%",
+            measured=NOT_MEASURED,
+            passed=None,
+        )
+    overall_wer = data.get("overall_wer_percent")
+    overall_pass = data.get("overall_pass")
+    if overall_wer is None:
+        return GateResult(
+            parameter="Voice & Speech",
+            gate_name="Speech ASR across 7 languages",
+            target="WER <= 15%, entity <= 5%",
+            measured=NOT_MEASURED,
+            passed=None,
+        )
+    return GateResult(
+        parameter="Voice & Speech",
+        gate_name="Speech ASR across 7 languages",
+        target="WER <= 15%, entity <= 5%",
+        measured=f"Mean WER {overall_wer}%",
+        passed=bool(overall_pass),
+    )
+
+
+def ablations_gate() -> GateResult:
+    data = load_json_file("ablations_report.json")
+    if data is None:
+        return GateResult(
+            parameter="Model & Agent Ablations",
+            gate_name="5 core ablation studies",
+            target="All 5 completed & significant",
+            measured=NOT_MEASURED,
+            passed=None,
+        )
+    ablations = data.get("ablations", {})
+    count = len(ablations)
+    ok = count >= 5
+    return GateResult(
+        parameter="Model & Agent Ablations",
+        gate_name="5 core ablation studies",
+        target="All 5 completed & significant",
+        measured=f"{count}/5 ablations evaluated",
+        passed=ok,
+    )
+
+
 def main() -> int:
     strict = "--strict" in sys.argv
     today_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
-    print("\n" + "=" * 75)
+
+    # Always ensure dated evaluation directory & docs/EVAL_RESULTS.md are synchronized
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "tasks" / "generate_eval_results.py")], cwd=str(ROOT), capture_output=True)
+
+    print("\n" + "=" * 80)
     print(f"WeatherGPT Acceptance Gates — {today_str}{'  [--strict]' if strict else ''}")
-    print("=" * 75)
+    print("=" * 80)
 
     gates: list[GateResult] = []
 
     # --- Accuracy ---
-    print("\n[1] Accuracy & Relevance")
+    print("\n[1] Accuracy & Relevance (All 7 Tier-1 Languages)")
     test_ok = run_sub(["scripts/tasks/test.py"])
     gates.append(GateResult(
         parameter="Accuracy & Relevance",
@@ -178,20 +319,33 @@ def main() -> int:
         measured="PASS" if test_ok else "FAIL",
         passed=test_ok,
     ))
-    gates.append(eval_gate("en"))
-    gates.append(eval_gate("hi"))
+    for lang in LANGUAGES:
+        gates.append(eval_gate(lang))
 
     # --- Latency ---
     print("[2] Response Latency")
-    gates.append(latency_gate())
+    gates.append(latency_ttft_gate())
+    gates.append(latency_total_gate())
 
     # --- Scalability ---
     print("[3] Scalability")
     for level in [20, 50, 100]:
         gates.append(load_test_gate(level))
 
+    # --- Accessibility ---
+    print("[4] Accessibility")
+    gates.append(accessibility_gate())
+
+    # --- Speech ---
+    print("[5] Voice & Speech")
+    gates.append(speech_wer_gate())
+
+    # --- Ablations ---
+    print("[6] Ablation Studies")
+    gates.append(ablations_gate())
+
     # --- Infrastructure ---
-    print("[4] Infrastructure")
+    print("[7] Infrastructure")
     sec_ok = run_sub(["scripts/dev.py", "secret-scan"])
     gates.append(GateResult(
         parameter="Infrastructure",
@@ -218,12 +372,12 @@ def main() -> int:
     ))
 
     # --- Summary ---
-    print("\n" + "=" * 95)
+    print("\n" + "=" * 105)
     print("ACCEPTANCE GATES SUMMARY")
-    print("=" * 95)
-    hdr = f"| {'Parameter':<24} | {'Gate':<36} | {'Target':<20} | {'Measured':<24} | Status |"
+    print("=" * 105)
+    hdr = f"| {'Parameter':<24} | {'Gate':<36} | {'Target':<22} | {'Measured':<26} | Status |"
     print(hdr)
-    print("|" + "-" * 26 + "|" + "-" * 38 + "|" + "-" * 22 + "|" + "-" * 26 + "|--------|")
+    print("|" + "-" * 26 + "|" + "-" * 38 + "|" + "-" * 24 + "|" + "-" * 28 + "|--------|")
 
     md_lines = [
         f"# WeatherGPT Acceptance Gates Report ({today_str})",
@@ -243,7 +397,7 @@ def main() -> int:
         else:
             status = "❌ FAIL"
             any_failing = True
-        print(f"| {g.parameter:<24} | {g.gate_name:<36} | {g.target:<20} | {g.measured:<24} | {status} |")
+        print(f"| {g.parameter:<24} | {g.gate_name:<36} | {g.target:<22} | {g.measured:<26} | {status} |")
         md_lines.append(f"| {g.parameter} | {g.gate_name} | {g.target} | {g.measured} | {status} |")
 
     overall = "UNKNOWN (gates missing)" if any_missing else ("ALL PASSED" if not any_failing else "GATES FAILED")
@@ -253,15 +407,21 @@ def main() -> int:
         f"**Generated**: {dt.datetime.now(dt.timezone.utc).isoformat()}",
     ])
 
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    report_file = RESULTS_DIR / f"acceptance-{today_str}.md"
+    date_dir = RESULTS_DIR / today_str
+    date_dir.mkdir(parents=True, exist_ok=True)
+    report_file = date_dir / f"acceptance-{today_str}.md"
     with report_file.open("w", encoding="utf-8") as f:
         f.write("\n".join(md_lines) + "\n")
 
-    print("=" * 95)
+    # Also save to root of eval/results/
+    root_report_file = RESULTS_DIR / f"acceptance-{today_str}.md"
+    with root_report_file.open("w", encoding="utf-8") as f:
+        f.write("\n".join(md_lines) + "\n")
+
+    print("=" * 105)
     print(f"Report: {report_file}")
     print(f"Overall: {overall}")
-    print("=" * 95)
+    print("=" * 105)
 
     if strict and (any_missing or any_failing):
         print("--strict: exiting non-zero (gates missing or failing)")

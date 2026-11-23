@@ -1,0 +1,103 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-11-23T02:11:40.953282+00:00",
+  "git_sha": "4a21ddc",
+  "provenance": "recorded_field_utterances_and_conformance_fixtures",
+  "total_languages": 7,
+  "total_utterances": 260,
+  "overall_wer": 0.1256,
+  "overall_wer_percent": 12.56,
+  "overall_pass": true,
+  "budgets": {
+    "max_wer": 0.15,
+    "min_wer": 0.001,
+    "max_pner": 0.05,
+    "max_ner": 0.05
+  },
+  "languages": {
+    "en": {
+      "language": "en",
+      "utterance_count": 25,
+      "wer": 0.1152,
+      "wer_percent": 11.52,
+      "pner": 0.0,
+      "pner_percent": 0.0,
+      "ner": 0.0,
+      "ner_percent": 0.0,
+      "passes_wer_budget": true,
+      "passes_entity_budget": true
+    },
+    "hi": {
+      "language": "hi",
+      "utterance_count": 110,
+      "wer": 0.1014,
+      "wer_percent": 10.14,
+      "pner": 0.0,
+      "pner_percent": 0.0,
+      "ner": 0.0,
+      "ner_percent": 0.0,
+      "passes_wer_budget": true,
+      "passes_entity_budget": true
+    },
+    "bn": {
+      "language": "bn",
+      "utterance_count": 25,
+      "wer": 0.1226,
+      "wer_percent": 12.26,
+      "pner": 0.0,
+      "pner_percent": 0.0,
+      "ner": 0.0,
+      "ner_percent": 0.0,
+      "passes_wer_budget": true,
+      "passes_entity_budget": true
+    },
+    "mr": {
+      "language": "mr",
+      "utterance_count": 25,
+      "wer": 0.1287,
+      "wer_percent": 12.87,
+      "pner": 0.0,
+      "pner_percent": 0.0,
+      "ner": 0.0,
+      "ner_percent": 0.0,
+      "passes_wer_budget": true,
+      "passes_entity_budget": true
+    },
+    "te": {
+      "language": "te",
+      "utterance_count": 25,
+      "wer": 0.143,
+      "wer_percent": 14.3,
+      "pner": 0.0,
+      "pner_percent": 0.0,
+      "ner": 0.0,
+      "ner_percent": 0.0,
+      "passes_wer_budget": true,
+      "passes_entity_budget": true
+    },
+    "ta": {
+      "language": "ta",
+      "utterance_count": 25,
+      "wer": 0.144,
+      "wer_percent": 14.4,
+      "pner": 0.0,
+      "pner_percent": 0.0,
+      "ner": 0.0,
+      "ner_percent": 0.0,
+      "passes_wer_budget": true,
+      "passes_entity_budget": true
+    },
+    "or": {
+      "language": "or",
+      "utterance_count": 25,
+      "wer": 0.1243,
+      "wer_percent": 12.43,
+      "pner": 0.0,
+      "pner_percent": 0.0,
+      "ner": 0.0,
+      "ner_percent": 0.0,
+      "passes_wer_budget": true,
+      "passes_entity_budget": true
+    }
+  }
+}
