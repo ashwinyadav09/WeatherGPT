@@ -1,23 +1,13 @@
 #!/usr/bin/env python3
-"""Speech ASR Evaluation for WeatherGPT (Ticket R6.2).
+"""Speech ASR Evaluation for WeatherGPT (Ticket R8.2 / R18.4).
 
 Evaluates Word Error Rate (WER), Place Name Error Rate (PNER), and Number Error Rate (NER)
-on >= 20 utterances per language across all 7 Tier-1 languages:
-- English (en)
-- Hindi (hi)
-- Bengali (bn)
-- Marathi (mr)
-- Telugu (te)
-- Tamil (ta)
-- Odia (or)
-
-Outputs:
-- reports/speech_wer_report.json
-- eval/results/speech_wer_report.json
+across all 7 Tier-1 languages:
+- English (en), Hindi (hi), Bengali (bn), Marathi (mr), Telugu (te), Tamil (ta), Odia (or)
 
 Adheres strictly to Section 2 (truthfulness rules):
-- Provenance tracked
-- Measured numbers only (WER > 0.00% and <= 15.0%)
+- T1 & T5: Zero simulation, no artificial dropout of words, no minimum budget constraints.
+- If real recorded audio is not available, status is reported as NOT MEASURED.
 """
 from __future__ import annotations
 
@@ -107,7 +97,6 @@ def match_place(expected_place: str, expected_place_en: str, hyp_text: str) -> b
         return True
     if expected_place_en and expected_place_en.lower() in hyp_text.lower():
         return True
-    # Stem matching for agglutinative / inflected forms (e.g. पुण्यात, சென்னையில், কালিম্পঙে)
     if expected_place:
         stem1 = expected_place[:-1] if len(expected_place) > 3 else expected_place
         if stem1 in hyp_text:
@@ -116,26 +105,6 @@ def match_place(expected_place: str, expected_place_en: str, hyp_text: str) -> b
         if stem2 in hyp_text:
             return True
     return False
-
-
-def simulate_realistic_asr_hypothesis(text: str, idx: int, expected_place: str = "") -> str:
-    """Simulate realistic field ASR hypothesis for a recorded speech utterance.
-
-    In conversational voice interfaces, ASR drops punctuation, and a small percentage
-    of utterances experience minor acoustic / lexical variations (such as dropping
-    terminal interrogatives like 'क्या?' or 'का?', or fillers).
-    """
-    cleaned = re.sub(r"[?!।,.]", "", text).strip()
-    words = cleaned.split()
-    if not words:
-        return cleaned
-
-    # Natural acoustic dropout of conversational tail particle if not the entity itself
-    if idx % 5 == 0 and len(words) > 3:
-        last_word = words[-1]
-        if not expected_place or expected_place.lower() not in last_word.lower():
-            return " ".join(words[:-1])
-    return " ".join(words)
 
 
 def evaluate_language(lang: str) -> dict[str, Any]:
@@ -150,114 +119,54 @@ def evaluate_language(lang: str) -> dict[str, Any]:
             break
 
     if not golden_file:
-        raise FileNotFoundError(f"No golden speech file found for language {lang}")
+        return {
+            "language": lang,
+            "status": "NOT MEASURED",
+            "reason": "Missing golden yaml file",
+            "utterance_count": 0,
+            "wer": "NOT MEASURED",
+            "pner": "NOT MEASURED",
+            "ner": "NOT MEASURED",
+        }
 
     with golden_file.open("r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
 
     utterances = data.get("utterances", [])
-    if len(utterances) < 20:
-        raise ValueError(f"Language {lang} has {len(utterances)} utterances, expected >= 20")
 
-    total_wer = 0.0
-    place_correct = 0
-    place_total = 0
-    number_correct = 0
-    number_total = 0
-
-    per_utterance_results = []
-
-    for i, u in enumerate(utterances):
-        ref_text = u["text"]
-        expected_place = u.get("expected_place", "")
-        expected_place_en = u.get("expected_place_en", "")
-        expected_nums = u.get("expected_numbers", [])
-
-        # Get transcription hypothesis
-        hyp_text = simulate_realistic_asr_hypothesis(ref_text, i, expected_place=expected_place or expected_place_en)
-        wer = compute_wer(ref_text, hyp_text)
-        total_wer += wer
-
-        # Place scoring
-        place_ok = False
-        if expected_place or expected_place_en:
-            place_total += 1
-            if match_place(expected_place, expected_place_en, hyp_text):
-                place_correct += 1
-                place_ok = True
-
-        # Number scoring
-        nums_ok = False
-        if expected_nums:
-            number_total += 1
-            extracted = extract_numbers(hyp_text)
-            if all(n in extracted for n in expected_nums):
-                number_correct += 1
-                nums_ok = True
-        else:
-            nums_ok = True
-
-        per_utterance_results.append({
-            "id": u["id"],
-            "wer": round(wer, 4),
-            "place_ok": place_ok if (expected_place or expected_place_en) else None,
-            "nums_ok": nums_ok if expected_nums else None,
-        })
-
-    avg_wer = total_wer / len(utterances)
-    pner = 1.0 - (place_correct / place_total if place_total > 0 else 1.0)
-    ner = 1.0 - (number_correct / number_total if number_total > 0 else 1.0)
-
+    # Per R8.2 and R18.4: No simulation. Real audio evaluation requires audio files.
+    # When real audio is not yet wired to live ASR, we report NOT MEASURED honestly.
     return {
         "language": lang,
         "utterance_count": len(utterances),
-        "wer": round(avg_wer, 4),
-        "wer_percent": round(avg_wer * 100, 2),
-        "pner": round(pner, 4),
-        "pner_percent": round(pner * 100, 2),
-        "ner": round(ner, 4),
-        "ner_percent": round(ner * 100, 2),
-        "passes_wer_budget": 0.0 < avg_wer <= 0.15,
-        "passes_entity_budget": pner <= 0.05 and ner <= 0.05,
+        "status": "NOT MEASURED",
+        "reason": "Real audio files pending human task H3",
+        "wer": "NOT MEASURED",
+        "pner": "NOT MEASURED",
+        "ner": "NOT MEASURED",
     }
 
 
 def main() -> int:
-    print("\nRunning Speech ASR Evaluation across 7 Tier-1 Languages...")
+    print("\nRunning Speech ASR Evaluation across 7 Tier-1 Languages (Rule T1: Real ML only)...")
     languages_report: dict[str, Any] = {}
     total_utterances = 0
-    all_wer: list[float] = []
 
     for lang in LANGUAGES:
         res = evaluate_language(lang)
         languages_report[lang] = res
-        total_utterances += res["utterance_count"]
-        all_wer.append(res["wer"])
-        print(
-            f"  [{lang.upper()}] Utterances: {res['utterance_count']} | "
-            f"WER: {res['wer_percent']}% | PNER: {res['pner_percent']}% | NER: {res['ner_percent']}% | "
-            f"Status: {'PASS' if res['passes_wer_budget'] and res['passes_entity_budget'] else 'FAIL'}"
-        )
-
-    overall_wer = sum(all_wer) / len(all_wer)
-    overall_pass = all(r["passes_wer_budget"] and r["passes_entity_budget"] for r in languages_report.values())
+        total_utterances += res.get("utterance_count", 0)
+        print(f"  [{lang.upper()}] Utterances: {res.get('utterance_count', 0)} | Status: {res.get('status')}")
 
     report = {
-        "schema_version": "1",
+        "schema_version": "2",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "git_sha": git_sha(),
-        "provenance": "recorded_field_utterances_and_conformance_fixtures",
+        "provenance": "recorded_reference_transcripts_pending_audio",
         "total_languages": len(LANGUAGES),
         "total_utterances": total_utterances,
-        "overall_wer": round(overall_wer, 4),
-        "overall_wer_percent": round(overall_wer * 100, 2),
-        "overall_pass": overall_pass,
-        "budgets": {
-            "max_wer": 0.15,
-            "min_wer": 0.001,  # Must not be 0.00%
-            "max_pner": 0.05,
-            "max_ner": 0.05,
-        },
+        "overall_status": "NOT MEASURED",
+        "notes": "Simulated ASR hypothesis generation deleted per Ticket R8.2. Real audio evaluation scheduled in R18.4.",
         "languages": languages_report,
     }
 
@@ -269,13 +178,7 @@ def main() -> int:
             json.dump(report, f, indent=2, ensure_ascii=False)
         print(f"Wrote {out_path}")
 
-    print("\n================ SPEECH WER REPORT ================")
-    print(f"Total Utterances: {total_utterances} across {len(LANGUAGES)} languages")
-    print(f"Mean WER: {round(overall_wer * 100, 2)}% (Budget: >0.00% and <=15.00%)")
-    print(f"Overall Status: {'PASS' if overall_pass else 'FAIL'}")
-    print("===================================================\n")
-
-    return 0 if overall_pass else 1
+    return 0
 
 
 if __name__ == "__main__":

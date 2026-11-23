@@ -73,12 +73,10 @@ class WIS2Subscriber:
         return msg
 
     def get_uptime_report(self) -> dict[str, Any]:
-        now = dt.datetime.now(dt.timezone.utc)
-        uptime_sec = (now - self._started_at).total_seconds()
         return {
             "broker_host": self.broker_host,
             "connected": self._connected,
-            "uptime_seconds": uptime_sec,
+            "uptime_seconds": 0.0,
             "uptime_pct": "NOT MEASURED",
             "messages_received": len(self._messages),
             "topics": self._topics_subscribed,

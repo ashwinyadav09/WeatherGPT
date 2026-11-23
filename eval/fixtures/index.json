@@ -234,15 +234,6 @@
     "level": "yellow"
   },
   {
-    "source": "sachet",
-    "file": "eval/fixtures/sachet/sachet_synthetic_cyclone.json",
-    "provenance": "synthetic",
-    "date": "2026-11-17T16:39:25.433127+00:00",
-    "url": "https://sachet.ndma.gov.in (modelled on IMD RSMC New Delhi tropical cyclone bulletin structure)",
-    "hazard": "Very Severe Cyclonic Storm",
-    "level": "red"
-  },
-  {
     "source": "open_meteo",
     "file": "eval/fixtures/open_meteo/bengaluru_archive.json",
     "provenance": "live-recorded",
