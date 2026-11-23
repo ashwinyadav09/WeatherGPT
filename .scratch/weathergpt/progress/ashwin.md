@@ -28,7 +28,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R5 | Real alert ingest | done | Merged in PR #65 |
 | R6.1 | Golden sets | done | Merged in PR #66 |
 | R6.2 | Real measurements | done | Merged in PR #67 |
-| R6.3 | Ablations | done | PR pending |
+| R6.3 | Ablations | done | Merged in PR #68 |
 
 ## Assumptions
 
