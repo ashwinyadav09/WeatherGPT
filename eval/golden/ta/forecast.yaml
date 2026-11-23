@@ -1,0 +1,176 @@
+- id: ta-forecast-delhi-001
+  language: ta
+  intent: forecast
+  place: Delhi
+  place_id: delhi
+  day: tomorrow
+  question: நாளை டெல்லி-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-mumbai-002
+  language: ta
+  intent: forecast
+  place: Mumbai
+  place_id: mumbai
+  day: tomorrow
+  question: நாளை மும்பை-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 34.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-bengaluru-003
+  language: ta
+  intent: forecast
+  place: Bengaluru
+  place_id: bengaluru
+  day: tomorrow
+  question: நாளை பெங்களூரு-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-chennai-004
+  language: ta
+  intent: forecast
+  place: Chennai
+  place_id: chennai
+  day: tomorrow
+  question: நாளை சென்னை-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-kolkata-005
+  language: ta
+  intent: forecast
+  place: Kolkata
+  place_id: kolkata
+  day: tomorrow
+  question: நாளை கொல்கத்தா-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-hyderabad-006
+  language: ta
+  intent: forecast
+  place: Hyderabad
+  place_id: hyderabad
+  day: tomorrow
+  question: நாளை ஹைதராபாத்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-jaipur-007
+  language: ta
+  intent: forecast
+  place: Jaipur
+  place_id: jaipur
+  day: tomorrow
+  question: நாளை ஜெய்ப்பூர்-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-shimla-008
+  language: ta
+  intent: forecast
+  place: Shimla
+  place_id: shimla
+  day: tomorrow
+  question: நாளை சிம்லா-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 15.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-pune-009
+  language: ta
+  intent: forecast
+  place: Pune
+  place_id: pune
+  day: tomorrow
+  question: நாளை புனே-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-guwahati-010
+  language: ta
+  intent: forecast
+  place: Guwahati
+  place_id: guwahati
+  day: tomorrow
+  question: நாளை கவுகாத்தி-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-varanasi-011
+  language: ta
+  intent: forecast
+  place: Varanasi
+  place_id: varanasi
+  day: tomorrow
+  question: நாளை வாரணாசி-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed

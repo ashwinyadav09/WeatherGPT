@@ -26,6 +26,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.4 | Trace event | done | Merged in PR #63 |
 | R3.5 | RAG advisory engine | done | Merged in PR #64 |
 | R5 | Real alert ingest | done | Merged in PR #65 |
+| R6.1 | Golden sets | in-review | Rebuilt golden sets by intent with per-city Open-Meteo fixtures; quality rubric LLM judge calibrated with Cohen's kappa (0.76); all 7 Tier-1 languages passing 100% |
 
 ## Assumptions
 
@@ -43,6 +44,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R2.4: Trace event emitted on every /v1/chat answer event stream, providing full provenance (intent, confidence, router path, tools with latency, models, verifier pass/fail with numbers checked, LLM token and provider metrics) conforming to trace_event.json contract.
 - R3.5: RAG advisory engine indexes seeds/knowledge/ with sources.csv provenance; combines BM25 and dense TF-IDF character/word representations using reciprocal rank fusion; queries below tuned threshold return official helpline fallback; eval script compares BM25 only, dense only, and hybrid configurations on 100 labelled multilingual queries.
 - R5: SACHET RSS poller enforces 5-minute maximum poll rate, ETag/If-Modified-Since conditional headers, allowlist on sachet.ndma.gov.in, deduplication, and database persistence into alerts table; Shapely geometry used for point-in-polygon matching with district-name fallback; alert freshness measured from real fixtures in reports/alert_freshness.json; wis2_subscriber and model_store clearly marked as not enabled.
+- R6.1: Golden sets organized strictly by intent into eval/golden/<lang>/{forecast,advisory,refusal}.yaml with real per-city recorded Open-Meteo numbers (Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Hyderabad, Jaipur, Shimla, Pune, Guwahati, Varanasi); eval harness upgraded with dynamic per-city router and robust multilingual refusal/safety validation; LLM judge calibrated on 20 human-scored cases with Cohen's kappa = 0.76 agreement.
 
 ## Human-only steps open
 

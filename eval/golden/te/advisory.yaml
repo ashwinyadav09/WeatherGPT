@@ -1,0 +1,38 @@
+- id: te-advisory-heatwave
+  language: te
+  intent: advisory
+  question: తీవ్రమైన వడగాల్పుల సమయంలో తీసుకోవాల్సిన జాగ్రత్తలు ఏమిటి?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: te-advisory-coldwave
+  language: te
+  intent: advisory
+  question: తీవ్రమైన శీతల గాలుల సమయంలో తీసుకోవాల్సిన జాగ్రత్తలు ఏమిటి?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: te-advisory-lightning
+  language: te
+  intent: advisory
+  question: ఉరుములు, మెరుపుల సమయంలో ఎలాంటి రక్షణ చర్యలు పాటించాలి?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: te-advisory-crop
+  language: te
+  intent: advisory
+  question: ప్రతికూల వాతావరణంలో పంటల రక్షణ కోసం వ్యవసాయ సలహా ఏమిటి?
+  expect:
+    source_named:
+    - ICAR
+    - GKMS
+    - NDMA
+    - IMD
+    refusal: false

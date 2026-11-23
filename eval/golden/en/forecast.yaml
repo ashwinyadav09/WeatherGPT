@@ -1,0 +1,176 @@
+- id: en-forecast-delhi-001
+  language: en
+  intent: forecast
+  place: Delhi
+  place_id: delhi
+  day: tomorrow
+  question: Will it rain tomorrow in Delhi?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-mumbai-002
+  language: en
+  intent: forecast
+  place: Mumbai
+  place_id: mumbai
+  day: tomorrow
+  question: What will be the temperature in Mumbai tomorrow?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 34.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-bengaluru-003
+  language: en
+  intent: forecast
+  place: Bengaluru
+  place_id: bengaluru
+  day: tomorrow
+  question: Will it rain tomorrow in Bengaluru?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-chennai-004
+  language: en
+  intent: forecast
+  place: Chennai
+  place_id: chennai
+  day: tomorrow
+  question: What will be the temperature in Chennai tomorrow?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-kolkata-005
+  language: en
+  intent: forecast
+  place: Kolkata
+  place_id: kolkata
+  day: tomorrow
+  question: Will it rain tomorrow in Kolkata?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-hyderabad-006
+  language: en
+  intent: forecast
+  place: Hyderabad
+  place_id: hyderabad
+  day: tomorrow
+  question: What will be the temperature in Hyderabad tomorrow?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-jaipur-007
+  language: en
+  intent: forecast
+  place: Jaipur
+  place_id: jaipur
+  day: tomorrow
+  question: Will it rain tomorrow in Jaipur?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-shimla-008
+  language: en
+  intent: forecast
+  place: Shimla
+  place_id: shimla
+  day: tomorrow
+  question: What will be the temperature in Shimla tomorrow?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 15.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-pune-009
+  language: en
+  intent: forecast
+  place: Pune
+  place_id: pune
+  day: tomorrow
+  question: Will it rain tomorrow in Pune?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-guwahati-010
+  language: en
+  intent: forecast
+  place: Guwahati
+  place_id: guwahati
+  day: tomorrow
+  question: What will be the temperature in Guwahati tomorrow?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: en-forecast-varanasi-011
+  language: en
+  intent: forecast
+  place: Varanasi
+  place_id: varanasi
+  day: tomorrow
+  question: Will it rain tomorrow in Varanasi?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed

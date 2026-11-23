@@ -1,0 +1,38 @@
+- id: or-advisory-heatwave
+  language: or
+  intent: advisory
+  question: ପ୍ରଚଣ୍ଡ ଗ୍ରୀଷ୍ମ ପ୍ରବାହ ସମୟରେ କେଉଁ ସତର୍କତା ଅବଲମ୍ବନ କରିବା ଉଚିତ?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: or-advisory-coldwave
+  language: or
+  intent: advisory
+  question: ଶୀତ ଲହରୀରୁ ସୁରକ୍ଷା ପାଇଁ ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ କ’ଣ?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: or-advisory-lightning
+  language: or
+  intent: advisory
+  question: ବଜ୍ରପାତ ଏବଂ ଝଡ଼ ସମୟରେ କେଉଁ ନିରାପତ୍ତା ନିୟମ ମାନିବା ଉଚିତ?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: or-advisory-crop
+  language: or
+  intent: advisory
+  question: ପ୍ରତିକୂଳ ପାଗରେ ଫସଲ ସୁରକ୍ଷା ପାଇଁ କୃଷି ପରାମର୍ଶ କ’ଣ?
+  expect:
+    source_named:
+    - ICAR
+    - GKMS
+    - NDMA
+    - IMD
+    refusal: false

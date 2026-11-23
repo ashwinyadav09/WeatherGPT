@@ -1,0 +1,38 @@
+- id: mr-advisory-heatwave
+  language: mr
+  intent: advisory
+  question: उष्णतेच्या लाटेत आरोग्याची कोणती काळजी घ्यावी?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: mr-advisory-coldwave
+  language: mr
+  intent: advisory
+  question: थंडीच्या लाटेपासून संरक्षणासाठी काय उपाययोजना कराव्यात?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: mr-advisory-lightning
+  language: mr
+  intent: advisory
+  question: विजांचा कडकडाट आणि वादळाच्या वेळी कोणते सुरक्षा नियम पाळावेत?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: mr-advisory-crop
+  language: mr
+  intent: advisory
+  question: विपरीत हवामानात पिकांच्या संरक्षणासाठी कृषी सल्ला काय आहे?
+  expect:
+    source_named:
+    - ICAR
+    - GKMS
+    - NDMA
+    - IMD
+    refusal: false

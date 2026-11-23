@@ -1,0 +1,38 @@
+- id: ta-advisory-heatwave
+  language: ta
+  intent: advisory
+  question: கடும் வெப்ப அலை வீசும்போது என்ன முன்னெச்சரிக்கை நடவடிக்கைகளை எடுக்க வேண்டும்?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: ta-advisory-coldwave
+  language: ta
+  intent: advisory
+  question: கடும் குளிர்காலத்திற்கான அதிகாரப்பூர்வ பாதுகாப்பு ஆலோசனைகள் என்ன?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: ta-advisory-lightning
+  language: ta
+  intent: advisory
+  question: இடி மின்னல் மற்றும் புயலின் போது பின்பற்ற வேண்டிய பாதுகாப்பு விதிகள் என்ன?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: ta-advisory-crop
+  language: ta
+  intent: advisory
+  question: மோசமான வானிலையின் போது பயிர்களைப் பாதுகாக்க வேளாண் ஆலோசனை என்ன?
+  expect:
+    source_named:
+    - ICAR
+    - GKMS
+    - NDMA
+    - IMD
+    refusal: false

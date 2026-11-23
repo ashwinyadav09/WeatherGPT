@@ -1,0 +1,176 @@
+- id: hi-forecast-delhi-001
+  language: hi
+  intent: forecast
+  place: Delhi
+  place_id: delhi
+  day: tomorrow
+  question: क्या कल दिल्ली में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-mumbai-002
+  language: hi
+  intent: forecast
+  place: Mumbai
+  place_id: mumbai
+  day: tomorrow
+  question: कल मुंबई में तापमान क्या रहेगा?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 34.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-bengaluru-003
+  language: hi
+  intent: forecast
+  place: Bengaluru
+  place_id: bengaluru
+  day: tomorrow
+  question: क्या कल बेंगलुरु में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-chennai-004
+  language: hi
+  intent: forecast
+  place: Chennai
+  place_id: chennai
+  day: tomorrow
+  question: कल चेन्नई में तापमान क्या रहेगा?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-kolkata-005
+  language: hi
+  intent: forecast
+  place: Kolkata
+  place_id: kolkata
+  day: tomorrow
+  question: क्या कल कोलकाता में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.2
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-hyderabad-006
+  language: hi
+  intent: forecast
+  place: Hyderabad
+  place_id: hyderabad
+  day: tomorrow
+  question: कल हैदराबाद में तापमान क्या रहेगा?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-jaipur-007
+  language: hi
+  intent: forecast
+  place: Jaipur
+  place_id: jaipur
+  day: tomorrow
+  question: क्या कल जयपुर में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-shimla-008
+  language: hi
+  intent: forecast
+  place: Shimla
+  place_id: shimla
+  day: tomorrow
+  question: कल शिमला में तापमान क्या रहेगा?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 15.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-pune-009
+  language: hi
+  intent: forecast
+  place: Pune
+  place_id: pune
+  day: tomorrow
+  question: क्या कल पुणे में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-guwahati-010
+  language: hi
+  intent: forecast
+  place: Guwahati
+  place_id: guwahati
+  day: tomorrow
+  question: कल गुवाहाटी में तापमान क्या रहेगा?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: hi-forecast-varanasi-011
+  language: hi
+  intent: forecast
+  place: Varanasi
+  place_id: varanasi
+  day: tomorrow
+  question: क्या कल वाराणसी में बारिश होगी?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 26.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed

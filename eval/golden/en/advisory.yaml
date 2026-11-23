@@ -1,0 +1,38 @@
+- id: en-advisory-heatwave
+  language: en
+  intent: advisory
+  question: What precautions should I take during a severe heatwave?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: en-advisory-coldwave
+  language: en
+  intent: advisory
+  question: What is the official advisory for severe coldwave?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: en-advisory-lightning
+  language: en
+  intent: advisory
+  question: What safety rules should I follow during lightning and thunderstorms?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: en-advisory-crop
+  language: en
+  intent: advisory
+  question: What is the agriculture advisory for crop protection during harsh weather?
+  expect:
+    source_named:
+    - ICAR
+    - GKMS
+    - NDMA
+    - IMD
+    refusal: false

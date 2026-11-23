@@ -1,0 +1,38 @@
+- id: hi-advisory-heatwave
+  language: hi
+  intent: advisory
+  question: भीषण लू से बचाव के लिए क्या उपाय करने चाहिए?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: hi-advisory-coldwave
+  language: hi
+  intent: advisory
+  question: शीतलहर से सुरक्षा के लिए आधिकारिक सलाह क्या है?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: hi-advisory-lightning
+  language: hi
+  intent: advisory
+  question: आकाशीय बिजली और तूफान के समय क्या सावधानियां बरतनी चाहिए?
+  expect:
+    source_named:
+    - NDMA
+    - IMD
+    refusal: false
+- id: hi-advisory-crop
+  language: hi
+  intent: advisory
+  question: मौसम खराब होने पर फसलों की सुरक्षा के लिए क्या कृषि सलाह है?
+  expect:
+    source_named:
+    - ICAR
+    - GKMS
+    - NDMA
+    - IMD
+    refusal: false

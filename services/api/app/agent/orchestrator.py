@@ -181,12 +181,19 @@ class Orchestrator:
             return
 
         # 4. Aviation briefing query (Decision D3: recognized and politely declined)
-        aviation_terms = ["aviation", "metar", "taf", "aerodrome", "pilot briefing", "flight weather"]
+        aviation_terms = ["aviation", "metar", "taf", "aerodrome", "pilot briefing", "flight weather", "विमान", "விமானம்", "విమానం"]
         if any(term in req.text.lower() for term in aviation_terms):
-            msg = (
-                "हवाई मौसम ब्रीफिंग (METAR/TAF) इस पायलट संस्करण में समर्थित नहीं है। आधिकारिक विमानन मौसम के लिए कृपया IMD विमानन पोर्टल देखें।"
-                if lang == "hi"
-                else "Aviation weather briefings (METAR/TAF) are not supported in this public-interest pilot. Please consult official aviation portals for flight planning."
+            aviation_msgs = {
+                "hi": "हवाई मौसम ब्रीफिंग (METAR/TAF) इस पायलट संस्करण में समर्थित नहीं है। आधिकारिक विमानन मौसम के लिए कृपया IMD विमानन पोर्टल देखें।",
+                "bn": "বিমান চলাচল সংক্রান্ত আবহাওয়া ব্রিফिंग (METAR/TAF) এই পাইলট সংস্করণে সমর্থিত নয়। ফ্লাইট পরিকল্পনার জন্য অনুগ্রহ করে সরকারি বিমান চলাচল পোর্টাল দেখুন।",
+                "mr": "विमान वाहतूक हवामान माहिती (METAR/TAF) या पायलट प्रकल्पात समर्थित नाही. कृपया अधिकृत विमान वाहतूक हवामान पोर्टलचा वापर करा.",
+                "te": "విమానయాన వాతావరణ సమాచారం (METAR/TAF) ఈ పైలట్ ప్రాజెక్ట్‌లో అందుబాటులో లేదు. విమాన ప్రణాళిక కోసం దయచేసి అధికారిక పోర్టల్‌లను చూడండి.",
+                "ta": "விமான வானிலை விவரங்கள் (METAR/TAF) இந்த முன்னோடி திட்டத்தில் ஆதரிக்கப்படவில்லை. விமான திட்டமிடலுக்கு அதிகாரப்பூர்வ வானிலை போர்ட்டலைப் பார்க்கவும்.",
+                "or": "ବିମାନ ଚଳାଚଳ ପାଣିପାଗ ବିବରଣୀ (METAR/TAF) ଏହି ପାଇଲଟ୍ ପ୍ରକଳ୍ପରେ ସମର୍ଥିତ ନୁହେଁ। ବିମାନ ଯୋଜନା ପାଇଁ ଦୟାକରି ସରକାରୀ ବିମାନ ଚଳାଚଳ ପୋର୍ଟାଲ୍ ଦେଖନ୍ତୁ।",
+            }
+            msg = aviation_msgs.get(
+                lang,
+                "Aviation weather briefings (METAR/TAF) are not supported in this public-interest pilot. Please consult official aviation portals for flight planning."
             )
             yield {
                 "event": "card",
@@ -195,6 +202,7 @@ class Orchestrator:
                     "source_line": "WeatherGPT Policy: Non-commercial public pilot",
                     "caveat": msg,
                     "actions": ["IMD Aviation Weather"],
+                    "category": "refusal",
                 },
             }
             yield {"event": "token", "data": {"text": msg}}
@@ -468,8 +476,30 @@ class Orchestrator:
         if not place:
             place = self._get_session_place(req.session_id)
 
+        # Check if query is an advisory question that does not require a specific town/city
+        advisory_keywords = [
+            "heat wave", "heatwave", "cold wave", "coldwave", "drinking water", "लू", "ठंड", "शीतलहर", "do's and don'ts",
+            "advice", "guidance", "guidelines", "ndma", "precaution", "what should i do", "safety", "उपाय", "सलाह", "बचाव",
+            "crop", "wheat", "rice", "paddy", "farming", "sowing", "irrigation", "फसल", "कृषि", "सिंचाई", "बुवाई", "kheti", "धान", "गेहूं",
+            "lightning", "बिजली", "आकाशीय बिजली", "तूफान", "thunderstorm",
+            "colour code", "yellow warning", "orange alert", "red warning", "कलर कोड",
+            "তাপদাহ", "শৈত্যপ্রবাহ", "বজ্রপাত", "পরামর্শ", "সতর্কতা",
+            "उष्णतेच्या", "लाटेत", "विजांचा", "पिकांच्या", "काळजी",
+            "వడగాల్పుల", "శీతల గాలుల", "ఉరుములు", "మెరుపుల", "పంటల", "జాగ్రత్తలు",
+            "வெப்ப அலை", "குளிர்கால", "இடி மின்னல்", "பயிர்களை", "முன்னெச்சரிக்கை",
+            "ଗ୍ରୀଷ୍ମ ପ୍ରବାହ", "ଶୀତ ଲହରୀ", "ବଜ୍ରପାତ", "ସତର୍କତା", "ଫସଲ", "କୃଷି", "ପରାମର୍ଶ", "ସୁରକ୍ଷା",
+        ]
+        is_advisory_q = any(w in req.text.lower() for w in advisory_keywords)
+
         if place:
             self._update_session_place(req.session_id, place)
+            p_name = place.names.get(lang, place.names.get("en", place.id))
+            lat = place.lat
+            lon = place.lon
+            place_ref = PlaceReference(id=place.id, name=p_name, lat=lat, lon=lon)
+        elif is_advisory_q:
+            p_name = "India" if lang == "en" else "भारत"
+            place_ref = PlaceReference(id="in_national", name=p_name, lat=20.59, lon=78.96)
         else:
             prompt_msg = (
                 "कृपया अपने शहर या जिले का नाम बताएं।"
@@ -501,11 +531,6 @@ class Orchestrator:
             yield {"event": "done", "data": {"latency_ms": latency_ms}}
             return
 
-        p_name = place.names.get(lang, place.names.get("en", place.id))
-        lat = place.lat
-        lon = place.lon
-        place_ref = PlaceReference(id=place.id, name=p_name, lat=lat, lon=lon)
-
         # 6. Intent Routing & Tool Execution
         tools_executed: list[dict[str, Any]] = []
         evidence_packets: list[EvidencePacket] = []
@@ -516,13 +541,7 @@ class Orchestrator:
         # Check intent keywords
         is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
         is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
-        is_advisory = any(w in req.text.lower() for w in [
-            "heat wave", "cold wave", "drinking water", "लू", "ठंड", "शीतलहर", "do's and don'ts",
-            "advice", "guidance", "precaution", "what should i do", "safety", "उपाय", "सलाह", "बचाव",
-            "crop", "wheat", "rice", "paddy", "farming", "sowing", "irrigation", "फसल", "कृषि", "सिंचाई", "बुवाई", "kheti", "धान", "गेहूं",
-            "lightning", "बिजली", "आकाशीय बिजली", "तूफान", "thunderstorm",
-            "colour code", "yellow warning", "orange alert", "red warning", "कलर कोड",
-        ])
+        is_advisory = any(w in req.text.lower() for w in advisory_keywords)
 
         if is_climate:
             intent = "climate_history"
