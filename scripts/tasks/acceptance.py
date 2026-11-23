@@ -51,6 +51,7 @@ def run_sub(cmd: list[str]) -> bool:
 
 
 def get_active_results_dir() -> Path:
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     today_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     dated = RESULTS_DIR / today_str
     if dated.exists():
