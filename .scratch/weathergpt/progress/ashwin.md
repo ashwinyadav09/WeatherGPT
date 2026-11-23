@@ -34,7 +34,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R8.1 | Mark and rewrite what is untrue | done | Merged in PR #71 |
 | R8.2 | Delete the simulation code | done | Merged in PR #72 |
 | R8.3 | Repair translations | done | Merged in PR #73 |
-| R8.4 | Point evaluation and trace at the real system | in-review | Branch ticket/R8.4-point-eval-trace-real-system |
+| R8.4 | Point evaluation and trace at the real system | done | Merged in PR #74 |
 
 ## Assumptions
 
