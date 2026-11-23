@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pytest
 
+from services.api.app.agent.orchestrator import ChatRequest, Orchestrator
 from services.api.app.config import settings
-from services.api.app.conversation.agent import ChatRequest, ConversationAgent
 from services.api.app.modules.advisory.agromet import AgrometAdapter
 from services.api.app.modules.advisory.marine import MarineAdapter
 
@@ -101,7 +101,7 @@ async def test_agromet_advisory_wheat_and_rice_stages():
             language="hi",
         )
         assert res_rice_harvest_hi["status"] == "success"
-        assert ("कटाई" in res_rice_harvest_hi["advisory_text"] or "पानी" in res_rice_harvest_hi["advisory_text"])
+        assert "कटाई" in res_rice_harvest_hi["advisory_text"] or "पानी" in res_rice_harvest_hi["advisory_text"]
     finally:
         settings.agromet_fixture_enabled = orig
 
@@ -127,7 +127,7 @@ async def test_agromet_never_gives_pesticide_doses():
         assert res["status"] == "refused_pesticide_dose"
         assert res["pesticide_refusal"] is True
         assert "1800-180-1551" in str(res)
-        assert ("KVK" in str(res) or "कृषि विज्ञान केंद्र" in str(res) or "Kisan Call Centre" in str(res))
+        assert "KVK" in str(res) or "कृषि विज्ञान केंद्र" in str(res) or "Kisan Call Centre" in str(res)
         # Ensure no dosage units are returned
         assert "ml/acre" not in str(res).lower()
         assert "kg/ha" not in str(res).lower()
@@ -177,7 +177,7 @@ async def test_marine_bulletin_and_fishermen_warnings():
 @pytest.mark.asyncio
 async def test_conversation_scenario_wheat_farmer():
     """Scenario test: Farmer asks for wheat sowing advisory in Ludhiana."""
-    agent = ConversationAgent()
+    agent = Orchestrator()
     req = ChatRequest(
         session_id="wheat_scenario_1",
         text="What is the agromet advisory for wheat sowing in Ludhiana?",
@@ -226,7 +226,7 @@ async def test_conversation_scenario_wheat_farmer():
 @pytest.mark.asyncio
 async def test_conversation_scenario_rice_farmer_hindi():
     """Scenario test: Farmer asks in Hindi for rice flowering stage advisory in Varanasi."""
-    agent = ConversationAgent()
+    agent = Orchestrator()
     req = ChatRequest(
         session_id="rice_scenario_hi",
         text="वाराणसी में धान की फसल के लिए मौसम आधारित सलाह क्या है?",
@@ -272,7 +272,7 @@ async def test_conversation_scenario_rice_farmer_hindi():
 @pytest.mark.asyncio
 async def test_conversation_scenario_coastal_fisherman_marine_warning():
     """Scenario test: Fisherman asks about sea conditions and warnings along Konkan coast."""
-    agent = ConversationAgent()
+    agent = Orchestrator()
     req = ChatRequest(
         session_id="marine_scenario_1",
         text="What is the sea condition and fishermen warning for Konkan coast?",
@@ -316,4 +316,3 @@ async def test_conversation_scenario_coastal_fisherman_marine_warning():
         assert "NOT to venture" in full_text
     finally:
         settings.agromet_fixture_enabled = orig
-

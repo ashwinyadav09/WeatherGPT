@@ -19,11 +19,12 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from eval.harness import get_per_city_forecast_transport
-from services.api.app.conversation.agent import ChatRequest, ConversationAgent
+from services.api.app.agent.orchestrator import ChatRequest, Orchestrator
 from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
 from services.api.app.modules.forecast.service import ForecastService
 from services.api.app.modules.location.adapters.open_meteo_geocoding import OpenMeteoGeocodingAdapter
 from services.api.app.modules.location.resolver import LocationResolver
+from services.api.app.registry import registry
 
 RESULTS_DIR = ROOT / "eval" / "results"
 REPORTS_DIR = ROOT / "reports"
@@ -59,7 +60,7 @@ def load_group_questions(lang: str) -> list[str]:
     return questions
 
 
-async def measure_query_latency(agent: ConversationAgent, question: str, lang: str = "en") -> tuple[float, float]:
+async def measure_query_latency(agent: Orchestrator, question: str, lang: str = "en") -> tuple[float, float]:
     """Measure Time to First Token (TTFT) and Total Duration in ms."""
     req = ChatRequest(
         session_id=f"bench_{uuid.uuid4().hex[:8]}",
@@ -90,7 +91,7 @@ async def run_benchmark(queries_per_group: int = 100) -> dict[str, Any]:
 
     geocoder = OpenMeteoGeocodingAdapter(client=mock_client)
     loc_resolver = LocationResolver(geocoder=geocoder)
-    agent = ConversationAgent(forecast_service=fc_service, location_resolver=loc_resolver)
+    agent = registry.get_orchestrator(forecast_service=fc_service, location_resolver=loc_resolver)
 
     # 1. English group
     en_pool = load_group_questions("en") or ["Will it rain tomorrow in Delhi?"]
