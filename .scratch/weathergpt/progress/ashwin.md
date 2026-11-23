@@ -26,7 +26,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R2.4 | Trace event | done | Merged in PR #63 |
 | R3.5 | RAG advisory engine | done | Merged in PR #64 |
 | R5 | Real alert ingest | done | Merged in PR #65 |
-| R6.1 | Golden sets | in-review | Rebuilt golden sets by intent with per-city Open-Meteo fixtures; quality rubric LLM judge calibrated with Cohen's kappa (0.76); all 7 Tier-1 languages passing 100% |
+| R6.1 | Golden sets | done | Merged in PR #66 |
 
 ## Assumptions
 
