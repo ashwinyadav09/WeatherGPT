@@ -20,12 +20,15 @@ from services.api.app.modules.alerts.sachet_adapter import SachetCAPAdapter, par
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
 SACHET_FIXTURES = ROOT / "eval" / "fixtures" / "sachet"
+TEST_FIXTURES = ROOT / "services" / "api" / "tests" / "fixtures"
 
 
 # ── Helper ───────────────────────────────────────────────────────────────────
 
 def load_fixture(name: str) -> dict:
     p = SACHET_FIXTURES / name
+    if not p.exists():
+        p = TEST_FIXTURES / name
     with p.open("r", encoding="utf-8") as f:
         return json.load(f)
 

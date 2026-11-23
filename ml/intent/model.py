@@ -1,13 +1,17 @@
+"""Keyword-rule intent and slot baseline (Ticket 15 / R8.2).
+
+Classifies user queries into 8 intents: current, forecast, alert, advisory,
+climate, explain, meta, unsafe. Extracts places, time windows, and crops.
+Retained as RuleIntentBaseline per Ticket R8.2.
+"""
+
 from __future__ import annotations
 
-import json
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-GOLDEN_PATH = ROOT / "ml" / "intent" / "datasets" / "golden.json"
 
 
 @dataclass
@@ -15,17 +19,17 @@ class PredictionResult:
     intent: str
     confidence: float
     slots: dict[str, str] = field(default_factory=dict)
-    model_version: str = "intent-multilingual-v1.0"
+    model_version: str = "rule-intent-baseline-v1.0"
 
 
-class IntentSlotModel:
-    """Multilingual Intent and Slot classifier for weather inquiries.
+class RuleIntentBaseline:
+    """Keyword-rule baseline intent and slot classifier for weather inquiries.
 
     Classifies user queries into 8 intents: current, forecast, alert, advisory,
-    climate, explain, meta, unsafe. Extracts places, time windows, and crops in milliseconds.
+    climate, explain, meta, unsafe. Extracts places, time windows, and crops.
     """
 
-    MODEL_VERSION = "intent-multilingual-v1.0"
+    MODEL_VERSION = "rule-intent-baseline-v1.0"
 
     INTENT_KEYWORDS: dict[str, list[str]] = {
         "unsafe": [
@@ -198,19 +202,9 @@ class IntentSlotModel:
         (r"\b(next\s*week|agla\s*hafta)\b", "next week"),
     ]
 
-    def load_golden_set(self) -> list[dict[str, Any]]:
-        if not GOLDEN_PATH.exists():
-            from ml.intent.dataset_generator import generate_dataset
-
-            _, golden = generate_dataset()
-            return golden
-        with GOLDEN_PATH.open("r", encoding="utf-8") as f:
-            return json.load(f)
-
     def predict(self, text: str) -> PredictionResult:
         low = text.lower()
 
-        # Score intents based on keyword matches
         scores: dict[str, float] = {k: 0.0 for k in self.INTENT_KEYWORDS}
         total_hits = 0
 
@@ -221,12 +215,10 @@ class IntentSlotModel:
                     scores[intent] += weight
                     total_hits += 1
 
-        # Check order of precedence: unsafe check always takes highest priority
         if scores["unsafe"] > 0:
             best_intent = "unsafe"
             confidence = 0.99
         elif total_hits == 0:
-            # Low confidence fallback
             best_intent = "current"
             confidence = 0.35
         else:
@@ -234,22 +226,18 @@ class IntentSlotModel:
             max_score = scores[best_intent]
             confidence = min(0.98, round(0.70 + (max_score * 0.10), 2))
 
-        # Extract slots
         slots: dict[str, str] = {}
 
-        # Place slot
         for kw, canonical in self.KNOWN_PLACES:
             if kw.lower() in low or kw in text:
                 slots["place"] = canonical
                 break
 
-        # Time slot
         for pat, canonical_time in self.TIME_PATTERNS:
             if re.search(pat, low, re.IGNORECASE):
                 slots["time_window"] = canonical_time
                 break
 
-        # Crop slot
         for kw, canonical_crop in self.KNOWN_CROPS:
             if kw.lower() in low or kw in text:
                 slots["crop"] = canonical_crop
@@ -265,3 +253,7 @@ class IntentSlotModel:
     def should_fallback_to_llm(self, result: PredictionResult, threshold: float = 0.75) -> bool:
         """Determines if query routing should fall back to LLM due to low confidence."""
         return result.confidence < threshold or result.intent == "explain"
+
+
+# Alias for backward compatibility
+IntentSlotModel = RuleIntentBaseline

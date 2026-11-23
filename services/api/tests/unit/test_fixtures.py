@@ -27,11 +27,13 @@ def test_fixture_loader_and_index():
 
 def test_sachet_fixtures():
     fixtures = list_fixtures(source="sachet")
-    # At least 20 real CAP samples plus 1 synthetic cyclone sample
-    assert len(fixtures) >= 21
+    # At least 20 real CAP samples (synthetic cyclone moved to test fixtures per R8.2)
+    assert len(fixtures) >= 20
     synthetic = [f for f in fixtures if f.get("provenance") == "synthetic"]
-    assert len(synthetic) >= 1
-    assert any("cyclone" in f.get("file", "").lower() or "cyclone" in f.get("hazard", "").lower() for f in synthetic)
+    assert len(synthetic) == 0, "Synthetic alerts must be excluded from SACHET fixture replays and metrics (R8.2)"
+    # Verify synthetic cyclone sample is isolated in test fixtures
+    synth_path = ROOT / "services" / "api" / "tests" / "fixtures" / "sachet_synthetic_cyclone.json"
+    assert synth_path.exists(), "Missing isolated synthetic cyclone in test fixtures"
 
 
 def test_open_meteo_fixtures():

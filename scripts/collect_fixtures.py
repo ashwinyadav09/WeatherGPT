@@ -125,41 +125,6 @@ def collect_sachet():
         except Exception as e:
             print(f"Error fetching {link}: {e}")
 
-    # Add synthetic cyclone alert
-    cyclone_alert = {
-        "_provenance": "synthetic",
-        "_source": "https://sachet.ndma.gov.in (modelled on IMD RSMC New Delhi tropical cyclone bulletin structure)",
-        "_recorded_at": now_iso,
-        "id": "urn:oid:2.49.0.1.356.sachet.cyclone.2026.01",
-        "sender": "IMD-RSMC-NewDelhi",
-        "sent": "2026-11-17T06:00:00Z",
-        "status": "Actual",
-        "msg_type": "Alert",
-        "hazard": "Very Severe Cyclonic Storm",
-        "severity": "Extreme",
-        "urgency": "Immediate",
-        "certainty": "Observed",
-        "onset": "2026-11-17T06:00:00Z",
-        "expires": "2026-11-19T18:00:00Z",
-        "areas": [
-            {
-                "areaDesc": "Coastal Odisha and West Bengal",
-                "polygon": "19.5,85.2 20.8,86.9 21.6,87.8 22.1,88.4 20.2,87.0 19.5,85.2",
-            }
-        ],
-        "text_by_language": {
-            "en": "Extreme Danger: Very Severe Cyclonic Storm with sustained wind speed 130-140 kmph gusting to 155 kmph. Fishermen advised not to venture into deep sea. Total suspension of fishing operations.",
-            "hi": "अत्यधिक चेतावनी: अत्यधिक भीषण चक्रवाती तूफान, हवा की गति 130-140 किमी/घंटा से 155 किमी/घंटा तक। मछुआरों को समुद्र में न जाने की सलाह दी जाती है।",
-        },
-        "source_url": "https://sachet.ndma.gov.in/cap_public_website/cyclone_synthetic.xml",
-        "authority_tier": 1,
-        "level": "red",
-    }
-    (sachet_dir / "sachet_synthetic_cyclone.json").write_text(
-        json.dumps(cyclone_alert, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
-    print("Saved synthetic cyclone alert.")
-
 
 def collect_open_meteo():
     om_dir = FIXTURES_DIR / "open_meteo"

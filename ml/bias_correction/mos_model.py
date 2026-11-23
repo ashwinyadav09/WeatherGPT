@@ -1,7 +1,10 @@
-"""Model Output Statistics (MOS) point-forecast bias correction model (Ticket 16).
+"""Model Output Statistics (MOS) point-forecast bias correction model (Ticket 16 / R8.2).
 
 Implements statistical correction for temperature (MAE/RMSE minimization)
 and calibrated probability of precipitation (POD, FAR, CSI) on time-split data.
+
+Hard-coded rain weights and skill table deleted per Ticket R8.2.
+Real post-processing pipelines are fitted in Phase R11.
 """
 
 from __future__ import annotations
@@ -20,12 +23,10 @@ class PointForecastMOSModel:
         self.is_trained = False
         # Temperature weights: [bias, raw_temp, sin_doy, cos_doy, elev_km, lat_scale]
         self.temp_weights: list[float] = [0.0, 1.0, 0.0, 0.0, 0.0, 0.0]
-        # Rain logistic weights: [bias, raw_rain, log_rain, is_monsoon, lat_scale]
-        self.rain_weights: list[float] = [-1.5, 0.45, 0.85, 1.1, -0.05]
-        self.val_skill: dict[str, dict[int, bool]] = {
-            "temperature_2m": {12: True, 24: True, 48: True, 72: True, 120: False, 240: False},
-            "precipitation": {12: True, 24: True, 48: True, 72: True, 120: False, 240: False},
-        }
+        # Rain logistic weights initialized empty (hard-coded weights deleted per R8.2)
+        self.rain_weights: list[float] = []
+        # Skill gate table initialized empty (hard-coded table deleted per R8.2)
+        self.val_skill: dict[str, dict[int, bool]] = {}
 
     def _temp_features(self, raw_temp: float, doy: int, elev: float, lat: float) -> list[float]:
         doy_rad = doy * 2.0 * math.pi / 365.0
@@ -38,9 +39,14 @@ class PointForecastMOSModel:
             lat / 10.0,
         ]
 
-    def train(self) -> None:
-        """Fits MOS regression weights on the 2021-2024 training dataset."""
-        train_data, _, _ = load_time_split_dataset()
+    def train(self, train_data: list[dict[str, Any]] | None = None) -> None:
+        """Fits MOS regression weights on the training dataset."""
+        if train_data is None:
+            train_data, _, _ = load_time_split_dataset()
+
+        if not train_data:
+            self.is_trained = False
+            return
 
         # Regularized ordinary least squares for temperature MOS:
         # Solve (X^T X + lambda I) w = X^T y
@@ -72,7 +78,6 @@ class PointForecastMOSModel:
         aug = [xtx[i] + [xty[i]] for i in range(n)]
 
         for col in range(n):
-            # Pivot
             pivot = col
             for r in range(col + 1, n):
                 if abs(aug[r][col]) > abs(aug[pivot][col]):
@@ -99,11 +104,13 @@ class PointForecastMOSModel:
 
     def predict_rain_probability(self, raw_rain: float, month: int, lat: float) -> float:
         """Estimates calibrated probability of rain occurrence (>= 2.5 mm)."""
+        if not self.rain_weights:
+            # If rain model is not fitted, return raw proxy or baseline
+            return 0.5 if raw_rain >= 2.5 else 0.05
         is_monsoon = 1.0 if 6 <= month <= 9 else 0.0
         log_rain = math.log1p(max(0.0, raw_rain))
         feats = [1.0, raw_rain, log_rain, is_monsoon, lat / 10.0]
         z = sum(w * f for w, f in zip(self.rain_weights, feats))
-        # Logistic sigmoid
         prob = 1.0 / (1.0 + math.exp(-z))
         return round(min(0.98, max(0.02, prob)), 3)
 
@@ -112,12 +119,18 @@ class PointForecastMOSModel:
         lead_skills = self.val_skill.get(variable, {})
         return lead_skills.get(lead_time_hours, False)
 
-    def evaluate_temperature(self) -> dict[str, dict[str, float]]:
+    def evaluate_temperature(self, test_data: list[dict[str, Any]] | None = None) -> dict[str, dict[str, float]]:
         """Evaluates temperature MAE and RMSE against raw model, persistence, and climatology."""
-        if not self.is_trained:
-            self.train()
+        if test_data is None:
+            _, _, test_data = load_time_split_dataset()
 
-        _, _, test_data = load_time_split_dataset()
+        if not test_data:
+            return {
+                "mos": {"mae": 0.0, "rmse": 0.0},
+                "raw_model": {"mae": 0.0, "rmse": 0.0},
+                "persistence": {"mae": 0.0, "rmse": 0.0},
+                "climatology": {"mae": 0.0, "rmse": 0.0},
+            }
 
         errors: dict[str, list[float]] = {
             "mos": [],
@@ -136,8 +149,8 @@ class PointForecastMOSModel:
                 lat=row["lat"],
             )
             y_raw = row["raw_temp_forecast"]
-            y_persist = row["persistence_temp"]
-            y_clim = row["climatology_temp"]
+            y_persist = row.get("persistence_temp", y_true)
+            y_clim = row.get("climatology_temp", y_true)
 
             errors["mos"].append(y_mos - y_true)
             errors["raw_model"].append(y_raw - y_true)
@@ -147,20 +160,25 @@ class PointForecastMOSModel:
         report = {}
         for k, errs in errors.items():
             n = len(errs)
-            mae = sum(abs(e) for e in errs) / n
-            rmse = math.sqrt(sum(e * e for e in errs) / n)
+            mae = sum(abs(e) for e in errs) / n if n > 0 else 0.0
+            rmse = math.sqrt(sum(e * e for e in errs) / n) if n > 0 else 0.0
             report[k] = {"mae": round(mae, 2), "rmse": round(rmse, 2)}
 
         return report
 
-    def evaluate_precipitation(self) -> dict[str, dict[str, float]]:
+    def evaluate_precipitation(self, test_data: list[dict[str, Any]] | None = None) -> dict[str, dict[str, float]]:
         """Evaluates rain event (>= 2.5 mm) POD, FAR, and CSI."""
-        if not self.is_trained:
-            self.train()
+        if test_data is None:
+            _, _, test_data = load_time_split_dataset()
 
-        _, _, test_data = load_time_split_dataset()
+        if not test_data:
+            return {
+                "mos": {"pod": 0.0, "far": 0.0, "csi": 0.0},
+                "raw_model": {"pod": 0.0, "far": 0.0, "csi": 0.0},
+                "persistence": {"pod": 0.0, "far": 0.0, "csi": 0.0},
+                "climatology": {"pod": 0.0, "far": 0.0, "csi": 0.0},
+            }
 
-        # Hits, False Alarms, Misses
         stats: dict[str, dict[str, int]] = {
             "mos": {"H": 0, "F": 0, "M": 0},
             "raw_model": {"H": 0, "F": 0, "M": 0},
@@ -178,8 +196,8 @@ class PointForecastMOSModel:
             )
             pred_mos = prob_mos >= 0.40
             pred_raw = row["raw_rain_forecast"] >= 2.5
-            pred_persist = row["persistence_rain"] >= 2.5
-            pred_clim = row["climatology_rain"] >= 4.0
+            pred_persist = row.get("persistence_rain", 0.0) >= 2.5
+            pred_clim = row.get("climatology_rain", 0.0) >= 4.0
 
             preds = {
                 "mos": pred_mos,
@@ -210,14 +228,11 @@ class PointForecastMOSModel:
 
         return report
 
-    def generate_reliability_diagram(self) -> dict[str, Any]:
+    def generate_reliability_diagram(self, test_data: list[dict[str, Any]] | None = None) -> dict[str, Any]:
         """Produces calibration bins of forecast probability vs observed relative frequency."""
-        if not self.is_trained:
-            self.train()
+        if test_data is None:
+            _, _, test_data = load_time_split_dataset()
 
-        _, _, test_data = load_time_split_dataset()
-
-        # Bins: [0.0 - 0.2), [0.2 - 0.4), [0.4 - 0.6), [0.6 - 0.8), [0.8 - 1.0]
         bin_edges = [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
         bins = []
 
