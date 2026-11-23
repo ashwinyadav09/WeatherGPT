@@ -6,6 +6,7 @@ from typing import Any
 
 import yaml
 
+from services.api.app.gateways.speech.exceptions import ProviderNotConfigured
 from services.api.app.gateways.translation.base import TranslationAdapter
 
 logger = logging.getLogger(__name__)
@@ -15,21 +16,33 @@ SEEDS_I18N = ROOT / "seeds" / "i18n"
 
 
 class LLMTranslationAdapter(TranslationAdapter):
-    """Fallback translation adapter using LLM with domain glossary in the prompt."""
+    """Fallback translation adapter using Groq LLM with domain glossary in the prompt."""
 
-    def __init__(self, llm_gateway: Any | None = None) -> None:
-        if llm_gateway:
-            self.llm = llm_gateway
+    def __init__(self, llm: Any | None = None) -> None:
+        if llm:
+            self.llm = llm
         else:
             from services.api.app.gateways.llm.gateway import LLMGateway
+            from services.api.app.registry import registry
 
-            self.llm = LLMGateway()
+            reg_gateway = registry.get_llm_gateway()
+            # Per R8.3: Remove stub from the translation chain (Groq LLM only, no stub fallback)
+            self.llm = LLMGateway(primary=reg_gateway.primary, fallback=reg_gateway.fallback, stub=None)
         self._glossaries: dict[str, dict[str, Any]] = {}
         self._load_glossaries()
 
     @property
     def source_id(self) -> str:
-        return "llm.translation"
+        return "groq.translation"
+
+    def is_configured(self) -> bool:
+        if hasattr(self.llm, "is_configured"):
+            return self.llm.is_configured()
+        if hasattr(self.llm, "primary") and self.llm.primary:
+            return bool(getattr(self.llm.primary, "api_key", None))
+        if hasattr(self.llm, "api_key"):
+            return bool(self.llm.api_key and self.llm.api_key.strip())
+        return False
 
     def _load_glossaries(self) -> None:
         if not SEEDS_I18N.exists():
@@ -49,6 +62,9 @@ class LLMTranslationAdapter(TranslationAdapter):
         tgt: str = "hi",
         **kwargs: Any,
     ) -> str:
+        if not self.is_configured():
+            raise ProviderNotConfigured("Groq LLM is not configured for translation.")
+
         glossary_terms = self._glossaries.get(tgt, {})
         glossary_sample = "\n".join(f"- {k}: {v}" for k, v in list(glossary_terms.items())[:20])
 
@@ -74,5 +90,9 @@ class LLMTranslationAdapter(TranslationAdapter):
         else:
             raw_text = str(res)
 
-        cleaned = raw_text.strip().strip('"').strip("'")
-        return cleaned or text
+        cleaned = (raw_text or "").strip().strip('"').strip("'")
+        if "according to open-meteo" in cleaned.lower():
+            raise RuntimeError("LLM returned stub sentence instead of real translation.")
+        if not cleaned:
+            raise RuntimeError("LLM returned empty translation.")
+        return cleaned

@@ -1,6 +1,6 @@
 {
   "language": "bn",
-  "generated_at": "2026-11-22T14:22:29.004703+00:00",
+  "generated_at": "2026-11-23T23:05:37.663875+00:00",
   "status": "pending_human_review",
   "human_review_required": true,
   "ui": {
@@ -127,73 +127,48 @@
   },
   "guidance": {
     "cold_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "cold_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA Cold Wave Safety - National Disaster Management Authority",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/cold-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+        "bn": {
+          "id": "ndma_guidance_cold_wave_bn",
+          "title": "অফিসিয়াল শৈত্যপ্রবাহ (কোল্ড ওয়েভ) সুরক্ষা পরামর্শ (এনডিএমএ ও আইএমডি)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
-        "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "একটি ভারী কাপড়ের বদলে একাধিক স্তরের ঢিলেঢালা, হালকা ও গরম পোশাক পরুন।",
+            "মাথা, ঘাড়, হাত ও পা ভালো করে ঢেকে রাখুন, কারণ এসব অংশ দিয়েই শরীরের সবচেয়ে বেশি তাপ বেরিয়ে যায়।",
+            "কয়লার উনুন বা গ্যাস হিটার ব্যবহারের সময় ঘরে পর্যাপ্ত বাতাস চলাচলের ব্যবস্থা রাখুন, যাতে প্রাণঘাতী কার্বন মনোক্সাইড বিষক্রিয়া না ঘটে।",
+            "বয়স্ক ব্যক্তি, শিশু এবং শ্বাসকষ্ট বা হৃদরোগীদের দীর্ঘক্ষণ ঠাণ্ডা বাতাসের সংস্পর্শ থেকে দূরে রাখুন।",
+            "শরীরের তাপমাত্রা বজায় রাখতে স্যুপ, গরম দুধ বা ভেষজ চায়ের মতো গরম পানীয় পান করুন।",
+            "তীব্র ঠাণ্ডার রাতে গবাদি পশু ও পোষা প্রাণীদের জন্য শুকনো বিছানা ও নিরাপদ আশ্রয়ের ব্যবস্থা করুন।"
           ]
         }
       }
     },
     "heat_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "heat_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA National Guidelines for Preparation of Action Plan - Prevention and Management of Heat Wave",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/heat-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+        "bn": {
+          "id": "ndma_guidance_heat_wave_bn",
+          "title": "অফিসিয়াল দাবদাহ (হিটওয়েভ) সুরক্ষা নির্দেশিকা (এনডিএমএ ও আইএমডি)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
-        "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "তৃষ্ণা না পেলেও ঘন ঘন পর্যাপ্ত জল পান করুন। ওআরএস, ডাবের জল বা বাড়িতে তৈরি লেবুর শরবত পান করুন।",
+            "হালকা রঙের, ঢিলেঢালা এবং আরামদায়ক সুতির পোশাক পরুন।",
+            "দুপুর ১২:০০ টা থেকে ৩:০০ টার মধ্যে তীব্র রোদে ভারী শারীরিক পরিশ্রম এড়িয়ে চলুন।",
+            "রোদে বাইরে বেরোনোর সময় সুতির কাপড়, টুপি বা ছাতা দিয়ে মাথা ঢেকে রাখুন।",
+            "শিশু, বয়স্ক ব্যক্তি, গর্ভবতী মহিলা এবং পোষা প্রাণীদের শীতল ও বাতাসযুক্ত ছায়াযুক্ত স্থানে রাখুন।",
+            "বন্ধ পার্ক করা গাড়ির ভিতরে শিশু বা পোষা প্রাণীকে কয়েক মিনিটের জন্যও একা ফেলে রাখবেন না।",
+            "কারও সানস্ট্রোক বা হিটস্ট্রোকের লক্ষণ (তীব্র জ্বর, বিভ্রান্তি, মাথা ঘোরা) দেখা দিলে তাকে তৎক্ষণাৎ ছায়ায় আনুন, ভেজা তোয়ালে দিয়ে শরীর মুছুন এবং দ্রুত ডাক্তারের পরামর্শ নিন।"
           ]
         }
       }

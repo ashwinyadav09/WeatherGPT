@@ -1,6 +1,6 @@
 {
   "language": "ta",
-  "generated_at": "2026-11-22T14:22:29.039546+00:00",
+  "generated_at": "2026-11-23T23:05:37.723298+00:00",
   "status": "pending_human_review",
   "human_review_required": true,
   "ui": {
@@ -127,73 +127,48 @@
   },
   "guidance": {
     "cold_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "cold_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA Cold Wave Safety - National Disaster Management Authority",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/cold-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+        "ta": {
+          "id": "ndma_guidance_cold_wave_ta",
+          "title": "அதிகாரப்பூர்வ குளிரலை பாதுகாப்பு வழிகாட்டுதல்கள் (என்டிஎம்ஏ மற்றும் ஐஎம்டி)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
-        "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "ஒரே தடிமனான ஆடைகளுக்குப் பதிலாக, பல அடுக்கு தளர்வான, மென்மையான கதகதப்பான ஆடைகளை அணியுங்கள்.",
+            "தலை, கழுத்து, கைகள் மற்றும் கால்களை நன்றாக மூடுங்கள், ஏனெனில் இந்த பகுதிகளிலிருந்தே உடலின் வெப்பம் அதிகம் வெளியேறுகிறது.",
+            "கரி அடுப்புகள் அல்லது ஹீட்டர்களைப் பயன்படுத்தும்போது கொடிய கார்பன் மோனாக்சைடு நச்சுத்தன்மையைத் தடுக்க போதுமான காற்றோட்டத்தை உறுதி செய்யுங்கள்.",
+            "முதியவர்கள், குழந்தைகள், ஆஸ்துமா மற்றும் இதய நோயாளிகளை குளிர்ந்த காற்றின் நேரடித் தாக்கத்திலிருந்து பாதுகாக்கவும்.",
+            "உடல் வெப்பநிலையைப் பராமரிக்க சூப், வெதுவெதுப்பான பால் அல்லது மூலிகை தேநீர் போன்ற சூடான பானங்களை அருந்துங்கள்.",
+            "கடும் குளிர்கால இரவுகளில் கால்நடைகள் மற்றும் செல்லப்பிராணிகளுக்கு உலர் படுக்கை மற்றும் பாதுகாப்பான தங்குமிடம் வழங்கவும்."
           ]
         }
       }
     },
     "heat_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "heat_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA National Guidelines for Preparation of Action Plan - Prevention and Management of Heat Wave",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/heat-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+        "ta": {
+          "id": "ndma_guidance_heat_wave_ta",
+          "title": "அதிகாரப்பூர்வ வெப்ப அலை பாதுகாப்பு வழிகாட்டுதல்கள் (என்டிஎம்ஏ மற்றும் ஐஎம்டி)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
-        "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "தாகம் எடுக்காவிட்டாலும் அடிக்கடி போதுமான தண்ணீர் குடியுங்கள். ஓஆர்எஸ், இளநீர் அல்லது எலுமிச்சை சாறு அருந்துங்கள்.",
+            "மென்மையான, தளர்வான, வெளிர் நிற பருத்தி ஆடைகளை அணியுங்கள்.",
+            "நண்பகல் 12:00 மணி முதல் மதியம் 3:00 மணி வரை கடுமையான வெயிலில் உடலுழைப்பு செய்வதைத் தவிர்க்கவும்.",
+            "வெயிலில் வெளியே செல்லும்போது துணி, தொப்பி அல்லது குடையால் தலையை மூடவும்.",
+            "குழந்தைகள், முதியவர்கள், கர்ப்பிணிப் பெண்கள் மற்றும் செல்லப்பிராணிகளை குளிர்ந்த, காற்றோட்டமான நிழலான இடங்களில் வைக்கவும்.",
+            "நிறுத்தப்பட்ட மூடிய வாகனங்களுக்குள் குழந்தைகளையோ அல்லது செல்லப்பிராணிகளையோ சில நிமிடங்களுக்கு கூட விட்டுச் செல்லாதீர்கள்.",
+            "யாருக்காவது வெப்ப பக்கவாத அறிகுறிகள் (அதிக காய்ச்சல், தலைசுற்றல், மயக்கம்) தென்பட்டால், உடனடியாக நிழலுக்குக் கொண்டுவந்து, குளிர்ந்த ஈரத்துணியால் துடைத்து, உடனே மருத்துவ உதவியை நாடுங்கள்."
           ]
         }
       }

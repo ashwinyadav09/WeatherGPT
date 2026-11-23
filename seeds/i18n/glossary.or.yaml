@@ -48,3 +48,6 @@ units:
   mm: ମିଲିମିଟର
   kmh: କିଲୋମିଟର ପ୍ରତି ଘଣ୍ଟା
   percent: ପ୍ରତିଶତ
+crops:
+  wheat: ଗହମ
+  rice: ଧାନ
