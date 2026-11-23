@@ -300,14 +300,45 @@ class Orchestrator:
         # 4c. Check for Agromet / Farming query (Wheat Sowing / Rice / Agromet)
         agro_terms = ["agromet", "wheat sowing", "धान की फसल", "गेहूं की बुवाई"]
         if any(k in req.text.lower() for k in agro_terms):
-            target_district = "Ludhiana"
+            target_district = None
             if req.place_id:
                 target_district = req.place_id.replace("_", " ").title()
             else:
-                # Extract place from text or default
+                # Extract place from text if available
                 resolved_agro = await self.location_resolver.resolve(req.text, language=lang)
                 if resolved_agro.get("resolved_place"):
                     target_district = resolved_agro["resolved_place"].names.get("en", resolved_agro["resolved_place"].id)
+
+            if not target_district:
+                prompt_msg = (
+                    "कृपया अपने जिले का नाम बताएं ताकि संबंधित कृषि परामर्श दी जा सके।"
+                    if lang == "hi"
+                    else "Please specify your district for agricultural advisories."
+                )
+                yield {
+                    "event": "card",
+                    "data": {
+                        "headline": "जिला स्पष्ट करें" if lang == "hi" else "District needed",
+                        "source_line": "WeatherGPT Location Resolver",
+                        "caveat": prompt_msg,
+                    },
+                }
+                yield {"event": "token", "data": {"text": prompt_msg}}
+                yield {
+                    "event": "trace",
+                    "data": {
+                        "intent": "clarification",
+                        "confidence": 1.0,
+                        "router_path": "location_resolver",
+                        "tools": [],
+                        "models": [],
+                        "verifier": {"passed": True, "checked_numbers": [], "failures": []},
+                        "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
+                    },
+                }
+                latency_ms = int((time.time() - start_time) * 1000)
+                yield {"event": "done", "data": {"latency_ms": latency_ms}}
+                return
 
             crop = "rice" if any(r in req.text.lower() for r in ["rice", "paddy", "धान", "चावल", "dhan"]) else "wheat"
             agro_data = await self.advisory_engine.agromet_adapter.get_agromet_advisory(

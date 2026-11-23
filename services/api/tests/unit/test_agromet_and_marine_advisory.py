@@ -316,3 +316,33 @@ async def test_conversation_scenario_coastal_fisherman_marine_warning():
         assert "NOT to venture" in full_text
     finally:
         settings.agromet_fixture_enabled = orig
+
+
+@pytest.mark.asyncio
+async def test_agromet_no_ludhiana_default_without_place():
+    """Verify that an agromet query without a district does NOT default to Ludhiana (R8.5)."""
+    agent = Orchestrator()
+    req = ChatRequest(
+        session_id="agro_no_dist",
+        text="What is the agromet advisory for wheat sowing?",
+        language="en",
+    )
+    tokens: list[str] = []
+    card_data: dict | None = None
+    trace_data: dict | None = None
+    async for ev in agent.run_chat(req):
+        if ev["event"] == "token":
+            tokens.append(ev["data"]["text"])
+        elif ev["event"] == "card":
+            card_data = ev["data"]
+        elif ev["event"] == "trace":
+            trace_data = ev["data"]
+
+    full_text = "".join(tokens)
+    assert card_data is not None
+    assert "District needed" in card_data["headline"] or "Location needed" in card_data["headline"]
+    assert "Please specify your district" in full_text
+    assert "Ludhiana" not in full_text
+    assert trace_data is not None
+    assert trace_data["intent"] == "clarification"
+    assert trace_data["router_path"] == "location_resolver"
