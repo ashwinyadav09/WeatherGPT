@@ -1,0 +1,155 @@
+version: '1.0'
+language: mr
+total_cases: 25
+description: Consented and field-like Marathi weather speech test set for WER, PNER, and NER
+utterances:
+- id: utt_mr_001
+  text: उद्या पुण्यात पाऊस पडेल का?
+  expected_place: पुणे
+  expected_place_en: pune
+  domain: rainfall
+  expected_numbers: []
+- id: utt_mr_002
+  text: मुंबईत आज तापमान ३२ अंश सेल्सिअस राहील का?
+  expected_place: मुंबई
+  expected_place_en: mumbai
+  domain: temperature
+  expected_numbers: [32]
+- id: utt_mr_003
+  text: नागपूरमध्ये उद्या ४४ अंश उष्णतेची लाट येईल का?
+  expected_place: नागपूर
+  expected_place_en: nagpur
+  domain: alerts
+  expected_numbers: [44]
+- id: utt_mr_004
+  text: नाशिकमध्ये द्राक्ष बागेसाठी २० मिमी पाऊस पुरेसा आहे का?
+  expected_place: नाशिक
+  expected_place_en: nashik
+  domain: agromet
+  expected_numbers: [20]
+- id: utt_mr_005
+  text: छत्रपती संभाजीनगरमध्ये पुढील ३ दिवसांचा हवामान अंदाज काय आहे?
+  expected_place: छत्रपती संभाजीनगर
+  expected_place_en: aurangabad
+  domain: forecast
+  expected_numbers: [3]
+- id: utt_mr_006
+  text: सोलापूरमध्ये आज वाऱ्याचा वेग ताशी ३० किमी असेल का?
+  expected_place: सोलापूर
+  expected_place_en: solapur
+  domain: wind
+  expected_numbers: [30]
+- id: utt_mr_007
+  text: कोल्हापुरात उद्या ५० मिमी मुसळधार पावसाची शक्यता आहे का?
+  expected_place: कोल्हापूर
+  expected_place_en: kolhapur
+  domain: rainfall
+  expected_numbers: [50]
+- id: utt_mr_008
+  text: साताऱ्यात आज रात्री तापमान १४ अंशांपर्यंत खाली जाईल का?
+  expected_place: सातारा
+  expected_place_en: satara
+  domain: temperature
+  expected_numbers: [14]
+- id: utt_mr_009
+  text: अमरावतीत सोयाबीन पेरणीसाठी ओल कधी येईल?
+  expected_place: अमरावती
+  expected_place_en: amravati
+  domain: agromet
+  expected_numbers: []
+- id: utt_mr_010
+  text: रत्नागिरीच्या समुद्रकिनारी ताशी ४५ किमी वेगाने वारे वाहतील का?
+  expected_place: रत्नागिरी
+  expected_place_en: ratnagiri
+  domain: alerts
+  expected_numbers: [45]
+- id: utt_mr_011
+  text: जळगावमध्ये केळी पिकासाठी ४० अंश तापमान हानिकारक आहे का?
+  expected_place: जळगाव
+  expected_place_en: jalgaon
+  domain: agromet
+  expected_numbers: [40]
+- id: utt_mr_012
+  text: ठाण्यात आज हवेतील आर्द्रता ८५ टक्के आहे का?
+  expected_place: ठाणे
+  expected_place_en: thane
+  domain: forecast
+  expected_numbers: [85]
+- id: utt_mr_013
+  text: नांदेडमध्ये पुढील २४ तासांत मेघगर्जनेसह पाऊस होईल का?
+  expected_place: नांदेड
+  expected_place_en: nanded
+  domain: alerts
+  expected_numbers: [24]
+- id: utt_mr_014
+  text: अकोल्यात कमाल तापमान ४३ अंशांवर पोहोचेल का?
+  expected_place: अकोला
+  expected_place_en: akola
+  domain: temperature
+  expected_numbers: [43]
+- id: utt_mr_015
+  text: लातूरमध्ये उद्या १० मिमी पावसाची शक्यता आहे का?
+  expected_place: लातूर
+  expected_place_en: latur
+  domain: rainfall
+  expected_numbers: [10]
+- id: utt_mr_016
+  text: चंद्रपुरात उन्हाची तीव्रता किती वाढेल?
+  expected_place: चंद्रपूर
+  expected_place_en: chandrapur
+  domain: forecast
+  expected_numbers: []
+- id: utt_mr_017
+  text: परभणीत कापूस पिकावर कीडनाशक फवारणीसाठी आज हवामान अनुकूल आहे का?
+  expected_place: परभणी
+  expected_place_en: parbhani
+  domain: agromet
+  expected_numbers: []
+- id: utt_mr_018
+  text: अहमदनगरमध्ये उद्या दुपारी तापमान ३५ अंश राहील का?
+  expected_place: अहमदनगर
+  expected_place_en: ahmednagar
+  domain: temperature
+  expected_numbers: [35]
+- id: utt_mr_019
+  text: सिंधुदुर्गात मच्छिमारांसाठी समुद्रात न जाण्याचा इशारा दिला आहे का?
+  expected_place: सिंधुदुर्ग
+  expected_place_en: sindhudurg
+  domain: alerts
+  expected_numbers: []
+- id: utt_mr_020
+  text: बीडमध्ये पुढील ५ दिवस हवामान कोरडे राहील का?
+  expected_place: बीड
+  expected_place_en: beed
+  domain: forecast
+  expected_numbers: [5]
+- id: utt_mr_021
+  text: यवतमाळमध्ये आज २५ किमी वेगाने वारे वाहणार आहेत का?
+  expected_place: यवतमाळ
+  expected_place_en: yavatmal
+  domain: wind
+  expected_numbers: [25]
+- id: utt_mr_022
+  text: गोंदियात उद्या रात्री किमान तापमान ११ अंश असेल का?
+  expected_place: गोंदिया
+  expected_place_en: gondia
+  domain: temperature
+  expected_numbers: [11]
+- id: utt_mr_023
+  text: उस्मानाबादमध्ये ज्वारी पिकासाठी पाऊस कधी पडेल?
+  expected_place: उस्मानाबाद
+  expected_place_en: osmanabad
+  domain: agromet
+  expected_numbers: []
+- id: utt_mr_024
+  text: रायगड जिल्ह्यात १०० मिमी अतिवृष्टीचा रेड अलर्ट आहे का?
+  expected_place: रायगड
+  expected_place_en: raigad
+  domain: alerts
+  expected_numbers: [100]
+- id: utt_mr_025
+  text: वर्ध्यात उद्या दिवसभरात आकाश ढगाळ राहील का?
+  expected_place: वर्धा
+  expected_place_en: wardha
+  domain: forecast
+  expected_numbers: []

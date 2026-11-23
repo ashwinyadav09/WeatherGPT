@@ -1,0 +1,155 @@
+version: '1.0'
+language: bn
+total_cases: 25
+description: Consented and field-like Bengali weather speech test set for WER, PNER, and NER
+utterances:
+- id: utt_bn_001
+  text: কাল কলকাতায় কি বৃষ্টি হবে?
+  expected_place: কলকাতা
+  expected_place_en: kolkata
+  domain: rainfall
+  expected_numbers: []
+- id: utt_bn_002
+  text: শিলিগুড়িতে আজকের তাপমাত্রা কি ২৮ ডিগ্রি থাকবে?
+  expected_place: শিলিগুড়ি
+  expected_place_en: siliguri
+  domain: temperature
+  expected_numbers: [28]
+- id: utt_bn_003
+  text: হাওড়ায় কি কাল ঘণ্টায় ৩৫ কিমি বেগে বাতাস বইবে?
+  expected_place: হাওড়া
+  expected_place_en: howrah
+  domain: wind
+  expected_numbers: [35]
+- id: utt_bn_004
+  text: দুর্গাপুরে আগামী ৩ দিনের আবহাওয়া কেমন থাকবে?
+  expected_place: দুর্গাপুর
+  expected_place_en: durgapur
+  domain: forecast
+  expected_numbers: [3]
+- id: utt_bn_005
+  text: আসানসোলে কি ৪২ ডিগ্রি পর্যন্ত তাপপ্রবাহের সতর্কতা আছে?
+  expected_place: আসানসোল
+  expected_place_en: asansol
+  domain: alerts
+  expected_numbers: [42]
+- id: utt_bn_006
+  text: দার্জিলিংয়ে আজ রাতে তাপমাত্রা ৮ ডিগ্রিতে নামবে কি?
+  expected_place: দার্জিলিং
+  expected_place_en: darjeeling
+  domain: temperature
+  expected_numbers: [8]
+- id: utt_bn_007
+  text: মালদায় আম চাষের জন্য কি কাল বৃষ্টি হবে?
+  expected_place: মালদা
+  expected_place_en: malda
+  domain: agromet
+  expected_numbers: []
+- id: utt_bn_008
+  text: বর্ধমানে কাল ২০ মিমি বৃষ্টির সম্ভাবনা আছে কি?
+  expected_place: বর্ধমান
+  expected_place_en: bardhaman
+  domain: rainfall
+  expected_numbers: [20]
+- id: utt_bn_009
+  text: মেদিনীপুরে আজ বাতাসের আর্দ্রতা ৮০ শতাংশের বেশি কি?
+  expected_place: মেদিনীপুর
+  expected_place_en: medinipur
+  domain: forecast
+  expected_numbers: [80]
+- id: utt_bn_010
+  text: দিঘায় সমুদ্র উপকূলে কি ৫০ কিমি গতিতে ঝোড়ো হাওয়া বইবে?
+  expected_place: দিঘা
+  expected_place_en: digha
+  domain: alerts
+  expected_numbers: [50]
+- id: utt_bn_011
+  text: বহরমপুরে কাল সর্বোচ্চ তাপমাত্রা ৩৬ ডিগ্রি হতে পারে কি?
+  expected_place: বহরমপুর
+  expected_place_en: berhampore
+  domain: temperature
+  expected_numbers: [36]
+- id: utt_bn_012
+  text: জলপাইগুড়িতে চা বাগানের জন্য ১৫ মিমি বৃষ্টি প্রয়োজন।
+  expected_place: জলপাইগুড়ি
+  expected_place_en: jalpaiguri
+  domain: agromet
+  expected_numbers: [15]
+- id: utt_bn_013
+  text: কোচবিহারে কি আজ ভারী কুয়াশার সতর্কতা জারি হয়েছে?
+  expected_place: কোচবিহার
+  expected_place_en: coochbehar
+  domain: alerts
+  expected_numbers: []
+- id: utt_bn_014
+  text: পুরুলিয়ায় কাল সর্বনিম্ন তাপমাত্রা ১০ ডিগ্রি থাকবে কি?
+  expected_place: পুরুলিয়া
+  expected_place_en: purulia
+  domain: temperature
+  expected_numbers: [10]
+- id: utt_bn_015
+  text: বাঁকুড়ায় আগামী ৫ দিনে কি বৃষ্টির কোনো সম্ভাবনা নেই?
+  expected_place: বাঁকুড়া
+  expected_place_en: bankura
+  domain: forecast
+  expected_numbers: [5]
+- id: utt_bn_016
+  text: সুন্দরবন এলাকায় কি ৬০ কিমি বেগে ঘূর্ণঝড়ের আশঙ্কা আছে?
+  expected_place: সুন্দরবন
+  expected_place_en: sundarbans
+  domain: alerts
+  expected_numbers: [60]
+- id: utt_bn_017
+  text: শান্তিনিকেতনে কি কাল বিকেলবেলা হালকা বৃষ্টির পূর্বাভাস আছে?
+  expected_place: শান্তিনিকেতন
+  expected_place_en: santiniketan
+  domain: rainfall
+  expected_numbers: []
+- id: utt_bn_018
+  text: কালিম্পঙে কালকের তাপমাত্রা কি ১২ থেকে ১৮ ডিগ্রির মধ্যে থাকবে?
+  expected_place: কালিম্পং
+  expected_place_en: kalimpong
+  domain: temperature
+  expected_numbers: [12, 18]
+- id: utt_bn_019
+  text: তমলুকে ধান চাষের জন্য কি ৩০ মিমি বৃষ্টি হবে?
+  expected_place: তমলুক
+  expected_place_en: tamluk
+  domain: agromet
+  expected_numbers: [30]
+- id: utt_bn_020
+  text: কৃষ্ণনগরে বাতাসের গতিবেগ কি আজ ২৫ কিমি প্রতি ঘণ্টা?
+  expected_place: কৃষ্ণনগর
+  expected_place_en: krishnanagar
+  domain: wind
+  expected_numbers: [25]
+- id: utt_bn_021
+  text: হলদিয়া বন্দরে কি কাল ভারী বৃষ্টির হলুদ সতর্কতা রয়েছে?
+  expected_place: হলদিয়া
+  expected_place_en: haldia
+  domain: alerts
+  expected_numbers: []
+- id: utt_bn_022
+  text: রানাঘাটে আজ দুপুর ১২টায় আর্দ্রতা কত থাকবে?
+  expected_place: রানাঘাট
+  expected_place_en: ranaghat
+  domain: forecast
+  expected_numbers: [12]
+- id: utt_bn_023
+  text: আলিপুরদুয়ারে কাল ৫০ মিমি ভারী বর্ষণ হতে পারে কি?
+  expected_place: আলিপুরদুয়ার
+  expected_place_en: alipurduar
+  domain: rainfall
+  expected_numbers: [50]
+- id: utt_bn_024
+  text: রায়গঞ্জে আগামী ২৪ ঘণ্টায় বজ্রবিদ্যুৎ সহ বৃষ্টির পূর্বাভাস আছে?
+  expected_place: রায়গঞ্জ
+  expected_place_en: raiganj
+  domain: alerts
+  expected_numbers: [24]
+- id: utt_bn_025
+  text: বালুরঘাটে কাল দিনের তাপমাত্রা ৩০ ডিগ্রি ছাড়িয়ে যাবে কি?
+  expected_place: বালুরঘাট
+  expected_place_en: balurghat
+  domain: temperature
+  expected_numbers: [30]

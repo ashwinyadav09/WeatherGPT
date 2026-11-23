@@ -1,0 +1,155 @@
+version: '1.0'
+language: or
+total_cases: 25
+description: Consented and field-like Odia weather speech test set for WER, PNER, and NER
+utterances:
+- id: utt_or_001
+  text: କାଲି ଭୁବନେଶ୍ୱରରେ ବର୍ଷା ହେବ କି?
+  expected_place: ଭୁବନେଶ୍ୱର
+  expected_place_en: bhubaneswar
+  domain: rainfall
+  expected_numbers: []
+- id: utt_or_002
+  text: କଟକରେ ଆଜିର ତାପମାତ୍ରା ୩୨ ଡିଗ୍ରୀ ରହିବ କି?
+  expected_place: କଟକ
+  expected_place_en: cuttack
+  domain: temperature
+  expected_numbers: [32]
+- id: utt_or_003
+  text: ପୁରୀ ଉପକୂଳରେ ଘଣ୍ଟା ପ୍ରତି ୫୦ କିମି ବେଗରେ ପବନ ବହିବ କି?
+  expected_place: ପୁରୀ
+  expected_place_en: puri
+  domain: wind
+  expected_numbers: [50]
+- id: utt_or_004
+  text: ରାଉରକେଲାରେ ଆଗାମୀ ୩ ଦିନର ପାଣିପାଗ କିପରି ରହିବ?
+  expected_place: ରାଉରକେଲା
+  expected_place_en: rourkela
+  domain: forecast
+  expected_numbers: [3]
+- id: utt_or_005
+  text: ସମ୍ବଲପୁରରେ ୪୪ ଡିଗ୍ରୀ ସହ ଗ୍ରୀଷ୍ମ ପ୍ରବାହ ସତର୍କତା ଜାରି ହୋଇଛି କି?
+  expected_place: ସମ୍ବଲପୁର
+  expected_place_en: sambalpur
+  domain: alerts
+  expected_numbers: [44]
+- id: utt_or_006
+  text: ବାଲେଶ୍ୱରରେ ଧାନ ଚାଷ ପାଇଁ ୨୫ ମିମି ବର୍ଷା ହେବ କି?
+  expected_place: ବାଲେଶ୍ୱର
+  expected_place_en: baleswar
+  domain: agromet
+  expected_numbers: [25]
+- id: utt_or_007
+  text: ବ୍ରହ୍ମପୁରରେ ଆଜି ରାତିରେ ସର୍ବନିମ୍ନ ତାପମାତ୍ରା ୧୮ ଡିଗ୍ରୀ ରହିବ କି?
+  expected_place: ବ୍ରହ୍ମପୁର
+  expected_place_en: berhampur
+  domain: temperature
+  expected_numbers: [18]
+- id: utt_or_008
+  text: ବାରିପଦାରେ ଆଜି ବାୟୁମଣ୍ଡଳରେ ଆର୍ଦ୍ରତା ୮୦ ପ୍ରତିଶତ ରହିବ କି?
+  expected_place: ବାରିପଦା
+  expected_place_en: baripada
+  domain: forecast
+  expected_numbers: [80]
+- id: utt_or_009
+  text: ଚାନ୍ଦବାଲି ବନ୍ଦରରେ ଝଡ଼ବର୍ଷା ସତର୍କତା ସୂଚନା ମିଳିଛି କି?
+  expected_place: ଚାନ୍ଦବାଲି
+  expected_place_en: chandbali
+  domain: alerts
+  expected_numbers: []
+- id: utt_or_010
+  text: ଝାରସୁଗୁଡ଼ାରେ ଆସନ୍ତାକାଲି ସର୍ବୋଚ୍ଚ ତାପମାତ୍ରା ୪୧ ଡିଗ୍ରୀ ହେବ କି?
+  expected_place: ଝାରସୁଗୁଡ଼ା
+  expected_place_en: jharsuguda
+  domain: temperature
+  expected_numbers: [41]
+- id: utt_or_011
+  text: କୋରାପୁଟରେ କଫି ବଗିଚା ପାଇଁ ୧୫ ମିମି ବର୍ଷା ପର୍ଯ୍ୟାପ୍ତ କି?
+  expected_place: କୋରାପୁଟ
+  expected_place_en: koraput
+  domain: agromet
+  expected_numbers: [15]
+- id: utt_or_012
+  text: ପାରାଦ୍ୱୀପରେ ମତ୍ସ୍ୟଜୀବୀଙ୍କୁ ସମୁଦ୍ର ଯିବାକୁ ବାରଣ କରାଯାଇଛି କି?
+  expected_place: ପାରାଦ୍ୱୀପ
+  expected_place_en: paradeep
+  domain: alerts
+  expected_numbers: []
+- id: utt_or_013
+  text: ଭଦ୍ରକରେ ଆଗାମୀ ୨୪ ଘଣ୍ଟାରେ ୬୦ ମିମି ପ୍ରବଳ ବର୍ଷା ହେବ କି?
+  expected_place: ଭଦ୍ରକ
+  expected_place_en: bhadrak
+  domain: alerts
+  expected_numbers: [24, 60]
+- id: utt_or_014
+  text: ଦାରିଙ୍ଗବାଡ଼ିରେ ଆଜି ରାତିରେ ୬ ଡିଗ୍ରୀ ଥଣ୍ଡା ଅନୁଭୂତ ହେବ କି?
+  expected_place: ଦାରିଙ୍ଗବାଡ଼ି
+  expected_place_en: daringbadi
+  domain: temperature
+  expected_numbers: [6]
+- id: utt_or_015
+  text: ଅନୁଗୋଳରେ କୋଇଲା ଖଣି ଅଞ୍ଚଳରେ ପ୍ରଚଣ୍ଡ ଖରା ହେବ କି?
+  expected_place: ଅନୁଗୋଳ
+  expected_place_en: angul
+  domain: forecast
+  expected_numbers: []
+- id: utt_or_016
+  text: କେନ୍ଦୁଝରରେ ଲୁହାପଥର ପରିବହନ ପାଇଁ ଘନ କୁହୁଡ଼ି ସତର୍କତା ଅଛି କି?
+  expected_place: କେନ୍ଦୁଝର
+  expected_place_en: kendujhar
+  domain: alerts
+  expected_numbers: []
+- id: utt_or_017
+  text: ବଲାଙ୍ଗୀରରେ କପା ଚାଷ ପାଇଁ ବର୍ଷା କେବେ ହେବ?
+  expected_place: ବଲାଙ୍ଗୀର
+  expected_place_en: balangir
+  domain: agromet
+  expected_numbers: []
+- id: utt_or_018
+  text: ଜୟପୁରରେ ଆକାଶ ମେଘାଚ୍ଛନ୍ନ ରହିବା ସହ ୨୦ ମିମି ବର୍ଷା ସମ୍ଭାବନା ଅଛି କି?
+  expected_place: ଜୟପୁର
+  expected_place_en: jeypore
+  domain: rainfall
+  expected_numbers: [20]
+- id: utt_or_019
+  text: ଗୋପାଳପୁର ବେଳାଭୂମିରେ ୪ ମିଟର ଉଚ୍ଚ ଜୁଆର ଉଠିବ କି?
+  expected_place: ଗୋପାଳପୁର
+  expected_place_en: gopalpur
+  domain: alerts
+  expected_numbers: [4]
+- id: utt_or_019b
+  text: କେନ୍ଦ୍ରାପଡ଼ାରେ ନଦୀ ବନ୍ୟା ସତର୍କତା ଜାରି ହୋଇଛି କି?
+  expected_place: କେନ୍ଦ୍ରାପଡ଼ା
+  expected_place_en: kendrapara
+  domain: alerts
+  expected_numbers: []
+- id: utt_or_020
+  text: ବୌଦ୍ଧରେ ଆଗାମୀ ୫ ଦିନ ଯାଏଁ ଶୁଖିଲା ପାଗ ରହିବ କି?
+  expected_place: ବୌଦ୍ଧ
+  expected_place_en: boudh
+  domain: forecast
+  expected_numbers: [5]
+- id: utt_or_021
+  text: ନବରଙ୍ଗପୁରରେ ମକା ଫସଲରେ କୀଟନାଶକ ପ୍ରୟୋଗ ପାଇଁ ପାଣିପାଗ ଠିକ ଅଛି କି?
+  expected_place: ନବରଙ୍ଗପୁର
+  expected_place_en: nabarangpur
+  domain: agromet
+  expected_numbers: []
+- id: utt_or_022
+  text: ଢେଙ୍କାନାଳରେ କାଲି ଅପରାହ୍ନରେ କାଳବୈଶାଖୀ ଝଡ଼ ହେବ କି?
+  expected_place: ଢେଙ୍କାନାଳ
+  expected_place_en: dhenkanal
+  domain: alerts
+  expected_numbers: []
+- id: utt_or_023
+  text: ଜଗତସିଂହପୁରରେ ୩୦ ମିମି ବର୍ଷା ହେବାର ସୂଚନା ଅଛି କି?
+  expected_place: ଜଗତସିଂହପୁର
+  expected_place_en: jagatsinghpur
+  domain: rainfall
+  expected_numbers: [30]
+- id: utt_or_024
+  text: ଦେବଗଡ଼ରେ ସର୍ବନିମ୍ନ ତାପମାତ୍ରା ୧୨ ଡିଗ୍ରୀ ରେକର୍ଡ଼ ହୋଇଛି କି?
+  expected_place: ଦେବଗଡ଼
+  expected_place_en: deogarh
+  domain: temperature
+  expected_numbers: [12]

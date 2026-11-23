@@ -1,0 +1,60 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-11-23T01:53:13.825687+00:00",
+  "git_sha": "4a21ddc",
+  "standard": "WCAG 2.2 Level AA",
+  "automated_axe": {
+    "engine": "@axe-core/playwright",
+    "version": "4.9.1",
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "core_views_audited": [
+      {
+        "view": "Ask",
+        "path": "/",
+        "selector": "main#main-content",
+        "violations": 0,
+        "status": "pass"
+      },
+      {
+        "view": "Alerts",
+        "path": "/#alerts",
+        "selector": "#alerts",
+        "violations": 0,
+        "status": "pass"
+      },
+      {
+        "view": "Places",
+        "path": "/#places",
+        "selector": "#places",
+        "violations": 0,
+        "status": "pass"
+      },
+      {
+        "view": "More",
+        "path": "/#more",
+        "selector": "#more",
+        "violations": 0,
+        "status": "pass"
+      },
+      {
+        "view": "Offline",
+        "path": "/offline.html",
+        "selector": "body",
+        "violations": 0,
+        "status": "pass"
+      }
+    ],
+    "total_violations": 0,
+    "status": "pass"
+  },
+  "manual_screen_reader": {
+    "nvda_windows": "NOT MEASURED",
+    "talkback_android": "NOT MEASURED",
+    "note": "Per Section 2 truthfulness rules, manual screen-reader tests require human operator on physical devices and must not be simulated."
+  }
+}
