@@ -72,11 +72,10 @@ class ClimateService:
 
         # Check if place is known in precomputed grid
         is_known = pid in CLIMATOLOGY_NORMALS
-        norm_dict = CLIMATOLOGY_NORMALS.get(pid, CLIMATOLOGY_NORMALS["delhi"])
-        normal_val = norm_dict["temp_c"][month - 1] if var_norm == "temperature" else norm_dict["rain_mm"][month - 1]
+        norm_dict = CLIMATOLOGY_NORMALS.get(pid)
 
         unit = "°C" if var_norm == "temperature" else "mm"
-        dataset = "IMD 0.25° Gridded Climatology (1991-2020) cross-referenced with ERA5"
+        dataset = "ERA5 Reanalysis (1991-2020) via Open-Meteo"
         resolution = "0.25° (~27 km)"
         method_notes = (
             f"Computed against standard {baseline} climatological base period using WMO 30-year normal guidelines. "
@@ -94,11 +93,16 @@ class ClimateService:
             "method_notes": method_notes,
         }
 
-        if not is_known:
+        if not is_known or norm_dict is None:
             res["caveat"] = (
-                "Place not in high-density station index. Climatology approximated from regional 0.25° grid; "
-                "record may be inhomogeneous or subject to local terrain microclimates."
+                f"Climatological normals are unavailable for '{place_id}'. "
+                "Place is not in the precomputed station index (1991-2020 baseline)."
             )
+            res["value"] = None
+            res["unit"] = unit
+            return res
+
+        normal_val = norm_dict["temp_c"][month - 1] if var_norm == "temperature" else norm_dict["rain_mm"][month - 1]
 
         if statistic == "normal":
             res["value"] = round(normal_val, 1)

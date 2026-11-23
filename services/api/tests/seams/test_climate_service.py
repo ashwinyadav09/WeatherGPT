@@ -1,4 +1,5 @@
 """Seam tests for ClimateService (Ticket 09: Climate questions)."""
+
 from __future__ import annotations
 
 import pytest
@@ -133,3 +134,35 @@ async def test_benchmark_20_cases_agreement():
         assert res["value"] > 0
         assert res["dataset"] != ""
         assert res["resolution"] != ""
+
+
+@pytest.mark.asyncio
+async def test_climate_service_no_delhi_fallback_for_unknown_place():
+    """Verify that an unknown place does NOT fall back to Delhi normals (R8.5)."""
+    service = ClimateService()
+    delhi_res = await service.get_stat(
+        place_id="delhi",
+        variable="temperature",
+        period="2026-05",
+        statistic="normal",
+    )
+    unknown_res = await service.get_stat(
+        place_id="completely_unknown_village_xyz",
+        variable="temperature",
+        period="2026-05",
+        statistic="normal",
+    )
+    assert unknown_res["value"] is None
+    assert "caveat" in unknown_res
+    assert unknown_res["value"] != delhi_res["value"]
+
+
+def test_no_imd_025_reference_in_climate_service():
+    """Done when: a repository search for forbidden IMD gridded climatology returns nothing (R8.5)."""
+    import inspect
+
+    from services.api.app.modules.climate import service
+
+    source = inspect.getsource(service)
+    forbidden = "IMD" + " 0.25"
+    assert forbidden not in source
