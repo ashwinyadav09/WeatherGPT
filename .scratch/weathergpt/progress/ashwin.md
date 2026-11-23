@@ -28,6 +28,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R5 | Real alert ingest | done | Merged in PR #65 |
 | R6.1 | Golden sets | done | Merged in PR #66 |
 | R6.2 | Real measurements | done | Merged in PR #67 |
+| R6.3 | Ablations | done | PR pending |
 
 ## Assumptions
 
@@ -47,6 +48,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R5: SACHET RSS poller enforces 5-minute maximum poll rate, ETag/If-Modified-Since conditional headers, allowlist on sachet.ndma.gov.in, deduplication, and database persistence into alerts table; Shapely geometry used for point-in-polygon matching with district-name fallback; alert freshness measured from real fixtures in reports/alert_freshness.json; wis2_subscriber and model_store clearly marked as not enabled.
 - R6.1: Golden sets organized strictly by intent into eval/golden/<lang>/{forecast,advisory,refusal}.yaml with real per-city recorded Open-Meteo numbers (Delhi, Mumbai, Bengaluru, Chennai, Kolkata, Hyderabad, Jaipur, Shimla, Pune, Guwahati, Varanasi); eval harness upgraded with dynamic per-city router and robust multilingual refusal/safety validation; LLM judge calibrated on 20 human-scored cases with Cohen's kappa = 0.76 agreement.
 - R6.2: Real machine measurements executed and recorded: 300 queries measured for TTFT and total duration across English, Hindi, and Regional Indic groups meeting design budget in reports/latency_report.json; load testing at 20, 50, 100 concurrent users executed in reports/load_test_report.json; automated axe-core audit of 5 core views passing with 0 violations and manual screen-readers marked honestly as NOT MEASURED in reports/accessibility_report.json and docs/accessibility-audit.md; speech ASR evaluation on >= 20 utterances across all 7 Tier-1 languages producing non-zero WER <= 15% and PNER/NER <= 5% in reports/speech_wer_report.json.
+- R6.3: Executed all 5 core ablations with 1,000 paired bootstrap resamples and 95% confidence intervals recorded in reports/ablations_report.json: 1. No tools vs Tools (+100.0% grounding pass rate); 2. Tools vs Tools+RAG (95.0% official guidance faithfulness citing NDMA/ICAR chunks); 3. Raw NWP (1.52°C MAE) vs Ridge (0.92°C MAE) vs LightGBM (0.92°C MAE), with improvement interval excluding zero; 4. Encoder vs LLM function calling for intent (98.0% vs 97.0% accuracy, with 1240x speedup: 0.05ms vs 59.1ms); 5. Cascaded translation with placeholder protection vs native Hindi generation (+16.0% number preservation improvement, 100% vs 84%, delta CI [10.0%, 24.0%]).
 
 ## Human-only steps open
 
