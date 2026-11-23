@@ -30,7 +30,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R6.2 | Real measurements | done | Merged in PR #67 |
 | R6.3 | Ablations | done | Merged in PR #68 |
 | R6.4 | Outputs | done | Merged in PR #69 |
-| R7 | Documentation alignment | done | PR pending |
+| R7 | Documentation alignment | done | Merged in PR #70 |
 
 ## Assumptions
 
