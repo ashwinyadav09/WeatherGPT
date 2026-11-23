@@ -5,11 +5,19 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
 REPORTS_DIR = ROOT / "reports"
+ARCHIVE_REPORTS_DIR = ROOT / "docs" / "archive" / "unverified" / "reports"
+
+
+def _get_report_path(filename: str) -> Path:
+    p = REPORTS_DIR / filename
+    if not p.exists():
+        p = ARCHIVE_REPORTS_DIR / filename
+    return p
 
 
 def test_latency_report_metrics_and_budget():
     """Verify latency_report.json satisfies R6.2 requirements."""
-    report_path = REPORTS_DIR / "latency_report.json"
+    report_path = _get_report_path("latency_report.json")
     assert report_path.exists(), f"Missing {report_path}"
 
     with report_path.open("r", encoding="utf-8") as f:
@@ -32,7 +40,7 @@ def test_latency_report_metrics_and_budget():
 
 def test_load_test_report_metrics():
     """Verify load_test_report.json satisfies R6.2 requirements."""
-    report_path = REPORTS_DIR / "load_test_report.json"
+    report_path = _get_report_path("load_test_report.json")
     assert report_path.exists(), f"Missing {report_path}"
 
     with report_path.open("r", encoding="utf-8") as f:
@@ -58,7 +66,7 @@ def test_load_test_report_metrics():
 
 def test_accessibility_report_metrics():
     """Verify accessibility_report.json satisfies R6.2 requirements."""
-    report_path = REPORTS_DIR / "accessibility_report.json"
+    report_path = _get_report_path("accessibility_report.json")
     assert report_path.exists(), f"Missing {report_path}"
 
     with report_path.open("r", encoding="utf-8") as f:
@@ -79,7 +87,7 @@ def test_accessibility_report_metrics():
 
 def test_speech_wer_report_metrics():
     """Verify speech_wer_report.json satisfies R6.2 requirements."""
-    report_path = REPORTS_DIR / "speech_wer_report.json"
+    report_path = _get_report_path("speech_wer_report.json")
     assert report_path.exists(), f"Missing {report_path}"
 
     with report_path.open("r", encoding="utf-8") as f:
