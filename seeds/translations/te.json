@@ -1,6 +1,6 @@
 {
   "language": "te",
-  "generated_at": "2026-11-22T14:22:29.027436+00:00",
+  "generated_at": "2026-11-23T23:05:37.703312+00:00",
   "status": "pending_human_review",
   "human_review_required": true,
   "ui": {
@@ -127,73 +127,48 @@
   },
   "guidance": {
     "cold_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "cold_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA Cold Wave Safety - National Disaster Management Authority",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/cold-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+        "te": {
+          "id": "ndma_guidance_cold_wave_te",
+          "title": "అధికారిక శీతల గాలుల భద్రతా మార్గదర్శకాలు (ఎన్‌డిఎమ్‌ఎ మరియు ఐఎమ్‌డి)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
-        "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "ఒకే మందపాటి బట్టలకు బదులుగా బహుళ పొరల వదులైన, తేలికపాటి వెచ్చని దుస్తులను ధరించండి.",
+            "తల, మెడ, చేతులు మరియు పాదాలను సరిగ్గా కప్పుకోండి, ఎందుకంటే శరీర వేడి ఎక్కువగా ఈ భాగాల నుండే బయటకు పోతుంది.",
+            "ప్రాణాంతక కార్బన్ మోనాక్సైడ్ విషవాయువు ప్రమాదాన్ని నివారించడానికి గదిలో హీటర్లు వాడేటప్పుడు సరైన గాలి వెలుతురు ఉండేలా చూసుకోండి.",
+            "వృద్ధులు, చిన్నపిల్లలు, ఉబ్బసం లేదా గుండె జబ్బులు ఉన్న రోగులను చల్లటి గాలుల బారిన పడకుండా కాపాడండి.",
+            "శరీర ఉష్ణోగ్రతను కాపాడుకోవడానికి సూప్‌లు, వేడి పాలు లేదా మూలికా టీ వంటి వేడి ద్రవాలను తీసుకోండి.",
+            "తీవ్రమైన చలి రాత్రులలో పశువులు మరియు పెంపుడు జంతువులకు పొడి పడకలు మరియు సురక్షితమైన ఆశ్రయాన్ని కల్పించండి."
           ]
         }
       }
     },
     "heat_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "heat_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA National Guidelines for Preparation of Action Plan - Prevention and Management of Heat Wave",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/heat-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+        "te": {
+          "id": "ndma_guidance_heat_wave_te",
+          "title": "అధికారిక వడగాల్పుల భద్రతా మార్గదర్శకాలు (ఎన్‌డిఎమ్‌ఎ మరియు ఐఎమ్‌డి)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
-        "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "దాహం వేయకపోయినా తరచుగా తగినంత నీరు త్రాగాలి. ఓఆర్‌ఎస్, కొబ్బరి నీళ్లు లేదా నిమ్మరసం తీసుకోండి.",
+            "లేత రంగు, వదులుగా ఉండే కాటన్ దుస్తులను ధరించండి.",
+            "మధ్యాహ్నం 12:00 నుండి 3:00 గంటల మధ్య ఎండ తీవ్రంగా ఉన్న సమయంలో బయట శ్రమతో కూడిన పనులు చేయవద్దు.",
+            "ఎండలో బయటకు వెళ్లేటప్పుడు తలకు వస్త్రం, టోపీ లేదా గొడుగుతో రక్షణ కల్పించుకోండి.",
+            "పిల్లలు, వృద్ధులు, గర్భిణీ స్త్రీలు మరియు పెంపుడు జంతువులను చల్లని, గాలి ఆడే నీడ ప్రదేశాలలో ఉంచండి.",
+            "పార్కింగ్ చేసిన మూసివున్న వాహనాల్లో పిల్లలను లేదా పెంపుడు జంతువులను కొన్ని నిమిషాలైనా ఒంటరిగా ఉంచవద్దు.",
+            "ఎవరికైనా వడదెబ్బ లక్షణాలు (తీవ్రమైన జ్వరం, తలతిరగడం, అపస్మారక స్థితి) కనిపిస్తే, వెంటనే నీడకు చేర్చి, తడి గుడ్డతో తుడిచి, వెంటనే వైద్య సహాయం అందించండి."
           ]
         }
       }

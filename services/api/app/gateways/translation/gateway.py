@@ -15,7 +15,7 @@ INDIC_DIGITS = (
     "०१२३४५६७८९"  # Devanagari (Hindi, Marathi)
     "০১২৩৪৫৬৭৮৯"  # Bengali
     "੦੧੨੩੪੫੬੭੮੯"  # Gurmukhi
-    "૦૧૨૩૪૫૬૭૮૯"  # Gujarati
+    "૦૧૨૩૪૫૬૭୮૯"  # Gujarati
     "୦୧୨୩୪୫୬୭୮୯"  # Odia
     "௦௧௨௩௪௫௬௭௮௯"  # Tamil
     "౦౧౨౩౪౫౬౭౮౯"  # Telugu
@@ -72,7 +72,8 @@ class TranslationGateway:
     """Gateway orchestrating text translation with caching, protection, and failover.
 
     - Primary: Sarvam AI (mayura:v1)
-    - Fallback: LLM Translation with domain glossary
+    - Fallback: Groq LLM with domain glossary
+    - Strict failover: Sarvam -> Groq LLM -> raise (never stub or silent fallback)
     - Cache key: sha256(text + src + tgt + glossary_version)
     - Protects numbers and units before translation, restores after.
     - Normalises native Indic digits to ASCII before returning.
@@ -115,12 +116,15 @@ class TranslationGateway:
         protected_text, mapping = protect_numbers_and_units(text)
 
         translated_protected: str | None = None
-        # 3. Try primary translation adapter
+        active_adapter: TranslationAdapter | None = None
+
+        # 3. Try primary translation adapter (Sarvam), then fallback (Groq LLM), then raise
         if self.primary:
             try:
                 translated_protected = await self.primary.translate(
                     protected_text, src=src_clean, tgt=tgt_clean, **kwargs
                 )
+                active_adapter = self.primary
             except (ProviderNotConfigured, Exception) as exc:
                 logger.warning(
                     "translation_primary_failed",
@@ -131,35 +135,30 @@ class TranslationGateway:
                     },
                 )
                 if self.fallback:
-                    try:
-                        translated_protected = await self.fallback.translate(
-                            protected_text, src=src_clean, tgt=tgt_clean, **kwargs
-                        )
-                    except Exception as fb_exc:
-                        logger.error(
-                            "translation_fallback_failed",
-                            extra={"error": str(fb_exc)},
-                        )
-                        translated_protected = protected_text
+                    translated_protected = await self.fallback.translate(
+                        protected_text, src=src_clean, tgt=tgt_clean, **kwargs
+                    )
+                    active_adapter = self.fallback
                 else:
-                    translated_protected = protected_text
+                    raise
         elif self.fallback:
-            try:
-                translated_protected = await self.fallback.translate(
-                    protected_text, src=src_clean, tgt=tgt_clean, **kwargs
-                )
-            except Exception as fb_exc:
-                logger.error("translation_fallback_failed", extra={"error": str(fb_exc)})
-                translated_protected = protected_text
+            translated_protected = await self.fallback.translate(
+                protected_text, src=src_clean, tgt=tgt_clean, **kwargs
+            )
+            active_adapter = self.fallback
         else:
-            translated_protected = protected_text
+            raise ProviderNotConfigured("No translation provider configured.")
+
+        if not translated_protected:
+            raise RuntimeError("Translation provider returned empty text.")
 
         # 4. Restore numbers and units
-        restored = restore_numbers_and_units(translated_protected or protected_text, mapping)
+        restored = restore_numbers_and_units(translated_protected, mapping)
 
         # 5. Normalise any native Indic digits to ASCII
         final_text = normalise_indic_digits(restored)
 
         # 6. Store in cache
-        self.cache.set(text, src_clean, tgt_clean, final_text, self.glossary_version)
+        adapter_id = getattr(active_adapter, "source_id", "unknown")
+        self.cache.set(text, src_clean, tgt_clean, final_text, self.glossary_version, adapter_id=adapter_id)
         return final_text

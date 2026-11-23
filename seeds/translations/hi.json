@@ -1,6 +1,6 @@
 {
   "language": "hi",
-  "generated_at": "2026-11-22T14:22:28.991663+00:00",
+  "generated_at": "2026-11-23T23:05:37.643644+00:00",
   "status": "pending_human_review",
   "human_review_required": true,
   "ui": {
@@ -127,73 +127,48 @@
   },
   "guidance": {
     "cold_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "cold_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA Cold Wave Safety - National Disaster Management Authority",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/cold-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
         "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "id": "ndma_guidance_cold_wave_hi",
+          "title": "आधिकारिक शीतलहर (कोल्ड वेव) सुरक्षा सलाह (एनडीएमए और आईएमडी)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "एक भारी कपड़े के बजाय ढीले, हल्के और कई परतों वाले गर्म कपड़े पहनें।",
+            "सिर, गर्दन, हाथ और पैरों को अच्छी तरह से ढकें, क्योंकि इन्हीं अंगों से शरीर की गर्मी सबसे तेजी से निकलती है।",
+            "कमरे में अंगीठी, हीटर या कोयला जलाते समय कमरे में वेंटिलेशन (हवा का निकास) अवश्य रखें ताकि कार्बन मोनोऑक्साइड गैस का खतरा न हो।",
+            "बुजुर्गों, शिशुओं और सांस या दिल के मरीजों को ठंडी हवा के सीधे संपर्क से बचाएं।",
+            "गर्म पेय जैसे सूप, गर्म दूध या चाय का सेवन करें जिससे शरीर का तापमान बना रहे।",
+            "शीतलहर के दौरान मवेशियों और पालतू जानवरों को ठंड से बचाने के लिए सूखे बिछावन और सुरक्षित बाड़े की व्यवस्था करें।"
           ]
         }
       }
     },
     "heat_wave": {
-      "hazard": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_by": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed_date": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "source_url": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "retrieved_on": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-      "reviewed": true,
+      "hazard": "heat_wave",
+      "reviewed_by": "ashwin",
+      "reviewed_date": "2026-11-17",
+      "source_title": "NDMA National Guidelines for Preparation of Action Plan - Prevention and Management of Heat Wave",
+      "source_url": "https://ndma.gov.in/Governance/Guidelines/heat-wave",
+      "retrieved_on": "2026-11-17",
+      "reviewed": false,
       "entries": {
-        "en": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
-          ]
-        },
         "hi": {
-          "id": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-          "title": "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
+          "id": "ndma_guidance_heat_wave_hi",
+          "title": "आधिकारिक लू (हीटवेव) सुरक्षा सलाह (एनडीएमए और आईएमडी)",
           "items": [
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune.",
-            "According to Open-Meteo forecasts, light rain of around 0 mm is expected tomorrow in Pune."
+            "प्यास न लगने पर भी बार-बार पर्याप्त पानी पिएं। ओआरएस, नींबू पानी, या छाछ का सेवन करें।",
+            "हल्के रंग के, ढीले और सूती कपड़े पहनें।",
+            "दोपहर 12:00 बजे से 3:00 बजे के बीच धूप में भारी शारीरिक काम करने से बचें।",
+            "धूप में बाहर निकलते समय सिर को सूती कपड़े, टोपी या छाते से ढक कर रखें।",
+            "बच्चों, बुजुर्गों, गर्भवती महिलाओं और पालतू जानवरों को ठंडे और हवादार स्थानों पर रखें।",
+            "खड़े वाहनों में बच्चों या पालतू जानवरों को कभी भी बंद न छोड़ें।",
+            "यदि किसी को लू लगने के लक्षण (तेज बुखार, चक्कर, बेहोशी) दिखें, तो तुरंत छाया में लाएं, ठंडे गीले कपड़े से पोछें और डॉक्टर से संपर्क करें।"
           ]
         }
       }
