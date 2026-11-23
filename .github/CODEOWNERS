@@ -22,3 +22,10 @@
 /infra/                                    @ashwinyadav09 @xyz0kRATOS
 /.github/                                  @ashwinyadav09 @xyz0kRATOS
 /docs/adr/                                 @ashwinyadav09 @xyz0kRATOS @PradeepChhaba
+
+# Mechanical guards and governance protected under Rule G1
+/services/api/tests/guards/                @ashwinyadav09
+/ml/common/                                @ashwinyadav09
+/scripts/tasks/audit_results.py            @ashwinyadav09
+/.agents/rules/                            @ashwinyadav09
+/.github/CODEOWNERS                        @ashwinyadav09

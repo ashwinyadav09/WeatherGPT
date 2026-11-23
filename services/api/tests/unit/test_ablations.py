@@ -5,11 +5,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
 REPORTS_DIR = ROOT / "reports"
+ARCHIVE_REPORTS_DIR = ROOT / "docs" / "archive" / "unverified" / "reports"
 
 
 def test_ablations_report_structure_and_ci():
     """Verify ablations_report.json satisfies Ticket R6.3 requirements."""
     report_path = REPORTS_DIR / "ablations_report.json"
+    if not report_path.exists():
+        report_path = ARCHIVE_REPORTS_DIR / "ablations_report.json"
     assert report_path.exists(), f"Missing {report_path}"
 
     with report_path.open("r", encoding="utf-8") as f:

@@ -133,9 +133,10 @@ async def test_poller_deduplication_and_update(async_test_db):
 
 
 @pytest.mark.asyncio
-async def test_poller_freshness_measurement():
+async def test_poller_freshness_measurement(tmp_path):
     poller = SachetAlertPoller()
-    report = poller.replay_fixtures_and_measure(fixtures_dir=FIXTURES_DIR)
+    tmp_out = tmp_path / "alert_freshness.json"
+    report = poller.replay_fixtures_and_measure(fixtures_dir=FIXTURES_DIR, output_report_path=tmp_out)
 
     assert "count" in report
     assert report["count"] >= 20

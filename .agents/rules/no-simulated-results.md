@@ -1,17 +1,24 @@
 ---
 trigger: always_on
-description: Every reported number must come from a script that writes a machine-readable result file. Never hard-code, simulate or hand-type a measured result.
+description: Strictest truthfulness rules. Never hard-code, simulate or hand-type a measured result. If real data is not available, stop and mark blocked.
 ---
 
-# No-simulated-results rules (R0.1)
+# No-simulated-results rules (V3)
 
-1. **No simulated results.** Never hard-code, simulate, estimate or hand-type a metric, latency, accuracy, uptime or count in code, config or docs. Every reported number must come from a script in the repository that writes a machine-readable result file.
-2. **Not measured is a valid value.** If something has not been measured, write `NOT MEASURED`. The acceptance script must fail in strict mode when a result file is missing.
-3. **Synthetic data only in unit tests.** Synthetic or LLM-generated data may be used for training only if labelled as such in the model card and never for the reported test set. Test sets are real, held-out, and checked for overlap with training data.
-4. **Reports are generated, not written.** `MODEL_CARD.md` and `EVAL_REPORT.md` are rendered by a script from `reports/metrics.json`. The renderer raises an error if a placeholder has no value.
-5. **Run manifest on every run.** Each training and evaluation run writes `git_sha`, timestamp, seed, data source URLs, retrieval time, row counts, file checksums and the exact split dates.
-6. **Provenance is visible.** Every evidence packet carries `provenance: live | cached | fixture`. Fixture or sample data is never shown to users as an official advisory or alert.
-7. **Name the source that really answered.** For example "Open-Meteo (global model)" or "NDMA SACHET". Do not add disclaimers about services that are not part of the product.
-8. **IMD is out of scope.** It is not a dependency. Its adapters stay dormant behind the existing flag (ADR 0007). No ticket, test, UI string or report may require it.
-9. **No hidden fallbacks to fake data.** If a provider is not configured, raise `ProviderNotConfigured` and show an honest error. Stubs are injected only by tests.
-10. **Negative results are results.** If a model does not beat its baseline, ship the baseline and report it.
+## Truthfulness
+- **T1. No simulated results.** Never hard-code, simulate, estimate or hand-type a metric, latency, accuracy, uptime, count or score. Every reported number comes from a script that reads real inputs and writes a result file.
+- **T2. Not measured is a valid value.** Write `NOT MEASURED`. Acceptance fails in strict mode if a result is missing.
+- **T3. Synthetic data is allowed only inside unit tests,** and never for training, validation, testing or any reported number. LLM-generated or machine-translated training text is allowed only if labelled in a `source` column and never in a test set.
+- **T4. Reports are generated.** `MODEL_CARD.md`, `EVAL_REPORT.md` and `docs/EVAL_RESULTS.md` are rendered from result files; the renderer fails on a missing value.
+- **T5. Never add a check that requires a metric to be nonzero, below 100%, or inside a "plausible" range.** A perfect or zero result is reported as it is and flagged for human review.
+- **T6. Name the real source.** Provenance values are only `live_api`, `recorded_real_http`, `real_audio`, `human_labels`, `fixture_test_only`. `fixture_test_only` may never appear in a performance claim.
+- **T7. No stub in any path that produces a result or user-visible content.** Stub adapters exist for tests and are injected explicitly. A missing provider raises `ProviderNotConfigured`.
+- **T8. IMD is out of scope.** Dormant adapters remain behind the existing flag.
+
+## Stop conditions (S)
+- **S1.** If a real data download fails, a dataset is too small (thresholds are in each ticket), or a human-provided input is missing, stop the ticket. Write `BLOCKED.md` (what was tried, the exact error, what a human must provide), set the ledger status to `blocked`, and continue with the next ticket.
+- **S2.** If a model does not beat its baseline, ship the baseline, keep `enabled=false` for the model, and report the negative result in the model card.
+- **S3.** Test sets are touched once. Log every evaluation of a test set in `RUN_MANIFEST.json`; a second evaluation after changes needs a new test block or a note explaining why.
+
+## Guard protection (G)
+- **G1.** Add `.github/CODEOWNERS` so that changes to `services/api/tests/guards/**`, `ml/common/**`, `scripts/tasks/audit_results.py`, `.agents/rules/**` and `CODEOWNERS` require review by Ashwin. Do not weaken, skip or rewrite those files in the same PR as the code they check.
