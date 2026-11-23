@@ -33,7 +33,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R7 | Documentation alignment | done | Merged in PR #70 |
 | R8.1 | Mark and rewrite what is untrue | done | Merged in PR #71 |
 | R8.2 | Delete the simulation code | done | Merged in PR #72 |
-| R8.3 | Repair translations | in-review | Branch ticket/R8.3-repair-translations |
+| R8.3 | Repair translations | done | Merged in PR #73 |
 
 ## Assumptions
 
