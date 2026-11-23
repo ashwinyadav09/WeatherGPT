@@ -35,7 +35,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R8.2 | Delete the simulation code | done | Merged in PR #72 |
 | R8.3 | Repair translations | done | Merged in PR #73 |
 | R8.4 | Point evaluation and trace at the real system | done | Merged in PR #74 |
-| R8.5 | Small residues | in-review | Branch ticket/R8.5-small-residues |
+| R8.5 | Small residues | done | Merged in PR #75 |
 
 ## Assumptions
 
