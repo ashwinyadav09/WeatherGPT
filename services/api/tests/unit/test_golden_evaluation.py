@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import httpx
 import pytest
 import yaml
 
@@ -20,6 +21,10 @@ from eval.harness import (
 )
 from eval.judge import calculate_cohen_kappa, evaluate_quality_rubric
 from services.api.app.conversation.agent import ConversationAgent
+from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
+from services.api.app.modules.forecast.service import ForecastService
+from services.api.app.modules.location.adapters.open_meteo_geocoding import OpenMeteoGeocodingAdapter
+from services.api.app.modules.location.resolver import LocationResolver
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
 GOLDEN_DIR = ROOT / "eval" / "golden"
@@ -110,8 +115,15 @@ def test_quality_rubric_scoring():
 @pytest.mark.asyncio
 async def test_evaluation_harness_with_per_city_mock():
     """Run single cases in evaluation harness with per-city mock transport."""
-    _ = get_per_city_forecast_transport()
-    agent = ConversationAgent()
+    transport = get_per_city_forecast_transport()
+    mock_client = httpx.AsyncClient(transport=transport)
+    fc_adapter = OpenMeteoForecastAdapter(client=mock_client)
+    fc_service = ForecastService()
+    fc_service.register_adapter(fc_adapter)
+
+    geocoder = OpenMeteoGeocodingAdapter(client=mock_client)
+    loc_resolver = LocationResolver(geocoder=geocoder)
+    agent = ConversationAgent(forecast_service=fc_service, location_resolver=loc_resolver)
 
     # Case 1: Forecast for Delhi
     case_delhi = {
