@@ -31,7 +31,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R6.3 | Ablations | done | Merged in PR #68 |
 | R6.4 | Outputs | done | Merged in PR #69 |
 | R7 | Documentation alignment | done | Merged in PR #70 |
-| R8.1 | Mark and rewrite what is untrue | in-review | PR pending |
+| R8.1 | Mark and rewrite what is untrue | done | Merged in PR #71 |
 
 ## Assumptions
 
