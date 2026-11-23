@@ -1,7 +1,7 @@
 # WeatherGPT Evaluation & Acceptance Results
 
 - **Date**: 2026-11-23
-- **Git SHA**: `e710b0b`
+- **Git SHA**: `1f52acc`
 - **Status**: ✅ **ALL ACCEPTANCE GATES PASSED**
 - **Compliance**: Strictly follows Section 2 Truthfulness Rules (zero simulated or hardcoded metrics).
 
@@ -97,4 +97,4 @@ Evaluated on >= 20 field/consented weather speech utterances per language:
 - **Advisories & Knowledge**: Public NDMA guidelines and ICAR crop alerts recorded in `seeds/knowledge/sources.csv`.
 - **Alert Feeds**: Real NDMA SACHET CAP fixtures (`eval/fixtures/sachet/`).
 - **Judged Samples**: Cohen's kappa agreement $\kappa = 0.76$ on 20 human-scored cases (`eval/golden/human_sample.json`).
-- **Report Generated**: `2026-11-23T04:13:02.512667+00:00`
+- **Report Generated**: `2026-11-23T04:45:08.183692+00:00`

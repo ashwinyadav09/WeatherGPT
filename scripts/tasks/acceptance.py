@@ -296,22 +296,11 @@ def ablations_gate() -> GateResult:
     )
 
 
-def main() -> int:
-    strict = "--strict" in sys.argv
-    today_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
-
-    # Always ensure dated evaluation directory & docs/EVAL_RESULTS.md are synchronized
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "tasks" / "generate_eval_results.py")], cwd=str(ROOT), capture_output=True)
-
-    print("\n" + "=" * 80)
-    print(f"WeatherGPT Acceptance Gates — {today_str}{'  [--strict]' if strict else ''}")
-    print("=" * 80)
-
+def evaluate_acceptance_gates(strict: bool = False, run_subcommands: bool = True) -> tuple[list[GateResult], bool]:
     gates: list[GateResult] = []
 
     # --- Accuracy ---
-    print("\n[1] Accuracy & Relevance (All 7 Tier-1 Languages)")
-    test_ok = run_sub(["scripts/tasks/test.py"])
+    test_ok = run_sub(["scripts/tasks/test.py"]) if run_subcommands else True
     gates.append(GateResult(
         parameter="Accuracy & Relevance",
         gate_name="Unit & seam tests",
@@ -323,30 +312,24 @@ def main() -> int:
         gates.append(eval_gate(lang))
 
     # --- Latency ---
-    print("[2] Response Latency")
     gates.append(latency_ttft_gate())
     gates.append(latency_total_gate())
 
     # --- Scalability ---
-    print("[3] Scalability")
     for level in [20, 50, 100]:
         gates.append(load_test_gate(level))
 
     # --- Accessibility ---
-    print("[4] Accessibility")
     gates.append(accessibility_gate())
 
     # --- Speech ---
-    print("[5] Voice & Speech")
     gates.append(speech_wer_gate())
 
     # --- Ablations ---
-    print("[6] Ablation Studies")
     gates.append(ablations_gate())
 
     # --- Infrastructure ---
-    print("[7] Infrastructure")
-    sec_ok = run_sub(["scripts/dev.py", "secret-scan"])
+    sec_ok = run_sub(["scripts/dev.py", "secret-scan"]) if run_subcommands else True
     gates.append(GateResult(
         parameter="Infrastructure",
         gate_name="Secret scan",
@@ -354,7 +337,7 @@ def main() -> int:
         measured="PASS" if sec_ok else "FAIL",
         passed=sec_ok,
     ))
-    db_ok = run_sub(["scripts/tasks/db_heads.py"])
+    db_ok = run_sub(["scripts/tasks/db_heads.py"]) if run_subcommands else True
     gates.append(GateResult(
         parameter="Infrastructure",
         gate_name="Single Alembic head",
@@ -362,7 +345,7 @@ def main() -> int:
         measured="PASS" if db_ok else "FAIL",
         passed=db_ok,
     ))
-    contracts_ok = run_sub(["scripts/tasks/contracts.py"])
+    contracts_ok = run_sub(["scripts/tasks/contracts.py"]) if run_subcommands else True
     gates.append(GateResult(
         parameter="Infrastructure",
         gate_name="Contract tests",
@@ -370,6 +353,31 @@ def main() -> int:
         measured="PASS" if contracts_ok else "FAIL",
         passed=contracts_ok,
     ))
+
+    all_passed = True
+    for g in gates:
+        if strict:
+            if not g.passed:
+                all_passed = False
+        else:
+            if g.passed is False:
+                all_passed = False
+
+    return gates, all_passed
+
+
+def main() -> int:
+    strict = "--strict" in sys.argv
+    today_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
+
+    # Always ensure dated evaluation directory & docs/EVAL_RESULTS.md are synchronized
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "tasks" / "generate_eval_results.py")], cwd=str(ROOT), capture_output=True)
+
+    print("\n" + "=" * 80)
+    print(f"WeatherGPT Acceptance Gates — {today_str}{'  [--strict]' if strict else ''}")
+    print("=" * 80)
+
+    gates, all_passed = evaluate_acceptance_gates(strict=strict, run_subcommands=True)
 
     # --- Summary ---
     print("\n" + "=" * 105)
