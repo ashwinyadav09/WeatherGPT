@@ -52,6 +52,11 @@ def get_latest_eval_file(lang: str) -> Path | None:
     return None
 
 
+def safe_copy(src: Path, dest: Path) -> None:
+    if src.resolve() != dest.resolve():
+        shutil.copy2(src, dest)
+
+
 def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
     target_dir.mkdir(parents=True, exist_ok=True)
     collected: dict[str, Any] = {}
@@ -62,7 +67,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
         f = get_latest_eval_file(lang)
         if f and f.exists():
             dest = target_dir / f"eval_{lang}.json"
-            shutil.copy2(f, dest)
+            safe_copy(f, dest)
             with f.open("r", encoding="utf-8") as fh:
                 data = json.load(fh)
                 eval_summaries[lang] = {
@@ -76,7 +81,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
     # 2. Latency report
     for src in [REPORTS_DIR / "latency_report.json", RESULTS_DIR / "latency_report.json"]:
         if src.exists():
-            shutil.copy2(src, target_dir / "latency_report.json")
+            safe_copy(src, target_dir / "latency_report.json")
             with src.open("r", encoding="utf-8") as fh:
                 collected["latency"] = json.load(fh)
             break
@@ -84,7 +89,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
     # 3. Load test report
     for src in [REPORTS_DIR / "load_test_report.json", RESULTS_DIR / "load_test_report.json"]:
         if src.exists():
-            shutil.copy2(src, target_dir / "load_test_report.json")
+            safe_copy(src, target_dir / "load_test_report.json")
             with src.open("r", encoding="utf-8") as fh:
                 collected["load_test"] = json.load(fh)
             break
@@ -92,7 +97,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
     # 4. Accessibility report
     for src in [REPORTS_DIR / "accessibility_report.json", RESULTS_DIR / "accessibility_report.json"]:
         if src.exists():
-            shutil.copy2(src, target_dir / "accessibility_report.json")
+            safe_copy(src, target_dir / "accessibility_report.json")
             with src.open("r", encoding="utf-8") as fh:
                 collected["accessibility"] = json.load(fh)
             break
@@ -100,7 +105,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
     # 5. Speech WER report
     for src in [REPORTS_DIR / "speech_wer_report.json", RESULTS_DIR / "speech_wer_report.json"]:
         if src.exists():
-            shutil.copy2(src, target_dir / "speech_wer_report.json")
+            safe_copy(src, target_dir / "speech_wer_report.json")
             with src.open("r", encoding="utf-8") as fh:
                 collected["speech_wer"] = json.load(fh)
             break
@@ -108,7 +113,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
     # 6. Ablations report
     for src in [REPORTS_DIR / "ablations_report.json", RESULTS_DIR / "ablations_report.json"]:
         if src.exists():
-            shutil.copy2(src, target_dir / "ablations_report.json")
+            safe_copy(src, target_dir / "ablations_report.json")
             with src.open("r", encoding="utf-8") as fh:
                 collected["ablations"] = json.load(fh)
             break
@@ -117,7 +122,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
     for name in ["rag_evaluation.json", "judge_calibration.json", "alert_freshness.json"]:
         for src in [REPORTS_DIR / name, RESULTS_DIR / name]:
             if src.exists():
-                shutil.copy2(src, target_dir / name)
+                safe_copy(src, target_dir / name)
                 with src.open("r", encoding="utf-8") as fh:
                     collected[name.replace(".json", "")] = json.load(fh)
                 break
