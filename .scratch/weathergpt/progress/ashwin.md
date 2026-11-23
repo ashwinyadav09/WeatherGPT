@@ -29,7 +29,8 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R6.1 | Golden sets | done | Merged in PR #66 |
 | R6.2 | Real measurements | done | Merged in PR #67 |
 | R6.3 | Ablations | done | Merged in PR #68 |
-| R6.4 | Outputs | done | PR pending |
+| R6.4 | Outputs | done | Merged in PR #69 |
+| R7 | Documentation alignment | done | PR pending |
 
 ## Assumptions
 
@@ -51,6 +52,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R6.2: Real machine measurements executed and recorded: 300 queries measured for TTFT and total duration across English, Hindi, and Regional Indic groups meeting design budget in reports/latency_report.json; load testing at 20, 50, 100 concurrent users executed in reports/load_test_report.json; automated axe-core audit of 5 core views passing with 0 violations and manual screen-readers marked honestly as NOT MEASURED in reports/accessibility_report.json and docs/accessibility-audit.md; speech ASR evaluation on >= 20 utterances across all 7 Tier-1 languages producing non-zero WER <= 15% and PNER/NER <= 5% in reports/speech_wer_report.json.
 - R6.3: Executed all 5 core ablations with 1,000 paired bootstrap resamples and 95% confidence intervals recorded in reports/ablations_report.json: 1. No tools vs Tools (+100.0% grounding pass rate); 2. Tools vs Tools+RAG (95.0% official guidance faithfulness citing NDMA/ICAR chunks); 3. Raw NWP (1.52°C MAE) vs Ridge (0.92°C MAE) vs LightGBM (0.92°C MAE), with improvement interval excluding zero; 4. Encoder vs LLM function calling for intent (98.0% vs 97.0% accuracy, with 1240x speedup: 0.05ms vs 59.1ms); 5. Cascaded translation with placeholder protection vs native Hindi generation (+16.0% number preservation improvement, 100% vs 84%, delta CI [10.0%, 24.0%]).
 - R6.4: Consolidated evaluation outputs into dated directory eval/results/<date>/ and rendered docs/EVAL_RESULTS.md via scripts/tasks/generate_eval_results.py; upgraded scripts/tasks/acceptance.py to evaluate all 19 gates across all 7 Tier-1 languages, latencies, load testing, accessibility, speech, ablations, and infrastructure with 100% pass under --strict mode.
+- R7: Completed Documentation Alignment: updated README.md, docs/architecture.md, docs/ml-plan.md, and docs/eval-and-acceptance.md to reflect operational system reality; added scripts/tasks/demo.py walking through 8 milestones (Hindi query, trace panel, ML on/off, risk card, climate trend, RAG advice, alert relay, acceptance gates); authored docs/PROPOSAL_DELTAS.md detailing the 5 major proposal revisions (IMD feeds replaced by SACHET, Bhashini replaced by Sarvam, targets re-confirmed against measured baselines, voice optional, aviation not supported).
 
 ## Human-only steps open
 
