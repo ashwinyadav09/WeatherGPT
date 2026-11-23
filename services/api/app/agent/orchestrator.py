@@ -65,6 +65,7 @@ class Orchestrator:
         climate_service: ClimateService | None = None,
         translation_gateway: TranslationGateway | None = None,
         llm_gateway: LLMGateway | None = None,
+        intent_model: Any | None = None,
     ) -> None:
         self.llm = llm or llm_gateway or LLMGateway()
         self.forecast_service = forecast_service or ForecastService()
@@ -73,6 +74,7 @@ class Orchestrator:
         self.advisory_engine = advisory_engine or AdvisoryEngine()
         self.climate_service = climate_service or ClimateService()
         self.translation_gateway = translation_gateway
+        self.intent_model = intent_model
         self.sessions: dict[str, dict[str, Any]] = {}
         self.pending_clarifications: dict[str, dict[str, Any]] = {}
 
@@ -534,16 +536,37 @@ class Orchestrator:
         # 6. Intent Routing & Tool Execution
         tools_executed: list[dict[str, Any]] = []
         evidence_packets: list[EvidencePacket] = []
+        models_invoked: list[dict[str, Any]] = []
+        confidence: float | None = None
+        router_path: str = "deterministic"
         intent = "forecast"
-        router_path = "deterministic"
-        confidence = 0.95
 
-        # Check intent keywords
-        is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
-        is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
-        is_advisory = any(w in req.text.lower() for w in advisory_keywords)
+        if self.intent_model:
+            pred = self.intent_model.predict(req.text)
+            intent = getattr(pred, "intent", "forecast")
+            confidence = float(getattr(pred, "confidence", 0.0))
+            router_path = "intent_model"
+            m_id = getattr(self.intent_model, "MODEL_ID", getattr(self.intent_model, "MODEL_VERSION", "rule_intent_baseline"))
+            m_ver = getattr(self.intent_model, "MODEL_VERSION", "v1.0")
+            models_invoked.append({"id": m_id, "version": m_ver, "used": True})
+        else:
+            confidence = None
+            router_path = "deterministic"
+            # Check intent keywords
+            is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
+            is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
+            is_advisory = any(w in req.text.lower() for w in advisory_keywords)
 
-        if is_climate:
+            if is_climate:
+                intent = "climate_history"
+            elif is_alert:
+                intent = "alert"
+            elif is_advisory:
+                intent = "advisory"
+            else:
+                intent = "forecast"
+
+        if intent in ("climate", "climate_history"):
             intent = "climate_history"
             t0 = time.time()
             metric = "rain" if "rain" in req.text.lower() else "temperature"
@@ -555,8 +578,7 @@ class Orchestrator:
                 "source": evidence_packets[0].source if evidence_packets else "era5",
                 "provenance": evidence_packets[0].provenance if evidence_packets else "live",
             })
-        elif is_alert:
-            intent = "alert"
+        elif intent == "alert":
             t0 = time.time()
             evidence_packets = await get_alerts(place=place_ref)
             tools_executed.append({
@@ -566,8 +588,7 @@ class Orchestrator:
                 "source": evidence_packets[0].source if evidence_packets else "sachet",
                 "provenance": evidence_packets[0].provenance if evidence_packets else "live",
             })
-        elif is_advisory:
-            intent = "advisory"
+        elif intent == "advisory":
             t0 = time.time()
             evidence_packets = await search_knowledge(query=req.text, lang=lang)
             tools_executed.append({
@@ -794,14 +815,26 @@ class Orchestrator:
             "data": card_data,
         }
 
-        # 13. Stream Trace Event (Ticket R2.4)
+        # 13. Stream Trace Event (Ticket R2.4, R8.4)
         checked_numbers = extract_numbers_from_text(answer_text)
+        llm_metrics = getattr(self.llm, "last_call_metrics", None)
+        if isinstance(llm_metrics, dict):
+            llm_provider = llm_metrics.get("provider", "none")
+            llm_model = llm_metrics.get("model", "none")
+            tokens_in = llm_metrics.get("prompt_tokens", 0)
+            tokens_out = llm_metrics.get("completion_tokens", 0)
+        else:
+            llm_provider = getattr(self.llm, "provider_name", "none")
+            llm_model = getattr(self.llm, "model", "none")
+            tokens_in = 0
+            tokens_out = 0
+
         trace_payload = {
             "intent": intent,
             "confidence": confidence,
             "router_path": router_path,
             "tools": tools_executed,
-            "models": [{"id": "intent_baseline", "version": "v1", "used": True}],
+            "models": models_invoked,
             "verifier": {
                 "passed": v_result.is_grounded if not fallback_used else True,
                 "checked_numbers": checked_numbers,
@@ -809,10 +842,10 @@ class Orchestrator:
                 "fallback_used": fallback_used,
             },
             "llm": {
-                "provider": self.llm.last_call_metrics.get("provider", "groq"),
-                "model": self.llm.last_call_metrics.get("model", "llama-3.3-70b-versatile"),
-                "tokens_in": self.llm.last_call_metrics.get("prompt_tokens", 0),
-                "tokens_out": self.llm.last_call_metrics.get("completion_tokens", 0),
+                "provider": llm_provider,
+                "model": llm_model,
+                "tokens_in": tokens_in,
+                "tokens_out": tokens_out,
             },
         }
         yield {

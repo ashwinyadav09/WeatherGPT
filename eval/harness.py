@@ -9,11 +9,12 @@ from typing import Any
 import httpx
 import yaml
 
-from services.api.app.conversation.agent import ChatRequest, ConversationAgent
+from services.api.app.agent.orchestrator import ChatRequest, Orchestrator
 from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
 from services.api.app.modules.forecast.service import ForecastService
 from services.api.app.modules.location.adapters.open_meteo_geocoding import OpenMeteoGeocodingAdapter
 from services.api.app.modules.location.resolver import LocationResolver
+from services.api.app.registry import registry
 
 logger = logging.getLogger(__name__)
 
@@ -85,7 +86,7 @@ def get_per_city_forecast_transport() -> httpx.MockTransport:
     return httpx.MockTransport(handler)
 
 
-async def run_single_case(agent: ConversationAgent, case: dict[str, Any]) -> dict[str, Any]:
+async def run_single_case(agent: Orchestrator, case: dict[str, Any]) -> dict[str, Any]:
     req = ChatRequest(
         session_id=f"eval_{case['id']}",
         text=case["question"],
@@ -227,7 +228,7 @@ async def evaluate_language(language: str = "en") -> dict[str, Any]:
 
     geocoder = OpenMeteoGeocodingAdapter(client=mock_client)
     loc_resolver = LocationResolver(geocoder=geocoder)
-    agent = ConversationAgent(forecast_service=fc_service, location_resolver=loc_resolver)
+    agent = registry.get_orchestrator(forecast_service=fc_service, location_resolver=loc_resolver)
 
     results = []
     for c in cases:

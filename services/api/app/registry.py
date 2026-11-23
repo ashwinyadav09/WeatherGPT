@@ -261,6 +261,35 @@ class ProviderRegistry:
         fallback = fallback_factory(self.settings)
         return TranslationGateway(primary=primary, fallback=fallback)
 
+    def get_orchestrator(
+        self,
+        forecast_service: Any | None = None,
+        location_resolver: Any | None = None,
+        llm: Any | None = None,
+        translation_gateway: Any | None = None,
+        intent_model: Any | None = None,
+    ) -> Any:
+        """Return configured Orchestrator via the registry."""
+        from services.api.app.agent.orchestrator import Orchestrator
+        from services.api.app.modules.forecast.service import ForecastService
+        from services.api.app.modules.location.resolver import LocationResolver
+
+        if forecast_service is None:
+            forecast_service = ForecastService()
+            for prov in self.get_available_forecast_providers():
+                forecast_service.register_adapter(prov)
+
+        if location_resolver is None:
+            location_resolver = LocationResolver(geocoder=self.get_geocoding_adapter())
+
+        return Orchestrator(
+            llm=llm or self.get_llm_gateway(),
+            forecast_service=forecast_service,
+            location_resolver=location_resolver,
+            translation_gateway=translation_gateway or self.get_translation_provider(),
+            intent_model=intent_model,
+        )
+
 
 # Module-level default registry instance and helper accessors
 registry = ProviderRegistry()
@@ -306,4 +335,10 @@ def get_translation_provider(settings: Settings | None = None) -> TranslationGat
     if settings:
         return ProviderRegistry(settings).get_translation_provider()
     return registry.get_translation_provider()
+
+
+def get_orchestrator(settings: Settings | None = None, **kwargs: Any) -> Any:
+    if settings:
+        return ProviderRegistry(settings).get_orchestrator(**kwargs)
+    return registry.get_orchestrator(**kwargs)
 

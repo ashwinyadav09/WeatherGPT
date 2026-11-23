@@ -6,7 +6,7 @@
   "type": "object",
   "properties": {
     "intent": {"type": "string"},
-    "confidence": {"type": "number"},
+    "confidence": {"type": ["number", "null"]},
     "router_path": {"type": "string"},
     "tools": {
       "type": "array",

@@ -34,6 +34,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R8.1 | Mark and rewrite what is untrue | done | Merged in PR #71 |
 | R8.2 | Delete the simulation code | done | Merged in PR #72 |
 | R8.3 | Repair translations | done | Merged in PR #73 |
+| R8.4 | Point evaluation and trace at the real system | in-review | Branch ticket/R8.4-point-eval-trace-real-system |
 
 ## Assumptions
 
@@ -59,6 +60,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R8.1: Quarantined docs/EVAL_RESULTS.md, eval/results/2026-11-23/, and reports/ to docs/archive/unverified/ with UNVERIFIED warning banner; updated .agents/rules/no-simulated-results.md to V3 rules; added Rule G1 mechanical guard paths to .github/CODEOWNERS; rewrote docs/PROPOSAL_DELTAS.md removing all performance metrics and stating truth regarding pending IMD and Bhashini API keys.
 - R8.2: Deleted simulate_realistic_asr_hypothesis and min_wer budget logic in eval_speech.py; deleted eval_ablations.py; deleted _generate_synthetic_station_records from ml/bias_correction/dataset.py and removed hard-coded rain_weights/val_skill table from mos_model.py; deleted ml/intent/dataset_generator.py and its synthetic dataset outputs while preserving RuleIntentBaseline; removed fake uptime in wis2_subscriber.py; moved sachet_synthetic_cyclone.json to services/api/tests/fixtures/ excluding it from SACHET replays and metrics; confirmed no module in ml/, eval/, or scripts/tasks/ imports random or numpy.random.
 - R8.3: Removed stub from translation chain (Sarvam -> Groq LLM -> raise); TranslationCache refuses stub entries and purges on read; deleted corrupted .cache/translations/; added crops terms in Odia glossary; added authentic NDMA guidance translations across bn, mr, or, ta, te in cold_wave.yaml and heat_wave.yaml; updated translate_static.py to write reviewed: false and copy English metadata (source_url, reviewed_by); added unit/test_translation_validation.py checking 0 stubs, >=50% script characters in non-Latin languages, reviewed=False on guidance, and metadata matching English.
+- R8.4: Pointed eval/harness.py and scripts/tasks/latency_report.py to Orchestrator via registry.get_orchestrator(); deleted legacy services/api/app/conversation/agent.py; updated trace_event schema to allow null confidence for deterministic routing without intent model; Orchestrator trace emits only invoked models (empty list on deterministic path), model confidence or null, actual answering LLM provider (or none), and truthful router_path; added unit/test_trace_honesty.py verifying trace honesty and asserting failure when trace reports uninvoked models.
 
 ## Human-only steps open
 

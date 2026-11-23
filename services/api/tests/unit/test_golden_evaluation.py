@@ -20,7 +20,7 @@ from eval.harness import (
     run_single_case,
 )
 from eval.judge import calculate_cohen_kappa, evaluate_quality_rubric
-from services.api.app.conversation.agent import ConversationAgent
+from services.api.app.agent.orchestrator import Orchestrator
 from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
 from services.api.app.modules.forecast.service import ForecastService
 from services.api.app.modules.location.adapters.open_meteo_geocoding import OpenMeteoGeocodingAdapter
@@ -123,7 +123,7 @@ async def test_evaluation_harness_with_per_city_mock():
 
     geocoder = OpenMeteoGeocodingAdapter(client=mock_client)
     loc_resolver = LocationResolver(geocoder=geocoder)
-    agent = ConversationAgent(forecast_service=fc_service, location_resolver=loc_resolver)
+    agent = Orchestrator(forecast_service=fc_service, location_resolver=loc_resolver)
 
     # Case 1: Forecast for Delhi
     case_delhi = {

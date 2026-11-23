@@ -17,7 +17,7 @@ from pathlib import Path
 import httpx
 import pytest
 
-from services.api.app.conversation.agent import ChatRequest, ConversationAgent
+from services.api.app.agent.orchestrator import ChatRequest, Orchestrator
 from services.api.app.conversation.verifier import verify_grounding
 from services.api.app.evidence.models import EvidencePacket, PlaceReference, ValueItem
 from services.api.app.modules.forecast.adapters.open_meteo import OpenMeteoForecastAdapter
@@ -83,7 +83,7 @@ async def test_agent_tomorrow_uses_day_index_1(mock_open_meteo_client):
     forecast_service = ForecastService()
     forecast_service.register_adapter(adapter)
 
-    agent = ConversationAgent(forecast_service=forecast_service)
+    agent = Orchestrator(forecast_service=forecast_service)
     req = ChatRequest(
         session_id="test_tomorrow_day1",
         text="Will it rain tomorrow in Pune?",
@@ -124,7 +124,7 @@ async def test_agent_tomorrow_uses_day_index_1(mock_open_meteo_client):
 @pytest.mark.asyncio
 async def test_agent_missing_place_asks_clarification():
     """Asking without place and without place_id must NOT default to Pune; must ask user for place."""
-    agent = ConversationAgent()
+    agent = Orchestrator()
     req = ChatRequest(
         session_id="test_no_place",
         text="Will it rain tomorrow?",  # No place mentioned

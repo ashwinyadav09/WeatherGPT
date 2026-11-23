@@ -46,7 +46,7 @@ async def test_trace_contract_forecast_query():
         validate_schema("trace_event", trace_data)
 
         assert trace_data["intent"] == "forecast"
-        assert trace_data["confidence"] > 0
+        assert trace_data["confidence"] is None or trace_data["confidence"] > 0
         assert trace_data["router_path"] in ["deterministic", "llm_function_call"]
         assert isinstance(trace_data["tools"], list)
         assert len(trace_data["tools"]) >= 1

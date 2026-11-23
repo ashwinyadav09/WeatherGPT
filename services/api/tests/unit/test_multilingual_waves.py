@@ -14,7 +14,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-from services.api.app.conversation.agent import ChatRequest, ConversationAgent
+from services.api.app.agent.orchestrator import ChatRequest, Orchestrator
 from services.api.app.conversation.i18n import detect_language
 
 ROOT = Path(__file__).resolve().parents[4]
@@ -95,7 +95,7 @@ def test_language_detection_scripts_and_stopword_heuristics() -> None:
 @pytest.mark.asyncio
 async def test_conversation_agent_answers_all_tier1_languages() -> None:
     """Conversation agent returns cards and answer tokens for all Tier-1 languages."""
-    agent = ConversationAgent()
+    agent = Orchestrator()
     samples = [
         ("en", "Will it rain tomorrow in Pune?"),
         ("hi", "कल पुणे में बारिश होगी क्या?"),
