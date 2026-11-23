@@ -27,7 +27,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R3.5 | RAG advisory engine | done | Merged in PR #64 |
 | R5 | Real alert ingest | done | Merged in PR #65 |
 | R6.1 | Golden sets | done | Merged in PR #66 |
-| R6.2 | Real measurements | done | PR pending |
+| R6.2 | Real measurements | done | Merged in PR #67 |
 
 ## Assumptions
 
