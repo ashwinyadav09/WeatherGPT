@@ -32,7 +32,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R6.4 | Outputs | done | Merged in PR #69 |
 | R7 | Documentation alignment | done | Merged in PR #70 |
 | R8.1 | Mark and rewrite what is untrue | done | Merged in PR #71 |
-| R8.2 | Delete the simulation code | in-review | PR pending |
+| R8.2 | Delete the simulation code | done | Merged in PR #72 |
 
 ## Assumptions
 
