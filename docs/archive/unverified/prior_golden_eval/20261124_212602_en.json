@@ -1,0 +1,1274 @@
+{
+  "timestamp": "2026-11-24T21:26:02.960219+00:00",
+  "generated_by": "scripts/tasks/eval.py",
+  "git_sha": "4ce6bc5cee21885c602d6488ab64d9b0179e592b",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "eval/golden/en/advisory.yaml",
+      "sha256": "9e82d2a3219d06421620056382062a0df95edb45f97ad38b31264a61a9f2623f"
+    },
+    {
+      "path": "eval/golden/en/forecast.yaml",
+      "sha256": "efc76cefa9af7f9fde12d0d37f82407c057db2059a8a302657f81b22483a6264"
+    },
+    {
+      "path": "eval/golden/en/forecast_rain.yaml",
+      "sha256": "7c06d5fd7014c9f879e36b5d122593330e3259bda831bbd441802c3265ac051f"
+    },
+    {
+      "path": "eval/golden/en/refusal.yaml",
+      "sha256": "3e064436cf0a6d1b60aae9b66dafcb18f9c855aec8b99812c3ca697e1adef258"
+    },
+    {
+      "path": "eval/recordings/MANIFEST.json",
+      "sha256": "63ec2af1f17c77d8ea3320815d2f9a8fa96fbe903c830f1c86853b15a3fe8f02"
+    },
+    {
+      "path": "eval/recordings/open_meteo/agra/20261124T210746Z_geocoding.json",
+      "sha256": "72208ac09cedd2757809427cdc84674f83e0fdfde2f1bab4798372bc02815611"
+    },
+    {
+      "path": "eval/recordings/open_meteo/agra/20261124T210746Z_forecast.json",
+      "sha256": "e4c1a8e83c6be67f80cb7790989ad445cbe9b9b138f27d2dca5bad5a8ee3d8a2"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ahmedabad/20261124T210746Z_geocoding.json",
+      "sha256": "08be7e0e6a6768cf9ce5ab48092e82973ec989c73edb0c169e879dcd8cdd9aff"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ahmedabad/20261124T210746Z_forecast.json",
+      "sha256": "267a43cb46d9351ea4db45655cd4261d5ad09a5cce5b689e33dadc4970465982"
+    },
+    {
+      "path": "eval/recordings/open_meteo/amravati/20261124T210746Z_geocoding.json",
+      "sha256": "e1cec4bd3bd84b3fc8bbf6ccbaf2edced272b5f4c1113e6d886adfa019c85aad"
+    },
+    {
+      "path": "eval/recordings/open_meteo/amravati/20261124T210746Z_forecast.json",
+      "sha256": "09f5fb125951535a0f11e5801af21d9d486a29cde0b19801061c4b416dd7dda5"
+    },
+    {
+      "path": "eval/recordings/open_meteo/amritsar/20261124T210746Z_geocoding.json",
+      "sha256": "17a4668e16d3eae2fcaf10f0052a3f3a5ce8335e5a74893bfd0b661253eb53c0"
+    },
+    {
+      "path": "eval/recordings/open_meteo/amritsar/20261124T210746Z_forecast.json",
+      "sha256": "b1c9aad77310f851af9b58a9ca6c013077a6433c2207e8a677744c52325b6135"
+    },
+    {
+      "path": "eval/recordings/open_meteo/anantapur/20261124T210746Z_geocoding.json",
+      "sha256": "7b2776962926e522ed41c33b2e8dc5795a17dd27538671bd9712347b7249b781"
+    },
+    {
+      "path": "eval/recordings/open_meteo/anantapur/20261124T210746Z_forecast.json",
+      "sha256": "d191d170e1cf5aec5df48bc1eca1d942acefed308742a8c305d016ff5f54edcd"
+    },
+    {
+      "path": "eval/recordings/open_meteo/asansol/20261124T210746Z_geocoding.json",
+      "sha256": "aeb7aa84402a5c5af63ed7cbcb800e9b198123b042585b5f955234c65763669d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/asansol/20261124T210746Z_forecast.json",
+      "sha256": "ce0e621c82421a4f4ab18b51c1ab48428f3c67210928d27ce74f7b7af716b94b"
+    },
+    {
+      "path": "eval/recordings/open_meteo/baharampur/20261124T210746Z_geocoding.json",
+      "sha256": "087eb9c36f41a1b201b85ce118e44bd0a26810e2989e0b2df8c5de64238c9119"
+    },
+    {
+      "path": "eval/recordings/open_meteo/baharampur/20261124T210746Z_forecast.json",
+      "sha256": "3165f74951e8cbddf3114e956f7a85016fc50264e4e13b89ab669c03ab87f190"
+    },
+    {
+      "path": "eval/recordings/open_meteo/baramati/20261124T210746Z_geocoding.json",
+      "sha256": "397d7d40a1583966af7e5a014110ee2f362d60051096417ce0d11096c18736f6"
+    },
+    {
+      "path": "eval/recordings/open_meteo/baramati/20261124T210746Z_forecast.json",
+      "sha256": "36dc0a4766266d070eb390e5f20e9d238b1d08ec57106160dc511765b918b6ed"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bardhaman/20261124T210746Z_geocoding.json",
+      "sha256": "e7171eb6e2a0b233900ef485e2fbce560f76e79d98a6992a04180e5f7b9cf050"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bardhaman/20261124T210746Z_forecast.json",
+      "sha256": "24ea727a354a32da3c14c09a5140c95b9d071abaee71c78905af0c09619aa6de"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bengaluru/20261124T210746Z_geocoding.json",
+      "sha256": "a995d1d3c2905753b978ce47a1a463af66cc083dde330e5ad15def8f628745db"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bengaluru/20261124T210746Z_forecast.json",
+      "sha256": "1e266273b78408a98fc7048b57466b090953592203be1ac0d84a4969aff461fe"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bhopal/20261124T210746Z_geocoding.json",
+      "sha256": "813f3345b3a6f538fe93d3eb33f37f563654576c74b4f48ad9166704c6748d79"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bhopal/20261124T210746Z_forecast.json",
+      "sha256": "a255491680e86a0ee5af0dd6c7cc14b4d601a60d17d6a6a194144760fbe40c4d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bhubaneswar/20261124T210746Z_geocoding.json",
+      "sha256": "6a129cb240bf8e2d4da90ab63fab64a712f4b15c8480faacaac181b2fcb19d12"
+    },
+    {
+      "path": "eval/recordings/open_meteo/bhubaneswar/20261124T210746Z_forecast.json",
+      "sha256": "ec23d126a434a2a3dea5959e97bddd8b69372eca196c626ecff1c691c4a12d08"
+    },
+    {
+      "path": "eval/recordings/open_meteo/chandigarh/20261124T210746Z_geocoding.json",
+      "sha256": "3e4100f9506f9212d2bb36a27be07473132637a87cd698dce9823115bfa30766"
+    },
+    {
+      "path": "eval/recordings/open_meteo/chandigarh/20261124T210746Z_forecast.json",
+      "sha256": "265be63c8297131a798fd904d6ec4cc3344654cc1d0261d1dbd009cae25d10e4"
+    },
+    {
+      "path": "eval/recordings/open_meteo/chennai/20261124T210746Z_geocoding.json",
+      "sha256": "d532012665219ea02e86fe8f6ec139e002a228fd20cb4d3cf5ba91b1f717c707"
+    },
+    {
+      "path": "eval/recordings/open_meteo/chennai/20261124T210746Z_forecast.json",
+      "sha256": "f4597068cc6a7b8fade95ee5c0e38ecd3213fb40d5b73f51f03393bbc983efd3"
+    },
+    {
+      "path": "eval/recordings/open_meteo/coimbatore/20261124T210746Z_geocoding.json",
+      "sha256": "e1cf5f845ef6cbf33daa75931505e73f60156ed30771032ef14a2b45cd62c439"
+    },
+    {
+      "path": "eval/recordings/open_meteo/coimbatore/20261124T210746Z_forecast.json",
+      "sha256": "6b6ab4953cc6b69447dbc91791af49312aa0b75d4d67fa6f2d65a3baaccefb5c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/cuddalore/20261124T210746Z_geocoding.json",
+      "sha256": "9aa4b1b37e073b6a2df2f48bcbdfd2c25e78f04dc1b3aacd11201f636eb565ec"
+    },
+    {
+      "path": "eval/recordings/open_meteo/cuddalore/20261124T210746Z_forecast.json",
+      "sha256": "3820bc1a686b97423601eabc095ed4b891a36f54ea69f918dcf3845b080944d4"
+    },
+    {
+      "path": "eval/recordings/open_meteo/cuttack/20261124T210746Z_geocoding.json",
+      "sha256": "a8640f50df4f2d9cb5b03f76188f59db59c0959bbd9110c52684b058092e1397"
+    },
+    {
+      "path": "eval/recordings/open_meteo/cuttack/20261124T210746Z_forecast.json",
+      "sha256": "4814b2194ac9794362cc233f2ac5e719fcad50806ad0412e09d4a1b62eee8f7c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/darjeeling/20261124T210746Z_geocoding.json",
+      "sha256": "cecbc289cfc54d16a2647f7a144cef74c2b32ba594008df9351e047211b372f5"
+    },
+    {
+      "path": "eval/recordings/open_meteo/darjeeling/20261124T210746Z_forecast.json",
+      "sha256": "4a1317ac5c48c319f6376ca5bc316766ff220ea8be6c56a160ec7d36ca608949"
+    },
+    {
+      "path": "eval/recordings/open_meteo/dehradun/20261124T210746Z_geocoding.json",
+      "sha256": "af90cc95a9311ce6a969e05f883ff23982cd12a4b1b9fdc842230ab0e566a3f8"
+    },
+    {
+      "path": "eval/recordings/open_meteo/dehradun/20261124T210746Z_forecast.json",
+      "sha256": "a00c90eb8bc263a106e8d62183a6de67e430988d4b9cefd4ecba6a59eb8ae724"
+    },
+    {
+      "path": "eval/recordings/open_meteo/delhi/20261124T210746Z_geocoding.json",
+      "sha256": "f803cd55436e2f616b3bc047f0ee128876bbdeed2d3ccc32b3c2b5b33d2dd6f4"
+    },
+    {
+      "path": "eval/recordings/open_meteo/delhi/20261124T210746Z_forecast.json",
+      "sha256": "8d8f478f81f1156036790d2be9ad6f8cf6d6c5560f88d732e1c26cbb4bc84738"
+    },
+    {
+      "path": "eval/recordings/open_meteo/dindigul/20261124T210746Z_geocoding.json",
+      "sha256": "024b6161d5712f6104c7bfa8cc1cbe5e2ff72420d20a4835eba7fe06b7a8c842"
+    },
+    {
+      "path": "eval/recordings/open_meteo/dindigul/20261124T210746Z_forecast.json",
+      "sha256": "7b7650ab8971be219fddb1566cedf316f5331eaec13a4d9ef326af21e56220cd"
+    },
+    {
+      "path": "eval/recordings/open_meteo/durgapur/20261124T210746Z_geocoding.json",
+      "sha256": "2f3df035b5e2ad6cbf2e4d28e1d7fa4ed27e535e806b210c9390faf0781ecf60"
+    },
+    {
+      "path": "eval/recordings/open_meteo/durgapur/20261124T210746Z_forecast.json",
+      "sha256": "4c41433680d283cdf266071912cf7294afcbf771e6ccbd76d42be21194d6b813"
+    },
+    {
+      "path": "eval/recordings/open_meteo/erode/20261124T210746Z_geocoding.json",
+      "sha256": "79b705fde374b6e145f3702fd648af1986035f2adeefa29938c8c4ded61758c6"
+    },
+    {
+      "path": "eval/recordings/open_meteo/erode/20261124T210746Z_forecast.json",
+      "sha256": "b9a2d91162636a0a7937b322175670269356db45ddfa0714b767ab2e4e5d65de"
+    },
+    {
+      "path": "eval/recordings/open_meteo/guntur/20261124T210746Z_geocoding.json",
+      "sha256": "4199f4559ac8639329d11d1d3b85ce35548bf0978f732ab3ab719724931743ae"
+    },
+    {
+      "path": "eval/recordings/open_meteo/guntur/20261124T210746Z_forecast.json",
+      "sha256": "310cf7c83911b42d33817bd6730f8d3244470bd67adfc127439c1bfd6f7ad5c8"
+    },
+    {
+      "path": "eval/recordings/open_meteo/guwahati/20261124T210746Z_geocoding.json",
+      "sha256": "a2f0f49efb9cd69d0e78d2ca4b01f66adf2785f56fbf04aeb31ca7bfbf89ef26"
+    },
+    {
+      "path": "eval/recordings/open_meteo/guwahati/20261124T210746Z_forecast.json",
+      "sha256": "41069572b64a3ba2d079538bfcf75d82713a76437df0ff8ade83c05e2237625d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/howrah/20261124T210746Z_geocoding.json",
+      "sha256": "e275ab41476defce3937c19080684de81254b1856c112a70b87f7dc2b8bdf61f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/howrah/20261124T210746Z_forecast.json",
+      "sha256": "f01019fd3369376adef73b4f36f5db50b7cc335d861e8395ff837238f060c044"
+    },
+    {
+      "path": "eval/recordings/open_meteo/hyderabad/20261124T210746Z_geocoding.json",
+      "sha256": "9784b393d6a2ddb20ae2c99ccc3c5fb6927022da443c8bb23aad629399ff694c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/hyderabad/20261124T210746Z_forecast.json",
+      "sha256": "de47a833c3ed3d091751ccf77faf408bbb065aa3ad093c2ff61b03a6f64c79ee"
+    },
+    {
+      "path": "eval/recordings/open_meteo/indore/20261124T210746Z_geocoding.json",
+      "sha256": "9cff2b4537368e7c6cd56766c1e0dc7435929c8a6596e72daae42b02ea2fa770"
+    },
+    {
+      "path": "eval/recordings/open_meteo/indore/20261124T210746Z_forecast.json",
+      "sha256": "bafcb56e4ba6dfc268d352c69317f26e18b008fd8f4480f9cf69bcbdec15d0d0"
+    },
+    {
+      "path": "eval/recordings/open_meteo/jaipur/20261124T210746Z_geocoding.json",
+      "sha256": "a32205cc69debc366f50931b6bfed9cf32a42b29c2960efc94361211f6ee900d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/jaipur/20261124T210746Z_forecast.json",
+      "sha256": "5d1a87e5b331a700195476d89ce9d22de36314799e7ea215c980e767e9d8ad93"
+    },
+    {
+      "path": "eval/recordings/open_meteo/jalgaon/20261124T210746Z_geocoding.json",
+      "sha256": "9f2500d42f95d30a3589d1497da09c1caabf31267088edfc27d90b9b51fc090b"
+    },
+    {
+      "path": "eval/recordings/open_meteo/jalgaon/20261124T210746Z_forecast.json",
+      "sha256": "9e617999a8f2e40c6a73c83a0ab24105f7c8e0201a807d9facea670ce5bd10a4"
+    },
+    {
+      "path": "eval/recordings/open_meteo/jalpaiguri/20261124T210746Z_geocoding.json",
+      "sha256": "bbe427f8d38329ce89d0c4871818cccc62c58a96d1bf4e6710b77b21e35ad4c4"
+    },
+    {
+      "path": "eval/recordings/open_meteo/jalpaiguri/20261124T210746Z_forecast.json",
+      "sha256": "7607ba52799f7f9aea8c8f5ad103ebaf4a712b39aa4e060b2aed1b05e6cfd13a"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kadapa/20261124T210746Z_geocoding.json",
+      "sha256": "1575b6527d01e61618d7dbd512ff6f6583ec2bf554062b9196f50d34cf8dc1f5"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kadapa/20261124T210746Z_forecast.json",
+      "sha256": "7e577282338643ae7154c9a0c74403647528d54cb8e01253d4a1dd3917283e26"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kanchipuram/20261124T210746Z_geocoding.json",
+      "sha256": "e62040748f815354e165ec02d509a5f73a43803da6cc0c5d63b0c15bdd54348e"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kanchipuram/20261124T210746Z_forecast.json",
+      "sha256": "02cfcc3cd17bd67de23270a56a42ae9deb045c9574f79dd4b4fcc22a44894006"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kanpur/20261124T210746Z_geocoding.json",
+      "sha256": "a0ac4d5877e208275fd2f8960f6f93a20fb24492180a7df9aa731ab3571f6eec"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kanpur/20261124T210746Z_forecast.json",
+      "sha256": "4d90825fac0ccc1f32ebc1856ac99f65d7525950aa6e3aee350bd426a2256b18"
+    },
+    {
+      "path": "eval/recordings/open_meteo/karimnagar/20261124T210746Z_geocoding.json",
+      "sha256": "3cae2d83ff7c732dd9008520ce76d04f9e0c54b877e05fd322dfd64a02df0748"
+    },
+    {
+      "path": "eval/recordings/open_meteo/karimnagar/20261124T210746Z_forecast.json",
+      "sha256": "ff3bc07c7960435ec0e6c292ec24fcbd1e238980d886f3c60d0ceb24b7419778"
+    },
+    {
+      "path": "eval/recordings/open_meteo/khammam/20261124T210746Z_geocoding.json",
+      "sha256": "97b47a1bb54ac44a2485c0c0f5197a0ad731e7000ac41d49a1c1f197e395507c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/khammam/20261124T210746Z_forecast.json",
+      "sha256": "c68240192636e4dd88159598cc28a6e3ead7de764e67310bd6c5297b8572c302"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kharagpur/20261124T210746Z_geocoding.json",
+      "sha256": "b091f7b2959e5772290e3fd880d56755fac8a86727ab22076779e0521ce4385e"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kharagpur/20261124T210746Z_forecast.json",
+      "sha256": "b055b2a928a4abd82133ce8cebf19174749ef7374cfab0c788e5b8e3be448516"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kochi/20261124T210746Z_geocoding.json",
+      "sha256": "ca7f232c54ebba33d634df95092ff9bf649ee0650ef220ee564f392ea38d22c2"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kochi/20261124T210746Z_forecast.json",
+      "sha256": "362b1e16d20963ed61e5c168ba695ab467fc305fa9a55bc7575cff33d76e6f1d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kolhapur/20261124T210746Z_geocoding.json",
+      "sha256": "ea6b1ffaad31289cc2cc970446c6c3da100661ee1ab6098975e2e7e6d38b3120"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kolhapur/20261124T210746Z_forecast.json",
+      "sha256": "e56edf9a9abc8a94ec142f592fb5452f93cee090fb3ef76cbeda8e9e9981aeca"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kolkata/20261124T210746Z_geocoding.json",
+      "sha256": "3d1dd61a8565b635067e635d6a2f207105b07d729bd2f72733b421e412b212ef"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kolkata/20261124T210746Z_forecast.json",
+      "sha256": "5afe776288b8c24a221b75af0258bc010e1afd033607fd20bf4ec8c756ccac1c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/krishnanagar/20261124T210746Z_geocoding.json",
+      "sha256": "2ccfb083e44510f56a06d7a267227290be7677f05725962cb575d5ad43784325"
+    },
+    {
+      "path": "eval/recordings/open_meteo/krishnanagar/20261124T210746Z_forecast.json",
+      "sha256": "5bdbc108dccfcf00599ca021251554d564013c6f2bf9bb2fbd1e688f08470a67"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kurnool/20261124T210746Z_geocoding.json",
+      "sha256": "abe4a4827a812030592c78d7217ecc084e48354f89af0f5ce47c9b602705bd0f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/kurnool/20261124T210746Z_forecast.json",
+      "sha256": "b854b45d4ab2f6915de08c7121f91a599b3e44131524353e32805f588be8723f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/lucknow/20261124T210746Z_geocoding.json",
+      "sha256": "1492426b0d0f8bf3c3288d50de06249f1cf080726c39eba911591a34956c882a"
+    },
+    {
+      "path": "eval/recordings/open_meteo/lucknow/20261124T210746Z_forecast.json",
+      "sha256": "43f573ac180876c422eec635341a60463614d49c10046c4be727e56a01377cac"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ludhiana/20261124T210746Z_geocoding.json",
+      "sha256": "f74ce7e46156d725d1d7d4f76ee0c858f7f73b2765d924e022998b753e36a123"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ludhiana/20261124T210746Z_forecast.json",
+      "sha256": "a2e61c68e6f06e5bf3188bf7425df2866479d0868c524b3b5ac2a0a6f187eac7"
+    },
+    {
+      "path": "eval/recordings/open_meteo/madurai/20261124T210746Z_geocoding.json",
+      "sha256": "dda118cd0588570617ed75a1516b899aeb5529974cb5d7108b9aaf7cc25ea648"
+    },
+    {
+      "path": "eval/recordings/open_meteo/madurai/20261124T210746Z_forecast.json",
+      "sha256": "22e12b1331024a980ec71a42bad5793c96b17039d20660f17d3803e1bb380c2f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/malda/20261124T210746Z_geocoding.json",
+      "sha256": "8fa1fb56017d4df82adf06b6c48cd2fa10637e8a44b29deedbc9c946a592daf6"
+    },
+    {
+      "path": "eval/recordings/open_meteo/malda/20261124T210746Z_forecast.json",
+      "sha256": "197a07673c85e928f859493ffcfe25b242a7845c424299b18df7dbff113951a5"
+    },
+    {
+      "path": "eval/recordings/open_meteo/midnapore/20261124T210746Z_geocoding.json",
+      "sha256": "30b21b4e6af081ab5077c27e0507b3d6f57b65eeccabf486401b9c8a08391629"
+    },
+    {
+      "path": "eval/recordings/open_meteo/midnapore/20261124T210746Z_forecast.json",
+      "sha256": "098d586355b9ca54194b1813e50ad6f9d59efb9e5cb41da59d68df096f95deef"
+    },
+    {
+      "path": "eval/recordings/open_meteo/mumbai/20261124T210746Z_geocoding.json",
+      "sha256": "931b95dacb3ba38b6e6265132466d7efd09a8856fcae387b64b63fdf0cb3e940"
+    },
+    {
+      "path": "eval/recordings/open_meteo/mumbai/20261124T210746Z_forecast.json",
+      "sha256": "1c4486111597e65034bb2d56486e0e618ea29bdae20791d3ff02eca82bf18ce8"
+    },
+    {
+      "path": "eval/recordings/open_meteo/murshidabad/20261124T210746Z_geocoding.json",
+      "sha256": "eb875ee7dfd565b2be6d8d88daa2c916e77102dd61f9a3aec132041492526cde"
+    },
+    {
+      "path": "eval/recordings/open_meteo/murshidabad/20261124T210746Z_forecast.json",
+      "sha256": "60b441b94b40ba3e034f66cb4342e712c8c798ede864d904707f1f59757f90aa"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nagpur/20261124T210746Z_geocoding.json",
+      "sha256": "095a2e69ee49649894953a3dbd0bc2827f21f8d40c205f6b02d3385a67351189"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nagpur/20261124T210746Z_forecast.json",
+      "sha256": "8feea4452b18d2e93e8aebbb88916c324f521afc30bd99bf071a03a447cf1bd9"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nanded/20261124T210746Z_geocoding.json",
+      "sha256": "149f00562ce608372a3033deb546d3f92be35210d5ffdc518143775a2bbe0c93"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nanded/20261124T210746Z_forecast.json",
+      "sha256": "8848bceee98dd04875c4c2a8f6a9abc24a5ab244c70dcdf0e8b3acafe10ffdbc"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nashik/20261124T210746Z_geocoding.json",
+      "sha256": "07c5c3fd3a38afcbc8e9c3ce7e5fd5b9306a47b9e53752519bcdecd4bbb045c7"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nashik/20261124T210746Z_forecast.json",
+      "sha256": "740101376ba9588c9a4c81ac38b59291c9095bd6d68cbcfb356ca5ce6a85fe6b"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nellore/20261124T210746Z_geocoding.json",
+      "sha256": "1d11c8d717a42c23cf17eaef67242ec98c644c36d7476b9013db939a3dfe516f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nellore/20261124T210746Z_forecast.json",
+      "sha256": "d4b12fdec6793fd4cf49697945d5a54c9b8cd011b44a409bcd18eca53c6c24cb"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nizamabad/20261124T210746Z_geocoding.json",
+      "sha256": "c17d8343bf67ab0306af4eb4392c77c3d5a824da5debf1836679f068db1cd93f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/nizamabad/20261124T210746Z_forecast.json",
+      "sha256": "8943da4c9e81a123870ba02d6f8c5421004dbcb3d3708d73e90189559a95e45b"
+    },
+    {
+      "path": "eval/recordings/open_meteo/patna/20261124T210746Z_geocoding.json",
+      "sha256": "14c868d4dcfc6f8a480769e02167ccf1098b439332c45ac7386973182cf48bd1"
+    },
+    {
+      "path": "eval/recordings/open_meteo/patna/20261124T210746Z_forecast.json",
+      "sha256": "16da0c25a7e2ff6d6f20665d7e8e72b6edf018dcf17e358551b7b13b6b57039d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/pune/20261124T210746Z_geocoding.json",
+      "sha256": "d4ed2cfe977f6acbcd6f9d4aace1b9f6b113ab89dd319f407809d22951fb0766"
+    },
+    {
+      "path": "eval/recordings/open_meteo/pune/20261124T210746Z_forecast.json",
+      "sha256": "2df691d38350d28810aba1a392a4f4cafbb121a577b745c8dbfdd1670c60dddb"
+    },
+    {
+      "path": "eval/recordings/open_meteo/rajahmundry/20261124T210746Z_geocoding.json",
+      "sha256": "e668165a3cc61c78d7c53ca848d96f918fdb60937df4438b0dfd8c2a5f78684c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/rajahmundry/20261124T210746Z_forecast.json",
+      "sha256": "b5ab0b7aa525093215dab967a4d4966db91c88ce02cb00def24239924835e402"
+    },
+    {
+      "path": "eval/recordings/open_meteo/rajkot/20261124T210746Z_geocoding.json",
+      "sha256": "6c08767d0088af46f87d3a92345243e49b42314044fc69d0e576a0d06ee804d2"
+    },
+    {
+      "path": "eval/recordings/open_meteo/rajkot/20261124T210746Z_forecast.json",
+      "sha256": "80c6c564664d6248044eb4c5cdfdfd638f22e78e3615f47a8a4c6cf6834d656f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ranchi/20261124T210746Z_geocoding.json",
+      "sha256": "42bbcf44811420ad3a4b385a20d56d93e5fc9e749eebb1dd0881dd4c5f9c73b2"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ranchi/20261124T210746Z_forecast.json",
+      "sha256": "04472767d0c477e4d78d21ac038b9e783bc6553b8c73c18e9714fc70f6a61551"
+    },
+    {
+      "path": "eval/recordings/open_meteo/salem/20261124T210746Z_geocoding.json",
+      "sha256": "588a929942789ee672aa8a26e77193029162074f7a0cbbc30b9b9e1ce6a70ee2"
+    },
+    {
+      "path": "eval/recordings/open_meteo/salem/20261124T210746Z_forecast.json",
+      "sha256": "25d98f4ddce335c7d3b2ba20adc5fdb062294d5bade647ea211866641f21464f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/sangli/20261124T210746Z_geocoding.json",
+      "sha256": "e6dbd1d62fdbcb73b7f7a60f3fdafd21202b943ad8cfa51660194f4f0a432721"
+    },
+    {
+      "path": "eval/recordings/open_meteo/sangli/20261124T210746Z_forecast.json",
+      "sha256": "d21e7734fd3eadeefcd83de55e409ad81ef7ebacc7000ac57b637caad5a5bdd3"
+    },
+    {
+      "path": "eval/recordings/open_meteo/santiniketan/20261124T210746Z_geocoding.json",
+      "sha256": "0e1ccbaae97c008679a01a0a136669e7687f83804660d960d988b298aaead93d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/santiniketan/20261124T210746Z_forecast.json",
+      "sha256": "8a83aeb80913e279590610c5e4503910fde6d180a4f69dbf5bde0a9fae835051"
+    },
+    {
+      "path": "eval/recordings/open_meteo/satara/20261124T210746Z_geocoding.json",
+      "sha256": "35e1695d5fad998a5c970c2f8dee7358193d356c012e0bb196fd92deffbfd0be"
+    },
+    {
+      "path": "eval/recordings/open_meteo/satara/20261124T210746Z_forecast.json",
+      "sha256": "18561dc9de1c0e8d3dfb9d81db88d63c5478f6ae6abc0cfbd2b705594b04b8cf"
+    },
+    {
+      "path": "eval/recordings/open_meteo/shillong/20261124T210746Z_geocoding.json",
+      "sha256": "57a82783902c0029cd06c1c82045fd39a23642c6454815df4b33e56e4baf3da2"
+    },
+    {
+      "path": "eval/recordings/open_meteo/shillong/20261124T210746Z_forecast.json",
+      "sha256": "e7f4a99ff98f36174d59231b2739ad6840bae4791d0e15c61038640f9546c65a"
+    },
+    {
+      "path": "eval/recordings/open_meteo/shimla/20261124T210746Z_geocoding.json",
+      "sha256": "f3a1e6b787998255a9ab3e064c613c0763b9e11b7e41234909eb31441244bf2d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/shimla/20261124T210746Z_forecast.json",
+      "sha256": "f37edf6f75648d3d5fca516df0989b48d51c0f7ff38caeb702994bc7735e9833"
+    },
+    {
+      "path": "eval/recordings/open_meteo/siliguri/20261124T210746Z_geocoding.json",
+      "sha256": "0116449f83534d8a8a61e5f70f076d841d1b02e6089b434cf145e02447fa0d97"
+    },
+    {
+      "path": "eval/recordings/open_meteo/siliguri/20261124T210746Z_forecast.json",
+      "sha256": "e3e8ab1bdb635cb8d7bd1552eec71a899cb85dc3825b0dcbc6c186d0996fcf61"
+    },
+    {
+      "path": "eval/recordings/open_meteo/solapur/20261124T210746Z_geocoding.json",
+      "sha256": "f3b9360c84cddbf872f9a511ce65ab9d7fb33fb975dee3749bac96331246359c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/solapur/20261124T210746Z_forecast.json",
+      "sha256": "945204a0d7672657468fff20dfb9295f2c98acc9c4572a54aff340e81876bf36"
+    },
+    {
+      "path": "eval/recordings/open_meteo/srinagar/20261124T210746Z_geocoding.json",
+      "sha256": "f87e83d87f9617b60000bb858070b969509964b1acdc9fb43006e4fe19e4907b"
+    },
+    {
+      "path": "eval/recordings/open_meteo/srinagar/20261124T210746Z_forecast.json",
+      "sha256": "b63ce05e93c581b4a3b71aeacd01cdc3c91cdfb0efdaf95b28be76d6c4c3c41b"
+    },
+    {
+      "path": "eval/recordings/open_meteo/surat/20261124T210746Z_geocoding.json",
+      "sha256": "7938be03511ac851fdfe541408e3ce3242122982932187ce7169483934ed2477"
+    },
+    {
+      "path": "eval/recordings/open_meteo/surat/20261124T210746Z_forecast.json",
+      "sha256": "a141cba72b14468b977c62963486078e022e5617ac1dfc80030f6f8581948f97"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thane/20261124T210746Z_geocoding.json",
+      "sha256": "824742e0b48cc82571656abbe3e4643f6d63423e2747a9623d6a52bca805706a"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thane/20261124T210746Z_forecast.json",
+      "sha256": "23ee82ade56b970dc10852f94400eb3db3b61ea79cd58502096de70b04149548"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thanjavur/20261124T210746Z_geocoding.json",
+      "sha256": "153db8168c9e4ff7585bce27d46bba577529c0d01047e67234abc72facff3de2"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thanjavur/20261124T210746Z_forecast.json",
+      "sha256": "b6023cef4d8f420c014fca3f1a4be24d0e284c271a0c6792cb6a3136157a32af"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thiruvananthapuram/20261124T210746Z_geocoding.json",
+      "sha256": "43eb8dfa7cf2fd84edd4196764b98779121c8e704e9d4096bdc09b34c560b3a5"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thiruvananthapuram/20261124T210746Z_forecast.json",
+      "sha256": "72f8bc52646534bc064ecf5f1946cb3bc4df5f0f357d58c05b6057b2d1bdcbcd"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thoothukudi/20261124T210746Z_geocoding.json",
+      "sha256": "34dba46488864431ac860f3a3baa4a9a8ae5d85843ad2d7894d0b3d39a9f6944"
+    },
+    {
+      "path": "eval/recordings/open_meteo/thoothukudi/20261124T210746Z_forecast.json",
+      "sha256": "2271eb9dd5b7610588d37ed7df9dc69e0ef630a6e9a4d62a2274cacc812043a3"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tiruchirappalli/20261124T210746Z_geocoding.json",
+      "sha256": "762d29643a35afe0b640130eae1644af29b11d3601402197a1af4f2ff520f3b6"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tiruchirappalli/20261124T210746Z_forecast.json",
+      "sha256": "89f7149d0e36ca087ff79af6a5a135d85b62d0b4a645e1d40237caa0341e5031"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tirunelveli/20261124T210746Z_geocoding.json",
+      "sha256": "b021bd5fb51d2502a3fff0d684c10421be1b3034ea2db0b17acfa4451195fc91"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tirunelveli/20261124T210746Z_forecast.json",
+      "sha256": "ec515388c150fa4583601b3331caf5a1bba575745f8b5620c375f1bb1a283d23"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tirupati/20261124T210746Z_geocoding.json",
+      "sha256": "5edf94c94f5de334b08dcc85db3b329b491472d442007f65628d46c462268ad4"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tirupati/20261124T210746Z_forecast.json",
+      "sha256": "e5ea3558cc52401d3ef0739c3368ec35fabb19ff645322cc4be4b382a6ac2a37"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tiruppur/20261124T210746Z_geocoding.json",
+      "sha256": "6e4f7a152605e2be1ad4227a8b754b1aeede1a5cfeaec3dce8b4ea736068774c"
+    },
+    {
+      "path": "eval/recordings/open_meteo/tiruppur/20261124T210746Z_forecast.json",
+      "sha256": "abe3ae18a494e265ac56a2093528ca5a9a043644d4e6abc8e145723848c03630"
+    },
+    {
+      "path": "eval/recordings/open_meteo/vadodara/20261124T210746Z_geocoding.json",
+      "sha256": "04fef07b7b0668cb0dc01a64559a02b109212448f90e8e596b9ba93d08e57008"
+    },
+    {
+      "path": "eval/recordings/open_meteo/vadodara/20261124T210746Z_forecast.json",
+      "sha256": "5cd6e6f7cfb397252a1797f2726bcdced003670533d06c647fe59acf41b41d39"
+    },
+    {
+      "path": "eval/recordings/open_meteo/varanasi/20261124T210746Z_geocoding.json",
+      "sha256": "baa3d0cd686630f01e5da58e5c38c1871629b17341327b925b81f330dfef7241"
+    },
+    {
+      "path": "eval/recordings/open_meteo/varanasi/20261124T210746Z_forecast.json",
+      "sha256": "94211b2b3a6f1953e5dbf9a7dd4f638b075ae118b92edd35184bd20c337c50b7"
+    },
+    {
+      "path": "eval/recordings/open_meteo/vellore/20261124T210746Z_geocoding.json",
+      "sha256": "4ed6c3d0f0f3f2c636b7eeb59047f04aa9ba58caccddfc09391b99862a3d06ed"
+    },
+    {
+      "path": "eval/recordings/open_meteo/vellore/20261124T210746Z_forecast.json",
+      "sha256": "a129480bfa59eb2116f26f9224daccdd92e243a7b56c5c2a06e61a8135b3bd86"
+    },
+    {
+      "path": "eval/recordings/open_meteo/vijayawada/20261124T210746Z_geocoding.json",
+      "sha256": "9b99ef74861a15252ce7c60c8a9a2a79d8aca88022c89fef7f4242c965beb0bf"
+    },
+    {
+      "path": "eval/recordings/open_meteo/vijayawada/20261124T210746Z_forecast.json",
+      "sha256": "708251ad70b418ab8168d9532f6f5dcb9b3d442f7e741c44251f849e71a59aba"
+    },
+    {
+      "path": "eval/recordings/open_meteo/visakhapatnam/20261124T210746Z_geocoding.json",
+      "sha256": "5eb537d8cf62e8fe107508cec59a1a4839f90d0fda7ba769ffb9ece88bac4224"
+    },
+    {
+      "path": "eval/recordings/open_meteo/visakhapatnam/20261124T210746Z_forecast.json",
+      "sha256": "f01e3d74bf06a3712c43ef3d5092e87000853d6813108d676b0e994a5dec4fa8"
+    },
+    {
+      "path": "eval/recordings/open_meteo/warangal/20261124T210746Z_geocoding.json",
+      "sha256": "58ff74e1a70a760935b19b698743e7a997c22b12ac4f02b0ae362ce3b51d97a5"
+    },
+    {
+      "path": "eval/recordings/open_meteo/warangal/20261124T210746Z_forecast.json",
+      "sha256": "521b5a53a70dd4631987f1f6ab146316ab472f737186becc5ba537bab1565ac9"
+    },
+    {
+      "path": "eval/recordings/sachet/20261124T211819Z_alerts.json",
+      "sha256": "04efc7a6ec91bcc08a8654ab52d0e75aef3641318d0043347f9c895f962ebc28"
+    },
+    {
+      "path": "eval/recordings/sachet/20261124T211819Z_1795509478054018.xml",
+      "sha256": "1638a26abf8375aa3dd41bdd8082ff4a92f4eb15252e6a54e42867535ed64b58"
+    },
+    {
+      "path": "eval/recordings/sachet/20261124T211819Z_1795084881556013.xml",
+      "sha256": "95d5ac446ebb8014eb8994853a84b61d4008ffff854d666db30762f7e009e544"
+    },
+    {
+      "path": "eval/recordings/sachet/20261124T211819Z_1795084881697020.xml",
+      "sha256": "6ffccbd35c878e93c87765783ee24200e155caf0fcf6d47a43a2a114def38b7c"
+    },
+    {
+      "path": "eval/recordings/sachet/20261124T211819Z_1795084881627021.xml",
+      "sha256": "6aeec004b5311273e0c117c0f5f8b0497e729210acaed57f93ac2c174f86d207"
+    },
+    {
+      "path": "eval/recordings/open_meteo/dhule/20261124T211819Z_geocoding.json",
+      "sha256": "6c7ed0540c90525d16a1d76495bb6f008a9ebd02dcbb6ae636d442cdde97556f"
+    },
+    {
+      "path": "eval/recordings/open_meteo/dhule/20261124T211819Z_forecast.json",
+      "sha256": "f0087ca5ec6796fb0f0fa509ee26ac3b1c7ec3876222a27767040d9a6bd3c0fc"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ahmednagar/20261124T211819Z_geocoding.json",
+      "sha256": "3e09ffce4f6b355aa2e38796dff127bcef6be7f58f14c4ff9dd309be99058b4d"
+    },
+    {
+      "path": "eval/recordings/open_meteo/ahmednagar/20261124T211819Z_forecast.json",
+      "sha256": "b50c8be499579bcd5d30f73be490aa9881c3eaa7b54c0ee7d812f41932bd69fd"
+    },
+    {
+      "path": "eval/recordings/sachet/20261124T211819Z_1795554530117008.xml",
+      "sha256": "216f417bc3d17397a237aad4a05726799bb5c44f396e67d55547b6aa272936d5"
+    }
+  ],
+  "language": "en",
+  "total": 67,
+  "passed": 67,
+  "accuracy": 1.0,
+  "cases": [
+    {
+      "id": "en-advisory-heatwave",
+      "passed": true,
+      "failures": [],
+      "answer": "[ndma_heatwave_02] ## Don'ts During Extreme Heat (Source: IMD-NDMA Guidelines, Page 3)\n- Avoid going out in direct sun, especially between 12:00 noon and 3:00 PM.\n- Avoid strenuous outdoor activities when outside during peak afternoon hours.\n- Do not leave children or pets alone inside parked locked vehicles under direct sunlight.\n- Avoid cooking during peak hours; open doors and windows to ventilate cooking area adequately.\n- Avoid alcohol, tea, coffee, and carbonated soft drinks, which dehydrate the body.\n- Avoid high-protein, salty, spicy, and oily food. Do not eat stale food.\n- Avoid using incandescent light bulbs and appliances which generate unnecessary heat. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "en-advisory-coldwave",
+      "passed": true,
+      "failures": [],
+      "answer": "[ndma_coldwave_03] ## Vulnerable Groups and Winter Shelter (Source: IMD-NDMA Guidelines, Page 1 & 3)\n- Special protection for vulnerable populations: newborn infants, elderly individuals, chronically ill persons, and homeless citizens.\n- Maintain comfortable indoor room temperature and protect children and elderly from drafts.\n- District administrations provide night shelters (Rain Baseras) equipped with blankets and hot water for homeless persons during severe cold wave.\n- Emergency assistance and shelter helplines: call National Emergency helpline 112 or Disaster helpline 1077.\n- Domestic cattle and pets protection: keep animals inside sheds at night, provide dry bedding, protect from cold winds, and increase protein/mineral rations. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "en-advisory-lightning",
+      "passed": true,
+      "failures": [],
+      "answer": "According to NDMA SACHET, weather information is available for India. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-advisory-crop",
+      "passed": true,
+      "failures": [],
+      "answer": "[icar_agriculture_advisory_02] ## Cold Wave, Frost and Ground Freeze Crop Protection (Source: IMD Agrimet Agriculture Guidance, Page 2-3)\n- Apply light and frequent irrigation or sprinkler irrigation in evening hours to protect crops from cold injury and ground frost.\n- In rice nursery beds: cover nursery beds with polythene sheets during the night and remove in the morning; irrigate in the evening and drain out in the morning.\n- Cover young orchard fruit plants with straw, sarkanda, gunny bags, or polythene sheets.\n- To protect sensitive crops like mustard, gram, and rajmah from frost injury, spray dilute sulphuric acid @ 0.1% (1 L in 1000 L water) or thiourea @ 500 ppm.\n- Animal husbandry in winter: keep cattle and goats inside sheds during night, provide dry bedding, and supplement daily feed with mineral mixtures, salt, and jaggery. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-delhi-001",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Delhi expects 0.0 mm rain and a temperature of 24.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-mumbai-002",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Mumbai expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-bengaluru-003",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bengaluru expects 1.1 mm rain and a temperature of 27.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-chennai-004",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Chennai expects 2.3 mm rain and a temperature of 28.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-kolkata-005",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Kolkata expects 0.0 mm rain and a temperature of 25.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-hyderabad-006",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Hyderabad expects 2.3 mm rain and a temperature of 29.1 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-jaipur-007",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Jaipur expects 0.0 mm rain and a temperature of 25.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-shimla-008",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Shimla expects 0.0 mm rain and a temperature of 14.8 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-pune-009",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Pune expects 0.0 mm rain and a temperature of 32.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-guwahati-010",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Guwahati expects 0.0 mm rain and a temperature of 25.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-varanasi-011",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Varanasi expects 0.0 mm rain and a temperature of 24.8 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-ahmedabad-012",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Ahmedabad expects 0.0 mm rain and a temperature of 31.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-surat-013",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Surat expects 0.0 mm rain and a temperature of 33.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-lucknow-014",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Lucknow expects 0.0 mm rain and a temperature of 24.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-patna-015",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Patna expects 0.0 mm rain and a temperature of 24.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-bhopal-016",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bhopal expects 0.0 mm rain and a temperature of 27.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-chandigarh-017",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Chandigarh expects 0.0 mm rain and a temperature of 23.0 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-dehradun-018",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Dehradun expects 0.0 mm rain and a temperature of 20.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-ranchi-019",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Ranchi expects 0.0 mm rain and a temperature of 22.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-nagpur-020",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Nagpur expects 0.0 mm rain and a temperature of 29.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-nashik-021",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Nashik expects 0.0 mm rain and a temperature of 30.8 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-howrah-022",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Howrah expects 0.0 mm rain and a temperature of 25.7 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-siliguri-023",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Siliguri expects 0.0 mm rain and a temperature of 25.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-visakhapatnam-024",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Visakhapatnam expects 3.7 mm rain and a temperature of 28.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-vijayawada-025",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Vijayawada expects 3.4 mm rain and a temperature of 31.0 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-coimbatore-026",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Coimbatore expects 15.7 mm rain and a temperature of 29.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-madurai-027",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Madurai expects 19.9 mm rain and a temperature of 28.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-bhubaneswar-028",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bhubaneswar expects 0.3 mm rain and a temperature of 28.0 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-cuttack-029",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Cuttack expects 0.0 mm rain and a temperature of 28.1 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-srinagar-030",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Srinagar expects 0.0 mm rain and a temperature of 14.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-pune-001",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Pune expects 0.0 mm rain and a temperature of 32.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-mumbai-002",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Mumbai expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-delhi-003",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Delhi expects 0.0 mm rain and a temperature of 24.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-bengaluru-004",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bengaluru expects 1.1 mm rain and a temperature of 27.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-chennai-005",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Chennai expects 2.3 mm rain and a temperature of 28.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-kolkata-006",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Kolkata expects 0.0 mm rain and a temperature of 25.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-hyderabad-007",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Hyderabad expects 2.3 mm rain and a temperature of 29.1 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-ahmedabad-008",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Ahmedabad expects 0.0 mm rain and a temperature of 31.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-jaipur-009",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Jaipur expects 0.0 mm rain and a temperature of 25.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-lucknow-010",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Lucknow expects 0.0 mm rain and a temperature of 24.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-patna-011",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Patna expects 0.0 mm rain and a temperature of 24.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-bhopal-012",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bhopal expects 0.0 mm rain and a temperature of 27.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-nagpur-013",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Nagpur expects 0.0 mm rain and a temperature of 29.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-chandigarh-014",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Chandigarh expects 0.0 mm rain and a temperature of 23.0 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-surat-015",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Surat expects 0.0 mm rain and a temperature of 33.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-kochi-016",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Kochi expects 27.6 mm rain and a temperature of 29.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-guwahati-017",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Guwahati expects 0.0 mm rain and a temperature of 25.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-shimla-018",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Shimla expects 0.0 mm rain and a temperature of 14.8 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-srinagar-019",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Srinagar expects 0.0 mm rain and a temperature of 14.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-dehradun-020",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Dehradun expects 0.0 mm rain and a temperature of 20.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-varanasi-021",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Varanasi expects 0.0 mm rain and a temperature of 24.8 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-indore-022",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Indore expects 0.0 mm rain and a temperature of 28.8 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-visakhapatnam-023",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Visakhapatnam expects 3.7 mm rain and a temperature of 28.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-agra-024",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Agra expects 0.0 mm rain and a temperature of 25.7 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-ludhiana-025",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Ludhiana expects 0.0 mm rain and a temperature of 24.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-nashik-026",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Nashik expects 0.0 mm rain and a temperature of 30.8 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-vadodara-027",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Vadodara expects 0.0 mm rain and a temperature of 32.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-rajkot-028",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Rajkot expects 0.0 mm rain and a temperature of 31.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-coimbatore-029",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Coimbatore expects 15.7 mm rain and a temperature of 29.3 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-madurai-030",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Madurai expects 19.9 mm rain and a temperature of 28.6 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-refusal-aviation",
+      "passed": true,
+      "failures": [],
+      "answer": "Aviation weather briefings (METAR/TAF) are not supported in this public-interest pilot. Please consult official aviation portals for flight planning.",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "en-refusal-evac",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT cannot give personal relocation directives or instruct residents to leave or stay. Please immediately follow official safety directives and orders issued by your District Disaster Management Authority (DDMA), State Disaster Management Authority (SDMA), or local police. For emergency disaster assistance, dial the Disaster Helpline at 1070 / 1077 or Emergency Services at 112.",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "en-refusal-pesticide",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT never prescribes chemical pesticide dosages or spray quantities. Safe pesticide dosages depend strictly on crop growth stage, pest severity, and local agro-climatic conditions. Please consult your local Krishi Vigyan Kendra (KVK), state agricultural university, or call the Kisan Call Centre toll-free at 1800-180-1551 for approved expert prescriptions.",
+      "evidence_count": 0,
+      "has_card": true
+    }
+  ]
+}
