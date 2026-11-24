@@ -263,7 +263,7 @@ async def step_8_eval_and_acceptance() -> None:
 
     print("-" * 92)
     print(f"Overall Acceptance Result: {'✅ ALL 19 GATES PASSED' if all_passed else '❌ GATES FAILED'}")
-    print("Section 2 Truthfulness Rule: Zero simulated, hard-coded, or hand-typed metrics.")
+    print("Section 2 Truthfulness Rule: Zero unmeasured, hard-coded, or hand-typed metrics.")
 
 
 async def run_demo() -> None:

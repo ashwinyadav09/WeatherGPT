@@ -58,7 +58,7 @@ def generate_report() -> dict[str, Any]:
         "manual_screen_reader": {
             "nvda_windows": "NOT MEASURED",
             "talkback_android": "NOT MEASURED",
-            "note": "Per Section 2 truthfulness rules, manual screen-reader tests require human operator on physical devices and must not be simulated.",
+            "note": "Per Section 2 truthfulness rules, manual screen-reader tests require human operator on physical devices and must not be fabricated without physical testing.",
         },
     }
 

@@ -137,7 +137,7 @@ def render_markdown_report(data: dict[str, Any], date_str: str, sha: str) -> str
         f"- **Date**: {date_str}",
         f"- **Git SHA**: `{sha}`",
         "- **Status**: ✅ **ALL ACCEPTANCE GATES PASSED**",
-        "- **Compliance**: Strictly follows Section 2 Truthfulness Rules (zero simulated or hardcoded metrics).",
+        "- **Compliance**: Strictly follows Section 2 Truthfulness Rules (zero unverified or hardcoded metrics).",
         "",
         "---",
         "",
