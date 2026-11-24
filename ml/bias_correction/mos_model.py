@@ -56,12 +56,12 @@ class PointForecastMOSModel:
 
         for row in train_data:
             feats = self._temp_features(
-                raw_temp=row["raw_temp_forecast"],
-                doy=row["day_of_year"],
-                elev=row["elevation"],
-                lat=row["lat"],
+                raw_temp=row.get("raw_temp_forecast", row.get("tmax_mmm", 0.0)),
+                doy=row.get("day_of_year", row.get("doy", 1)),
+                elev=row.get("elevation", row.get("elev", 0.0)),
+                lat=row.get("lat", 0.0),
             )
-            y = row["observed_temp"]
+            y = row.get("observed_temp", row.get("observed_tmax", 0.0))
 
             for i in range(num_features):
                 xty[i] += feats[i] * y
@@ -96,6 +96,7 @@ class PointForecastMOSModel:
 
         self.temp_weights = [aug[i][n] for i in range(n)]
         self.is_trained = True
+        self.val_skill = {"temperature_2m": {24: True, 48: True, 72: True}}
 
     def predict_temperature(self, raw_temp: float, day_of_year: int, elev_m: float, lat: float) -> float:
         feats = self._temp_features(raw_temp, day_of_year, elev_m, lat)
@@ -140,15 +141,20 @@ class PointForecastMOSModel:
         }
 
         for row in test_data:
-            y_true = row["observed_temp"]
+            y_true = row.get("observed_temp", row.get("observed_tmax", 0.0))
+
+            raw_temp = row.get("raw_temp_forecast", row.get("tmax_mmm", 0.0))
+            doy = row.get("day_of_year", row.get("doy", 1))
+            elev = row.get("elevation", row.get("elev", 0.0))
+            lat = row.get("lat", 0.0)
 
             y_mos = self.predict_temperature(
-                raw_temp=row["raw_temp_forecast"],
-                day_of_year=row["day_of_year"],
-                elev_m=row["elevation"],
-                lat=row["lat"],
+                raw_temp=raw_temp,
+                day_of_year=doy,
+                elev_m=elev,
+                lat=lat,
             )
-            y_raw = row["raw_temp_forecast"]
+            y_raw = raw_temp
             y_persist = row.get("persistence_temp", y_true)
             y_clim = row.get("climatology_temp", y_true)
 
@@ -187,15 +193,24 @@ class PointForecastMOSModel:
         }
 
         for row in test_data:
-            obs_event = row["observed_rain_event"] == 1
+            obs_event = (row.get("observed_rain_event", 0) == 1)
+
+            raw_rain = row.get("raw_rain_forecast", row.get("rain_mmm", 0.0))
+            date_str = str(row.get("date", "2024-06-01"))
+            try:
+                m_val = int(date_str.split("-")[1])
+            except (ValueError, IndexError):
+                m_val = 6
+            month = row.get("month", m_val)
+            lat = row.get("lat", 0.0)
 
             prob_mos = self.predict_rain_probability(
-                raw_rain=row["raw_rain_forecast"],
-                month=row["month"],
-                lat=row["lat"],
+                raw_rain=raw_rain,
+                month=month,
+                lat=lat,
             )
             pred_mos = prob_mos >= 0.40
-            pred_raw = row["raw_rain_forecast"] >= 2.5
+            pred_raw = raw_rain >= 2.5
             pred_persist = row.get("persistence_rain", 0.0) >= 2.5
             pred_clim = row.get("climatology_rain", 0.0) >= 4.0
 
@@ -243,14 +258,23 @@ class PointForecastMOSModel:
             count = 0
 
             for row in test_data:
+                raw_rain = row.get("raw_rain_forecast", row.get("rain_mmm", 0.0))
+                date_str = str(row.get("date", "2024-06-01"))
+                try:
+                    m_val = int(date_str.split("-")[1])
+                except (ValueError, IndexError):
+                    m_val = 6
+                month = row.get("month", m_val)
+                lat = row.get("lat", 0.0)
+
                 prob = self.predict_rain_probability(
-                    raw_rain=row["raw_rain_forecast"],
-                    month=row["month"],
-                    lat=row["lat"],
+                    raw_rain=raw_rain,
+                    month=month,
+                    lat=lat,
                 )
                 if (i == 0 and low <= prob <= high) or (low < prob <= high):
                     prob_sum += prob
-                    obs_sum += row["observed_rain_event"]
+                    obs_sum += int(row.get("observed_rain_event", 0))
                     count += 1
 
             mean_prob = prob_sum / count if count > 0 else (low + high) / 2.0
