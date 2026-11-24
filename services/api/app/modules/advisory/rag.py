@@ -236,7 +236,7 @@ class RagEngine:
         lang: str = "en",
         mode: str = "hybrid",
         top_k: int = 3,
-        threshold: float = 0.010,
+        threshold: float = 0.002,
     ) -> list[tuple[KnowledgeChunk, float]]:
         """Search corpus with bm25, dense, or hybrid reciprocal rank fusion."""
         if not self.chunks:
@@ -300,7 +300,7 @@ class RagEngine:
         lang: str = "en",
         mode: str = "hybrid",
         top_k: int = 3,
-        threshold: float = 0.010,
+        threshold: float = 0.002,
     ) -> list[dict[str, Any]]:
         """Search and format results as dictionary representations of EvidencePacket."""
         import datetime as dt

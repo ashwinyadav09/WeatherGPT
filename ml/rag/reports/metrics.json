@@ -2,8 +2,8 @@
   "model_id": "rag_advisory_engine",
   "model_name": "WeatherGPT Advisory RAG Engine",
   "generated_by": "ml/rag/eval.py",
-  "git_sha": "47f37dbf51032780f1170b1e96f6001841381d48",
-  "generated_at": "2026-11-24T17:03:25.975925+00:00",
+  "git_sha": "347fae9b9a081a10e44ec3af3bcc426182b3162b",
+  "generated_at": "2026-11-24T17:14:47.031099+00:00",
   "provenance": "human_labels",
   "accuracy": 0.628571429,
   "n_test": 70,
@@ -12,7 +12,7 @@
   "inputs": [
     {
       "path": "seeds/knowledge/chunks.json",
-      "sha256": "644d5b6d0867fb9cfb73b770654a831fd5cb07862a5262a9299a4fef7886378e"
+      "sha256": "832a70c866bc622fa3c8736022752ab07622160366006a2f591833fc100e9fa2"
     },
     {
       "path": "seeds/knowledge/chunk_embeddings.npy",

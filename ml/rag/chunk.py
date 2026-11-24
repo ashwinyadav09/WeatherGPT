@@ -561,11 +561,11 @@ def build_corpus() -> list[dict[str, Any]]:
         for c in doc_chunks:
             body_parts.append(c["text"])
             body_parts.append("")
-        out_path.write_text("\n".join(body_parts).strip() + "\n", encoding="utf-8")
+        out_path.write_bytes(("\n".join(body_parts).strip() + "\n").encode("utf-8"))
         print(f"[OK] Rebuilt {out_path.relative_to(ROOT)} ({len(doc_chunks)} chunks)")
 
     # 4. Write seeds/knowledge/chunks.json
-    CHUNKS_JSON.write_text(json.dumps(chunks, indent=2, ensure_ascii=False), encoding="utf-8")
+    CHUNKS_JSON.write_bytes(json.dumps(chunks, indent=2, ensure_ascii=False).encode("utf-8"))
     print(f"[OK] Generated {CHUNKS_JSON.relative_to(ROOT)} with {len(chunks)} official chunks.")
 
     return chunks

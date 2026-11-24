@@ -315,7 +315,7 @@ def run_evaluation() -> dict[str, Any]:
         },
     }
 
-    METRICS_FILE.write_text(json.dumps(metrics_data, indent=2), encoding="utf-8")
+    METRICS_FILE.write_bytes(json.dumps(metrics_data, indent=2).encode("utf-8"))
     print(f"[OK] Wrote {METRICS_FILE.relative_to(ROOT)}")
     print(f"[OK] Wrote {PREDICTIONS_FILE.relative_to(ROOT)} ({len(test_rows)} rows)")
 
@@ -335,7 +335,7 @@ def run_evaluation() -> dict[str, Any]:
             "accuracy": headline_accuracy,
         },
     }
-    MANIFEST_FILE.write_text(json.dumps(manifest_data, indent=2), encoding="utf-8")
+    MANIFEST_FILE.write_bytes(json.dumps(manifest_data, indent=2).encode("utf-8"))
     print(f"[OK] Wrote {MANIFEST_FILE.relative_to(ROOT)}")
 
     # 7. Render MODEL_CARD.md
@@ -414,7 +414,7 @@ python ml/rag/eval.py
 python scripts/dev.py ml verify rag
 ```
 """
-    MODEL_CARD_FILE.write_text(card_text, encoding="utf-8")
+    MODEL_CARD_FILE.write_bytes(card_text.encode("utf-8"))
     print(f"[OK] Rendered {MODEL_CARD_FILE.relative_to(ROOT)}")
 
 
