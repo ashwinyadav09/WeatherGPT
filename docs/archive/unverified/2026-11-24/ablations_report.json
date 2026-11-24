@@ -1,4 +1,5 @@
 {
+  "_banner": "UNVERIFIED: contains hard-coded values",
   "schema_version": "1",
   "generated_by": "scripts/tasks/eval_ablations.py",
   "generated_at": "2026-11-24T18:47:32.555528+00:00",

@@ -126,99 +126,32 @@ def eval_gate(lang: str, target_pass_rate: float = 0.95) -> GateResult:
         parameter="Accuracy & Relevance",
         gate_name=f"{lang.upper()} Golden Set",
         target=f">= {target_pass_rate:.0%}",
-        measured=f"{passed_count}/{total} ({pct:.1%})",
+        measured=f"{passed_count}/{total} ({pct:.1%}) [template-built cases over fixture data, not a product measurement]",
         passed=ok,
     )
 
 
 def latency_ttft_gate() -> GateResult:
-    data = load_json_file("latency_report.json")
-    if data is None:
-        return GateResult(
-            parameter="Response Latency",
-            gate_name="TTFT p95",
-            target="<= 1500 ms",
-            measured=NOT_MEASURED,
-            passed=None,
-        )
-    p95 = data.get("overall", {}).get("ttft_p95_ms") or data.get("ttft_p95_ms")
-    if p95 is None:
-        return GateResult(
-            parameter="Response Latency",
-            gate_name="TTFT p95",
-            target="<= 1500 ms",
-            measured=NOT_MEASURED,
-            passed=None,
-        )
-    ok = float(p95) <= 1500.0
     return GateResult(
         parameter="Response Latency",
         gate_name="TTFT p95",
         target="<= 1500 ms",
-        measured=f"{p95} ms",
-        passed=ok,
+        measured=NOT_MEASURED,
+        passed=None,
     )
 
 
 def latency_total_gate() -> GateResult:
-    data = load_json_file("latency_report.json")
-    if data is None:
-        return GateResult(
-            parameter="Response Latency",
-            gate_name="Total duration p95",
-            target="<= 3000 ms",
-            measured=NOT_MEASURED,
-            passed=None,
-        )
-    p95 = data.get("overall", {}).get("total_p95_ms") or data.get("total_p95_ms")
-    if p95 is None:
-        return GateResult(
-            parameter="Response Latency",
-            gate_name="Total duration p95",
-            target="<= 3000 ms",
-            measured=NOT_MEASURED,
-            passed=None,
-        )
-    ok = float(p95) <= 3000.0
     return GateResult(
         parameter="Response Latency",
         gate_name="Total duration p95",
         target="<= 3000 ms",
-        measured=f"{p95} ms",
-        passed=ok,
+        measured=NOT_MEASURED,
+        passed=None,
     )
 
 
 def load_test_gate(concurrency: int) -> GateResult:
-    data = load_json_file("load_test_report.json")
-    if data is None:
-        return GateResult(
-            parameter="Scalability",
-            gate_name=f"Load {concurrency} concurrent users p95",
-            target="<= 1500 ms",
-            measured=NOT_MEASURED,
-            passed=None,
-        )
-    levels: list[dict[str, Any]] = data.get("levels", [])
-    for lv in levels:
-        if lv.get("concurrency") == concurrency:
-            if not lv.get("measured"):
-                return GateResult(
-                    parameter="Scalability",
-                    gate_name=f"Load {concurrency} concurrent users p95",
-                    target="<= 1500 ms",
-                    measured=NOT_MEASURED,
-                    passed=None,
-                )
-            p95 = lv.get("p95_latency_ms")
-            ok = float(p95) <= 1500.0
-            return GateResult(
-                parameter="Scalability",
-                gate_name=f"Load {concurrency} concurrent users p95",
-                target="<= 1500 ms",
-                measured=f"{p95} ms",
-                passed=ok,
-            )
     return GateResult(
         parameter="Scalability",
         gate_name=f"Load {concurrency} concurrent users p95",
@@ -287,24 +220,12 @@ def speech_wer_gate() -> GateResult:
 
 
 def ablations_gate() -> GateResult:
-    data = load_json_file("ablations_report.json")
-    if data is None:
-        return GateResult(
-            parameter="Model & Agent Ablations",
-            gate_name="5 core ablation studies",
-            target="All 5 completed & significant",
-            measured=NOT_MEASURED,
-            passed=None,
-        )
-    ablations = data.get("ablations", {})
-    count = len(ablations)
-    ok = count >= 5
     return GateResult(
         parameter="Model & Agent Ablations",
         gate_name="5 core ablation studies",
         target="All 5 completed & significant",
-        measured=f"{count}/5 ablations evaluated",
-        passed=ok,
+        measured=NOT_MEASURED,
+        passed=None,
     )
 
 

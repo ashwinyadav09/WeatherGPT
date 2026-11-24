@@ -1,4 +1,5 @@
 {
+  "_banner": "UNVERIFIED: contains hard-coded values",
   "schema_version": "1",
   "generated_by": "scripts/tasks/latency_report.py",
   "git_sha": "d6c3ed59c6c3ce26e0185ea6641be9e3bd1cbccf",

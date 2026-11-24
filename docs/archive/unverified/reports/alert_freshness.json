@@ -1,4 +1,5 @@
 {
+  "_banner": "UNVERIFIED: contains hard-coded values",
   "git_sha": "1f52accbf3a1c2ea11274ba3ca098abba2544d19",
   "measured_at": "2026-11-23T04:44:43.118303+00:00",
   "provenance": "replayed_real_fixtures",

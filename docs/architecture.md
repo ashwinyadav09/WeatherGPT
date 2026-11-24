@@ -86,12 +86,12 @@ Tables: places, place_names, user_places, push_subscriptions, alerts, alert_area
 Source ids: `sachet.cap` (active Tier-1 official warnings), `open_meteo.forecast` (active Tier-5 operational guidance), `open_meteo.archive` (climate history), `ecmwf.ifs`, `ecmwf.aifs`, `gfs.point`, `geonames`. Note: `imd.*` adapters are dormant behind `IMD_ENABLED` per ADR 0011; `iem.metar` and `awc.metar` aviation feeds are out of scope for the public weather pilot (Decision D3).
 
 ## ML & Decision Pipeline
-- **Intent routing:** FastText / Multilingual MiniLM & Logistic Regression encoder achieves 79.2% accuracy (95% CI: `[76.2%, 82.2%]`) with high precision at tau (0.9543) at 0.05 ms latency (1,100x faster than cloud LLM function calling), with graceful fallback to LLM tool-calling.
-- **Point-forecast MOS:** LightGBM and Ridge bias-correction models trained on 5,601 station observations achieve 1.0937°C MAE (-0.0862°C improvement over 1.1799°C raw NWP, with 95% bootstrap CI strictly excluding zero).
+- **Intent routing:** FastText / Multilingual MiniLM & Logistic Regression encoder provides microsecond classification across 7 query archetypes with graceful fallback to LLM tool-calling; undergoing full multi-language evaluation in R20.7.
+- **Point-forecast MOS:** LightGBM and Ridge bias-correction models trained on station observations achieve temperature MAE reduction over raw NWP; undergoing dataset extension and baseline expansion in R20.6.
 - **Climate Normals:** ERA5 30-year reference normal models compute observed anomalies, percentile ranks, and decadal trend notes.
 - **Extreme-Event Risk:** Calibrated LightGBM models with SHAP TreeExplainer feature importance attribution predict heat wave, heavy rainfall, and cold wave probabilities with prominent non-warning safety disclaimers.
-- **Advisory RAG:** Hybrid BM25 + dense multilingual-e5-small retrieval over 20 vetted NDMA disaster guidelines and ICAR agromet advisory chunks yields 70.5% Recall@3 and 100% grounding.
-- **Translation:** Cascaded translation with numeric placeholder protection preserves 100% of numerical quantities across all 7 Tier-1 Indic languages.
+- **Advisory RAG:** Hybrid BM25 + dense multilingual-e5-small retrieval over vetted NDMA disaster guidelines and ICAR agromet advisory chunks; undergoing full corpus rebuild from raw official documents in R20.10.
+- **Translation:** Cascaded translation with numeric placeholder protection preserves numerical quantities across all 7 Tier-1 Indic languages.
 
 ## Configuration files
 - `config/sources.yaml`: id, base_url, authority_tier, ttl_seconds, rate_limit, attribution, licence_note, enabled (IMD entries read `IMD_ENABLED`).

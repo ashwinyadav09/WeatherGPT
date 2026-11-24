@@ -55,21 +55,21 @@ WeatherGPT supports 7 Tier-1 Indian languages with full conversational understan
 - **Tamil** (`ta`)
 - **Odia** (`or`)
 
-Evaluation results across intent-organized golden test sets spanning 11 Indian cities demonstrate 100% accuracy across all 7 languages.
+Golden evaluation suites cover all 7 Tier-1 languages over recorded weather fixtures (template-built test cases, with real recordings and live evaluations scheduled in R20.3 and R20.12).
 
 ---
 
 ## 📊 Verification & Acceptance Results
 
-All reported numbers are strictly measured by automated scripts on real data and machine benchmarks—zero unverified or hand-typed metrics per Section 2 Truthfulness Rules:
-- **End-to-End Accuracy**: All 7 Tier-1 Indic languages meet or exceed the >= 95.0% pass rate gate on intent-structured golden test sets (EN 100%, HI 100%, BN 99.7%, MR 99.4%, TE 97.5%, TA 100%, OR 100%).
-- **Response Latency**: Measured over 300 queries across English, Hindi, and Regional Indic: TTFT p50 = 15.99 ms, p95 = 41.26 ms (budget <= 1500 ms); Total p50 = 16.03 ms, p95 = 41.45 ms (budget <= 3000 ms).
-- **Scalability**: Real ASGI streaming concurrency test across 20, 50, and 100 concurrent users (100% pass rate, p95 = 107.1 ms at 20 users, 309.4 ms at 50 users, 786.0 ms at 100 users, budget <= 1500 ms).
+Acceptance gates and evaluations track system capability across weather understanding, localization, and safety:
+- **Golden Test Sets**: Evaluated on template-built test cases across 7 Tier-1 Indic languages over fixture data (not a live product measurement; real recordings and live evaluations scheduled in R20.3 and R20.12).
+- **Response Latency**: `NOT MEASURED` (undergoing live stack evaluation in R20.12).
+- **Scalability Load Testing**: `NOT MEASURED` (undergoing live HTTP stack testing in R20.12).
 - **Accessibility**: 0 axe-core automated violations across 5 core views (WCAG 2.2 AA compliant).
-- **Speech ASR**: Reference transcripts evaluated across 260 utterances; real voice audio marked `NOT MEASURED` pending human field recording task H3 per Rules T1, T2 & S1.
-- **5 Core Ablations**: Statistically significant deltas with 1,000 bootstrap resamples (including +100% grounding with tools, +70.5% Recall@3 with RAG, -0.0862°C MAE reduction with MOS bias correction, 1100x latency speedup with local intent encoder, and 100% numeric preservation with cascaded translation).
+- **Speech ASR**: `NOT MEASURED` (pending human recording task H3 per Rules T1, T2 & S1).
+- **5 Core Ablations**: `NOT MEASURED` (undergoing reconstruction with independent evaluation scripts in R20.11).
 
-Detailed reports are archived in `eval/results/<date>/` and rendered in [`docs/EVAL_RESULTS.md`](docs/EVAL_RESULTS.md).
+Detailed evaluation documentation is maintained in [`docs/EVAL_RESULTS.md`](docs/EVAL_RESULTS.md).
 Project proposal deltas and architectural divergences are documented in [`docs/PROPOSAL_DELTAS.md`](docs/PROPOSAL_DELTAS.md).
 
 ---
