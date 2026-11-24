@@ -14,7 +14,7 @@ _service = ClimateService()
 async def get_climate(
     place_id: str = Query(..., description="Place identifier or name"),
     var: str = Query("temperature", description="Climate variable (temperature, rain)"),
-    period: str = Query("2026-05", description="Period string (e.g. 2026-05 or 1991-2020)"),
+    period: str | None = Query(None, description="Period string (e.g. 2024-05 or 1991-2020)"),
     stat: str = Query("anomaly", description="Statistic (normal, anomaly, percentile, days_above_threshold, trend)"),
     threshold: float | None = Query(None, description="Optional threshold value for counts"),
     baseline: str = Query("1991-2020", description="Baseline normal period"),

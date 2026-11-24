@@ -1,0 +1,50 @@
+{
+  "generated_by": "ml/climate/eval.py",
+  "git_sha": "6203ce81ef9123b3a35b560642187ed513bdb1be",
+  "provenance": "recorded_real_http",
+  "run_id": "climate_eval_20261124_143847",
+  "script": "ml/climate/eval.py",
+  "created_at": "2026-11-24T14:38:47.968585+00:00",
+  "inputs": [
+    {
+      "path": "ml/climate/events.csv",
+      "sha256": "9be79ae44440ab40ac778e36b9f116a6adfc61054b994ecf5b6199c8bc5b0445"
+    },
+    {
+      "path": "ml/climate/data/cache/13.00_77.50.json",
+      "sha256": "a498cd9743bd0301d4b9dbcbda069d02b333a162c3a9005230a94d8d62b5252e"
+    },
+    {
+      "path": "ml/climate/data/cache/13.00_80.25.json",
+      "sha256": "5423c472e2529f34cc2cbbc80eb6e1bee35cbba8f555b0bf4d0a1a3d31728374"
+    },
+    {
+      "path": "ml/climate/data/cache/18.50_73.75.json",
+      "sha256": "54fcf6d616ad2503aef1699a52c6fab803fc04e0fae54fc441ffc603e17f436c"
+    },
+    {
+      "path": "ml/climate/data/cache/19.00_73.00.json",
+      "sha256": "f55e5e8c39342bb9a9c288c9966e83f0cd12211b3fd70a12b986e76c8ca49e06"
+    },
+    {
+      "path": "ml/climate/data/cache/22.50_88.25.json",
+      "sha256": "fca29f32430ca10efa6d7a1ebc643d6ec52f335afa3c27bdf7f80e7ec560c682"
+    },
+    {
+      "path": "ml/climate/data/cache/27.00_75.75.json",
+      "sha256": "b27dcc37da02edfbc3bcc1525d84249ed84cc6f5b1fa99287b17b2ff9477761b"
+    },
+    {
+      "path": "ml/climate/data/cache/28.50_77.25.json",
+      "sha256": "5b2e95c62270d9e5d0c78f4ffc347f88295e1a1c9a30f44af73d0c7218f812a0"
+    },
+    {
+      "path": "ml/climate/data/cache/31.00_77.25.json",
+      "sha256": "0ac9f387f83d6f76f18d988faf2a54abb27197fce6315b691a5b62cc6aa9ac32"
+    }
+  ],
+  "output_reports": [
+    "ml/climate/reports/metrics.json",
+    "ml/climate/reports/MODEL_CARD.md"
+  ]
+}
