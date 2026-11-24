@@ -32,6 +32,19 @@ class RuleIntentBaseline:
     MODEL_VERSION = "rule-intent-baseline-v1.0"
 
     INTENT_KEYWORDS: dict[str, list[str]] = {
+        "out_of_domain": [
+            "pilot briefing",
+            "flight ai",
+            "metar",
+            "pilot",
+            "flight",
+            "ticket",
+            "train",
+            "hotel",
+            "cricket",
+            "stock",
+            "horoscope",
+        ],
         "unsafe": [
             "ignore all previous",
             "system prompt",
@@ -218,6 +231,9 @@ class RuleIntentBaseline:
         if scores["unsafe"] > 0:
             best_intent = "unsafe"
             confidence = 0.99
+        elif scores.get("out_of_domain", 0) > 0:
+            best_intent = "out_of_domain"
+            confidence = 0.85
         elif total_hits == 0:
             best_intent = "current"
             confidence = 0.35

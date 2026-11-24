@@ -78,6 +78,7 @@ class IntentService:
                 "explain": "general_knowledge",
                 "meta": "general_knowledge",
                 "unsafe": "out_of_domain",
+                "out_of_domain": "out_of_domain",
             }
             canon_intent = canon_map.get(rule_res.intent, "forecast")
             conf = float(rule_res.confidence)
