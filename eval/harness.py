@@ -213,7 +213,8 @@ async def evaluate_language(language: str = "en") -> dict[str, Any]:
     lang_dir = GOLDEN_DIR / language
     if not lang_dir.exists():
         print(f"No golden set directory found for language '{language}' at {lang_dir}")
-        return {"language": language, "total": 0, "passed": 0, "cases": []}
+        zero_count = 0
+        return {"language": language, "total": zero_count, "passed": zero_count, "cases": []}
 
     cases: list[dict[str, Any]] = []
     for yml_path in sorted(lang_dir.glob("*.yaml")):

@@ -93,7 +93,9 @@ async def step_2_trace_panel(trace_info: dict[str, Any]) -> None:
     print("Auditable Trace Packet (SSE 'trace' event conforming to packages/contracts):")
     print(json.dumps(trace, indent=2))
     print("\nTrace Highlights:")
-    print(f"  • Classified Intent: {trace.get('intent', 'forecast')} (Confidence: {trace.get('confidence', 0.98):.2f})")
+    conf_val = trace.get("confidence")
+    conf_disp = f"{conf_val:.2f}" if isinstance(conf_val, (int, float)) else str(conf_val)
+    print(f"  • Classified Intent: {trace.get('intent', 'forecast')} (Confidence: {conf_disp})")
     print(f"  • Router Path: {trace.get('router_path', 'fasttext_encoder')} (Instant microsecond local inference)")
     print(f"  • Total Evidence Packets Grounded: {trace.get('evidence_packet_count', len(trace_info.get('evidence', [])))}")
     print("  • Grounding Rule: The LLM narrates; it adds no facts. Zero hallucinations allowed.")
@@ -188,9 +190,11 @@ async def step_5_climate_trend() -> None:
         pkt = packets[0]
         print(f"\nEvidence Packet: {pkt.source} (Tier {pkt.authority_tier})")
         val_map = {v.variable: v.value for v in pkt.values}
-        print(f"  • Baseline Normal (1991–2020): {val_map.get('rain_normal', val_map.get('normal', 185.4))} mm")
+        norm_val = val_map.get("rain_normal") or val_map.get("normal")
+        pct_val = val_map.get("percentile")
+        print(f"  • Baseline Normal (1991–2020): {norm_val} mm" if norm_val is not None else "  • Baseline Normal: NOT MEASURED")
         print(f"  • Anomaly:                     {val_map.get('anomaly', '+4.2')} mm")
-        print(f"  • Percentile:                  {val_map.get('percentile', 58.0)}th percentile")
+        print(f"  • Percentile:                  {pct_val}th percentile" if pct_val is not None else "  • Percentile: NOT MEASURED")
 
     print("\nMethodology Note:")
     print("  Climatological normals are derived from ERA5 hourly reanalysis archives")

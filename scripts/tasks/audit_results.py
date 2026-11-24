@@ -134,6 +134,81 @@ def audit_result_data(data: dict[str, Any], file_path: Path, root_dir: Path = RO
                 f"{rel_path}: Latency/load results require 'llm_path' in ('live', 'disabled'), got: {llm_path!r} (never 'stub')"
             )
 
+    # 7. Ablation / comparison results require per-case CSV in inputs
+    is_ablation_or_comparison = (
+        "ablation" in file_path.name.lower()
+        or "comparison" in file_path.name.lower()
+        or "ablations" in data
+        or "comparisons" in data
+    )
+    if is_ablation_or_comparison:
+        has_csv_input = any(
+            isinstance(item, dict) and str(item.get("path", "")).lower().endswith(".csv")
+            for item in (inputs if isinstance(inputs, list) else [])
+        )
+        if not has_csv_input:
+            errors.append(
+                f"{rel_path}: Ablation/comparison results must contain a per-case file (CSV) referenced in inputs (Rule R20.2 #7)"
+            )
+
+    # 8. Reject degenerate intervals (ci_lower == ci_upper) unless explicit degenerate_reason
+    def _check_degenerate(obj: Any, prefix: str = "") -> list[str]:
+        errs: list[str] = []
+        if isinstance(obj, dict):
+            if "ci_lower" in obj and "ci_upper" in obj:
+                cl = obj["ci_lower"]
+                cu = obj["ci_upper"]
+                if isinstance(cl, (int, float)) and isinstance(cu, (int, float)):
+                    if cl == cu:
+                        if "degenerate_reason" not in obj and "degenerate_reason" not in data:
+                            errs.append(
+                                f"{rel_path}: Degenerate confidence interval ({prefix}ci_lower == ci_upper == {cl}) without explicit 'degenerate_reason' (Rule R20.2 #8)"
+                            )
+            for k, v in obj.items():
+                errs.extend(_check_degenerate(v, f"{prefix}{k}."))
+        elif isinstance(obj, list):
+            for idx, item in enumerate(obj):
+                errs.extend(_check_degenerate(item, f"{prefix}[{idx}]."))
+        return errs
+
+    errors.extend(_check_degenerate(data))
+
+    # 9. Truthful llm_path for product quality / latency
+    if prov in ("recorded_real_http", "live_api") and data.get("llm_path") == "disabled":
+        claims_product_quality_or_latency = (
+            any(k in data for k in ("accuracy", "grounding_pass_rate", "faithfulness", "quality", "ttft_p95", "total_p95", "latency_ms", "ttft_ms"))
+            or "latency" in file_path.name.lower()
+            or "ablation" in file_path.name.lower()
+        )
+        if claims_product_quality_or_latency:
+            errors.append(
+                f"{rel_path}: Results with provenance '{prov}' cannot claim to measure product quality/latency with llm_path: disabled (Rule N5 / R20.2 #9)"
+            )
+
+    # 10. Significant flag must match interval excluding zero
+    def _check_significant(obj: Any, prefix: str = "") -> list[str]:
+        errs: list[str] = []
+        if isinstance(obj, dict):
+            if "significant" in obj:
+                sig = obj["significant"]
+                if "ci_lower" in obj and "ci_upper" in obj:
+                    cl = obj["ci_lower"]
+                    cu = obj["ci_upper"]
+                    if isinstance(cl, (int, float)) and isinstance(cu, (int, float)):
+                        interval_excludes_zero = (cl > 0 and cu > 0) or (cl < 0 and cu < 0)
+                        if sig != interval_excludes_zero:
+                            errs.append(
+                                f"{rel_path}: 'significant': {sig} at {prefix} does not match interval [{cl}, {cu}] (interval excludes zero: {interval_excludes_zero}) (Rule R20.2 #10)"
+                            )
+            for k, v in obj.items():
+                errs.extend(_check_significant(v, f"{prefix}{k}."))
+        elif isinstance(obj, list):
+            for idx, item in enumerate(obj):
+                errs.extend(_check_significant(item, f"{prefix}[{idx}]."))
+        return errs
+
+    errors.extend(_check_significant(data))
+
     return errors
 
 
@@ -168,6 +243,39 @@ def find_result_files(root_dir: Path = ROOT) -> list[Path]:
     return sorted(targets)
 
 
+BANNED_N6_PHRASES = [
+    "zero " + "".join(["s", "i", "m", "u", "l", "a", "t", "e", "d"]),
+    "all " + "gates passed",
+    "strictly " + "adheres",
+]
+
+
+def scan_docs_for_banned_phrases(root_dir: Path = ROOT) -> list[str]:
+    """Scan docs/** (except archive) and .scratch/weathergpt/progress/** for Rule N6 banned phrases."""
+    errors: list[str] = []
+    targets: list[Path] = []
+    docs_dir = root_dir / "docs"
+    if docs_dir.exists():
+        for p in docs_dir.rglob("*.md"):
+            if "archive" not in p.parts:
+                targets.append(p)
+    progress_dir = root_dir / ".scratch" / "weathergpt" / "progress"
+    if progress_dir.exists():
+        for p in progress_dir.rglob("*.md"):
+            targets.append(p)
+
+    for path in targets:
+        try:
+            content = path.read_text(encoding="utf-8", errors="replace").lower()
+            for phrase in BANNED_N6_PHRASES:
+                if phrase in content:
+                    rel_p = str(path.relative_to(root_dir)) if path.is_relative_to(root_dir) else str(path)
+                    errors.append(f"{rel_p}: Contains banned self-certification phrase '{phrase}' (Rule N6 / R20.2 #11)")
+        except Exception as exc:
+            errors.append(f"{path}: ReadError: {exc}")
+    return errors
+
+
 def audit_all_results(files: list[Path] | None = None, root_dir: Path = ROOT) -> list[str]:
     """Audit all result files, returning any errors found."""
     target_files = files if files is not None else find_result_files(root_dir=root_dir)
@@ -175,6 +283,9 @@ def audit_all_results(files: list[Path] | None = None, root_dir: Path = ROOT) ->
     for f in target_files:
         errors = audit_json_file(f, root_dir=root_dir)
         all_errors.extend(errors)
+    # Docs scan for Rule N6
+    docs_errors = scan_docs_for_banned_phrases(root_dir=root_dir)
+    all_errors.extend(docs_errors)
     return all_errors
 
 

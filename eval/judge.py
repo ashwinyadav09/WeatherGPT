@@ -30,7 +30,11 @@ def calculate_cohen_kappa(rater1: list[int], rater2: list[int]) -> float:
     if pe >= 1.0:
         return 1.0
     kappa = (po - pe) / (1.0 - pe)
-    return max(-1.0, min(1.0, kappa))
+    if kappa < -1.0:
+        return -1.0
+    if kappa > 1.0:
+        return 1.0
+    return kappa
 
 
 def evaluate_quality_rubric(answer: str, case: dict[str, Any]) -> dict[str, Any]:

@@ -73,7 +73,7 @@ def copy_reports_to_dated_dir(target_dir: Path) -> dict[str, Any]:
                 eval_summaries[lang] = {
                     "total": data.get("total", 0),
                     "passed": data.get("passed", 0),
-                    "accuracy": data.get("accuracy", 0.0),
+                    "accuracy": data.get("accuracy"),
                     "file": f.name,
                 }
     collected["golden_evals"] = eval_summaries

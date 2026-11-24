@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from ml.common.stats import bootstrap_sample_indices  # noqa: E402
 from services.api.app.modules.advisory.rag import RagEngine, _tokenize  # noqa: E402
 
 KNOWLEDGE_DIR = ROOT / "seeds" / "knowledge"
@@ -105,12 +106,11 @@ def bootstrap_retrieval_ci(
     seed: int = 42,
 ) -> dict[str, dict[str, float]]:
     """Compute 95% bootstrap confidence intervals for retrieval metrics."""
-    rng = np.random.default_rng(seed)
     n = len(queries)
     r1_dist, r3_dist, r5_dist, mrr_dist = [], [], [], []
+    sample_batches = bootstrap_sample_indices(n, n_bootstrap=n_bootstrap, seed=seed)
 
-    for _ in range(n_bootstrap):
-        sampled_indices = rng.integers(0, n, size=n)
+    for sampled_indices in sample_batches:
         s_queries = [queries[i] for i in sampled_indices]
         s_ranks = [ranks_list[i] for i in sampled_indices]
         m = compute_retrieval_metrics(s_queries, s_ranks)
@@ -187,7 +187,10 @@ def run_evaluation() -> dict[str, Any]:
 
         # BM25
         q_tokens = _tokenize(query_text)
-        bm_scores = rag.bm25.get_scores(q_tokens) if (rag.bm25 and q_tokens) else np.zeros(len(chunks))
+        if rag.bm25 and q_tokens:
+            bm_scores = rag.bm25.get_scores(q_tokens)
+        else:
+            raise ValueError(f"Uninitialized BM25 or empty query tokens: {query_text!r}")
         bm_order = np.argsort(bm_scores)[::-1]
         bm_cids = [chunks[i].chunk_id for i in bm_order]
         bm25_test_ranks.append(bm_cids)

@@ -109,11 +109,15 @@ class PointForecastMOSModel:
             # If rain model is not fitted, return raw proxy or baseline
             return 0.5 if raw_rain >= 2.5 else 0.05
         is_monsoon = 1.0 if 6 <= month <= 9 else 0.0
-        log_rain = math.log1p(max(0.0, raw_rain))
+        log_rain = math.log1p(max(0, raw_rain))
         feats = [1.0, raw_rain, log_rain, is_monsoon, lat / 10.0]
         z = sum(w * f for w, f in zip(self.rain_weights, feats))
         prob = 1.0 / (1.0 + math.exp(-z))
-        return round(min(0.98, max(0.02, prob)), 3)
+        if prob < 0.02:
+            prob = 0.02
+        elif prob > 0.98:
+            prob = 0.98
+        return round(prob, 3)
 
     def should_use_correction(self, variable: str, lead_time_hours: int) -> bool:
         """Gate: Returns True only if MOS beats the raw model on held-out data for this variable and lead time."""

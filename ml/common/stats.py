@@ -317,3 +317,11 @@ def paired_block_bootstrap(
         "n_blocks": n_blocks,
         "n_bootstrap": n_bootstrap,
     }
+
+
+def bootstrap_sample_indices(n: int, n_bootstrap: int = 2000, seed: int = 42) -> list[list[int]]:
+    """Generate bootstrap sample index arrays with a fixed seed. Permitted under Rule T1/N1 in ml/common/stats.py."""
+    if n <= 0:
+        return []
+    rng = np.random.default_rng(seed)
+    return [rng.integers(0, n, size=n).tolist() for _ in range(n_bootstrap)]

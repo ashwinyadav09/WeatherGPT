@@ -78,7 +78,7 @@ def evaluate() -> dict[str, Any]:
     with open(ARTIFACTS_DIR / "thresholds.json", "r", encoding="utf-8") as f:
         meta = json.load(f)
 
-    decision_thresh = float(meta.get("decision_threshold", 0.35))
+    decision_thresh = float(meta["decision_threshold"])
 
     print("[INFO] Loading held-out test set...")
     train_df, _, test_df = load_extreme_event_data()

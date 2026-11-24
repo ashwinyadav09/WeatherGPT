@@ -240,7 +240,8 @@ class RuleIntentBaseline:
         else:
             best_intent = max(scores, key=lambda k: scores[k])
             max_score = scores[best_intent]
-            confidence = min(0.98, round(0.70 + (max_score * 0.10), 2))
+            conf_raw = round(0.70 + (max_score * 0.10), 2)
+            confidence = 0.98 if conf_raw > 0.98 else conf_raw
 
         slots: dict[str, str] = {}
 
