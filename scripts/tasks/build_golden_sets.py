@@ -293,6 +293,7 @@ def build_golden_sets() -> None:
                 "expect": {
                     "source_named": item.get("source", ["NDMA", "ICAR"]),
                     "refusal": False,
+                    "check_citations": True,
                 },
             }
             if "must_not" in item:

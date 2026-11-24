@@ -83,7 +83,7 @@ async def test_trace_contract_evacuation_safety_guard():
         validate_schema("trace_event", trace_data)
         assert trace_data["intent"] == "safety_redirect"
         assert trace_data["router_path"] == "safety_guard"
-        assert trace_data["confidence"] == 1.0
+        assert trace_data["confidence"] is None
 
 
 @pytest.mark.asyncio

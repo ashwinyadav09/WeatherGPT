@@ -233,6 +233,32 @@ async def run_single_case(agent: Orchestrator, case: dict[str, Any]) -> dict[str
         if required.lower() not in full_text.lower():
             failures.append(f"Required word/phrase missing: '{required}'")
 
+    # 7. Check question text is not treated as a place name (Finding V5 - R20.5)
+    question_text = case.get("question", "")
+    if question_text and len(question_text) > 10:
+        if question_text in (card.get("headline", "") if card else ""):
+            failures.append(f"Card headline treated question text as place name: {card.get('headline', '')!r}")
+        bad_phrase_en = f"weather information is available for {question_text}"
+        if bad_phrase_en.lower() in full_text.lower():
+            failures.append("Answer treated question text as place name in fallback phrase")
+
+    # 8. Check cited chunk IDs were retrieved (R20.5 - citations grounded in evidence)
+    if case.get("check_citations") and evidence_packets:
+        import re as _re
+        cited_ids = _re.findall(r"\(([a-z0-9_\-]+),", full_text)
+        retrieved_ids = set()
+        for ep in evidence_packets:
+            ep_id = ep.get("id", "") if isinstance(ep, dict) else str(getattr(ep, "id", ""))
+            if ep_id:
+                retrieved_ids.add(ep_id.replace("kb_", ""))
+            if isinstance(ep, dict):
+                for v in ep.get("values", []):
+                    if v.get("variable") == "chunk_id":
+                        retrieved_ids.add(str(v.get("value", "")))
+        for cid in cited_ids:
+            if cid not in retrieved_ids and cid != "no_official_guidance":
+                failures.append(f"Cited chunk id '{cid}' was not retrieved in evidence packets")
+
     passed = len(failures) == 0
     return {
         "id": case["id"],

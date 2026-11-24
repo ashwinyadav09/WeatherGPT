@@ -110,5 +110,5 @@ async def test_orchestrator_advisory_flow_with_rag():
 
     token_text = "".join(e["data"]["text"] for e in events if e["event"] == "token")
     assert len(token_text) > 0
-    # The answer should cite the chunk ID
-    assert "[" in token_text and "]" in token_text
+    # The answer should cite source/page or chunk citation (Ticket R20.5: no raw chunk dump)
+    assert ("(" in token_text and "p." in token_text) or ("[" in token_text and "]" in token_text)
