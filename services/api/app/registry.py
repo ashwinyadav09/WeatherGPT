@@ -290,6 +290,15 @@ class ProviderRegistry:
             intent_model=intent_model,
         )
 
+    def get_intent_model(self) -> Any:
+        """Return configured Intent model or service."""
+        try:
+            from ml.intent.service import IntentService
+            return IntentService()
+        except Exception:
+            from ml.intent.model import RuleIntentBaseline
+            return RuleIntentBaseline()
+
 
 # Module-level default registry instance and helper accessors
 registry = ProviderRegistry()

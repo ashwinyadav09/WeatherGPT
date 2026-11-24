@@ -1,0 +1,93 @@
+[
+  {
+    "id": "h1_en_001",
+    "query": "Will it rain tomorrow in Pune?",
+    "language": "en",
+    "intent": "forecast",
+    "slots": {
+      "place": "Pune",
+      "date_range": "tomorrow",
+      "crop": null,
+      "hazard": "rain"
+    },
+    "verified_by": "human_contributor_id"
+  },
+  {
+    "id": "h1_hi_001",
+    "query": "कल दिल्ली में तापमान कितना रहेगा?",
+    "language": "hi",
+    "intent": "forecast",
+    "slots": {
+      "place": "दिल्ली",
+      "date_range": "कल",
+      "crop": null,
+      "hazard": null
+    },
+    "verified_by": "human_contributor_id"
+  },
+  {
+    "id": "h1_bn_001",
+    "query": "আগামীকাল কলকাতায় বৃষ্টি হবে কি?",
+    "language": "bn",
+    "intent": "forecast",
+    "slots": {
+      "place": "কলকাতা",
+      "date_range": "আগামীকাল",
+      "crop": null,
+      "hazard": "বৃষ্টি"
+    },
+    "verified_by": "human_contributor_id"
+  },
+  {
+    "id": "h1_mr_001",
+    "query": "उद्या पुण्यात पाऊस पडेल का?",
+    "language": "mr",
+    "intent": "forecast",
+    "slots": {
+      "place": "पुणे",
+      "date_range": "उद्या",
+      "crop": null,
+      "hazard": "पाऊस"
+    },
+    "verified_by": "human_contributor_id"
+  },
+  {
+    "id": "h1_te_001",
+    "query": "రేపు హైదరాబాద్‌లో వర్షం పడుతుందా?",
+    "language": "te",
+    "intent": "forecast",
+    "slots": {
+      "place": "హైదరాబాద్",
+      "date_range": "రేపు",
+      "crop": null,
+      "hazard": "వర్షం"
+    },
+    "verified_by": "human_contributor_id"
+  },
+  {
+    "id": "h1_ta_001",
+    "query": "நாளை சென்னையில் மழை பெய்யுமா?",
+    "language": "ta",
+    "intent": "forecast",
+    "slots": {
+      "place": "சென்னை",
+      "date_range": "நாளை",
+      "crop": null,
+      "hazard": "மழை"
+    },
+    "verified_by": "human_contributor_id"
+  },
+  {
+    "id": "h1_or_001",
+    "query": "ଆସନ୍ତାକାଲି ଭୁବନେଶ୍ୱରରେ ବର୍ଷା ହେବ କି?",
+    "language": "or",
+    "intent": "forecast",
+    "slots": {
+      "place": "ଭୁବନେଶ୍ୱର",
+      "date_range": "ଆସନ୍ତାକାଲି",
+      "crop": null,
+      "hazard": "ବର୍ଷା"
+    },
+    "verified_by": "human_contributor_id"
+  }
+]

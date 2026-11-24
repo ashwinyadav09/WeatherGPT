@@ -1,0 +1,14 @@
+{
+  "generated_by": "ml/intent/eval.py",
+  "git_sha": "2df9bd6e4202356c68f856c9bbfe2d3c91ed50b6",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "ml/intent/data/processed_dataset.csv",
+      "sha256": "bcc7d3be54ee63b3e3ed3f832e8b5964366c864e6a297735857d54c0dce4ea6d"
+    }
+  ],
+  "evaluation_timestamp": "2026-11-24T14:01:09.106107+00:00",
+  "status": "BLOCKED_PENDING_H1",
+  "note": "Evaluation on gold test set pending human contribution H1."
+}

@@ -1,0 +1,30 @@
+{
+  "model_version": "intent-v1.0",
+  "labels": [
+    "current_conditions",
+    "forecast",
+    "alert",
+    "advisory",
+    "climate_history",
+    "general_knowledge",
+    "out_of_domain"
+  ],
+  "n_train": 3876,
+  "n_val": 966,
+  "classes": [
+    "advisory",
+    "alert",
+    "climate_history",
+    "current_conditions",
+    "forecast",
+    "general_knowledge",
+    "out_of_domain"
+  ],
+  "val_macro_f1": 0.6296,
+  "val_accuracy": 0.7919,
+  "baseline0_macro_f1": 0.2437,
+  "baseline0_accuracy": 0.0994,
+  "auto_route_threshold": 0.68,
+  "tau_precision": 0.9543,
+  "tau_coverage": 0.5663
+}

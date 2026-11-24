@@ -222,7 +222,7 @@ class RuleIntentBaseline:
             best_intent = "current"
             confidence = 0.35
         else:
-            best_intent = max(scores, key=scores.get)
+            best_intent = max(scores, key=lambda k: scores[k])
             max_score = scores[best_intent]
             confidence = min(0.98, round(0.70 + (max_score * 0.10), 2))
 
