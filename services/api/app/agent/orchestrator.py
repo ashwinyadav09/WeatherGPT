@@ -23,6 +23,7 @@ from services.api.app.agent.tools import (
     get_alerts,
     get_climate,
     get_forecast,
+    get_risk_outlook,
     search_knowledge,
 )
 from services.api.app.conversation.i18n import (
@@ -52,6 +53,24 @@ class ChatRequest(BaseModel):
     place_id: str | None = None
     client_tz: str = "Asia/Kolkata"
     stream: bool = True
+    ml_mode: str = "raw"  # "raw" | "ml"
+
+
+def is_model_enabled(model_name: str) -> bool:
+    """Check whether a model is enabled in production from its audited reports/metrics.json."""
+    from pathlib import Path
+    metrics_path = Path(__file__).resolve().parents[4] / "ml" / model_name / "reports" / "metrics.json"
+    if not metrics_path.exists():
+        return False
+    try:
+        import json
+        data = json.loads(metrics_path.read_text(encoding="utf-8"))
+        return bool(data.get("enabled_in_production", True))
+    except Exception:
+        return False
+
+
+_DEFAULT_INTENT = object()
 
 
 class Orchestrator:
@@ -65,7 +84,7 @@ class Orchestrator:
         climate_service: ClimateService | None = None,
         translation_gateway: TranslationGateway | None = None,
         llm_gateway: LLMGateway | None = None,
-        intent_model: Any | None = None,
+        intent_model: Any = _DEFAULT_INTENT,
     ) -> None:
         self.llm = llm or llm_gateway or LLMGateway()
         self.forecast_service = forecast_service or ForecastService()
@@ -74,7 +93,14 @@ class Orchestrator:
         self.advisory_engine = advisory_engine or AdvisoryEngine()
         self.climate_service = climate_service or ClimateService()
         self.translation_gateway = translation_gateway
-        self.intent_model = intent_model
+        if intent_model is not _DEFAULT_INTENT:
+            self.intent_model = intent_model
+        else:
+            try:
+                from ml.intent.service import IntentService
+                self.intent_model = IntentService()
+            except Exception:
+                self.intent_model = None
         self.sessions: dict[str, dict[str, Any]] = {}
         self.pending_clarifications: dict[str, dict[str, Any]] = {}
 
@@ -572,24 +598,56 @@ class Orchestrator:
         router_path: str = "deterministic"
         intent = "forecast"
 
-        if self.intent_model:
-            pred = self.intent_model.predict(req.text)
-            intent = getattr(pred, "intent", "forecast")
-            confidence = float(getattr(pred, "confidence", 0.0))
-            router_path = "intent_model"
-            m_id = getattr(self.intent_model, "MODEL_ID", getattr(self.intent_model, "MODEL_VERSION", "rule_intent_baseline"))
-            m_ver = getattr(self.intent_model, "MODEL_VERSION", "v1.0")
-            models_invoked.append({"id": m_id, "version": m_ver, "used": True})
+        if self.intent_model and is_model_enabled("intent"):
+            try:
+                try:
+                    pred = self.intent_model.predict(req.text, language=lang)
+                except TypeError:
+                    pred = self.intent_model.predict(req.text)
+                confidence = float(getattr(pred, "confidence", 0.0))
+                auto_route = getattr(pred, "auto_route", False)
+                m_id = getattr(self.intent_model, "MODEL_ID", "intent_classifier_v1.0")
+                m_ver = getattr(self.intent_model, "MODEL_VERSION", "v1.0")
+                models_invoked.append({"id": m_id, "version": m_ver, "used": True})
+
+                if auto_route and getattr(pred, "intent", None) not in (None, "out_of_domain"):
+                    intent = pred.intent
+                    router_path = "intent_model_auto"
+                else:
+                    # Query below auto-route threshold tau: fall back to keyword matching
+                    router_path = "intent_model"
+                    is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
+                    is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
+                    is_risk = any(w in req.text.lower() for w in ["risk", "extreme event", "heatwave risk", "cold wave risk", "severe weather risk", "जोखिम", "खतरा"])
+                    is_advisory = any(w in req.text.lower() for w in advisory_keywords)
+
+                    if is_climate:
+                        intent = "climate_history"
+                    elif is_risk:
+                        intent = "risk"
+                    elif is_alert:
+                        intent = "alert"
+                    elif is_advisory:
+                        intent = "advisory"
+                    else:
+                        intent = "forecast"
+            except Exception as exc:
+                logger.warning("intent_model_failed", extra={"error": str(exc)})
+                confidence = None
+                router_path = "deterministic"
         else:
             confidence = None
             router_path = "deterministic"
             # Check intent keywords
             is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
             is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
+            is_risk = any(w in req.text.lower() for w in ["risk", "extreme event", "heatwave risk", "cold wave risk", "severe weather risk", "जोखिम", "खतरा"])
             is_advisory = any(w in req.text.lower() for w in advisory_keywords)
 
             if is_climate:
                 intent = "climate_history"
+            elif is_risk:
+                intent = "risk"
             elif is_alert:
                 intent = "alert"
             elif is_advisory:
@@ -599,6 +657,8 @@ class Orchestrator:
 
         if intent in ("climate", "climate_history"):
             intent = "climate_history"
+            if is_model_enabled("climate"):
+                models_invoked.append({"id": "climate_trend_v1", "version": "v1.0", "used": True})
             t0 = time.time()
             metric = "rain" if "rain" in req.text.lower() else "temperature"
             evidence_packets = await get_climate(place=place_ref, metric=metric, period="2026-05")
@@ -607,6 +667,19 @@ class Orchestrator:
                 "args": {"place": place_ref.id, "metric": metric, "period": "2026-05"},
                 "latency_ms": int((time.time() - t0) * 1000),
                 "source": evidence_packets[0].source if evidence_packets else "era5",
+                "provenance": evidence_packets[0].provenance if evidence_packets else "live",
+            })
+        elif intent in ("risk", "extreme_event"):
+            intent = "risk"
+            if is_model_enabled("extreme_event"):
+                models_invoked.append({"id": "extreme_event_risk_v1", "version": "v1.0", "used": True})
+            t0 = time.time()
+            evidence_packets = await get_risk_outlook(place=place_ref, lead_day=1)
+            tools_executed.append({
+                "name": "get_risk_outlook",
+                "args": {"place": place_ref.id, "lead_day": 1},
+                "latency_ms": int((time.time() - t0) * 1000),
+                "source": evidence_packets[0].source if evidence_packets else "extreme_event_risk",
                 "provenance": evidence_packets[0].provenance if evidence_packets else "live",
             })
         elif intent == "alert":
@@ -620,6 +693,8 @@ class Orchestrator:
                 "provenance": evidence_packets[0].provenance if evidence_packets else "live",
             })
         elif intent == "advisory":
+            if is_model_enabled("rag"):
+                models_invoked.append({"id": "rag_advisory_engine", "version": "v1.0", "used": True})
             t0 = time.time()
             evidence_packets = await search_knowledge(query=req.text, lang=lang)
             tools_executed.append({
@@ -641,12 +716,21 @@ class Orchestrator:
                 day_target = 1
 
             t0 = time.time()
+            req_ml_mode = getattr(req, "ml_mode", "raw")
+            effective_ml_mode = req_ml_mode if (req_ml_mode == "ml" and is_model_enabled("bias_correction")) else "raw"
             evidence_packets = await get_forecast(
-                place=place_ref, day=day_target, forecast_service=self.forecast_service
+                place=place_ref,
+                day=day_target,
+                forecast_service=self.forecast_service,
+                ml_mode=effective_ml_mode,
             )
+            bias_corrected = any(p.id.endswith("-corrected") for p in evidence_packets)
+            if bias_corrected and is_model_enabled("bias_correction"):
+                models_invoked.append({"id": "NWP_BiasCorrection_v1", "version": "1.0.0", "used": True})
+
             tools_executed.append({
                 "name": "get_forecast",
-                "args": {"place": place_ref.id, "day": day_target},
+                "args": {"place": place_ref.id, "day": day_target, "ml_mode": effective_ml_mode},
                 "latency_ms": int((time.time() - t0) * 1000),
                 "source": evidence_packets[0].source if evidence_packets else "open_meteo",
                 "provenance": evidence_packets[0].provenance if evidence_packets else "live",
@@ -753,6 +837,16 @@ class Orchestrator:
                         answer_text = f"[{top_chunk_id}] {top_guidance}"
                     else:
                         answer_text = top_guidance
+                elif intent == "risk":
+                    risk_lvl = "low"
+                    for p in evidence_packets:
+                        for v in p.values:
+                            if v.variable == "risk_level":
+                                risk_lvl = str(v.value)
+                    if lang == "hi":
+                        answer_text = f"{p_name} के लिए चरम मौसम जोखिम स्तर: {risk_lvl}। यह आधिकारिक चेतावनी नहीं है।"
+                    else:
+                        answer_text = f"Extreme weather risk outlook for {p_name}: {risk_lvl} risk. This is not an official warning."
                 elif rain_val is not None and temp_val is not None:
                     if lang == "hi":
                         rf_phrase = get_hindi_rainfall_phrase(rain_val)
@@ -809,10 +903,31 @@ class Orchestrator:
             }
 
         # 12. Build and Stream Card Event
-        if intent == "advisory":
+        card_data: dict[str, Any] = {}
+        if intent == "risk":
+            card_headline = f"{p_name} Risk Outlook" if lang != "hi" else f"{p_name} चरम मौसम जोखिम"
+            risk_prob_str = "Low"
+            top_drivers_str = ""
+            for p in evidence_packets:
+                for v in p.values:
+                    if v.variable == "risk_level":
+                        risk_prob_str = str(v.value)
+                    elif v.variable == "top_drivers":
+                        top_drivers_str = str(v.value)
+            card_data = {
+                "headline": card_headline,
+                "key_values": {
+                    "Risk Level" if lang != "hi" else "जोखिम स्तर": risk_prob_str.title(),
+                    "Top Drivers" if lang != "hi" else "मुख्य कारक": top_drivers_str or "Baseline climatology",
+                },
+                "source_line": "WeatherGPT Extreme-Event Risk Classifier (v1.0)",
+                "caveat": "This is not an official warning. Official warnings are issued exclusively by IMD.",
+                "actions": ["View Alerts", "Safety Guidelines"],
+            }
+        elif intent == "advisory":
             card_headline = f"{p_name} Advisory" if lang != "hi" else f"{p_name} मौसम व सुरक्षा सलाह"
             first_val = evidence_packets[0].values[0].value if evidence_packets and evidence_packets[0].values else "Safety"
-            card_data: dict[str, Any] = {
+            card_data = {
                 "headline": card_headline,
                 "key_values": {
                     "Topic" if lang != "hi" else "विषय": str(first_val),

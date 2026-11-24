@@ -181,6 +181,7 @@ async def get_forecast(
     day: int | str | None = 0,
     range_days: int | None = None,
     forecast_service: ForecastService | None = None,
+    ml_mode: str = "raw",
 ) -> list[EvidencePacket]:
     """Forecast values for a place and day/range from the best available sources."""
     try:
@@ -210,6 +211,8 @@ async def get_forecast(
             lat=place_ref.lat,
             lon=place_ref.lon,
             place_name=place_ref.name,
+            ml_mode=ml_mode,
+            elevation=getattr(place_ref, "elevation", 0.0) or 0.0,
         )
 
         # Parse target day index if given as string
@@ -563,6 +566,7 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                         "description": "Day index (0=today, 1=tomorrow) or string ('today', 'tomorrow', 'YYYY-MM-DD').",
                     },
                     "range_days": {"type": "integer", "description": "Number of forecast days to retrieve (1-7)."},
+                    "ml_mode": {"type": "string", "enum": ["raw", "ml"], "description": "Whether to apply machine learning bias correction (ml) or raw NWP forecast (raw)."},
                 },
                 "required": ["place"],
             },
