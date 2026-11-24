@@ -43,9 +43,16 @@ def test_rag_engine_loading_and_retrieval():
     assert "heatwave" in bm25_res[0][0].chunk_id.lower()
 
     # Dense search
-    dense_res = rag.search_dense("hypothermia and warm clothing in cold weather", top_k=3)
-    assert len(dense_res) >= 1
-    assert "coldwave" in dense_res[0][0].chunk_id.lower()
+    try:
+        import sentence_transformers  # noqa: F401
+        has_dense = True
+    except ImportError:
+        has_dense = False
+
+    if has_dense:
+        dense_res = rag.search_dense("hypothermia and warm clothing in cold weather", top_k=3)
+        assert len(dense_res) >= 1
+        assert "coldwave" in dense_res[0][0].chunk_id.lower()
 
     # Hybrid search
     hybrid_res = rag.search("What is the 30-30 lightning safety rule?", mode="hybrid", top_k=3)
