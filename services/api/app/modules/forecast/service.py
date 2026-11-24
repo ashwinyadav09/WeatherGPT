@@ -31,8 +31,23 @@ class ForecastService:
         lat: float = 18.5204,
         lon: float = 73.8567,
         place_name: str = "Pune",
+        ml_mode: str = "raw",
+        elevation: float = 0.0,
         **kwargs: Any,
     ) -> list[EvidencePacket]:
-        return await self.provider.get_forecast(
+        packets = await self.provider.get_forecast(
             lat=lat, lon=lon, place_name=place_name, place_id=place_id, **kwargs
         )
+        if ml_mode == "ml":
+            try:
+                from ml.bias_correction.service import apply_bias_correction_hook
+                return apply_bias_correction_hook(
+                    packets=packets,
+                    lat=lat,
+                    lon=lon,
+                    elev=elevation,
+                    ml_mode=ml_mode,
+                )
+            except Exception:
+                return packets
+        return packets
