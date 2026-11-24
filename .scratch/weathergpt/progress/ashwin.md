@@ -46,7 +46,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R20.2 | Make the guards actually work | done | Extended test_no_synthetic_data.py (attribute random, ones/zeros, float allowlist, dict metric keys, max/min floors, fallback .get/ifexp) and audit_results.py (per-case CSV, degenerate intervals, disabled llm_path, significant interval check, docs N6 scan). PR #88. |
 | R20.3 | Record real data per city and replace mock transport | done | Recorded live Open-Meteo geocoding & forecast data and SACHET alerts feed under eval/recordings/ with MANIFEST.json (176 entries across 85 cities); implemented RecordedHTTPTransport replaying by deterministic request hash; replaced old mock transport; rebuilt golden sets by code from recorded values with per-city differences; verified transport failure on deleted recordings. |
 | R20.4 | Live evaluation infrastructure | done | Implemented eval/llm_cache/ caching and ProviderThrottler; implemented scripts/tasks/live_stack.py supporting docker_http and in_process stacks; exits with NOT MEASURED without keys and caches real responses with audited output when run. |
-| R20.5 | Fix routing and answer bugs (all 7 languages) | in-review | Branch ticket/R20.5-routing-and-answer-bugs. 17 regression tests GREEN. 43 unit+contract+guard tests GREEN. All CI passing. |
+| R20.5 | Fix routing and answer bugs (all 7 languages) | in-review | PR #91. 17 regression tests GREEN across all 7 languages. 339 tests passing. CI green. |
 
 ## Assumptions
 
