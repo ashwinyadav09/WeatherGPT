@@ -24,6 +24,8 @@ def main() -> int:
     ensure_installed("greenlet")
     ensure_installed("aiosqlite")
     ensure_installed("asyncpg")
+    ensure_installed("joblib")
+    ensure_installed("sklearn")
 
     args = sys.argv[1:]
     target = args if args else ["services/api/tests"]

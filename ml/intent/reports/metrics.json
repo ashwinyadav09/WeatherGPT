@@ -1,0 +1,38 @@
+{
+  "model_name": "Intent & Slot Classifier (Multilingual TF-IDF + Calibrated Logistic Regression)",
+  "version": "intent-v1.0",
+  "task": "Multilingual intent classification (7 canonical classes) and slot extraction",
+  "generated_by": "ml/intent/eval.py",
+  "git_sha": "2df9bd6e4202356c68f856c9bbfe2d3c91ed50b6",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "ml/intent/data/processed_dataset.csv",
+      "sha256": "bcc7d3be54ee63b3e3ed3f832e8b5964366c864e6a297735857d54c0dce4ea6d"
+    }
+  ],
+  "n_train": 3876,
+  "n_val": 966,
+  "n_test": 0,
+  "status": "BLOCKED_PENDING_H1",
+  "metrics": {
+    "gold_set_macro_f1": "NOT MEASURED",
+    "gold_set_accuracy": "NOT MEASURED",
+    "val_macro_f1": 0.6296,
+    "val_accuracy": 0.7919,
+    "auto_route_threshold": 0.68,
+    "tau_precision": 0.9543
+  },
+  "enabled_in_production": true,
+  "note": "Gold set H1 pending human verification. Per R12: metrics are NOT MEASURED.",
+  "dataset": {
+    "name": "Amazon MASSIVE 1.1 + Project Domain Seeds",
+    "sources": "AmazonScience/massive S3 archive (en-US, hi-IN, bn-BD, ta-IN, te-IN)",
+    "provenance": "recorded_real_http"
+  },
+  "limitations": [
+    "Test set accuracy is NOT MEASURED pending human contribution of gold test set H1.",
+    "Model is trained on MASSIVE speech utterances and hand-crafted domain seeds.",
+    "Marathi and Odia training data rely on subword transfer from Hindi/Bengali char n-grams."
+  ]
+}
