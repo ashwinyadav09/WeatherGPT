@@ -1,0 +1,53 @@
+{
+  "schema_version": "1",
+  "generated_by": "scripts/tasks/load_test.py",
+  "generated_at": "2026-11-24T18:41:23.943274+00:00",
+  "git_sha": "d6c3ed59c6c3ce26e0185ea6641be9e3bd1cbccf",
+  "provenance": "recorded_real_http",
+  "llm_path": "disabled",
+  "inputs": [
+    {
+      "path": "eval/golden/en/forecast.yaml",
+      "sha256": "3514a90abb9a2a5862e38ec56c7457c028a22b40b1cb29e615ed18b483887f13"
+    }
+  ],
+  "machine": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "AMD64 Family 26 Model 96 Stepping 0, AuthenticAMD",
+    "python": "3.12.10",
+    "cpus": "16"
+  },
+  "target": "in_process_asgi_app",
+  "levels": [
+    {
+      "concurrency": 20,
+      "n_requests": 20,
+      "n_ok": 20,
+      "elapsed_sec": 0.11,
+      "requests_per_second": 184.4,
+      "p50_latency_ms": 80.3,
+      "p95_latency_ms": 107.1,
+      "measured": true
+    },
+    {
+      "concurrency": 50,
+      "n_requests": 50,
+      "n_ok": 50,
+      "elapsed_sec": 0.32,
+      "requests_per_second": 158.4,
+      "p50_latency_ms": 304.4,
+      "p95_latency_ms": 309.4,
+      "measured": true
+    },
+    {
+      "concurrency": 100,
+      "n_requests": 100,
+      "n_ok": 100,
+      "elapsed_sec": 0.8,
+      "requests_per_second": 125.1,
+      "p50_latency_ms": 764.0,
+      "p95_latency_ms": 786.0,
+      "measured": true
+    }
+  ]
+}

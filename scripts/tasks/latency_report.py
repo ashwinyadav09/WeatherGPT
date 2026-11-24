@@ -37,7 +37,7 @@ P95_BUDGET_MS = 3000
 def get_git_sha() -> str:
     try:
         return subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"],
+            ["git", "rev-parse", "HEAD"],
             cwd=str(ROOT),
             stderr=subprocess.DEVNULL,
         ).decode().strip()
@@ -163,10 +163,22 @@ async def run_benchmark(queries_per_group: int = 100) -> dict[str, Any]:
     print(f"Overall Total:  p95={overall_p95_total:.1f} ms (Budget < {P95_BUDGET_MS} ms) -> {'PASS' if p95_pass else 'FAIL'}")
     print("================================================\n")
 
+    import hashlib
+
+    inputs = []
+    for g_path in [GOLDEN_DIR / "en" / "forecast.yaml", GOLDEN_DIR / "hi" / "forecast.yaml"]:
+        if g_path.exists():
+            sha = hashlib.sha256(g_path.read_bytes()).hexdigest()
+            inputs.append({"path": str(g_path.relative_to(ROOT)).replace("\\", "/"), "sha256": sha})
+
     report = {
+        "schema_version": "1",
+        "generated_by": "scripts/tasks/latency_report.py",
         "git_sha": get_git_sha(),
         "measured_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "provenance": "real_queries_over_recorded_fixtures",
+        "provenance": "recorded_real_http",
+        "llm_path": "disabled",
+        "inputs": inputs,
         "total_queries": tot_n,
         "queries_per_group": queries_per_group,
         "budgets": {

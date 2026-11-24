@@ -831,12 +831,26 @@ class Orchestrator:
                                 top_guidance = str(v.value)
                             elif v.variable == "chunk_id" and not top_chunk_id:
                                 top_chunk_id = str(v.value)
+                    guidance_prefix = ""
+                    if lang == "hi":
+                        guidance_prefix = "आधिकारिक दिशानिर्देशों के अनुसार:\n"
+                    elif lang == "bn":
+                        guidance_prefix = "অফিসিয়াল নির্দেশিকা অনুসারে:\n"
+                    elif lang == "mr":
+                        guidance_prefix = "अधिकृत मार्गदर्शक तत्त्वांनुसार:\n"
+                    elif lang == "te":
+                        guidance_prefix = "అధికారిక మార్గదర్శకాల ప్రకారం:\n"
+                    elif lang == "ta":
+                        guidance_prefix = "அதிகாரப்பூர்வ வழிகாட்டுதல்களின்படி:\n"
+                    elif lang == "or":
+                        guidance_prefix = "ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁଯାୟୀ:\n"
+
                     if top_chunk_id == "no_official_guidance":
-                        answer_text = top_guidance
+                        answer_text = f"{guidance_prefix}{top_guidance}" if guidance_prefix else top_guidance
                     elif top_chunk_id:
-                        answer_text = f"[{top_chunk_id}] {top_guidance}"
+                        answer_text = f"[{top_chunk_id}] {guidance_prefix}{top_guidance}"
                     else:
-                        answer_text = top_guidance
+                        answer_text = f"{guidance_prefix}{top_guidance}" if guidance_prefix else top_guidance
                 elif intent == "risk":
                     risk_lvl = "low"
                     for p in evidence_packets:

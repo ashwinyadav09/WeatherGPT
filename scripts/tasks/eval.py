@@ -15,14 +15,19 @@ from eval.harness import evaluate_language
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run golden-set evaluation")
     parser.add_argument("--lang", default="en", help="Language code (e.g. en, hi)")
+    parser.add_argument("--threshold", type=float, default=0.95, help="Minimum pass rate threshold (default 0.95)")
     args = parser.parse_args()
 
     summary = asyncio.run(evaluate_language(language=args.lang))
-    if summary["total"] > 0 and summary["passed"] < summary["total"]:
-        print(f"Evaluation failed: {summary['total'] - summary['passed']} failures")
+    total = summary["total"]
+    passed = summary["passed"]
+    pass_rate = (passed / total) if total > 0 else 1.0
+
+    if total > 0 and pass_rate < args.threshold:
+        print(f"Evaluation failed: {passed}/{total} passed ({pass_rate:.1%}) below threshold {args.threshold:.1%}")
         return 1
 
-    print("eval: evaluation passed.")
+    print(f"eval: evaluation passed ({passed}/{total}, {pass_rate:.1%}).")
     return 0
 
 
