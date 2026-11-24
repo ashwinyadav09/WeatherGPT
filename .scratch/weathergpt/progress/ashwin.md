@@ -36,6 +36,8 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R8.3 | Repair translations | done | Merged in PR #73 |
 | R8.4 | Point evaluation and trace at the real system | done | Merged in PR #74 |
 | R8.5 | Small residues | done | Merged in PR #75 |
+| R8 | Clean up (blocking) | done | Done across R8.1-R8.5 (PR #71-#75) |
+| R9 | Mechanical guards | done | Merged in PR #76 |
 
 ## Assumptions
 
@@ -63,6 +65,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R8.3: Removed stub from translation chain (Sarvam -> Groq LLM -> raise); TranslationCache refuses stub entries and purges on read; deleted corrupted .cache/translations/; added crops terms in Odia glossary; added authentic NDMA guidance translations across bn, mr, or, ta, te in cold_wave.yaml and heat_wave.yaml; updated translate_static.py to write reviewed: false and copy English metadata (source_url, reviewed_by); added unit/test_translation_validation.py checking 0 stubs, >=50% script characters in non-Latin languages, reviewed=False on guidance, and metadata matching English.
 - R8.4: Pointed eval/harness.py and scripts/tasks/latency_report.py to Orchestrator via registry.get_orchestrator(); deleted legacy services/api/app/conversation/agent.py; updated trace_event schema to allow null confidence for deterministic routing without intent model; Orchestrator trace emits only invoked models (empty list on deterministic path), model confidence or null, actual answering LLM provider (or none), and truthful router_path; added unit/test_trace_honesty.py verifying trace honesty and asserting failure when trace reports uninvoked models.
 - R8.5: Removed 'IMD 0.25° Gridded Climatology' dataset label in modules/climate/service.py and replaced with 'ERA5 Reanalysis (1991-2020) via Open-Meteo'; removed Delhi fallback for unknown places in ClimateService, returning caveat and null value; removed silent Ludhiana default in Orchestrator agromet query routing, prompting user for district clarification when omitted; verified repository search for 'IMD 0.25' across code and docs returns 0 matches.
+- R9: Implemented mechanical guards: AST static scanner test_no_synthetic_data.py scanning ml/**, eval/**, scripts/tasks/** (except ml/common/stats.py for seeded bootstrap) catching random imports, synthetic keywords, hardcoded metric assignments, and budget constants; audit_results.py enforcing generated_by, git_sha in git log, input sha256 hashes matching disk, allowed provenance list, and live/disabled llm_path for latency/load; ml/common/recompute.py independently recomputing metrics from predictions_test.csv matching metrics.json within 1e-9; acceptance.py rewritten to accept only audited JSON results (missing = NOT MEASURED, strict mode exits 1); dev.py extended with ml, audit-results, verify-results, and updated ticket_titles/assignments for R8-R19.
 
 ## Human-only steps open
 

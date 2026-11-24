@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -28,6 +29,8 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from scripts.tasks.audit_results import audit_json_file
 
 RESULTS_DIR = ROOT / "eval" / "results"
 REPORTS_DIR = ROOT / "reports"
@@ -46,7 +49,9 @@ class GateResult:
 
 
 def run_sub(cmd: list[str]) -> bool:
-    res = subprocess.run([sys.executable, *cmd], cwd=str(ROOT), capture_output=True)
+    env = dict(os.environ)
+    env["PYTHONUTF8"] = "1"
+    res = subprocess.run([sys.executable, *cmd], cwd=str(ROOT), capture_output=True, env=env)
     return res.returncode == 0
 
 
@@ -63,15 +68,26 @@ def get_active_results_dir() -> Path:
     return RESULTS_DIR
 
 
+def load_audited_json(file_path: Path) -> dict[str, Any] | None:
+    """Read a JSON result file only if it strictly passes the R9.2 audit."""
+    if not file_path.exists():
+        return None
+    errors = audit_json_file(file_path, root_dir=ROOT)
+    if errors:
+        return None
+    try:
+        with file_path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
 def load_json_file(filename: str) -> dict[str, Any] | None:
     active_dir = get_active_results_dir()
     for search_path in [active_dir / filename, REPORTS_DIR / filename, RESULTS_DIR / filename]:
-        if search_path.exists():
-            try:
-                with search_path.open("r", encoding="utf-8") as f:
-                    return json.load(f)
-            except Exception:
-                continue
+        data = load_audited_json(search_path)
+        if data is not None:
+            return data
     return None
 
 
@@ -79,21 +95,16 @@ def latest_eval_result(lang: str) -> dict[str, Any] | None:
     active_dir = get_active_results_dir()
     # Check in active dated dir first
     direct_eval = active_dir / f"eval_{lang}.json"
-    if direct_eval.exists():
-        try:
-            with direct_eval.open("r", encoding="utf-8") as fh:
-                return json.load(fh)
-        except Exception:
-            pass
+    data = load_audited_json(direct_eval)
+    if data is not None:
+        return data
 
     # Search in RESULTS_DIR
     files = sorted(RESULTS_DIR.glob(f"*_{lang}.json"), reverse=True)
     for f in files:
-        try:
-            with f.open("r", encoding="utf-8") as fh:
-                return json.load(fh)
-        except Exception:
-            continue
+        data = load_audited_json(f)
+        if data is not None:
+            return data
     return None
 
 
@@ -370,9 +381,6 @@ def evaluate_acceptance_gates(strict: bool = False, run_subcommands: bool = True
 def main() -> int:
     strict = "--strict" in sys.argv
     today_str = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
-
-    # Always ensure dated evaluation directory & docs/EVAL_RESULTS.md are synchronized
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "tasks" / "generate_eval_results.py")], cwd=str(ROOT), capture_output=True)
 
     print("\n" + "=" * 80)
     print(f"WeatherGPT Acceptance Gates — {today_str}{'  [--strict]' if strict else ''}")

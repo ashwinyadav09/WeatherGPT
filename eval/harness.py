@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import logging
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -238,8 +240,24 @@ async def evaluate_language(language: str = "en") -> dict[str, Any]:
     total = len(results)
     passed_count = sum(1 for r in results if r["passed"])
 
+    golden_inputs = []
+    for yml_path in sorted(lang_dir.glob("*.yaml")):
+        sha = hashlib.sha256(yml_path.read_bytes()).hexdigest()
+        golden_inputs.append({"path": str(yml_path.relative_to(ROOT)).replace("\\", "/"), "sha256": sha})
+
+    try:
+        git_sha = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=str(ROOT), stderr=subprocess.DEVNULL
+        ).decode().strip()
+    except Exception:
+        git_sha = "unknown"
+
     summary = {
         "timestamp": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "generated_by": "scripts/tasks/eval.py",
+        "git_sha": git_sha,
+        "provenance": "recorded_real_http",
+        "inputs": golden_inputs,
         "language": language,
         "total": total,
         "passed": passed_count,

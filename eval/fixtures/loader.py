@@ -8,7 +8,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent.parent
 INDEX_PATH = ROOT / "eval" / "fixtures" / "index.json"
 
-PROVENANCE_VALUES = ("live-recorded", "documented-sample", "spec-only", "synthetic")
+PROVENANCE_VALUES = ("live-recorded", "documented-sample", "spec-only", "fixture_test_only")
 
 
 def load_fixture_index() -> list[dict[str, Any]]:

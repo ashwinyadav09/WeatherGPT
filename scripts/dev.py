@@ -237,10 +237,15 @@ def ticket_titles() -> dict:
         first = p.read_text(encoding="utf-8").splitlines()[0] if p.stat().st_size else ""
         t = re.sub(rf"^#\s*{TICKET_ID}:\s*", "", first).strip()
         titles[m.group(1)] = t or p.stem
-    rem_plan = SCRATCH / "REMEDIATION_PLAN.md"
-    if rem_plan.exists():
-        for m in re.finditer(r"\*\*(R\d+(?:\.\d+)?)\s+([^*]+)\*\*", rem_plan.read_text(encoding="utf-8")):
-            titles[m.group(1)] = m.group(2).strip()
+    for rem_name in ["REMEDIATION_PLAN.md", "REMEDIATION_PLAN_V3.md"]:
+        for search_dir in [SCRATCH, ROOT / "claude"]:
+            plan_file = search_dir / rem_name
+            if plan_file.exists():
+                text = plan_file.read_text(encoding="utf-8")
+                for m in re.finditer(r"^###\s+Phase\s+(R\d+):?\s*([^\n]+)", text, re.MULTILINE):
+                    titles[m.group(1)] = m.group(2).strip()
+                for m in re.finditer(r"^\*\*(R\d+(?:\.\d+)?)\s+([^*]+)\*\*", text, re.MULTILINE):
+                    titles[m.group(1)] = m.group(2).strip().rstrip(":")
     return titles
 
 
@@ -305,6 +310,7 @@ def cmd_ci(args, rest) -> int:
 
     step("secret-scan", lambda: cmd_secret_scan(args, []))
     step("progress", lambda: cmd_progress(args, []))
+    step("audit-results", lambda: delegated("audit-results", []))
     step("lint", lambda: delegated("lint", []))
     step("test", lambda: delegated("test", []))
     step("migration heads", lambda: delegated("db-heads", []))
@@ -328,6 +334,9 @@ DELEGATED = {
     "contract-checks": "run live contract checks (needs keys)",
     "demo": "start the scripted demo",
     "translate-static": "pre-translate static strings into seeds/translations/<lang>.json",
+    "audit-results": "audit machine learning and evaluation result files against truthfulness rules",
+    "ml": "machine learning tasks: verify, download, train, eval",
+    "verify-results": "run audit-results and verify metrics for all models",
 }
 
 

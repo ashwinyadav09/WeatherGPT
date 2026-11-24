@@ -166,7 +166,7 @@ def main() -> int:
         "total_languages": len(LANGUAGES),
         "total_utterances": total_utterances,
         "overall_status": "NOT MEASURED",
-        "notes": "Simulated ASR hypothesis generation deleted per Ticket R8.2. Real audio evaluation scheduled in R18.4.",
+        "notes": "Hypothesis generator removed per Ticket R8.2. Real audio evaluation scheduled in R18.4.",
         "languages": languages_report,
     }
 
