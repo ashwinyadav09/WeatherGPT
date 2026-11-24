@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Cuttack",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "67b893060c5dd29f7ff09a89696bcc8dc7f00f48cd6ad7590085852f1b0ec1a5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:58.871018+00:00",
+    "bytes": 396,
+    "sha256": "a8640f50df4f2d9cb5b03f76188f59db59c0959bbd9110c52684b058092e1397",
+    "file": "open_meteo/cuttack/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/cuttack/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.4625,
+      "longitude": 85.883,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "a4c8e277a41c4f059760f6706c4ed2afb200360cde261438bd62fe2e140ba5b2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:59.069654+00:00",
+    "bytes": 863,
+    "sha256": "4814b2194ac9794362cc233f2ac5e719fcad50806ad0412e09d4a1b62eee8f7c",
+    "file": "open_meteo/cuttack/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/cuttack/20261124T210746Z_forecast.json"
+  }
+]

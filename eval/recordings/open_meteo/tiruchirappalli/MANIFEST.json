@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tiruchirappalli",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "9330a82b699420df0fc6e7596b7151e30479911108397180994df3464bf8abeb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.100025+00:00",
+    "bytes": 782,
+    "sha256": "762d29643a35afe0b640130eae1644af29b11d3601402197a1af4f2ff520f3b6",
+    "file": "open_meteo/tiruchirappalli/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tiruchirappalli/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 10.7905,
+      "longitude": 78.7047,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7cb406a971b12efac271eac5aecffbf15ee9e3d3216302eb5f8830a14aa413dc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.268822+00:00",
+    "bytes": 872,
+    "sha256": "89f7149d0e36ca087ff79af6a5a135d85b62d0b4a645e1d40237caa0341e5031",
+    "file": "open_meteo/tiruchirappalli/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tiruchirappalli/20261124T210746Z_forecast.json"
+  }
+]

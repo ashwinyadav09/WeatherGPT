@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thane",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3956c67f78d65c469506131785cb74476c21835cf8f631ce14f519d947beef51",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:33.660856+00:00",
+    "bytes": 1711,
+    "sha256": "824742e0b48cc82571656abbe3e4643f6d63423e2747a9623d6a52bca805706a",
+    "file": "open_meteo/thane/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thane/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.2183,
+      "longitude": 72.9781,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "163a33661328571a662efee64e890adcb72c24741ee419842bb22a1268d80abb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:33.864832+00:00",
+    "bytes": 862,
+    "sha256": "23ee82ade56b970dc10852f94400eb3db3b61ea79cd58502096de70b04149548",
+    "file": "open_meteo/thane/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thane/20261124T210746Z_forecast.json"
+  }
+]

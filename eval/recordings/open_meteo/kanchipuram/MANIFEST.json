@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kanchipuram",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "b7c2d0982a988a324494b9c5aa660642ceab72e6a1cfb41c7f5f2faf7e57f981",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:08.396716+00:00",
+    "bytes": 1079,
+    "sha256": "e62040748f815354e165ec02d509a5f73a43803da6cc0c5d63b0c15bdd54348e",
+    "file": "open_meteo/kanchipuram/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kanchipuram/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 12.8342,
+      "longitude": 79.7036,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "1bb3c6da5376a22aad6a5440e1b9dbda26d3cc6415e692fbdf2b9d8789912807",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:08.592978+00:00",
+    "bytes": 872,
+    "sha256": "02cfcc3cd17bd67de23270a56a42ae9deb045c9574f79dd4b4fcc22a44894006",
+    "file": "open_meteo/kanchipuram/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kanchipuram/20261124T210746Z_forecast.json"
+  }
+]

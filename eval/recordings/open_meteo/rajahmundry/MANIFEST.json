@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Rajahmundry",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "08f3058395484803894dd80560c9421342dfba2ae3783e10d3e063aadb5c6bd1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.675711+00:00",
+    "bytes": 1411,
+    "sha256": "e668165a3cc61c78d7c53ca848d96f918fdb60937df4438b0dfd8c2a5f78684c",
+    "file": "open_meteo/rajahmundry/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/rajahmundry/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.0005,
+      "longitude": 81.804,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d5de47fa5f2ecdb52b9a905e3d3c2bdf7584903d53f6eff857babe46ce664d0d",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.863770+00:00",
+    "bytes": 866,
+    "sha256": "b5ab0b7aa525093215dab967a4d4966db91c88ce02cb00def24239924835e402",
+    "file": "open_meteo/rajahmundry/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/rajahmundry/20261124T210746Z_forecast.json"
+  }
+]

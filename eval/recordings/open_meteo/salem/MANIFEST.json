@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Salem",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "7ff8814971160b57aba6433ee67c1953947e6b655b8b5a688c5f557b7530d8bf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:26.820268+00:00",
+    "bytes": 1912,
+    "sha256": "588a929942789ee672aa8a26e77193029162074f7a0cbbc30b9b9e1ce6a70ee2",
+    "file": "open_meteo/salem/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/salem/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.6643,
+      "longitude": 78.146,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bbdbb2b337f39a619e044c40cacc7323e0d61e86f722b74aae140bde2d065a81",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:27.022731+00:00",
+    "bytes": 872,
+    "sha256": "25d98f4ddce335c7d3b2ba20adc5fdb062294d5bade647ea211866641f21464f",
+    "file": "open_meteo/salem/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/salem/20261124T210746Z_forecast.json"
+  }
+]

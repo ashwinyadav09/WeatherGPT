@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Varanasi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "03232584eca217d5fe714845532de4f1374fb3c1865aac3c74b25ecf788a8677",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:39.213517+00:00",
+    "bytes": 1721,
+    "sha256": "baa3d0cd686630f01e5da58e5c38c1871629b17341327b925b81f330dfef7241",
+    "file": "open_meteo/varanasi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/varanasi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.3176,
+      "longitude": 82.9739,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "891ce8a041a5755868ebb7d307ab9a87dcaf37de7362fc6bffc2fb6f8db0551b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:39.418403+00:00",
+    "bytes": 860,
+    "sha256": "94211b2b3a6f1953e5dbf9a7dd4f638b075ae118b92edd35184bd20c337c50b7",
+    "file": "open_meteo/varanasi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/varanasi/20261124T210746Z_forecast.json"
+  }
+]

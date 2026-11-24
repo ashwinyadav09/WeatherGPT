@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kurnool",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "33ecc0f8aad0d5859c0ed7cb9915ee0d850487ef99ccd1fbfb8d5c1a30a7e2f2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.167991+00:00",
+    "bytes": 742,
+    "sha256": "abe4a4827a812030592c78d7217ecc084e48354f89af0f5ce47c9b602705bd0f",
+    "file": "open_meteo/kurnool/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kurnool/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 15.8281,
+      "longitude": 78.0373,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "aa9dfa6d810cb5b097aec626739f00e492dadd2b2a78f4a184b7ed9c0bb1ff15",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.335673+00:00",
+    "bytes": 866,
+    "sha256": "b854b45d4ab2f6915de08c7121f91a599b3e44131524353e32805f588be8723f",
+    "file": "open_meteo/kurnool/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kurnool/20261124T210746Z_forecast.json"
+  }
+]

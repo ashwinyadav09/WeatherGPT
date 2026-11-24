@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Agra",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3dafc1ff55be4a034add6542e427966d1ed29b6d1bb7e9e3218e93d23dad0651",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:47.926002+00:00",
+    "bytes": 1783,
+    "sha256": "72208ac09cedd2757809427cdc84674f83e0fdfde2f1bab4798372bc02815611",
+    "file": "open_meteo/agra/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/agra/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 27.1767,
+      "longitude": 78.0081,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "25b56c3bd3f250710444ab706010abefe1762f8aee2939172e8c3d142b2b6429",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:48.695111+00:00",
+    "bytes": 865,
+    "sha256": "e4c1a8e83c6be67f80cb7790989ad445cbe9b9b138f27d2dca5bad5a8ee3d8a2",
+    "file": "open_meteo/agra/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/agra/20261124T210746Z_forecast.json"
+  }
+]

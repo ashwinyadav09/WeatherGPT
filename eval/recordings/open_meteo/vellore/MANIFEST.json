@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Vellore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "0e4931feef731255f3cbd47472fcc8bf435a05f5b7d413a20db9a59bb746fb7a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:39.838351+00:00",
+    "bytes": 1187,
+    "sha256": "4ed6c3d0f0f3f2c636b7eeb59047f04aa9ba58caccddfc09391b99862a3d06ed",
+    "file": "open_meteo/vellore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/vellore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 12.9165,
+      "longitude": 79.1325,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "9389000108a252816609a7b70a12227ac20070e75aed1685984a996f0d9fb3fe",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:40.027296+00:00",
+    "bytes": 871,
+    "sha256": "a129480bfa59eb2116f26f9224daccdd92e243a7b56c5c2a06e61a8135b3bd86",
+    "file": "open_meteo/vellore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/vellore/20261124T210746Z_forecast.json"
+  }
+]

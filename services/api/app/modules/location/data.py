@@ -135,6 +135,16 @@ INDIA_PLACES: list[PlaceModel] = [
         district="Jalgaon",
     ),
     PlaceModel(
+        id="dhule",
+        kind="district",
+        names={"en": "Dhule", "hi": "धुले", "mr": "धुळे"},
+        lat=20.9042,
+        lon=74.7749,
+        elevation=250.0,
+        state="Maharashtra",
+        district="Dhule",
+    ),
+    PlaceModel(
         id="ahmednagar",
         kind="district",
         names={"en": "Ahilyanagar", "hi": "अहिल्यानगर", "mr": "अहिल्यानगर"},

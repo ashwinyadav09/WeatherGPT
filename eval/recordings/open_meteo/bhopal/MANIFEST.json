@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bhopal",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6baecb0568b3c4a3b3968d8c2911bdbec9adf8bb5ab71c821412d6c653f572af",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:54.875353+00:00",
+    "bytes": 1732,
+    "sha256": "813f3345b3a6f538fe93d3eb33f37f563654576c74b4f48ad9166704c6748d79",
+    "file": "open_meteo/bhopal/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bhopal/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.2599,
+      "longitude": 77.4126,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "40ca9344dd9e4d3f4c9befa8bc680b5b1396fadc3e7ffd4818b9c06ccb640cce",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:55.075536+00:00",
+    "bytes": 864,
+    "sha256": "a255491680e86a0ee5af0dd6c7cc14b4d601a60d17d6a6a194144760fbe40c4d",
+    "file": "open_meteo/bhopal/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bhopal/20261124T210746Z_forecast.json"
+  }
+]

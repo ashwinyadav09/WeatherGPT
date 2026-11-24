@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ahmedabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2e1d610a666ff1fc0bdbb84baa29ced0a0a7ccc3ece004fdb2c638667a796650",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.134597+00:00",
+    "bytes": 1589,
+    "sha256": "08be7e0e6a6768cf9ce5ab48092e82973ec989c73edb0c169e879dcd8cdd9aff",
+    "file": "open_meteo/ahmedabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ahmedabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.0225,
+      "longitude": 72.5714,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "29aedf633ab4fd07d702452f3cac06ef8e19305792e7be423545833ced61f520",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.341526+00:00",
+    "bytes": 863,
+    "sha256": "267a43cb46d9351ea4db45655cd4261d5ad09a5cce5b689e33dadc4970465982",
+    "file": "open_meteo/ahmedabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ahmedabad/20261124T210746Z_forecast.json"
+  }
+]

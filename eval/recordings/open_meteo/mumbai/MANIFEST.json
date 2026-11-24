@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Mumbai",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "11363b2ff12b89fefc38482341ac0ec5fcd52cf5ccad67853db363d66022736e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:17.921623+00:00",
+    "bytes": 304,
+    "sha256": "931b95dacb3ba38b6e6265132466d7efd09a8856fcae387b64b63fdf0cb3e940",
+    "file": "open_meteo/mumbai/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/mumbai/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3de9a703d35609fe138b78a6502482ce6d415604d75a760f804b8a4c9fcf93a4",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:18.100481+00:00",
+    "bytes": 862,
+    "sha256": "1c4486111597e65034bb2d56486e0e618ea29bdae20791d3ff02eca82bf18ce8",
+    "file": "open_meteo/mumbai/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/mumbai/20261124T210746Z_forecast.json"
+  }
+]

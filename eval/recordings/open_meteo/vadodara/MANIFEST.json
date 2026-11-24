@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Vadodara",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c56d2b4e5dd5427119a4b83cba960b50e59aacd5475fe72511b2fbb6e11050fa",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:38.507955+00:00",
+    "bytes": 721,
+    "sha256": "04fef07b7b0668cb0dc01a64559a02b109212448f90e8e596b9ba93d08e57008",
+    "file": "open_meteo/vadodara/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/vadodara/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.3072,
+      "longitude": 73.1812,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "70a4f18e423167e5c49b736a950c98c88ed9f0a48134a6a1afbf05b98ad484b0",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:38.698605+00:00",
+    "bytes": 863,
+    "sha256": "5cd6e6f7cfb397252a1797f2726bcdced003670533d06c647fe59acf41b41d39",
+    "file": "open_meteo/vadodara/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/vadodara/20261124T210746Z_forecast.json"
+  }
+]

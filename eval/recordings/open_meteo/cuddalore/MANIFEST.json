@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Cuddalore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "03ee2c8470a51aeff1d73a597ab4044c9d05da39815c41b9574a964430df8a74",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:58.251496+00:00",
+    "bytes": 387,
+    "sha256": "9aa4b1b37e073b6a2df2f48bcbdfd2c25e78f04dc1b3aacd11201f636eb565ec",
+    "file": "open_meteo/cuddalore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/cuddalore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.748,
+      "longitude": 79.7714,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "4228400429064bc268d15d378e0a651f8282dff7efb41a2b166ace5155b708ab",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:58.455404+00:00",
+    "bytes": 871,
+    "sha256": "3820bc1a686b97423601eabc095ed4b891a36f54ea69f918dcf3845b080944d4",
+    "file": "open_meteo/cuddalore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/cuddalore/20261124T210746Z_forecast.json"
+  }
+]

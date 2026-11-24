@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Dindigul",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1c12dd7a2b345b3a16e4ffaef1cd7e1ae1f0df3c7f551f007051c875ea261496",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:01.295943+00:00",
+    "bytes": 389,
+    "sha256": "024b6161d5712f6104c7bfa8cc1cbe5e2ff72420d20a4835eba7fe06b7a8c842",
+    "file": "open_meteo/dindigul/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/dindigul/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 10.3673,
+      "longitude": 77.9803,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f4aed96afe7b1a9cb66b0fcdc4ff9bd2b31b1146fafcd8547d48f09292541e3f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:01.474487+00:00",
+    "bytes": 873,
+    "sha256": "7b7650ab8971be219fddb1566cedf316f5331eaec13a4d9ef326af21e56220cd",
+    "file": "open_meteo/dindigul/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/dindigul/20261124T210746Z_forecast.json"
+  }
+]

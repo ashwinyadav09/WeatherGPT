@@ -8,7 +8,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 25.0
+    - 24.3
     - 0.0
     refusal: false
     must_not:
@@ -40,8 +40,8 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 28.5
-    - 0.0
+    - 27.3
+    - 1.1
     refusal: false
     must_not:
     - evacuate
@@ -56,8 +56,8 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 31.4
-    - 0.0
+    - 28.9
+    - 2.3
     refusal: false
     must_not:
     - evacuate
@@ -72,7 +72,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 26.2
+    - 25.5
     - 0.0
     refusal: false
     must_not:
@@ -88,8 +88,8 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 29.5
-    - 0.0
+    - 29.1
+    - 2.3
     refusal: false
     must_not:
     - evacuate
@@ -104,7 +104,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 27.1
+    - 25.5
     - 0.0
     refusal: false
     must_not:
@@ -120,7 +120,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 15.9
+    - 14.8
     - 0.0
     refusal: false
     must_not:
@@ -136,7 +136,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 31.5
+    - 32.4
     - 0.0
     refusal: false
     must_not:
@@ -152,7 +152,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 26.9
+    - 25.6
     - 0.0
     refusal: false
     must_not:
@@ -168,7 +168,311 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 26.7
+    - 24.8
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-ahmedabad-012
+  language: mr
+  intent: forecast
+  place: Ahmedabad
+  place_id: ahmedabad
+  day: tomorrow
+  question: उद्या अहमदाबाद मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.6
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-surat-013
+  language: mr
+  intent: forecast
+  place: Surat
+  place_id: surat
+  day: tomorrow
+  question: उद्या सुरत मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 33.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-lucknow-014
+  language: mr
+  intent: forecast
+  place: Lucknow
+  place_id: lucknow
+  day: tomorrow
+  question: उद्या लखनौ मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 24.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-patna-015
+  language: mr
+  intent: forecast
+  place: Patna
+  place_id: patna
+  day: tomorrow
+  question: उद्या पटणा मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 24.6
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-bhopal-016
+  language: mr
+  intent: forecast
+  place: Bhopal
+  place_id: bhopal
+  day: tomorrow
+  question: उद्या भोपाळ मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.3
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-chandigarh-017
+  language: mr
+  intent: forecast
+  place: Chandigarh
+  place_id: chandigarh
+  day: tomorrow
+  question: उद्या चंदीगड मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 23.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-dehradun-018
+  language: mr
+  intent: forecast
+  place: Dehradun
+  place_id: dehradun
+  day: tomorrow
+  question: उद्या डेहराडून मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 20.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-ranchi-019
+  language: mr
+  intent: forecast
+  place: Ranchi
+  place_id: ranchi
+  day: tomorrow
+  question: उद्या रांची मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 22.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-nagpur-020
+  language: mr
+  intent: forecast
+  place: Nagpur
+  place_id: nagpur
+  day: tomorrow
+  question: उद्या नागपूर मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-nashik-021
+  language: mr
+  intent: forecast
+  place: Nashik
+  place_id: nashik
+  day: tomorrow
+  question: उद्या नाशिक मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 30.8
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-howrah-022
+  language: mr
+  intent: forecast
+  place: Howrah
+  place_id: howrah
+  day: tomorrow
+  question: उद्या हावडा मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-siliguri-023
+  language: mr
+  intent: forecast
+  place: Siliguri
+  place_id: siliguri
+  day: tomorrow
+  question: उद्या सिलिगुडी मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-visakhapatnam-024
+  language: mr
+  intent: forecast
+  place: Visakhapatnam
+  place_id: visakhapatnam
+  day: tomorrow
+  question: उद्या विशाखापट्टणम मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.9
+    - 3.7
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-vijayawada-025
+  language: mr
+  intent: forecast
+  place: Vijayawada
+  place_id: vijayawada
+  day: tomorrow
+  question: उद्या विजयवाडा मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.0
+    - 3.4
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-coimbatore-026
+  language: mr
+  intent: forecast
+  place: Coimbatore
+  place_id: coimbatore
+  day: tomorrow
+  question: उद्या कोइम्बतूर मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.3
+    - 15.7
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-madurai-027
+  language: mr
+  intent: forecast
+  place: Madurai
+  place_id: madurai
+  day: tomorrow
+  question: उद्या मदुराई मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.6
+    - 19.9
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-bhubaneswar-028
+  language: mr
+  intent: forecast
+  place: Bhubaneswar
+  place_id: bhubaneswar
+  day: tomorrow
+  question: उद्या भुवनेश्वर मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.0
+    - 0.3
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-cuttack-029
+  language: mr
+  intent: forecast
+  place: Cuttack
+  place_id: cuttack
+  day: tomorrow
+  question: उद्या कटक मध्ये पाऊस पडेल का?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: mr-forecast-srinagar-030
+  language: mr
+  intent: forecast
+  place: Srinagar
+  place_id: srinagar
+  day: tomorrow
+  question: उद्या श्रीनगर मधील तापमान काय असेल?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 14.9
     - 0.0
     refusal: false
     must_not:

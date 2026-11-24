@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Anantapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2c19d3f24b763637d148e782949e984e35965c5cc4fb2238d2c57875a7e672d6",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.182596+00:00",
+    "bytes": 1967,
+    "sha256": "7b2776962926e522ed41c33b2e8dc5795a17dd27538671bd9712347b7249b781",
+    "file": "open_meteo/anantapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/anantapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 14.6819,
+      "longitude": 77.6006,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f23efdbb45ceb9425e77b33ebbf760f64973168eb1075366142e60f2a77c06ea",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.353497+00:00",
+    "bytes": 868,
+    "sha256": "d191d170e1cf5aec5df48bc1eca1d942acefed308742a8c305d016ff5f54edcd",
+    "file": "open_meteo/anantapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/anantapur/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Siliguri",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f08469061c50d6739139084993080b3e31773427d08dfe3e42eb271c9ce3c546",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.019207+00:00",
+    "bytes": 389,
+    "sha256": "0116449f83534d8a8a61e5f70f076d841d1b02e6089b434cf145e02447fa0d97",
+    "file": "open_meteo/siliguri/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/siliguri/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.7271,
+      "longitude": 88.3953,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "450a58c2df70447f6411d041d2487cbbdd04cb9d442adbc90991b7cd3fe52af7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.230594+00:00",
+    "bytes": 863,
+    "sha256": "e3e8ab1bdb635cb8d7bd1552eec71a899cb85dc3825b0dcbc6c186d0996fcf61",
+    "file": "open_meteo/siliguri/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/siliguri/20261124T210746Z_forecast.json"
+  }
+]

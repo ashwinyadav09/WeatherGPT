@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Surat",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "87bb355af0e252e61dc88b34d4021d1a646ea02fc29a661f6526094872dcde72",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:32.969564+00:00",
+    "bytes": 1657,
+    "sha256": "7938be03511ac851fdfe541408e3ce3242122982932187ce7169483934ed2477",
+    "file": "open_meteo/surat/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/surat/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 21.1702,
+      "longitude": 72.8311,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bda2bab77e930c5829742ccffbc23a7d1c7ed54d61e52af79bf5b461a84a8520",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:33.168730+00:00",
+    "bytes": 863,
+    "sha256": "a141cba72b14468b977c62963486078e022e5617ac1dfc80030f6f8581948f97",
+    "file": "open_meteo/surat/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/surat/20261124T210746Z_forecast.json"
+  }
+]

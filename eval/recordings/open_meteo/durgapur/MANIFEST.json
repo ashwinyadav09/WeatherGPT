@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Durgapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "dff400b09bcbf59c3d890c2fec1ab55ccf21405228775dc405476a15b4196bff",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:01.889227+00:00",
+    "bytes": 1919,
+    "sha256": "2f3df035b5e2ad6cbf2e4d28e1d7fa4ed27e535e806b210c9390faf0781ecf60",
+    "file": "open_meteo/durgapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/durgapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.5204,
+      "longitude": 87.3119,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5803f82efb867f7acbd1ecdf7127772f6b50a0c9df915f028af8adfe8d40f04e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:02.056144+00:00",
+    "bytes": 864,
+    "sha256": "4c41433680d283cdf266071912cf7294afcbf771e6ccbd76d42be21194d6b813",
+    "file": "open_meteo/durgapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/durgapur/20261124T210746Z_forecast.json"
+  }
+]

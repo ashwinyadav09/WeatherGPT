@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 import datetime as dt
-import json
 import uuid
-from pathlib import Path
 from typing import Any, Literal
 
 import httpx
@@ -35,20 +33,6 @@ class OpenMeteoForecastAdapter(ForecastAdapter):
             resp = await client.get(self.base_url, params=params)
             resp.raise_for_status()
             data = resp.json()
-        except Exception:
-            # Fall back to recorded fixture for offline/CI environments
-            fixture_path = (
-                Path(__file__).resolve().parents[6]
-                / "eval"
-                / "fixtures"
-                / "open_meteo"
-                / "pune_forecast.json"
-            )
-            if fixture_path.exists():
-                with fixture_path.open("r", encoding="utf-8") as f:
-                    data = json.load(f)
-            else:
-                raise
         finally:
             if not self._client:
                 await client.aclose()

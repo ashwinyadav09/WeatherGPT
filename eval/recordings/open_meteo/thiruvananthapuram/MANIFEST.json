@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thiruvananthapuram",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "854f0a572cf89a7992ee9d0d808326371c3142c3bfdb80a9c12bf39a691b7b03",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:34.918640+00:00",
+    "bytes": 409,
+    "sha256": "43eb8dfa7cf2fd84edd4196764b98779121c8e704e9d4096bdc09b34c560b3a5",
+    "file": "open_meteo/thiruvananthapuram/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thiruvananthapuram/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 8.5241,
+      "longitude": 76.9366,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "82808e98b2b98b82de69dc69357edd567b06276b8148e68b12afa2dba635c6c7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:35.085590+00:00",
+    "bytes": 873,
+    "sha256": "72f8bc52646534bc064ecf5f1946cb3bc4df5f0f357d58c05b6057b2d1bdcbcd",
+    "file": "open_meteo/thiruvananthapuram/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thiruvananthapuram/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ludhiana",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1d5556e7f04cfe2c5db72386938800bf0652275bee7db9322faf433e85e8ed43",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:15.322931+00:00",
+    "bytes": 1076,
+    "sha256": "f74ce7e46156d725d1d7d4f76ee0c858f7f73b2765d924e022998b753e36a123",
+    "file": "open_meteo/ludhiana/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ludhiana/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 30.901,
+      "longitude": 75.8573,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "eb1498050c7ae1bef0bf0d5759ab5f61e4669a377b75d2ce7e2b1ffe09c47d54",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:15.489660+00:00",
+    "bytes": 864,
+    "sha256": "a2e61c68e6f06e5bf3188bf7425df2866479d0868c524b3b5ac2a0a6f187eac7",
+    "file": "open_meteo/ludhiana/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ludhiana/20261124T210746Z_forecast.json"
+  }
+]

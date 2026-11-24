@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Jalpaiguri",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f8907216efd4a8133f30711ed2d4c22400dabddd77d633429a79fb55ba07b51e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.199057+00:00",
+    "bytes": 404,
+    "sha256": "bbe427f8d38329ce89d0c4871818cccc62c58a96d1bf4e6710b77b21e35ad4c4",
+    "file": "open_meteo/jalpaiguri/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/jalpaiguri/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.541,
+      "longitude": 88.7196,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "2819a72606f346668335803eee8a73fdc6580a924671bab6b05cbb67ea867257",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.367488+00:00",
+    "bytes": 863,
+    "sha256": "7607ba52799f7f9aea8c8f5ad103ebaf4a712b39aa4e060b2aed1b05e6cfd13a",
+    "file": "open_meteo/jalpaiguri/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/jalpaiguri/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Pune",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c0f15406e9fe98debca2c9062e7704dad002ae4e0ffc4a7b1d734a119118686f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.063446+00:00",
+    "bytes": 1466,
+    "sha256": "d4ed2cfe977f6acbcd6f9d4aace1b9f6b113ab89dd319f407809d22951fb0766",
+    "file": "open_meteo/pune/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/pune/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bbf6a59eb3fcb4efe606aa2f451f57462e1910e1e6eecf4b3b8cadc8bcb4397a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.259205+00:00",
+    "bytes": 864,
+    "sha256": "2df691d38350d28810aba1a392a4f4cafbb121a577b745c8dbfdd1670c60dddb",
+    "file": "open_meteo/pune/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/pune/20261124T210746Z_forecast.json"
+  }
+]

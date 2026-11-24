@@ -23,69 +23,104 @@ logger = logging.getLogger(__name__)
 ROOT = Path(__file__).resolve().parent.parent
 GOLDEN_DIR = ROOT / "eval" / "golden"
 RESULTS_DIR = ROOT / "eval" / "results"
-FIXTURES_DIR = ROOT / "eval" / "fixtures" / "open_meteo"
+RECORDINGS_DIR = ROOT / "eval" / "recordings"
 
 
-def get_per_city_forecast_transport() -> httpx.MockTransport:
-    """MockTransport routing queries to real recorded per-city Open-Meteo fixtures."""
-    city_forecasts: dict[str, tuple[float, float, dict[str, Any]]] = {}
-    for f in FIXTURES_DIR.glob("*_forecast.json"):
-        city = f.stem.replace("_forecast", "")
-        if city == "differing_days":
-            continue
-        with f.open("r", encoding="utf-8") as jf:
-            data = json.load(jf)
-        city_forecasts[city] = (data.get("latitude", 0.0), data.get("longitude", 0.0), data)
+class RecordedHTTPTransport(httpx.AsyncBaseTransport, httpx.BaseTransport):
+    """Transport that replays real HTTP recordings from eval/recordings/ by request hash.
 
-    def handler(request: httpx.Request) -> httpx.Response:
-        url_str = str(request.url)
-        if "forecast" in url_str:
-            lat = float(request.url.params.get("latitude", 0.0))
-            lon = float(request.url.params.get("longitude", 0.0))
-            best_dist, best_data = float("inf"), None
-            for _, (clat, clon, data) in city_forecasts.items():
-                dist = ((lat - clat) ** 2 + (lon - clon) ** 2) ** 0.5
-                if dist < best_dist:
-                    best_dist = dist
-                    best_data = data
-            if best_data is not None:
-                return httpx.Response(200, json=best_data)
-            return httpx.Response(200, json={})
+    Enforces Rules T1, T6, T7 and N1-N4:
+    - Replays recordings by deterministic request hash.
+    - Verifies file existence on disk (raises FileNotFoundError if missing or deleted).
+    - Verifies sha256 of recording content against MANIFEST.json (raises ValueError if tampered).
+    - Raises KeyError on any cache miss (never falls back to mock, default, or silent pass).
+    """
 
-        if "search" in url_str or "geocoding" in url_str:
-            q_name = (request.url.params.get("name", "")).lower()
-            geo_file = FIXTURES_DIR / f"{q_name}_geocoding.json"
-            if geo_file.exists():
-                with geo_file.open("r", encoding="utf-8") as gf:
-                    return httpx.Response(200, json=json.load(gf))
-            from services.api.app.modules.location.resolver import INDIA_PLACES
-            matched_results = []
-            for p in INDIA_PLACES:
-                for n in p.names.values():
-                    if q_name in n.lower() or n.lower() in q_name:
-                        matched_results.append({
-                            "id": p.id,
-                            "name": p.names.get("en", p.id),
-                            "latitude": p.lat,
-                            "longitude": p.lon,
-                            "country_code": "IN",
-                            "admin1": p.state or "",
-                        })
-                        break
-            if not matched_results:
-                matched_results.append({
-                    "id": f"geo_{abs(hash(q_name)) % 100000}",
-                    "name": request.url.params.get("name", "Maharashtra"),
-                    "latitude": 18.5204,
-                    "longitude": 73.8567,
-                    "country_code": "IN",
-                    "admin1": "Maharashtra",
-                })
-            return httpx.Response(200, json={"results": matched_results})
+    def __init__(
+        self,
+        manifest_path: Path | None = None,
+        recordings_dir: Path | None = None,
+    ) -> None:
+        self.recordings_dir = recordings_dir or RECORDINGS_DIR
+        self.manifest_path = manifest_path or (self.recordings_dir / "MANIFEST.json")
+        self._entries_by_hash: dict[str, dict[str, Any]] = {}
+        self._recorded_files: list[Path] = []
+        self._load_manifest()
 
-        return httpx.Response(200, json={})
+    def _load_manifest(self) -> None:
+        if not self.manifest_path.exists():
+            raise FileNotFoundError(f"Recordings manifest not found at {self.manifest_path}")
+        with self.manifest_path.open("r", encoding="utf-8") as f:
+            manifest_data = json.load(f)
 
-    return httpx.MockTransport(handler)
+        entries = manifest_data if isinstance(manifest_data, list) else []
+        for entry in entries:
+            req_hash = entry.get("request_hash")
+            if req_hash:
+                self._entries_by_hash[req_hash] = entry
+                rel_file = entry.get("file")
+                if rel_file:
+                    file_path = self.recordings_dir / rel_file
+                    self._recorded_files.append(file_path)
+
+    def get_recorded_inputs(self, root_dir: Path = ROOT) -> list[dict[str, str]]:
+        """Return inputs list formatted for result auditing."""
+        inputs: list[dict[str, str]] = []
+        if self.manifest_path.exists():
+            m_sha = hashlib.sha256(self.manifest_path.read_bytes()).hexdigest()
+            rel_m = str(self.manifest_path.relative_to(root_dir)).replace("\\", "/")
+            inputs.append({"path": rel_m, "sha256": m_sha})
+
+        for f in self._recorded_files:
+            if f.exists():
+                f_sha = hashlib.sha256(f.read_bytes()).hexdigest()
+                rel_f = str(f.relative_to(root_dir)).replace("\\", "/")
+                inputs.append({"path": rel_f, "sha256": f_sha})
+        return inputs
+
+    def _match_and_respond(self, request: httpx.Request) -> httpx.Response:
+        from scripts.tasks.record_fixtures import compute_request_hash
+
+        req_hash = compute_request_hash(request)
+        entry = self._entries_by_hash.get(req_hash)
+
+        if not entry:
+            raise KeyError(
+                f"RecordedHTTPTransport miss: no recorded fixture for {request.method} {request.url} (hash: {req_hash})"
+            )
+
+        rel_file = entry.get("file")
+        if not rel_file:
+            raise FileNotFoundError(f"Manifest entry for hash {req_hash} has no file specified")
+
+        file_path = self.recordings_dir / rel_file
+        if not file_path.exists():
+            raise FileNotFoundError(f"Recording file missing on disk: {file_path}")
+
+        content = file_path.read_bytes()
+        computed_sha = hashlib.sha256(content).hexdigest()
+        expected_sha = entry.get("sha256", "")
+        if expected_sha and computed_sha.lower() != expected_sha.lower():
+            raise ValueError(
+                f"Recording SHA-256 mismatch for {file_path}: expected {expected_sha}, got {computed_sha}"
+            )
+
+        status_code = entry.get("status_code", 200)
+        headers = {"content-type": "application/json"}
+        if str(file_path).endswith(".xml"):
+            headers = {"content-type": "application/xml"}
+        return httpx.Response(status_code=status_code, content=content, headers=headers)
+
+    def handle_request(self, request: httpx.Request) -> httpx.Response:
+        return self._match_and_respond(request)
+
+    async def handle_async_request(self, request: httpx.Request) -> httpx.Response:
+        return self._match_and_respond(request)
+
+
+def get_per_city_forecast_transport() -> RecordedHTTPTransport:
+    """Return RecordedHTTPTransport replaying real recorded fixtures (replaces old MockTransport)."""
+    return RecordedHTTPTransport()
 
 
 async def run_single_case(agent: Orchestrator, case: dict[str, Any]) -> dict[str, Any]:
@@ -245,6 +280,7 @@ async def evaluate_language(language: str = "en") -> dict[str, Any]:
     for yml_path in sorted(lang_dir.glob("*.yaml")):
         sha = hashlib.sha256(yml_path.read_bytes()).hexdigest()
         golden_inputs.append({"path": str(yml_path.relative_to(ROOT)).replace("\\", "/"), "sha256": sha})
+    golden_inputs.extend(transport.get_recorded_inputs(root_dir=ROOT))
 
     try:
         git_sha = subprocess.check_output(

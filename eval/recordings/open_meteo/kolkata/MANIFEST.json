@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kolkata",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6204ba2b6e955c85793404e72361601f5e738914da2dde89f122b39cd8116fdf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.813708+00:00",
+    "bytes": 383,
+    "sha256": "3d1dd61a8565b635067e635d6a2f207105b07d729bd2f72733b421e412b212ef",
+    "file": "open_meteo/kolkata/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kolkata/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.5726,
+      "longitude": 88.3639,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "10d3b5ad3a73112562da129e1ac8a35c70e0d1c6a2ae07d784927e2250c6e8ed",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.998426+00:00",
+    "bytes": 863,
+    "sha256": "5afe776288b8c24a221b75af0258bc010e1afd033607fd20bf4ec8c756ccac1c",
+    "file": "open_meteo/kolkata/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kolkata/20261124T210746Z_forecast.json"
+  }
+]

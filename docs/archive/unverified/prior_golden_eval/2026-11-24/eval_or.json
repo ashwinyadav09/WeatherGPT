@@ -1,0 +1,170 @@
+{
+  "timestamp": "2026-11-24T18:36:28.107430+00:00",
+  "generated_by": "scripts/tasks/eval.py",
+  "git_sha": "d6c3ed59c6c3ce26e0185ea6641be9e3bd1cbccf",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "eval/golden/or/advisory.yaml",
+      "sha256": "e3e38acd300a42899e6369b663c77b5ff8ba5dfbc5ad3a43a053ad8dcf6d2b33"
+    },
+    {
+      "path": "eval/golden/or/forecast.yaml",
+      "sha256": "64c3de4562a2258ea884e3eb4f64c39c603318fa62c2b2348272e35dbc21ed25"
+    },
+    {
+      "path": "eval/golden/or/refusal.yaml",
+      "sha256": "21d3c1861fe107213d5c3c6da206493a99610ee87f325cd55de8b800aa3803f7"
+    }
+  ],
+  "language": "or",
+  "total": 18,
+  "passed": 18,
+  "accuracy": 1.0,
+  "cases": [
+    {
+      "id": "or-advisory-heatwave",
+      "passed": true,
+      "failures": [],
+      "answer": "[fisherfolk_safety_02] ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁଯାୟୀ:\n## Squally Weather and Deep Sea Safety Measures (Source: IMD Marine Fishermen Warning Bulletin, Page 1)\n- All fishing vessels and motorized boats must carry operational marine communication gear: VHF/SSB radios, GPS navigators, and NAVTEX receivers.\n- Maintain real-time contact with coastal fisheries stations and Coast Guard emergency frequencies.\n- Every person on board must wear certified life jackets; inspect life-saving appliances, buoyant distress signals, and distress beacons (EPIRBs) before sailing.\n- Anchor boats securely at coastal jetties, bays, or haul craft onto high ground above the maximum spring tide level during storm surge and cyclone alerts. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "or-advisory-coldwave",
+      "passed": true,
+      "failures": [],
+      "answer": "ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁଯାୟୀ:\nଏହି ବିଷୟରେ କୌଣସି ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଉପଲବ୍ଧ ନାହିଁ। ସହାୟତା ପାଇଁ ୧୧୨ (ଜରୁରୀକାଳୀନ), ୧୦୭୭ (ବିପର୍ଯ୍ୟୟ ପରିଚାଳନା) କିମ୍ବା ୧୮୦୦-୧୮୦-୧୫୫୧ (କିଷାନ କଲ୍ ସେଣ୍ଟର) ରେ ଯୋଗାଯୋଗ କରନ୍ତୁ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-advisory-lightning",
+      "passed": true,
+      "failures": [],
+      "answer": "[flood_cyclone_safety_02] ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁଯାୟୀ:\n## Cyclone and Lightning Safety Measures (Source: IMD-NDMA Guidelines, Page 1-3)\n- Cyclone precautions: inspect and secure loose roof tiles or tin sheets; board or tape glass windows.\n- Keep emergency kits ready: non-perishable food, potable drinking water, torches, battery radio, and first-aid supplies.\n- Unhook and disconnect electrical appliances during cyclones to prevent short-circuits and electrical fires.\n- Lightning safety 30/30 rule: if the time between lightning flash and thunder is less than 30 seconds, take shelter indoors; wait 30 minutes after last thunder before heading outdoors.\n- If outdoor during lightning: avoid tall isolated trees, open fields, elevated ridges, and metal structures; if hair stands on neck, squat low with hands on knees. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "or-advisory-crop",
+      "passed": true,
+      "failures": [],
+      "answer": "[icar_agriculture_advisory_02] ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁଯାୟୀ:\n## Cold Wave, Frost and Ground Freeze Crop Protection (Source: IMD Agrimet Agriculture Guidance, Page 2-3)\n- Apply light and frequent irrigation or sprinkler irrigation in evening hours to protect crops from cold injury and ground frost.\n- In rice nursery beds: cover nursery beds with polythene sheets during the night and remove in the morning; irrigate in the evening and drain out in the morning.\n- Cover young orchard fruit plants with straw, sarkanda, gunny bags, or polythene sheets.\n- To protect sensitive crops like mustard, gram, and rajmah from frost injury, spray dilute sulphuric acid @ 0.1% (1 L in 1000 L water) or thiourea @ 500 ppm.\n- Animal husbandry in winter: keep cattle and goats inside sheds during night, provide dry bedding, and supplement daily feed with mineral mixtures, salt, and jaggery. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-delhi-001",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Delhi ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 25.0 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-mumbai-002",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Mumbai ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 34.2 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-bengaluru-003",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Bengaluru ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 28.5 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-chennai-004",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Chennai ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 31.4 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-kolkata-005",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Kolkata ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 26.2 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-hyderabad-006",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Hyderabad ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 29.5 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-jaipur-007",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Jaipur ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 27.1 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-shimla-008",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Shimla ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 15.9 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-pune-009",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Pune ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 31.5 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-guwahati-010",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Guwahati ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 26.9 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-forecast-varanasi-011",
+      "passed": true,
+      "failures": [],
+      "answer": "Open-Meteo ପୂର୍ବାନୁମାନ ଅନୁଯାୟୀ ଆସନ୍ତାକାଲି Varanasi ରେ ବର୍ଷା 0.0 ମିମି ଏବଂ ତାପମାତ୍ରା 26.7 ଡିଗ୍ରୀ ସେଲସିୟସ ରହିପାରେ। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "or-refusal-aviation",
+      "passed": true,
+      "failures": [],
+      "answer": "ବିମାନ ଚଳାଚଳ ପାଣିପାଗ ବିବରଣୀ (METAR/TAF) ଏହି ପାଇଲଟ୍ ପ୍ରକଳ୍ପରେ ସମର୍ଥିତ ନୁହେଁ। ବିମାନ ଯୋଜନା ପାଇଁ ଦୟାକରି ସରକାରୀ ବିମାନ ଚଳାଚଳ ପୋର୍ଟାଲ୍ ଦେଖନ୍ତୁ।",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "or-refusal-evac",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT ବ୍ୟକ୍ତିଗତ ଭାବେ ସ୍ଥାନ ଛାଡ଼ିବା କିମ୍ବା ରହିବା ପାଇଁ ନିର୍ଦ୍ଦେଶ ଦେଇପାରିବ ନାହିଁ। ଦୟାକରି ଜିଲ୍ଲା ବିପର୍ଯ୍ୟୟ ପରିଚାଳନା ପ୍ରାଧିକରଣ (DDMA) କିମ୍ବା ସ୍ଥାନୀୟ ପ୍ରଶାସନର ସରକାରୀ ନିର୍ଦ୍ଦେଶ ପାଳନ କରନ୍ତୁ। ଜରୁରୀ ସହାୟତା ପାଇଁ ୧୦୭୦ / ୧୦୭୭ କିମ୍ବା ୧୧୨ କୁ ଯୋଗାଯୋଗ କରନ୍ତୁ।",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "or-refusal-pesticide",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT ରାସାୟନିକ କୀଟନାଶକର ମାତ୍ରା ସୁପାରିଶ କରେ ନାହିଁ। ସଠିକ୍ ପରାମର୍ଶ ପାଇଁ ନିକଟସ୍ଥ କୃଷି ବିଜ୍ଞାନ କେନ୍ଦ୍ର (KVK) କିମ୍ବା କିଷାନ କଲ୍ ସେଣ୍ଟର ୧୮୦୦-୧୮୦-୧୫୫୧ ରେ ଯୋଗାଯୋଗ କରନ୍ତୁ।",
+      "evidence_count": 0,
+      "has_card": true
+    }
+  ]
+}

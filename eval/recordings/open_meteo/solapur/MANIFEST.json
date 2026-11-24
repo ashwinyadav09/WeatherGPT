@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Solapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "24532b0b6f91737c7a7f6ad10df768e1780a7fd17bc4ffd3b3a27a4c91a85c30",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.648372+00:00",
+    "bytes": 1373,
+    "sha256": "f3b9360c84cddbf872f9a511ce65ab9d7fb33fb975dee3749bac96331246359c",
+    "file": "open_meteo/solapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/solapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.6599,
+      "longitude": 75.9064,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7c49e06994a7e64cb8b61d6ce26e42d62c5d4b6adfa61e2efd92f3933287fbae",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.836749+00:00",
+    "bytes": 867,
+    "sha256": "945204a0d7672657468fff20dfb9295f2c98acc9c4572a54aff340e81876bf36",
+    "file": "open_meteo/solapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/solapur/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Amravati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "e12287e186c2598afbd871a0853f628c33096c8aeb5afabe18f6517a9e4b2dd8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.759778+00:00",
+    "bytes": 1374,
+    "sha256": "e1cec4bd3bd84b3fc8bbf6ccbaf2edced272b5f4c1113e6d886adfa019c85aad",
+    "file": "open_meteo/amravati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/amravati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.9374,
+      "longitude": 77.7796,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "2282cb8faed4fd2fee7adf7264c376b2446c78d4715f2bcac810bc0eae3368fa",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.954904+00:00",
+    "bytes": 863,
+    "sha256": "09f5fb125951535a0f11e5801af21d9d486a29cde0b19801061c4b416dd7dda5",
+    "file": "open_meteo/amravati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/amravati/20261124T210746Z_forecast.json"
+  }
+]

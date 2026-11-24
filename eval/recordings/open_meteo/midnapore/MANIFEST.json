@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Midnapore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1993b7e1c7dbf1419d0cd3259af4da47af1ff93c7f08cf778293499552277fd1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:17.295964+00:00",
+    "bytes": 698,
+    "sha256": "30b21b4e6af081ab5077c27e0507b3d6f57b65eeccabf486401b9c8a08391629",
+    "file": "open_meteo/midnapore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/midnapore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.4257,
+      "longitude": 87.3199,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "130ae33af4a6f188a8d607e8024fb493008112d5311bd8400ccd0966ea44a54e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:17.500615+00:00",
+    "bytes": 864,
+    "sha256": "098d586355b9ca54194b1813e50ad6f9d59efb9e5cb41da59d68df096f95deef",
+    "file": "open_meteo/midnapore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/midnapore/20261124T210746Z_forecast.json"
+  }
+]

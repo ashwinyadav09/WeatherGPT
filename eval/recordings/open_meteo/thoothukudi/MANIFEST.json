@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thoothukudi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "386b97d1758eab5055adc4f0a52ee4c15f7aced9e5421b640ce326e9e39ef5d3",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:35.522342+00:00",
+    "bytes": 390,
+    "sha256": "34dba46488864431ac860f3a3baa4a9a8ae5d85843ad2d7894d0b3d39a9f6944",
+    "file": "open_meteo/thoothukudi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thoothukudi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 8.7642,
+      "longitude": 78.1348,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3dc999e0d9c8af0a72ae02f870a42cd5dbb35852018407c52f2bb4f4738701e2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:35.688285+00:00",
+    "bytes": 870,
+    "sha256": "2271eb9dd5b7610588d37ed7df9dc69e0ef630a6e9a4d62a2274cacc812043a3",
+    "file": "open_meteo/thoothukudi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thoothukudi/20261124T210746Z_forecast.json"
+  }
+]

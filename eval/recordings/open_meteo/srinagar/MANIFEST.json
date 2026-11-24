@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Srinagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6f7b3d0c9586bd9865071b066d6ff2b57bd2711a3c13dc324503de7259d86c23",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:32.347428+00:00",
+    "bytes": 1911,
+    "sha256": "f87e83d87f9617b60000bb858070b969509964b1acdc9fb43006e4fe19e4907b",
+    "file": "open_meteo/srinagar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/srinagar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 34.0837,
+      "longitude": 74.7973,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "93e62aa48c59a2bb127336440d1e00a8ed3821f8aa3cd5f650b0b58cd1c28e93",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:32.553676+00:00",
+    "bytes": 857,
+    "sha256": "b63ce05e93c581b4a3b71aeacd01cdc3c91cdfb0efdaf95b28be76d6c4c3c41b",
+    "file": "open_meteo/srinagar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/srinagar/20261124T210746Z_forecast.json"
+  }
+]

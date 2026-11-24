@@ -1,0 +1,2883 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Agra",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3dafc1ff55be4a034add6542e427966d1ed29b6d1bb7e9e3218e93d23dad0651",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:47.926002+00:00",
+    "bytes": 1783,
+    "sha256": "72208ac09cedd2757809427cdc84674f83e0fdfde2f1bab4798372bc02815611",
+    "file": "open_meteo/agra/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/agra/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 27.1767,
+      "longitude": 78.0081,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "25b56c3bd3f250710444ab706010abefe1762f8aee2939172e8c3d142b2b6429",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:48.695111+00:00",
+    "bytes": 865,
+    "sha256": "e4c1a8e83c6be67f80cb7790989ad445cbe9b9b138f27d2dca5bad5a8ee3d8a2",
+    "file": "open_meteo/agra/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/agra/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ahmedabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2e1d610a666ff1fc0bdbb84baa29ced0a0a7ccc3ece004fdb2c638667a796650",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.134597+00:00",
+    "bytes": 1589,
+    "sha256": "08be7e0e6a6768cf9ce5ab48092e82973ec989c73edb0c169e879dcd8cdd9aff",
+    "file": "open_meteo/ahmedabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ahmedabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.0225,
+      "longitude": 72.5714,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "29aedf633ab4fd07d702452f3cac06ef8e19305792e7be423545833ced61f520",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.341526+00:00",
+    "bytes": 863,
+    "sha256": "267a43cb46d9351ea4db45655cd4261d5ad09a5cce5b689e33dadc4970465982",
+    "file": "open_meteo/ahmedabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ahmedabad/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Amravati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "e12287e186c2598afbd871a0853f628c33096c8aeb5afabe18f6517a9e4b2dd8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.759778+00:00",
+    "bytes": 1374,
+    "sha256": "e1cec4bd3bd84b3fc8bbf6ccbaf2edced272b5f4c1113e6d886adfa019c85aad",
+    "file": "open_meteo/amravati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/amravati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.9374,
+      "longitude": 77.7796,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "2282cb8faed4fd2fee7adf7264c376b2446c78d4715f2bcac810bc0eae3368fa",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:49.954904+00:00",
+    "bytes": 863,
+    "sha256": "09f5fb125951535a0f11e5801af21d9d486a29cde0b19801061c4b416dd7dda5",
+    "file": "open_meteo/amravati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/amravati/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Amritsar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "4c106a9e619072fd5f743f8c989e31e2e32ab67da5e93110a5d34340a9257b30",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:50.468524+00:00",
+    "bytes": 1008,
+    "sha256": "17a4668e16d3eae2fcaf10f0052a3f3a5ce8335e5a74893bfd0b661253eb53c0",
+    "file": "open_meteo/amritsar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/amritsar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 31.634,
+      "longitude": 74.8723,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7db63f2407c38a4f53302ddceebb190eedface6ccab0a4b79a6dfa9154e621db",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:50.671613+00:00",
+    "bytes": 864,
+    "sha256": "b1c9aad77310f851af9b58a9ca6c013077a6433c2207e8a677744c52325b6135",
+    "file": "open_meteo/amritsar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/amritsar/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Anantapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2c19d3f24b763637d148e782949e984e35965c5cc4fb2238d2c57875a7e672d6",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.182596+00:00",
+    "bytes": 1967,
+    "sha256": "7b2776962926e522ed41c33b2e8dc5795a17dd27538671bd9712347b7249b781",
+    "file": "open_meteo/anantapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/anantapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 14.6819,
+      "longitude": 77.6006,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f23efdbb45ceb9425e77b33ebbf760f64973168eb1075366142e60f2a77c06ea",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.353497+00:00",
+    "bytes": 868,
+    "sha256": "d191d170e1cf5aec5df48bc1eca1d942acefed308742a8c305d016ff5f54edcd",
+    "file": "open_meteo/anantapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/anantapur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Asansol",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "cde54f6d92bf5ec9522d9f902b088d63d6827a6ecb7bf53eef07621cb6a5fccc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.799243+00:00",
+    "bytes": 1034,
+    "sha256": "aeb7aa84402a5c5af63ed7cbcb800e9b198123b042585b5f955234c65763669d",
+    "file": "open_meteo/asansol/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/asansol/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.6739,
+      "longitude": 86.9524,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "938226a76878c3a3ded6d6ab1a3bd70a903c395edc6248d53f388b186313ff8e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.979043+00:00",
+    "bytes": 864,
+    "sha256": "ce0e621c82421a4f4ab18b51c1ab48428f3c67210928d27ce74f7b7af716b94b",
+    "file": "open_meteo/asansol/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/asansol/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Baharampur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "82b480b81c275e05c86c7d2a4dd188836fc3a3ff8ccc1e108acc04c596ec5aba",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:52.413389+00:00",
+    "bytes": 1940,
+    "sha256": "087eb9c36f41a1b201b85ce118e44bd0a26810e2989e0b2df8c5de64238c9119",
+    "file": "open_meteo/baharampur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/baharampur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 24.0988,
+      "longitude": 88.2536,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "72faa2b3aef4eedced40c155482cc6bf318f7554ff2c7265011b61f47d768392",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:52.588175+00:00",
+    "bytes": 862,
+    "sha256": "3165f74951e8cbddf3114e956f7a85016fc50264e4e13b89ab669c03ab87f190",
+    "file": "open_meteo/baharampur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/baharampur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Baramati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "b75ba0948ee61e91221dfa28308998c954e9092799e91b8e482b90512599c5a8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.028203+00:00",
+    "bytes": 383,
+    "sha256": "397d7d40a1583966af7e5a014110ee2f362d60051096417ce0d11096c18736f6",
+    "file": "open_meteo/baramati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/baramati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.1517,
+      "longitude": 74.5774,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5f6a5854545057c3a4b3a11c5d5751116cdd026d3149397b3356514c49a558d9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.231193+00:00",
+    "bytes": 864,
+    "sha256": "36dc0a4766266d070eb390e5f20e9d238b1d08ec57106160dc511765b918b6ed",
+    "file": "open_meteo/baramati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/baramati/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bardhaman",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8a2bb3c2ca15317f2ac7b2419f1a21db9ee0c5a3c010980546fef0c3b7b5112f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.647476+00:00",
+    "bytes": 772,
+    "sha256": "e7171eb6e2a0b233900ef485e2fbce560f76e79d98a6992a04180e5f7b9cf050",
+    "file": "open_meteo/bardhaman/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bardhaman/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.2324,
+      "longitude": 87.8615,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "1a1bee986352a8178543d79e022467c193c77cbb754064eb3c926984c932b5f5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.846871+00:00",
+    "bytes": 863,
+    "sha256": "24ea727a354a32da3c14c09a5140c95b9d071abaee71c78905af0c09619aa6de",
+    "file": "open_meteo/bardhaman/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bardhaman/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bengaluru",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "cf8bbb49709b083c5d7011f8dede388c710c64bbb6f0164e6563a1e023eebd45",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:54.265080+00:00",
+    "bytes": 353,
+    "sha256": "a995d1d3c2905753b978ce47a1a463af66cc083dde330e5ad15def8f628745db",
+    "file": "open_meteo/bengaluru/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bengaluru/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "0dd3a67ade94532fc61eb7c8d95b51b045361dc1a818857f8d3ff09590ef34f0",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:54.460860+00:00",
+    "bytes": 870,
+    "sha256": "1e266273b78408a98fc7048b57466b090953592203be1ac0d84a4969aff461fe",
+    "file": "open_meteo/bengaluru/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bengaluru/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bhopal",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6baecb0568b3c4a3b3968d8c2911bdbec9adf8bb5ab71c821412d6c653f572af",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:54.875353+00:00",
+    "bytes": 1732,
+    "sha256": "813f3345b3a6f538fe93d3eb33f37f563654576c74b4f48ad9166704c6748d79",
+    "file": "open_meteo/bhopal/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bhopal/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.2599,
+      "longitude": 77.4126,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "40ca9344dd9e4d3f4c9befa8bc680b5b1396fadc3e7ffd4818b9c06ccb640cce",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:55.075536+00:00",
+    "bytes": 864,
+    "sha256": "a255491680e86a0ee5af0dd6c7cc14b4d601a60d17d6a6a194144760fbe40c4d",
+    "file": "open_meteo/bhopal/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bhopal/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bhubaneswar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "e09fd61bd3fe364529a5affac896c688bfdecfea701e14e9c37b695f26b813c3",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:55.496381+00:00",
+    "bytes": 770,
+    "sha256": "6a129cb240bf8e2d4da90ab63fab64a712f4b15c8480faacaac181b2fcb19d12",
+    "file": "open_meteo/bhubaneswar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bhubaneswar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.2961,
+      "longitude": 85.8245,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f8f292590dd4b0f849d88af324bdfaea0dafaf1c96133e7565933a7d407d996a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:55.698326+00:00",
+    "bytes": 864,
+    "sha256": "ec23d126a434a2a3dea5959e97bddd8b69372eca196c626ecff1c691c4a12d08",
+    "file": "open_meteo/bhubaneswar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bhubaneswar/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Chandigarh",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3a7895c73d21167d0283800df17a954f105fc6499d109d5c25e2154b110bce72",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:56.202303+00:00",
+    "bytes": 1660,
+    "sha256": "3e4100f9506f9212d2bb36a27be07473132637a87cd698dce9823115bfa30766",
+    "file": "open_meteo/chandigarh/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/chandigarh/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 30.7333,
+      "longitude": 76.7794,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f2c30a79b767f96d3f1ddf147877bf1d75c48c07953fa7a81029d80ac5e1681c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:56.405139+00:00",
+    "bytes": 862,
+    "sha256": "265be63c8297131a798fd904d6ec4cc3344654cc1d0261d1dbd009cae25d10e4",
+    "file": "open_meteo/chandigarh/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/chandigarh/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Chennai",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "d7361fa00586130af2019a970a08d1a6624dc96cb64eac13cee31bf5769a9de9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:56.875443+00:00",
+    "bytes": 1040,
+    "sha256": "d532012665219ea02e86fe8f6ec139e002a228fd20cb4d3cf5ba91b1f717c707",
+    "file": "open_meteo/chennai/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/chennai/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "aea833fd4cfb0cd2cbd5c8725e5cc7b07b276ef4e9431d71c7c268e87d4fab5c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:57.117930+00:00",
+    "bytes": 872,
+    "sha256": "f4597068cc6a7b8fade95ee5c0e38ecd3213fb40d5b73f51f03393bbc983efd3",
+    "file": "open_meteo/chennai/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/chennai/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Coimbatore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "75c532cbd591491d793ef15b5efb40b7063ab3d2b2b8bcd69a45d653e391b5de",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:57.635131+00:00",
+    "bytes": 1388,
+    "sha256": "e1cf5f845ef6cbf33daa75931505e73f60156ed30771032ef14a2b45cd62c439",
+    "file": "open_meteo/coimbatore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/coimbatore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.0168,
+      "longitude": 76.9558,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d2331e7888e2a6dde76a17c32779280ec82b6325e022fa783ced39d0aedd5258",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:57.837526+00:00",
+    "bytes": 875,
+    "sha256": "6b6ab4953cc6b69447dbc91791af49312aa0b75d4d67fa6f2d65a3baaccefb5c",
+    "file": "open_meteo/coimbatore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/coimbatore/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Cuddalore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "03ee2c8470a51aeff1d73a597ab4044c9d05da39815c41b9574a964430df8a74",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:58.251496+00:00",
+    "bytes": 387,
+    "sha256": "9aa4b1b37e073b6a2df2f48bcbdfd2c25e78f04dc1b3aacd11201f636eb565ec",
+    "file": "open_meteo/cuddalore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/cuddalore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.748,
+      "longitude": 79.7714,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "4228400429064bc268d15d378e0a651f8282dff7efb41a2b166ace5155b708ab",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:58.455404+00:00",
+    "bytes": 871,
+    "sha256": "3820bc1a686b97423601eabc095ed4b891a36f54ea69f918dcf3845b080944d4",
+    "file": "open_meteo/cuddalore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/cuddalore/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Cuttack",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "67b893060c5dd29f7ff09a89696bcc8dc7f00f48cd6ad7590085852f1b0ec1a5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:58.871018+00:00",
+    "bytes": 396,
+    "sha256": "a8640f50df4f2d9cb5b03f76188f59db59c0959bbd9110c52684b058092e1397",
+    "file": "open_meteo/cuttack/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/cuttack/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.4625,
+      "longitude": 85.883,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "a4c8e277a41c4f059760f6706c4ed2afb200360cde261438bd62fe2e140ba5b2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:59.069654+00:00",
+    "bytes": 863,
+    "sha256": "4814b2194ac9794362cc233f2ac5e719fcad50806ad0412e09d4a1b62eee8f7c",
+    "file": "open_meteo/cuttack/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/cuttack/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Darjeeling",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "4aa4be1002286e0c155825e92205abc70468e05b20e870065807bae64793b542",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:59.497321+00:00",
+    "bytes": 739,
+    "sha256": "cecbc289cfc54d16a2647f7a144cef74c2b32ba594008df9351e047211b372f5",
+    "file": "open_meteo/darjeeling/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/darjeeling/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 27.041,
+      "longitude": 88.2663,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "a16c4d52562688360dfea2728b20798192faab776cd5e7a43883e6327ab8e21c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:59.662683+00:00",
+    "bytes": 858,
+    "sha256": "4a1317ac5c48c319f6376ca5bc316766ff220ea8be6c56a160ec7d36ca608949",
+    "file": "open_meteo/darjeeling/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/darjeeling/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Dehradun",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6aa98fce579cdc8de25e991465bff93f8290247c08fcf9d4ba4de6efefae4074",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.088247+00:00",
+    "bytes": 387,
+    "sha256": "af90cc95a9311ce6a969e05f883ff23982cd12a4b1b9fdc842230ab0e566a3f8",
+    "file": "open_meteo/dehradun/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/dehradun/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 30.3165,
+      "longitude": 78.0322,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "6bb78b5c722c75f08ccda4f60e505c5b9c77c4b85173506adeba91695de5972c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.255787+00:00",
+    "bytes": 863,
+    "sha256": "a00c90eb8bc263a106e8d62183a6de67e430988d4b9cefd4ecba6a59eb8ae724",
+    "file": "open_meteo/dehradun/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/dehradun/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Delhi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "9722a72c299e65680c5c247e0a140233f58c4670ba1061bdc62c6e78f0991dd8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.667388+00:00",
+    "bytes": 1731,
+    "sha256": "f803cd55436e2f616b3bc047f0ee128876bbdeed2d3ccc32b3c2b5b33d2dd6f4",
+    "file": "open_meteo/delhi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/delhi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f4fc1f24f0ad567f9909759b1371d6e281a60031119fb28ed18b07a4c1fdd3c3",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.883273+00:00",
+    "bytes": 864,
+    "sha256": "8d8f478f81f1156036790d2be9ad6f8cf6d6c5560f88d732e1c26cbb4bc84738",
+    "file": "open_meteo/delhi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/delhi/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Dindigul",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1c12dd7a2b345b3a16e4ffaef1cd7e1ae1f0df3c7f551f007051c875ea261496",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:01.295943+00:00",
+    "bytes": 389,
+    "sha256": "024b6161d5712f6104c7bfa8cc1cbe5e2ff72420d20a4835eba7fe06b7a8c842",
+    "file": "open_meteo/dindigul/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/dindigul/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 10.3673,
+      "longitude": 77.9803,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f4aed96afe7b1a9cb66b0fcdc4ff9bd2b31b1146fafcd8547d48f09292541e3f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:01.474487+00:00",
+    "bytes": 873,
+    "sha256": "7b7650ab8971be219fddb1566cedf316f5331eaec13a4d9ef326af21e56220cd",
+    "file": "open_meteo/dindigul/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/dindigul/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Durgapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "dff400b09bcbf59c3d890c2fec1ab55ccf21405228775dc405476a15b4196bff",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:01.889227+00:00",
+    "bytes": 1919,
+    "sha256": "2f3df035b5e2ad6cbf2e4d28e1d7fa4ed27e535e806b210c9390faf0781ecf60",
+    "file": "open_meteo/durgapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/durgapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.5204,
+      "longitude": 87.3119,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5803f82efb867f7acbd1ecdf7127772f6b50a0c9df915f028af8adfe8d40f04e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:02.056144+00:00",
+    "bytes": 864,
+    "sha256": "4c41433680d283cdf266071912cf7294afcbf771e6ccbd76d42be21194d6b813",
+    "file": "open_meteo/durgapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/durgapur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Erode",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8288b1e96a2f186b0ac52d838ffd637afd2742331568f4f72d7560a19b574e3d",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:02.468601+00:00",
+    "bytes": 1032,
+    "sha256": "79b705fde374b6e145f3702fd648af1986035f2adeefa29938c8c4ded61758c6",
+    "file": "open_meteo/erode/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/erode/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.341,
+      "longitude": 77.7172,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "0909966d8a7aeb76eb2aab6bcaa10754da763ca83681e43410eabf8f16b2e39e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:02.637118+00:00",
+    "bytes": 873,
+    "sha256": "b9a2d91162636a0a7937b322175670269356db45ddfa0714b767ab2e4e5d65de",
+    "file": "open_meteo/erode/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/erode/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Guntur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c953414fdda0b099301a55e5e5c39916d73363ff19c66db912214572c3a40d67",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.049735+00:00",
+    "bytes": 1612,
+    "sha256": "4199f4559ac8639329d11d1d3b85ce35548bf0978f732ab3ab719724931743ae",
+    "file": "open_meteo/guntur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/guntur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.3067,
+      "longitude": 80.4365,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "1e6ad8e01ad47f822ec308b5a512f6bee6e3de5a1cc35bf4e867bfd657a47e5b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.216255+00:00",
+    "bytes": 865,
+    "sha256": "310cf7c83911b42d33817bd6730f8d3244470bd67adfc127439c1bfd6f7ad5c8",
+    "file": "open_meteo/guntur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/guntur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Guwahati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "aaa736d28370b9ece1eb58c0e2b7a14aad77ea2e501ce129dd66531bdee86112",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.628797+00:00",
+    "bytes": 754,
+    "sha256": "a2f0f49efb9cd69d0e78d2ca4b01f66adf2785f56fbf04aeb31ca7bfbf89ef26",
+    "file": "open_meteo/guwahati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/guwahati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.1445,
+      "longitude": 91.7362,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7dd5a22f690541b10edc818fd2ef3cd7990de8aaff2704a4c1213b518eb92314",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.797740+00:00",
+    "bytes": 863,
+    "sha256": "41069572b64a3ba2d079538bfcf75d82713a76437df0ff8ade83c05e2237625d",
+    "file": "open_meteo/guwahati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/guwahati/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Howrah",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "214ae48c61b0d5b8e4fca39225150eff2c48373049af46b0d3304ffdb6b88ef9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:04.222879+00:00",
+    "bytes": 1005,
+    "sha256": "e275ab41476defce3937c19080684de81254b1856c112a70b87f7dc2b8bdf61f",
+    "file": "open_meteo/howrah/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/howrah/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.5958,
+      "longitude": 88.2636,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "268b680efcdfa4b215ef51a3cb5aff9f38e8c5d24d370c5bb89206f975803e32",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:04.396928+00:00",
+    "bytes": 861,
+    "sha256": "f01019fd3369376adef73b4f36f5db50b7cc335d861e8395ff837238f060c044",
+    "file": "open_meteo/howrah/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/howrah/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Hyderabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "85b11fde4f024e12a77da4a33b6040cafb365a82e1c33e0c5e7c24b4d827a4c9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:04.809072+00:00",
+    "bytes": 1527,
+    "sha256": "9784b393d6a2ddb20ae2c99ccc3c5fb6927022da443c8bb23aad629399ff694c",
+    "file": "open_meteo/hyderabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/hyderabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "cef0f5694a2f53dc1438f1c387f29a10e83148abeabc32c115f9a8ef564690bd",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:05.008275+00:00",
+    "bytes": 868,
+    "sha256": "de47a833c3ed3d091751ccf77faf408bbb065aa3ad093c2ff61b03a6f64c79ee",
+    "file": "open_meteo/hyderabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/hyderabad/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Indore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "bfb6dd83ef11ce2fb4dc26f19588dc3e223840ff789ed0bb8cd558a56022410b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:05.424681+00:00",
+    "bytes": 1040,
+    "sha256": "9cff2b4537368e7c6cd56766c1e0dc7435929c8a6596e72daae42b02ea2fa770",
+    "file": "open_meteo/indore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/indore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.7196,
+      "longitude": 75.8577,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "fad247fbaf776d6d2b678eca232fa6a9d1b22e3fdfe36fba2251cdd9b9004f19",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:05.620876+00:00",
+    "bytes": 865,
+    "sha256": "bafcb56e4ba6dfc268d352c69317f26e18b008fd8f4480f9cf69bcbdec15d0d0",
+    "file": "open_meteo/indore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/indore/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Jaipur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "089886bca141a83e9a2e8de17430075068b808e1940e7db0ebfb10070b0aed5e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:06.037085+00:00",
+    "bytes": 1915,
+    "sha256": "a32205cc69debc366f50931b6bfed9cf32a42b29c2960efc94361211f6ee900d",
+    "file": "open_meteo/jaipur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/jaipur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.9124,
+      "longitude": 75.7873,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "a976f9397558a55d63f27cef9b9c0b331cd73e4fa788c9f5a171e3e230a2186f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:06.205096+00:00",
+    "bytes": 859,
+    "sha256": "5d1a87e5b331a700195476d89ce9d22de36314799e7ea215c980e767e9d8ad93",
+    "file": "open_meteo/jaipur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/jaipur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Jalgaon",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "4641b7ddf906fcf82ea9c7e470757383c91246a210c826a1cd480c1bd58e6d21",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:06.616157+00:00",
+    "bytes": 1779,
+    "sha256": "9f2500d42f95d30a3589d1497da09c1caabf31267088edfc27d90b9b51fc090b",
+    "file": "open_meteo/jalgaon/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/jalgaon/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 21.0077,
+      "longitude": 75.5626,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "db89901142f34115ab1e208fd02a81776faeaac2fe30f2aee6cf1f65455330ae",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:06.786675+00:00",
+    "bytes": 864,
+    "sha256": "9e617999a8f2e40c6a73c83a0ab24105f7c8e0201a807d9facea670ce5bd10a4",
+    "file": "open_meteo/jalgaon/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/jalgaon/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Jalpaiguri",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f8907216efd4a8133f30711ed2d4c22400dabddd77d633429a79fb55ba07b51e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.199057+00:00",
+    "bytes": 404,
+    "sha256": "bbe427f8d38329ce89d0c4871818cccc62c58a96d1bf4e6710b77b21e35ad4c4",
+    "file": "open_meteo/jalpaiguri/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/jalpaiguri/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.541,
+      "longitude": 88.7196,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "2819a72606f346668335803eee8a73fdc6580a924671bab6b05cbb67ea867257",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.367488+00:00",
+    "bytes": 863,
+    "sha256": "7607ba52799f7f9aea8c8f5ad103ebaf4a712b39aa4e060b2aed1b05e6cfd13a",
+    "file": "open_meteo/jalpaiguri/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/jalpaiguri/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kadapa",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8ae714a548e33147877098c5a6e172bc6a8df9f00ae8143ded4934aafb419a16",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.780360+00:00",
+    "bytes": 1653,
+    "sha256": "1575b6527d01e61618d7dbd512ff6f6583ec2bf554062b9196f50d34cf8dc1f5",
+    "file": "open_meteo/kadapa/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kadapa/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 14.4673,
+      "longitude": 78.8242,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "c5462f8951b3ee36b5ee25bdcdfe61cbf1fa86f3aa4baf7c8e9838acacfd4804",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.978604+00:00",
+    "bytes": 869,
+    "sha256": "7e577282338643ae7154c9a0c74403647528d54cb8e01253d4a1dd3917283e26",
+    "file": "open_meteo/kadapa/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kadapa/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kanchipuram",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "b7c2d0982a988a324494b9c5aa660642ceab72e6a1cfb41c7f5f2faf7e57f981",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:08.396716+00:00",
+    "bytes": 1079,
+    "sha256": "e62040748f815354e165ec02d509a5f73a43803da6cc0c5d63b0c15bdd54348e",
+    "file": "open_meteo/kanchipuram/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kanchipuram/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 12.8342,
+      "longitude": 79.7036,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "1bb3c6da5376a22aad6a5440e1b9dbda26d3cc6415e692fbdf2b9d8789912807",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:08.592978+00:00",
+    "bytes": 872,
+    "sha256": "02cfcc3cd17bd67de23270a56a42ae9deb045c9574f79dd4b4fcc22a44894006",
+    "file": "open_meteo/kanchipuram/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kanchipuram/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kanpur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "879088da9b2283d3ce0386d41b926535fd9be2711d64eacb4b165c3da5d6daab",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.004352+00:00",
+    "bytes": 1626,
+    "sha256": "a0ac4d5877e208275fd2f8960f6f93a20fb24492180a7df9aa731ab3571f6eec",
+    "file": "open_meteo/kanpur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kanpur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.4499,
+      "longitude": 80.3319,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "84a52aac7b982eeec34082bd178204566a21d41c5a34222f374c9fc7490b9d10",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.204718+00:00",
+    "bytes": 864,
+    "sha256": "4d90825fac0ccc1f32ebc1856ac99f65d7525950aa6e3aee350bd426a2256b18",
+    "file": "open_meteo/kanpur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kanpur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Karimnagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "35bf937dd62d49ae4bdfdb9ab8c02ecb118f23f3a574e435603990126f7d57eb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.722981+00:00",
+    "bytes": 1766,
+    "sha256": "3cae2d83ff7c732dd9008520ce76d04f9e0c54b877e05fd322dfd64a02df0748",
+    "file": "open_meteo/karimnagar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/karimnagar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.4386,
+      "longitude": 79.1288,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5e673e1aa31e1578088ad17027af2e17586691bebe1064f3f38b4f4844cc0bfc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.887999+00:00",
+    "bytes": 865,
+    "sha256": "ff3bc07c7960435ec0e6c292ec24fcbd1e238980d886f3c60d0ceb24b7419778",
+    "file": "open_meteo/karimnagar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/karimnagar/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Khammam",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6178b5cb233d291890acef59cd3454a70a05e546a12d1cebc95f37233cb6e285",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:10.299083+00:00",
+    "bytes": 1060,
+    "sha256": "97b47a1bb54ac44a2485c0c0f5197a0ad731e7000ac41d49a1c1f197e395507c",
+    "file": "open_meteo/khammam/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/khammam/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.2473,
+      "longitude": 80.1514,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "8098fb5e1832feeae3db83f279f6b6ad99f33ab28f438d01920b6193e758b661",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:10.464599+00:00",
+    "bytes": 867,
+    "sha256": "c68240192636e4dd88159598cc28a6e3ead7de764e67310bd6c5297b8572c302",
+    "file": "open_meteo/khammam/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/khammam/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kharagpur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8438253894087b8fb35e9875dfd341a93f6916ee278f1dc91d350358f93a8ee5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:10.878194+00:00",
+    "bytes": 1712,
+    "sha256": "b091f7b2959e5772290e3fd880d56755fac8a86727ab22076779e0521ce4385e",
+    "file": "open_meteo/kharagpur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kharagpur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.346,
+      "longitude": 87.232,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "2373f0fb57af4770af4cce75d082a3b4df36f91a69f1e0b06cb04a71bc0d61a8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:11.044614+00:00",
+    "bytes": 863,
+    "sha256": "b055b2a928a4abd82133ce8cebf19174749ef7374cfab0c788e5b8e3be448516",
+    "file": "open_meteo/kharagpur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kharagpur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kochi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "43d1dd945f794285768dc000bbc5b96326dd751ebfdbe1cf24a17dda59871d3c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:11.458218+00:00",
+    "bytes": 1594,
+    "sha256": "ca7f232c54ebba33d634df95092ff9bf649ee0650ef220ee564f392ea38d22c2",
+    "file": "open_meteo/kochi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kochi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 9.9312,
+      "longitude": 76.2673,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f745a82bf4263ac7ab2fb37d4c64193a6f9ebbc73d1d7385001149ff9ef65f9e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:11.623532+00:00",
+    "bytes": 872,
+    "sha256": "362b1e16d20963ed61e5c168ba695ab467fc305fa9a55bc7575cff33d76e6f1d",
+    "file": "open_meteo/kochi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kochi/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kolhapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "803e9be2799edbe97845aa2447f5d826904aade6e603e3d8f56c0cc43901c56c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.173757+00:00",
+    "bytes": 1697,
+    "sha256": "ea6b1ffaad31289cc2cc970446c6c3da100661ee1ab6098975e2e7e6d38b3120",
+    "file": "open_meteo/kolhapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kolhapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.705,
+      "longitude": 74.2433,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "c2488ca536eed89dabf4c4edf7e62850f5117e20ddf39264cd25a770947dfe70",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.338572+00:00",
+    "bytes": 869,
+    "sha256": "e56edf9a9abc8a94ec142f592fb5452f93cee090fb3ef76cbeda8e9e9981aeca",
+    "file": "open_meteo/kolhapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kolhapur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kolkata",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6204ba2b6e955c85793404e72361601f5e738914da2dde89f122b39cd8116fdf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.813708+00:00",
+    "bytes": 383,
+    "sha256": "3d1dd61a8565b635067e635d6a2f207105b07d729bd2f72733b421e412b212ef",
+    "file": "open_meteo/kolkata/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kolkata/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.5726,
+      "longitude": 88.3639,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "10d3b5ad3a73112562da129e1ac8a35c70e0d1c6a2ae07d784927e2250c6e8ed",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.998426+00:00",
+    "bytes": 863,
+    "sha256": "5afe776288b8c24a221b75af0258bc010e1afd033607fd20bf4ec8c756ccac1c",
+    "file": "open_meteo/kolkata/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kolkata/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Krishnanagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "0c4396badebdf220f65fedf709da16982f95c1c1a0b3341683c8c1577b28d2fc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:13.508386+00:00",
+    "bytes": 1945,
+    "sha256": "2ccfb083e44510f56a06d7a267227290be7677f05725962cb575d5ad43784325",
+    "file": "open_meteo/krishnanagar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/krishnanagar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.4,
+      "longitude": 88.5,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "b4639c79f8823676124b3508e18be0f03f22580bb7578ad156a20f538b1b95f9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:13.756600+00:00",
+    "bytes": 861,
+    "sha256": "5bdbc108dccfcf00599ca021251554d564013c6f2bf9bb2fbd1e688f08470a67",
+    "file": "open_meteo/krishnanagar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/krishnanagar/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kurnool",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "33ecc0f8aad0d5859c0ed7cb9915ee0d850487ef99ccd1fbfb8d5c1a30a7e2f2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.167991+00:00",
+    "bytes": 742,
+    "sha256": "abe4a4827a812030592c78d7217ecc084e48354f89af0f5ce47c9b602705bd0f",
+    "file": "open_meteo/kurnool/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kurnool/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 15.8281,
+      "longitude": 78.0373,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "aa9dfa6d810cb5b097aec626739f00e492dadd2b2a78f4a184b7ed9c0bb1ff15",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.335673+00:00",
+    "bytes": 866,
+    "sha256": "b854b45d4ab2f6915de08c7121f91a599b3e44131524353e32805f588be8723f",
+    "file": "open_meteo/kurnool/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kurnool/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Lucknow",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "bf3145a14ba6fa59ead9e9721157f41549f7e08aac2bcdb0ffc90d4416d683af",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.746307+00:00",
+    "bytes": 1754,
+    "sha256": "1492426b0d0f8bf3c3288d50de06249f1cf080726c39eba911591a34956c882a",
+    "file": "open_meteo/lucknow/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/lucknow/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.8467,
+      "longitude": 80.9462,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "afe119566e7c20e6314a798eebaf2180be103aa1cdbb808961c17ffdc4575b74",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.910607+00:00",
+    "bytes": 863,
+    "sha256": "43f573ac180876c422eec635341a60463614d49c10046c4be727e56a01377cac",
+    "file": "open_meteo/lucknow/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/lucknow/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ludhiana",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1d5556e7f04cfe2c5db72386938800bf0652275bee7db9322faf433e85e8ed43",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:15.322931+00:00",
+    "bytes": 1076,
+    "sha256": "f74ce7e46156d725d1d7d4f76ee0c858f7f73b2765d924e022998b753e36a123",
+    "file": "open_meteo/ludhiana/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ludhiana/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 30.901,
+      "longitude": 75.8573,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "eb1498050c7ae1bef0bf0d5759ab5f61e4669a377b75d2ce7e2b1ffe09c47d54",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:15.489660+00:00",
+    "bytes": 864,
+    "sha256": "a2e61c68e6f06e5bf3188bf7425df2866479d0868c524b3b5ac2a0a6f187eac7",
+    "file": "open_meteo/ludhiana/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ludhiana/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Madurai",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "dc96d10340ec05395ba08dbff82ebf1bf1081f8e0d82a39fc4558f28ecb92d61",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:15.960708+00:00",
+    "bytes": 1747,
+    "sha256": "dda118cd0588570617ed75a1516b899aeb5529974cb5d7108b9aaf7cc25ea648",
+    "file": "open_meteo/madurai/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/madurai/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 9.9252,
+      "longitude": 78.1198,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "65c771b1024123d566a8826d6a31f33908696cdc1dbbae752dd092b547114148",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:16.170763+00:00",
+    "bytes": 872,
+    "sha256": "22e12b1331024a980ec71a42bad5793c96b17039d20660f17d3803e1bb380c2f",
+    "file": "open_meteo/madurai/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/madurai/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Malda",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "76b1fb9004c117193d7b4eb3a636c32c940a085eb80d3ac8ce4298193ad0fdf5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:16.593079+00:00",
+    "bytes": 1550,
+    "sha256": "8fa1fb56017d4df82adf06b6c48cd2fa10637e8a44b29deedbc9c946a592daf6",
+    "file": "open_meteo/malda/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/malda/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.0108,
+      "longitude": 88.1411,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3e46c5726dddc6f021845457e1a2f502b3b9d7d2e70a12d847c287d525f360af",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:16.786211+00:00",
+    "bytes": 861,
+    "sha256": "197a07673c85e928f859493ffcfe25b242a7845c424299b18df7dbff113951a5",
+    "file": "open_meteo/malda/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/malda/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Midnapore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1993b7e1c7dbf1419d0cd3259af4da47af1ff93c7f08cf778293499552277fd1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:17.295964+00:00",
+    "bytes": 698,
+    "sha256": "30b21b4e6af081ab5077c27e0507b3d6f57b65eeccabf486401b9c8a08391629",
+    "file": "open_meteo/midnapore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/midnapore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.4257,
+      "longitude": 87.3199,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "130ae33af4a6f188a8d607e8024fb493008112d5311bd8400ccd0966ea44a54e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:17.500615+00:00",
+    "bytes": 864,
+    "sha256": "098d586355b9ca54194b1813e50ad6f9d59efb9e5cb41da59d68df096f95deef",
+    "file": "open_meteo/midnapore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/midnapore/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Mumbai",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "11363b2ff12b89fefc38482341ac0ec5fcd52cf5ccad67853db363d66022736e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:17.921623+00:00",
+    "bytes": 304,
+    "sha256": "931b95dacb3ba38b6e6265132466d7efd09a8856fcae387b64b63fdf0cb3e940",
+    "file": "open_meteo/mumbai/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/mumbai/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3de9a703d35609fe138b78a6502482ce6d415604d75a760f804b8a4c9fcf93a4",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:18.100481+00:00",
+    "bytes": 862,
+    "sha256": "1c4486111597e65034bb2d56486e0e618ea29bdae20791d3ff02eca82bf18ce8",
+    "file": "open_meteo/mumbai/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/mumbai/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Murshidabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "7a29e44a9f957d683f843068af98913eefd5bdc12d8f0446cc9e7a84e961f732",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:18.628453+00:00",
+    "bytes": 1659,
+    "sha256": "eb875ee7dfd565b2be6d8d88daa2c916e77102dd61f9a3aec132041492526cde",
+    "file": "open_meteo/murshidabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/murshidabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 24.175,
+      "longitude": 88.28,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5c8efa30caaf15df27259b19de28809c6fb4071328a38537989efe54a3cef921",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:19.758248+00:00",
+    "bytes": 861,
+    "sha256": "60b441b94b40ba3e034f66cb4342e712c8c798ede864d904707f1f59757f90aa",
+    "file": "open_meteo/murshidabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/murshidabad/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nagpur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c1c2fac8bf94a1632f6df309207bdf019e520a04615c87b91add48ca9976cc03",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.169876+00:00",
+    "bytes": 1766,
+    "sha256": "095a2e69ee49649894953a3dbd0bc2827f21f8d40c205f6b02d3385a67351189",
+    "file": "open_meteo/nagpur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nagpur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 21.1458,
+      "longitude": 79.0882,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "b1da11a21755ef5a39c5f15e28ae50971b27fa8180f7047ea1aee0a6d1ecc666",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.367174+00:00",
+    "bytes": 864,
+    "sha256": "8feea4452b18d2e93e8aebbb88916c324f521afc30bd99bf071a03a447cf1bd9",
+    "file": "open_meteo/nagpur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nagpur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nanded",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "fd27c51e9787bad04fbcf18ca42b537edfec7641127e862c09aa562c4f041b78",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.784983+00:00",
+    "bytes": 1695,
+    "sha256": "149f00562ce608372a3033deb546d3f92be35210d5ffdc518143775a2bbe0c93",
+    "file": "open_meteo/nanded/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nanded/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.1383,
+      "longitude": 77.321,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "14e3c6dbb434e0e4dfd7296dbd5cd1da450b6f48abb0fb2dbc5f06361eb30bb7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.983618+00:00",
+    "bytes": 864,
+    "sha256": "8848bceee98dd04875c4c2a8f6a9abc24a5ab244c70dcdf0e8b3acafe10ffdbc",
+    "file": "open_meteo/nanded/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nanded/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nashik",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f7a38febbcdd4a9b8ac97570d0df5becded208f4c2e44dbb54b449dba390dafb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:21.401335+00:00",
+    "bytes": 944,
+    "sha256": "07c5c3fd3a38afcbc8e9c3ce7e5fd5b9306a47b9e53752519bcdecd4bbb045c7",
+    "file": "open_meteo/nashik/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nashik/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.9975,
+      "longitude": 73.7898,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "e7208b8fc4f9fab7fbd666b781bc8195b5c12162bf0fe20febf6508b6f552c25",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:21.594887+00:00",
+    "bytes": 860,
+    "sha256": "740101376ba9588c9a4c81ac38b59291c9095bd6d68cbcfb356ca5ce6a85fe6b",
+    "file": "open_meteo/nashik/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nashik/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nellore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "e2ba9ad28d5d9278c69fdf343babb0af907bb8ef05d6b4e261d2e6847da021c7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:22.107777+00:00",
+    "bytes": 426,
+    "sha256": "1d11c8d717a42c23cf17eaef67242ec98c644c36d7476b9013db939a3dfe516f",
+    "file": "open_meteo/nellore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nellore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 14.4426,
+      "longitude": 79.9865,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "859e1caa43ef44cd43b360e486dc8711627bb11c9046e91308bd6daa75fe2f9c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:22.311632+00:00",
+    "bytes": 869,
+    "sha256": "d4b12fdec6793fd4cf49697945d5a54c9b8cd011b44a409bcd18eca53c6c24cb",
+    "file": "open_meteo/nellore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nellore/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nizamabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f2b9e2fd1a40af89a9549be1c82497d3d35a4864f46d18170e134799745280dc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:22.825694+00:00",
+    "bytes": 1747,
+    "sha256": "c17d8343bf67ab0306af4eb4392c77c3d5a824da5debf1836679f068db1cd93f",
+    "file": "open_meteo/nizamabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nizamabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.6725,
+      "longitude": 78.0941,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d68353e5e6977306466f8cda6f733eceea0732bb316b310ca5496c9a25e7921e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:23.029674+00:00",
+    "bytes": 865,
+    "sha256": "8943da4c9e81a123870ba02d6f8c5421004dbcb3d3708d73e90189559a95e45b",
+    "file": "open_meteo/nizamabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nizamabad/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Patna",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "a6e68b303d0a58680b919df2521b2b7a7be2b63166a05f8fe46d1cbc523d3de9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:23.443089+00:00",
+    "bytes": 1785,
+    "sha256": "14c868d4dcfc6f8a480769e02167ccf1098b439332c45ac7386973182cf48bd1",
+    "file": "open_meteo/patna/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/patna/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.5941,
+      "longitude": 85.1376,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3181f49ed77db77e1a3a07667f7115fa5d1214f8810890a2e71c0bf55bb18091",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:23.646314+00:00",
+    "bytes": 862,
+    "sha256": "16da0c25a7e2ff6d6f20665d7e8e72b6edf018dcf17e358551b7b13b6b57039d",
+    "file": "open_meteo/patna/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/patna/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Pune",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c0f15406e9fe98debca2c9062e7704dad002ae4e0ffc4a7b1d734a119118686f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.063446+00:00",
+    "bytes": 1466,
+    "sha256": "d4ed2cfe977f6acbcd6f9d4aace1b9f6b113ab89dd319f407809d22951fb0766",
+    "file": "open_meteo/pune/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/pune/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bbf6a59eb3fcb4efe606aa2f451f57462e1910e1e6eecf4b3b8cadc8bcb4397a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.259205+00:00",
+    "bytes": 864,
+    "sha256": "2df691d38350d28810aba1a392a4f4cafbb121a577b745c8dbfdd1670c60dddb",
+    "file": "open_meteo/pune/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/pune/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Rajahmundry",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "08f3058395484803894dd80560c9421342dfba2ae3783e10d3e063aadb5c6bd1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.675711+00:00",
+    "bytes": 1411,
+    "sha256": "e668165a3cc61c78d7c53ca848d96f918fdb60937df4438b0dfd8c2a5f78684c",
+    "file": "open_meteo/rajahmundry/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/rajahmundry/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.0005,
+      "longitude": 81.804,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d5de47fa5f2ecdb52b9a905e3d3c2bdf7584903d53f6eff857babe46ce664d0d",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:24.863770+00:00",
+    "bytes": 866,
+    "sha256": "b5ab0b7aa525093215dab967a4d4966db91c88ce02cb00def24239924835e402",
+    "file": "open_meteo/rajahmundry/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/rajahmundry/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Rajkot",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "7a0dffd50fb3ed6d3552a83c8cec88028cf7576fe83667eb11b1436fd26863f1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:25.386545+00:00",
+    "bytes": 1518,
+    "sha256": "6c08767d0088af46f87d3a92345243e49b42314044fc69d0e576a0d06ee804d2",
+    "file": "open_meteo/rajkot/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/rajkot/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.3039,
+      "longitude": 70.8022,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "ddf0ee5cabbaa220676865bbb8d1109e6d72ced0c0df47f50a6805a2cf75996e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:25.593350+00:00",
+    "bytes": 863,
+    "sha256": "80c6c564664d6248044eb4c5cdfdfd638f22e78e3615f47a8a4c6cf6834d656f",
+    "file": "open_meteo/rajkot/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/rajkot/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ranchi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "184b35f1d8219f1e6dfbb9fdc85d823c07b5fc068c5fa3f03e4dedb375070dd4",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:26.100286+00:00",
+    "bytes": 1710,
+    "sha256": "42bbcf44811420ad3a4b385a20d56d93e5fc9e749eebb1dd0881dd4c5f9c73b2",
+    "file": "open_meteo/ranchi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ranchi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.3441,
+      "longitude": 85.3096,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3655e6a3fd7f34b670c66be758eb1a5c3d66c1b53f90f6faf459c79d656299c5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:26.308231+00:00",
+    "bytes": 863,
+    "sha256": "04472767d0c477e4d78d21ac038b9e783bc6553b8c73c18e9714fc70f6a61551",
+    "file": "open_meteo/ranchi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ranchi/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Salem",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "7ff8814971160b57aba6433ee67c1953947e6b655b8b5a688c5f557b7530d8bf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:26.820268+00:00",
+    "bytes": 1912,
+    "sha256": "588a929942789ee672aa8a26e77193029162074f7a0cbbc30b9b9e1ce6a70ee2",
+    "file": "open_meteo/salem/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/salem/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.6643,
+      "longitude": 78.146,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bbdbb2b337f39a619e044c40cacc7323e0d61e86f722b74aae140bde2d065a81",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:27.022731+00:00",
+    "bytes": 872,
+    "sha256": "25d98f4ddce335c7d3b2ba20adc5fdb062294d5bade647ea211866641f21464f",
+    "file": "open_meteo/salem/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/salem/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Sangli",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "d32c8ad87f967c3d88e29f3a7761dbc4b769d518274790afe2530fc39827bf9b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:27.441722+00:00",
+    "bytes": 1571,
+    "sha256": "e6dbd1d62fdbcb73b7f7a60f3fdafd21202b943ad8cfa51660194f4f0a432721",
+    "file": "open_meteo/sangli/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/sangli/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.8524,
+      "longitude": 74.5815,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bea296603e31603ef2694748bd270e610513a32fa5ab68fb6aae3e3549a6bdce",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:27.637646+00:00",
+    "bytes": 869,
+    "sha256": "d21e7734fd3eadeefcd83de55e409ad81ef7ebacc7000ac57b637caad5a5bdd3",
+    "file": "open_meteo/sangli/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/sangli/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Santiniketan",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3f26a571adec9a16d4ad35abb3d7fa5d6a2e307ed2cde61a41563c4fb422515c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:28.151029+00:00",
+    "bytes": 388,
+    "sha256": "0e1ccbaae97c008679a01a0a136669e7687f83804660d960d988b298aaead93d",
+    "file": "open_meteo/santiniketan/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/santiniketan/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.68,
+      "longitude": 87.68,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "58ad5b9b02ff9649b33e98d29c6da57b09c2fc6e81b50ab8134fd91f531c8cbf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:28.356203+00:00",
+    "bytes": 863,
+    "sha256": "8a83aeb80913e279590610c5e4503910fde6d180a4f69dbf5bde0a9fae835051",
+    "file": "open_meteo/santiniketan/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/santiniketan/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Satara",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1a70ccd6f9f608dc79dff6a5808bdeddd1a6b80c237c5d9e5e68b8b09dea351e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:28.874103+00:00",
+    "bytes": 1664,
+    "sha256": "35e1695d5fad998a5c970c2f8dee7358193d356c012e0bb196fd92deffbfd0be",
+    "file": "open_meteo/satara/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/satara/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.6805,
+      "longitude": 73.9997,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "e09c9c545e2791fb757ee8484b2ff2a13d4d2140a0dd8715d8356298c419ec00",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:29.071001+00:00",
+    "bytes": 863,
+    "sha256": "18561dc9de1c0e8d3dfb9d81db88d63c5478f6ae6abc0cfbd2b705594b04b8cf",
+    "file": "open_meteo/satara/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/satara/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Shillong",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3ab8cba577148323303ee41dbab0a7a5a2e2d66f21551442b23c7df306fb65cf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:29.591666+00:00",
+    "bytes": 750,
+    "sha256": "57a82783902c0029cd06c1c82045fd39a23642c6454815df4b33e56e4baf3da2",
+    "file": "open_meteo/shillong/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/shillong/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.5788,
+      "longitude": 91.8933,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d2c76fb7fc9497db50c4c25ded5bc9483349cd9c5f3da2810939a15762b23327",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:29.793354+00:00",
+    "bytes": 861,
+    "sha256": "e7f4a99ff98f36174d59231b2739ad6840bae4791d0e15c61038640f9546c65a",
+    "file": "open_meteo/shillong/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/shillong/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Shimla",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3d95288e2bf6d3394f03fbad4df08fa43e64b8b9bdd68c3cc3add0d6ff5d8211",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:30.299517+00:00",
+    "bytes": 1659,
+    "sha256": "f3a1e6b787998255a9ab3e064c613c0763b9e11b7e41234909eb31441244bf2d",
+    "file": "open_meteo/shimla/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/shimla/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 31.1048,
+      "longitude": 77.1734,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "023448577147cd7b9878bc81c1553928b29c0617c2a441319beab36b3cee6451",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:30.512315+00:00",
+    "bytes": 857,
+    "sha256": "f37edf6f75648d3d5fca516df0989b48d51c0f7ff38caeb702994bc7735e9833",
+    "file": "open_meteo/shimla/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/shimla/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Siliguri",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f08469061c50d6739139084993080b3e31773427d08dfe3e42eb271c9ce3c546",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.019207+00:00",
+    "bytes": 389,
+    "sha256": "0116449f83534d8a8a61e5f70f076d841d1b02e6089b434cf145e02447fa0d97",
+    "file": "open_meteo/siliguri/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/siliguri/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.7271,
+      "longitude": 88.3953,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "450a58c2df70447f6411d041d2487cbbdd04cb9d442adbc90991b7cd3fe52af7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.230594+00:00",
+    "bytes": 863,
+    "sha256": "e3e8ab1bdb635cb8d7bd1552eec71a899cb85dc3825b0dcbc6c186d0996fcf61",
+    "file": "open_meteo/siliguri/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/siliguri/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Solapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "24532b0b6f91737c7a7f6ad10df768e1780a7fd17bc4ffd3b3a27a4c91a85c30",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.648372+00:00",
+    "bytes": 1373,
+    "sha256": "f3b9360c84cddbf872f9a511ce65ab9d7fb33fb975dee3749bac96331246359c",
+    "file": "open_meteo/solapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/solapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.6599,
+      "longitude": 75.9064,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7c49e06994a7e64cb8b61d6ce26e42d62c5d4b6adfa61e2efd92f3933287fbae",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:31.836749+00:00",
+    "bytes": 867,
+    "sha256": "945204a0d7672657468fff20dfb9295f2c98acc9c4572a54aff340e81876bf36",
+    "file": "open_meteo/solapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/solapur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Srinagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6f7b3d0c9586bd9865071b066d6ff2b57bd2711a3c13dc324503de7259d86c23",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:32.347428+00:00",
+    "bytes": 1911,
+    "sha256": "f87e83d87f9617b60000bb858070b969509964b1acdc9fb43006e4fe19e4907b",
+    "file": "open_meteo/srinagar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/srinagar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 34.0837,
+      "longitude": 74.7973,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "93e62aa48c59a2bb127336440d1e00a8ed3821f8aa3cd5f650b0b58cd1c28e93",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:32.553676+00:00",
+    "bytes": 857,
+    "sha256": "b63ce05e93c581b4a3b71aeacd01cdc3c91cdfb0efdaf95b28be76d6c4c3c41b",
+    "file": "open_meteo/srinagar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/srinagar/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Surat",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "87bb355af0e252e61dc88b34d4021d1a646ea02fc29a661f6526094872dcde72",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:32.969564+00:00",
+    "bytes": 1657,
+    "sha256": "7938be03511ac851fdfe541408e3ce3242122982932187ce7169483934ed2477",
+    "file": "open_meteo/surat/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/surat/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 21.1702,
+      "longitude": 72.8311,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bda2bab77e930c5829742ccffbc23a7d1c7ed54d61e52af79bf5b461a84a8520",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:33.168730+00:00",
+    "bytes": 863,
+    "sha256": "a141cba72b14468b977c62963486078e022e5617ac1dfc80030f6f8581948f97",
+    "file": "open_meteo/surat/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/surat/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thane",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3956c67f78d65c469506131785cb74476c21835cf8f631ce14f519d947beef51",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:33.660856+00:00",
+    "bytes": 1711,
+    "sha256": "824742e0b48cc82571656abbe3e4643f6d63423e2747a9623d6a52bca805706a",
+    "file": "open_meteo/thane/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thane/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.2183,
+      "longitude": 72.9781,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "163a33661328571a662efee64e890adcb72c24741ee419842bb22a1268d80abb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:33.864832+00:00",
+    "bytes": 862,
+    "sha256": "23ee82ade56b970dc10852f94400eb3db3b61ea79cd58502096de70b04149548",
+    "file": "open_meteo/thane/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thane/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thanjavur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3d78b8ae94254e4abc3bdc2ecddd3807aec31c59323764f83414a393ca4dce7e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:34.295990+00:00",
+    "bytes": 727,
+    "sha256": "153db8168c9e4ff7585bce27d46bba577529c0d01047e67234abc72facff3de2",
+    "file": "open_meteo/thanjavur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thanjavur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 10.787,
+      "longitude": 79.1378,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "471059955d38c7d709918827ce04982714ca396288f7437092e4d70728a7ae95",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:34.498104+00:00",
+    "bytes": 873,
+    "sha256": "b6023cef4d8f420c014fca3f1a4be24d0e284c271a0c6792cb6a3136157a32af",
+    "file": "open_meteo/thanjavur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thanjavur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thiruvananthapuram",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "854f0a572cf89a7992ee9d0d808326371c3142c3bfdb80a9c12bf39a691b7b03",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:34.918640+00:00",
+    "bytes": 409,
+    "sha256": "43eb8dfa7cf2fd84edd4196764b98779121c8e704e9d4096bdc09b34c560b3a5",
+    "file": "open_meteo/thiruvananthapuram/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thiruvananthapuram/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 8.5241,
+      "longitude": 76.9366,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "82808e98b2b98b82de69dc69357edd567b06276b8148e68b12afa2dba635c6c7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:35.085590+00:00",
+    "bytes": 873,
+    "sha256": "72f8bc52646534bc064ecf5f1946cb3bc4df5f0f357d58c05b6057b2d1bdcbcd",
+    "file": "open_meteo/thiruvananthapuram/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thiruvananthapuram/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thoothukudi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "386b97d1758eab5055adc4f0a52ee4c15f7aced9e5421b640ce326e9e39ef5d3",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:35.522342+00:00",
+    "bytes": 390,
+    "sha256": "34dba46488864431ac860f3a3baa4a9a8ae5d85843ad2d7894d0b3d39a9f6944",
+    "file": "open_meteo/thoothukudi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thoothukudi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 8.7642,
+      "longitude": 78.1348,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3dc999e0d9c8af0a72ae02f870a42cd5dbb35852018407c52f2bb4f4738701e2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:35.688285+00:00",
+    "bytes": 870,
+    "sha256": "2271eb9dd5b7610588d37ed7df9dc69e0ef630a6e9a4d62a2274cacc812043a3",
+    "file": "open_meteo/thoothukudi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thoothukudi/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tiruchirappalli",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "9330a82b699420df0fc6e7596b7151e30479911108397180994df3464bf8abeb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.100025+00:00",
+    "bytes": 782,
+    "sha256": "762d29643a35afe0b640130eae1644af29b11d3601402197a1af4f2ff520f3b6",
+    "file": "open_meteo/tiruchirappalli/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tiruchirappalli/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 10.7905,
+      "longitude": 78.7047,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7cb406a971b12efac271eac5aecffbf15ee9e3d3216302eb5f8830a14aa413dc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.268822+00:00",
+    "bytes": 872,
+    "sha256": "89f7149d0e36ca087ff79af6a5a135d85b62d0b4a645e1d40237caa0341e5031",
+    "file": "open_meteo/tiruchirappalli/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tiruchirappalli/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tirunelveli",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "a6500d4066249b57d3bcd26eaa883ba3df16b695ae41133857baf6d092f1e411",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.681458+00:00",
+    "bytes": 801,
+    "sha256": "b021bd5fb51d2502a3fff0d684c10421be1b3034ea2db0b17acfa4451195fc91",
+    "file": "open_meteo/tirunelveli/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tirunelveli/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 8.7139,
+      "longitude": 77.7567,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "844adb895037a01629e69ae89fc13b02b45b997d0520d19e817e6151f7700eb1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.848257+00:00",
+    "bytes": 873,
+    "sha256": "ec515388c150fa4583601b3331caf5a1bba575745f8b5620c375f1bb1a283d23",
+    "file": "open_meteo/tirunelveli/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tirunelveli/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tirupati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f44c84ffc3cdaabaa12adac3c741f20bdc139cfaa4807e04418e9889ee115e07",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:37.260441+00:00",
+    "bytes": 1698,
+    "sha256": "5edf94c94f5de334b08dcc85db3b329b491472d442007f65628d46c462268ad4",
+    "file": "open_meteo/tirupati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tirupati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 13.6288,
+      "longitude": 79.4192,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3df6e404ac0fb9b531982ddb916cf1d07f9870904e4f0e252dc8d3d35357f301",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:37.424330+00:00",
+    "bytes": 871,
+    "sha256": "e5ea3558cc52401d3ef0739c3368ec35fabb19ff645322cc4be4b382a6ac2a37",
+    "file": "open_meteo/tirupati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tirupati/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tiruppur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "bd0fabca4d6fcf6aef57ed04b7f8e43b83fa020d0f92896237d360d3a6347141",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:37.838251+00:00",
+    "bytes": 1364,
+    "sha256": "6e4f7a152605e2be1ad4227a8b754b1aeede1a5cfeaec3dce8b4ea736068774c",
+    "file": "open_meteo/tiruppur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tiruppur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.1085,
+      "longitude": 77.3411,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "b68055b8eb0b4680d0e682fa199bed7ab15cd5d3b2421f3676c5b3c2e3a628fc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:38.091090+00:00",
+    "bytes": 874,
+    "sha256": "abe3ae18a494e265ac56a2093528ca5a9a043644d4e6abc8e145723848c03630",
+    "file": "open_meteo/tiruppur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tiruppur/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Vadodara",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c56d2b4e5dd5427119a4b83cba960b50e59aacd5475fe72511b2fbb6e11050fa",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:38.507955+00:00",
+    "bytes": 721,
+    "sha256": "04fef07b7b0668cb0dc01a64559a02b109212448f90e8e596b9ba93d08e57008",
+    "file": "open_meteo/vadodara/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/vadodara/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.3072,
+      "longitude": 73.1812,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "70a4f18e423167e5c49b736a950c98c88ed9f0a48134a6a1afbf05b98ad484b0",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:38.698605+00:00",
+    "bytes": 863,
+    "sha256": "5cd6e6f7cfb397252a1797f2726bcdced003670533d06c647fe59acf41b41d39",
+    "file": "open_meteo/vadodara/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/vadodara/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Varanasi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "03232584eca217d5fe714845532de4f1374fb3c1865aac3c74b25ecf788a8677",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:39.213517+00:00",
+    "bytes": 1721,
+    "sha256": "baa3d0cd686630f01e5da58e5c38c1871629b17341327b925b81f330dfef7241",
+    "file": "open_meteo/varanasi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/varanasi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.3176,
+      "longitude": 82.9739,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "891ce8a041a5755868ebb7d307ab9a87dcaf37de7362fc6bffc2fb6f8db0551b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:39.418403+00:00",
+    "bytes": 860,
+    "sha256": "94211b2b3a6f1953e5dbf9a7dd4f638b075ae118b92edd35184bd20c337c50b7",
+    "file": "open_meteo/varanasi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/varanasi/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Vellore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "0e4931feef731255f3cbd47472fcc8bf435a05f5b7d413a20db9a59bb746fb7a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:39.838351+00:00",
+    "bytes": 1187,
+    "sha256": "4ed6c3d0f0f3f2c636b7eeb59047f04aa9ba58caccddfc09391b99862a3d06ed",
+    "file": "open_meteo/vellore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/vellore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 12.9165,
+      "longitude": 79.1325,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "9389000108a252816609a7b70a12227ac20070e75aed1685984a996f0d9fb3fe",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:40.027296+00:00",
+    "bytes": 871,
+    "sha256": "a129480bfa59eb2116f26f9224daccdd92e243a7b56c5c2a06e61a8135b3bd86",
+    "file": "open_meteo/vellore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/vellore/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Vijayawada",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2166a22d9027fde365e14969545cf5931c3ef1c9af7b247b13794ee9ce037905",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:40.540630+00:00",
+    "bytes": 1402,
+    "sha256": "9b99ef74861a15252ce7c60c8a9a2a79d8aca88022c89fef7f4242c965beb0bf",
+    "file": "open_meteo/vijayawada/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/vijayawada/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.5062,
+      "longitude": 80.648,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bbb54c729c4461304cdbc7f0cf7f583f3759b06709fc298e4992492d1f499a99",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:40.708408+00:00",
+    "bytes": 865,
+    "sha256": "708251ad70b418ab8168d9532f6f5dcb9b3d442f7e741c44251f849e71a59aba",
+    "file": "open_meteo/vijayawada/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/vijayawada/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Visakhapatnam",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2b579af970dc58a529d90767d787d7de084bcf370e7aaf2d14b6fe4954b3fed2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.155888+00:00",
+    "bytes": 743,
+    "sha256": "5eb537d8cf62e8fe107508cec59a1a4839f90d0fda7ba769ffb9ece88bac4224",
+    "file": "open_meteo/visakhapatnam/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/visakhapatnam/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.6868,
+      "longitude": 83.2185,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "c88c6d7b7ea0663495a7586d291aadb3ad867d04134d853e81bcabcb357797e6",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.359486+00:00",
+    "bytes": 866,
+    "sha256": "f01e3d74bf06a3712c43ef3d5092e87000853d6813108d676b0e994a5dec4fa8",
+    "file": "open_meteo/visakhapatnam/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/visakhapatnam/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Warangal",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "89b199993f389ac079682d8e6d0aade6bb84ba488237cb4757ef865f790118b7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.781925+00:00",
+    "bytes": 749,
+    "sha256": "58ff74e1a70a760935b19b698743e7a997c22b12ac4f02b0ae362ce3b51d97a5",
+    "file": "open_meteo/warangal/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/warangal/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.9689,
+      "longitude": 79.5941,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "ab01b199f5151b8c91f8b484c0666cee40576ef01a1a7ad9672dc2d25ee484a2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.951083+00:00",
+    "bytes": 867,
+    "sha256": "521b5a53a70dd4631987f1f6ab146316ab472f737186becc5ba537bab1565ac9",
+    "file": "open_meteo/warangal/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/warangal/20261124T210746Z_forecast.json"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchAllAlertDetails",
+    "parameters": {},
+    "request_hash": "3b29c0fe2285181df08e04c6f963e89871509b6393a57909b46ed9f34b533c69",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.216901+00:00",
+    "bytes": 3708,
+    "sha256": "04efc7a6ec91bcc08a8654ab52d0e75aef3641318d0043347f9c895f962ebc28",
+    "file": "sachet/20261124T211819Z_alerts.json",
+    "path": "eval/recordings/sachet/20261124T211819Z_alerts.json"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795509478054018",
+    "parameters": {
+      "identifier": "1795509478054018"
+    },
+    "request_hash": "aaf26d5599cc72fee3a00bb22b8222c5be49480b9de575a5725c18a017f200f1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.376262+00:00",
+    "bytes": 1455,
+    "sha256": "1638a26abf8375aa3dd41bdd8082ff4a92f4eb15252e6a54e42867535ed64b58",
+    "file": "sachet/20261124T211819Z_1795509478054018.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795509478054018.xml"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795084881556013",
+    "parameters": {
+      "identifier": "1795084881556013"
+    },
+    "request_hash": "7c0ae2013b37697a8863d992214a53bc72b256d468f11c4fd42a42245d689b35",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.453388+00:00",
+    "bytes": 2466,
+    "sha256": "95d5ac446ebb8014eb8994853a84b61d4008ffff854d666db30762f7e009e544",
+    "file": "sachet/20261124T211819Z_1795084881556013.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795084881556013.xml"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795084881697020",
+    "parameters": {
+      "identifier": "1795084881697020"
+    },
+    "request_hash": "d6fd209c74f13504d5796bb15da4bf22d01a32a4d564e70c8a196c777608b76a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.527748+00:00",
+    "bytes": 1281,
+    "sha256": "6ffccbd35c878e93c87765783ee24200e155caf0fcf6d47a43a2a114def38b7c",
+    "file": "sachet/20261124T211819Z_1795084881697020.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795084881697020.xml"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795084881627021",
+    "parameters": {
+      "identifier": "1795084881627021"
+    },
+    "request_hash": "2ecd0f054b1f5897abc38b5812d7ac79e179bae66a396a4e46e9fc7f28133243",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.605507+00:00",
+    "bytes": 2469,
+    "sha256": "6aeec004b5311273e0c117c0f5f8b0497e729210acaed57f93ac2c174f86d207",
+    "file": "sachet/20261124T211819Z_1795084881627021.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795084881627021.xml"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Dhule",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "0980a2203c0c72713b99f2f6a168689b7a58423972a8d554009b78c07afa2e2f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:21.465769+00:00",
+    "bytes": 1657,
+    "sha256": "6c7ed0540c90525d16a1d76495bb6f008a9ebd02dcbb6ae636d442cdde97556f",
+    "file": "open_meteo/dhule/20261124T211819Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/dhule/20261124T211819Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.9042,
+      "longitude": 74.7749,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5c909ee8cf509f570aa5f146984025993c0f389012a1732a0d2f5e954f3bae50",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:22.135330+00:00",
+    "bytes": 864,
+    "sha256": "f0087ca5ec6796fb0f0fa509ee26ac3b1c7ec3876222a27767040d9a6bd3c0fc",
+    "file": "open_meteo/dhule/20261124T211819Z_forecast.json",
+    "path": "eval/recordings/open_meteo/dhule/20261124T211819Z_forecast.json"
+  },
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ahilyanagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2c0474df6fef380f286dc00d3d90655f50e32407ef78b2340a31e1ab4d6c9c5b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:22.533958+00:00",
+    "bytes": 388,
+    "sha256": "3e09ffce4f6b355aa2e38796dff127bcef6be7f58f14c4ff9dd309be99058b4d",
+    "file": "open_meteo/ahmednagar/20261124T211819Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ahmednagar/20261124T211819Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.0948,
+      "longitude": 74.748,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "395236c15af034192016dae96d98d6883149a00cd2f914f08a48ee5469f19622",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:22.712104+00:00",
+    "bytes": 864,
+    "sha256": "b50c8be499579bcd5d30f73be490aa9881c3eaa7b54c0ee7d812f41932bd69fd",
+    "file": "open_meteo/ahmednagar/20261124T211819Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ahmednagar/20261124T211819Z_forecast.json"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795554530117008",
+    "parameters": {
+      "identifier": "1795554530117008"
+    },
+    "request_hash": "c90d09a67699e5e55d5ae9f568553cced735719cb19f9ce6bc1199f4771ef092",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.298225+00:00",
+    "bytes": 2755,
+    "sha256": "216f417bc3d17397a237aad4a05726799bb5c44f396e67d55547b6aa272936d5",
+    "file": "sachet/20261124T211819Z_1795554530117008.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795554530117008.xml"
+  }
+]

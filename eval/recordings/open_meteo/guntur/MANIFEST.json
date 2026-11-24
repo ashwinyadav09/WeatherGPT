@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Guntur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c953414fdda0b099301a55e5e5c39916d73363ff19c66db912214572c3a40d67",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.049735+00:00",
+    "bytes": 1612,
+    "sha256": "4199f4559ac8639329d11d1d3b85ce35548bf0978f732ab3ab719724931743ae",
+    "file": "open_meteo/guntur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/guntur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.3067,
+      "longitude": 80.4365,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "1e6ad8e01ad47f822ec308b5a512f6bee6e3de5a1cc35bf4e867bfd657a47e5b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.216255+00:00",
+    "bytes": 865,
+    "sha256": "310cf7c83911b42d33817bd6730f8d3244470bd67adfc127439c1bfd6f7ad5c8",
+    "file": "open_meteo/guntur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/guntur/20261124T210746Z_forecast.json"
+  }
+]

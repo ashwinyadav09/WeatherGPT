@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Chennai",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "d7361fa00586130af2019a970a08d1a6624dc96cb64eac13cee31bf5769a9de9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:56.875443+00:00",
+    "bytes": 1040,
+    "sha256": "d532012665219ea02e86fe8f6ec139e002a228fd20cb4d3cf5ba91b1f717c707",
+    "file": "open_meteo/chennai/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/chennai/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 13.0827,
+      "longitude": 80.2707,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "aea833fd4cfb0cd2cbd5c8725e5cc7b07b276ef4e9431d71c7c268e87d4fab5c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:57.117930+00:00",
+    "bytes": 872,
+    "sha256": "f4597068cc6a7b8fade95ee5c0e38ecd3213fb40d5b73f51f03393bbc983efd3",
+    "file": "open_meteo/chennai/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/chennai/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Jaipur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "089886bca141a83e9a2e8de17430075068b808e1940e7db0ebfb10070b0aed5e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:06.037085+00:00",
+    "bytes": 1915,
+    "sha256": "a32205cc69debc366f50931b6bfed9cf32a42b29c2960efc94361211f6ee900d",
+    "file": "open_meteo/jaipur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/jaipur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.9124,
+      "longitude": 75.7873,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "a976f9397558a55d63f27cef9b9c0b331cd73e4fa788c9f5a171e3e230a2186f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:06.205096+00:00",
+    "bytes": 859,
+    "sha256": "5d1a87e5b331a700195476d89ce9d22de36314799e7ea215c980e767e9d8ad93",
+    "file": "open_meteo/jaipur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/jaipur/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Howrah",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "214ae48c61b0d5b8e4fca39225150eff2c48373049af46b0d3304ffdb6b88ef9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:04.222879+00:00",
+    "bytes": 1005,
+    "sha256": "e275ab41476defce3937c19080684de81254b1856c112a70b87f7dc2b8bdf61f",
+    "file": "open_meteo/howrah/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/howrah/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.5958,
+      "longitude": 88.2636,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "268b680efcdfa4b215ef51a3cb5aff9f38e8c5d24d370c5bb89206f975803e32",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:04.396928+00:00",
+    "bytes": 861,
+    "sha256": "f01019fd3369376adef73b4f36f5db50b7cc335d861e8395ff837238f060c044",
+    "file": "open_meteo/howrah/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/howrah/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchAllAlertDetails",
+    "parameters": {},
+    "request_hash": "3b29c0fe2285181df08e04c6f963e89871509b6393a57909b46ed9f34b533c69",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.216901+00:00",
+    "bytes": 3708,
+    "sha256": "04efc7a6ec91bcc08a8654ab52d0e75aef3641318d0043347f9c895f962ebc28",
+    "file": "sachet/20261124T211819Z_alerts.json",
+    "path": "eval/recordings/sachet/20261124T211819Z_alerts.json"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795554530117008",
+    "parameters": {
+      "identifier": "1795554530117008"
+    },
+    "request_hash": "c90d09a67699e5e55d5ae9f568553cced735719cb19f9ce6bc1199f4771ef092",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.298225+00:00",
+    "bytes": 2755,
+    "sha256": "216f417bc3d17397a237aad4a05726799bb5c44f396e67d55547b6aa272936d5",
+    "file": "sachet/20261124T211819Z_1795554530117008.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795554530117008.xml"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795509478054018",
+    "parameters": {
+      "identifier": "1795509478054018"
+    },
+    "request_hash": "aaf26d5599cc72fee3a00bb22b8222c5be49480b9de575a5725c18a017f200f1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.376262+00:00",
+    "bytes": 1455,
+    "sha256": "1638a26abf8375aa3dd41bdd8082ff4a92f4eb15252e6a54e42867535ed64b58",
+    "file": "sachet/20261124T211819Z_1795509478054018.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795509478054018.xml"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795084881556013",
+    "parameters": {
+      "identifier": "1795084881556013"
+    },
+    "request_hash": "7c0ae2013b37697a8863d992214a53bc72b256d468f11c4fd42a42245d689b35",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.453388+00:00",
+    "bytes": 2466,
+    "sha256": "95d5ac446ebb8014eb8994853a84b61d4008ffff854d666db30762f7e009e544",
+    "file": "sachet/20261124T211819Z_1795084881556013.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795084881556013.xml"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795084881697020",
+    "parameters": {
+      "identifier": "1795084881697020"
+    },
+    "request_hash": "d6fd209c74f13504d5796bb15da4bf22d01a32a4d564e70c8a196c777608b76a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.527748+00:00",
+    "bytes": 1281,
+    "sha256": "6ffccbd35c878e93c87765783ee24200e155caf0fcf6d47a43a2a114def38b7c",
+    "file": "sachet/20261124T211819Z_1795084881697020.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795084881697020.xml"
+  },
+  {
+    "url": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1795084881627021",
+    "parameters": {
+      "identifier": "1795084881627021"
+    },
+    "request_hash": "2ecd0f054b1f5897abc38b5812d7ac79e179bae66a396a4e46e9fc7f28133243",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:23.605507+00:00",
+    "bytes": 2469,
+    "sha256": "6aeec004b5311273e0c117c0f5f8b0497e729210acaed57f93ac2c174f86d207",
+    "file": "sachet/20261124T211819Z_1795084881627021.xml",
+    "path": "eval/recordings/sachet/20261124T211819Z_1795084881627021.xml"
+  }
+]

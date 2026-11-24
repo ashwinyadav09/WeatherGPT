@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Delhi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "9722a72c299e65680c5c247e0a140233f58c4670ba1061bdc62c6e78f0991dd8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.667388+00:00",
+    "bytes": 1731,
+    "sha256": "f803cd55436e2f616b3bc047f0ee128876bbdeed2d3ccc32b3c2b5b33d2dd6f4",
+    "file": "open_meteo/delhi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/delhi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f4fc1f24f0ad567f9909759b1371d6e281a60031119fb28ed18b07a4c1fdd3c3",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.883273+00:00",
+    "bytes": 864,
+    "sha256": "8d8f478f81f1156036790d2be9ad6f8cf6d6c5560f88d732e1c26cbb4bc84738",
+    "file": "open_meteo/delhi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/delhi/20261124T210746Z_forecast.json"
+  }
+]

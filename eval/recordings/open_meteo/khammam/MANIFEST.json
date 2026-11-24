@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Khammam",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6178b5cb233d291890acef59cd3454a70a05e546a12d1cebc95f37233cb6e285",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:10.299083+00:00",
+    "bytes": 1060,
+    "sha256": "97b47a1bb54ac44a2485c0c0f5197a0ad731e7000ac41d49a1c1f197e395507c",
+    "file": "open_meteo/khammam/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/khammam/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.2473,
+      "longitude": 80.1514,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "8098fb5e1832feeae3db83f279f6b6ad99f33ab28f438d01920b6193e758b661",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:10.464599+00:00",
+    "bytes": 867,
+    "sha256": "c68240192636e4dd88159598cc28a6e3ead7de764e67310bd6c5297b8572c302",
+    "file": "open_meteo/khammam/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/khammam/20261124T210746Z_forecast.json"
+  }
+]

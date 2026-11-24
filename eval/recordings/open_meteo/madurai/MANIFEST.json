@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Madurai",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "dc96d10340ec05395ba08dbff82ebf1bf1081f8e0d82a39fc4558f28ecb92d61",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:15.960708+00:00",
+    "bytes": 1747,
+    "sha256": "dda118cd0588570617ed75a1516b899aeb5529974cb5d7108b9aaf7cc25ea648",
+    "file": "open_meteo/madurai/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/madurai/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 9.9252,
+      "longitude": 78.1198,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "65c771b1024123d566a8826d6a31f33908696cdc1dbbae752dd092b547114148",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:16.170763+00:00",
+    "bytes": 872,
+    "sha256": "22e12b1331024a980ec71a42bad5793c96b17039d20660f17d3803e1bb380c2f",
+    "file": "open_meteo/madurai/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/madurai/20261124T210746Z_forecast.json"
+  }
+]

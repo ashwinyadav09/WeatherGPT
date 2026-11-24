@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Rajkot",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "7a0dffd50fb3ed6d3552a83c8cec88028cf7576fe83667eb11b1436fd26863f1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:25.386545+00:00",
+    "bytes": 1518,
+    "sha256": "6c08767d0088af46f87d3a92345243e49b42314044fc69d0e576a0d06ee804d2",
+    "file": "open_meteo/rajkot/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/rajkot/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.3039,
+      "longitude": 70.8022,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "ddf0ee5cabbaa220676865bbb8d1109e6d72ced0c0df47f50a6805a2cf75996e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:25.593350+00:00",
+    "bytes": 863,
+    "sha256": "80c6c564664d6248044eb4c5cdfdfd638f22e78e3615f47a8a4c6cf6834d656f",
+    "file": "open_meteo/rajkot/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/rajkot/20261124T210746Z_forecast.json"
+  }
+]

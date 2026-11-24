@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Murshidabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "7a29e44a9f957d683f843068af98913eefd5bdc12d8f0446cc9e7a84e961f732",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:18.628453+00:00",
+    "bytes": 1659,
+    "sha256": "eb875ee7dfd565b2be6d8d88daa2c916e77102dd61f9a3aec132041492526cde",
+    "file": "open_meteo/murshidabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/murshidabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 24.175,
+      "longitude": 88.28,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5c8efa30caaf15df27259b19de28809c6fb4071328a38537989efe54a3cef921",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:19.758248+00:00",
+    "bytes": 861,
+    "sha256": "60b441b94b40ba3e034f66cb4342e712c8c798ede864d904707f1f59757f90aa",
+    "file": "open_meteo/murshidabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/murshidabad/20261124T210746Z_forecast.json"
+  }
+]

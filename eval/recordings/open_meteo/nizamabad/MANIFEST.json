@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nizamabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f2b9e2fd1a40af89a9549be1c82497d3d35a4864f46d18170e134799745280dc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:22.825694+00:00",
+    "bytes": 1747,
+    "sha256": "c17d8343bf67ab0306af4eb4392c77c3d5a824da5debf1836679f068db1cd93f",
+    "file": "open_meteo/nizamabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nizamabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.6725,
+      "longitude": 78.0941,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d68353e5e6977306466f8cda6f733eceea0732bb316b310ca5496c9a25e7921e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:23.029674+00:00",
+    "bytes": 865,
+    "sha256": "8943da4c9e81a123870ba02d6f8c5421004dbcb3d3708d73e90189559a95e45b",
+    "file": "open_meteo/nizamabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nizamabad/20261124T210746Z_forecast.json"
+  }
+]
