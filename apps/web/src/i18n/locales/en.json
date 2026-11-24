@@ -33,5 +33,6 @@
   "install": "Add to home screen",
   "status": "Status",
   "non_commercial": "A non-commercial public-interest project",
-  "admin": "Admin"
+  "admin": "Admin",
+  "ml_lab": "ML Lab"
 }

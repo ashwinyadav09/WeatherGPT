@@ -81,3 +81,76 @@ def test_dpdp_privacy_consent_and_delete_data():
     assert del_data["deleted"] is True
     assert "audit_reference" in del_data
     assert del_data["session_id"] == "test_session_123"
+
+
+def test_tier1_locales_and_indic_fonts():
+    """Verify all seven Tier-1 locales exist with required UI keys and Indic fonts configured (Ticket R17)."""
+    locales_dir = WEB_ROOT / "src" / "i18n" / "locales"
+    tier1_codes = ["en", "hi", "bn", "mr", "te", "ta", "or"]
+
+    required_keys = ["app_name", "ask", "ml_lab", "why_this_answer", "source", "official_alert"]
+
+    for code in tier1_codes:
+        locale_path = locales_dir / f"{code}.json"
+        assert locale_path.exists(), f"Locale file {locale_path} missing"
+        data = json.loads(locale_path.read_text(encoding="utf-8"))
+        assert isinstance(data, dict), f"Locale {code} is not a valid dict"
+        for k in required_keys:
+            assert k in data, f"Required key '{k}' missing from locale {code}"
+            assert data[k] != "", f"Key '{k}' in {code} is empty"
+
+    # Verify LanguageContext contains all 7 languages
+    lang_ctx_path = WEB_ROOT / "src" / "i18n" / "LanguageContext.tsx"
+    lang_ctx = lang_ctx_path.read_text(encoding="utf-8")
+    for code in tier1_codes:
+        assert f"code: '{code}'" in lang_ctx, f"Code '{code}' not registered in LANGUAGES in LanguageContext"
+
+    # Verify Indic fonts in index.html and index.css
+    index_html = (WEB_ROOT / "index.html").read_text(encoding="utf-8")
+    assert "Noto+Sans+Bengali" in index_html
+    assert "Noto+Sans+Devanagari" in index_html
+    assert "Noto+Sans+Telugu" in index_html
+    assert "Noto+Sans+Tamil" in index_html
+    assert "Noto+Sans+Oriya" in index_html
+
+    index_css = (WEB_ROOT / "src" / "index.css").read_text(encoding="utf-8")
+    assert "Noto Sans Bengali" in index_css
+    assert "Noto Sans Devanagari" in index_css
+    assert "Noto Sans Telugu" in index_css
+    assert "Noto Sans Tamil" in index_css
+    assert "Noto Sans Oriya" in index_css
+
+
+def test_ml_lab_and_trace_panel_integration():
+    """Verify ML Lab feature, TracePanel, and AnswerCard integration in web app (Ticket R17)."""
+    # 1. Feature definition
+    ml_lab_feature_path = WEB_ROOT / "src" / "features" / "ml-lab" / "feature.ts"
+    assert ml_lab_feature_path.exists(), "ml-lab/feature.ts missing"
+    feat_text = ml_lab_feature_path.read_text(encoding="utf-8")
+    assert "id: 'mllab'" in feat_text or 'id: "mllab"' in feat_text
+    assert "/ml-lab" in feat_text
+
+    # 2. MLLabPage component
+    ml_lab_page_path = WEB_ROOT / "src" / "features" / "ml-lab" / "MLLabPage.tsx"
+    assert ml_lab_page_path.exists(), "ml-lab/MLLabPage.tsx missing"
+    page_text = ml_lab_page_path.read_text(encoding="utf-8")
+    assert "/v1/ml/models" in page_text
+    assert "/v1/ml/eval/summary" in page_text
+    assert "/v1/ml/predict/" in page_text
+    assert "NOT MEASURED" in page_text
+
+    # 3. TracePanel component
+    trace_panel_path = WEB_ROOT / "src" / "features" / "ask" / "TracePanel.tsx"
+    assert trace_panel_path.exists(), "ask/TracePanel.tsx missing"
+    panel_text = trace_panel_path.read_text(encoding="utf-8")
+    assert "TracePanel" in panel_text
+    assert "p10" in panel_text and "p90" in panel_text
+    assert "SHAP" in panel_text
+    assert "Grounding Verifier" in panel_text or "verifier" in panel_text
+
+    # 4. AnswerCard embedding
+    answer_card_path = WEB_ROOT / "src" / "features" / "ask" / "AnswerCard.tsx"
+    card_text = answer_card_path.read_text(encoding="utf-8")
+    assert "TracePanel" in card_text
+    assert "traceData" in card_text
+

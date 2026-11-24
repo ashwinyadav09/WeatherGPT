@@ -12,7 +12,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
     <div
       role="radiogroup"
       aria-label="Language selection"
-      className={`inline-flex items-center rounded-lg bg-slate-200 dark:bg-slate-800 p-1 ${className}`}
+      className={`inline-flex flex-wrap items-center gap-1 rounded-lg bg-slate-200 dark:bg-slate-800 p-1 ${className}`}
     >
       {(Object.keys(LANGUAGES) as SupportedLanguage[]).map((code) => {
         const info = LANGUAGES[code];

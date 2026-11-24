@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ShareModal } from '../share/ShareModal';
+import { TracePanel, TraceEventData } from './TracePanel';
+
+export type { TraceEventData };
 
 export interface EvidencePacket {
   id: string;
@@ -47,12 +50,13 @@ export interface AnswerCardData {
   needsConfirmation?: boolean;
   guidanceCards?: GuidanceCard[];
   evidencePackets?: EvidencePacket[];
+  traceData?: TraceEventData;
   timestamp: string;
 }
 
 interface AnswerCardProps {
   data: AnswerCardData;
-  language?: 'en' | 'hi';
+  language?: string;
   onActionClick?: (actionText: string) => void;
 }
 
@@ -355,38 +359,20 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({
         <button
           onClick={() => setShowEvidence(!showEvidence)}
           type="button"
+          aria-expanded={showEvidence}
           className="inline-flex items-center gap-1.5 px-3 py-2 text-sm font-medium rounded-lg text-blue-700 bg-blue-50 hover:bg-blue-100 min-h-[44px] ml-auto"
         >
-          Why this answer?
+          {language === 'hi' ? 'यह जवाब क्यों? (ट्रेस)' : 'Why this answer? (Trace)'}
         </button>
       </div>
 
-      {/* Expandable Evidence Packet Viewer */}
+      {/* Expandable Trace & Grounding Panel */}
       {showEvidence && (
-        <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-2">
-          <h4 className="font-semibold text-slate-700">Underlying Evidence Packets</h4>
-          {data.evidencePackets && data.evidencePackets.length > 0 ? (
-            data.evidencePackets.map((ep) => (
-              <div key={ep.id} className="bg-white p-2.5 rounded border border-slate-200">
-                <div className="flex justify-between font-medium text-slate-800">
-                  <span>Source: {ep.source} (Tier {ep.authority_tier})</span>
-                  <span>Provenance: {ep.provenance}</span>
-                </div>
-                <div className="text-slate-600 mt-1">
-                  Place: {ep.place.name} ({ep.place.lat.toFixed(2)}, {ep.place.lon.toFixed(2)})
-                </div>
-                <div className="text-slate-600 mt-1">
-                  Values: {ep.values.map((v) => `${v.variable}: ${v.value} ${v.unit}`).join(', ')}
-                </div>
-                <div className="text-slate-400 mt-1 text-[11px]">
-                  Attribution: {ep.attribution}
-                </div>
-              </div>
-            ))
-          ) : (
-            <p className="text-slate-500 italic">No raw evidence packets attached.</p>
-          )}
-        </div>
+        <TracePanel
+          trace={data.traceData}
+          evidencePackets={data.evidencePackets}
+          language={language}
+        />
       )}
 
       {/* Share Modal Dialog with Link & Image Card */}

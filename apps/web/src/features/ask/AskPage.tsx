@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MicButton } from '../../components/MicButton';
 import { BrowserAudioRecorder } from '../../utils/audioRecorder';
-import { AnswerCard, AnswerCardData, EvidencePacket } from './AnswerCard';
+import { AnswerCard, AnswerCardData, EvidencePacket, TraceEventData } from './AnswerCard';
 
 export const AskPage: React.FC = () => {
   const [question, setQuestion] = useState('');
@@ -112,6 +112,7 @@ export const AskPage: React.FC = () => {
       let actions: string[] | undefined;
       let needsConfirmation = false;
       let guidanceCards: any[] | undefined;
+      let traceData: TraceEventData | undefined;
 
       while (true) {
         const { value, done } = await reader.read();
@@ -133,6 +134,8 @@ export const AskPage: React.FC = () => {
                 accumulatedText += data.text;
               } else if (currentEvent === 'evidence') {
                 gatheredPackets.push(data);
+              } else if (currentEvent === 'trace') {
+                traceData = data;
               } else if (currentEvent === 'card') {
                 headline = data.headline;
                 keyValues = data.key_values;
@@ -158,6 +161,7 @@ export const AskPage: React.FC = () => {
                         needsConfirmation: needsConfirmation ?? c.needsConfirmation,
                         guidanceCards: guidanceCards || c.guidanceCards,
                         evidencePackets: gatheredPackets,
+                        traceData: traceData || c.traceData,
                       }
                     : c
                 )

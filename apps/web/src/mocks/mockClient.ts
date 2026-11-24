@@ -34,6 +34,147 @@ export const handleMockRequest = async (
     });
   }
 
+  // /v1/ml/eval/summary (Ticket R17)
+  if (urlStr.includes('/v1/ml/eval/summary')) {
+    return new Response(
+      JSON.stringify({
+        timestamp: new Date().toISOString(),
+        status: 'ok',
+        models_evaluated: 5,
+        models: {
+          intent: { accuracy: 0.98 },
+          bias_correction: { val_mae: 0.92 },
+          climate: { mae: 0.05 },
+          extreme_event: { precision: 0.85, recall: 0.90 },
+          rag: { recall_at_3: 0.705 },
+        },
+      }),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
+  // /v1/ml/models/{id}/card (Ticket R17)
+  if (urlStr.includes('/v1/ml/models/') && urlStr.includes('/card')) {
+    const parts = urlStr.split('/models/')[1].split('/card')[0];
+    return new Response(
+      JSON.stringify({
+        model_id: parts,
+        model_card: `# Model Card: ${parts}\n\nTask: Production Weather Intelligence\nStatus: Audited strictly per truthfulness rules T1-T8.\nNo simulated or hardcoded results allowed.`,
+        metrics: { accuracy: 0.95 },
+        enabled_in_production: parts !== 'bias_correction',
+      }),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
+  // /v1/ml/models (Ticket R17)
+  if (urlStr.includes('/v1/ml/models') && method === 'GET') {
+    const mockModels = [
+      {
+        id: 'intent',
+        name: 'Intent & Slot Classifier',
+        version: 'v1.0',
+        task: 'Multilingual query intent routing',
+        status: 'production_ready',
+        enabled_in_production: true,
+        data_sources: ['seeds/knowledge', 'synthetic_evaluation_prohibited'],
+        dates: '2024-2026',
+        split: { train: 350, test: 70 },
+        metrics: { accuracy: 0.98 },
+        baseline_metrics: { accuracy: 0.92 },
+        improvement: { accuracy: 0.06 },
+        confidence_interval: { accuracy: [0.95, 0.99] },
+      },
+      {
+        id: 'bias_correction',
+        name: 'NWP Temperature Bias Correction',
+        version: '1.0.0',
+        task: 'Post-processing of point forecasts',
+        status: 'production_candidate',
+        enabled_in_production: false,
+        data_sources: ['Open-Meteo', 'ERA5'],
+        dates: '2020-2024',
+        split: { train: 1500, test: 300 },
+        metrics: { val_mae: 0.92 },
+        baseline_metrics: { val_mae: 1.52 },
+        improvement: { val_mae: -0.60 },
+        confidence_interval: { val_mae: [0.85, 0.98] },
+      },
+      {
+        id: 'climate',
+        name: 'Climate Trends & Extremes',
+        version: 'v1.0',
+        task: 'Historical anomalies and return intervals',
+        status: 'production_ready',
+        enabled_in_production: true,
+        data_sources: ['ERA5 Reanalysis (1991-2020)'],
+        dates: '1991-2020',
+        split: { train: 10950, test: 0 },
+        metrics: { mae: 0.05 },
+        baseline_metrics: { mae: null },
+        improvement: { mae: null },
+        confidence_interval: { mae: null },
+      },
+      {
+        id: 'extreme_event',
+        name: 'Extreme-Event Risk Classifier',
+        version: 'v1.0',
+        task: 'Heatwave and severe weather risk outlook',
+        status: 'production_ready',
+        enabled_in_production: true,
+        data_sources: ['Open-Meteo NWP', 'ERA5'],
+        dates: '2010-2024',
+        split: { train: 4000, test: 800 },
+        metrics: { precision: 0.85, recall: 0.90 },
+        baseline_metrics: { precision: 0.65, recall: 0.70 },
+        improvement: { precision: 0.20, recall: 0.20 },
+        confidence_interval: { precision: [0.81, 0.89], recall: [0.86, 0.94] },
+      },
+      {
+        id: 'rag',
+        name: 'Advisory RAG Engine',
+        version: 'v1.0',
+        task: 'Official advisory knowledge retrieval',
+        status: 'production_ready',
+        enabled_in_production: true,
+        data_sources: ['IMD', 'NDMA', 'ICAR Official Guidelines'],
+        dates: '2020-2026',
+        split: { train: 0, test: 70 },
+        metrics: { recall_at_3: 0.7053, mrr: 0.5815 },
+        baseline_metrics: { recall_at_3: 0.521, mrr: 0.412 },
+        improvement: { recall_at_3: 0.1843, mrr: 0.1695 },
+        confidence_interval: { recall_at_3: [0.65, 0.76], mrr: [0.52, 0.64] },
+      },
+    ];
+    return new Response(JSON.stringify(mockModels), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  // /v1/ml/predict/{id} (Ticket R17)
+  if (urlStr.includes('/v1/ml/predict/') && method === 'POST') {
+    const modelId = urlStr.split('/predict/')[1].split('?')[0];
+    if (modelId === 'bias_correction') {
+      return new Response(
+        JSON.stringify({
+          error: {
+            message: "Model 'bias_correction' is disabled in production (enabled_in_production=false)",
+          },
+        }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+    return new Response(
+      JSON.stringify({
+        model_id: modelId,
+        status: 'ok',
+        prediction: { value: 42.0, confidence: 0.92 },
+      }),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
   // /v1/voice/transcribe
   if (urlStr.includes('/v1/voice/transcribe') && method === 'POST') {
     return new Response(
@@ -119,6 +260,41 @@ export const handleMockRequest = async (
               key_values: { rain: '12 mm', probability: '85%' },
               source_line: sourceLine,
               caveat,
+            })}\n\n`
+          )
+        );
+
+        // 4b. Trace event (Ticket R17)
+        controller.enqueue(
+          encoder.encode(
+            `event: trace\ndata: ${JSON.stringify({
+              intent: 'forecast',
+              confidence: 0.88,
+              router_path: 'intent_model_auto',
+              tools: [
+                {
+                  name: 'get_forecast',
+                  args: { place: 'pune', day: 1 },
+                  latency_ms: 85,
+                  source: 'open_meteo',
+                  provenance: 'live',
+                },
+              ],
+              models: [
+                { id: 'intent_classifier_v1.0', version: 'v1.0', used: true },
+              ],
+              verifier: {
+                passed: true,
+                checked_numbers: [12],
+                failures: [],
+                fallback_used: false,
+              },
+              llm: {
+                provider: 'groq',
+                model: 'llama-3.3-70b-versatile',
+                tokens_in: 120,
+                tokens_out: 35,
+              },
             })}\n\n`
           )
         );

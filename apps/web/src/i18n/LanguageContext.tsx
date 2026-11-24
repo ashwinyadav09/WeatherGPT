@@ -1,8 +1,13 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import enBase from './locales/en.json';
 import hiBase from './locales/hi.json';
+import bnBase from './locales/bn.json';
+import mrBase from './locales/mr.json';
+import teBase from './locales/te.json';
+import taBase from './locales/ta.json';
+import orBase from './locales/or.json';
 
-export type SupportedLanguage = 'en' | 'hi';
+export type SupportedLanguage = 'en' | 'hi' | 'bn' | 'mr' | 'te' | 'ta' | 'or';
 
 export interface LanguageInfo {
   code: SupportedLanguage;
@@ -24,18 +29,53 @@ export const LANGUAGES: Record<SupportedLanguage, LanguageInfo> = {
     nativeName: 'हिन्दी',
     fontFamily: "'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif",
   },
+  bn: {
+    code: 'bn',
+    name: 'Bengali',
+    nativeName: 'বাংলা',
+    fontFamily: "'Noto Sans Bengali', 'Noto Sans', system-ui, sans-serif",
+  },
+  mr: {
+    code: 'mr',
+    name: 'Marathi',
+    nativeName: 'मराठी',
+    fontFamily: "'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif",
+  },
+  te: {
+    code: 'te',
+    name: 'Telugu',
+    nativeName: 'తెలుగు',
+    fontFamily: "'Noto Sans Telugu', 'Noto Sans', system-ui, sans-serif",
+  },
+  ta: {
+    code: 'ta',
+    name: 'Tamil',
+    nativeName: 'தமிழ்',
+    fontFamily: "'Noto Sans Tamil', 'Noto Sans', system-ui, sans-serif",
+  },
+  or: {
+    code: 'or',
+    name: 'Odia',
+    nativeName: 'ଓଡ଼ିଆ',
+    fontFamily: "'Noto Sans Oriya', 'Noto Sans', system-ui, sans-serif",
+  },
 };
 
 interface LanguageContextType {
   language: SupportedLanguage;
   setLanguage: (lang: SupportedLanguage) => void;
   t: (key: string, params?: Record<string, string | number>) => string;
-  registerTranslations: (featureId: string, translations: { en: Record<string, string>; hi: Record<string, string> }) => void;
+  registerTranslations: (featureId: string, translations: Partial<Record<SupportedLanguage, Record<string, string>>>) => void;
 }
 
 const baseDictionaries: Record<SupportedLanguage, Record<string, string>> = {
   en: { ...enBase },
   hi: { ...hiBase },
+  bn: { ...bnBase },
+  mr: { ...mrBase },
+  te: { ...teBase },
+  ta: { ...taBase },
+  or: { ...orBase },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -60,21 +100,22 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const registerTranslations = (
     featureId: string,
-    translations: { en: Record<string, string>; hi: Record<string, string> }
+    translations: Partial<Record<SupportedLanguage, Record<string, string>>>
   ) => {
     setDictionaries((prev) => {
-      const nextEn = { ...prev.en };
-      const nextHi = { ...prev.hi };
-
-      for (const [k, v] of Object.entries(translations.en)) {
-        nextEn[`${featureId}.${k}`] = v;
-        if (!nextEn[k]) nextEn[k] = v; // Allow unqualified fallback
+      const next: Record<SupportedLanguage, Record<string, string>> = { ...prev };
+      for (const langKey of Object.keys(LANGUAGES) as SupportedLanguage[]) {
+        const langDict = { ...prev[langKey] };
+        const incoming = translations[langKey];
+        if (incoming) {
+          for (const [k, v] of Object.entries(incoming)) {
+            langDict[`${featureId}.${k}`] = v;
+            if (!langDict[k]) langDict[k] = v;
+          }
+        }
+        next[langKey] = langDict;
       }
-      for (const [k, v] of Object.entries(translations.hi)) {
-        nextHi[`${featureId}.${k}`] = v;
-        if (!nextHi[k]) nextHi[k] = v;
-      }
-      return { en: nextEn, hi: nextHi };
+      return next;
     });
   };
 
