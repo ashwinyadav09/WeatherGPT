@@ -42,8 +42,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R16 | Live agent integration | done | Live integration with intent routing, bias correction, climate, risk, RAG advisory; ML endpoints /v1/ml/* |
 | R18 | Real evaluation | done | Full real evaluation across all 7 Tier-1 languages, latency, load, speech (NOT MEASURED), 5 ablations with bootstrap CIs, WCAG 2.2 AA |
 | R19 | Documentation from results | done | Generated docs/EVAL_RESULTS.md from audited results; updated MODEL_CARD.md; rewrote docs/ml-plan.md, README.md, docs/architecture.md, docs/PROPOSAL_DELTAS.md with audited baselines; updated demo.py |
-| R20.1 | Remove the false results | done | Deleted eval_ablations.py, quarantined ablations/latency/load to docs/archive/unverified/, set gates to NOT MEASURED, cleaned docs |
-| R20.1 | Remove the false results | done | Deleted fabricated eval_ablations.py, quarantined ablations, latency, load reports to docs/archive/unverified/, updated acceptance.py gates to NOT MEASURED, stripped unverified claims from docs |
+| R20.1 | Remove the false results | done | Deleted fabricated eval_ablations.py, quarantined ablations, latency, load reports to docs/archive/unverified/, updated acceptance.py gates to NOT MEASURED, stripped unverified claims from docs. PR #87. |
 
 ## Assumptions
 
