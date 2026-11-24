@@ -28,11 +28,25 @@ class OpenMeteoForecastAdapter(ForecastAdapter):
             "timezone": "Asia/Kolkata",
             "forecast_days": 7,
         }
-        client = self._client or httpx.AsyncClient(timeout=5.0)
+        client = self._client or httpx.AsyncClient(timeout=15.0)
+        data = None
+        last_exc: Exception | None = None
         try:
-            resp = await client.get(self.base_url, params=params)
-            resp.raise_for_status()
-            data = resp.json()
+            for attempt in range(3):
+                try:
+                    resp = await client.get(self.base_url, params=params)
+                    resp.raise_for_status()
+                    data = resp.json()
+                    break
+                except Exception as exc:
+                    last_exc = exc
+                    if attempt < 2:
+                        import asyncio
+                        await asyncio.sleep(0.5 * (attempt + 1))
+            if data is None:
+                if last_exc:
+                    raise last_exc
+                raise RuntimeError("Failed to fetch forecast from Open-Meteo")
         finally:
             if not self._client:
                 await client.aclose()

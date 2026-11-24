@@ -268,7 +268,7 @@ async def get_forecast(
         return all_packets
     except Exception as exc:
         logger.warning("get_forecast_tool_failed", extra={"place": str(place), "error": str(exc)})
-        ref = place if isinstance(place, PlaceReference) else None
+        ref = place_ref if 'place_ref' in locals() and place_ref else (place if isinstance(place, PlaceReference) else None)
         return [_make_error_packet("get_forecast", str(exc), place_ref=ref)]
 
 
