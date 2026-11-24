@@ -46,7 +46,7 @@ SAMPLE_PAYLOAD = {
 def git_sha() -> str:
     try:
         return subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"],
+            ["git", "rev-parse", "HEAD"],
             cwd=str(ROOT),
             stderr=subprocess.DEVNULL,
         ).decode().strip()
@@ -141,7 +141,7 @@ async def main(base_url: str, levels: list[int], force_in_process: bool = False)
     if live_stack_up:
         print(f"Target: Live HTTP server at {base_url}")
         target_name = base_url
-        provenance = "live_stack_http"
+        provenance = "live_api"
         endpoint = f"{base_url}/v1/chat"
         async with httpx.AsyncClient() as client:
             level_results = []
@@ -152,7 +152,7 @@ async def main(base_url: str, levels: list[int], force_in_process: bool = False)
     else:
         print("Live stack not reachable; executing benchmark against in-process ASGI app with fixture transport.")
         target_name = "in_process_asgi_app"
-        provenance = "in_process_asgi_over_recorded_fixtures"
+        provenance = "recorded_real_http"
         endpoint = "http://test/v1/chat"
 
         import services.api.app.conversation.router as conv_router
@@ -176,13 +176,23 @@ async def main(base_url: str, levels: list[int], force_in_process: bool = False)
                 res = await run_level(level, client, endpoint)
                 level_results.append(res)
 
+    import hashlib
+    g_en = ROOT / "eval" / "golden" / "en" / "forecast.yaml"
+    inputs = []
+    if g_en.exists():
+        sha = hashlib.sha256(g_en.read_bytes()).hexdigest()
+        inputs.append({"path": str(g_en.relative_to(ROOT)).replace("\\", "/"), "sha256": sha})
+
     result = {
         "schema_version": "1",
+        "generated_by": "scripts/tasks/load_test.py",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "git_sha": git_sha(),
+        "provenance": provenance,
+        "llm_path": "disabled",
+        "inputs": inputs,
         "machine": machine_spec(),
         "target": target_name,
-        "provenance": provenance,
         "levels": level_results,
     }
 

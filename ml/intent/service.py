@@ -101,8 +101,17 @@ class IntentService:
             best_intent = str(classes[best_idx])
             confidence = float(round(probs[best_idx], 4))
 
-            # Auto-route when calibrated confidence exceeds tau
-            auto_route = confidence >= self.tau and best_intent not in ("general_knowledge",)
+            # Out-of-vocabulary check: if query has fewer than 3 matching features
+            # (e.g. scripts with low n-gram overlap where only a punctuation mark matched),
+            # the statistical confidence is spurious and auto-route must be suppressed.
+            tfidf = getattr(self.pipeline, "named_steps", {}).get("tfidf")
+            feat_nnz = tfidf.transform([text]).nnz if tfidf is not None else 10
+            if feat_nnz < 3:
+                confidence = float(round(confidence * 0.1, 4))
+                auto_route = False
+            else:
+                # Auto-route when calibrated confidence exceeds tau
+                auto_route = confidence >= self.tau and best_intent not in ("general_knowledge",)
 
             return IntentPrediction(
                 intent=best_intent,

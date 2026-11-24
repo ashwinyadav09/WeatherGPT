@@ -1,0 +1,276 @@
+{
+  "git_sha": "d6c3ed59c6c3ce26e0185ea6641be9e3bd1cbccf",
+  "measured_at": "2026-11-24T18:52:31.188714+00:00",
+  "provenance": "replayed_real_fixtures",
+  "fixtures_directory": "eval\\fixtures\\sachet",
+  "count": 26,
+  "min_seconds": 651151.19,
+  "max_seconds": 820994.19,
+  "median_seconds": 771617.19,
+  "mean_seconds": 771570.84,
+  "live_poller_freshness": "NOT MEASURED",
+  "pipeline_processing_time_ms": 12.4,
+  "note": "Replay from recorded SACHET fixtures. Live 48h poller alert freshness is NOT MEASURED (< 5 live alerts observed per R18.6).",
+  "alerts": [
+    {
+      "id": "urn:oid:2.49.0.1.356.1.1.2026.11.10.1",
+      "fixture_file": "alert_sample.json",
+      "sender": "NDMA-SACHET",
+      "hazard": "Thunderstorm",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-17T06:00:00+00:00",
+      "freshness_seconds": 651151.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794853111405010.10",
+      "fixture_file": "sachet_01_update.json",
+      "sender": "Assam-SDMA",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T23:53:24+05:30",
+      "freshness_seconds": 692947.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794850780088010.10",
+      "fixture_file": "sachet_02_update.json",
+      "sender": "Assam-SDMA",
+      "hazard": "Thunderstorm with Lightning",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T23:12:48+05:30",
+      "freshness_seconds": 695383.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794833494909010.10",
+      "fixture_file": "sachet_03_update.json",
+      "sender": "Assam-SDMA",
+      "hazard": "Light Thunderstorms",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T18:24:17+05:30",
+      "freshness_seconds": 712694.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794822213748010.10",
+      "fixture_file": "sachet_04_update.json",
+      "sender": "Assam-SDMA",
+      "hazard": "Light Thunderstorms",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T15:16:02+05:30",
+      "freshness_seconds": 723989.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794808686215038.38",
+      "fixture_file": "sachet_05_update.json",
+      "sender": "Andaman-and-Nicobar-SDMA",
+      "hazard": "Squally",
+      "severity": "Extreme",
+      "level": "red",
+      "sent": "2026-11-16T11:33:57+05:30",
+      "freshness_seconds": 737314.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794805423229008.8",
+      "fixture_file": "sachet_06_alert.json",
+      "sender": "Andhra-Pradesh-SDMA",
+      "hazard": "SDMA Alert",
+      "severity": "Severe",
+      "level": "orange",
+      "sent": "2026-11-16T10:33:43+05:30",
+      "freshness_seconds": 740928.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794791850683041.41",
+      "fixture_file": "sachet_07_update.json",
+      "sender": "Puducherry-SDMA",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T06:50:20+05:30",
+      "freshness_seconds": 754331.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794791847032007.43",
+      "fixture_file": "sachet_08_alert.json",
+      "sender": "IMD-Chennai",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T06:46:53+05:30",
+      "freshness_seconds": 754538.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794782079959007.43",
+      "fixture_file": "sachet_09_update.json",
+      "sender": "IMD-Chennai",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T04:04:07+05:30",
+      "freshness_seconds": 764304.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794781934911010.10",
+      "fixture_file": "sachet_10_update.json",
+      "sender": "Assam-SDMA",
+      "hazard": "Light Thunderstorms",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T04:05:52+05:30",
+      "freshness_seconds": 764199.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794781980746007.43",
+      "fixture_file": "sachet_11_alert.json",
+      "sender": "IMD-Chennai",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T04:02:18+05:30",
+      "freshness_seconds": 764413.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794777328423007.43",
+      "fixture_file": "sachet_12_alert.json",
+      "sender": "IMD-Chennai",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T02:45:04+05:30",
+      "freshness_seconds": 769047.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794772193063007.43",
+      "fixture_file": "sachet_13_alert.json",
+      "sender": "IMD-Chennai",
+      "hazard": "Light Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-16T01:19:24+05:30",
+      "freshness_seconds": 774187.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794745524167009.9",
+      "fixture_file": "sachet_14_update.json",
+      "sender": "Uttarakhand-SDMA",
+      "hazard": "Thunderstorm with Lightning",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T18:04:36+05:30",
+      "freshness_seconds": 800275.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794740880003009.9",
+      "fixture_file": "sachet_15_update.json",
+      "sender": "Uttarakhand-SDMA",
+      "hazard": "Thunderstorm with Lightning",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T16:40:12+05:30",
+      "freshness_seconds": 805339.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794738483089041.41",
+      "fixture_file": "sachet_16_update.json",
+      "sender": "Puducherry-SDMA",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T16:00:25+05:30",
+      "freshness_seconds": 807726.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794738481839007.43",
+      "fixture_file": "sachet_17_alert.json",
+      "sender": "IMD-Chennai",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T15:57:13+05:30",
+      "freshness_seconds": 807918.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794735414687009.9",
+      "fixture_file": "sachet_18_update.json",
+      "sender": "Uttarakhand-SDMA",
+      "hazard": "Thunderstorm with Lightning",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T15:09:42+05:30",
+      "freshness_seconds": 810769.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728982581009.9",
+      "fixture_file": "sachet_19_update.json",
+      "sender": "Uttarakhand-SDMA",
+      "hazard": "Thunderstorm with Lightning",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T13:30:48+05:30",
+      "freshness_seconds": 816703.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728723301009.9",
+      "fixture_file": "sachet_20_update.json",
+      "sender": "Uttarakhand-SDMA",
+      "hazard": "Thunderstorm with Lightning",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T13:17:06+05:30",
+      "freshness_seconds": 817525.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728624051041.41",
+      "fixture_file": "sachet_21_update.json",
+      "sender": "Puducherry-SDMA",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T13:15:55+05:30",
+      "freshness_seconds": 817596.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794728622884007.43",
+      "fixture_file": "sachet_22_alert.json",
+      "sender": "IMD-Chennai",
+      "hazard": "Moderate Rain",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T13:13:13+05:30",
+      "freshness_seconds": 817758.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794725545573028.28",
+      "fixture_file": "sachet_23_update.json",
+      "sender": "Rajasthan-SDMA",
+      "hazard": "Thunderstorm",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T12:54:47+05:30",
+      "freshness_seconds": 818864.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794726140255038.38",
+      "fixture_file": "sachet_24_update.json",
+      "sender": "Andaman-and-Nicobar-SDMA",
+      "hazard": "Squally",
+      "severity": "Extreme",
+      "level": "red",
+      "sent": "2026-11-15T12:36:46+05:30",
+      "freshness_seconds": 819945.19
+    },
+    {
+      "id": "urn:oid:2.49.0.1.356.sachet.IN.1794723722587028.28",
+      "fixture_file": "sachet_25_update.json",
+      "sender": "Rajasthan-SDMA",
+      "hazard": "Thunderstorm with Lightning",
+      "severity": "Moderate",
+      "level": "yellow",
+      "sent": "2026-11-15T12:19:17+05:30",
+      "freshness_seconds": 820994.19
+    }
+  ]
+}

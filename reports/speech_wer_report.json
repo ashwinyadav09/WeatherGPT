@@ -1,0 +1,110 @@
+{
+  "schema_version": "2",
+  "generated_by": "scripts/tasks/eval_speech.py",
+  "generated_at": "2026-11-24T18:40:36.729081+00:00",
+  "git_sha": "d6c3ed59c6c3ce26e0185ea6641be9e3bd1cbccf",
+  "provenance": "real_audio",
+  "inputs": [
+    {
+      "path": "eval/speech/bn_asr_golden.yaml",
+      "sha256": "cc6c89219625810eecd760c3a3ec89441391b390d1488a445155ad1b9b68bfb0"
+    },
+    {
+      "path": "eval/speech/en_asr_golden.yaml",
+      "sha256": "d26ce631c4122effab242f27f778117a67f1dd288b216c65f9f4f25f73ac4362"
+    },
+    {
+      "path": "eval/speech/hi_asr_golden.yaml",
+      "sha256": "6238e9187c55932d3358d24fa502b7766dfbbd45f0fe1996a6fed3131e2259b9"
+    },
+    {
+      "path": "eval/speech/hindi_asr_golden.yaml",
+      "sha256": "6238e9187c55932d3358d24fa502b7766dfbbd45f0fe1996a6fed3131e2259b9"
+    },
+    {
+      "path": "eval/speech/mr_asr_golden.yaml",
+      "sha256": "d72913d302dab0dde8a2f74bd1f5d29e085d05573d15b4031ceef5d1b517e89e"
+    },
+    {
+      "path": "eval/speech/or_asr_golden.yaml",
+      "sha256": "2e236b2612f4daf285c7a3d1688794400cf9d8bf4d24600f25161a4c674f6db2"
+    },
+    {
+      "path": "eval/speech/ta_asr_golden.yaml",
+      "sha256": "9bd0cdfe433686b9f357440e8e55f4cdb338203a262c336b437307b49edda42a"
+    },
+    {
+      "path": "eval/speech/te_asr_golden.yaml",
+      "sha256": "cd798561452e7956e006621764bc376520cd48bf3333070fa405485e164beda9"
+    }
+  ],
+  "total_languages": 7,
+  "total_utterances": 260,
+  "overall_status": "NOT MEASURED",
+  "notes": "Hypothesis generator removed per Ticket R8.2. Real audio evaluation scheduled in R18.4 (pending H3).",
+  "languages": {
+    "en": {
+      "language": "en",
+      "utterance_count": 25,
+      "status": "NOT MEASURED",
+      "reason": "Real audio files pending human task H3",
+      "wer": "NOT MEASURED",
+      "pner": "NOT MEASURED",
+      "ner": "NOT MEASURED"
+    },
+    "hi": {
+      "language": "hi",
+      "utterance_count": 110,
+      "status": "NOT MEASURED",
+      "reason": "Real audio files pending human task H3",
+      "wer": "NOT MEASURED",
+      "pner": "NOT MEASURED",
+      "ner": "NOT MEASURED"
+    },
+    "bn": {
+      "language": "bn",
+      "utterance_count": 25,
+      "status": "NOT MEASURED",
+      "reason": "Real audio files pending human task H3",
+      "wer": "NOT MEASURED",
+      "pner": "NOT MEASURED",
+      "ner": "NOT MEASURED"
+    },
+    "mr": {
+      "language": "mr",
+      "utterance_count": 25,
+      "status": "NOT MEASURED",
+      "reason": "Real audio files pending human task H3",
+      "wer": "NOT MEASURED",
+      "pner": "NOT MEASURED",
+      "ner": "NOT MEASURED"
+    },
+    "te": {
+      "language": "te",
+      "utterance_count": 25,
+      "status": "NOT MEASURED",
+      "reason": "Real audio files pending human task H3",
+      "wer": "NOT MEASURED",
+      "pner": "NOT MEASURED",
+      "ner": "NOT MEASURED"
+    },
+    "ta": {
+      "language": "ta",
+      "utterance_count": 25,
+      "status": "NOT MEASURED",
+      "reason": "Real audio files pending human task H3",
+      "wer": "NOT MEASURED",
+      "pner": "NOT MEASURED",
+      "ner": "NOT MEASURED"
+    },
+    "or": {
+      "language": "or",
+      "utterance_count": 25,
+      "status": "NOT MEASURED",
+      "reason": "Real audio files pending human task H3",
+      "wer": "NOT MEASURED",
+      "pner": "NOT MEASURED",
+      "ner": "NOT MEASURED"
+    }
+  }
+}

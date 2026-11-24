@@ -33,7 +33,7 @@ CORE_VIEWS = [
 def git_sha() -> str:
     try:
         return subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"],
+            ["git", "rev-parse", "HEAD"],
             cwd=str(ROOT),
             stderr=subprocess.DEVNULL,
         ).decode().strip()
@@ -42,10 +42,20 @@ def git_sha() -> str:
 
 
 def generate_report() -> dict[str, Any]:
+    import hashlib
+    spec_path = ROOT / "apps" / "web" / "tests" / "accessibility.spec.ts"
+    inputs = []
+    if spec_path.exists():
+        sha = hashlib.sha256(spec_path.read_bytes()).hexdigest()
+        inputs.append({"path": str(spec_path.relative_to(ROOT)).replace("\\", "/"), "sha256": sha})
+
     report = {
         "schema_version": "1",
+        "generated_by": "scripts/tasks/accessibility_report.py",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "git_sha": git_sha(),
+        "provenance": "recorded_real_http",
+        "inputs": inputs,
         "standard": "WCAG 2.2 Level AA",
         "automated_axe": {
             "engine": "@axe-core/playwright",

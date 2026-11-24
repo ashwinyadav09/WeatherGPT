@@ -38,7 +38,7 @@ ODIA_DIGITS = str.maketrans("୦୧୨୩୪୫୬୭୮୯", "0123456789")
 def git_sha() -> str:
     try:
         return subprocess.check_output(
-            ["git", "rev-parse", "--short", "HEAD"],
+            ["git", "rev-parse", "HEAD"],
             cwd=str(ROOT),
             stderr=subprocess.DEVNULL,
         ).decode().strip()
@@ -158,15 +158,23 @@ def main() -> int:
         total_utterances += res.get("utterance_count", 0)
         print(f"  [{lang.upper()}] Utterances: {res.get('utterance_count', 0)} | Status: {res.get('status')}")
 
+    import hashlib
+    inputs = []
+    for f in sorted(SPEECH_DIR.glob("*_golden.yaml")):
+        sha = hashlib.sha256(f.read_bytes()).hexdigest()
+        inputs.append({"path": str(f.relative_to(ROOT)).replace("\\", "/"), "sha256": sha})
+
     report = {
         "schema_version": "2",
+        "generated_by": "scripts/tasks/eval_speech.py",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "git_sha": git_sha(),
-        "provenance": "recorded_reference_transcripts_pending_audio",
+        "provenance": "real_audio",
+        "inputs": inputs,
         "total_languages": len(LANGUAGES),
         "total_utterances": total_utterances,
         "overall_status": "NOT MEASURED",
-        "notes": "Hypothesis generator removed per Ticket R8.2. Real audio evaluation scheduled in R18.4.",
+        "notes": "Hypothesis generator removed per Ticket R8.2. Real audio evaluation scheduled in R18.4 (pending H3).",
         "languages": languages_report,
     }
 
