@@ -1,0 +1,47 @@
+{
+  "decision_threshold": 0.0615,
+  "risk_levels": {
+    "low": 0.2,
+    "moderate": 0.5,
+    "high": 0.75,
+    "severe": 1.0
+  },
+  "target_hazard": "heatwave",
+  "stage1_features": [
+    "lead_day",
+    "doy_sin",
+    "doy_cos",
+    "lat",
+    "lon",
+    "elev",
+    "normal_tmax",
+    "obs_tmax_lag1",
+    "obs_tmax_lag2",
+    "obs_tmax_lag3",
+    "obs_dep_lag1",
+    "obs_mean_7d",
+    "persistence"
+  ],
+  "stage2_features": [
+    "lead_day",
+    "doy_sin",
+    "doy_cos",
+    "lat",
+    "lon",
+    "elev",
+    "normal_tmax",
+    "obs_tmax_lag1",
+    "obs_tmax_lag2",
+    "obs_tmax_lag3",
+    "obs_dep_lag1",
+    "obs_mean_7d",
+    "persistence",
+    "tmax_mmm",
+    "tmax_gfs",
+    "tmax_ecmwf",
+    "tmax_icon",
+    "recent_bias",
+    "forecast_dep",
+    "forecast_hw_rule"
+  ]
+}

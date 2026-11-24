@@ -398,27 +398,71 @@ async def get_climate(
 
 async def get_risk_outlook(
     place: str | PlaceReference | dict[str, Any],
+    lead_day: int = 1,
 ) -> list[EvidencePacket]:
-    """Extreme-event risk probabilities and drivers for heat wave, heavy rain, and cold wave."""
+    """Extreme-event risk probabilities and SHAP drivers for severe weather hazards."""
     try:
         place_ref = await _resolve_place_reference(place)
         now = dt.datetime.now(dt.timezone.utc)
 
+        from ml.extreme_event.service import ExtremeEventRiskService
+        svc = ExtremeEventRiskService()
+
+        # Try to obtain forecast tmax for the target place and lead day
+        fc_tmax: float | None = None
+        try:
+            fc_svc = ForecastService()
+            fc_pkts = await fc_svc.get_forecast(place_ref.id, place_ref.lat, place_ref.lon, place_ref.name)
+            for p in fc_pkts:
+                for v in p.values:
+                    if v.variable in ("temperature_max", "tmax", "temperature_2m_max") and (v.step == lead_day or v.step is None):
+                        if v.value is not None:
+                            try:
+                                fc_tmax = float(v.value)
+                            except (ValueError, TypeError):
+                                pass
+                        break
+                if fc_tmax is not None:
+                    break
+        except Exception:
+            fc_tmax = None
+
+        pred = svc.predict_risk(
+            lat=place_ref.lat,
+            lon=place_ref.lon,
+            elev=float(getattr(place_ref, "elevation", 100.0) or 100.0),
+            lead_day=lead_day,
+            forecast_tmax=fc_tmax,
+        )
+
+        drivers_str = "; ".join(pred["top_drivers"]) if pred["top_drivers"] else "None identified"
+
         values = [
-            ValueItem(variable="heat_wave_risk", value=0.05, unit="probability"),
-            ValueItem(variable="heavy_rain_risk", value=0.10, unit="probability"),
-            ValueItem(variable="cold_wave_risk", value=0.02, unit="probability"),
-            ValueItem(variable="risk_level", value="low", unit="text"),
+            ValueItem(variable="heat_wave_risk", value=pred["heat_wave_risk"], unit="probability"),
+            ValueItem(variable="risk_level", value=pred["risk_level"], unit="text"),
+            ValueItem(variable="top_drivers", value=drivers_str, unit="text"),
+            ValueItem(variable="heavy_rain_risk", value="unavailable", unit="text"),
+            ValueItem(
+                variable="heavy_rain_exclusion_reason",
+                value=pred["excluded_hazards"]["heavy_rain"]["reason"],
+                unit="text",
+            ),
+            ValueItem(variable="cold_wave_risk", value="unavailable", unit="text"),
+            ValueItem(
+                variable="cold_wave_exclusion_reason",
+                value=pred["excluded_hazards"]["cold_wave"]["reason"],
+                unit="text",
+            ),
             ValueItem(
                 variable="advisory_note",
-                value="Experimental model - not an official warning. Refer to NDMA SACHET for official alerts.",
+                value=pred["advisory_note"],
                 unit="text",
             ),
         ]
         return [
             EvidencePacket(
                 id=f"risk_{uuid.uuid4().hex[:10]}",
-                source="WeatherGPT Risk Model",
+                source="WeatherGPT Extreme Event Model (Stage 2 Calibrated LightGBM)",
                 authority_tier=4,
                 provenance="live",
                 issued_at=now,
@@ -426,7 +470,7 @@ async def get_risk_outlook(
                 valid_to=now + dt.timedelta(hours=48),
                 place=place_ref,
                 values=values,
-                attribution="WeatherGPT Risk Model (Experimental, not an official warning)",
+                attribution=pred["attribution"],
                 fetched_at=now,
             )
         ]
