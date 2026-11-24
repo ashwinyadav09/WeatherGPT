@@ -1,20 +1,21 @@
 # ICAR Agricultural Weather Advisory and Good Agricultural Practices
 
-## Extreme Heat and Drought Crop Management
-- Apply light and frequent irrigation during evening or early morning hours to maintain root zone moisture and reduce soil surface temperature.
-- Use straw mulch, crop residue, or organic mulch between crop rows to conserve soil moisture and suppress weed growth.
-- Protect fruit trees and young nursery seedlings by setting up green agro-shade nets or thatched straw coverings.
-- Provide clean, cool drinking water to livestock 3 to 4 times a day and ensure animal sheds have proper cross-ventilation.
-- Key terms: सिंचाई, नमी, पुआल मल्चिंग, પિયત, ನೀರಾವರಿ, நீர்ப்பாசனம், ଜଳସେଚନ, irrigation, soil moisture, mulch, nursery seedlings.
+## Extreme Heat and Drought Crop Management (Source: IMD Agrimet Agriculture Guidance, Page 4)
+- Apply light and frequent irrigation to standing crops during evening or early morning hours to maintain root zone moisture and reduce soil surface temperature.
+- Increase frequency of irrigation during critical crop growth stages (tillering, flowering, grain filling).
+- Mulch with crop residue, straw, or polythene sheets to conserve soil moisture and suppress evaporative loss.
+- Use sprinkler and drip irrigation systems to optimize water use efficiency under heat stress.
+- Protect farm animals and cattle: keep animals under shade, provide ample cool drinking water, cool sheds with straw/dung-mud plaster or water foggers, and graze only during cooler morning and evening hours.
 
-## Rain and Strong Wind Management
-- Withhold pesticide spraying and fertilizer application when rain or gusty winds exceeding 20 km/h are forecasted within 24 to 48 hours to prevent chemical wash-off and environmental leaching.
-- Clear farm field drainage channels, bunds, and furrows before the arrival of heavy monsoon showers to prevent waterlogging and root rot.
-- Provide mechanical staking or bamboo support to standing crops like sugarcane, banana, tomato, and papaya to prevent lodging during thunderstorm squalls.
-- Key terms: कीटनाशक छिड़काव, बारिश, जलभराव, औषध फवारणी, କୀଟନାଶକ ପ୍ରୟୋଗ, spraying, pesticide, wash-off, staking, lodging, drainage channels.
+## Cold Wave, Frost and Ground Freeze Crop Protection (Source: IMD Agrimet Agriculture Guidance, Page 2-3)
+- Apply light and frequent irrigation or sprinkler irrigation in evening hours to protect crops from cold injury and ground frost.
+- In rice nursery beds: cover nursery beds with polythene sheets during the night and remove in the morning; irrigate in the evening and drain out in the morning.
+- Cover young orchard fruit plants with straw, sarkanda, gunny bags, or polythene sheets.
+- To protect sensitive crops like mustard, gram, and rajmah from frost injury, spray dilute sulphuric acid @ 0.1% (1 L in 1000 L water) or thiourea @ 500 ppm.
+- Animal husbandry in winter: keep cattle and goats inside sheds during night, provide dry bedding, and supplement daily feed with mineral mixtures, salt, and jaggery.
 
-## Frost and Cold Wave Crop Protection
-- Provide light irrigation to fields during the late evening prior to cold wave nights; moist soil retains and radiates heat better than dry soil, protecting plants from ground frost.
-- Create light smokiness (smudging) along orchard borders using moist biomass on calm frosty nights to raise boundary temperatures.
-- For crop-specific advice and pest management, farmers can contact the national Kisan Call Centre toll-free at 1800-180-1551.
-- Key terms: पाला, ठंड से फसल सुरक्षा, धुआं, किसान कॉल सेंटर, കിസാൻ കോൾ സെന്റർ, கிசான் கால் சென்டர், frost, smudging, 1800-180-1551, Kisan Call Centre.
+## Flood, Waterlogging and Standing Crop Protection (Source: IMD Agrimet Floods Guidance, Page 3)
+- Provide adequate field drainage channels to immediately drain excess stagnant water from submerged crop fields.
+- Stake and provide mechanical support to tall crops like banana, sugarcane, and vegetables to prevent lodging from heavy rain and squally winds.
+- Postpone spraying of chemical pesticides and application of fertilizers during periods of heavy rainfall and high soil moisture.
+- Once flood water recedes, apply top dressing with nitrogen fertilizer or foliar spray of 1% to 2% urea / potassium nitrate solution to promote rapid crop root recovery and rejuvenate standing plants.

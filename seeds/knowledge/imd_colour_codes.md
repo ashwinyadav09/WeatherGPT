@@ -1,21 +1,21 @@
-# Official Weather Warning Colour-Code Definitions
+# IMD Standard Operating Procedure: Weather Warning Colour Codes
 
-## Green: No Warning (Normal)
-- Meaning: No adverse weather expected.
-- Action: No emergency action required. Regular day-to-day activities can continue normally.
-- Key terms: ग्रीन, हरा, सामान्य मौसम, సాధారణ వాతావరణం, Green alert, Normal weather.
+## Green: No Warning (Normal Weather)
+- Official Label: Green – No Warning.
+- Meaning: Atmospheric and weather conditions are normal, comfortable, and safe. No severe or hazardous weather expected.
+- Action Required: No advisory or emergency action is required. Citizens, transport networks, and commercial operations continue day-to-day activities normally without disruption.
 
 ## Yellow: Watch (Be Updated)
-- Meaning: Weather conditions are deteriorating and may worsen. Moderately adverse conditions possible.
-- Action: Stay informed of local weather forecasts. Check daily updates from official portals and plan ahead.
-- Key terms: येलो अलर्ट, पीली चेतावनी, दक्ष राहा, সতর্ক থাকুন, ఎల్లో అలర్ట్, Yellow watch, Be Updated.
+- Official Label: Yellow – Watch.
+- Meaning: Severely bad weather or adverse conditions are possible over the next few days. The situation is developing and carries uncertainty.
+- Action Required: Be updated / Be aware. Citizens, travelers, and disaster response teams should keep track of the latest weather forecasts, nowcasts, and official bulletins as conditions may worsen.
 
 ## Orange: Alert (Be Prepared)
-- Meaning: Very bad weather with high likelihood of disruptions to transport, electricity, agriculture, and communication.
-- Action: Be prepared for emergency conditions. Keep essential supplies, medicines, drinking water, and battery-powered lights ready. Limit non-essential travel.
-- Key terms: ऑरेंज अलर्ट, नारंगी चेतावनी, सतर्कता इशारा, প্রস্তুত থাকুন, ఆరెంజ్ అలర్ట్, Orange alert, Be Prepared.
+- Official Label: Orange – Alert.
+- Meaning: Weather conditions have deteriorated and have the potential to cause significant disruptions, transport delays, power outages, and threat to life and property.
+- Action Required: Be prepared / Alert. Authorities must prepare contingency plans, preposition rescue teams, and inspect drainage/power networks. Citizens should keep emergency supplies, medicines, water, and backup lights ready.
 
 ## Red: Warning (Take Action)
-- Meaning: Extremely severe weather conditions posing serious risk to human life, livestock, and infrastructure.
-- Action: Take immediate protective action. Follow instructions issued by National Disaster Management Authority (NDMA), State Disaster Management Authority (SDMA), and local district authorities. Evacuate only if instructed by local district administration.
-- Key terms: रेड अलर्ट, लाल चेतावनी, धोकादायक हवामान, লাল সতর্কতা, రெட் అలர்ட், ரெட் அலர்ட், Red warning, Take Action, Evacuation.
+- Official Label: Red – Warning (Take Action).
+- Meaning: Extremely severe weather conditions are imminent or ongoing with high impact, extreme risk to life, and catastrophic damage to infrastructure.
+- Action Required: Take action immediately. Emergency response authorities (NDMA, SDMA, District Administration) deploy NDRF/SDRF teams and execute mandatory evacuation from low-lying or vulnerable areas. Citizens must stay in safe shelters and avoid all travel.

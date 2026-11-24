@@ -1,0 +1,115 @@
+{
+  "model_id": "rag_advisory_engine",
+  "model_name": "WeatherGPT Advisory RAG Engine",
+  "generated_by": "ml/rag/eval.py",
+  "git_sha": "47f37dbf51032780f1170b1e96f6001841381d48",
+  "generated_at": "2026-11-24T17:03:25.975925+00:00",
+  "provenance": "human_labels",
+  "accuracy": 0.628571429,
+  "n_test": 70,
+  "n_val": 30,
+  "n_chunks": 20,
+  "inputs": [
+    {
+      "path": "seeds/knowledge/chunks.json",
+      "sha256": "644d5b6d0867fb9cfb73b770654a831fd5cb07862a5262a9299a4fef7886378e"
+    },
+    {
+      "path": "seeds/knowledge/chunk_embeddings.npy",
+      "sha256": "aee551b6d0e11d8fd93f09ce4da939f341215c13d076c7e36805cdc6b594b128"
+    },
+    {
+      "path": "eval/rag/eval_queries.json",
+      "sha256": "3b8115b8036ab83e3159fe31d54b664971b07e75ac06decf8d42ee6570ffaedb"
+    }
+  ],
+  "bm25": {
+    "recall_at_1": 0.3286,
+    "recall_at_3": 0.4143,
+    "recall_at_5": 0.5286,
+    "mrr": 0.4326,
+    "ci_95": {
+      "recall_at_1": {
+        "mean": 0.32909999999999995,
+        "ci_lower": 0.21428571428571427,
+        "ci_upper": 0.44285714285714284
+      },
+      "recall_at_3": {
+        "mean": 0.4153214285714286,
+        "ci_lower": 0.3,
+        "ci_upper": 0.5285714285714286
+      },
+      "recall_at_5": {
+        "mean": 0.5293285714285714,
+        "ci_lower": 0.4142857142857143,
+        "ci_upper": 0.6428571428571429
+      },
+      "mrr": {
+        "mean": 0.4333315306358711,
+        "ci_lower": 0.33902474456381737,
+        "ci_upper": 0.5288610174839165
+      }
+    }
+  },
+  "dense": {
+    "recall_at_1": 0.6143,
+    "recall_at_3": 0.8429,
+    "recall_at_5": 0.8714,
+    "mrr": 0.7362,
+    "ci_95": {
+      "recall_at_1": {
+        "mean": 0.6141571428571428,
+        "ci_lower": 0.5,
+        "ci_upper": 0.7285714285714285
+      },
+      "recall_at_3": {
+        "mean": 0.843107142857143,
+        "ci_lower": 0.7571428571428571,
+        "ci_upper": 0.9285714285714286
+      },
+      "recall_at_5": {
+        "mean": 0.8718714285714289,
+        "ci_lower": 0.7857142857142857,
+        "ci_upper": 0.9428571428571428
+      },
+      "mrr": {
+        "mean": 0.7364149181700652,
+        "ci_lower": 0.6539209026267848,
+        "ci_upper": 0.816521645021645
+      }
+    }
+  },
+  "hybrid": {
+    "recall_at_1": 0.6429,
+    "recall_at_3": 0.8143,
+    "recall_at_5": 0.8857,
+    "mrr": 0.7491,
+    "ci_95": {
+      "recall_at_1": {
+        "mean": 0.6421714285714285,
+        "ci_lower": 0.5285714285714286,
+        "ci_upper": 0.7571428571428571
+      },
+      "recall_at_3": {
+        "mean": 0.8141357142857145,
+        "ci_lower": 0.7285714285714285,
+        "ci_upper": 0.9
+      },
+      "recall_at_5": {
+        "mean": 0.885957142857143,
+        "ci_lower": 0.8142857142857143,
+        "ci_upper": 0.9571428571428572
+      },
+      "mrr": {
+        "mean": 0.7488797974247975,
+        "ci_lower": 0.6677888440924157,
+        "ci_upper": 0.8309409142444858
+      }
+    }
+  },
+  "generation": {
+    "citation_precision": "NOT MEASURED",
+    "fact_coverage_with_retrieval": 0.9571,
+    "fact_coverage_without_retrieval": "NOT MEASURED"
+  }
+}

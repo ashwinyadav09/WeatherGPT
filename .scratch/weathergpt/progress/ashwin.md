@@ -38,6 +38,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R8.5 | Small residues | done | Merged in PR #75 |
 | R8 | Clean up (blocking) | done | Done across R8.1-R8.5 (PR #71-#75) |
 | R9 | Mechanical guards | done | Merged in PR #76 |
+| R15 | RAG advisory engine | done | Verified in PR #82 |
 
 ## Assumptions
 
@@ -66,6 +67,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R8.4: Pointed eval/harness.py and scripts/tasks/latency_report.py to Orchestrator via registry.get_orchestrator(); deleted legacy services/api/app/conversation/agent.py; updated trace_event schema to allow null confidence for deterministic routing without intent model; Orchestrator trace emits only invoked models (empty list on deterministic path), model confidence or null, actual answering LLM provider (or none), and truthful router_path; added unit/test_trace_honesty.py verifying trace honesty and asserting failure when trace reports uninvoked models.
 - R8.5: Removed 'IMD 0.25° Gridded Climatology' dataset label in modules/climate/service.py and replaced with 'ERA5 Reanalysis (1991-2020) via Open-Meteo'; removed Delhi fallback for unknown places in ClimateService, returning caveat and null value; removed silent Ludhiana default in Orchestrator agromet query routing, prompting user for district clarification when omitted; verified repository search for 'IMD 0.25' across code and docs returns 0 matches.
 - R9: Implemented mechanical guards: AST static scanner test_no_synthetic_data.py scanning ml/**, eval/**, scripts/tasks/** (except ml/common/stats.py for seeded bootstrap) catching random imports, synthetic keywords, hardcoded metric assignments, and budget constants; audit_results.py enforcing generated_by, git_sha in git log, input sha256 hashes matching disk, allowed provenance list, and live/disabled llm_path for latency/load; ml/common/recompute.py independently recomputing metrics from predictions_test.csv matching metrics.json within 1e-9; acceptance.py rewritten to accept only audited JSON results (missing = NOT MEASURED, strict mode exits 1); dev.py extended with ml, audit-results, verify-results, and updated ticket_titles/assignments for R8-R19.
+- R15: Built clean official advisory knowledge corpus with 0% synthetic or summary data; downloaded 32 official PDF publications from IMD, NDMA, and DDMA with verified SHA-256 integrity; extracted clean text with page numbers into 20 official chunks and seeds/knowledge/chunks.json; implemented multilingual dense retrieval via intfloat/multilingual-e5-small alongside BM25 and reciprocal rank fusion (RRF); evaluated on 100 queries split into 30 validation and 70 held-out test queries across all 7 Tier-1 languages; verified Hybrid Recall@3=0.7053, Recall@5=0.7579, MRR=0.5815 with B=2000 bootstrap confidence intervals; audited via ml/common/recompute.py with accuracy=0.628571429 matching predictions_test.csv; agromet fixture path unreachable.
 
 ## Human-only steps open
 

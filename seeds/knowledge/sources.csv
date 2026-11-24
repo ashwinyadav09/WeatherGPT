@@ -1,8 +1,8 @@
 filename,title,url,license,retrieval_date,sha256
-ndma_heatwave.md,NDMA Heatwave Guidelines,https://ndma.gov.in/Resources/guidelines/heat-wave,OGDL-India,2026-11-22,fa2b7932c12217f254784ff4bf9a055da24c07f35a57b6833443181ed384eff9
-ndma_coldwave.md,NDMA Coldwave Guidelines,https://ndma.gov.in/Resources/guidelines/cold-wave,OGDL-India,2026-11-22,6f0f56959cd1ffbad1c9b0aae015a15d9049c16ae1a9b96ae72b4f6a1dbefef0
-imd_colour_codes.md,IMD Warning Colour Codes,https://mausam.imd.gov.in/imd_latest/contents/districtwise-warning.php,CC-BY-4.0,2026-11-22,93768f15f8d71eecc01e560bc3f565b9d5e1ea092738ca33780764e5be0c87d2
-heat_action_plan.md,National Heat Action Plan Framework,https://ndma.gov.in/Natural-Hazards/Heat-Wave,OGDL-India,2026-11-22,61f0fbd18cac975d0352316779d8e652f690a4f4d05d963b8923523c7de8b72f
-icar_agriculture_advisory.md,ICAR Weather Advisory & Good Agricultural Practices,https://icar.org.in/extension-guidance,Public-Domain,2026-11-22,fcfac8dc31b7bb8ded24ec87f973eeb6a1c3064778198d7b0d4e97f54f5cbc43
-fisherfolk_safety.md,Coastal & Marine Weather Safety Guidance,https://incois.gov.in/portal/osf/safety.jsp,OGDL-India,2026-11-22,939e19748708038187336cd25203d90e6143fd9b7f05cd67cb7b5c431649d869
-flood_cyclone_safety.md,NDMA Flood & Cyclone Safety Guidelines,https://ndma.gov.in/Natural-Hazards/Floods,OGDL-India,2026-11-22,fdab7ef7208251ed2bbf68c2ce5d3d45790baefe01b3ba2de1c4829741f15118
+ndma_heatwave.md,NDMA Heatwave Guidelines,https://imdagrimet.gov.in/Files/Dos_Donts/Heat_wave_Dos_and_Donts.pdf,OGDL-India,2026-11-24,ced3f06f31bcff5a125f5aadcd51af53c0b9f8d8e7f982190c2e7ddc14fa2248
+ndma_coldwave.md,NDMA Coldwave Guidelines,https://imdagrimet.gov.in/Files/Dos_Donts/Cold%20wave_Dos_and_Donts.pdf,OGDL-India,2026-11-24,bbd5518c7bc74fd9260985b1d6a2d4d70a203798f6518a0ee4d8f8b3fff570a0
+heat_action_plan.md,State Heat Action Plan Framework,https://ddma.delhi.gov.in/sites/default/files/ddma/generic_multiple_files/hap_delhi_21.4.25_3.pdf,OGDL-India,2026-11-24,4ead8234ba3be50a25f39000de14e78f8dffa748e1d11466675d81681bd64eaf
+imd_colour_codes.md,IMD Warning Colour Codes,https://mausam.imd.gov.in/delhiums/mcdata/Aboutus.pdf,CC-BY-4.0,2026-11-24,32435886211022d7978a6d824330021b8f41c94fbf8d405d7bc74aa36a74de3f
+flood_cyclone_safety.md,"Flood, Cyclone and Lightning Safety Guidelines",https://imdagrimet.gov.in/Files/Dos_Donts/Floods_Dos_and_Donts.pdf,OGDL-India,2026-11-24,5da1f46d61e5e51c875a1e76a64cbc623606808f3f8d7246ae60eb0390beef91
+icar_agriculture_advisory.md,ICAR Agricultural Weather Advisory and Good Agricultural Practices,https://imdagrimet.gov.in/Files/Dos_Donts/Heat_wave_Dos_and_Donts.pdf,OGDL-India,2026-11-24,a91411bd778772c925013b7a344c37081cc2aaf6349c3a47aa01ac7d4eb64f6b
+fisherfolk_safety.md,Coastal and Fisherfolk Marine Weather Safety Guidance,https://rsmcnewdelhi.imd.gov.in/uploads/archive/45/45_0bbace9d6227c530ddcc.pdf,CC-BY-4.0,2026-11-24,9cb38d3539a9bb3bcc7e508913b1e42197e2b8bd249096522ce1f138f82f6ef6

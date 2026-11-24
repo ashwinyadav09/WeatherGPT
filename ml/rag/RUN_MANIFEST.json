@@ -1,0 +1,15 @@
+{
+  "experiment_id": "rag_eval_47f37dbf",
+  "timestamp": "2026-11-24T17:03:25.975925+00:00",
+  "git_sha": "47f37dbf51032780f1170b1e96f6001841381d48",
+  "script": "ml/rag/eval.py",
+  "n_test_queries": 70,
+  "n_val_queries": 30,
+  "metrics_summary": {
+    "bm25_recall_at_3": 0.4142857142857143,
+    "dense_recall_at_3": 0.8428571428571429,
+    "hybrid_recall_at_3": 0.8142857142857143,
+    "hybrid_mrr": 0.7491322962751534,
+    "accuracy": 0.6285714285714286
+  }
+}
