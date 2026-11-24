@@ -343,7 +343,7 @@ async def get_alerts(
 async def get_climate(
     place: str | PlaceReference | dict[str, Any],
     metric: str = "rain",
-    period: str = "2026-05",
+    period: str | None = None,
     statistic: str = "normal",
     threshold: float | None = None,
     climate_service: ClimateService | None = None,
@@ -368,6 +368,13 @@ async def get_climate(
             ValueItem(variable="anomaly", value=stat_res.get("anomaly"), unit=unit),
             ValueItem(variable="percentile", value=stat_res.get("percentile"), unit="%"),
         ]
+        if "rate_per_decade" in stat_res:
+            values.append(ValueItem(variable="rate_per_decade", value=stat_res.get("rate_per_decade"), unit=f"{unit}/decade"))
+        if "p_value" in stat_res:
+            values.append(ValueItem(variable="p_value", value=stat_res.get("p_value"), unit="p"))
+        if "n_years" in stat_res:
+            values.append(ValueItem(variable="n_years", value=stat_res.get("n_years"), unit="years"))
+
         return [
             EvidencePacket(
                 id=f"clim_{uuid.uuid4().hex[:10]}",
@@ -542,7 +549,7 @@ TOOL_SCHEMAS: list[dict[str, Any]] = [
                     "place": {"type": "string", "description": "Place name or place ID."},
                     "metric": {"type": "string", "enum": ["rain", "temperature"], "description": "Climate variable."},
                     "period": {"type": "string", "description": "Period e.g. '2026-05'."},
-                    "statistic": {"type": "string", "enum": ["normal", "anomaly", "percentile"], "description": "Statistic type."},
+                    "statistic": {"type": "string", "enum": ["normal", "anomaly", "percentile", "days_above_threshold", "trend"], "description": "Statistic type."},
                 },
                 "required": ["place"],
             },

@@ -26,6 +26,9 @@ def main() -> int:
     ensure_installed("asyncpg")
     ensure_installed("joblib")
     ensure_installed("sklearn")
+    ensure_installed("pandas")
+    ensure_installed("pymannkendall")
+    ensure_installed("statsmodels")
 
     args = sys.argv[1:]
     target = args if args else ["services/api/tests"]

@@ -1,0 +1,133 @@
+{
+  "generated_by": "ml/climate/eval.py",
+  "git_sha": "6203ce81ef9123b3a35b560642187ed513bdb1be",
+  "timestamp": "2026-11-24T14:38:47.901166+00:00",
+  "inputs": [
+    {
+      "path": "ml/climate/events.csv",
+      "sha256": "9be79ae44440ab40ac778e36b9f116a6adfc61054b994ecf5b6199c8bc5b0445"
+    },
+    {
+      "path": "ml/climate/data/cache/13.00_77.50.json",
+      "sha256": "a498cd9743bd0301d4b9dbcbda069d02b333a162c3a9005230a94d8d62b5252e"
+    },
+    {
+      "path": "ml/climate/data/cache/13.00_80.25.json",
+      "sha256": "5423c472e2529f34cc2cbbc80eb6e1bee35cbba8f555b0bf4d0a1a3d31728374"
+    },
+    {
+      "path": "ml/climate/data/cache/18.50_73.75.json",
+      "sha256": "54fcf6d616ad2503aef1699a52c6fab803fc04e0fae54fc441ffc603e17f436c"
+    },
+    {
+      "path": "ml/climate/data/cache/19.00_73.00.json",
+      "sha256": "f55e5e8c39342bb9a9c288c9966e83f0cd12211b3fd70a12b986e76c8ca49e06"
+    },
+    {
+      "path": "ml/climate/data/cache/22.50_88.25.json",
+      "sha256": "fca29f32430ca10efa6d7a1ebc643d6ec52f335afa3c27bdf7f80e7ec560c682"
+    },
+    {
+      "path": "ml/climate/data/cache/27.00_75.75.json",
+      "sha256": "b27dcc37da02edfbc3bcc1525d84249ed84cc6f5b1fa99287b17b2ff9477761b"
+    },
+    {
+      "path": "ml/climate/data/cache/28.50_77.25.json",
+      "sha256": "5b2e95c62270d9e5d0c78f4ffc347f88295e1a1c9a30f44af73d0c7218f812a0"
+    },
+    {
+      "path": "ml/climate/data/cache/31.00_77.25.json",
+      "sha256": "0ac9f387f83d6f76f18d988faf2a54abb27197fce6315b691a5b62cc6aa9ac32"
+    }
+  ],
+  "provenance": "recorded_real_http",
+  "source": "Open-Meteo Archive API (ERA5 Reanalysis 1950-2024)",
+  "methodology": "WMO 1991-2020 climatology, Mann-Kendall Sen's slope with LOO stability, Isolation Forest",
+  "metrics": {
+    "n_grid_cells_evaluated": 8,
+    "mean_annual_temp_trend_degc_per_decade": 0.1476,
+    "mean_monsoon_rain_trend_mm_per_decade": -7.6319,
+    "mean_trend_loo_stability_std": 0.003,
+    "event_recall_isolation_forest": 0.6667,
+    "event_recall_percentile_baseline": 1.0,
+    "false_flag_rate_isolation_forest": 0.6667,
+    "false_flag_rate_percentile_baseline": 0.6667,
+    "n_positive_events_tested": 3,
+    "n_negative_controls_tested": 3
+  },
+  "event_evaluation_details": [
+    {
+      "event_id": "EV02",
+      "event_name": "Mumbai Extreme Rain 2005",
+      "is_event": true,
+      "hazard": "heavy_rain",
+      "days_in_window": 2,
+      "iso_flagged": true,
+      "baseline_flagged": true,
+      "iso_min_score": -0.5938,
+      "max_rain_mm": 69.6,
+      "max_tmax_c": 27.2
+    },
+    {
+      "event_id": "EV04",
+      "event_name": "Chennai Floods 2015",
+      "is_event": true,
+      "hazard": "heavy_rain",
+      "days_in_window": 5,
+      "iso_flagged": true,
+      "baseline_flagged": true,
+      "iso_min_score": -0.7367,
+      "max_rain_mm": 57.9,
+      "max_tmax_c": 27.5
+    },
+    {
+      "event_id": "EV06",
+      "event_name": "North India Heatwave 2024",
+      "is_event": true,
+      "hazard": "heatwave",
+      "days_in_window": 14,
+      "iso_flagged": false,
+      "baseline_flagged": true,
+      "iso_min_score": -0.5481,
+      "max_rain_mm": 0.0,
+      "max_tmax_c": 46.3
+    },
+    {
+      "event_id": "CTRL02",
+      "event_name": "Mumbai Non-Event Control 2002",
+      "is_event": false,
+      "hazard": "benign",
+      "days_in_window": 2,
+      "iso_flagged": false,
+      "baseline_flagged": false,
+      "iso_min_score": -0.4646,
+      "max_rain_mm": 9.8,
+      "max_tmax_c": 28.6
+    },
+    {
+      "event_id": "CTRL04",
+      "event_name": "Chennai Non-Event Control 2012",
+      "is_event": false,
+      "hazard": "benign",
+      "days_in_window": 5,
+      "iso_flagged": true,
+      "baseline_flagged": true,
+      "iso_min_score": -0.6901,
+      "max_rain_mm": 61.5,
+      "max_tmax_c": 28.7
+    },
+    {
+      "event_id": "CTRL06",
+      "event_name": "Delhi Non-Event Control 2021",
+      "is_event": false,
+      "hazard": "benign",
+      "days_in_window": 14,
+      "iso_flagged": true,
+      "baseline_flagged": true,
+      "iso_min_score": -0.7723,
+      "max_rain_mm": 69.7,
+      "max_tmax_c": 39.8
+    }
+  ],
+  "caveat": "ERA5 is an atmospheric reanalysis on a 0.25\u00b0 (~27 km) grid, not direct station observations. Convective rainfall extremes are smoothed. Climatological baselines reflect 1991-2020."
+}

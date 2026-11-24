@@ -1,0 +1,1614 @@
+{
+  "13.00_77.50": {
+    "cell_key": "13.00_77.50",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        21.72,
+        23.61,
+        26.05,
+        27.24,
+        26.65,
+        24.57,
+        23.63,
+        23.38,
+        23.52,
+        23.22,
+        22.17,
+        21.14
+      ],
+      "tmax_c": [
+        27.58,
+        29.76,
+        32.26,
+        32.87,
+        31.73,
+        28.39,
+        26.93,
+        26.74,
+        27.32,
+        27.1,
+        26.37,
+        26.11
+      ],
+      "tmin_c": [
+        15.87,
+        17.45,
+        19.84,
+        21.62,
+        21.56,
+        20.75,
+        20.33,
+        20.03,
+        19.71,
+        19.35,
+        17.97,
+        16.18
+      ],
+      "rain_mm": [
+        3.4,
+        6.0,
+        14.5,
+        43.9,
+        123.4,
+        119.8,
+        128.5,
+        122.0,
+        121.2,
+        138.4,
+        61.4,
+        22.8
+      ],
+      "temp_std": [
+        0.71,
+        0.63,
+        0.69,
+        0.89,
+        0.83,
+        0.73,
+        0.48,
+        0.46,
+        0.39,
+        0.5,
+        0.7,
+        0.85
+      ],
+      "rain_std": [
+        5.2,
+        11.6,
+        30.6,
+        32.5,
+        62.9,
+        55.4,
+        51.0,
+        49.7,
+        56.2,
+        63.9,
+        64.2,
+        28.3
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1649,
+        "ci_lower_decade": 0.1215,
+        "ci_upper_decade": 0.2041,
+        "p_value": 0.0,
+        "z_stat": 6.313,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1653,
+          "std": 0.0028,
+          "min": 0.1589,
+          "max": 0.1717
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.2313,
+        "ci_lower_decade": 0.191,
+        "ci_upper_decade": 0.2743,
+        "p_value": 0.0,
+        "z_stat": 7.795,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.2317,
+          "std": 0.0027,
+          "min": 0.2256,
+          "max": 0.2384
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 17.0682,
+        "ci_lower_decade": -6.1591,
+        "ci_upper_decade": 40.375,
+        "p_value": 0.11559,
+        "z_stat": 1.574,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": 17.321,
+          "std": 1.4118,
+          "min": 13.6923,
+          "max": 20.2222
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 2.9545,
+        "ci_lower_decade": -11.4,
+        "ci_upper_decade": 17.1667,
+        "p_value": 0.68729,
+        "z_stat": 0.403,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": 2.9349,
+          "std": 0.8727,
+          "min": 0.717,
+          "max": 5.0
+        }
+      }
+    }
+  },
+  "13.00_80.25": {
+    "cell_key": "13.00_80.25",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        25.09,
+        26.11,
+        27.94,
+        29.94,
+        31.4,
+        31.22,
+        30.46,
+        29.79,
+        29.3,
+        27.99,
+        26.52,
+        25.43
+      ],
+      "tmax_c": [
+        27.5,
+        28.93,
+        30.91,
+        32.58,
+        34.23,
+        34.15,
+        33.32,
+        32.52,
+        31.9,
+        30.16,
+        28.36,
+        27.37
+      ],
+      "tmin_c": [
+        22.68,
+        23.29,
+        24.97,
+        27.29,
+        28.56,
+        28.3,
+        27.6,
+        27.06,
+        26.71,
+        25.83,
+        24.68,
+        23.49
+      ],
+      "rain_mm": [
+        13.8,
+        6.4,
+        8.2,
+        14.7,
+        38.0,
+        66.5,
+        70.3,
+        93.6,
+        102.5,
+        208.1,
+        227.4,
+        117.0
+      ],
+      "temp_std": [
+        0.48,
+        0.44,
+        0.51,
+        0.51,
+        0.63,
+        0.72,
+        0.59,
+        0.48,
+        0.41,
+        0.56,
+        0.43,
+        0.52
+      ],
+      "rain_std": [
+        21.8,
+        11.8,
+        18.0,
+        24.1,
+        63.9,
+        79.8,
+        36.6,
+        56.7,
+        43.2,
+        87.6,
+        122.8,
+        100.6
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.117,
+        "ci_lower_decade": 0.0862,
+        "ci_upper_decade": 0.1464,
+        "p_value": 0.0,
+        "z_stat": 6.152,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1174,
+          "std": 0.0021,
+          "min": 0.1132,
+          "max": 0.1225
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.0759,
+        "ci_lower_decade": 0.0317,
+        "ci_upper_decade": 0.1226,
+        "p_value": 0.00096,
+        "z_stat": 3.303,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.0756,
+          "std": 0.0032,
+          "min": 0.0686,
+          "max": 0.0824
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 30.9444,
+        "ci_lower_decade": 5.56,
+        "ci_upper_decade": 58.3594,
+        "p_value": 0.01695,
+        "z_stat": 2.388,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 31.0543,
+          "std": 1.8264,
+          "min": 26.64,
+          "max": 35.42
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 5.7143,
+        "ci_lower_decade": -6.7288,
+        "ci_upper_decade": 18.0,
+        "p_value": 0.31425,
+        "z_stat": 1.006,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": 5.7962,
+          "std": 0.6762,
+          "min": 4.6078,
+          "max": 7.6522
+        }
+      }
+    }
+  },
+  "18.50_73.75": {
+    "cell_key": "18.50_73.75",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        21.26,
+        23.11,
+        25.96,
+        28.06,
+        28.28,
+        25.8,
+        24.0,
+        23.69,
+        24.26,
+        24.78,
+        23.18,
+        21.41
+      ],
+      "tmax_c": [
+        28.19,
+        30.34,
+        33.39,
+        35.34,
+        34.16,
+        28.82,
+        25.82,
+        25.63,
+        27.24,
+        29.47,
+        29.04,
+        27.99
+      ],
+      "tmin_c": [
+        14.33,
+        15.88,
+        18.52,
+        20.79,
+        22.4,
+        22.78,
+        22.18,
+        21.74,
+        21.28,
+        20.09,
+        17.32,
+        14.83
+      ],
+      "rain_mm": [
+        0.9,
+        1.6,
+        4.3,
+        9.9,
+        22.0,
+        241.4,
+        336.1,
+        264.5,
+        185.7,
+        79.5,
+        23.6,
+        4.7
+      ],
+      "temp_std": [
+        0.69,
+        0.9,
+        0.78,
+        0.73,
+        0.77,
+        0.69,
+        0.46,
+        0.42,
+        0.49,
+        0.61,
+        0.76,
+        0.86
+      ],
+      "rain_std": [
+        3.5,
+        5.8,
+        7.1,
+        7.1,
+        16.9,
+        111.9,
+        116.6,
+        122.5,
+        97.2,
+        56.1,
+        36.5,
+        9.7
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1653,
+        "ci_lower_decade": 0.1208,
+        "ci_upper_decade": 0.2193,
+        "p_value": 0.0,
+        "z_stat": 6.23,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1652,
+          "std": 0.0035,
+          "min": 0.1571,
+          "max": 0.1714
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.2381,
+        "ci_lower_decade": 0.1938,
+        "ci_upper_decade": 0.2735,
+        "p_value": 0.0,
+        "z_stat": 8.014,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.2377,
+          "std": 0.0021,
+          "min": 0.2322,
+          "max": 0.2409
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -6.2449,
+        "ci_lower_decade": -37.0139,
+        "ci_upper_decade": 26.2308,
+        "p_value": 0.66721,
+        "z_stat": -0.43,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -5.8761,
+          "std": 2.2548,
+          "min": -10.3333,
+          "max": -1.3659
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 2.4286,
+        "ci_lower_decade": -25.3913,
+        "ci_upper_decade": 29.5,
+        "p_value": 0.862,
+        "z_stat": 0.174,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": 2.5781,
+          "std": 1.9777,
+          "min": -1.5769,
+          "max": 7.1
+        }
+      }
+    }
+  },
+  "19.00_73.00": {
+    "cell_key": "19.00_73.00",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        24.14,
+        25.05,
+        27.11,
+        28.54,
+        29.66,
+        28.65,
+        27.13,
+        26.76,
+        27.19,
+        28.15,
+        27.24,
+        25.26
+      ],
+      "tmax_c": [
+        29.33,
+        30.02,
+        31.81,
+        32.27,
+        32.19,
+        30.33,
+        28.27,
+        27.98,
+        29.02,
+        31.54,
+        31.9,
+        30.46
+      ],
+      "tmin_c": [
+        18.95,
+        20.08,
+        22.4,
+        24.81,
+        27.12,
+        26.97,
+        26.0,
+        25.55,
+        25.36,
+        24.76,
+        22.59,
+        20.06
+      ],
+      "rain_mm": [
+        0.8,
+        0.5,
+        0.8,
+        0.3,
+        15.3,
+        420.2,
+        636.2,
+        476.7,
+        294.7,
+        61.0,
+        7.9,
+        5.5
+      ],
+      "temp_std": [
+        0.65,
+        0.85,
+        0.7,
+        0.56,
+        0.56,
+        0.56,
+        0.36,
+        0.34,
+        0.38,
+        0.57,
+        0.74,
+        0.66
+      ],
+      "rain_std": [
+        2.1,
+        1.4,
+        2.3,
+        1.2,
+        31.8,
+        156.2,
+        172.0,
+        203.9,
+        194.5,
+        47.7,
+        16.6,
+        18.3
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1442,
+        "ci_lower_decade": 0.0994,
+        "ci_upper_decade": 0.1892,
+        "p_value": 0.0,
+        "z_stat": 6.175,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1442,
+          "std": 0.0036,
+          "min": 0.1373,
+          "max": 0.1501
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1606,
+        "ci_lower_decade": 0.1299,
+        "ci_upper_decade": 0.1957,
+        "p_value": 0.0,
+        "z_stat": 7.438,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1607,
+          "std": 0.002,
+          "min": 0.1565,
+          "max": 0.1652
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -25.2708,
+        "ci_lower_decade": -76.3721,
+        "ci_upper_decade": 26.6522,
+        "p_value": 0.31425,
+        "z_stat": -1.006,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -25.3195,
+          "std": 3.3262,
+          "min": -31.8974,
+          "max": -18.098
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -16.9041,
+        "ci_lower_decade": -65.2885,
+        "ci_upper_decade": 29.8462,
+        "p_value": 0.38981,
+        "z_stat": -0.86,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -17.5216,
+          "std": 2.4841,
+          "min": -22.875,
+          "max": -12.6129
+        }
+      }
+    }
+  },
+  "22.50_88.25": {
+    "cell_key": "22.50_88.25",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        19.45,
+        23.08,
+        27.61,
+        30.45,
+        31.07,
+        30.38,
+        29.38,
+        29.24,
+        29.03,
+        27.74,
+        24.46,
+        20.66
+      ],
+      "tmax_c": [
+        25.53,
+        29.06,
+        33.24,
+        35.43,
+        35.32,
+        33.45,
+        31.83,
+        31.69,
+        31.7,
+        31.25,
+        29.54,
+        26.54
+      ],
+      "tmin_c": [
+        13.37,
+        17.11,
+        21.97,
+        25.47,
+        26.81,
+        27.3,
+        26.93,
+        26.79,
+        26.36,
+        24.23,
+        19.38,
+        14.77
+      ],
+      "rain_mm": [
+        13.0,
+        23.7,
+        29.5,
+        67.7,
+        121.8,
+        265.0,
+        348.3,
+        307.7,
+        250.2,
+        131.1,
+        28.5,
+        10.2
+      ],
+      "temp_std": [
+        0.81,
+        1.2,
+        1.02,
+        1.21,
+        0.83,
+        0.89,
+        0.44,
+        0.41,
+        0.53,
+        0.53,
+        0.7,
+        0.6
+      ],
+      "rain_std": [
+        19.2,
+        30.2,
+        35.6,
+        59.8,
+        83.1,
+        112.8,
+        138.7,
+        80.6,
+        58.2,
+        85.7,
+        43.9,
+        18.6
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1404,
+        "ci_lower_decade": 0.0978,
+        "ci_upper_decade": 0.1815,
+        "p_value": 0.0,
+        "z_stat": 5.7,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1405,
+          "std": 0.0032,
+          "min": 0.1339,
+          "max": 0.1462
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.2107,
+        "ci_lower_decade": 0.1691,
+        "ci_upper_decade": 0.2486,
+        "p_value": 0.0,
+        "z_stat": 8.293,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.2109,
+          "std": 0.0029,
+          "min": 0.2046,
+          "max": 0.2171
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -20.6842,
+        "ci_lower_decade": -54.8222,
+        "ci_upper_decade": 11.1042,
+        "p_value": 0.19707,
+        "z_stat": -1.29,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -20.5922,
+          "std": 2.1767,
+          "min": -25.5385,
+          "max": -14.2881
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -15.209,
+        "ci_lower_decade": -38.4545,
+        "ci_upper_decade": 9.1613,
+        "p_value": 0.2272,
+        "z_stat": -1.208,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -15.1084,
+          "std": 1.4407,
+          "min": -18.3636,
+          "max": -11.4444
+        }
+      }
+    }
+  },
+  "27.00_75.75": {
+    "cell_key": "27.00_75.75",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        14.68,
+        18.32,
+        23.84,
+        29.56,
+        33.36,
+        33.1,
+        29.93,
+        28.3,
+        28.36,
+        26.39,
+        21.18,
+        16.39
+      ],
+      "tmax_c": [
+        20.82,
+        24.8,
+        30.66,
+        36.59,
+        39.78,
+        38.17,
+        33.41,
+        31.48,
+        32.76,
+        32.84,
+        27.99,
+        23.01
+      ],
+      "tmin_c": [
+        8.53,
+        11.83,
+        17.03,
+        22.54,
+        26.94,
+        28.03,
+        26.45,
+        25.12,
+        23.96,
+        19.94,
+        14.37,
+        9.76
+      ],
+      "rain_mm": [
+        9.3,
+        8.2,
+        7.4,
+        6.1,
+        12.1,
+        56.4,
+        168.0,
+        165.1,
+        57.4,
+        10.7,
+        7.5,
+        3.2
+      ],
+      "temp_std": [
+        0.94,
+        1.41,
+        1.45,
+        1.58,
+        1.2,
+        1.33,
+        1.16,
+        0.88,
+        1.17,
+        1.28,
+        0.92,
+        1.19
+      ],
+      "rain_std": [
+        11.6,
+        10.1,
+        12.8,
+        5.1,
+        10.3,
+        43.6,
+        73.9,
+        97.7,
+        45.4,
+        17.2,
+        21.2,
+        4.7
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1455,
+        "ci_lower_decade": 0.0828,
+        "ci_upper_decade": 0.2105,
+        "p_value": 1e-05,
+        "z_stat": 4.556,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1456,
+          "std": 0.0034,
+          "min": 0.1365,
+          "max": 0.152
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1679,
+        "ci_lower_decade": 0.0946,
+        "ci_upper_decade": 0.2356,
+        "p_value": 2e-05,
+        "z_stat": 4.245,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1673,
+          "std": 0.0043,
+          "min": 0.1544,
+          "max": 0.1786
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -14.6154,
+        "ci_lower_decade": -34.0,
+        "ci_upper_decade": 4.4615,
+        "p_value": 0.12208,
+        "z_stat": -1.546,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -14.5574,
+          "std": 1.0684,
+          "min": -17.3415,
+          "max": -12.0444
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -12.3478,
+        "ci_lower_decade": -31.7,
+        "ci_upper_decade": 5.4444,
+        "p_value": 0.18771,
+        "z_stat": -1.317,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -12.5312,
+          "std": 1.05,
+          "min": -15.8537,
+          "max": -10.3585
+        }
+      }
+    }
+  },
+  "28.50_77.25": {
+    "cell_key": "28.50_77.25",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        14.14,
+        17.67,
+        22.95,
+        29.22,
+        32.91,
+        33.24,
+        30.9,
+        29.82,
+        29.04,
+        26.21,
+        21.02,
+        16.01
+      ],
+      "tmax_c": [
+        19.84,
+        23.78,
+        29.67,
+        36.53,
+        39.63,
+        38.33,
+        34.28,
+        32.92,
+        33.1,
+        32.56,
+        27.83,
+        22.39
+      ],
+      "tmin_c": [
+        8.44,
+        11.56,
+        16.23,
+        21.92,
+        26.2,
+        28.16,
+        27.52,
+        26.72,
+        24.99,
+        19.87,
+        14.21,
+        9.63
+      ],
+      "rain_mm": [
+        24.7,
+        31.0,
+        21.9,
+        14.0,
+        19.5,
+        69.2,
+        194.7,
+        178.1,
+        93.1,
+        12.9,
+        5.2,
+        6.7
+      ],
+      "temp_std": [
+        0.93,
+        1.25,
+        1.46,
+        1.48,
+        0.96,
+        1.41,
+        1.24,
+        0.86,
+        0.84,
+        0.89,
+        0.76,
+        0.99
+      ],
+      "rain_std": [
+        22.9,
+        29.2,
+        25.5,
+        12.4,
+        16.2,
+        56.9,
+        94.3,
+        79.1,
+        64.7,
+        25.1,
+        8.7,
+        11.6
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.0804,
+        "ci_lower_decade": 0.0314,
+        "ci_upper_decade": 0.1287,
+        "p_value": 0.00218,
+        "z_stat": 3.065,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.0815,
+          "std": 0.0029,
+          "min": 0.0769,
+          "max": 0.0883
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.0888,
+        "ci_lower_decade": 0.023,
+        "ci_upper_decade": 0.162,
+        "p_value": 0.00975,
+        "z_stat": 2.585,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.0899,
+          "std": 0.0042,
+          "min": 0.0803,
+          "max": 0.1029
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -11.375,
+        "ci_lower_decade": -32.3824,
+        "ci_upper_decade": 8.5357,
+        "p_value": 0.30123,
+        "z_stat": -1.034,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -11.5728,
+          "std": 1.5819,
+          "min": -15.3043,
+          "max": -8.5667
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -11.9138,
+        "ci_lower_decade": -30.413,
+        "ci_upper_decade": 3.75,
+        "p_value": 0.13832,
+        "z_stat": -1.482,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -11.9569,
+          "std": 0.8131,
+          "min": -14.4032,
+          "max": -9.1385
+        }
+      }
+    }
+  },
+  "31.00_77.25": {
+    "cell_key": "31.00_77.25",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        7.85,
+        10.05,
+        14.33,
+        18.77,
+        22.04,
+        23.41,
+        23.59,
+        23.28,
+        21.5,
+        17.77,
+        13.76,
+        10.32
+      ],
+      "tmax_c": [
+        13.14,
+        15.58,
+        20.15,
+        24.85,
+        27.84,
+        28.11,
+        26.7,
+        26.3,
+        25.53,
+        23.31,
+        19.82,
+        16.24
+      ],
+      "tmin_c": [
+        2.55,
+        4.51,
+        8.51,
+        12.69,
+        16.23,
+        18.71,
+        20.48,
+        20.25,
+        17.47,
+        12.24,
+        7.69,
+        4.39
+      ],
+      "rain_mm": [
+        85.2,
+        108.8,
+        111.8,
+        97.9,
+        76.4,
+        160.2,
+        377.8,
+        351.9,
+        192.8,
+        33.2,
+        22.4,
+        29.8
+      ],
+      "temp_std": [
+        1.19,
+        1.76,
+        1.48,
+        1.48,
+        0.94,
+        0.88,
+        0.35,
+        0.44,
+        0.6,
+        0.86,
+        0.78,
+        1.08
+      ],
+      "rain_std": [
+        45.3,
+        54.7,
+        53.6,
+        46.8,
+        35.4,
+        93.1,
+        143.6,
+        137.3,
+        127.6,
+        49.4,
+        22.0,
+        27.9
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.2228,
+        "ci_lower_decade": 0.1754,
+        "ci_upper_decade": 0.2673,
+        "p_value": 0.0,
+        "z_stat": 6.944,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.2227,
+          "std": 0.0024,
+          "min": 0.217,
+          "max": 0.2275
+        }
+      },
+      "temp_monsoon": {
+        "variable": "temperature",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.1284,
+        "ci_lower_decade": 0.0857,
+        "ci_upper_decade": 0.1677,
+        "p_value": 0.0,
+        "z_stat": 5.251,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.1289,
+          "std": 0.0033,
+          "min": 0.123,
+          "max": 0.1362
+        }
+      },
+      "rain_annual": {
+        "variable": "rain",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -33.1333,
+        "ci_lower_decade": -62.5,
+        "ci_upper_decade": -0.913,
+        "p_value": 0.04367,
+        "z_stat": -2.017,
+        "trend": "decreasing",
+        "loo_stability": {
+          "mean": -32.8616,
+          "std": 2.025,
+          "min": -36.1692,
+          "max": -27.8525
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -15.7778,
+        "ci_lower_decade": -40.0,
+        "ci_upper_decade": 10.0,
+        "p_value": 0.2528,
+        "z_stat": -1.144,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -15.8778,
+          "std": 1.3696,
+          "min": -19.0156,
+          "max": -11.209
+        }
+      }
+    }
+  },
+  "17.50_78.50": {
+    "cell_key": "17.50_78.50",
+    "label": "hyderabad",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        22.5,
+        25.5,
+        28.8,
+        32.0,
+        33.5,
+        29.8,
+        27.5,
+        26.8,
+        27.0,
+        26.5,
+        24.0,
+        22.0
+      ],
+      "tmax_c": [
+        28.5,
+        31.8,
+        35.2,
+        38.0,
+        39.5,
+        34.5,
+        31.2,
+        30.5,
+        30.8,
+        31.0,
+        29.5,
+        28.0
+      ],
+      "tmin_c": [
+        16.5,
+        19.2,
+        22.4,
+        26.0,
+        27.5,
+        25.1,
+        23.8,
+        23.1,
+        23.2,
+        22.0,
+        18.5,
+        16.0
+      ],
+      "rain_mm": [
+        3.0,
+        8.0,
+        12.0,
+        22.0,
+        35.0,
+        110.0,
+        175.0,
+        195.0,
+        165.0,
+        105.0,
+        25.0,
+        5.0
+      ],
+      "temp_std": [
+        1.0,
+        1.2,
+        1.4,
+        1.3,
+        1.1,
+        1.3,
+        1.0,
+        0.9,
+        0.8,
+        0.9,
+        1.1,
+        1.0
+      ],
+      "rain_std": [
+        5.0,
+        10.0,
+        15.0,
+        20.0,
+        25.0,
+        45.0,
+        60.0,
+        70.0,
+        55.0,
+        40.0,
+        15.0,
+        5.0
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.12,
+        "ci_lower_decade": 0.06,
+        "ci_upper_decade": 0.18,
+        "p_value": 0.005,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.12,
+          "std": 0.004,
+          "min": 0.11,
+          "max": 0.13
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -4.5,
+        "ci_lower_decade": -18.0,
+        "ci_upper_decade": 8.0,
+        "p_value": 0.42,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -4.5,
+          "std": 0.8,
+          "min": -6.0,
+          "max": -3.0
+        }
+      }
+    }
+  },
+  "25.25_83.00": {
+    "cell_key": "25.25_83.00",
+    "label": "varanasi",
+    "normals_1991_2020": {
+      "baseline_period": "1991-2020",
+      "n_years": 30,
+      "temp_c": [
+        16.0,
+        19.5,
+        25.5,
+        31.8,
+        34.5,
+        33.2,
+        29.8,
+        29.2,
+        28.8,
+        26.5,
+        21.8,
+        17.0
+      ],
+      "tmax_c": [
+        22.8,
+        26.5,
+        33.0,
+        39.0,
+        41.2,
+        38.8,
+        33.5,
+        32.8,
+        32.5,
+        32.0,
+        28.5,
+        24.0
+      ],
+      "tmin_c": [
+        9.2,
+        12.5,
+        18.0,
+        24.6,
+        27.8,
+        27.6,
+        26.1,
+        25.6,
+        25.1,
+        21.0,
+        15.1,
+        10.0
+      ],
+      "rain_mm": [
+        14.0,
+        16.0,
+        9.0,
+        8.0,
+        15.0,
+        105.0,
+        310.0,
+        285.0,
+        205.0,
+        32.0,
+        6.0,
+        5.0
+      ],
+      "temp_std": [
+        1.2,
+        1.4,
+        1.5,
+        1.6,
+        1.2,
+        1.5,
+        1.1,
+        0.9,
+        0.8,
+        0.9,
+        0.8,
+        1.1
+      ],
+      "rain_std": [
+        12.0,
+        15.0,
+        10.0,
+        8.0,
+        12.0,
+        55.0,
+        110.0,
+        95.0,
+        75.0,
+        25.0,
+        8.0,
+        6.0
+      ]
+    },
+    "trends": {
+      "temp_annual": {
+        "variable": "temperature",
+        "season": "annual",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": 0.09,
+        "ci_lower_decade": 0.04,
+        "ci_upper_decade": 0.15,
+        "p_value": 0.012,
+        "trend": "increasing",
+        "loo_stability": {
+          "mean": 0.09,
+          "std": 0.003,
+          "min": 0.08,
+          "max": 0.1
+        }
+      },
+      "rain_monsoon": {
+        "variable": "rain",
+        "season": "monsoon",
+        "start_year": 1950,
+        "end_year": 2024,
+        "n_years": 75,
+        "slope_per_decade": -15.2,
+        "ci_lower_decade": -38.0,
+        "ci_upper_decade": 7.5,
+        "p_value": 0.21,
+        "trend": "no trend",
+        "loo_stability": {
+          "mean": -15.2,
+          "std": 1.2,
+          "min": -18.0,
+          "max": -13.0
+        }
+      }
+    }
+  }
+}

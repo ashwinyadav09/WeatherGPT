@@ -12,6 +12,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | 11 | Language waves 2 and 3 | done | Merged to main |
 | 19 | Agromet and marine advisories (after the IMD key arrives) | done | Merged to main |
 | 14 | Aviation and smart-city read-only modules | done | Merged to main |
+| R13 | Climate trend and anomaly | done | Implemented ERA5 reanalysis pipeline, WMO 1991-2020 normals, Mann-Kendall Sen slope with LOO stability, and Isolation Forest |
 
 ## Assumptions
 
