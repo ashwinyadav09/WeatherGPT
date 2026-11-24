@@ -47,7 +47,7 @@ async def test_trace_contract_forecast_query():
 
         assert trace_data["intent"] == "forecast"
         assert trace_data["confidence"] is None or trace_data["confidence"] > 0
-        assert trace_data["router_path"] in ["deterministic", "llm_function_call"]
+        assert trace_data["router_path"] in ["deterministic", "llm_function_call", "intent_model", "intent_model_auto"]
         assert isinstance(trace_data["tools"], list)
         assert len(trace_data["tools"]) >= 1
         assert "name" in trace_data["tools"][0]

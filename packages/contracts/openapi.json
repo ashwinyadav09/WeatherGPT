@@ -1525,12 +1525,18 @@
             "in": "query",
             "required": false,
             "schema": {
-              "type": "string",
-              "description": "Period string (e.g. 2026-05 or 1991-2020)",
-              "default": "2026-05",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Period string (e.g. 2024-05 or 1991-2020)",
               "title": "Period"
             },
-            "description": "Period string (e.g. 2026-05 or 1991-2020)"
+            "description": "Period string (e.g. 2024-05 or 1991-2020)"
           },
           {
             "name": "stat",
@@ -1820,6 +1826,159 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ml/models": {
+      "get": {
+        "tags": [
+          "ml"
+        ],
+        "summary": "List Models",
+        "description": "List all registered ML models with audited metrics from reports/metrics.json.",
+        "operationId": "list_models_v1_ml_models_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  "type": "array",
+                  "title": "Response List Models V1 Ml Models Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ml/models/{model_id}/card": {
+      "get": {
+        "tags": [
+          "ml"
+        ],
+        "summary": "Get Model Card",
+        "description": "Retrieve model card and evaluation metrics for a specific model.",
+        "operationId": "get_model_card_v1_ml_models__model_id__card_get",
+        "parameters": [
+          {
+            "name": "model_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Model Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Get Model Card V1 Ml Models  Model Id  Card Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ml/predict/{model_id}": {
+      "post": {
+        "tags": [
+          "ml"
+        ],
+        "summary": "Predict Model",
+        "description": "Execute live inference on a registered model. Rejects if enabled_in_production=False.",
+        "operationId": "predict_model_v1_ml_predict__model_id__post",
+        "parameters": [
+          {
+            "name": "model_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Model Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Predict Model V1 Ml Predict  Model Id  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ml/eval/summary": {
+      "get": {
+        "tags": [
+          "ml"
+        ],
+        "summary": "Get Evaluation Summary",
+        "description": "Aggregate evaluation summary across all models strictly from reports/metrics.json.",
+        "operationId": "get_evaluation_summary_v1_ml_eval_summary_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Get Evaluation Summary V1 Ml Eval Summary Get"
                 }
               }
             }
@@ -2462,6 +2621,11 @@
             "type": "boolean",
             "title": "Stream",
             "default": true
+          },
+          "ml_mode": {
+            "type": "string",
+            "title": "Ml Mode",
+            "default": "raw"
           }
         },
         "type": "object",

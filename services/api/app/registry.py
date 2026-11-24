@@ -287,7 +287,7 @@ class ProviderRegistry:
             forecast_service=forecast_service,
             location_resolver=location_resolver,
             translation_gateway=translation_gateway or self.get_translation_provider(),
-            intent_model=intent_model,
+            intent_model=intent_model or self.get_intent_model(),
         )
 
     def get_intent_model(self) -> Any:
