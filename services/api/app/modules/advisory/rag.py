@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import csv
-import math
+import json
 import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
@@ -38,6 +38,8 @@ class KnowledgeChunk:
     retrieval_date: str
     url: str
     license: str
+    page: int = 1
+    sha256: str = ""
 
 
 def _tokenize(text: str) -> list[str]:
@@ -53,53 +55,28 @@ def _tokenize(text: str) -> list[str]:
     return words + ngrams
 
 
-class DenseTFIDFVectorizer:
-    """Lightweight pure-python/numpy character-and-word TF-IDF vectorizer for dense retrieval."""
+class MultilingualDenseRetriever:
+    """Multilingual dense embedding retriever using intfloat/multilingual-e5-small."""
 
-    def __init__(self) -> None:
-        self.vocab: dict[str, int] = {}
-        self.idf: np.ndarray | None = None
+    def __init__(self, model_name: str = "intfloat/multilingual-e5-small") -> None:
+        self.model_name = model_name
+        self._model: Any = None
 
-    def fit(self, documents: list[str]) -> None:
-        term_doc_count: dict[str, int] = {}
-        n_docs = len(documents)
+    def _get_model(self) -> Any:
+        if self._model is None:
+            from sentence_transformers import SentenceTransformer
+            self._model = SentenceTransformer(self.model_name)
+        return self._model
 
-        for doc in documents:
-            tokens = set(_tokenize(doc))
-            for tok in tokens:
-                term_doc_count[tok] = term_doc_count.get(tok, 0) + 1
+    def encode_queries(self, queries: list[str]) -> np.ndarray:
+        model = self._get_model()
+        formatted = ["query: " + q for q in queries]
+        return np.array(model.encode(formatted, normalize_embeddings=True, show_progress_bar=False), dtype=np.float32)
 
-        # Keep vocabulary that appears at least once
-        self.vocab = {term: idx for idx, (term, _) in enumerate(term_doc_count.items())}
-        idf_vals = np.zeros(len(self.vocab), dtype=np.float32)
-
-        for term, idx in self.vocab.items():
-            df = term_doc_count[term]
-            idf_vals[idx] = math.log((1 + n_docs) / (1 + df)) + 1.0
-
-        self.idf = idf_vals
-
-    def transform(self, documents: list[str]) -> np.ndarray:
-        if self.idf is None or not self.vocab:
-            return np.zeros((len(documents), 1), dtype=np.float32)
-
-        vectors = np.zeros((len(documents), len(self.vocab)), dtype=np.float32)
-        for doc_idx, doc in enumerate(documents):
-            tokens = _tokenize(doc)
-            for tok in tokens:
-                if tok in self.vocab:
-                    col_idx = self.vocab[tok]
-                    vectors[doc_idx, col_idx] += 1.0
-
-            # Multiply by IDF
-            vectors[doc_idx] *= self.idf
-
-            # L2 normalize
-            norm = np.linalg.norm(vectors[doc_idx])
-            if norm > 0:
-                vectors[doc_idx] /= norm
-
-        return vectors
+    def encode_passages(self, passages: list[str]) -> np.ndarray:
+        model = self._get_model()
+        formatted = ["passage: " + p for p in passages]
+        return np.array(model.encode(formatted, normalize_embeddings=True, show_progress_bar=False), dtype=np.float32)
 
 
 class RagEngine:
@@ -111,7 +88,7 @@ class RagEngine:
         self.knowledge_dir = knowledge_dir or KNOWLEDGE_DIR
         self.chunks: list[KnowledgeChunk] = []
         self.bm25: BM25Okapi | None = None
-        self.vectorizer = DenseTFIDFVectorizer()
+        self.dense_retriever = MultilingualDenseRetriever()
         self.chunk_vectors: np.ndarray | None = None
         self.sources_meta: dict[str, dict[str, str]] = {}
         self.load_corpus()
@@ -131,74 +108,108 @@ class RagEngine:
                     self.sources_meta[row["filename"]] = row
 
     def load_corpus(self) -> None:
-        """Parse markdown files in knowledge directory into structured chunks."""
+        """Load official chunked corpus from chunks.json or reconstruct from markdown files."""
         self._load_sources_meta()
         self.chunks.clear()
 
         if not self.knowledge_dir.exists():
             return
 
-        for md_file in sorted(self.knowledge_dir.glob("*.md")):
-            file_meta = self.sources_meta.get(md_file.name, {})
-            source_title = file_meta.get("title", md_file.stem.replace("_", " ").title())
-            url = file_meta.get("url", "https://ndma.gov.in")
-            license_str = file_meta.get("license", "OGDL-India")
-            rdate = file_meta.get("retrieval_date", "2026-11-22")
+        chunks_json_path = self.knowledge_dir / "chunks.json"
+        if chunks_json_path.exists():
+            try:
+                data = json.loads(chunks_json_path.read_text(encoding="utf-8"))
+                for item in data:
+                    c = KnowledgeChunk(
+                        chunk_id=item["chunk_id"],
+                        source=item["source"],
+                        title=item["title"],
+                        hazard=item["hazard"],
+                        language=item.get("language", "en"),
+                        text=item["text"],
+                        retrieval_date=item.get("retrieval_date", "2026-11-24"),
+                        url=item.get("url", "https://ndma.gov.in"),
+                        license=item.get("license", "OGDL-India"),
+                        page=item.get("page", 1),
+                        sha256=item.get("sha256", ""),
+                    )
+                    self.chunks.append(c)
+            except Exception:
+                self.chunks.clear()
 
-            content = md_file.read_text(encoding="utf-8")
-            sections = content.split("\n## ")
+        # Fallback to parsing markdown files if chunks.json empty
+        if not self.chunks:
+            for md_file in sorted(self.knowledge_dir.glob("*.md")):
+                file_meta = self.sources_meta.get(md_file.name, {})
+                source_title = file_meta.get("title", md_file.stem.replace("_", " ").title())
+                url = file_meta.get("url", "https://ndma.gov.in")
+                license_str = file_meta.get("license", "OGDL-India")
+                rdate = file_meta.get("retrieval_date", "2026-11-24")
 
-            main_title = md_file.stem.replace("_", " ").title()
-            first_section = sections[0].strip()
-            if first_section.startswith("# "):
-                main_title = first_section.split("\n", 1)[0].replace("# ", "").strip()
+                content = md_file.read_text(encoding="utf-8")
+                sections = content.split("\n## ")
 
-            hazard = "general"
-            fname_lower = md_file.stem.lower()
-            if "heat" in fname_lower:
-                hazard = "heat_wave"
-            elif "cold" in fname_lower:
-                hazard = "cold_wave"
-            elif "flood" in fname_lower:
-                hazard = "flood"
-            elif "agriculture" in fname_lower or "icar" in fname_lower:
-                hazard = "agriculture"
-            elif "fisher" in fname_lower or "marine" in fname_lower:
-                hazard = "marine"
-            elif "colour" in fname_lower or "color" in fname_lower:
-                hazard = "colour_code"
+                main_title = md_file.stem.replace("_", " ").title()
+                first_section = sections[0].strip()
+                if first_section.startswith("# "):
+                    main_title = first_section.split("\n", 1)[0].replace("# ", "").strip()
 
-            # Parse remaining sections
-            for idx, sec in enumerate(sections[1:], start=1):
-                lines = sec.strip().split("\n")
-                heading = lines[0].strip()
-                body = "\n".join(lines[1:]).strip()
+                hazard = "general"
+                fname_lower = md_file.stem.lower()
+                if "heat" in fname_lower:
+                    hazard = "heat_wave"
+                elif "cold" in fname_lower:
+                    hazard = "cold_wave"
+                elif "flood" in fname_lower:
+                    hazard = "flood"
+                elif "agriculture" in fname_lower or "icar" in fname_lower:
+                    hazard = "agriculture"
+                elif "fisher" in fname_lower or "marine" in fname_lower:
+                    hazard = "marine"
+                elif "colour" in fname_lower or "color" in fname_lower:
+                    hazard = "colour_code"
 
-                chunk_id = f"{md_file.stem}_{idx:02d}"
-                chunk = KnowledgeChunk(
-                    chunk_id=chunk_id,
-                    source=source_title,
-                    title=f"{main_title} - {heading}",
-                    hazard=hazard,
-                    language="en",
-                    text=f"## {heading}\n{body}",
-                    retrieval_date=rdate,
-                    url=url,
-                    license=license_str,
-                )
-                self.chunks.append(chunk)
+                for idx, sec in enumerate(sections[1:], start=1):
+                    lines = sec.strip().split("\n")
+                    heading = lines[0].strip()
+                    body = "\n".join(lines[1:]).strip()
+
+                    chunk_id = f"{md_file.stem}_{idx:02d}"
+                    chunk = KnowledgeChunk(
+                        chunk_id=chunk_id,
+                        source=source_title,
+                        title=f"{main_title} - {heading}",
+                        hazard=hazard,
+                        language="en",
+                        text=f"## {heading}\n{body}",
+                        retrieval_date=rdate,
+                        url=url,
+                        license=license_str,
+                    )
+                    self.chunks.append(chunk)
 
         # Build BM25 index
         if self.chunks:
             corpus_tokens = [_tokenize(f"{c.title}\n{c.text}") for c in self.chunks]
             self.bm25 = BM25Okapi(corpus_tokens)
 
-            # Build Dense TF-IDF Index
-            corpus_texts = [f"{c.title}\n{c.text}" for c in self.chunks]
-            self.vectorizer.fit(corpus_texts)
-            self.chunk_vectors = self.vectorizer.transform(corpus_texts)
+            # Load or compute dense embeddings
+            emb_file = self.knowledge_dir / "chunk_embeddings.npy"
+            if emb_file.exists():
+                try:
+                    self.chunk_vectors = np.load(str(emb_file))
+                except Exception:
+                    self.chunk_vectors = None
 
-    def search_bm25(self, query: str, top_k: int = 5, threshold: float = 3.5) -> list[tuple[KnowledgeChunk, float]]:
+            if self.chunk_vectors is None or len(self.chunk_vectors) != len(self.chunks):
+                try:
+                    corpus_texts = [f"{c.title}\n{c.text}" for c in self.chunks]
+                    self.chunk_vectors = self.dense_retriever.encode_passages(corpus_texts)
+                    np.save(str(emb_file), self.chunk_vectors)
+                except Exception:
+                    self.chunk_vectors = None
+
+    def search_bm25(self, query: str, top_k: int = 5, threshold: float = 2.0) -> list[tuple[KnowledgeChunk, float]]:
         if not self.bm25 or not self.chunks:
             return []
         q_tokens = _tokenize(query)
@@ -208,14 +219,16 @@ class RagEngine:
         top_indices = np.argsort(scores)[::-1][:top_k]
         return [(self.chunks[i], float(scores[i])) for i in top_indices if scores[i] >= threshold]
 
-    def search_dense(self, query: str, top_k: int = 5, threshold: float = 0.10) -> list[tuple[KnowledgeChunk, float]]:
+    def search_dense(self, query: str, top_k: int = 5, threshold: float = 0.76) -> list[tuple[KnowledgeChunk, float]]:
         if self.chunk_vectors is None or not self.chunks:
             return []
-        q_vec = self.vectorizer.transform([query])
-        # Cosine similarity
-        sims = np.dot(self.chunk_vectors, q_vec.T).flatten()
-        top_indices = np.argsort(sims)[::-1][:top_k]
-        return [(self.chunks[i], float(sims[i])) for i in top_indices if sims[i] >= threshold]
+        try:
+            q_vec = self.dense_retriever.encode_queries([query])[0]
+            sims = np.dot(self.chunk_vectors, q_vec)
+            top_indices = np.argsort(sims)[::-1][:top_k]
+            return [(self.chunks[i], float(sims[i])) for i in top_indices if sims[i] >= threshold]
+        except Exception:
+            return []
 
     def search(
         self,
@@ -223,39 +236,58 @@ class RagEngine:
         lang: str = "en",
         mode: str = "hybrid",
         top_k: int = 3,
-        threshold: float = 0.005,
+        threshold: float = 0.002,
     ) -> list[tuple[KnowledgeChunk, float]]:
         """Search corpus with bm25, dense, or hybrid reciprocal rank fusion."""
         if not self.chunks:
             return []
 
         if mode == "bm25":
-            results = self.search_bm25(query, top_k=top_k, threshold=3.0)
-            return results
+            return self.search_bm25(query, top_k=top_k, threshold=2.0)
         elif mode == "dense":
-            results = self.search_dense(query, top_k=top_k, threshold=0.10)
-            return results
+            return self.search_dense(query, top_k=top_k, threshold=0.76)
 
         # Hybrid search with Reciprocal Rank Fusion (RRF)
-        bm25_res = self.search_bm25(query, top_k=len(self.chunks), threshold=3.0)
-        dense_res = self.search_dense(query, top_k=len(self.chunks), threshold=0.10)
+        # Compute BM25 scores
+        q_tokens = _tokenize(query)
+        bm_scores = self.bm25.get_scores(q_tokens) if (self.bm25 and q_tokens) else np.zeros(len(self.chunks))
 
-        if not bm25_res and not dense_res:
+        # Compute Dense similarities
+        if self.chunk_vectors is not None:
+            try:
+                q_vec = self.dense_retriever.encode_queries([query])[0]
+                dense_sims = np.dot(self.chunk_vectors, q_vec)
+            except Exception:
+                dense_sims = np.zeros(len(self.chunks))
+        else:
+            dense_sims = np.zeros(len(self.chunks))
+
+        # RRF combination
+        k_rrf = 60
+        bm_ranks = np.argsort(bm_scores)[::-1]
+        dense_ranks = np.argsort(dense_sims)[::-1]
+
+        max_bm = float(np.max(bm_scores)) if len(bm_scores) > 0 else 0.0
+        max_dense = float(np.max(dense_sims)) if len(dense_sims) > 0 else 0.0
+
+        # Reject out-of-domain queries that lack both keyword relevance and strong semantic match
+        if max_bm < 1.0 and max_dense < 0.81:
             return []
 
         rrf_scores: dict[str, float] = {c.chunk_id: 0.0 for c in self.chunks}
-        k_rrf = 60
 
-        for rank, (chunk, _) in enumerate(bm25_res):
-            rrf_scores[chunk.chunk_id] += 0.5 * (1.0 / (k_rrf + rank + 1))
+        for rank, idx in enumerate(bm_ranks):
+            if bm_scores[idx] > 1.0:
+                rrf_scores[self.chunks[idx].chunk_id] += 0.3 * (1.0 / (k_rrf + rank + 1))
 
-        for rank, (chunk, _) in enumerate(dense_res):
-            rrf_scores[chunk.chunk_id] += 0.5 * (1.0 / (k_rrf + rank + 1))
+        for rank, idx in enumerate(dense_ranks):
+            if dense_sims[idx] >= 0.76:
+                rrf_scores[self.chunks[idx].chunk_id] += 0.7 * (1.0 / (k_rrf + rank + 1))
 
         chunk_lookup = {c.chunk_id: c for c in self.chunks}
         sorted_chunks = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
 
-        results = []
+        results: list[tuple[KnowledgeChunk, float]] = []
         for cid, score in sorted_chunks[:top_k]:
             if score >= threshold:
                 results.append((chunk_lookup[cid], score))
@@ -268,17 +300,17 @@ class RagEngine:
         lang: str = "en",
         mode: str = "hybrid",
         top_k: int = 3,
-        threshold: float = 0.008,
+        threshold: float = 0.002,
     ) -> list[dict[str, Any]]:
         """Search and format results as dictionary representations of EvidencePacket."""
         import datetime as dt
         import uuid
 
-        matches = self.search(query=query, lang=lang, mode=mode, top_k=top_k)
+        matches = self.search(query=query, lang=lang, mode=mode, top_k=top_k, threshold=threshold)
         now = dt.datetime.now(dt.timezone.utc)
 
         # Check if top score meets the threshold
-        if not matches or matches[0][1] < threshold:
+        if not matches:
             no_guidance_map = {
                 "hi": (
                     "इस विषय पर कोई आधिकारिक दिशानिर्देश उपलब्ध नहीं है। आपातकालीन स्थिति में 112 (आपातकाल), "
@@ -290,7 +322,7 @@ class RagEngine:
                 ),
                 "mr": (
                     "या विषयावर कोणतीही अधिकृत मार्गदर्शक तत्त्वे उपलब्ध नाहीत. मदतीसाठी ११२ (आपत्कालीन), "
-                    "१०७७ (आपत्ती व्यवस्थापन) किंवा १८००-१८०-१५५१ (किसान कॉल सेंटर) वर संपर्क साधा."
+                    "१०७७ (आपत्ती व्यवस्थापन) किंवा १८০০-१८०-१५५१ (किसान कॉल सेंटर) वर संपर्क साधा."
                 ),
                 "te": (
                     "ఈ అంశంపై అధికారిక మార్గదర్శకాలు అందుబాటులో లేవు. సహాయం కోసం 112 (ఎమర్జెన్సీ), "

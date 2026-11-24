@@ -1,19 +1,21 @@
-# City and District Heat Action Plan Framework
+# State Disaster Management Authority: Heat Action Plan
 
-## Early Warning and Inter-Agency Coordination
-- District administrations issue heatwave alerts based on forecasted temperature thresholds (Yellow at 40 degC, Orange at 43 degC, Red at 45 degC in plains).
-- Nodal officers coordinate municipal water supplies, public shaded shelters, and hospital heat illness casualty wards.
-- Key terms: हीट एक्शन प्लान, तापमान सीमा, threshold, water supplies, shaded shelters, inter-agency coordination.
+## Early Warning System and Temperature Thresholds (Source: DDMA Heat Action Plan, Page 10 & 42)
+- District administrations and municipal corporations activate Heat Action Plans based on forecasted temperature thresholds.
+- Alert levels: Yellow Watch (Hot day advisory >= 40 °C in plains), Orange Alert (Be Prepared for severe heat stress), and Red Warning (Take Action for extreme heat conditions).
+- Inter-agency coordination: Nodal disaster officers coordinate municipal water tankers, public drinking water kiosks (Piyau), and emergency health centres.
+- Public awareness campaigns and early warnings disseminated via SMS, mobile apps, local media, and transit announcements 24 to 48 hours in advance.
 
-## Workplace and School Protocols
-- Reschedule outdoor construction and MGNREGA manual labour shifts to early morning (6:00 AM to 11:00 AM) and late evening (after 4:30 PM).
-- Prohibit strenuous outdoor labour between 11:30 AM and 4:00 PM when Orange or Red alerts are active.
-- Ensure mandatory shaded resting shelters and cool drinking water pots (matkas) at all active construction sites and farm mandis.
-- Schools adjust timings to early morning sessions or declare summer vacations early during prolonged heat spells.
-- Key terms: मजदूरों के लिए नियम, स्कूल की छुट्टियां, बांधकाम मजूर, নির্মাণ শ্রমিক, కార్మికుల విశ్రాంతి, labour shifts, schools, construction sites, matkas.
+## Outdoor Labour Protection and Working Hours (Source: DDMA Heat Action Plan, Page 69 & 81)
+- Labour Department mandates rescheduling working hours for outdoor construction labourers and agricultural workers.
+- Shift working hours to cooler morning hours (6:00 AM to 11:00 AM) and late afternoon (after 4:00 PM).
+- Mandatory afternoon work stoppage between 12:00 PM and 3:00 PM during declared Orange and Red alert days.
+- Employers must provide on-site shaded resting areas, clean drinking water, ORS hydration packets, and first-aid facilities.
+- Mobile medical vans deployed at high-density labour hotspots to provide emergency medical support.
 
-## Healthcare Facility Preparedness
-- Primary Health Centres (PHCs) and Community Health Centres (CHCs) stock emergency ice packs, IV fluids (normal saline, Ringer lactate), and ORS packets.
-- Dedicated air-cooled or shaded isolation beds designated for heat exhaustion and heat stroke patients.
-- For emergency ambulance dispatch, dial 108 or 112.
-- Key terms: अस्पताल, प्राथमिक स्वास्थ्य केंद्र, एम्बुलेंस, ice packs, ORS, IV fluids, 108, 112, Primary Health Centre.
+## Cool Roof Systems and Passive Urban Cooling (Source: DDMA Heat Action Plan, Page 88-89)
+- Cool roofs utilize high-albedo (reflective) materials and solar-reflective white paint to reduce surface temperatures.
+- Application of cool roof coatings lowers indoor temperatures by 2 °C to 5 °C, improving indoor thermal comfort.
+- Cool roofs achieve significant energy savings by reducing air-conditioning and fan power requirements.
+- Reduces urban heat island effect across densely populated settlements and low-income slum households.
+- Incorporates cross-ventilation, shading sunshades, green vegetative roofs, and reflective exterior building coatings.
