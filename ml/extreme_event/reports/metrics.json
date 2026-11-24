@@ -1,0 +1,112 @@
+{
+  "generated_by": "ml/extreme_event/eval.py",
+  "git_sha": "14a39560c724fbdb159c6a7259feaeb8fe8b39d8",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "ml/extreme_event/data/processed_dataset.csv",
+      "sha256": "7b5ac7b73778f8f5f9d442000a287cb39ae239a1d1fbc3e92633a5a4bc198d9e"
+    },
+    {
+      "path": "ml/bias_correction/data/processed_dataset.csv",
+      "sha256": "9b6f5e0b5a12e42ac07d13a8ed54621cb0679adc3f9b913f7325b06be2930504"
+    },
+    {
+      "path": "ml/climate/artifacts/climatology_db.json",
+      "sha256": "554d2123d380f92a902b2049a679e6fbd66900b67cc0c6bf6b21312c3bcbd4df"
+    }
+  ],
+  "n_test": 5601,
+  "prevalence": 0.0611,
+  "decision_threshold": 0.0615,
+  "accuracy": 0.9391180146402428,
+  "macro_f1": 0.8002634512341746,
+  "stage1": {
+    "pr_auc": 0.6036,
+    "brier_score": 0.0438,
+    "bss_vs_climatology": 0.2525,
+    "ece": 0.0257
+  },
+  "stage2": {
+    "pr_auc": 0.6795,
+    "brier_score": 0.0381,
+    "bss_vs_climatology": 0.3505,
+    "bss_vs_threshold_rule": 0.1465,
+    "ece": 0.0266,
+    "recall_at_precision_05": 0.8626
+  },
+  "baselines": {
+    "climatology_brier": 0.0587,
+    "persistence_prauc": 0.6301,
+    "persistence_brier": 0.048,
+    "threshold_rule_prauc": 0.6934,
+    "threshold_rule_brier": 0.0446
+  },
+  "lead_day_breakdown": {
+    "lead_1": {
+      "n_samples": 1867,
+      "positive_events": 114,
+      "prevalence": 0.0611,
+      "stage1_prauc": 0.6565,
+      "stage1_brier": 0.0428,
+      "stage2_prauc": 0.733,
+      "stage2_brier": 0.0374,
+      "stage2_bss_vs_clim": 0.3625,
+      "stage2_bss_vs_rule": -0.0118,
+      "rule_prauc": 0.7316,
+      "rule_brier": 0.037,
+      "recall_at_precision_05": 0.9035
+    },
+    "lead_2": {
+      "n_samples": 1867,
+      "positive_events": 114,
+      "prevalence": 0.0611,
+      "stage1_prauc": 0.6033,
+      "stage1_brier": 0.0439,
+      "stage2_prauc": 0.6992,
+      "stage2_brier": 0.0378,
+      "stage2_bss_vs_clim": 0.355,
+      "stage2_bss_vs_rule": 0.1059,
+      "rule_prauc": 0.705,
+      "rule_brier": 0.0423,
+      "recall_at_precision_05": 0.8684
+    },
+    "lead_3": {
+      "n_samples": 1867,
+      "positive_events": 114,
+      "prevalence": 0.0611,
+      "stage1_prauc": 0.5563,
+      "stage1_brier": 0.0448,
+      "stage2_prauc": 0.6152,
+      "stage2_brier": 0.0391,
+      "stage2_bss_vs_clim": 0.3341,
+      "stage2_bss_vs_rule": 0.285,
+      "rule_prauc": 0.6496,
+      "rule_brier": 0.0546,
+      "recall_at_precision_05": 0.8158
+    }
+  },
+  "bootstrap_brier_diff_vs_rule": {
+    "delta_mean": -0.006646,
+    "ci_lower": -0.016128,
+    "ci_upper": 0.001219,
+    "p_value": 0.114,
+    "n_blocks": 27,
+    "n_bootstrap": 2000
+  },
+  "feasibility_gate": {
+    "heatwave": {
+      "status": "kept",
+      "train_events": 83,
+      "test_events": 114
+    },
+    "cold_wave": {
+      "status": "excluded",
+      "reason": "0 events in test period (May-Oct summer/monsoon)"
+    },
+    "heavy_rain": {
+      "status": "excluded",
+      "reason": "Insufficient station events (12 train, 16 test) due to gridded rain smoothing"
+    }
+  }
+}

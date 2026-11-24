@@ -29,6 +29,8 @@ def main() -> int:
     ensure_installed("pandas")
     ensure_installed("pymannkendall")
     ensure_installed("statsmodels")
+    ensure_installed("lightgbm")
+    ensure_installed("shap")
 
     args = sys.argv[1:]
     target = args if args else ["services/api/tests"]

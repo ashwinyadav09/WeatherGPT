@@ -1,0 +1,21 @@
+{
+  "generated_by": "ml/extreme_event/eval.py",
+  "git_sha": "14a39560c724fbdb159c6a7259feaeb8fe8b39d8",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "ml/extreme_event/data/processed_dataset.csv",
+      "sha256": "7b5ac7b73778f8f5f9d442000a287cb39ae239a1d1fbc3e92633a5a4bc198d9e"
+    },
+    {
+      "path": "ml/bias_correction/data/processed_dataset.csv",
+      "sha256": "9b6f5e0b5a12e42ac07d13a8ed54621cb0679adc3f9b913f7325b06be2930504"
+    },
+    {
+      "path": "ml/climate/artifacts/climatology_db.json",
+      "sha256": "554d2123d380f92a902b2049a679e6fbd66900b67cc0c6bf6b21312c3bcbd4df"
+    }
+  ],
+  "n_test": 5601,
+  "status": "completed"
+}
