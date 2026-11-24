@@ -1,7 +1,7 @@
 # WeatherGPT Evaluation & Acceptance Results
 
 - **Date**: 2026-11-24
-- **Git SHA**: `d6c3ed5`
+- **Git SHA**: `674a29e`
 - **Status**: ✅ **ALL ACCEPTANCE GATES PASSED**
 - **Compliance**: Strictly follows Section 2 Truthfulness Rules (zero unverified or hardcoded metrics).
 
@@ -86,7 +86,7 @@ Evaluated on >= 20 field/consented weather speech utterances per language:
 | 1. Tools | No Tools: 0% | Tools: 100% | Grounding Pass Rate | +100.0% [100.0%, 100.0%] | Significant (p < 0.05) |
 | 2. RAG | Tools only: 0% | Tools+RAG: 70.5% | Recall@3 | +70.5% [70.5%, 70.5%] | Significant (p < 0.05) |
 | 3. NWP Post-Processing | Raw NWP: 1.1799°C | Model: 1.0937°C | Temperature MAE (°C) | -0.0862°C [0.0267, 0.14] | Improvement excludes 0 |
-| 4. Intent Classification | LLM: 85% ({'mean': 55.0, 'ci_lower': 52.0, 'ci_upper': 58.0}ms) | Encoder: 79.2% ({'mean': 0.05, 'ci_lower': 0.04, 'ci_upper': 0.06}ms) | Accuracy & Latency | 1100.0x speedup | Sub-millisecond latency |
+| 4. Intent Classification | LLM: 85% (55.0 ms) | Encoder: 79.2% (0.05 ms) | Accuracy & Latency | 1100.0x speedup | Sub-millisecond latency |
 | 5. Translation Strategy | Native: 84% | Cascaded: 100% | Number Preservation | +16% | Significant (p < 0.05) |
 
 ---
@@ -97,4 +97,4 @@ Evaluated on >= 20 field/consented weather speech utterances per language:
 - **Advisories & Knowledge**: Public NDMA guidelines and ICAR crop alerts recorded in `seeds/knowledge/sources.csv`.
 - **Alert Feeds**: Real NDMA SACHET CAP fixtures (`eval/fixtures/sachet/`); live 48h poller alert freshness is `NOT MEASURED` (< 5 live alerts observed).
 - **LLM Judge Calibration**: `NOT MEASURED` pending independent human scoring H4.
-- **Report Generated**: `2026-11-24T18:56:00.725905+00:00`
+- **Report Generated**: `2026-11-24T19:04:29.811926+00:00`

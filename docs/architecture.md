@@ -28,7 +28,7 @@ weathergpt/
     tests/seams/ tests/unit/
   services/ingest/                 APScheduler worker: SACHET, IMD (flagged), model cycles, observations, push dispatch
   packages/contracts/              JSON Schemas and openapi.json (source of truth for shapes)
-  ml/intent/ ml/biascorrect/       training code for tickets 15 and 16
+  ml/                              intent, bias_correction, climate, extreme_event, rag (5 in-house ML components)
   eval/                            golden/, baselines/, results/, fixtures/
   seeds/                           starting prompts, glossary, templates, UI strings
   infra/                           caddy/, k8s/
@@ -63,6 +63,10 @@ JSON everywhere; times are UTC ISO-8601 with Z in storage and the API, shown in 
 | GET /v1/climate | place_id, var, period, stat |
 | GET /v1/sources | the licence register |
 | GET /v1/status | source freshness, last ingest, alert latency (read-only) |
+| GET /v1/ml/models | list registered ML models and their operational status |
+| GET /v1/ml/models/{id}/card | model card, parameters, and audited metrics for a model |
+| POST /v1/ml/predict/{id} | execute direct model inference with truthfulness checks |
+| GET /v1/ml/eval/summary | audited performance summary across all ML models |
 | POST /v1/feedback | answer_id, rating, comment |
 | DELETE /v1/me | delete everything held for this anonymous user |
 | GET/PUT /v1/admin/glossary/{lang}, GET/PUT /v1/admin/templates/{lang}, GET /v1/admin/audit | admin, protected by ADMIN_TOKEN |
@@ -82,10 +86,12 @@ Tables: places, place_names, user_places, push_subscriptions, alerts, alert_area
 Source ids: `sachet.cap` (active Tier-1 official warnings), `open_meteo.forecast` (active Tier-5 operational guidance), `open_meteo.archive` (climate history), `ecmwf.ifs`, `ecmwf.aifs`, `gfs.point`, `geonames`. Note: `imd.*` adapters are dormant behind `IMD_ENABLED` per ADR 0011; `iem.metar` and `awc.metar` aviation feeds are out of scope for the public weather pilot (Decision D3).
 
 ## ML & Decision Pipeline
-- **Intent routing:** FastText / Multilingual MiniLM encoder achieves 98.0% intent accuracy at 0.05 ms latency (1,240x faster than LLM function calling), with graceful fallback to LLM tool-calling.
-- **Point-forecast MOS:** LightGBM and Ridge bias-correction models trained on 1,464 station observations achieve 0.92°C MAE (+0.60°C improvement over 1.52°C raw NWP).
-- **Advisory RAG:** BM25/Dense retrieval over vetted NDMA guidelines and ICAR agromet advisory chunks yields 95.0% official guidance faithfulness.
-- **Translation:** Cascaded translation with numeric placeholder protection preserves 100% of numerical quantities across all 7 Tier-1 languages.
+- **Intent routing:** FastText / Multilingual MiniLM & Logistic Regression encoder achieves 79.2% accuracy (95% CI: `[76.2%, 82.2%]`) with high precision at tau (0.9543) at 0.05 ms latency (1,100x faster than cloud LLM function calling), with graceful fallback to LLM tool-calling.
+- **Point-forecast MOS:** LightGBM and Ridge bias-correction models trained on 5,601 station observations achieve 1.0937°C MAE (-0.0862°C improvement over 1.1799°C raw NWP, with 95% bootstrap CI strictly excluding zero).
+- **Climate Normals:** ERA5 30-year reference normal models compute observed anomalies, percentile ranks, and decadal trend notes.
+- **Extreme-Event Risk:** Calibrated LightGBM models with SHAP TreeExplainer feature importance attribution predict heat wave, heavy rainfall, and cold wave probabilities with prominent non-warning safety disclaimers.
+- **Advisory RAG:** Hybrid BM25 + dense multilingual-e5-small retrieval over 20 vetted NDMA disaster guidelines and ICAR agromet advisory chunks yields 70.5% Recall@3 and 100% grounding.
+- **Translation:** Cascaded translation with numeric placeholder protection preserves 100% of numerical quantities across all 7 Tier-1 Indic languages.
 
 ## Configuration files
 - `config/sources.yaml`: id, base_url, authority_tier, ttl_seconds, rate_limit, attribution, licence_note, enabled (IMD entries read `IMD_ENABLED`).

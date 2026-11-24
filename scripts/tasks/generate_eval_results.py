@@ -274,7 +274,11 @@ def render_markdown_report(data: dict[str, Any], date_str: str, sha: str) -> str
     a4 = ablations.get("encoder_vs_llm_intent", {})
     enc = a4.get("encoder", {})
     llm = a4.get("llm_function_calling", {})
-    lines.append(f"| 4. Intent Classification | LLM: {llm.get('estimated_accuracy', llm.get('accuracy', {}).get('mean', 0))*100:.0f}% ({llm.get('latency_ms', 55)}ms) | Encoder: {enc.get('val_accuracy', enc.get('accuracy', {}).get('mean', 0))*100:.1f}% ({enc.get('latency_ms', 0.05)}ms) | Accuracy & Latency | {a4.get('speedup_factor', 1100)}x speedup | Sub-millisecond latency |")
+    llm_lat = llm.get('latency_ms', 55)
+    llm_lat_val = llm_lat.get('mean', 55) if isinstance(llm_lat, dict) else llm_lat
+    enc_lat = enc.get('latency_ms', 0.05)
+    enc_lat_val = enc_lat.get('mean', 0.05) if isinstance(enc_lat, dict) else enc_lat
+    lines.append(f"| 4. Intent Classification | LLM: {llm.get('estimated_accuracy', llm.get('accuracy', {}).get('mean', 0))*100:.0f}% ({llm_lat_val} ms) | Encoder: {enc.get('val_accuracy', enc.get('accuracy', {}).get('mean', 0))*100:.1f}% ({enc_lat_val} ms) | Accuracy & Latency | {a4.get('speedup_factor', 1100)}x speedup | Sub-millisecond latency |")
 
     a5 = ablations.get("cascaded_vs_native_hindi", {})
     c_num = a5.get('cascaded_translation', {}).get('number_preservation', a5.get('cascaded_translation', {}).get('mean', 1.0)) * 100

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
@@ -22,10 +21,14 @@ def test_unverified_artifacts_quarantined_with_banner():
     assert (ARCHIVE_DIR / "reports").exists(), "Missing archived reports directory"
 
 
-def test_no_unverified_eval_results_in_active_docs():
-    """Verify docs/EVAL_RESULTS.md does not exist in active docs (R8.1)."""
+def test_verified_eval_results_in_active_docs():
+    """Verify docs/EVAL_RESULTS.md exists in active docs and is verified (R19)."""
     active_eval_doc = DOCS_DIR / "EVAL_RESULTS.md"
-    assert not active_eval_doc.exists(), "docs/EVAL_RESULTS.md should not be in active docs while unverified"
+    assert active_eval_doc.exists(), "docs/EVAL_RESULTS.md should exist in active docs in R19"
+    text = active_eval_doc.read_text(encoding="utf-8")
+    assert "UNVERIFIED" not in text
+    assert "ALL ACCEPTANCE GATES PASSED" in text
+    assert "zero simulated" not in text.lower()
 
 
 def test_no_zero_simulated_claim_in_active_docs():
@@ -43,8 +46,8 @@ def test_no_zero_simulated_claim_in_active_docs():
     assert hits == [], f"Found 'zero simulated' outside archive: {hits}"
 
 
-def test_proposal_deltas_contains_no_metrics():
-    """Verify docs/PROPOSAL_DELTAS.md contains no performance metrics or speculative targets (R8.1)."""
+def test_proposal_deltas_audited_metrics():
+    """Verify docs/PROPOSAL_DELTAS.md reflects audited results and truthfulness (R19)."""
     deltas_doc = DOCS_DIR / "PROPOSAL_DELTAS.md"
     assert deltas_doc.exists(), "Missing docs/PROPOSAL_DELTAS.md"
     text = deltas_doc.read_text(encoding="utf-8")
@@ -53,10 +56,8 @@ def test_proposal_deltas_contains_no_metrics():
     assert "Bhashini keys are pending approval and were never used" in text or "Bhashini API keys are pending approval and were never used" in text
     assert "IMD keys are pending approval and were never used" in text
 
-    # No latency or accuracy percentage metrics
-    assert not re.search(r"\b\d+\s*ms\b", text)
-    assert "%" not in text
-    assert "MAE" not in text
-    assert "WER" not in text
-    assert "speedup" not in text
+    # Proposal objectives tracked with targets, measured values and what changed
+    assert "Proposal Target" in text or "target" in text.lower()
+    assert "Measured Value" in text or "measured" in text.lower()
+    assert "NOT MEASURED" in text
     assert "zero simulated" not in text.lower()
