@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Hyderabad",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "85b11fde4f024e12a77da4a33b6040cafb365a82e1c33e0c5e7c24b4d827a4c9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:04.809072+00:00",
+    "bytes": 1527,
+    "sha256": "9784b393d6a2ddb20ae2c99ccc3c5fb6927022da443c8bb23aad629399ff694c",
+    "file": "open_meteo/hyderabad/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/hyderabad/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "cef0f5694a2f53dc1438f1c387f29a10e83148abeabc32c115f9a8ef564690bd",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:05.008275+00:00",
+    "bytes": 868,
+    "sha256": "de47a833c3ed3d091751ccf77faf408bbb065aa3ad093c2ff61b03a6f64c79ee",
+    "file": "open_meteo/hyderabad/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/hyderabad/20261124T210746Z_forecast.json"
+  }
+]

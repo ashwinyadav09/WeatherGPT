@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Shimla",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3d95288e2bf6d3394f03fbad4df08fa43e64b8b9bdd68c3cc3add0d6ff5d8211",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:30.299517+00:00",
+    "bytes": 1659,
+    "sha256": "f3a1e6b787998255a9ab3e064c613c0763b9e11b7e41234909eb31441244bf2d",
+    "file": "open_meteo/shimla/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/shimla/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 31.1048,
+      "longitude": 77.1734,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "023448577147cd7b9878bc81c1553928b29c0617c2a441319beab36b3cee6451",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:30.512315+00:00",
+    "bytes": 857,
+    "sha256": "f37edf6f75648d3d5fca516df0989b48d51c0f7ff38caeb702994bc7735e9833",
+    "file": "open_meteo/shimla/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/shimla/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Baharampur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "82b480b81c275e05c86c7d2a4dd188836fc3a3ff8ccc1e108acc04c596ec5aba",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:52.413389+00:00",
+    "bytes": 1940,
+    "sha256": "087eb9c36f41a1b201b85ce118e44bd0a26810e2989e0b2df8c5de64238c9119",
+    "file": "open_meteo/baharampur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/baharampur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 24.0988,
+      "longitude": 88.2536,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "72faa2b3aef4eedced40c155482cc6bf318f7554ff2c7265011b61f47d768392",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:52.588175+00:00",
+    "bytes": 862,
+    "sha256": "3165f74951e8cbddf3114e956f7a85016fc50264e4e13b89ab669c03ab87f190",
+    "file": "open_meteo/baharampur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/baharampur/20261124T210746Z_forecast.json"
+  }
+]

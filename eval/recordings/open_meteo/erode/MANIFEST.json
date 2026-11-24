@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Erode",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8288b1e96a2f186b0ac52d838ffd637afd2742331568f4f72d7560a19b574e3d",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:02.468601+00:00",
+    "bytes": 1032,
+    "sha256": "79b705fde374b6e145f3702fd648af1986035f2adeefa29938c8c4ded61758c6",
+    "file": "open_meteo/erode/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/erode/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.341,
+      "longitude": 77.7172,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "0909966d8a7aeb76eb2aab6bcaa10754da763ca83681e43410eabf8f16b2e39e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:02.637118+00:00",
+    "bytes": 873,
+    "sha256": "b9a2d91162636a0a7937b322175670269356db45ddfa0714b767ab2e4e5d65de",
+    "file": "open_meteo/erode/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/erode/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Amritsar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "4c106a9e619072fd5f743f8c989e31e2e32ab67da5e93110a5d34340a9257b30",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:50.468524+00:00",
+    "bytes": 1008,
+    "sha256": "17a4668e16d3eae2fcaf10f0052a3f3a5ce8335e5a74893bfd0b661253eb53c0",
+    "file": "open_meteo/amritsar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/amritsar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 31.634,
+      "longitude": 74.8723,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7db63f2407c38a4f53302ddceebb190eedface6ccab0a4b79a6dfa9154e621db",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:50.671613+00:00",
+    "bytes": 864,
+    "sha256": "b1c9aad77310f851af9b58a9ca6c013077a6433c2207e8a677744c52325b6135",
+    "file": "open_meteo/amritsar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/amritsar/20261124T210746Z_forecast.json"
+  }
+]

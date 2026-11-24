@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kanpur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "879088da9b2283d3ce0386d41b926535fd9be2711d64eacb4b165c3da5d6daab",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.004352+00:00",
+    "bytes": 1626,
+    "sha256": "a0ac4d5877e208275fd2f8960f6f93a20fb24492180a7df9aa731ab3571f6eec",
+    "file": "open_meteo/kanpur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kanpur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.4499,
+      "longitude": 80.3319,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "84a52aac7b982eeec34082bd178204566a21d41c5a34222f374c9fc7490b9d10",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.204718+00:00",
+    "bytes": 864,
+    "sha256": "4d90825fac0ccc1f32ebc1856ac99f65d7525950aa6e3aee350bd426a2256b18",
+    "file": "open_meteo/kanpur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kanpur/20261124T210746Z_forecast.json"
+  }
+]

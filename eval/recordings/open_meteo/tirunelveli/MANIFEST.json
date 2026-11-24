@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tirunelveli",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "a6500d4066249b57d3bcd26eaa883ba3df16b695ae41133857baf6d092f1e411",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.681458+00:00",
+    "bytes": 801,
+    "sha256": "b021bd5fb51d2502a3fff0d684c10421be1b3034ea2db0b17acfa4451195fc91",
+    "file": "open_meteo/tirunelveli/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tirunelveli/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 8.7139,
+      "longitude": 77.7567,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "844adb895037a01629e69ae89fc13b02b45b997d0520d19e817e6151f7700eb1",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:36.848257+00:00",
+    "bytes": 873,
+    "sha256": "ec515388c150fa4583601b3331caf5a1bba575745f8b5620c375f1bb1a283d23",
+    "file": "open_meteo/tirunelveli/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tirunelveli/20261124T210746Z_forecast.json"
+  }
+]

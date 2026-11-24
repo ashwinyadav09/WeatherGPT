@@ -98,12 +98,12 @@ def test_cohen_kappa_calculation():
 
 def test_quality_rubric_scoring():
     """Test 5-point quality rubric evaluation."""
-    sample_answer = "According to Open-Meteo forecasts, tomorrow in Delhi expects 0.0 mm rain and a temperature of 25.0 degC."
+    sample_answer = "According to Open-Meteo forecasts, tomorrow in Delhi expects 0.0 mm rain and a temperature of 24.3 degC."
     sample_case = {
         "id": "test-001",
         "question": "Will it rain tomorrow in Delhi?",
         "place": "Delhi",
-        "expect": {"source_named": "Open-Meteo", "expected_numbers": [25.0, 0.0], "refusal": False},
+        "expect": {"source_named": "Open-Meteo", "expected_numbers": [24.3, 0.0], "refusal": False},
     }
 
     result = evaluate_quality_rubric(sample_answer, sample_case)
@@ -131,11 +131,12 @@ async def test_evaluation_harness_with_per_city_mock():
         "language": "en",
         "intent": "forecast",
         "place": "Delhi",
+        "place_id": "delhi",
         "day": "tomorrow",
         "question": "Will it rain tomorrow in Delhi?",
         "expect": {
             "source_named": "Open-Meteo",
-            "expected_numbers": [25.0],
+            "expected_numbers": [24.3, 0.0],
             "refusal": False,
             "must_not": ["evacuate"],
         },

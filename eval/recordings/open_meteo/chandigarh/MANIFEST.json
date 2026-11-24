@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Chandigarh",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3a7895c73d21167d0283800df17a954f105fc6499d109d5c25e2154b110bce72",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:56.202303+00:00",
+    "bytes": 1660,
+    "sha256": "3e4100f9506f9212d2bb36a27be07473132637a87cd698dce9823115bfa30766",
+    "file": "open_meteo/chandigarh/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/chandigarh/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 30.7333,
+      "longitude": 76.7794,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f2c30a79b767f96d3f1ddf147877bf1d75c48c07953fa7a81029d80ac5e1681c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:56.405139+00:00",
+    "bytes": 862,
+    "sha256": "265be63c8297131a798fd904d6ec4cc3344654cc1d0261d1dbd009cae25d10e4",
+    "file": "open_meteo/chandigarh/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/chandigarh/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Dehradun",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "6aa98fce579cdc8de25e991465bff93f8290247c08fcf9d4ba4de6efefae4074",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.088247+00:00",
+    "bytes": 387,
+    "sha256": "af90cc95a9311ce6a969e05f883ff23982cd12a4b1b9fdc842230ab0e566a3f8",
+    "file": "open_meteo/dehradun/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/dehradun/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 30.3165,
+      "longitude": 78.0322,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "6bb78b5c722c75f08ccda4f60e505c5b9c77c4b85173506adeba91695de5972c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:00.255787+00:00",
+    "bytes": 863,
+    "sha256": "a00c90eb8bc263a106e8d62183a6de67e430988d4b9cefd4ecba6a59eb8ae724",
+    "file": "open_meteo/dehradun/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/dehradun/20261124T210746Z_forecast.json"
+  }
+]

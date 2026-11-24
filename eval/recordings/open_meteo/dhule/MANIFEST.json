@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Dhule",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "0980a2203c0c72713b99f2f6a168689b7a58423972a8d554009b78c07afa2e2f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:21.465769+00:00",
+    "bytes": 1657,
+    "sha256": "6c7ed0540c90525d16a1d76495bb6f008a9ebd02dcbb6ae636d442cdde97556f",
+    "file": "open_meteo/dhule/20261124T211819Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/dhule/20261124T211819Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.9042,
+      "longitude": 74.7749,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5c909ee8cf509f570aa5f146984025993c0f389012a1732a0d2f5e954f3bae50",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:22.135330+00:00",
+    "bytes": 864,
+    "sha256": "f0087ca5ec6796fb0f0fa509ee26ac3b1c7ec3876222a27767040d9a6bd3c0fc",
+    "file": "open_meteo/dhule/20261124T211819Z_forecast.json",
+    "path": "eval/recordings/open_meteo/dhule/20261124T211819Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bengaluru",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "cf8bbb49709b083c5d7011f8dede388c710c64bbb6f0164e6563a1e023eebd45",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:54.265080+00:00",
+    "bytes": 353,
+    "sha256": "a995d1d3c2905753b978ce47a1a463af66cc083dde330e5ad15def8f628745db",
+    "file": "open_meteo/bengaluru/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bengaluru/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "0dd3a67ade94532fc61eb7c8d95b51b045361dc1a818857f8d3ff09590ef34f0",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:54.460860+00:00",
+    "bytes": 870,
+    "sha256": "1e266273b78408a98fc7048b57466b090953592203be1ac0d84a4969aff461fe",
+    "file": "open_meteo/bengaluru/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bengaluru/20261124T210746Z_forecast.json"
+  }
+]

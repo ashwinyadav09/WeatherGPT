@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Karimnagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "35bf937dd62d49ae4bdfdb9ab8c02ecb118f23f3a574e435603990126f7d57eb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.722981+00:00",
+    "bytes": 1766,
+    "sha256": "3cae2d83ff7c732dd9008520ce76d04f9e0c54b877e05fd322dfd64a02df0748",
+    "file": "open_meteo/karimnagar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/karimnagar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.4386,
+      "longitude": 79.1288,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5e673e1aa31e1578088ad17027af2e17586691bebe1064f3f38b4f4844cc0bfc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:09.887999+00:00",
+    "bytes": 865,
+    "sha256": "ff3bc07c7960435ec0e6c292ec24fcbd1e238980d886f3c60d0ceb24b7419778",
+    "file": "open_meteo/karimnagar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/karimnagar/20261124T210746Z_forecast.json"
+  }
+]

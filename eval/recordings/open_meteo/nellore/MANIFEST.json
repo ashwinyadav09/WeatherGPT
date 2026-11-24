@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nellore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "e2ba9ad28d5d9278c69fdf343babb0af907bb8ef05d6b4e261d2e6847da021c7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:22.107777+00:00",
+    "bytes": 426,
+    "sha256": "1d11c8d717a42c23cf17eaef67242ec98c644c36d7476b9013db939a3dfe516f",
+    "file": "open_meteo/nellore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nellore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 14.4426,
+      "longitude": 79.9865,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "859e1caa43ef44cd43b360e486dc8711627bb11c9046e91308bd6daa75fe2f9c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:22.311632+00:00",
+    "bytes": 869,
+    "sha256": "d4b12fdec6793fd4cf49697945d5a54c9b8cd011b44a409bcd18eca53c6c24cb",
+    "file": "open_meteo/nellore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nellore/20261124T210746Z_forecast.json"
+  }
+]

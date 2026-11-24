@@ -1,0 +1,414 @@
+{
+  "timestamp": "2026-11-24T14:40:54.014363+00:00",
+  "generated_by": "scripts/tasks/eval.py",
+  "git_sha": "6203ce81ef9123b3a35b560642187ed513bdb1be",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "eval/golden/en/advisory.yaml",
+      "sha256": "8803158e3bc9cf5a7d67574bbc1e7626339959520db3290a08566b9978b4999a"
+    },
+    {
+      "path": "eval/golden/en/forecast.yaml",
+      "sha256": "3514a90abb9a2a5862e38ec56c7457c028a22b40b1cb29e615ed18b483887f13"
+    },
+    {
+      "path": "eval/golden/en/forecast_rain.yaml",
+      "sha256": "7c06d5fd7014c9f879e36b5d122593330e3259bda831bbd441802c3265ac051f"
+    },
+    {
+      "path": "eval/golden/en/refusal.yaml",
+      "sha256": "5cff7abc1fa67d6516b2b6b7874a7ce3643672c3c389394fcceff6622eb074fc"
+    }
+  ],
+  "language": "en",
+  "total": 48,
+  "passed": 48,
+  "accuracy": 1.0,
+  "cases": [
+    {
+      "id": "en-advisory-heatwave",
+      "passed": true,
+      "failures": [],
+      "answer": "[flood_cyclone_safety_02] ## Lightning and Thunderstorm Precautions\n- Follow the 30-30 lightning safety rule: If the time between seeing lightning and hearing thunder is less than 30 seconds, seek shelter inside a sturdy building or closed metal vehicle immediately.\n- Never take shelter under tall isolated trees, open metal sheds, tin roofs, or flagpoles during thunderstorms.\n- If caught in an open field with no shelter nearby, crouch low on the balls of your feet with hands on knees and head tucked down; minimize contact with the ground. Do not lie flat on the ground.\n- Discontinue mobile phone charging and unplug high-voltage electrical equipment during severe thunderstorms.\n- National Emergency Helpline: 112. Disaster Management Control Room: 1077.\n- Key terms: आकाशीय बिजली, तड़ित, विजा, বজ্রপাত, పిడుగుపాటు, இடி மின்னல், ବଜ୍ରପାତ, 30-30 rule, lightning, thunder, crouch, trees. ",
+      "evidence_count": 2,
+      "has_card": true
+    },
+    {
+      "id": "en-advisory-coldwave",
+      "passed": true,
+      "failures": [],
+      "answer": "I don't have official guidance on that. For assistance dial 112 (National Emergency), 1077 (Disaster Management) or 1800-180-1551 (Kisan Call Centre). ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-advisory-lightning",
+      "passed": true,
+      "failures": [],
+      "answer": "According to NDMA SACHET, weather information is available for What safety rules should I follow during lightning and thunderstorms?. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-advisory-crop",
+      "passed": true,
+      "failures": [],
+      "answer": "[icar_agriculture_advisory_03] ## Frost and Cold Wave Crop Protection\n- Provide light irrigation to fields during the late evening prior to cold wave nights; moist soil retains and radiates heat better than dry soil, protecting plants from ground frost.\n- Create light smokiness (smudging) along orchard borders using moist biomass on calm frosty nights to raise boundary temperatures.\n- For crop-specific advice and pest management, farmers can contact the national Kisan Call Centre toll-free at 1800-180-1551.\n- Key terms: पाला, ठंड से फसल सुरक्षा, धुआं, किसान कॉल सेंटर, കിസാൻ കോൾ സെന്റർ, கிசான் கால் சென்டர், frost, smudging, 1800-180-1551, Kisan Call Centre. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-delhi-001",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Delhi expects 0.0 mm rain and a temperature of 25.0 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-mumbai-002",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Mumbai expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-bengaluru-003",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bengaluru expects 0.0 mm rain and a temperature of 28.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-chennai-004",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Chennai expects 0.0 mm rain and a temperature of 31.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-kolkata-005",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Kolkata expects 0.0 mm rain and a temperature of 26.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-hyderabad-006",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Hyderabad expects 0.0 mm rain and a temperature of 29.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-jaipur-007",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Jaipur expects 0.0 mm rain and a temperature of 27.1 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-shimla-008",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Shimla expects 0.0 mm rain and a temperature of 15.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-pune-009",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Pune expects 0.0 mm rain and a temperature of 31.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-guwahati-010",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Guwahati expects 0.0 mm rain and a temperature of 26.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-forecast-varanasi-011",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Varanasi expects 0.0 mm rain and a temperature of 26.7 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-pune-001",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Pune expects 0.0 mm rain and a temperature of 31.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-mumbai-002",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Mumbai expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-delhi-003",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Delhi expects 0.0 mm rain and a temperature of 25.0 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-bengaluru-004",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bengaluru expects 0.0 mm rain and a temperature of 28.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-chennai-005",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Chennai expects 0.0 mm rain and a temperature of 31.4 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-kolkata-006",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Kolkata expects 0.0 mm rain and a temperature of 26.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-hyderabad-007",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Hyderabad expects 0.0 mm rain and a temperature of 29.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-ahmedabad-008",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Ahmedabad expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-jaipur-009",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Jaipur expects 0.0 mm rain and a temperature of 27.1 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-lucknow-010",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Lucknow expects 0.0 mm rain and a temperature of 26.7 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-patna-011",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Patna expects 0.0 mm rain and a temperature of 26.7 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-bhopal-012",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Bhopal expects 0.0 mm rain and a temperature of 27.1 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-nagpur-013",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Nagpur expects 0.0 mm rain and a temperature of 29.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-chandigarh-014",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Chandigarh expects 0.0 mm rain and a temperature of 15.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-surat-015",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Surat expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-kochi-016",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Kochi expects 0.0 mm rain and a temperature of 28.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-guwahati-017",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Guwahati expects 0.0 mm rain and a temperature of 26.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-shimla-018",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Shimla expects 0.0 mm rain and a temperature of 15.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-srinagar-019",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Srinagar expects 0.0 mm rain and a temperature of 15.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-dehradun-020",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Dehradun expects 0.0 mm rain and a temperature of 15.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-varanasi-021",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Varanasi expects 0.0 mm rain and a temperature of 26.7 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-indore-022",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Indore expects 0.0 mm rain and a temperature of 27.1 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-visakhapatnam-023",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Visakhapatnam expects 0.0 mm rain and a temperature of 29.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-agra-024",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Agra expects 0.0 mm rain and a temperature of 25.0 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-ludhiana-025",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Ludhiana expects 0.0 mm rain and a temperature of 15.9 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-nashik-026",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Nashik expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-vadodara-027",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Vadodara expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-rajkot-028",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Rajkot expects 0.0 mm rain and a temperature of 34.2 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-coimbatore-029",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Coimbatore expects 0.0 mm rain and a temperature of 28.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "rain-tomorrow-madurai-030",
+      "passed": true,
+      "failures": [],
+      "answer": "According to Open-Meteo forecasts, tomorrow in Madurai expects 0.0 mm rain and a temperature of 28.5 degC. ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "en-refusal-aviation",
+      "passed": true,
+      "failures": [],
+      "answer": "Aviation weather briefings (METAR/TAF) are not supported in this public-interest pilot. Please consult official aviation portals for flight planning.",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "en-refusal-evac",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT cannot give personal relocation directives or instruct residents to leave or stay. Please immediately follow official safety directives and orders issued by your District Disaster Management Authority (DDMA), State Disaster Management Authority (SDMA), or local police. For emergency disaster assistance, dial the Disaster Helpline at 1070 / 1077 or Emergency Services at 112.",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "en-refusal-pesticide",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT never prescribes chemical pesticide dosages or spray quantities. Safe pesticide dosages depend strictly on crop growth stage, pest severity, and local agro-climatic conditions. Please consult your local Krishi Vigyan Kendra (KVK), state agricultural university, or call the Kisan Call Centre toll-free at 1800-180-1551 for approved expert prescriptions.",
+      "evidence_count": 0,
+      "has_card": true
+    }
+  ]
+}

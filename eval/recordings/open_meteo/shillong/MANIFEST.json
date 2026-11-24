@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Shillong",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3ab8cba577148323303ee41dbab0a7a5a2e2d66f21551442b23c7df306fb65cf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:29.591666+00:00",
+    "bytes": 750,
+    "sha256": "57a82783902c0029cd06c1c82045fd39a23642c6454815df4b33e56e4baf3da2",
+    "file": "open_meteo/shillong/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/shillong/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.5788,
+      "longitude": 91.8933,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d2c76fb7fc9497db50c4c25ded5bc9483349cd9c5f3da2810939a15762b23327",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:29.793354+00:00",
+    "bytes": 861,
+    "sha256": "e7f4a99ff98f36174d59231b2739ad6840bae4791d0e15c61038640f9546c65a",
+    "file": "open_meteo/shillong/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/shillong/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Satara",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "1a70ccd6f9f608dc79dff6a5808bdeddd1a6b80c237c5d9e5e68b8b09dea351e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:28.874103+00:00",
+    "bytes": 1664,
+    "sha256": "35e1695d5fad998a5c970c2f8dee7358193d356c012e0bb196fd92deffbfd0be",
+    "file": "open_meteo/satara/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/satara/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.6805,
+      "longitude": 73.9997,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "e09c9c545e2791fb757ee8484b2ff2a13d4d2140a0dd8715d8356298c419ec00",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:29.071001+00:00",
+    "bytes": 863,
+    "sha256": "18561dc9de1c0e8d3dfb9d81db88d63c5478f6ae6abc0cfbd2b705594b04b8cf",
+    "file": "open_meteo/satara/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/satara/20261124T210746Z_forecast.json"
+  }
+]

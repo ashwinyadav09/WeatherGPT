@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Visakhapatnam",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2b579af970dc58a529d90767d787d7de084bcf370e7aaf2d14b6fe4954b3fed2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.155888+00:00",
+    "bytes": 743,
+    "sha256": "5eb537d8cf62e8fe107508cec59a1a4839f90d0fda7ba769ffb9ece88bac4224",
+    "file": "open_meteo/visakhapatnam/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/visakhapatnam/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.6868,
+      "longitude": 83.2185,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "c88c6d7b7ea0663495a7586d291aadb3ad867d04134d853e81bcabcb357797e6",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.359486+00:00",
+    "bytes": 866,
+    "sha256": "f01e3d74bf06a3712c43ef3d5092e87000853d6813108d676b0e994a5dec4fa8",
+    "file": "open_meteo/visakhapatnam/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/visakhapatnam/20261124T210746Z_forecast.json"
+  }
+]

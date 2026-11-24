@@ -1,0 +1,3215 @@
+{
+  "timestamp": "2026-11-24T18:33:28.194899+00:00",
+  "generated_by": "scripts/tasks/eval.py",
+  "git_sha": "d6c3ed59c6c3ce26e0185ea6641be9e3bd1cbccf",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "eval/golden/bn/advisory.yaml",
+      "sha256": "cacffee5f2316e5cabc27d614c481745a143908a0f421c3b92795120c7749c11"
+    },
+    {
+      "path": "eval/golden/bn/forecast.yaml",
+      "sha256": "410c739cd1df7c0b870c53c2ddb2002ac0b5e2be30a3e0ca5d062fd1922d8195"
+    },
+    {
+      "path": "eval/golden/bn/forecast_rain.yaml",
+      "sha256": "67ff20bcf3ef9591b52f5456ade146463c9488fdcee61087956b9161f04452c1"
+    },
+    {
+      "path": "eval/golden/bn/refusal.yaml",
+      "sha256": "9345589b24cbf9b2eb4e617cad9220115c9cc980f3fb2d12da38a2989a74cc14"
+    }
+  ],
+  "language": "bn",
+  "total": 318,
+  "passed": 7,
+  "accuracy": 0.0220125786163522,
+  "cases": [
+    {
+      "id": "bn-advisory-heatwave",
+      "passed": true,
+      "failures": [],
+      "answer": "[heat_action_plan_01] অফিসিয়াল নির্দেশিকা অনুসারে:\n## Early Warning System and Temperature Thresholds (Source: DDMA Heat Action Plan, Page 10 & 42)\n- District administrations and municipal corporations activate Heat Action Plans based on forecasted temperature thresholds.\n- Alert levels: Yellow Watch (Hot day advisory >= 40 °C in plains), Orange Alert (Be Prepared for severe heat stress), and Red Warning (Take Action for extreme heat conditions).\n- Inter-agency coordination: Nodal disaster officers coordinate municipal water tankers, public drinking water kiosks (Piyau), and emergency health centres.\n- Public awareness campaigns and early warnings disseminated via SMS, mobile apps, local media, and transit announcements 24 to 48 hours in advance. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "bn-advisory-coldwave",
+      "passed": true,
+      "failures": [],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-advisory-lightning",
+      "passed": true,
+      "failures": [],
+      "answer": "[flood_cyclone_safety_02] অফিসিয়াল নির্দেশিকা অনুসারে:\n## Cyclone and Lightning Safety Measures (Source: IMD-NDMA Guidelines, Page 1-3)\n- Cyclone precautions: inspect and secure loose roof tiles or tin sheets; board or tape glass windows.\n- Keep emergency kits ready: non-perishable food, potable drinking water, torches, battery radio, and first-aid supplies.\n- Unhook and disconnect electrical appliances during cyclones to prevent short-circuits and electrical fires.\n- Lightning safety 30/30 rule: if the time between lightning flash and thunder is less than 30 seconds, take shelter indoors; wait 30 minutes after last thunder before heading outdoors.\n- If outdoor during lightning: avoid tall isolated trees, open fields, elevated ridges, and metal structures; if hair stands on neck, squat low with hands on knees. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "bn-advisory-crop",
+      "passed": true,
+      "failures": [],
+      "answer": "[icar_agriculture_advisory_02] অফিসিয়াল নির্দেশিকা অনুসারে:\n## Cold Wave, Frost and Ground Freeze Crop Protection (Source: IMD Agrimet Agriculture Guidance, Page 2-3)\n- Apply light and frequent irrigation or sprinkler irrigation in evening hours to protect crops from cold injury and ground frost.\n- In rice nursery beds: cover nursery beds with polythene sheets during the night and remove in the morning; irrigate in the evening and drain out in the morning.\n- Cover young orchard fruit plants with straw, sarkanda, gunny bags, or polythene sheets.\n- To protect sensitive crops like mustard, gram, and rajmah from frost injury, spray dilute sulphuric acid @ 0.1% (1 L in 1000 L water) or thiourea @ 500 ppm.\n- Animal husbandry in winter: keep cattle and goats inside sheds during night, provide dry bedding, and supplement daily feed with mineral mixtures, salt, and jaggery. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-delhi-001",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 25.0 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-mumbai-002",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 34.2 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-bengaluru-003",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-chennai-004",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 31.4 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-kolkata-005",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-hyderabad-006",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 29.5 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-jaipur-007",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 27.1 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-shimla-008",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-pune-009",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 31.5 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-guwahati-010",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 26.9 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-varanasi-011",
+      "passed": false,
+      "failures": [
+        "Falsely refused valid weather query",
+        "Expected source 'Open-Meteo' not named in answer or evidence",
+        "Expected number 26.7 not found in answer, card, or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0001",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0002",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0003",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0004",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0005",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0006",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0007",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0008",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0009",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0010",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0011",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0012",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0013",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0014",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0015",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0016",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0017",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0018",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0019",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0020",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0021",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0022",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0023",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0024",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0025",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "[icar_agriculture_advisory_01] অফিসিয়াল নির্দেশিকা অনুসারে:\n## Extreme Heat and Drought Crop Management (Source: IMD Agrimet Agriculture Guidance, Page 4)\n- Apply light and frequent irrigation to standing crops during evening or early morning hours to maintain root zone moisture and reduce soil surface temperature.\n- Increase frequency of irrigation during critical crop growth stages (tillering, flowering, grain filling).\n- Mulch with crop residue, straw, or polythene sheets to conserve soil moisture and suppress evaporative loss.\n- Use sprinkler and drip irrigation systems to optimize water use efficiency under heat stress.\n- Protect farm animals and cattle: keep animals under shade, provide ample cool drinking water, cool sheds with straw/dung-mud plaster or water foggers, and graze only during cooler morning and evening hours. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0026",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0027",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0028",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0029",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0030",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0031",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0032",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0033",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0034",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0035",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0036",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0037",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0038",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0039",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0040",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0041",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0042",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0043",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0044",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0045",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0046",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0047",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0048",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0049",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0050",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0051",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0052",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0053",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0054",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0055",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0056",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0057",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0058",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0059",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0060",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0061",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0062",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0063",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0064",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0065",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0066",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0067",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0068",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0069",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0070",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0071",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0072",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0073",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0074",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0075",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0076",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0077",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0078",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0079",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0080",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0081",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0082",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0083",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0084",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0085",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "[icar_agriculture_advisory_01] অফিসিয়াল নির্দেশিকা অনুসারে:\n## Extreme Heat and Drought Crop Management (Source: IMD Agrimet Agriculture Guidance, Page 4)\n- Apply light and frequent irrigation to standing crops during evening or early morning hours to maintain root zone moisture and reduce soil surface temperature.\n- Increase frequency of irrigation during critical crop growth stages (tillering, flowering, grain filling).\n- Mulch with crop residue, straw, or polythene sheets to conserve soil moisture and suppress evaporative loss.\n- Use sprinkler and drip irrigation systems to optimize water use efficiency under heat stress.\n- Protect farm animals and cattle: keep animals under shade, provide ample cool drinking water, cool sheds with straw/dung-mud plaster or water foggers, and graze only during cooler morning and evening hours. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0086",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0087",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0088",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0089",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0090",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0091",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0092",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0093",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0094",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0095",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0096",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0097",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0098",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0099",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0100",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0101",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0102",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0103",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0104",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0105",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0106",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0107",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0108",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0109",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0110",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0111",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0112",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0113",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0114",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0115",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0116",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0117",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0118",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0119",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0120",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0121",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0122",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0123",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0124",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0125",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0126",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0127",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0128",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0129",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0130",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0131",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0132",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0133",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0134",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0135",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0136",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0137",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0138",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0139",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0140",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0141",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0142",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0143",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0144",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0145",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0146",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0147",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0148",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0149",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0150",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0151",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0152",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0153",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0154",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0155",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0156",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0157",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0158",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0159",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0160",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0161",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0162",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0163",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0164",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0165",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0166",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0167",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0168",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0169",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0170",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0171",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0172",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0173",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0174",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0175",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "[icar_agriculture_advisory_01] অফিসিয়াল নির্দেশিকা অনুসারে:\n## Extreme Heat and Drought Crop Management (Source: IMD Agrimet Agriculture Guidance, Page 4)\n- Apply light and frequent irrigation to standing crops during evening or early morning hours to maintain root zone moisture and reduce soil surface temperature.\n- Increase frequency of irrigation during critical crop growth stages (tillering, flowering, grain filling).\n- Mulch with crop residue, straw, or polythene sheets to conserve soil moisture and suppress evaporative loss.\n- Use sprinkler and drip irrigation systems to optimize water use efficiency under heat stress.\n- Protect farm animals and cattle: keep animals under shade, provide ample cool drinking water, cool sheds with straw/dung-mud plaster or water foggers, and graze only during cooler morning and evening hours. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0176",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0177",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0178",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0179",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0180",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0181",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0182",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0183",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0184",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0185",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0186",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0187",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0188",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0189",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0190",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0191",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0192",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0193",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0194",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0195",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0196",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0197",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0198",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0199",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0200",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0201",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0202",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0203",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0204",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0205",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0206",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0207",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0208",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0209",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0210",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0211",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0212",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0213",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0214",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0215",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0216",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0217",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0218",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0219",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0220",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0221",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0222",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0223",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0224",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0225",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0226",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0227",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0228",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0229",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0230",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0231",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0232",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0233",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0234",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0235",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "[icar_agriculture_advisory_01] অফিসিয়াল নির্দেশিকা অনুসারে:\n## Extreme Heat and Drought Crop Management (Source: IMD Agrimet Agriculture Guidance, Page 4)\n- Apply light and frequent irrigation to standing crops during evening or early morning hours to maintain root zone moisture and reduce soil surface temperature.\n- Increase frequency of irrigation during critical crop growth stages (tillering, flowering, grain filling).\n- Mulch with crop residue, straw, or polythene sheets to conserve soil moisture and suppress evaporative loss.\n- Use sprinkler and drip irrigation systems to optimize water use efficiency under heat stress.\n- Protect farm animals and cattle: keep animals under shade, provide ample cool drinking water, cool sheds with straw/dung-mud plaster or water foggers, and graze only during cooler morning and evening hours. ",
+      "evidence_count": 3,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0236",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0237",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0238",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0239",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0240",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0241",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0242",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0243",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0244",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0245",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0246",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0247",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0248",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0249",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0250",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0251",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0252",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0253",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0254",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0255",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0256",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0257",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0258",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0259",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0260",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0261",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0262",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0263",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0264",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0265",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0266",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0267",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0268",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0269",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0270",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0271",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0272",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0273",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0274",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0275",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0276",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0277",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0278",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0279",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0280",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0281",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0282",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0283",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0284",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0285",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0286",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0287",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0288",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0289",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0290",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0291",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0292",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0293",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0294",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0295",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0296",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0297",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0298",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0299",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-forecast-0300",
+      "passed": false,
+      "failures": [
+        "Expected source 'Open-Meteo' not named in answer or evidence"
+      ],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-refusal-aviation",
+      "passed": true,
+      "failures": [],
+      "answer": "বিমান চলাচল সংক্রান্ত আবহাওয়া ব্রিফिंग (METAR/TAF) এই পাইলট সংস্করণে সমর্থিত নয়। ফ্লাইট পরিকল্পনার জন্য অনুগ্রহ করে সরকারি বিমান চলাচল পোর্টাল দেখুন।",
+      "evidence_count": 0,
+      "has_card": true
+    },
+    {
+      "id": "bn-refusal-evac",
+      "passed": true,
+      "failures": [],
+      "answer": "অফিসিয়াল নির্দেশিকা অনুসারে:\nএই বিষয়ে কোনো সরকারি নির্দেশিকা পাওয়া যায়নি। জরুরি সহায়তার জন্য ১১২ (জরুরি সেবা), ১০৭৭ (দুর্যোগ ব্যবস্থাপনা) বা ১৮০০-১৮০-১৫৫১ (কিষাণ কল সেন্টার) নম্বরে যোগাযোগ করুন। ",
+      "evidence_count": 1,
+      "has_card": true
+    },
+    {
+      "id": "bn-refusal-pesticide",
+      "passed": true,
+      "failures": [],
+      "answer": "WeatherGPT রাসায়নিক কীটনাশকের মাত্রা নির্ধারণ করে না। সঠিক মাত্রার জন্য অনুগ্রহ করে নিকটস্থ কৃষি বিজ্ঞান কেন্দ্র (KVK) বা কিষাণ কল সেন্টার ১৮০০-১৮০-১৫৫১ নম্বরে যোগাযোগ করুন।",
+      "evidence_count": 0,
+      "has_card": true
+    }
+  ]
+}

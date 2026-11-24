@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kochi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "43d1dd945f794285768dc000bbc5b96326dd751ebfdbe1cf24a17dda59871d3c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:11.458218+00:00",
+    "bytes": 1594,
+    "sha256": "ca7f232c54ebba33d634df95092ff9bf649ee0650ef220ee564f392ea38d22c2",
+    "file": "open_meteo/kochi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kochi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 9.9312,
+      "longitude": 76.2673,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f745a82bf4263ac7ab2fb37d4c64193a6f9ebbc73d1d7385001149ff9ef65f9e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:11.623532+00:00",
+    "bytes": 872,
+    "sha256": "362b1e16d20963ed61e5c168ba695ab467fc305fa9a55bc7575cff33d76e6f1d",
+    "file": "open_meteo/kochi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kochi/20261124T210746Z_forecast.json"
+  }
+]

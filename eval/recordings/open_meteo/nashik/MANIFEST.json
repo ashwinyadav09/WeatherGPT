@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nashik",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f7a38febbcdd4a9b8ac97570d0df5becded208f4c2e44dbb54b449dba390dafb",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:21.401335+00:00",
+    "bytes": 944,
+    "sha256": "07c5c3fd3a38afcbc8e9c3ce7e5fd5b9306a47b9e53752519bcdecd4bbb045c7",
+    "file": "open_meteo/nashik/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nashik/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.9975,
+      "longitude": 73.7898,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "e7208b8fc4f9fab7fbd666b781bc8195b5c12162bf0fe20febf6508b6f552c25",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:21.594887+00:00",
+    "bytes": 860,
+    "sha256": "740101376ba9588c9a4c81ac38b59291c9095bd6d68cbcfb356ca5ce6a85fe6b",
+    "file": "open_meteo/nashik/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nashik/20261124T210746Z_forecast.json"
+  }
+]

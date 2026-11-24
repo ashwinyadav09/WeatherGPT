@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Darjeeling",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "4aa4be1002286e0c155825e92205abc70468e05b20e870065807bae64793b542",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:59.497321+00:00",
+    "bytes": 739,
+    "sha256": "cecbc289cfc54d16a2647f7a144cef74c2b32ba594008df9351e047211b372f5",
+    "file": "open_meteo/darjeeling/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/darjeeling/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 27.041,
+      "longitude": 88.2663,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "a16c4d52562688360dfea2728b20798192faab776cd5e7a43883e6327ab8e21c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:59.662683+00:00",
+    "bytes": 858,
+    "sha256": "4a1317ac5c48c319f6376ca5bc316766ff220ea8be6c56a160ec7d36ca608949",
+    "file": "open_meteo/darjeeling/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/darjeeling/20261124T210746Z_forecast.json"
+  }
+]

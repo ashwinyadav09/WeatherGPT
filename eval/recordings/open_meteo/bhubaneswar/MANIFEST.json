@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bhubaneswar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "e09fd61bd3fe364529a5affac896c688bfdecfea701e14e9c37b695f26b813c3",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:55.496381+00:00",
+    "bytes": 770,
+    "sha256": "6a129cb240bf8e2d4da90ab63fab64a712f4b15c8480faacaac181b2fcb19d12",
+    "file": "open_meteo/bhubaneswar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bhubaneswar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 20.2961,
+      "longitude": 85.8245,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "f8f292590dd4b0f849d88af324bdfaea0dafaf1c96133e7565933a7d407d996a",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:55.698326+00:00",
+    "bytes": 864,
+    "sha256": "ec23d126a434a2a3dea5959e97bddd8b69372eca196c626ecff1c691c4a12d08",
+    "file": "open_meteo/bhubaneswar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bhubaneswar/20261124T210746Z_forecast.json"
+  }
+]

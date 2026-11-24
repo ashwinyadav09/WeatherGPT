@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kadapa",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8ae714a548e33147877098c5a6e172bc6a8df9f00ae8143ded4934aafb419a16",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.780360+00:00",
+    "bytes": 1653,
+    "sha256": "1575b6527d01e61618d7dbd512ff6f6583ec2bf554062b9196f50d34cf8dc1f5",
+    "file": "open_meteo/kadapa/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kadapa/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 14.4673,
+      "longitude": 78.8242,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "c5462f8951b3ee36b5ee25bdcdfe61cbf1fa86f3aa4baf7c8e9838acacfd4804",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:07.978604+00:00",
+    "bytes": 869,
+    "sha256": "7e577282338643ae7154c9a0c74403647528d54cb8e01253d4a1dd3917283e26",
+    "file": "open_meteo/kadapa/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kadapa/20261124T210746Z_forecast.json"
+  }
+]

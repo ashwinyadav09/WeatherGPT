@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Vijayawada",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2166a22d9027fde365e14969545cf5931c3ef1c9af7b247b13794ee9ce037905",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:40.540630+00:00",
+    "bytes": 1402,
+    "sha256": "9b99ef74861a15252ce7c60c8a9a2a79d8aca88022c89fef7f4242c965beb0bf",
+    "file": "open_meteo/vijayawada/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/vijayawada/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.5062,
+      "longitude": 80.648,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bbb54c729c4461304cdbc7f0cf7f583f3759b06709fc298e4992492d1f499a99",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:40.708408+00:00",
+    "bytes": 865,
+    "sha256": "708251ad70b418ab8168d9532f6f5dcb9b3d442f7e741c44251f849e71a59aba",
+    "file": "open_meteo/vijayawada/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/vijayawada/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kharagpur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8438253894087b8fb35e9875dfd341a93f6916ee278f1dc91d350358f93a8ee5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:10.878194+00:00",
+    "bytes": 1712,
+    "sha256": "b091f7b2959e5772290e3fd880d56755fac8a86727ab22076779e0521ce4385e",
+    "file": "open_meteo/kharagpur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kharagpur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.346,
+      "longitude": 87.232,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "2373f0fb57af4770af4cce75d082a3b4df36f91a69f1e0b06cb04a71bc0d61a8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:11.044614+00:00",
+    "bytes": 863,
+    "sha256": "b055b2a928a4abd82133ce8cebf19174749ef7374cfab0c788e5b8e3be448516",
+    "file": "open_meteo/kharagpur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kharagpur/20261124T210746Z_forecast.json"
+  }
+]

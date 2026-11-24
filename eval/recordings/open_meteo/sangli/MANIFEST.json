@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Sangli",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "d32c8ad87f967c3d88e29f3a7761dbc4b769d518274790afe2530fc39827bf9b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:27.441722+00:00",
+    "bytes": 1571,
+    "sha256": "e6dbd1d62fdbcb73b7f7a60f3fdafd21202b943ad8cfa51660194f4f0a432721",
+    "file": "open_meteo/sangli/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/sangli/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.8524,
+      "longitude": 74.5815,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "bea296603e31603ef2694748bd270e610513a32fa5ab68fb6aae3e3549a6bdce",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:27.637646+00:00",
+    "bytes": 869,
+    "sha256": "d21e7734fd3eadeefcd83de55e409ad81ef7ebacc7000ac57b637caad5a5bdd3",
+    "file": "open_meteo/sangli/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/sangli/20261124T210746Z_forecast.json"
+  }
+]

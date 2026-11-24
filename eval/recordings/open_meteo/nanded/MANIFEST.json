@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nanded",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "fd27c51e9787bad04fbcf18ca42b537edfec7641127e862c09aa562c4f041b78",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.784983+00:00",
+    "bytes": 1695,
+    "sha256": "149f00562ce608372a3033deb546d3f92be35210d5ffdc518143775a2bbe0c93",
+    "file": "open_meteo/nanded/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nanded/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.1383,
+      "longitude": 77.321,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "14e3c6dbb434e0e4dfd7296dbd5cd1da450b6f48abb0fb2dbc5f06361eb30bb7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.983618+00:00",
+    "bytes": 864,
+    "sha256": "8848bceee98dd04875c4c2a8f6a9abc24a5ab244c70dcdf0e8b3acafe10ffdbc",
+    "file": "open_meteo/nanded/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nanded/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Bardhaman",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "8a2bb3c2ca15317f2ac7b2419f1a21db9ee0c5a3c010980546fef0c3b7b5112f",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.647476+00:00",
+    "bytes": 772,
+    "sha256": "e7171eb6e2a0b233900ef485e2fbce560f76e79d98a6992a04180e5f7b9cf050",
+    "file": "open_meteo/bardhaman/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/bardhaman/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.2324,
+      "longitude": 87.8615,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "1a1bee986352a8178543d79e022467c193c77cbb754064eb3c926984c932b5f5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.846871+00:00",
+    "bytes": 863,
+    "sha256": "24ea727a354a32da3c14c09a5140c95b9d071abaee71c78905af0c09619aa6de",
+    "file": "open_meteo/bardhaman/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/bardhaman/20261124T210746Z_forecast.json"
+  }
+]

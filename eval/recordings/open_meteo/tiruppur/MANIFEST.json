@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tiruppur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "bd0fabca4d6fcf6aef57ed04b7f8e43b83fa020d0f92896237d360d3a6347141",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:37.838251+00:00",
+    "bytes": 1364,
+    "sha256": "6e4f7a152605e2be1ad4227a8b754b1aeede1a5cfeaec3dce8b4ea736068774c",
+    "file": "open_meteo/tiruppur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tiruppur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.1085,
+      "longitude": 77.3411,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "b68055b8eb0b4680d0e682fa199bed7ab15cd5d3b2421f3676c5b3c2e3a628fc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:38.091090+00:00",
+    "bytes": 874,
+    "sha256": "abe3ae18a494e265ac56a2093528ca5a9a043644d4e6abc8e145723848c03630",
+    "file": "open_meteo/tiruppur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tiruppur/20261124T210746Z_forecast.json"
+  }
+]

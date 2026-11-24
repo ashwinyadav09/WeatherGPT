@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ahilyanagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "2c0474df6fef380f286dc00d3d90655f50e32407ef78b2340a31e1ab4d6c9c5b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:22.533958+00:00",
+    "bytes": 388,
+    "sha256": "3e09ffce4f6b355aa2e38796dff127bcef6be7f58f14c4ff9dd309be99058b4d",
+    "file": "open_meteo/ahmednagar/20261124T211819Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ahmednagar/20261124T211819Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 19.0948,
+      "longitude": 74.748,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "395236c15af034192016dae96d98d6883149a00cd2f914f08a48ee5469f19622",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:18:22.712104+00:00",
+    "bytes": 864,
+    "sha256": "b50c8be499579bcd5d30f73be490aa9881c3eaa7b54c0ee7d812f41932bd69fd",
+    "file": "open_meteo/ahmednagar/20261124T211819Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ahmednagar/20261124T211819Z_forecast.json"
+  }
+]

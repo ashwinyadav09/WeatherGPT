@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Santiniketan",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3f26a571adec9a16d4ad35abb3d7fa5d6a2e307ed2cde61a41563c4fb422515c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:28.151029+00:00",
+    "bytes": 388,
+    "sha256": "0e1ccbaae97c008679a01a0a136669e7687f83804660d960d988b298aaead93d",
+    "file": "open_meteo/santiniketan/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/santiniketan/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.68,
+      "longitude": 87.68,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "58ad5b9b02ff9649b33e98d29c6da57b09c2fc6e81b50ab8134fd91f531c8cbf",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:28.356203+00:00",
+    "bytes": 863,
+    "sha256": "8a83aeb80913e279590610c5e4503910fde6d180a4f69dbf5bde0a9fae835051",
+    "file": "open_meteo/santiniketan/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/santiniketan/20261124T210746Z_forecast.json"
+  }
+]

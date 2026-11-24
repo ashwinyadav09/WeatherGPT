@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Kolhapur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "803e9be2799edbe97845aa2447f5d826904aade6e603e3d8f56c0cc43901c56c",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.173757+00:00",
+    "bytes": 1697,
+    "sha256": "ea6b1ffaad31289cc2cc970446c6c3da100661ee1ab6098975e2e7e6d38b3120",
+    "file": "open_meteo/kolhapur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/kolhapur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 16.705,
+      "longitude": 74.2433,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "c2488ca536eed89dabf4c4edf7e62850f5117e20ddf39264cd25a770947dfe70",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:12.338572+00:00",
+    "bytes": 869,
+    "sha256": "e56edf9a9abc8a94ec142f592fb5452f93cee090fb3ef76cbeda8e9e9981aeca",
+    "file": "open_meteo/kolhapur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/kolhapur/20261124T210746Z_forecast.json"
+  }
+]

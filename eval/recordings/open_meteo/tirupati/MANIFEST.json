@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Tirupati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "f44c84ffc3cdaabaa12adac3c741f20bdc139cfaa4807e04418e9889ee115e07",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:37.260441+00:00",
+    "bytes": 1698,
+    "sha256": "5edf94c94f5de334b08dcc85db3b329b491472d442007f65628d46c462268ad4",
+    "file": "open_meteo/tirupati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/tirupati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 13.6288,
+      "longitude": 79.4192,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3df6e404ac0fb9b531982ddb916cf1d07f9870904e4f0e252dc8d3d35357f301",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:37.424330+00:00",
+    "bytes": 871,
+    "sha256": "e5ea3558cc52401d3ef0739c3368ec35fabb19ff645322cc4be4b382a6ac2a37",
+    "file": "open_meteo/tirupati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/tirupati/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Krishnanagar",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "0c4396badebdf220f65fedf709da16982f95c1c1a0b3341683c8c1577b28d2fc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:13.508386+00:00",
+    "bytes": 1945,
+    "sha256": "2ccfb083e44510f56a06d7a267227290be7677f05725962cb575d5ad43784325",
+    "file": "open_meteo/krishnanagar/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/krishnanagar/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.4,
+      "longitude": 88.5,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "b4639c79f8823676124b3508e18be0f03f22580bb7578ad156a20f538b1b95f9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:13.756600+00:00",
+    "bytes": 861,
+    "sha256": "5bdbc108dccfcf00599ca021251554d564013c6f2bf9bb2fbd1e688f08470a67",
+    "file": "open_meteo/krishnanagar/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/krishnanagar/20261124T210746Z_forecast.json"
+  }
+]

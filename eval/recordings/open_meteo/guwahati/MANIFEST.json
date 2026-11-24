@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Guwahati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "aaa736d28370b9ece1eb58c0e2b7a14aad77ea2e501ce129dd66531bdee86112",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.628797+00:00",
+    "bytes": 754,
+    "sha256": "a2f0f49efb9cd69d0e78d2ca4b01f66adf2785f56fbf04aeb31ca7bfbf89ef26",
+    "file": "open_meteo/guwahati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/guwahati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.1445,
+      "longitude": 91.7362,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "7dd5a22f690541b10edc818fd2ef3cd7990de8aaff2704a4c1213b518eb92314",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:03.797740+00:00",
+    "bytes": 863,
+    "sha256": "41069572b64a3ba2d079538bfcf75d82713a76437df0ff8ade83c05e2237625d",
+    "file": "open_meteo/guwahati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/guwahati/20261124T210746Z_forecast.json"
+  }
+]

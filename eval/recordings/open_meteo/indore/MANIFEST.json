@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Indore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "bfb6dd83ef11ce2fb4dc26f19588dc3e223840ff789ed0bb8cd558a56022410b",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:05.424681+00:00",
+    "bytes": 1040,
+    "sha256": "9cff2b4537368e7c6cd56766c1e0dc7435929c8a6596e72daae42b02ea2fa770",
+    "file": "open_meteo/indore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/indore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 22.7196,
+      "longitude": 75.8577,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "fad247fbaf776d6d2b678eca232fa6a9d1b22e3fdfe36fba2251cdd9b9004f19",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:05.620876+00:00",
+    "bytes": 865,
+    "sha256": "bafcb56e4ba6dfc268d352c69317f26e18b008fd8f4480f9cf69bcbdec15d0d0",
+    "file": "open_meteo/indore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/indore/20261124T210746Z_forecast.json"
+  }
+]

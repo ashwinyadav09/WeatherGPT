@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Ranchi",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "184b35f1d8219f1e6dfbb9fdc85d823c07b5fc068c5fa3f03e4dedb375070dd4",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:26.100286+00:00",
+    "bytes": 1710,
+    "sha256": "42bbcf44811420ad3a4b385a20d56d93e5fc9e749eebb1dd0881dd4c5f9c73b2",
+    "file": "open_meteo/ranchi/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/ranchi/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.3441,
+      "longitude": 85.3096,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3655e6a3fd7f34b670c66be758eb1a5c3d66c1b53f90f6faf459c79d656299c5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:26.308231+00:00",
+    "bytes": 863,
+    "sha256": "04472767d0c477e4d78d21ac038b9e783bc6553b8c73c18e9714fc70f6a61551",
+    "file": "open_meteo/ranchi/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/ranchi/20261124T210746Z_forecast.json"
+  }
+]

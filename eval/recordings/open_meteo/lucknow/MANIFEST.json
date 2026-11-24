@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Lucknow",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "bf3145a14ba6fa59ead9e9721157f41549f7e08aac2bcdb0ffc90d4416d683af",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.746307+00:00",
+    "bytes": 1754,
+    "sha256": "1492426b0d0f8bf3c3288d50de06249f1cf080726c39eba911591a34956c882a",
+    "file": "open_meteo/lucknow/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/lucknow/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 26.8467,
+      "longitude": 80.9462,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "afe119566e7c20e6314a798eebaf2180be103aa1cdbb808961c17ffdc4575b74",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:14.910607+00:00",
+    "bytes": 863,
+    "sha256": "43f573ac180876c422eec635341a60463614d49c10046c4be727e56a01377cac",
+    "file": "open_meteo/lucknow/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/lucknow/20261124T210746Z_forecast.json"
+  }
+]

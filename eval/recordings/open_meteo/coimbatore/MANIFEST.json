@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Coimbatore",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "75c532cbd591491d793ef15b5efb40b7063ab3d2b2b8bcd69a45d653e391b5de",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:57.635131+00:00",
+    "bytes": 1388,
+    "sha256": "e1cf5f845ef6cbf33daa75931505e73f60156ed30771032ef14a2b45cd62c439",
+    "file": "open_meteo/coimbatore/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/coimbatore/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 11.0168,
+      "longitude": 76.9558,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "d2331e7888e2a6dde76a17c32779280ec82b6325e022fa783ced39d0aedd5258",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:57.837526+00:00",
+    "bytes": 875,
+    "sha256": "6b6ab4953cc6b69447dbc91791af49312aa0b75d4d67fa6f2d65a3baaccefb5c",
+    "file": "open_meteo/coimbatore/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/coimbatore/20261124T210746Z_forecast.json"
+  }
+]

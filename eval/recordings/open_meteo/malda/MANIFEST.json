@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Malda",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "76b1fb9004c117193d7b4eb3a636c32c940a085eb80d3ac8ce4298193ad0fdf5",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:16.593079+00:00",
+    "bytes": 1550,
+    "sha256": "8fa1fb56017d4df82adf06b6c48cd2fa10637e8a44b29deedbc9c946a592daf6",
+    "file": "open_meteo/malda/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/malda/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.0108,
+      "longitude": 88.1411,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3e46c5726dddc6f021845457e1a2f502b3b9d7d2e70a12d847c287d525f360af",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:16.786211+00:00",
+    "bytes": 861,
+    "sha256": "197a07673c85e928f859493ffcfe25b242a7845c424299b18df7dbff113951a5",
+    "file": "open_meteo/malda/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/malda/20261124T210746Z_forecast.json"
+  }
+]

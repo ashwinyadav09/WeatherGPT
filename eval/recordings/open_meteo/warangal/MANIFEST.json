@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Warangal",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "89b199993f389ac079682d8e6d0aade6bb84ba488237cb4757ef865f790118b7",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.781925+00:00",
+    "bytes": 749,
+    "sha256": "58ff74e1a70a760935b19b698743e7a997c22b12ac4f02b0ae362ce3b51d97a5",
+    "file": "open_meteo/warangal/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/warangal/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 17.9689,
+      "longitude": 79.5941,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "ab01b199f5151b8c91f8b484c0666cee40576ef01a1a7ad9672dc2d25ee484a2",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:41.951083+00:00",
+    "bytes": 867,
+    "sha256": "521b5a53a70dd4631987f1f6ab146316ab472f737186becc5ba537bab1565ac9",
+    "file": "open_meteo/warangal/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/warangal/20261124T210746Z_forecast.json"
+  }
+]

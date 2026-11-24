@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Thanjavur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "3d78b8ae94254e4abc3bdc2ecddd3807aec31c59323764f83414a393ca4dce7e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:34.295990+00:00",
+    "bytes": 727,
+    "sha256": "153db8168c9e4ff7585bce27d46bba577529c0d01047e67234abc72facff3de2",
+    "file": "open_meteo/thanjavur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/thanjavur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 10.787,
+      "longitude": 79.1378,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "471059955d38c7d709918827ce04982714ca396288f7437092e4d70728a7ae95",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:34.498104+00:00",
+    "bytes": 873,
+    "sha256": "b6023cef4d8f420c014fca3f1a4be24d0e284c271a0c6792cb6a3136157a32af",
+    "file": "open_meteo/thanjavur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/thanjavur/20261124T210746Z_forecast.json"
+  }
+]

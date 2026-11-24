@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Patna",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "a6e68b303d0a58680b919df2521b2b7a7be2b63166a05f8fe46d1cbc523d3de9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:23.443089+00:00",
+    "bytes": 1785,
+    "sha256": "14c868d4dcfc6f8a480769e02167ccf1098b439332c45ac7386973182cf48bd1",
+    "file": "open_meteo/patna/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/patna/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 25.5941,
+      "longitude": 85.1376,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "3181f49ed77db77e1a3a07667f7115fa5d1214f8810890a2e71c0bf55bb18091",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:23.646314+00:00",
+    "bytes": 862,
+    "sha256": "16da0c25a7e2ff6d6f20665d7e8e72b6edf018dcf17e358551b7b13b6b57039d",
+    "file": "open_meteo/patna/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/patna/20261124T210746Z_forecast.json"
+  }
+]

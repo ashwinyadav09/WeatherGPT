@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Baramati",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "b75ba0948ee61e91221dfa28308998c954e9092799e91b8e482b90512599c5a8",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.028203+00:00",
+    "bytes": 383,
+    "sha256": "397d7d40a1583966af7e5a014110ee2f362d60051096417ce0d11096c18736f6",
+    "file": "open_meteo/baramati/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/baramati/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 18.1517,
+      "longitude": 74.5774,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "5f6a5854545057c3a4b3a11c5d5751116cdd026d3149397b3356514c49a558d9",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:53.231193+00:00",
+    "bytes": 864,
+    "sha256": "36dc0a4766266d070eb390e5f20e9d238b1d08ec57106160dc511765b918b6ed",
+    "file": "open_meteo/baramati/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/baramati/20261124T210746Z_forecast.json"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Asansol",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "cde54f6d92bf5ec9522d9f902b088d63d6827a6ecb7bf53eef07621cb6a5fccc",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.799243+00:00",
+    "bytes": 1034,
+    "sha256": "aeb7aa84402a5c5af63ed7cbcb800e9b198123b042585b5f955234c65763669d",
+    "file": "open_meteo/asansol/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/asansol/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 23.6739,
+      "longitude": 86.9524,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "938226a76878c3a3ded6d6ab1a3bd70a903c395edc6248d53f388b186313ff8e",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:07:51.979043+00:00",
+    "bytes": 864,
+    "sha256": "ce0e621c82421a4f4ab18b51c1ab48428f3c67210928d27ce74f7b7af716b94b",
+    "file": "open_meteo/asansol/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/asansol/20261124T210746Z_forecast.json"
+  }
+]

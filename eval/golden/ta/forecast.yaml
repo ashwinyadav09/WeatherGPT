@@ -8,7 +8,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 25.0
+    - 24.3
     - 0.0
     refusal: false
     must_not:
@@ -40,8 +40,8 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 28.5
-    - 0.0
+    - 27.3
+    - 1.1
     refusal: false
     must_not:
     - evacuate
@@ -56,8 +56,8 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 31.4
-    - 0.0
+    - 28.9
+    - 2.3
     refusal: false
     must_not:
     - evacuate
@@ -72,7 +72,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 26.2
+    - 25.5
     - 0.0
     refusal: false
     must_not:
@@ -88,8 +88,8 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 29.5
-    - 0.0
+    - 29.1
+    - 2.3
     refusal: false
     must_not:
     - evacuate
@@ -104,7 +104,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 27.1
+    - 25.5
     - 0.0
     refusal: false
     must_not:
@@ -120,7 +120,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 15.9
+    - 14.8
     - 0.0
     refusal: false
     must_not:
@@ -136,7 +136,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 31.5
+    - 32.4
     - 0.0
     refusal: false
     must_not:
@@ -152,7 +152,7 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 26.9
+    - 25.6
     - 0.0
     refusal: false
     must_not:
@@ -168,7 +168,311 @@
   expect:
     source_named: Open-Meteo
     expected_numbers:
-    - 26.7
+    - 24.8
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-ahmedabad-012
+  language: ta
+  intent: forecast
+  place: Ahmedabad
+  place_id: ahmedabad
+  day: tomorrow
+  question: நாளை அகமதாபாத்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.6
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-surat-013
+  language: ta
+  intent: forecast
+  place: Surat
+  place_id: surat
+  day: tomorrow
+  question: நாளை சூரத்-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 33.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-lucknow-014
+  language: ta
+  intent: forecast
+  place: Lucknow
+  place_id: lucknow
+  day: tomorrow
+  question: நாளை லக்னோ-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 24.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-patna-015
+  language: ta
+  intent: forecast
+  place: Patna
+  place_id: patna
+  day: tomorrow
+  question: நாளை பாட்னா-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 24.6
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-bhopal-016
+  language: ta
+  intent: forecast
+  place: Bhopal
+  place_id: bhopal
+  day: tomorrow
+  question: நாளை போபால்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 27.3
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-chandigarh-017
+  language: ta
+  intent: forecast
+  place: Chandigarh
+  place_id: chandigarh
+  day: tomorrow
+  question: நாளை சண்டிகர்-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 23.0
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-dehradun-018
+  language: ta
+  intent: forecast
+  place: Dehradun
+  place_id: dehradun
+  day: tomorrow
+  question: நாளை டேராடூன்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 20.4
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-ranchi-019
+  language: ta
+  intent: forecast
+  place: Ranchi
+  place_id: ranchi
+  day: tomorrow
+  question: நாளை ராஞ்சி-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 22.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-nagpur-020
+  language: ta
+  intent: forecast
+  place: Nagpur
+  place_id: nagpur
+  day: tomorrow
+  question: நாளை நாக்பூர்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.9
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-nashik-021
+  language: ta
+  intent: forecast
+  place: Nashik
+  place_id: nashik
+  day: tomorrow
+  question: நாளை நாசிக்-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 30.8
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-howrah-022
+  language: ta
+  intent: forecast
+  place: Howrah
+  place_id: howrah
+  day: tomorrow
+  question: நாளை ஹவுரா-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.7
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-siliguri-023
+  language: ta
+  intent: forecast
+  place: Siliguri
+  place_id: siliguri
+  day: tomorrow
+  question: நாளை சிலிகுரி-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 25.5
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-visakhapatnam-024
+  language: ta
+  intent: forecast
+  place: Visakhapatnam
+  place_id: visakhapatnam
+  day: tomorrow
+  question: நாளை விசாகப்பட்டினம்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.9
+    - 3.7
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-vijayawada-025
+  language: ta
+  intent: forecast
+  place: Vijayawada
+  place_id: vijayawada
+  day: tomorrow
+  question: நாளை விஜயவாடா-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 31.0
+    - 3.4
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-coimbatore-026
+  language: ta
+  intent: forecast
+  place: Coimbatore
+  place_id: coimbatore
+  day: tomorrow
+  question: நாளை கோயம்புத்தூர்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 29.3
+    - 15.7
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-madurai-027
+  language: ta
+  intent: forecast
+  place: Madurai
+  place_id: madurai
+  day: tomorrow
+  question: நாளை மதுரை-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.6
+    - 19.9
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-bhubaneswar-028
+  language: ta
+  intent: forecast
+  place: Bhubaneswar
+  place_id: bhubaneswar
+  day: tomorrow
+  question: நாளை புவனேஸ்வர்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.0
+    - 0.3
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-cuttack-029
+  language: ta
+  intent: forecast
+  place: Cuttack
+  place_id: cuttack
+  day: tomorrow
+  question: நாளை கட்டாக்-ல் மழை பெய்யுமா?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 28.1
+    - 0.0
+    refusal: false
+    must_not:
+    - evacuate
+    - guaranteed
+- id: ta-forecast-srinagar-030
+  language: ta
+  intent: forecast
+  place: Srinagar
+  place_id: srinagar
+  day: tomorrow
+  question: நாளை ஸ்ரீநகர்-ல் வெப்பநிலை என்னவாக இருக்கும்?
+  expect:
+    source_named: Open-Meteo
+    expected_numbers:
+    - 14.9
     - 0.0
     refusal: false
     must_not:

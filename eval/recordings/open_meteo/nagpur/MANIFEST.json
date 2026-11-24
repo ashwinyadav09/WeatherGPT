@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://geocoding-api.open-meteo.com/v1/search",
+    "parameters": {
+      "name": "Nagpur",
+      "count": 5,
+      "language": "en"
+    },
+    "request_hash": "c1c2fac8bf94a1632f6df309207bdf019e520a04615c87b91add48ca9976cc03",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.169876+00:00",
+    "bytes": 1766,
+    "sha256": "095a2e69ee49649894953a3dbd0bc2827f21f8d40c205f6b02d3385a67351189",
+    "file": "open_meteo/nagpur/20261124T210746Z_geocoding.json",
+    "path": "eval/recordings/open_meteo/nagpur/20261124T210746Z_geocoding.json"
+  },
+  {
+    "url": "https://api.open-meteo.com/v1/forecast",
+    "parameters": {
+      "latitude": 21.1458,
+      "longitude": 79.0882,
+      "current": "temperature_2m,precipitation",
+      "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
+      "timezone": "Asia/Kolkata",
+      "forecast_days": 7
+    },
+    "request_hash": "b1da11a21755ef5a39c5f15e28ae50971b27fa8180f7047ea1aee0a6d1ecc666",
+    "status_code": 200,
+    "retrieved_at": "2026-11-24T21:08:20.367174+00:00",
+    "bytes": 864,
+    "sha256": "8feea4452b18d2e93e8aebbb88916c324f521afc30bd99bf071a03a447cf1bd9",
+    "file": "open_meteo/nagpur/20261124T210746Z_forecast.json",
+    "path": "eval/recordings/open_meteo/nagpur/20261124T210746Z_forecast.json"
+  }
+]
