@@ -7,6 +7,7 @@
     - NDMA
     - IMD
     refusal: false
+    check_citations: true
 - id: or-advisory-coldwave
   language: or
   intent: advisory
@@ -16,6 +17,7 @@
     - NDMA
     - IMD
     refusal: false
+    check_citations: true
 - id: or-advisory-lightning
   language: or
   intent: advisory
@@ -25,6 +27,7 @@
     - NDMA
     - IMD
     refusal: false
+    check_citations: true
 - id: or-advisory-crop
   language: or
   intent: advisory
@@ -36,3 +39,4 @@
     - NDMA
     - IMD
     refusal: false
+    check_citations: true

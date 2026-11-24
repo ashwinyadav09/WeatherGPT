@@ -140,7 +140,7 @@ class TelegramChannelAdapter:
 
         primary_pkt = packets[0]
         temp_val = "N/A"
-        precip_val = "0.0 mm"
+        precip_val = "N/A"
         for v in primary_pkt.values:
             if v.variable == "temperature_2m" and v.value is not None:
                 temp_val = f"{v.value}{v.unit}"

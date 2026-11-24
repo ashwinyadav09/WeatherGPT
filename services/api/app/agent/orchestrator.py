@@ -45,6 +45,63 @@ logger = logging.getLogger(__name__)
 
 SESSION_TTL_SECONDS = 900  # 15 minutes
 
+ADVISORY_TITLES: dict[str, str] = {
+    "en": "Safety & Weather Advisory",
+    "hi": "मौसम व सुरक्षा सलाह",
+    "bn": "আবহাওয়া ও সুরক্ষা সংক্রান্ত পরামর্শ",
+    "mr": "हवामान आणि सुरक्षा सल्ला",
+    "te": "వాతావరణ మరియు భద్రతా సలహా",
+    "ta": "வானிலை மற்றும் பாதுகாப்பு ஆலோசனை",
+    "or": "ପାଣିପାଗ ଏବଂ ସୁରକ୍ଷା ପରାମର୍ଶ",
+}
+
+HAZARD_ADVISORY_TERMS: tuple[str, ...] = (
+    # Lightning / thunderstorm
+    "lightning", "thunderstorm", "बिजली", "आकाशीय बिजली", "तूफान", "वज्रपात", "तड़ित",
+    "বজ্রপাত", "বজ্রঝড়", "विजांचा", "कडकडाट", "वादळ", "वादळाच्या", "ఉరుములు", "మెరుపులు", "మెరుపుల",
+    "இடி", "மின்னல்", "புயல்", "புயலின்", "ବଜ୍ରପାତ", "ଝଡ଼",
+    # Heatwave
+    "heatwave", "heat wave", "लू", "भीषण लू", "तापদাহ", "উष्णतेच्या", "उष्णतेची लाट",
+    "వడగాల్పులు", "వడగాల్పుల", "வெப்ப அலை", "ଗ୍ରୀଷ୍ମ ପ୍ରବାହ",
+    # Coldwave
+    "coldwave", "cold wave", "शीतलहर", "ठंड", "শৈত্যপ্রবাহ", "शीत लाट", "थंडीची लाट", "थंडीच्या",
+    "శీతల గాలులు", "శీతల గాలుల", "குளிர்கால", "ଶୀତ ଲହରୀ",
+    # Flood
+    "flood", "waterlogging", "बाढ़", "বন্যা", "पूर", "వరదలు", "வெள்ளம்", "ବନ୍ୟା",
+    # Cyclone
+    "cyclone", "चक्रवात", "ঘূর্ণিঝড়", "चक्रीवादळ", "తుఫాను", "சூறாவளி", "ବାତ୍ୟା", "ଚକ୍ରବାତ",
+    # Crop protection / agriculture advisory
+    "crop protection", "crop safety", "agriculture advisory", "फसल सुरक्षा", "फसलों की सुरक्षा",
+    "कृषि सलाह", "ফসল সুরক্ষা", "কৃষি পরামর্শ", "पीक संरक्षण", "पिकांची काळजी", "पिकांच्या",
+    "कृषी सल्ला", "పంటల రక్షణ", "పంటల జాగ్రత్తలు", "వ్యవసాయ సలహా", "பயிர் பாதுகாப்பு",
+    "பயிர்களை", "வேளாண் ஆலோசனை", "ଫସଲ ସୁରକ୍ଷା", "କୃଷି ପରାମର୍ଶ",
+    # General safety / advice keywords
+    "safety rules", "precautions", "do's and don'ts", "सावधानियां", "सुरक्षा नियम",
+    "बचाव के उपाय", "निরাপত্তা নিয়ম", "সতর্কতা", "काळजी",
+    "రక్షణ చర్యలు", "జాగ్రత్తలు", "பாதுகாப்பு விதிகள்", "முன்னெச்சரிக்கை", "ନିରାପତ୍ତା ନିୟମ",
+)
+
+
+_RISK_OVERRIDE_TERMS: tuple[str, ...] = (
+    "risk outlook", "risk", "extreme event", "extreme heatwave risk", "extreme heat risk",
+    "extreme cold risk", "flood risk", "cyclone risk", "risk forecast", "risk prediction",
+    "risk assessment", "जोखिम", "खतरा", "ریسک",
+)
+
+
+def is_hazard_or_advice_query(text: str) -> bool:
+    """Detect if query asks for hazard safety, warnings, or advisory guidelines (Ticket R20.5).
+
+    Returns False for queries that are risk/outlook queries even if they mention a hazard
+    term (e.g. "extreme heatwave risk outlook" is a risk forecast, not a safety advisory).
+    """
+    text_lower = text.lower()
+    # Risk/outlook queries take priority: even if a hazard term appears, they route to risk intent
+    if any(rt in text_lower for rt in _RISK_OVERRIDE_TERMS):
+        return False
+    return any(term in text_lower for term in HAZARD_ADVISORY_TERMS)
+
+
 
 class ChatRequest(BaseModel):
     session_id: str
@@ -166,7 +223,7 @@ class Orchestrator:
                 "event": "trace",
                 "data": {
                     "intent": "safety_redirect",
-                    "confidence": 1.0,
+                    "confidence": None,
                     "router_path": "safety_guard",
                     "tools": [],
                     "models": [],
@@ -196,7 +253,7 @@ class Orchestrator:
                 "event": "trace",
                 "data": {
                     "intent": "safety_redirect",
-                    "confidence": 1.0,
+                    "confidence": None,
                     "router_path": "safety_guard",
                     "tools": [],
                     "models": [],
@@ -238,7 +295,7 @@ class Orchestrator:
                 "event": "trace",
                 "data": {
                     "intent": "aviation_brief",
-                    "confidence": 1.0,
+                    "confidence": None,
                     "router_path": "policy_check",
                     "tools": [],
                     "models": [],
@@ -276,7 +333,7 @@ class Orchestrator:
                     "event": "trace",
                     "data": {
                         "intent": "advisory",
-                        "confidence": 0.95,
+                        "confidence": None,
                         "router_path": "marine_adapter",
                         "tools": [{"name": "marine_bulletin", "args": {"area": target_area}, "latency_ms": 10}],
                         "models": [],
@@ -311,7 +368,7 @@ class Orchestrator:
                 "event": "trace",
                 "data": {
                     "intent": "advisory",
-                    "confidence": 0.95,
+                    "confidence": None,
                     "router_path": "marine_adapter",
                     "tools": [{"name": "marine_bulletin", "args": {"area": target_area}, "latency_ms": 10}],
                     "models": [],
@@ -354,7 +411,7 @@ class Orchestrator:
                     "event": "trace",
                     "data": {
                         "intent": "clarification",
-                        "confidence": 1.0,
+                        "confidence": None,
                         "router_path": "location_resolver",
                         "tools": [],
                         "models": [],
@@ -394,7 +451,7 @@ class Orchestrator:
                     "event": "trace",
                     "data": {
                         "intent": "advisory",
-                        "confidence": 0.95,
+                        "confidence": None,
                         "router_path": "agromet_adapter",
                         "tools": [{"name": "agromet_advisory", "args": {"district": target_district, "crop": crop}, "latency_ms": 10}],
                         "models": [],
@@ -430,7 +487,7 @@ class Orchestrator:
                 "event": "trace",
                 "data": {
                     "intent": "advisory",
-                    "confidence": 0.95,
+                    "confidence": None,
                     "router_path": "agromet_adapter",
                     "tools": [{"name": "agromet_advisory", "args": {"district": target_district, "crop": crop}, "latency_ms": 10}],
                     "models": [],
@@ -442,20 +499,131 @@ class Orchestrator:
             yield {"event": "done", "data": {"latency_ms": latency_ms}}
             return
 
-        # 5. Place Resolution & Session Memory
-        confirmed_place = None
-        clean_text = req.text.strip().lower()
-        if req.session_id in self.pending_clarifications:
-            pending = self.pending_clarifications[req.session_id]
-            if clean_text in ("हाँ", "हां", "yes", "sahi", "सही", "ha", "haan", "yep", "sure", "correct"):
-                confirmed_place = pending["place"]
+        # Check if query is a hazard safety, advice, or advisory question (Ticket R20.5)
+        # Hazard-safety and advice questions (lightning, thunderstorm, heatwave, cold wave,
+        # flood, cyclone, crop protection) must route to the advisory path and never to place resolution.
+        is_hazard_advisory = is_hazard_or_advice_query(req.text)
+        place = None
+
+        if is_hazard_advisory:
+            # Hazard advisory queries do NOT geocode or resolve question text (Finding V5)
+            if req.session_id in self.pending_clarifications:
                 del self.pending_clarifications[req.session_id]
-            elif clean_text in ("नहीं", "ना", "no", "nahi", "nahin", "wrong", "गलत"):
-                del self.pending_clarifications[req.session_id]
+            if req.place_id:
+                pid = req.place_id.lower()
+                place = PLACES_BY_ID.get(pid)
+            if not place:
+                place = self._get_session_place(req.session_id)
+            if place:
+                p_name = place.names.get(lang, place.names.get("en", place.id))
+                place_ref = PlaceReference(id=place.id, name=p_name, lat=place.lat, lon=place.lon)
+            else:
+                p_name = "India" if lang == "en" else "भारत"
+                place_ref = PlaceReference(id="in_national", name=p_name, lat=20.5937, lon=78.9629)
+        else:
+            # 5. Place Resolution & Session Memory
+            confirmed_place = None
+            clean_text = req.text.strip().lower()
+            if req.session_id in self.pending_clarifications:
+                pending = self.pending_clarifications[req.session_id]
+                if clean_text in ("हाँ", "हां", "yes", "sahi", "सही", "ha", "haan", "yep", "sure", "correct"):
+                    confirmed_place = pending["place"]
+                    del self.pending_clarifications[req.session_id]
+                elif clean_text in ("नहीं", "ना", "no", "nahi", "nahin", "wrong", "गलत"):
+                    del self.pending_clarifications[req.session_id]
+                    prompt_msg = (
+                        "कृपया अपने जिले या राज्य का नाम बताएं।"
+                        if lang == "hi"
+                        else "Please specify your district or state name."
+                    )
+                    yield {
+                        "event": "card",
+                        "data": {
+                            "headline": "स्थान स्पष्ट करें" if lang == "hi" else "Location needed",
+                            "source_line": "WeatherGPT Location Resolver",
+                            "caveat": prompt_msg,
+                        },
+                    }
+                    yield {"event": "token", "data": {"text": prompt_msg}}
+                    yield {
+                        "event": "trace",
+                        "data": {
+                            "intent": "clarification",
+                            "confidence": None,
+                            "router_path": "location_resolver",
+                            "tools": [],
+                            "models": [],
+                            "verifier": {"passed": True, "checked_numbers": [], "failures": []},
+                            "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
+                        },
+                    }
+                    latency_ms = int((time.time() - start_time) * 1000)
+                    yield {"event": "done", "data": {"latency_ms": latency_ms}}
+                    return
+
+            if confirmed_place:
+                place = confirmed_place
+            elif req.place_id:
+                pid = req.place_id.lower()
+                place = PLACES_BY_ID.get(pid)
+                if not place:
+                    resolved_p = await self.location_resolver.resolve(req.place_id, language=lang)
+                    place = resolved_p.get("resolved_place")
+            else:
+                resolved = await self.location_resolver.resolve(req.text, language=lang)
+                if resolved.get("ambiguous") and resolved.get("clarification_question"):
+                    clarify_q = str(resolved["clarification_question"])
+                    cand_place = resolved.get("resolved_place")
+                    self.pending_clarifications[req.session_id] = {
+                        "place": cand_place,
+                        "places": resolved.get("places", []),
+                        "language": lang,
+                    }
+                    actions = ["हाँ", "नहीं"] if lang == "hi" else ["Yes", "No"]
+                    yield {
+                        "event": "card",
+                        "data": {
+                            "headline": "Clarification needed" if lang != "hi" else "स्थान स्पष्ट करें",
+                            "source_line": "WeatherGPT Location Resolver",
+                            "caveat": clarify_q,
+                            "actions": actions,
+                            "needs_confirmation": True,
+                        },
+                    }
+                    yield {"event": "token", "data": {"text": clarify_q}}
+                    yield {
+                        "event": "trace",
+                        "data": {
+                            "intent": "clarification",
+                            "confidence": None,
+                            "router_path": "location_resolver",
+                            "tools": [{"name": "geocode", "args": {"text": req.text}, "latency_ms": 5, "source": "nominatim_or_gazetteer", "provenance": "cached"}],
+                            "models": [],
+                            "verifier": {"passed": True, "checked_numbers": [], "failures": []},
+                            "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
+                        },
+                    }
+                    latency_ms = int((time.time() - start_time) * 1000)
+                    yield {"event": "done", "data": {"latency_ms": latency_ms}}
+                    return
+
+                place = resolved.get("resolved_place")
+
+            # Fallback to session context if user didn't mention a new place
+            if not place:
+                place = self._get_session_place(req.session_id)
+
+            if place:
+                self._update_session_place(req.session_id, place)
+                p_name = place.names.get(lang, place.names.get("en", place.id))
+                lat = place.lat
+                lon = place.lon
+                place_ref = PlaceReference(id=place.id, name=p_name, lat=lat, lon=lon)
+            else:
                 prompt_msg = (
-                    "कृपया अपने जिले या राज्य का नाम बताएं।"
+                    "कृपया अपने शहर या जिले का नाम बताएं।"
                     if lang == "hi"
-                    else "Please specify your district or state name."
+                    else "Please specify your city or district."
                 )
                 yield {
                     "event": "card",
@@ -470,7 +638,7 @@ class Orchestrator:
                     "event": "trace",
                     "data": {
                         "intent": "clarification",
-                        "confidence": 1.0,
+                        "confidence": None,
                         "router_path": "location_resolver",
                         "tools": [],
                         "models": [],
@@ -482,58 +650,13 @@ class Orchestrator:
                 yield {"event": "done", "data": {"latency_ms": latency_ms}}
                 return
 
-        place = None
-        if confirmed_place:
-            place = confirmed_place
-        elif req.place_id:
-            pid = req.place_id.lower()
-            place = PLACES_BY_ID.get(pid)
-            if not place:
-                resolved_p = await self.location_resolver.resolve(req.place_id, language=lang)
-                place = resolved_p.get("resolved_place")
-        else:
-            resolved = await self.location_resolver.resolve(req.text, language=lang)
-            if resolved.get("ambiguous") and resolved.get("clarification_question"):
-                clarify_q = str(resolved["clarification_question"])
-                cand_place = resolved.get("resolved_place")
-                self.pending_clarifications[req.session_id] = {
-                    "place": cand_place,
-                    "places": resolved.get("places", []),
-                    "language": lang,
-                }
-                actions = ["हाँ", "नहीं"] if lang == "hi" else ["Yes", "No"]
-                yield {
-                    "event": "card",
-                    "data": {
-                        "headline": "Clarification needed" if lang != "hi" else "स्थान स्पष्ट करें",
-                        "source_line": "WeatherGPT Location Resolver",
-                        "caveat": clarify_q,
-                        "actions": actions,
-                        "needs_confirmation": True,
-                    },
-                }
-                yield {"event": "token", "data": {"text": clarify_q}}
-                yield {
-                    "event": "trace",
-                    "data": {
-                        "intent": "clarification",
-                        "confidence": 0.5,
-                        "router_path": "location_resolver",
-                        "tools": [{"name": "geocode", "args": {"text": req.text}, "latency_ms": 5, "source": "nominatim_or_gazetteer", "provenance": "cached"}],
-                        "models": [],
-                        "verifier": {"passed": True, "checked_numbers": [], "failures": []},
-                        "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
-                    },
-                }
-                latency_ms = int((time.time() - start_time) * 1000)
-                yield {"event": "done", "data": {"latency_ms": latency_ms}}
-                return
-
-            place = resolved.get("resolved_place")
-
-        # Fallback to session context if user didn't mention a new place
-        if not place:
-            place = self._get_session_place(req.session_id)
+        # 6. Intent Routing & Tool Execution
+        tools_executed: list[dict[str, Any]] = []
+        evidence_packets: list[EvidencePacket] = []
+        models_invoked: list[dict[str, Any]] = []
+        confidence: float | None = None
+        router_path: str = "deterministic"
+        intent = "forecast"
 
         # Check if query is an advisory question that does not require a specific town/city
         advisory_keywords = [
@@ -542,61 +665,12 @@ class Orchestrator:
             "crop", "wheat", "rice", "paddy", "farming", "sowing", "irrigation", "फसल", "कृषि", "सिंचाई", "बुवाई", "kheti", "धान", "गेहूं",
             "lightning", "बिजली", "आकाशीय बिजली", "तूफान", "thunderstorm",
             "colour code", "yellow warning", "orange alert", "red warning", "कलर कोड",
-            "তাপদাহ", "শৈত্যপ্রবাহ", "বজ্রপাত", "পরামর্শ", "সতর্কতা",
+            "तापदाह", "শৈত্যপ্রবাহ", "বজ্রপাত", "পরামর্শ", "সতর্কতা",
             "उष्णतेच्या", "लाटेत", "विजांचा", "पिकांच्या", "काळजी",
             "వడగాల్పుల", "శీతల గాలుల", "ఉరుములు", "మెరుపుల", "పంటల", "జాగ్రత్తలు",
             "வெப்ப அலை", "குளிர்கால", "இடி மின்னல்", "பயிர்களை", "முன்னெச்சரிக்கை",
             "ଗ୍ରୀଷ୍ମ ପ୍ରବାହ", "ଶୀତ ଲହରୀ", "ବଜ୍ରପାତ", "ସତର୍କତା", "ଫସଲ", "କୃଷି", "ପରାମର୍ଶ", "ସୁରକ୍ଷା",
         ]
-        is_advisory_q = any(w in req.text.lower() for w in advisory_keywords)
-
-        if place:
-            self._update_session_place(req.session_id, place)
-            p_name = place.names.get(lang, place.names.get("en", place.id))
-            lat = place.lat
-            lon = place.lon
-            place_ref = PlaceReference(id=place.id, name=p_name, lat=lat, lon=lon)
-        elif is_advisory_q:
-            p_name = "India" if lang == "en" else "भारत"
-            place_ref = PlaceReference(id="in_national", name=p_name, lat=20.59, lon=78.96)
-        else:
-            prompt_msg = (
-                "कृपया अपने शहर या जिले का नाम बताएं।"
-                if lang == "hi"
-                else "Please specify your city or district."
-            )
-            yield {
-                "event": "card",
-                "data": {
-                    "headline": "स्थान स्पष्ट करें" if lang == "hi" else "Location needed",
-                    "source_line": "WeatherGPT Location Resolver",
-                    "caveat": prompt_msg,
-                },
-            }
-            yield {"event": "token", "data": {"text": prompt_msg}}
-            yield {
-                "event": "trace",
-                "data": {
-                    "intent": "clarification",
-                    "confidence": 1.0,
-                    "router_path": "location_resolver",
-                    "tools": [],
-                    "models": [],
-                    "verifier": {"passed": True, "checked_numbers": [], "failures": []},
-                    "llm": {"provider": "none", "model": "none", "tokens_in": 0, "tokens_out": 0},
-                },
-            }
-            latency_ms = int((time.time() - start_time) * 1000)
-            yield {"event": "done", "data": {"latency_ms": latency_ms}}
-            return
-
-        # 6. Intent Routing & Tool Execution
-        tools_executed: list[dict[str, Any]] = []
-        evidence_packets: list[EvidencePacket] = []
-        models_invoked: list[dict[str, Any]] = []
-        confidence: float | None = None
-        router_path: str = "deterministic"
-        intent = "forecast"
 
         if self.intent_model and is_model_enabled("intent"):
             try:
@@ -610,7 +684,10 @@ class Orchestrator:
                 m_ver = getattr(self.intent_model, "MODEL_VERSION", "v1.0")
                 models_invoked.append({"id": m_id, "version": m_ver, "used": True})
 
-                if auto_route and getattr(pred, "intent", None) not in (None, "out_of_domain"):
+                if is_hazard_advisory:
+                    intent = "advisory"
+                    router_path = "intent_model_auto" if auto_route else "intent_model"
+                elif auto_route and getattr(pred, "intent", None) not in (None, "out_of_domain"):
                     intent = pred.intent
                     router_path = "intent_model_auto"
                 else:
@@ -619,7 +696,7 @@ class Orchestrator:
                     is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
                     is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
                     is_risk = any(w in req.text.lower() for w in ["risk", "extreme event", "heatwave risk", "cold wave risk", "severe weather risk", "जोखिम", "खतरा"])
-                    is_advisory = any(w in req.text.lower() for w in advisory_keywords)
+                    is_advisory = is_hazard_advisory or any(w in req.text.lower() for w in advisory_keywords)
 
                     if is_climate:
                         intent = "climate_history"
@@ -635,25 +712,30 @@ class Orchestrator:
                 logger.warning("intent_model_failed", extra={"error": str(exc)})
                 confidence = None
                 router_path = "deterministic"
+                if is_hazard_advisory:
+                    intent = "advisory"
         else:
             confidence = None
             router_path = "deterministic"
-            # Check intent keywords
-            is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
-            is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
-            is_risk = any(w in req.text.lower() for w in ["risk", "extreme event", "heatwave risk", "cold wave risk", "severe weather risk", "जोखिम", "खतरा"])
-            is_advisory = any(w in req.text.lower() for w in advisory_keywords)
-
-            if is_climate:
-                intent = "climate_history"
-            elif is_risk:
-                intent = "risk"
-            elif is_alert:
-                intent = "alert"
-            elif is_advisory:
+            if is_hazard_advisory:
                 intent = "advisory"
             else:
-                intent = "forecast"
+                # Check intent keywords
+                is_climate = any(w in req.text.lower() for w in ["climate", "normal", "anomaly", "percentile", "trend", "since 1990", "monsoon rain changed"])
+                is_alert = any(w in req.text.lower() for w in ["alert", "warning", "cyclone", "storm", "चेतावनी", "अलर्ट"])
+                is_risk = any(w in req.text.lower() for w in ["risk", "extreme event", "heatwave risk", "cold wave risk", "severe weather risk", "जोखिम", "खतरा"])
+                is_advisory = any(w in req.text.lower() for w in advisory_keywords)
+
+                if is_climate:
+                    intent = "climate_history"
+                elif is_risk:
+                    intent = "risk"
+                elif is_alert:
+                    intent = "alert"
+                elif is_advisory:
+                    intent = "advisory"
+                else:
+                    intent = "forecast"
 
         if intent in ("climate", "climate_history"):
             intent = "climate_history"
@@ -778,15 +860,26 @@ class Orchestrator:
 
         # 9. Compose answer via LLM with structured evidence
         prompt_evidence = [p.model_dump(mode="json") for p in evidence_packets]
+        if intent == "advisory":
+            sys_content = (
+                "You are WeatherGPT, an official public-safety weather assistant for India.\n"
+                "Compose advisory answers from the retrieved chunks with citations ([chunk_id, source, page] from chunk metadata only).\n"
+                "Only state facts and safety rules present in the provided evidence packets.\n"
+                "Never invent, assume, or hallucinate guidelines or place names.\n"
+                f"Answer in language code '{lang}'. Name the source: {source_display}."
+            )
+        else:
+            sys_content = (
+                "You are WeatherGPT, a factual grounded weather assistant for India.\n"
+                "Only state facts and numbers present in the provided evidence packets.\n"
+                "Never invent, assume, or hallucinate a weather number.\n"
+                f"Answer in language code '{lang}'. Name the source: {source_display}."
+            )
+
         messages = [
             {
                 "role": "system",
-                "content": (
-                    "You are WeatherGPT, a factual grounded weather assistant for India.\n"
-                    "Only state facts and numbers present in the provided evidence packets.\n"
-                    "Never invent, assume, or hallucinate a weather number.\n"
-                    f"Answer in language code '{lang}'. Name the source: {source_display}."
-                ),
+                "content": sys_content,
             },
             {
                 "role": "user",
@@ -825,12 +918,21 @@ class Orchestrator:
                 if intent == "advisory":
                     top_guidance = ""
                     top_chunk_id = ""
+                    top_source = ""
+                    top_page = ""
                     for p in evidence_packets:
                         for v in p.values:
                             if v.variable == "guidance" and not top_guidance:
                                 top_guidance = str(v.value)
                             elif v.variable == "chunk_id" and not top_chunk_id:
                                 top_chunk_id = str(v.value)
+                            elif v.variable in ("doc_source", "source") and not top_source:
+                                top_source = str(v.value)
+                            elif v.variable == "page" and not top_page:
+                                top_page = str(v.value)
+                        if not top_source and p.source:
+                            top_source = p.source
+
                     guidance_prefix = ""
                     if lang == "hi":
                         guidance_prefix = "आधिकारिक दिशानिर्देशों के अनुसार:\n"
@@ -845,12 +947,18 @@ class Orchestrator:
                     elif lang == "or":
                         guidance_prefix = "ସରକାରୀ ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁଯାୟୀ:\n"
 
+                    top_src_display = top_source or (evidence_packets[0].source if evidence_packets else "NDMA")
+                    page_str = f", p. {top_page}" if top_page else ""
+
                     if top_chunk_id == "no_official_guidance":
                         answer_text = f"{guidance_prefix}{top_guidance}" if guidance_prefix else top_guidance
-                    elif top_chunk_id:
-                        answer_text = f"[{top_chunk_id}] {guidance_prefix}{top_guidance}"
+                    elif top_guidance:
+                        clean_guidance = top_guidance.strip()
+                        if clean_guidance.startswith("## "):
+                            clean_guidance = clean_guidance.split("\n", 1)[-1].strip()
+                        answer_text = f'{guidance_prefix}"{clean_guidance}" ({top_src_display}{page_str})'
                     else:
-                        answer_text = f"{guidance_prefix}{top_guidance}" if guidance_prefix else top_guidance
+                        answer_text = f"{guidance_prefix}Official safety advisory is available." if guidance_prefix else "Official safety advisory is available."
                 elif intent == "risk":
                     risk_lvl = "low"
                     for p in evidence_packets:
@@ -861,6 +969,31 @@ class Orchestrator:
                         answer_text = f"{p_name} के लिए चरम मौसम जोखिम स्तर: {risk_lvl}। यह आधिकारिक चेतावनी नहीं है।"
                     else:
                         answer_text = f"Extreme weather risk outlook for {p_name}: {risk_lvl} risk. This is not an official warning."
+                elif intent == "alert":
+                    alert_text = ""
+                    for p in evidence_packets:
+                        for v in p.values:
+                            if v.variable in ("headline", "alert", "warning", "description") and v.value:
+                                alert_text = str(v.value)
+                                break
+                        if alert_text:
+                            break
+                    if alert_text:
+                        answer_text = alert_text
+                    elif lang == "hi":
+                        answer_text = f"{p_name} के लिए कोई सक्रिय मौसम चेतावनी नहीं है।"
+                    elif lang == "bn":
+                        answer_text = f"{p_name}-এর জন্য কোনো সক্রিয় আবহাওয়া সতর্কতা নেই।"
+                    elif lang == "mr":
+                        answer_text = f"{p_name} साठी कोणताही सक्रिय हवामान इशारा नाही."
+                    elif lang == "te":
+                        answer_text = f"{p_name} కొరకు క్రియాశీల వాతావరణ హెచ్చరికలు లేవు."
+                    elif lang == "ta":
+                        answer_text = f"{p_name} க்கு செயலில் உள்ள வானிலை எச்சரிக்கைகள் எதுவும் இல்லை."
+                    elif lang == "or":
+                        answer_text = f"{p_name} ପାଇଁ କୌଣସି ସକ୍ରିୟ ପାଣିପାଗ ଚେତାବନୀ ନାହିଁ।"
+                    else:
+                        answer_text = f"No active weather warnings for {p_name}."
                 elif rain_val is not None and temp_val is not None:
                     if lang == "hi":
                         rf_phrase = get_hindi_rainfall_phrase(rain_val)
@@ -893,11 +1026,16 @@ class Orchestrator:
                             f"According to {source_display} forecast for {p_name}: tomorrow expects {rain_val:.1f} mm rain "
                             f"and a temperature of {temp_val:.1f} degC."
                         )
+                elif p_name != req.text:
+                    if lang == "hi":
+                        answer_text = f"{source_display} के अनुसार {p_name} के लिए पूर्वानुमान उपलब्ध नहीं है।"
+                    else:
+                        answer_text = f"According to {source_display}, forecast data is currently unavailable for {p_name}."
                 else:
                     if lang == "hi":
-                        answer_text = f"{source_display} के अनुसार {p_name} के लिए मौसम विवरण उपलब्ध है।"
+                        answer_text = f"{source_display} के अनुसार पूर्वानुमान उपलब्ध नहीं है।"
                     else:
-                        answer_text = f"According to {source_display}, weather information is available for {p_name}."
+                        answer_text = f"According to {source_display}, forecast data is currently unavailable."
 
         # Apply dynamic glossary replacements from admin service if configured
         try:
@@ -939,7 +1077,10 @@ class Orchestrator:
                 "actions": ["View Alerts", "Safety Guidelines"],
             }
         elif intent == "advisory":
-            card_headline = f"{p_name} Advisory" if lang != "hi" else f"{p_name} मौसम व सुरक्षा सलाह"
+            if p_name and p_name not in ("India", "भारत", "all_india", "in_national") and p_name != req.text:
+                card_headline = f"{p_name} Advisory" if lang != "hi" else f"{p_name} मौसम व सुरक्षा सलाह"
+            else:
+                card_headline = ADVISORY_TITLES.get(lang, "Safety & Weather Advisory")
             first_val = evidence_packets[0].values[0].value if evidence_packets and evidence_packets[0].values else "Safety"
             card_data = {
                 "headline": card_headline,

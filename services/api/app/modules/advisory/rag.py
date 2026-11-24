@@ -380,6 +380,8 @@ class RagEngine:
                     {"variable": "title", "value": chunk.title, "unit": "text"},
                     {"variable": "hazard", "value": chunk.hazard, "unit": "text"},
                     {"variable": "guidance", "value": chunk.text, "unit": "text"},
+                    {"variable": "page", "value": int(chunk.page), "unit": "page"},
+                    {"variable": "doc_source", "value": chunk.source, "unit": "source"},
                     {"variable": "score", "value": round(float(score), 4), "unit": "score"},
                 ],
                 "attribution": f"{chunk.source} ({chunk.license})",
