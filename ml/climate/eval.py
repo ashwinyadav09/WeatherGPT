@@ -129,10 +129,10 @@ def run_evaluation() -> dict[str, Any]:
             "mean_annual_temp_trend_degc_per_decade": mean_temp_trend_degc_decade,
             "mean_monsoon_rain_trend_mm_per_decade": mean_monsoon_rain_trend_mm_decade,
             "mean_trend_loo_stability_std": mean_loo_stability_std,
-            "event_recall_isolation_forest": event_eval.get("isolation_forest_recall", 0.0),
-            "event_recall_percentile_baseline": event_eval.get("baseline_recall", 0.0),
-            "false_flag_rate_isolation_forest": event_eval.get("isolation_forest_false_flag_rate", 0.0),
-            "false_flag_rate_percentile_baseline": event_eval.get("baseline_false_flag_rate", 0.0),
+            "event_recall_isolation_forest": event_eval.get("isolation_forest_recall"),
+            "event_recall_percentile_baseline": event_eval.get("baseline_recall"),
+            "false_flag_rate_isolation_forest": event_eval.get("isolation_forest_false_flag_rate"),
+            "false_flag_rate_percentile_baseline": event_eval.get("baseline_false_flag_rate"),
             "n_positive_events_tested": event_eval.get("n_events", 0),
             "n_negative_controls_tested": event_eval.get("n_controls", 0),
         },
@@ -181,10 +181,10 @@ def run_evaluation() -> dict[str, Any]:
 - **Mean annual temperature trend**: {mean_temp_trend_degc_decade:+.3f} °C / decade
 - **Mean monsoon precipitation trend**: {mean_monsoon_rain_trend_mm_decade:+.2f} mm / decade
 - **Leave-One-Year-Out Slope Stability (Std)**: {mean_loo_stability_std:.4f} °C / decade
-- **Extreme Event Recall (Isolation Forest)**: {event_eval.get('isolation_forest_recall', 0.0) * 100:.1f}% ({event_eval.get('n_events', 0)} events tested)
-- **Extreme Event Recall (Percentile Baseline)**: {event_eval.get('baseline_recall', 0.0) * 100:.1f}%
-- **False-Flag Rate on Control Windows (Isolation Forest)**: {event_eval.get('isolation_forest_false_flag_rate', 0.0) * 100:.1f}%
-- **False-Flag Rate on Control Windows (Percentile Baseline)**: {event_eval.get('baseline_false_flag_rate', 0.0) * 100:.1f}%
+- **Extreme Event Recall (Isolation Forest)**: {event_eval.get('isolation_forest_recall')} ({event_eval.get('n_events', 0)} events tested)
+- **Extreme Event Recall (Percentile Baseline)**: {event_eval.get('baseline_recall')}
+- **False-Flag Rate on Control Windows (Isolation Forest)**: {event_eval.get('isolation_forest_false_flag_rate')}
+- **False-Flag Rate on Control Windows (Percentile Baseline)**: {event_eval.get('baseline_false_flag_rate')}
 
 ## Known Limitations
 1. **Reanalysis vs Gauge Records**: ERA5 values represent spatial grid averages (~27 km), not point meteorological station gauges.

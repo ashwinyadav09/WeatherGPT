@@ -1,0 +1,747 @@
+[
+  {
+    "file": "eval/harness.py",
+    "value": 0.5,
+    "reason": "Median quantile threshold"
+  },
+  {
+    "file": "eval/harness.py",
+    "value": 18.5204,
+    "reason": "Default test latitude"
+  },
+  {
+    "file": "eval/harness.py",
+    "value": 73.8567,
+    "reason": "Default test longitude"
+  },
+  {
+    "file": "ml/bias_correction/dataset.py",
+    "value": 2.5,
+    "reason": "Rain event threshold mm"
+  },
+  {
+    "file": "ml/bias_correction/dataset.py",
+    "value": 365.25,
+    "reason": "Days per Julian year for seasonal encoding"
+  },
+  {
+    "file": "ml/bias_correction/download.py",
+    "value": 0.5,
+    "reason": "Forecast lead day increment"
+  },
+  {
+    "file": "ml/bias_correction/eval.py",
+    "value": 0.35,
+    "reason": "Rain probability decision threshold"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 1e-09,
+    "reason": "Numerical stability epsilon"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.02,
+    "reason": "Probability lower bound clamp"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.05,
+    "reason": "Baseline rain probability"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.2,
+    "reason": "Rain probability threshold"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.4,
+    "reason": "Rain probability threshold"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.5,
+    "reason": "Rain probability decision threshold"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.6,
+    "reason": "Rain probability threshold"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.8,
+    "reason": "Rain probability threshold"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 0.98,
+    "reason": "Probability upper bound clamp"
+  },
+  {
+    "file": "ml/bias_correction/mos_model.py",
+    "value": 2.5,
+    "reason": "Rain event threshold mm"
+  },
+  {
+    "file": "ml/bias_correction/service.py",
+    "value": 365.25,
+    "reason": "Days per Julian year for seasonal encoding"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 12.99,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 13.1979,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 17.2403,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 18.5822,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 19.0887,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 20.2444,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 21.0922,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 22.6547,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 23.0772,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 23.2875,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 26.8242,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 28.5665,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 72.6347,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 72.8679,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 73.9197,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 75.8122,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 77.1031,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 77.3378,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 77.7063,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 78.4294,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 79.0583,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 80.1693,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 85.8178,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/stations.py",
+    "value": 88.4467,
+    "reason": "Station latitude and longitude coordinates"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.0001,
+    "reason": "L2 regularization alpha"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.001,
+    "reason": "Learning rate"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.05,
+    "reason": "Significance alpha"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.08,
+    "reason": "LightGBM learning rate"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.1,
+    "reason": "Learning rate"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.2,
+    "reason": "Test split fraction"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.5,
+    "reason": "Decision threshold"
+  },
+  {
+    "file": "ml/bias_correction/train.py",
+    "value": 0.9,
+    "reason": "Quantile regression parameter"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 0.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 0.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 17.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 18.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 20.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 22.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 25.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 28.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 30.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 72.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 73.75,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 75.75,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 76.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 77.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 77.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 78.5,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 80.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 85.75,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/download.py",
+    "value": 88.25,
+    "reason": "Grid coordinates and spatial resolutions"
+  },
+  {
+    "file": "ml/climate/models.py",
+    "value": 0.03,
+    "reason": "Precipitation sensitivity threshold mm"
+  },
+  {
+    "file": "ml/climate/models.py",
+    "value": 0.05,
+    "reason": "Statistical significance level alpha"
+  },
+  {
+    "file": "ml/climate/models.py",
+    "value": 0.95,
+    "reason": "Theil-Sen confidence level"
+  },
+  {
+    "file": "ml/climate/models.py",
+    "value": 64.5,
+    "reason": "Heavy rainfall threshold mm"
+  },
+  {
+    "file": "ml/common/recompute.py",
+    "value": 1e-09,
+    "reason": "Floating-point comparison tolerance"
+  },
+  {
+    "file": "ml/common/splits.py",
+    "value": 0.2,
+    "reason": "Validation split fraction"
+  },
+  {
+    "file": "ml/extreme_event/dataset.py",
+    "value": 4.5,
+    "reason": "Heatwave temperature departure threshold deg C"
+  },
+  {
+    "file": "ml/extreme_event/eda.py",
+    "value": 4.5,
+    "reason": "Heatwave departure threshold deg C"
+  },
+  {
+    "file": "ml/extreme_event/eda.py",
+    "value": 64.5,
+    "reason": "Heavy rainfall threshold mm"
+  },
+  {
+    "file": "ml/extreme_event/eval.py",
+    "value": 0.35,
+    "reason": "Decision threshold"
+  },
+  {
+    "file": "ml/extreme_event/eval.py",
+    "value": 0.5,
+    "reason": "Decision threshold"
+  },
+  {
+    "file": "ml/extreme_event/service.py",
+    "value": 0.05,
+    "reason": "Statistical significance level alpha"
+  },
+  {
+    "file": "ml/extreme_event/service.py",
+    "value": 0.2,
+    "reason": "Probability threshold"
+  },
+  {
+    "file": "ml/extreme_event/service.py",
+    "value": 0.5,
+    "reason": "Probability threshold"
+  },
+  {
+    "file": "ml/extreme_event/service.py",
+    "value": 0.75,
+    "reason": "Probability threshold"
+  },
+  {
+    "file": "ml/extreme_event/service.py",
+    "value": 4.5,
+    "reason": "Heatwave departure threshold deg C"
+  },
+  {
+    "file": "ml/extreme_event/service.py",
+    "value": 73.5,
+    "reason": "Reference longitude"
+  },
+  {
+    "file": "ml/extreme_event/service.py",
+    "value": 365.25,
+    "reason": "Days per Julian year"
+  },
+  {
+    "file": "ml/extreme_event/train.py",
+    "value": 0.05,
+    "reason": "Statistical significance level alpha"
+  },
+  {
+    "file": "ml/extreme_event/train.py",
+    "value": 0.2,
+    "reason": "Validation split fraction"
+  },
+  {
+    "file": "ml/extreme_event/train.py",
+    "value": 0.35,
+    "reason": "Decision threshold"
+  },
+  {
+    "file": "ml/extreme_event/train.py",
+    "value": 0.5,
+    "reason": "Decision threshold"
+  },
+  {
+    "file": "ml/extreme_event/train.py",
+    "value": 0.75,
+    "reason": "Decision threshold"
+  },
+  {
+    "file": "ml/intent/dataset.py",
+    "value": 0.2,
+    "reason": "Validation split fraction"
+  },
+  {
+    "file": "ml/intent/eval.py",
+    "value": 0.6296,
+    "reason": "Allowed float parameter"
+  },
+  {
+    "file": "ml/intent/eval.py",
+    "value": 0.68,
+    "reason": "Allowed float parameter"
+  },
+  {
+    "file": "ml/intent/eval.py",
+    "value": 0.7919,
+    "reason": "Allowed float parameter"
+  },
+  {
+    "file": "ml/intent/eval.py",
+    "value": 0.9543,
+    "reason": "Allowed float parameter"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 0.1,
+    "reason": "Temperature scaling parameter"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 0.35,
+    "reason": "Probability threshold"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 0.7,
+    "reason": "Classification threshold"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 0.75,
+    "reason": "Classification threshold"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 0.85,
+    "reason": "Confidence threshold"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 0.98,
+    "reason": "Probability clamp upper bound"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 0.99,
+    "reason": "Confidence threshold"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 1.5,
+    "reason": "Temperature scaling parameter"
+  },
+  {
+    "file": "ml/intent/model.py",
+    "value": 2.5,
+    "reason": "Temperature scaling parameter"
+  },
+  {
+    "file": "ml/intent/service.py",
+    "value": 0.1,
+    "reason": "Probability margin threshold"
+  },
+  {
+    "file": "ml/intent/service.py",
+    "value": 0.68,
+    "reason": "Tau auto-routing threshold"
+  },
+  {
+    "file": "ml/intent/train.py",
+    "value": 0.2,
+    "reason": "Validation split fraction"
+  },
+  {
+    "file": "ml/intent/train.py",
+    "value": 0.4,
+    "reason": "Confidence threshold"
+  },
+  {
+    "file": "ml/intent/train.py",
+    "value": 0.75,
+    "reason": "Confidence threshold"
+  },
+  {
+    "file": "ml/intent/train.py",
+    "value": 0.95,
+    "reason": "Target precision level"
+  },
+  {
+    "file": "ml/rag/eval.py",
+    "value": 0.01,
+    "reason": "RRF smoothing constant"
+  },
+  {
+    "file": "ml/rag/eval.py",
+    "value": 0.3,
+    "reason": "Dense retrieval weight"
+  },
+  {
+    "file": "ml/rag/eval.py",
+    "value": 0.7,
+    "reason": "BM25 retrieval weight"
+  },
+  {
+    "file": "ml/rag/eval.py",
+    "value": 0.76,
+    "reason": "Tuned hybrid search threshold"
+  },
+  {
+    "file": "ml/rag/eval.py",
+    "value": 2.5,
+    "reason": "Lower percentile for 95% bootstrap interval"
+  },
+  {
+    "file": "ml/rag/eval.py",
+    "value": 97.5,
+    "reason": "Upper percentile for 95% bootstrap interval"
+  },
+  {
+    "file": "scripts/tasks/acceptance.py",
+    "value": 0.95,
+    "reason": "Golden accuracy acceptance threshold"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 15.9,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 26.2,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 26.7,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 26.9,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 27.1,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 28.5,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 29.5,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 31.4,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 31.5,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/build_golden_sets.py",
+    "value": 34.2,
+    "reason": "Legacy per-city fixture temperatures pending R20.3 replacement"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 0.05,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 0.1,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 0.98,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 6.8,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 6.95,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 28.61,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 34.2,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 77.23,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/demo.py",
+    "value": 185.4,
+    "reason": "Demonstration script display values"
+  },
+  {
+    "file": "scripts/tasks/eval.py",
+    "value": 0.95,
+    "reason": "Golden evaluation accuracy target"
+  },
+  {
+    "file": "scripts/tasks/latency_report.py",
+    "value": 0.95,
+    "reason": "p95 latency percentile"
+  },
+  {
+    "file": "scripts/tasks/load_test.py",
+    "value": 0.5,
+    "reason": "p50 latency percentile"
+  },
+  {
+    "file": "scripts/tasks/load_test.py",
+    "value": 0.95,
+    "reason": "p95 latency percentile"
+  },
+  {
+    "file": "scripts/tasks/model_selection.py",
+    "value": 0.05,
+    "reason": "Significance alpha"
+  },
+  {
+    "file": "scripts/tasks/model_selection.py",
+    "value": 0.08,
+    "reason": "Learning rate"
+  },
+  {
+    "file": "scripts/tasks/model_selection.py",
+    "value": 0.4,
+    "reason": "Threshold"
+  },
+  {
+    "file": "scripts/tasks/model_selection.py",
+    "value": 0.5,
+    "reason": "Threshold"
+  },
+  {
+    "file": "scripts/tasks/model_selection.py",
+    "value": 0.59,
+    "reason": "F1 threshold"
+  },
+  {
+    "file": "scripts/tasks/model_selection.py",
+    "value": 0.79,
+    "reason": "Accuracy threshold"
+  },
+  {
+    "file": "scripts/tasks/model_selection.py",
+    "value": 0.95,
+    "reason": "Precision target"
+  }
+]

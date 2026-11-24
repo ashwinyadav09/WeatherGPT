@@ -58,10 +58,10 @@ def _extract_rain_features(rows: list[dict[str, Any]]) -> tuple[np.ndarray, np.n
 
     for r in rows:
         lead = float(r["lead_day"])
-        rain_mmm = max(0.0, float(r["rain_mmm"]))
+        rain_mmm = max(0, float(r["rain_mmm"]))
         log_rain = math.log1p(rain_mmm)
-        gfs_rain = max(0.0, float(r["rain_gfs"]))
-        ecm_rain = max(0.0, float(r["rain_ecmwf"]))
+        gfs_rain = max(0, float(r["rain_gfs"]))
+        ecm_rain = max(0, float(r["rain_ecmwf"]))
         d = r["date"]
         month = int(d.split("-")[1])
         is_monsoon = 1.0 if 6 <= month <= 9 else 0.0

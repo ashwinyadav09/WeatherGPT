@@ -89,6 +89,24 @@ Once provided, running `python ml/intent/eval.py` will automatically test the mo
         BLOCKED_FILE.write_text(blocked_text, encoding="utf-8")
         print(f"[OK] Wrote blocker documentation to {BLOCKED_FILE}")
 
+        val_f1 = "NOT MEASURED"
+        val_acc = "NOT MEASURED"
+        route_tau = 0.68
+        tau_prec = "NOT MEASURED"
+        if METADATA_FILE.exists():
+            try:
+                m_meta = json.loads(METADATA_FILE.read_text(encoding="utf-8"))
+                if "val_macro_f1" in m_meta:
+                    val_f1 = m_meta["val_macro_f1"]
+                if "val_accuracy" in m_meta:
+                    val_acc = m_meta["val_accuracy"]
+                if "auto_route_threshold" in m_meta:
+                    route_tau = m_meta["auto_route_threshold"]
+                if "tau_precision" in m_meta:
+                    tau_prec = m_meta["tau_precision"]
+            except Exception:
+                pass
+
         # Write metrics.json with NOT MEASURED status
         metrics_data: dict[str, Any] = {
             "model_name": "Intent & Slot Classifier (Multilingual TF-IDF + Calibrated Logistic Regression)",
@@ -110,10 +128,10 @@ Once provided, running `python ml/intent/eval.py` will automatically test the mo
             "metrics": {
                 "gold_set_macro_f1": "NOT MEASURED",
                 "gold_set_accuracy": "NOT MEASURED",
-                "val_macro_f1": 0.6296,
-                "val_accuracy": 0.7919,
-                "auto_route_threshold": 0.68,
-                "tau_precision": 0.9543,
+                "val_macro_f1": val_f1,
+                "val_accuracy": val_acc,
+                "auto_route_threshold": route_tau,
+                "tau_precision": tau_prec,
             },
             "enabled_in_production": True,
             "note": "Gold set H1 pending human verification. Per R12: metrics are NOT MEASURED.",

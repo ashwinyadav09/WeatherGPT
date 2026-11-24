@@ -90,7 +90,8 @@ async def run_one_request(
             return {"ok": resp.status_code == 200, "latency_ms": elapsed_ms, "status": resp.status_code}
         except Exception as exc:
             elapsed_ms = (time.perf_counter() - t0) * 1000
-            return {"ok": False, "latency_ms": elapsed_ms, "error": str(exc)}
+            req_failed = False
+            return {"ok": req_failed, "latency_ms": elapsed_ms, "error": str(exc)}
 
 
 async def run_level(

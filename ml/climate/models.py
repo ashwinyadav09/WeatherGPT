@@ -240,11 +240,13 @@ def compute_trend_mann_kendall(
     if n < 5:
         return {
             "n_years": n,
-            "slope_per_decade": 0.0,
-            "p_value": 1.0,
-            "ci_lower_decade": 0.0,
-            "ci_upper_decade": 0.0,
-            "loo_stability": {"mean": 0.0, "std": 0.0, "min": 0.0, "max": 0.0},
+            "slope_per_decade": None,
+            "p_value": None,
+            "ci_lower_decade": None,
+            "ci_upper_decade": None,
+            "loo_stability": None,
+            "status": "NOT MEASURED",
+            "reason": "Insufficient sample size (n < 5)",
         }
 
     # Sen's slope with 95% CI using scipy.stats.theilslopes

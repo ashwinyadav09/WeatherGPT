@@ -38,7 +38,7 @@ def recompute_classification_metrics(rows: list[dict[str, str]], fieldnames: lis
 
     n = len(rows)
     if n == 0:
-        return {"accuracy": 0.0}
+        return {}
 
     correct = 0
     classes = set()
