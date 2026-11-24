@@ -6,7 +6,7 @@ Enforces:
    characters in every string longer than 20 characters (excluding placeholders, proper names, URLs).
 3. Guidance entries in seeds/translations/*.json contain reviewed: false (only human edits may set reviewed: true).
 4. Guidance translation fields source_url and reviewed_by match the English originals exactly.
-5. TranslationGateway strictly adheres to Sarvam -> Groq LLM -> raise (never stub).
+5. TranslationGateway uses Sarvam -> Groq LLM -> raise (never stub).
 6. TranslationCache refuses any entry whose adapter id or content is a stub.
 """
 from __future__ import annotations

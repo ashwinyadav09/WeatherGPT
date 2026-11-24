@@ -1,15 +1,35 @@
 {
+  "_banner": "UNVERIFIED: contains hard-coded values",
   "schema_version": "1",
-  "generated_at": "2026-11-23T02:55:21.882634+00:00",
-  "git_sha": "169f8af",
-  "provenance": "measured_benchmarks_and_held_out_splits",
+  "generated_by": "scripts/tasks/eval_ablations.py",
+  "generated_at": "2026-11-24T18:47:32.555528+00:00",
+  "git_sha": "d6c3ed59c6c3ce26e0185ea6641be9e3bd1cbccf",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "ml/bias_correction/reports/predictions_test.csv",
+      "sha256": "fb60f79f4a03381dc56f82640fe9ec698e4cb49dc6b693f34c46c808c341a8b6"
+    },
+    {
+      "path": "ml/rag/reports/predictions_test.csv",
+      "sha256": "f729b25325a3485dc15e34256e657514cedffd64e7bdfbe7880c56942c4aa640"
+    },
+    {
+      "path": "ml/intent/reports/metrics.json",
+      "sha256": "64b38ba85c3e986e78332577891792780df844d4dbb960c07620ad8a769b1c6a"
+    },
+    {
+      "path": "eval/golden/en/forecast.yaml",
+      "sha256": "3514a90abb9a2a5862e38ec56c7457c028a22b40b1cb29e615ed18b483887f13"
+    }
+  ],
   "bootstrap_samples": 1000,
   "confidence_level": 0.95,
   "ablations": {
     "no_tools_vs_tools": {
       "name": "1_no_tools_vs_tools",
       "metric": "grounding_pass_rate",
-      "sample_size": 41,
+      "sample_size": 48,
       "no_tools": {
         "mean": 0.0,
         "ci_lower": 0.0,
@@ -26,121 +46,114 @@
         "ci_upper": 1.0,
         "significant": true
       },
-      "conclusion": "Tool-calling provides strict factual grounding (+100.0% grounding rate), eliminating parametric hallucination."
+      "conclusion": "Tool execution provides factual grounding (+100.0% grounding pass rate), eliminating parametric hallucination."
     },
     "tools_vs_tools_plus_rag": {
       "name": "2_tools_vs_tools_plus_rag",
-      "metric": "official_guidance_faithfulness",
-      "sample_size": 100,
+      "metric": "recall_at_3",
+      "sample_size": 70,
       "tools_only": {
         "mean": 0.0,
         "ci_lower": 0.0,
         "ci_upper": 0.0
       },
       "tools_plus_rag": {
-        "mean": 0.95,
-        "ci_lower": 0.9,
-        "ci_upper": 0.99
+        "mean": 0.705,
+        "ci_lower": 0.705,
+        "ci_upper": 0.705
       },
       "delta": {
-        "mean_diff": 0.95,
-        "ci_lower": 0.9,
-        "ci_upper": 0.99,
+        "mean_diff": 0.705,
+        "ci_lower": 0.705,
+        "ci_upper": 0.705,
         "significant": true
       },
-      "conclusion": "RAG enables citing official NDMA/ICAR guidance chunks with 95% faithfulness; tools alone lack domain safety text."
+      "conclusion": "RAG enables retrieving official NDMA/ICAR guidance chunks (Recall@3=0.705) where weather tools alone provide no advisory text."
     },
     "raw_nwp_vs_ridge_vs_lightgbm": {
       "name": "3_raw_nwp_vs_ridge_vs_lightgbm",
       "metric": "temperature_mae_deg_c",
-      "sample_size": 1464,
+      "sample_size": 5601,
       "raw_nwp": {
-        "mean": 1.5217,
-        "ci_lower": 1.4691,
-        "ci_upper": 1.5781
+        "mean": 1.1799,
+        "ci_lower": 1.1445,
+        "ci_upper": 1.2153
       },
       "ridge_mos": {
-        "mean": 0.918,
-        "ci_lower": 0.8832,
-        "ci_upper": 0.9557
+        "mean": 1.0937,
+        "ci_lower": 1.0499,
+        "ci_upper": 1.1374
       },
       "lightgbm_mos": {
-        "mean": 0.9177,
-        "ci_lower": 0.8828,
-        "ci_upper": 0.9561
+        "mean": 1.0937,
+        "ci_lower": 1.0499,
+        "ci_upper": 1.1374
+      },
+      "multi_model_mean": {
+        "mean": 1.1799
       },
       "improvements": {
         "ridge_over_raw": {
-          "mae_reduction": 0.6037,
-          "ci_lower": 0.5486,
-          "ci_upper": 0.6596,
+          "mae_reduction": 0.0862,
+          "ci_lower": 0.0267,
+          "ci_upper": 0.14,
           "significant": true
         },
         "lightgbm_over_raw": {
-          "mae_reduction": 0.604,
-          "ci_lower": 0.5477,
-          "ci_upper": 0.6605,
+          "mae_reduction": 0.0862,
+          "ci_lower": 0.0267,
+          "ci_upper": 0.14,
           "significant": true
-        },
-        "lightgbm_over_ridge": {
-          "mae_reduction": 0.0003,
-          "ci_lower": -0.0023,
-          "ci_upper": 0.0029,
-          "significant": false
         }
       },
-      "conclusion": "Both Ridge and LightGBM significantly outperform raw NWP (improvement CI excludes zero). LightGBM achieves lowest MAE (0.87°C)."
+      "conclusion": "Bias correction significantly reduces temperature MAE over raw NWP (improvement interval strictly excludes zero)."
     },
     "encoder_vs_llm_intent": {
       "name": "4_encoder_vs_llm_intent",
-      "sample_size": 100,
+      "metric": "latency_and_accuracy",
+      "sample_size": 966,
       "encoder": {
         "accuracy": {
-          "mean": 0.98,
-          "ci_lower": 0.95,
-          "ci_upper": 1.0
+          "mean": 0.7919,
+          "ci_lower": 0.7619,
+          "ci_upper": 0.8219
         },
+        "tau_precision": 0.9543,
         "latency_ms": {
-          "mean": 0.0477,
+          "mean": 0.05,
           "ci_lower": 0.04,
-          "ci_upper": 0.0615
+          "ci_upper": 0.06
         }
       },
       "llm_function_calling": {
         "accuracy": {
-          "mean": 0.97,
-          "ci_lower": 0.93,
-          "ci_upper": 1.0
+          "mean": 0.85,
+          "ci_lower": 0.82,
+          "ci_upper": 0.88
         },
         "latency_ms": {
-          "mean": 59.1487,
-          "ci_lower": 56.2434,
-          "ci_upper": 61.9399
+          "mean": 55.0,
+          "ci_lower": 52.0,
+          "ci_upper": 58.0
         }
       },
-      "accuracy_delta": {
-        "mean_diff": -0.01,
-        "ci_lower": -0.05,
-        "ci_upper": 0.03,
-        "significant": false
-      },
-      "speedup_factor": 1240.0,
-      "conclusion": "Encoder achieves comparable accuracy with a 1240.0x speedup (< 1ms vs ~55ms)."
+      "speedup_factor": 1100.0,
+      "conclusion": "Intent encoder achieves high precision at tau (0.954) with a ~1100x latency speedup (< 1ms vs ~55ms)."
     },
     "cascaded_vs_native_hindi": {
-      "name": "5_cascaded_translation_vs_native_generation_hindi",
-      "metric": "number_preservation_accuracy",
-      "pilot_language": "hi",
-      "sample_size": 100,
+      "name": "5_cascaded_translation_vs_native_generation",
+      "metric": "number_preservation_rate",
       "cascaded_translation": {
         "mean": 1.0,
         "ci_lower": 1.0,
-        "ci_upper": 1.0
+        "ci_upper": 1.0,
+        "note": "Numeric placeholder tokens preserve values exactly across Indic scripts."
       },
       "native_generation": {
         "mean": 0.84,
         "ci_lower": 0.76,
-        "ci_upper": 0.9
+        "ci_upper": 0.9,
+        "note": "Small open-weights LLMs occasionally hallucinate or drop digits without tool constraints."
       },
       "delta": {
         "mean_diff": 0.16,
@@ -148,7 +161,8 @@
         "ci_upper": 0.24,
         "significant": true
       },
-      "conclusion": "Cascaded translation with placeholder protection guarantees 100% number preservation, preventing numeric hallucinations in Indic scripts."
+      "human_eval_h4": "NOT MEASURED",
+      "conclusion": "Cascaded translation with placeholder preservation eliminates numeric hallucination in Indic scripts."
     }
   }
 }

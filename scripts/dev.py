@@ -237,7 +237,7 @@ def ticket_titles() -> dict:
         first = p.read_text(encoding="utf-8").splitlines()[0] if p.stat().st_size else ""
         t = re.sub(rf"^#\s*{TICKET_ID}:\s*", "", first).strip()
         titles[m.group(1)] = t or p.stem
-    for rem_name in ["REMEDIATION_PLAN.md", "REMEDIATION_PLAN_V3.md"]:
+    for rem_name in ["REMEDIATION_PLAN.md", "REMEDIATION_PLAN_V3.md", "PROMPT_R20.md", "ANTIGRAVITY_PROMPT_R20.md"]:
         for search_dir in [SCRATCH, ROOT / "claude"]:
             plan_file = search_dir / rem_name
             if plan_file.exists():
@@ -246,6 +246,8 @@ def ticket_titles() -> dict:
                     titles[m.group(1)] = m.group(2).strip()
                 for m in re.finditer(r"^\*\*(R\d+(?:\.\d+)?)\s+([^*]+)\*\*", text, re.MULTILINE):
                     titles[m.group(1)] = m.group(2).strip().rstrip(":")
+                for m in re.finditer(r"^###\s+(R20\.\d+)\s+([^\n]+)", text, re.MULTILINE):
+                    titles[m.group(1)] = m.group(2).strip()
     return titles
 
 

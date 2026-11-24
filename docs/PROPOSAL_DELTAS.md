@@ -22,11 +22,11 @@ The team will use this document to synchronize the formal project proposal PDF.
 
 ## Proposal Objectives: Target vs. Measured Reality
 
-In accordance with Phase R19 requirements, each objective from the original project proposal is tracked below with its intended target, empirical measured value with confidence interval (or `NOT MEASURED`), and the architectural change:
+In accordance with remediation requirements, each objective from the original project proposal is tracked below with its intended target, empirical measured value with confidence interval (or `NOT MEASURED`), and the architectural change:
 
 ### 1. Multilingual Golden Set Accuracy (Tier-1 Indic Languages)
 - **Proposal Target**: >= 95.0% accuracy across conversational weather query archetypes in Indian languages.
-- **Measured Value**:
+- **Measured Value**: Template-built test cases evaluated over recorded weather fixtures:
   - English (`en`): **100.0%** (48/48 passed)
   - Hindi (`hi`): **100.0%** (318/318 passed)
   - Bengali (`bn`): **99.7%** (317/318 passed)
@@ -34,26 +34,17 @@ In accordance with Phase R19 requirements, each objective from the original proj
   - Telugu (`te`): **97.5%** (310/318 passed)
   - Tamil (`ta`): **100.0%** (318/318 passed)
   - Odia (`or`): **100.0%** (18/18 passed)
-- **What Changed**: All 7 Tier-1 Indic languages meet or exceed the >= 95.0% accuracy target using structured intent extraction, slot extraction, and deterministic script guidance fallback.
+- **Status / Note**: Template-built cases over fixture data, not a product measurement. Live end-to-end evaluation against recorded real city forecasts is scheduled in tickets R20.3 and R20.12.
 
 ### 2. Response Latency & Time to First Token (TTFT)
 - **Proposal Target**: TTFT p95 <= 1500 ms; Total Turn Duration p95 <= 3000 ms.
-- **Measured Value**:
-  - **Overall TTFT**: p50 = 15.99 ms, p95 = 41.26 ms (Target: <= 1500 ms)
-  - **Overall Total Duration**: p50 = 16.03 ms, p95 = 41.45 ms (Target: <= 3000 ms)
-  - **By Language Group (Total Duration p95)**:
-    - English: 46.17 ms
-    - Hindi: 29.88 ms
-    - Regional Indic: 41.94 ms
-- **What Changed**: With local ML inference (FastText/MiniLM intent encoder) and in-process tool execution when cloud LLM is disabled, streaming response begins within 42 ms p95, well inside the 1500 ms budget.
+- **Measured Value**: **`NOT MEASURED`**
+- **Status / Note**: Undergoing live HTTP stack benchmarking in ticket R20.12 across Docker HTTP services with real LLM and Sarvam integration.
 
 ### 3. Concurrency Load Testing & Scalability
 - **Proposal Target**: Concurrent streaming support at 20, 50, and 100 simultaneous users with p95 latency <= 1500 ms.
-- **Measured Value**:
-  - **20 Concurrent Users**: 20/20 OK (100%), throughput 184.4 req/s, p50 = 80.3 ms, p95 = 107.1 ms
-  - **50 Concurrent Users**: 50/50 OK (100%), throughput 158.4 req/s, p50 = 304.4 ms, p95 = 309.4 ms
-  - **100 Concurrent Users**: 100/100 OK (100%), throughput 125.1 req/s, p50 = 764.0 ms, p95 = 786.0 ms
-- **What Changed**: Tested against the streaming `/v1/chat` endpoint; all concurrency levels achieve 100% success and remain well under the 1500 ms p95 budget.
+- **Measured Value**: **`NOT MEASURED`**
+- **Status / Note**: Undergoing live multi-user ramp load testing on the Docker stack in ticket R20.12.
 
 ### 4. Speech Recognition (ASR) & Speech Synthesis (TTS)
 - **Proposal Target**: Word Error Rate (WER) <= 15.0% across 7 Indic languages via Bhashini.
@@ -67,32 +58,26 @@ In accordance with Phase R19 requirements, each objective from the original proj
 - **Measured Value**:
   - Raw NWP Baseline: **1.1799°C** MAE (95% CI: `[1.1445°C, 1.2153°C]`)
   - Ridge MOS / LightGBM MOS: **1.0937°C** MAE (95% CI: `[1.0499°C, 1.1374°C]`)
-  - Improvement Delta: **-0.0862°C** MAE reduction (95% bootstrap CI: `[0.0267°C, 0.1400°C]`, improvement strictly excludes zero, p < 0.05).
-- **What Changed**: Trained localized Ridge and LightGBM models on paired observations across 15 Indian stations. Outputs are designated strictly as model guidance (Tier 4) and never alter official disaster warnings.
+  - Improvement Delta: **-0.0862°C** MAE reduction (95% bootstrap CI: `[0.0267°C, 0.1400°C]`, p < 0.05).
+- **Status / Note**: Prior split (2024 test block). Extended data window through 2026, additional baselines (persistence, climatology), and per-lead evaluation scheduled in ticket R20.6.
 
-### 6. Intent Classification & Microsecond Edge Routing
+### 6. Intent Classification & Edge Routing
 - **Proposal Target**: Fast, robust intent classification across weather queries without cloud round-trip delay.
 - **Measured Value**:
-  - Local Intent Encoder: **79.2%** accuracy (95% CI: `[76.2%, 82.2%]`), precision at tau = **0.9543**, latency = **0.05 ms** (95% CI: `[0.04 ms, 0.06 ms]`)
-  - Cloud LLM Function Calling: **85.0%** accuracy (95% CI: `[82.0%, 88.0%]`), latency = **55.0 ms** (95% CI: `[52.0 ms, 58.0 ms]`)
-  - Speedup Delta: **1,100x speedup** (< 1 ms vs ~55 ms), saving ~55 ms per turn while operating offline.
+  - Local Intent Model: Validation accuracy = **79.2%** (95% CI: `[76.2%, 82.2%]`), Macro-F1 = **0.63**, precision at tau = **0.9543**.
+  - Gold Set Evaluation: **`NOT MEASURED`** (Pending H1 human gold set).
+  - Comparative Latency & Speedup: **`NOT MEASURED`** (Scheduled for live comparison on validation split in R20.7/R20.11).
 - **What Changed**: High precision threshold (tau) routes queries locally; low-confidence queries safely fall back to LLM or deterministic routing.
 
 ### 7. Advisory RAG Retrieval & Knowledge Grounding
 - **Proposal Target**: Agricultural and disaster safety advice grounded in vetted official documents without hallucination.
-- **Measured Value**:
-  - Weather Tools Only: **0.0%** Recall@3
-  - Weather Tools + RAG: **70.5%** Recall@3 (95% CI: `[70.5%, 70.5%]`), MRR = **0.5815**, Hybrid Recall@5 = **0.7579**
-  - Grounding Pass Rate: **0.0%** without tools vs **100.0%** with tools and RAG (+100.0% delta, 95% CI: `[100.0%, 100.0%]`, p < 0.05).
-- **What Changed**: Ingested 32 official PDF publications from IMD, NDMA, and DDMA with verified SHA-256 integrity into 20 clean chunks. Implemented hybrid dense (`intfloat/multilingual-e5-small`) and BM25 retrieval with reciprocal rank fusion (RRF).
+- **Measured Value**: **`NOT MEASURED`**
+- **Status / Note**: Corpus rebuild from 33 real downloaded PDFs and evaluation with human-verified queries (H2) scheduled in ticket R20.10.
 
 ### 8. Cross-Lingual Number & Unit Preservation
 - **Proposal Target**: Multilingual Indic generation without numerical drift or hallucination of temperatures and rainfall amounts.
-- **Measured Value**:
-  - Native Indic LLM Generation: **84.0%** number preservation (95% CI: `[76.0%, 90.0%]`)
-  - Cascaded Translation with Regex Protection: **100.0%** number preservation (95% CI: `[100.0%, 100.0%]`)
-  - Delta: **+16.0%** improvement (95% CI: `[10.0%, 24.0%]`, p < 0.05).
-- **What Changed**: Implemented regex placeholder token shielding (`__NUM_0__`, `__UNIT_0__`) before translation, completely eliminating numerical corruption across Indic scripts.
+- **Measured Value**: **`NOT MEASURED`**
+- **Status / Note**: Systematic evaluation of cascaded translation versus native generation over 100 evidence-grounded answers scheduled in ticket R20.11.
 
 ### 9. Accessibility (WCAG 2.2 AA)
 - **Proposal Target**: Full compliance with WCAG 2.2 Level AA accessibility standards.
@@ -174,9 +159,9 @@ In accordance with Phase R19 requirements, each objective from the original proj
 
 ## Document Alignment Verification
 
-All documentation across the repository reflects these deltas and audited metrics:
+All documentation across the repository reflects these deltas:
 - `README.md`: Authority ladder, NDMA SACHET alerts, Open-Meteo guidance, Sarvam AI, 7 Tier-1 languages.
 - `docs/architecture.md`: Ingest pipelines, trace panel SSE contract, MOS bias correction, RAG advisory engine.
-- `docs/ml-plan.md`: FastText/MiniLM encoder, LightGBM/Ridge MOS models, audited ablation studies with bootstrap intervals.
+- `docs/ml-plan.md`: FastText/MiniLM encoder, LightGBM/Ridge MOS models, planned ablation studies.
 - `docs/eval-and-acceptance.md`: Automated acceptance gates, Section 2 truthfulness rules, dated result archives.
 - `scripts/tasks/demo.py`: Walkthrough illustrating operational systems with live audited metrics.

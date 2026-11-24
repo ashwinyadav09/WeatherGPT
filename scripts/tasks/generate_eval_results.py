@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Generate Dated Eval Results and docs/EVAL_RESULTS.md (Ticket R6.4).
+"""Generate Dated Eval Results and docs/EVAL_RESULTS.md (Ticket R6.4 / R19 / R20).
 
 Copies latest machine-readable evaluation reports into eval/results/<date>/,
 then renders the consolidated docs/EVAL_RESULTS.md report according to
-Section 2 (Truthfulness Rules): zero simulated, hardcoded, or unmeasured numbers.
+Section 2 (Truthfulness Rules): unmeasured or unverified numbers are reported as NOT MEASURED.
 """
 from __future__ import annotations
 
@@ -177,18 +177,24 @@ def render_markdown_report(data: dict[str, Any], date_str: str, sha: str) -> str
         "",
     ])
 
-    lat = data.get("latency", {})
-    overall_lat = lat.get("overall", {})
-    lines.extend([
-        f"- **Total Measured Queries**: {lat.get('total_queries', 300)}",
-        f"- **Time to First Token (TTFT)**: p50 = {overall_lat.get('ttft_p50_ms', 0)} ms, p95 = {overall_lat.get('ttft_p95_ms', 0)} ms (Budget: <= 1500 ms) -> {'✅ PASS' if overall_lat.get('p50_pass') else '❌ FAIL'}",
-        f"- **Total Duration**: p50 = {overall_lat.get('total_p50_ms', 0)} ms, p95 = {overall_lat.get('total_p95_ms', 0)} ms (Budget: <= 3000 ms) -> {'✅ PASS' if overall_lat.get('p95_pass') else '❌ FAIL'}",
-        "",
-        "| Group | Count | TTFT p50 (ms) | TTFT p95 (ms) | Total p50 (ms) | Total p95 (ms) |",
-        "|---|---|---|---|---|---|",
-    ])
-    for grp_k, grp_v in lat.get("groups", {}).items():
-        lines.append(f"| {grp_k} | {grp_v.get('count')} | {grp_v.get('ttft_p50_ms')} | {grp_v.get('ttft_p95_ms')} | {grp_v.get('total_p50_ms')} | {grp_v.get('total_p95_ms')} |")
+    lat = data.get("latency")
+    if lat:
+        overall_lat = lat.get("overall", {})
+        lines.extend([
+            f"- **Total Measured Queries**: {lat.get('total_queries', 300)}",
+            f"- **Time to First Token (TTFT)**: p50 = {overall_lat.get('ttft_p50_ms', 0)} ms, p95 = {overall_lat.get('ttft_p95_ms', 0)} ms (Budget: <= 1500 ms) -> {'✅ PASS' if overall_lat.get('p50_pass') else '❌ FAIL'}",
+            f"- **Total Duration**: p50 = {overall_lat.get('total_p50_ms', 0)} ms, p95 = {overall_lat.get('total_p95_ms', 0)} ms (Budget: <= 3000 ms) -> {'✅ PASS' if overall_lat.get('p95_pass') else '❌ FAIL'}",
+            "",
+            "| Group | Count | TTFT p50 (ms) | TTFT p95 (ms) | Total p50 (ms) | Total p95 (ms) |",
+            "|---|---|---|---|---|---|",
+        ])
+        for grp_k, grp_v in lat.get("groups", {}).items():
+            lines.append(f"| {grp_k} | {grp_v.get('count')} | {grp_v.get('ttft_p50_ms')} | {grp_v.get('ttft_p95_ms')} | {grp_v.get('total_p50_ms')} | {grp_v.get('total_p95_ms')} |")
+    else:
+        lines.extend([
+            "- **Time to First Token (TTFT)**: `NOT MEASURED` (undergoing live stack evaluation in R20.12).",
+            "- **Total Duration**: `NOT MEASURED` (undergoing live stack evaluation in R20.12).",
+        ])
 
     lines.extend([
         "",
@@ -196,21 +202,30 @@ def render_markdown_report(data: dict[str, Any], date_str: str, sha: str) -> str
         "",
         "## 3. Concurrency & Scalability Load Testing",
         "",
-        "Executed against `/v1/chat` streaming endpoint across 20, 50, and 100 concurrent users:",
-        "",
-        "| Concurrency | Requests | Success (OK) | Throughput (req/s) | p50 Latency (ms) | p95 Latency (ms) | Target p95 | Status |",
-        "|---|---|---|---|---|---|---|---|",
     ])
-    load_test = data.get("load_test", {})
-    for lv in load_test.get("levels", []):
-        c = lv.get("concurrency")
-        reqs = lv.get("n_requests")
-        ok = lv.get("n_ok")
-        rps = lv.get("requests_per_second")
-        p50 = lv.get("p50_latency_ms")
-        p95 = lv.get("p95_latency_ms")
-        status = "✅ PASS" if (float(p95) <= 1500.0 and ok == reqs) else "❌ FAIL"
-        lines.append(f"| {c} users | {reqs} | {ok}/{reqs} | {rps} | {p50} | {p95} | <= 1500 ms | {status} |")
+    load_test = data.get("load_test")
+    if load_test and load_test.get("levels"):
+        lines.extend([
+            "Executed against `/v1/chat` streaming endpoint across 20, 50, and 100 concurrent users:",
+            "",
+            "| Concurrency | Requests | Success (OK) | Throughput (req/s) | p50 Latency (ms) | p95 Latency (ms) | Target p95 | Status |",
+            "|---|---|---|---|---|---|---|---|",
+        ])
+        for lv in load_test.get("levels", []):
+            c = lv.get("concurrency")
+            reqs = lv.get("n_requests")
+            ok = lv.get("n_ok")
+            rps = lv.get("requests_per_second")
+            p50 = lv.get("p50_latency_ms")
+            p95 = lv.get("p95_latency_ms")
+            status = "✅ PASS" if (float(p95) <= 1500.0 and ok == reqs) else "❌ FAIL"
+            lines.append(f"| {c} users | {reqs} | {ok}/{reqs} | {rps} | {p50} | {p95} | <= 1500 ms | {status} |")
+    else:
+        lines.extend([
+            "- **20 Concurrent Users**: `NOT MEASURED` (undergoing live HTTP stack testing in R20.12).",
+            "- **50 Concurrent Users**: `NOT MEASURED` (undergoing live HTTP stack testing in R20.12).",
+            "- **100 Concurrent Users**: `NOT MEASURED` (undergoing live HTTP stack testing in R20.12).",
+        ])
 
     lines.extend([
         "",
@@ -251,39 +266,27 @@ def render_markdown_report(data: dict[str, Any], date_str: str, sha: str) -> str
         "",
         "---",
         "",
-        "## 6. Five Core Ablation Studies (95% Bootstrap Confidence Intervals)",
+        "## 6. Five Core Ablation Studies",
         "",
-        "1,000 paired bootstrap resamples computed for each ablation to verify statistical significance:",
-        "",
-        "| Ablation | Condition A | Condition B | Metric | Delta (B - A) [95% CI] | Significance |",
-        "|---|---|---|---|---|---|",
     ])
     ablations = data.get("ablations", {}).get("ablations", {})
-    a1 = ablations.get("no_tools_vs_tools", {})
-    a1_mean = a1.get('delta', {}).get('mean_diff', 0)
-    lines.append(f"| 1. Tools | No Tools: {a1.get('no_tools', {}).get('mean', 0)*100:.0f}% | Tools: {a1.get('tools', {}).get('mean', 0)*100:.0f}% | Grounding Pass Rate | +{a1_mean*100:.1f}% [{a1.get('delta', {}).get('ci_lower', 0)*100:.1f}%, {a1.get('delta', {}).get('ci_upper', 0)*100:.1f}%] | Significant (p < 0.05) |")
-
-    a2 = ablations.get("tools_vs_tools_plus_rag", {})
-    a2_mean = a2.get('delta', {}).get('mean_diff', 0)
-    lines.append(f"| 2. RAG | Tools only: {a2.get('tools_only', {}).get('mean', 0)*100:.0f}% | Tools+RAG: {a2.get('tools_plus_rag', {}).get('mean', 0)*100:.1f}% | Recall@3 | +{a2_mean*100:.1f}% [{a2.get('delta', {}).get('ci_lower', 0)*100:.1f}%, {a2.get('delta', {}).get('ci_upper', 0)*100:.1f}%] | Significant (p < 0.05) |")
-
-    a3 = ablations.get("raw_nwp_vs_ridge_vs_lightgbm", {})
-    imp = a3.get("improvements", {}).get("model_over_raw", a3.get("improvements", {}).get("ridge_over_raw", {}))
-    lines.append(f"| 3. NWP Post-Processing | Raw NWP: {a3.get('raw_nwp', {}).get('mean')}°C | Model: {a3.get('bias_corrected_model', a3.get('ridge_mos', {})).get('mean')}°C | Temperature MAE (°C) | -{imp.get('mae_reduction', 0)}°C [{imp.get('ci_lower', 0)}, {imp.get('ci_upper', 0)}] | Improvement excludes 0 |")
-
-    a4 = ablations.get("encoder_vs_llm_intent", {})
-    enc = a4.get("encoder", {})
-    llm = a4.get("llm_function_calling", {})
-    llm_lat = llm.get('latency_ms', 55)
-    llm_lat_val = llm_lat.get('mean', 55) if isinstance(llm_lat, dict) else llm_lat
-    enc_lat = enc.get('latency_ms', 0.05)
-    enc_lat_val = enc_lat.get('mean', 0.05) if isinstance(enc_lat, dict) else enc_lat
-    lines.append(f"| 4. Intent Classification | LLM: {llm.get('estimated_accuracy', llm.get('accuracy', {}).get('mean', 0))*100:.0f}% ({llm_lat_val} ms) | Encoder: {enc.get('val_accuracy', enc.get('accuracy', {}).get('mean', 0))*100:.1f}% ({enc_lat_val} ms) | Accuracy & Latency | {a4.get('speedup_factor', 1100)}x speedup | Sub-millisecond latency |")
-
-    a5 = ablations.get("cascaded_vs_native_hindi", {})
-    c_num = a5.get('cascaded_translation', {}).get('number_preservation', a5.get('cascaded_translation', {}).get('mean', 1.0)) * 100
-    n_num = a5.get('native_generation', {}).get('number_preservation', a5.get('native_generation', {}).get('mean', 0.84)) * 100
-    lines.append(f"| 5. Translation Strategy | Native: {n_num:.0f}% | Cascaded: {c_num:.0f}% | Number Preservation | +{c_num - n_num:.0f}% | Significant (p < 0.05) |")
+    if ablations:
+        lines.extend([
+            "1,000 paired bootstrap resamples computed for each ablation to verify statistical significance:",
+            "",
+            "| Ablation | Condition A | Condition B | Metric | Delta (B - A) [95% CI] | Significance |",
+            "|---|---|---|---|---|---|",
+        ])
+        for k, v in ablations.items():
+            lines.append(f"| {k} | {v.get('condition_a')} | {v.get('condition_b')} | {v.get('metric')} | {v.get('delta')} | {v.get('significance')} |")
+    else:
+        lines.extend([
+            "- **Ablation 1 (Tools vs No Tools)**: `NOT MEASURED` (scheduled for re-evaluation in R20.11).",
+            "- **Ablation 2 (Tools vs Tools + RAG)**: `NOT MEASURED` (scheduled for re-evaluation in R20.11).",
+            "- **Ablation 3 (Raw NWP vs Ridge vs LightGBM)**: `NOT MEASURED` (scheduled for re-evaluation in R20.11 from R20.6 predictions).",
+            "- **Ablation 4 (Encoder vs LLM Intent)**: `NOT MEASURED` (scheduled for re-evaluation in R20.11 from R20.7 predictions).",
+            "- **Ablation 5 (Cascaded vs Native Generation)**: `NOT MEASURED` (scheduled for re-evaluation in R20.11).",
+        ])
 
     lines.extend([
         "",

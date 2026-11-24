@@ -22,28 +22,32 @@ def test_unverified_artifacts_quarantined_with_banner():
 
 
 def test_verified_eval_results_in_active_docs():
-    """Verify docs/EVAL_RESULTS.md exists in active docs and is verified (R19)."""
+    """Verify docs/EVAL_RESULTS.md exists in active docs and is verified (R20.1)."""
     active_eval_doc = DOCS_DIR / "EVAL_RESULTS.md"
-    assert active_eval_doc.exists(), "docs/EVAL_RESULTS.md should exist in active docs in R19"
+    assert active_eval_doc.exists(), "docs/EVAL_RESULTS.md should exist in active docs in R20.1"
     text = active_eval_doc.read_text(encoding="utf-8")
     assert "UNVERIFIED" not in text
-    assert "ALL ACCEPTANCE GATES PASSED" in text
-    assert "zero simulated" not in text.lower()
+    assert "NOT MEASURED" in text
+    assert ("zero" + " simulated") not in text.lower()
+    assert ("all gates" + " passed") not in text.lower()
+    assert ("strictly" + " adheres") not in text.lower()
 
 
 def test_no_zero_simulated_claim_in_active_docs():
-    """Verify grep for 'zero simulated' returns nothing outside the archive (R8.1)."""
+    """Verify grep for banned phrases returns nothing outside the archive (R20.1)."""
     hits = []
+    banned = ["zero" + " simulated", "strictly" + " adheres", "all" + " gates passed"]
     for p in DOCS_DIR.rglob("*.md"):
         if "archive" in p.parts:
             continue
         try:
             content = p.read_text(encoding="utf-8")
-            if "zero simulated" in content.lower():
-                hits.append(str(p.relative_to(ROOT)))
+            for phrase in banned:
+                if phrase in content.lower():
+                    hits.append(f"{p.relative_to(ROOT)}: {phrase}")
         except Exception:
             pass
-    assert hits == [], f"Found 'zero simulated' outside archive: {hits}"
+    assert hits == [], f"Found banned phrases outside archive: {hits}"
 
 
 def test_proposal_deltas_audited_metrics():
@@ -60,4 +64,4 @@ def test_proposal_deltas_audited_metrics():
     assert "Proposal Target" in text or "target" in text.lower()
     assert "Measured Value" in text or "measured" in text.lower()
     assert "NOT MEASURED" in text
-    assert "zero simulated" not in text.lower()
+    assert ("zero" + " simulated") not in text.lower()
