@@ -47,7 +47,7 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 | R20.3 | Record real data per city and replace mock transport | done | Recorded live Open-Meteo geocoding & forecast data and SACHET alerts feed under eval/recordings/ with MANIFEST.json (176 entries across 85 cities); implemented RecordedHTTPTransport replaying by deterministic request hash; replaced old mock transport; rebuilt golden sets by code from recorded values with per-city differences; verified transport failure on deleted recordings. |
 | R20.4 | Live evaluation infrastructure | done | Implemented eval/llm_cache/ caching and ProviderThrottler; implemented scripts/tasks/live_stack.py supporting docker_http and in_process stacks; exits with NOT MEASURED without keys and caches real responses with audited output when run. |
 | R20.5 | Fix routing and answer bugs (all 7 languages) | done | Merged in PR #91 |
-| R20.6 | Bias correction: complete it properly | in-review | Extended data to 2026-10-31 across 12 stations, probed model starts, held-out test block 11,685 rows. Real distinct baselines (Best raw ECMWF, Climatology, Persistence, 30-day bias, MMM). Trained Ridge (MAE 0.8358°C vs ECMWF 1.1740°C) and LightGBM with rain classifier. Bootstrap gates enabled. PR #92. |
+| R20.6 | Bias correction: complete it properly | done | Merged in PR #92 |
 
 ## Assumptions
 
@@ -85,6 +85,8 @@ Edit only this file. Rows: | ticket | title | status | notes |. Statuses: todo, 
 - R20.4: eval/llm_cache/ caches real LLM and Sarvam responses keyed by sha256(provider, model, messages, parameters); replay returns replayed: true. ProviderThrottler enforces provider rate limits with integer millisecond timing. scripts/tasks/live_stack.py checks real keys (GROQ_API_KEY, OPENROUTER_API_KEY, SARVAM_API_KEY); without keys it exits cleanly with NOT MEASURED per Rules S1 and T2; with keys it spins up live stack (docker_http or in_process) and writes audited result files.
 
 - R20.5: Hazard-safety and advice queries (lightning, thunderstorm, heatwave, cold wave, flood, cyclone, crop protection) in all 7 languages now bypass geocode/location-resolution and route directly to advisory intent. `is_hazard_or_advice_query()` checked before Step 5. Confidence set to `None` when no ML model ran (Rule T2). Advisory fallback format is quoted extract with source and page, never raw `[chunk_id]` dump. Card headline uses localized title (not question text as place name). Eval harness checks 7 (question-as-place) and 8 (cited chunk retrieval) added. Golden sets rebuilt with `check_citations: True`.
+
+- R20.6: Extended data window to 2026-10-31 across 12 airport stations, probing model start dates in MANIFEST.json and model_start_dates.json (earliest common date with GFS/ICON/ECMWF: 2024-02-05). Archived prior 2024 split results under ml/bias_correction/archive/prior_split_2024/. Implemented 5 real distinct baselines (Best raw ECMWF IFS, Multi-model mean, Persistence T_obs(d-1), Trailing 30-day bias correction, Station-DOY Climatology from training years) with AST separation asserted in services/api/tests/unit/test_bias_correction_baselines.py. Trained Ridge (MAE 0.8358°C, RMSE 1.1759°C) and LightGBM models on residual delta, plus LightGBM rain classifier. Evaluated on 12-month test block (11,685 rows) with 1,000 paired weekly-block bootstrap iterations; statistically significant improvement across all lead days enabled correction gates. Connected ForecastService to gates with p10/p90 intervals.
 
 ## Human-only steps open
 
