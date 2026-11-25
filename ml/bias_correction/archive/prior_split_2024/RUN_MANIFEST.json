@@ -1,0 +1,26 @@
+{
+  "generated_by": "ml/bias_correction/eval.py",
+  "git_sha": "a12f4d4e10de6b7509a5b246ed12a72190521924",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "ml/bias_correction/data/processed_dataset.csv",
+      "sha256": "9b6f5e0b5a12e42ac07d13a8ed54621cb0679adc3f9b913f7325b06be2930504"
+    }
+  ],
+  "evaluation_timestamp": "2026-11-24T12:07:54.594931+00:00",
+  "test_dataset": {
+    "path": "ml/bias_correction/data/processed_dataset.csv",
+    "sha256": "9b6f5e0b5a12e42ac07d13a8ed54621cb0679adc3f9b913f7325b06be2930504",
+    "n_test": 5601,
+    "test_period": "2024-05-01 to 2024-10-31",
+    "embargo_days": 7
+  },
+  "headline_metrics": {
+    "mae": 1.0936672022853062,
+    "rmse": 1.404122218225188,
+    "bias": -0.19042135332976262
+  },
+  "enabled_in_production": true,
+  "note": "Evaluation on held-out test block (Rule S3). Test set evaluated once."
+}

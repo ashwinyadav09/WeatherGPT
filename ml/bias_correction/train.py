@@ -1,11 +1,15 @@
-"""Train point-forecast bias correction models on real observations (Ticket R11).
+"""Train point-forecast bias correction models on real observations (Ticket R20.6 / ADR 0011).
 
 Trains:
-- Temperature MOS Ridge Regression (minimizes MAE / RMSE)
-- Quantile Regression (p10, p50, p90) via Iteratively Reweighted Least Squares (IRLS)
-- Calibrated probability of precipitation (rain occurrence >= 2.5 mm)
+- Temperature MOS Ridge Regression (minimizes MAE / RMSE on residual delta)
+- Temperature LightGBM Regressor (non-linear gradient boosting on residual delta)
+- Quantile Regression (p10, p90) for prediction intervals via LightGBM and empirical residual bounds
+- Calibrated probability of precipitation occurrence (>= 2.5 mm) via Logistic Regression & LightGBM
 
-Saves trained artifacts to ml/bias_correction/artifacts/model_weights.json.
+Saves real artifacts to:
+- ml/bias_correction/artifacts/ridge_model.joblib
+- ml/bias_correction/artifacts/lgbm_model.joblib
+- ml/bias_correction/artifacts/model_artifacts.json
 """
 from __future__ import annotations
 
@@ -15,20 +19,64 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import joblib
 import numpy as np
-
-from ml.bias_correction.dataset import get_time_splits, load_dataset
+from lightgbm import LGBMClassifier, LGBMRegressor
+from sklearn.linear_model import LogisticRegression, Ridge
 
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from ml.bias_correction.dataset import (  # noqa: E402
+    TRAIN_END_DATE,
+    TRAIN_START_DATE,
+    VAL_END_DATE,
+    VAL_START_DATE,
+    get_three_way_splits,
+    load_dataset,
+)
+
 ARTIFACTS_DIR = ROOT / "ml" / "bias_correction" / "artifacts"
-WEIGHTS_FILE = ARTIFACTS_DIR / "model_weights.json"
+RIDGE_MODEL_FILE = ARTIFACTS_DIR / "ridge_model.joblib"
+LGBM_MODEL_FILE = ARTIFACTS_DIR / "lgbm_model.joblib"
+ARTIFACTS_JSON_FILE = ARTIFACTS_DIR / "model_artifacts.json"
+LEGACY_WEIGHTS_FILE = ARTIFACTS_DIR / "model_weights.json"
+
+TEMP_FEATURE_COLS = [
+    "lead_day",
+    "tmax_gfs",
+    "tmax_ecmwf",
+    "tmax_icon",
+    "tmax_mmm",
+    "doy_sin",
+    "doy_cos",
+    "lat",
+    "lon",
+    "elev",
+    "recent_bias",
+    "trailing_30d_bias",
+    "persistence_tmax",
+]
+
+RAIN_FEATURE_COLS = [
+    "lead_day",
+    "rain_mmm",
+    "log_rain_mmm",
+    "rain_gfs",
+    "rain_ecmwf",
+    "rain_icon",
+    "is_monsoon",
+    "lat",
+    "lon",
+    "elev",
+]
 
 
-def _extract_temp_features(rows: list[dict[str, Any]]) -> tuple[np.ndarray, np.ndarray]:
-    """Extract design matrix X and target y for temperature models."""
+def _extract_temp_features(rows: list[dict[str, Any]]) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Extract design matrix X, raw MMM baseline, and target observed Tmax."""
     x_list = []
+    raw_list = []
     y_list = []
 
     for r in rows:
@@ -43,12 +91,29 @@ def _extract_temp_features(rows: list[dict[str, Any]]) -> tuple[np.ndarray, np.n
         lon = float(r["lon"]) / 10.0
         elev = float(r["elev"]) / 1000.0
         rec_bias = float(r["recent_bias"])
+        trail_bias = float(r["trailing_30d_bias"])
+        persist = float(r["persistence_tmax"])
 
-        feat = [1.0, lead, gfs, ecmwf, icon, mmm, doy_s, doy_c, lat, lon, elev, rec_bias]
+        feat = [
+            lead,
+            gfs,
+            ecmwf,
+            icon,
+            mmm,
+            doy_s,
+            doy_c,
+            lat,
+            lon,
+            elev,
+            rec_bias,
+            trail_bias,
+            persist,
+        ]
         x_list.append(feat)
+        raw_list.append(mmm)
         y_list.append(float(r["observed_tmax"]))
 
-    return np.array(x_list, dtype=float), np.array(y_list, dtype=float)
+    return np.array(x_list, dtype=float), np.array(raw_list, dtype=float), np.array(y_list, dtype=float)
 
 
 def _extract_rain_features(rows: list[dict[str, Any]]) -> tuple[np.ndarray, np.ndarray]:
@@ -58,139 +123,183 @@ def _extract_rain_features(rows: list[dict[str, Any]]) -> tuple[np.ndarray, np.n
 
     for r in rows:
         lead = float(r["lead_day"])
-        rain_mmm = max(0, float(r["rain_mmm"]))
+        rain_mmm = max(0.0, float(r["rain_mmm"]))
         log_rain = math.log1p(rain_mmm)
-        gfs_rain = max(0, float(r["rain_gfs"]))
-        ecm_rain = max(0, float(r["rain_ecmwf"]))
+        gfs_rain = max(0.0, float(r["rain_gfs"]))
+        ecm_rain = max(0.0, float(r["rain_ecmwf"]))
+        icon_rain = max(0.0, float(r["rain_icon"]))
         d = r["date"]
         month = int(d.split("-")[1])
         is_monsoon = 1.0 if 6 <= month <= 9 else 0.0
         lat = float(r["lat"]) / 10.0
+        lon = float(r["lon"]) / 10.0
+        elev = float(r["elev"]) / 1000.0
 
-        feat = [1.0, lead, rain_mmm, log_rain, gfs_rain, ecm_rain, is_monsoon, lat]
+        feat = [lead, rain_mmm, log_rain, gfs_rain, ecm_rain, icon_rain, is_monsoon, lat, lon, elev]
         x_list.append(feat)
         y_list.append(int(r["observed_rain_event"]))
 
-    return np.array(x_list, dtype=float), np.array(y_list, dtype=float)
-
-
-def fit_ridge(X: np.ndarray, y: np.ndarray, l2_reg: float = 1.0) -> list[float]:
-    """Solve regularized least squares: (X^T X + l2_reg * I) w = X^T y."""
-    n_features = X.shape[1]
-    xtx = X.T @ X
-    # Do not penalize intercept (feature 0)
-    reg_matrix = np.eye(n_features) * l2_reg
-    reg_matrix[0, 0] = 0.0
-
-    xty = X.T @ y
-    w = np.linalg.solve(xtx + reg_matrix, xty)
-    return [float(v) for v in w]
-
-
-def fit_quantile_irls(
-    X: np.ndarray,
-    y: np.ndarray,
-    tau: float,
-    max_iter: int = 30,
-    l2_reg: float = 0.1,
-    tol: float = 1e-4,
-) -> list[float]:
-    """Fit linear quantile regression using Iteratively Reweighted Least Squares (IRLS).
-
-    Loss: sum(rho_tau(y - X w)) where rho_tau(u) = u * (tau - I(u < 0)).
-    """
-    n, p = X.shape
-    # Initialize with ridge OLS solution
-    w = np.array(fit_ridge(X, y, l2_reg=1.0))
-
-    reg_diag = np.eye(p) * l2_reg
-    reg_diag[0, 0] = 0.0
-
-    for _ in range(max_iter):
-        residuals = y - X @ w
-        # Asymmetric weights with smoothing parameter epsilon
-        eps = 1e-3
-        abs_r = np.maximum(np.abs(residuals), eps)
-        weights = np.where(residuals >= 0, tau / abs_r, (1.0 - tau) / abs_r)
-
-        # Solve (X^T W X + reg) w_new = X^T W y
-        W_sqrt = np.sqrt(weights)
-        X_w = X * W_sqrt[:, np.newaxis]
-        y_w = y * W_sqrt
-
-        w_new = np.linalg.solve(X_w.T @ X_w + reg_diag, X_w.T @ y_w)
-        if np.max(np.abs(w_new - w)) < tol:
-            break
-        w = w_new
-
-    return [float(v) for v in w]
-
-
-def fit_logistic(X: np.ndarray, y: np.ndarray, max_iter: int = 50, lr: float = 0.05, l2_reg: float = 0.5) -> list[float]:
-    """Fit regularized logistic regression for rain probability."""
-    n, p = X.shape
-    w = np.zeros(p)
-
-    for _ in range(max_iter):
-        z = np.clip(X @ w, -15.0, 15.0)
-        p_hat = 1.0 / (1.0 + np.exp(-z))
-        gradient = (X.T @ (p_hat - y)) / n
-        gradient[1:] += (l2_reg / n) * w[1:]
-        w -= lr * gradient
-
-    return [float(v) for v in w]
+    return np.array(x_list, dtype=float), np.array(y_list, dtype=int)
 
 
 def train_models() -> dict[str, Any]:
-    """Load real training data and fit temperature and rain models."""
-    print("ml.bias_correction.train: Loading training dataset...")
+    """Train Ridge and LightGBM models on real training data and tune on validation split."""
+    print("ml.bias_correction.train: Loading processed dataset...")
     rows = load_dataset()
-    train_rows, test_rows = get_time_splits(rows)
+    train_rows, val_rows, test_rows = get_three_way_splits(rows)
 
-    print(f"Dataset split: {len(train_rows)} train rows, {len(test_rows)} test rows (7-day embargo enforced).")
+    print(
+        f"Splits: {len(train_rows)} train ({TRAIN_START_DATE}..{TRAIN_END_DATE}), "
+        f"{len(val_rows)} val ({VAL_START_DATE}..{VAL_END_DATE}), "
+        f"{len(test_rows)} held-out test (7-day embargo)."
+    )
     if not train_rows:
         raise ValueError("Training set is empty; run 'python scripts/dev.py ml download bias_correction' first.")
 
-    # 1. Temperature Ridge Regression
-    X_temp_train, y_temp_train = _extract_temp_features(train_rows)
-    print(f"Fitting Temperature Ridge Regression on {len(train_rows)} samples...")
-    ridge_weights = fit_ridge(X_temp_train, y_temp_train, l2_reg=1.0)
+    # 1. Temperature Features
+    X_temp_train, raw_train, y_temp_train = _extract_temp_features(train_rows)
+    delta_train = y_temp_train - raw_train
 
-    # 2. Quantile Regression (p10, p50, p90)
-    print("Fitting Quantile Regression models (p10, p50, p90) via IRLS...")
-    p10_weights = fit_quantile_irls(X_temp_train, y_temp_train, tau=0.10)
-    p50_weights = fit_quantile_irls(X_temp_train, y_temp_train, tau=0.50)
-    p90_weights = fit_quantile_irls(X_temp_train, y_temp_train, tau=0.90)
+    X_temp_val, raw_val, y_temp_val = _extract_temp_features(val_rows)
 
-    # 3. Rain Occurrence Logistic Model
+    # 2. Train Ridge Regressor on Delta
+    print(f"Fitting Temperature Ridge Regressor on {len(train_rows)} samples...")
+    ridge = Ridge(alpha=100.0)
+    ridge.fit(X_temp_train, delta_train)
+    val_pred_ridge = raw_val + ridge.predict(X_temp_val)
+    val_mae_ridge = float(np.mean(np.abs(val_pred_ridge - y_temp_val)))
+
+    # Compute empirical residual bounds on validation set for Ridge p10 and p90
+    val_residuals = y_temp_val - val_pred_ridge
+    p10_offset = float(np.percentile(val_residuals, 10))
+    p90_offset = float(np.percentile(val_residuals, 90))
+
+    # 3. Train LightGBM Regressor on Delta
+    print(f"Fitting Temperature LightGBM Regressor on {len(train_rows)} samples...")
+    lgb_temp = LGBMRegressor(
+        n_estimators=60,
+        learning_rate=3 / 100,
+        max_depth=3,
+        num_leaves=7,
+        reg_alpha=1.0,
+        reg_lambda=5.0,
+        random_state=42,
+        verbose=-1,
+    )
+    lgb_temp.fit(X_temp_train, delta_train)
+    val_pred_lgb = raw_val + lgb_temp.predict(X_temp_val)
+    val_mae_lgb = float(np.mean(np.abs(val_pred_lgb - y_temp_val)))
+
+    # Train LightGBM Quantile Regressors (p10, p90)
+    print("Fitting LightGBM Quantile Regressors (p10, p90)...")
+    lgb_p10 = LGBMRegressor(
+        objective="quantile",
+        alpha=0.10,
+        n_estimators=50,
+        learning_rate=3 / 100,
+        max_depth=3,
+        random_state=42,
+        verbose=-1,
+    )
+    lgb_p10.fit(X_temp_train, delta_train)
+
+    lgb_p90 = LGBMRegressor(
+        objective="quantile",
+        alpha=0.90,
+        n_estimators=50,
+        learning_rate=3 / 100,
+        max_depth=3,
+        random_state=42,
+        verbose=-1,
+    )
+    lgb_p90.fit(X_temp_train, delta_train)
+
+    # 4. Rain Occurrence Models
     X_rain_train, y_rain_train = _extract_rain_features(train_rows)
-    print(f"Fitting Rain Occurrence Logistic model on {len(train_rows)} samples...")
-    rain_weights = fit_logistic(X_rain_train, y_rain_train, max_iter=60, lr=0.08, l2_reg=0.2)
+    X_rain_val, y_rain_val = _extract_rain_features(val_rows)
 
-    # Calculate training climatology by DOY
-    doy_sums: dict[int, list[float]] = {}
-    for r in train_rows:
-        doy_sums.setdefault(r["doy"], []).append(r["observed_tmax"])
-    doy_clim = {doy: round(sum(vals) / len(vals), 2) for doy, vals in doy_sums.items()}
+    print("Fitting Rain Logistic Regression...")
+    lr_rain = LogisticRegression(C=0.5, max_iter=500, random_state=42)
+    lr_rain.fit(X_rain_train, y_rain_train)
+    val_p_lr = lr_rain.predict_proba(X_rain_val)[:, 1]
+    val_brier_lr = float(np.mean((val_p_lr - y_rain_val) ** 2))
 
-    artifacts: dict[str, Any] = {
-        "model_version": "bias_correction_v1.0",
-        "training_period": "2023-06-01 to 2024-04-23",
-        "n_train_samples": len(train_rows),
-        "temperature_ridge_weights": ridge_weights,
-        "temperature_p10_weights": p10_weights,
-        "temperature_p50_weights": p50_weights,
-        "temperature_p90_weights": p90_weights,
-        "rain_logistic_weights": rain_weights,
-        "doy_climatology": doy_clim,
-    }
+    print("Fitting Rain LightGBM Classifier...")
+    lgb_rain = LGBMClassifier(
+        n_estimators=50,
+        learning_rate=3 / 100,
+        max_depth=3,
+        reg_alpha=0.5,
+        reg_lambda=2.0,
+        random_state=42,
+        verbose=-1,
+    )
+    lgb_rain.fit(X_rain_train, y_rain_train)
+    val_p_lgb = lgb_rain.predict_proba(X_rain_val)[:, 1]
+    val_brier_lgb = float(np.mean((val_p_lgb - y_rain_val) ** 2))
+
+    print(f"Validation MAE: Ridge={val_mae_ridge:.4f}°C, LightGBM={val_mae_lgb:.4f}°C")
+    print(f"Validation Rain Brier: Logistic={val_brier_lr:.4f}, LightGBM={val_brier_lgb:.4f}")
 
     ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-    with WEIGHTS_FILE.open("w", encoding="utf-8") as f:
-        json.dump(artifacts, f, indent=2)
 
-    print(f"[OK] Training complete. Artifacts saved to {WEIGHTS_FILE}")
-    return artifacts
+    # Save real model artifacts using joblib (Rule T1)
+    ridge_bundle = {
+        "model_type": "Ridge",
+        "temp_ridge": ridge,
+        "p10_offset": p10_offset,
+        "p90_offset": p90_offset,
+        "rain_logistic": lr_rain,
+        "temp_features": TEMP_FEATURE_COLS,
+        "rain_features": RAIN_FEATURE_COLS,
+    }
+    joblib.dump(ridge_bundle, RIDGE_MODEL_FILE)
+    print(f"[OK] Saved Ridge model artifact to {RIDGE_MODEL_FILE}")
+
+    lgbm_bundle = {
+        "model_type": "LightGBM",
+        "temp_lgbm": lgb_temp,
+        "p10_lgbm": lgb_p10,
+        "p90_lgbm": lgb_p90,
+        "rain_lgbm": lgb_rain,
+        "temp_features": TEMP_FEATURE_COLS,
+        "rain_features": RAIN_FEATURE_COLS,
+    }
+    joblib.dump(lgbm_bundle, LGBM_MODEL_FILE)
+    print(f"[OK] Saved LightGBM model artifact to {LGBM_MODEL_FILE}")
+
+    artifacts_meta: dict[str, Any] = {
+        "model_version": "bias_correction_v2.0",
+        "training_window": f"{TRAIN_START_DATE} to {TRAIN_END_DATE}",
+        "validation_window": f"{VAL_START_DATE} to {VAL_END_DATE}",
+        "n_train_samples": len(train_rows),
+        "n_val_samples": len(val_rows),
+        "temperature_features": TEMP_FEATURE_COLS,
+        "rain_features": RAIN_FEATURE_COLS,
+        "models_trained": ["Ridge", "LightGBM"],
+        "ridge_coefficients": [float(c) for c in ridge.coef_],
+        "ridge_intercept": float(ridge.intercept_),
+        "ridge_p10_offset": p10_offset,
+        "ridge_p90_offset": p90_offset,
+        "logistic_coefficients": [float(c) for c in lr_rain.coef_[0]],
+        "logistic_intercept": float(lr_rain.intercept_[0]),
+        "validation_performance": {
+            "ridge_mae": val_mae_ridge,
+            "lgbm_mae": val_mae_lgb,
+            "logistic_rain_brier": val_brier_lr,
+            "lgbm_rain_brier": val_brier_lgb,
+        },
+    }
+    with ARTIFACTS_JSON_FILE.open("w", encoding="utf-8") as f:
+        json.dump(artifacts_meta, f, indent=2)
+
+    # Remove obsolete model_weights.json if present per Ticket R20.6
+    if LEGACY_WEIGHTS_FILE.exists():
+        LEGACY_WEIGHTS_FILE.unlink()
+        print(f"[OK] Removed legacy unprincipled {LEGACY_WEIGHTS_FILE}")
+
+    print(f"[OK] Training complete. Artifact metadata saved to {ARTIFACTS_JSON_FILE}")
+    return artifacts_meta
 
 
 def main() -> int:

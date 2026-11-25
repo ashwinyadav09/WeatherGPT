@@ -1,0 +1,63 @@
+{
+  "model_name": "NWP_BiasCorrection_v1",
+  "version": "1.0.0",
+  "task": "Point-forecast 2m temperature post-processing and precipitation occurrence",
+  "generated_by": "ml/bias_correction/eval.py",
+  "git_sha": "a12f4d4e10de6b7509a5b246ed12a72190521924",
+  "provenance": "recorded_real_http",
+  "inputs": [
+    {
+      "path": "ml/bias_correction/data/processed_dataset.csv",
+      "sha256": "9b6f5e0b5a12e42ac07d13a8ed54621cb0679adc3f9b913f7325b06be2930504"
+    }
+  ],
+  "n_train": 10131,
+  "n_test": 5601,
+  "enabled_in_production": true,
+  "mae": 1.0936672022853062,
+  "rmse": 1.404122218225188,
+  "bias": -0.19042135332976262,
+  "interval_coverage_10_90": 0.8079,
+  "brier_score": 0.1524,
+  "brier_skill_score": 0.3891,
+  "heidke_skill_score": 0.5686,
+  "metrics": {
+    "mae": 1.0936672022853062,
+    "rmse": 1.404122218225188,
+    "bias": -0.19042135332976262,
+    "interval_coverage_10_90": 0.8079,
+    "brier_score": 0.1524,
+    "brier_skill_score": 0.3891,
+    "heidke_skill_score": 0.5686
+  },
+  "baseline_comparison": {
+    "temperature_mae": {
+      "baseline_name": "Multi-model mean",
+      "baseline": 1.1799,
+      "model": 1.0937,
+      "delta": -0.086,
+      "ci_lower": -0.1391,
+      "ci_upper": -0.0303,
+      "p_value": 0.002
+    },
+    "climatology_mae": {
+      "baseline_name": "Climatology",
+      "baseline": 1.1799,
+      "model": 1.0937,
+      "delta": -0.0862
+    }
+  },
+  "dataset": {
+    "name": "Open-Meteo Previous Runs NWP paired with IEM ASOS METAR Observations",
+    "models_ingested": "ECMWF IFS 0.25\u00b0, NOAA GFS, DWD ICON",
+    "truth_sources": "IEM ASOS METAR hourly observations (IST Tmax) and Open-Meteo archive precipitation",
+    "training_period": "2023-06-01 to 2024-04-23",
+    "embargo_period": "2024-04-24 to 2024-04-30 (7 days)",
+    "test_period": "2024-05-01 to 2024-10-31 (6 months)"
+  },
+  "limitations": [
+    "METAR observations record integer Celsius temperatures, imparting a rounding effect of ~0.5\u00b0C.",
+    "Bias correction is verified only within 100 km and 300 m elevation of training airport stations.",
+    "Precipitation occurrence model is trained on precipitation proxy from reanalysis."
+  ]
+}

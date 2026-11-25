@@ -29,9 +29,17 @@ DATA_DIR = ROOT / "ml" / "bias_correction" / "data"
 RAW_DIR = DATA_DIR / "raw"
 PROCESSED_FILE = DATA_DIR / "processed_dataset.csv"
 
-TEST_START_DATE = "2024-05-01"
-TEST_END_DATE = "2024-10-31"
+# Extended Data Window and New Splits (Ticket R20.6 / ADR 0011)
+# Earliest common date probed across GFS, ECMWF, and ICON: 2024-02-05
+TRAIN_START_DATE = "2024-02-05"
+TRAIN_END_DATE = "2025-05-31"
+VAL_START_DATE = "2025-06-01"
+VAL_END_DATE = "2025-10-31"
 EMBARGO_DAYS = 7
+EMBARGO_START_DATE = "2025-11-01"
+EMBARGO_END_DATE = "2025-11-07"
+TEST_START_DATE = "2025-11-08"
+TEST_END_DATE = "2026-10-31"
 
 
 def _parse_metar_file(file_path: Path) -> dict[str, dict[str, Any]]:
@@ -194,12 +202,15 @@ def build_processed_dataset(stations: list[dict[str, Any]] | None = None) -> lis
     """
     target_stations = stations or STATIONS
     valid_station_count = 0
-    all_rows: list[dict[str, Any]] = []
+
+    # First pass: parse METAR QC, NWP data, and precip truth for each station
+    station_metar: dict[str, dict[str, dict[str, Any]]] = {}
+    station_nwp: dict[str, dict[str, dict[int, dict[str, float]]]] = {}
+    station_precip: dict[str, dict[str, float]] = {}
+    station_daily_errors: dict[str, dict[str, float]] = {}
 
     for st in target_stations:
         st_id = st["id"]
-        lat, lon, elev = st["lat"], st["lon"], st["elev"]
-
         metar_qc = _parse_metar_file(RAW_DIR / f"{st_id}_metar.csv")
         nwp_data = _parse_previous_runs_file(RAW_DIR / f"{st_id}_previous_runs.json")
         precip_truth = _parse_precip_truth_file(RAW_DIR / f"{st_id}_precip_truth.json")
@@ -207,23 +218,67 @@ def build_processed_dataset(stations: list[dict[str, Any]] | None = None) -> lis
         if not metar_qc or not nwp_data:
             continue
 
-        # Check >= 70% valid days requirement
         common_dates = sorted(set(metar_qc.keys()).intersection(nwp_data.keys()))
         if len(common_dates) < 150:
             print(f"[WARN] Station {st_id} has only {len(common_dates)} valid days; dropping.")
             continue
 
         valid_station_count += 1
+        station_metar[st_id] = metar_qc
+        station_nwp[st_id] = nwp_data
+        station_precip[st_id] = precip_truth
 
-        # Calculate recent-bias history without future leakage
-        # Map: date -> raw_error (tmax_mmm - observed_tmax)
+        # Compute raw MMM lead 1 error history (tmax_mmm - observed_tmax)
         daily_errors: dict[str, float] = {}
         for d in common_dates:
             if 1 in nwp_data[d] and "tmax_mmm" in nwp_data[d][1]:
                 raw_pred = nwp_data[d][1]["tmax_mmm"]
                 obs = metar_qc[d]["tmax"]
                 daily_errors[d] = raw_pred - obs
+        station_daily_errors[st_id] = daily_errors
 
+    # Compute station-day-of-year climatology strictly from training years only (Rule S3 / Ticket R20.6)
+    train_st_doy_sums: dict[tuple[str, int], list[float]] = {}
+    train_st_sums: dict[str, list[float]] = {}
+    for st_id, m_qc in station_metar.items():
+        for d_str, obs_info in m_qc.items():
+            if TRAIN_START_DATE <= d_str <= TRAIN_END_DATE:
+                d_obj = dt.date.fromisoformat(d_str)
+                doy = d_obj.timetuple().tm_yday
+                tmax = float(obs_info["tmax"])
+                train_st_doy_sums.setdefault((st_id, doy), []).append(tmax)
+                train_st_sums.setdefault(st_id, []).append(tmax)
+
+    station_training_means = {st: sum(vals) / len(vals) for st, vals in train_st_sums.items() if vals}
+    climatology_table = {k: sum(vals) / len(vals) for k, vals in train_st_doy_sums.items() if vals}
+
+    def _get_clim(st_id: str, doy: int) -> float:
+        if (st_id, doy) in climatology_table:
+            return round(climatology_table[(st_id, doy)], 2)
+        # Circular window +/- 5 days in training climatology
+        nearby = []
+        for delta in range(-5, 6):
+            target_doy = (doy + delta - 1) % 366 + 1
+            if (st_id, target_doy) in climatology_table:
+                nearby.append(climatology_table[(st_id, target_doy)])
+        if nearby:
+            return round(sum(nearby) / len(nearby), 2)
+        return round(station_training_means.get(st_id, 30.0), 2)
+
+    all_rows: list[dict[str, Any]] = []
+
+    for st in target_stations:
+        st_id = st["id"]
+        if st_id not in station_metar:
+            continue
+
+        lat, lon, elev = st["lat"], st["lon"], st["elev"]
+        metar_qc = station_metar[st_id]
+        nwp_data = station_nwp[st_id]
+        precip_truth = station_precip[st_id]
+        daily_errors = station_daily_errors[st_id]
+
+        common_dates = sorted(set(metar_qc.keys()).intersection(nwp_data.keys()))
         date_objects = [dt.date.fromisoformat(d) for d in common_dates]
 
         for d_obj in date_objects:
@@ -233,13 +288,36 @@ def build_processed_dataset(stations: list[dict[str, Any]] | None = None) -> lis
             doy_sin = math.sin(doy_rad)
             doy_cos = math.cos(doy_rad)
 
-            # Compute recent bias: trailing 7 days strictly before d_obj
+            # Compute recent bias (trailing 7 days strictly before d_obj)
             recent_errs = []
             for delta_d in range(1, 8):
                 past_d = (d_obj - dt.timedelta(days=delta_d)).isoformat()
                 if past_d in daily_errors:
                     recent_errs.append(daily_errors[past_d])
             recent_bias = sum(recent_errs) / len(recent_errs) if recent_errs else 0.0
+
+            # Compute trailing 30-day mean-error correction strictly before d_obj
+            trailing_30d_errs = []
+            for delta_d in range(1, 31):
+                past_d = (d_obj - dt.timedelta(days=delta_d)).isoformat()
+                if past_d in daily_errors:
+                    trailing_30d_errs.append(daily_errors[past_d])
+            trailing_30d_bias = (
+                sum(trailing_30d_errs) / len(trailing_30d_errs) if len(trailing_30d_errs) >= 5 else 0.0
+            )
+
+            # Compute persistence baseline: previous day's observed Tmax (T_obs(d-1))
+            persistence_tmax = None
+            for delta_d in range(1, 8):
+                past_d = (d_obj - dt.timedelta(days=delta_d)).isoformat()
+                if past_d in metar_qc:
+                    persistence_tmax = float(metar_qc[past_d]["tmax"])
+                    break
+            if persistence_tmax is None:
+                persistence_tmax = station_training_means.get(st_id, 30.0)
+
+            # Compute climatology baseline: station-day-of-year from training years only
+            climatology_tmax = _get_clim(st_id, doy)
 
             obs_tmax = metar_qc[d_str]["tmax"]
             obs_rain = precip_truth.get(d_str, 0.0)
@@ -261,6 +339,9 @@ def build_processed_dataset(stations: list[dict[str, Any]] | None = None) -> lis
                     "lon": lon,
                     "elev": elev,
                     "recent_bias": round(recent_bias, 3),
+                    "trailing_30d_bias": round(trailing_30d_bias, 3),
+                    "persistence_tmax": round(persistence_tmax, 1),
+                    "climatology_tmax": round(climatology_tmax, 2),
                     "tmax_gfs": lead_nwp.get("tmax_gfs", lead_nwp["tmax_mmm"]),
                     "tmax_ecmwf": lead_nwp.get("tmax_ecmwf", lead_nwp["tmax_mmm"]),
                     "tmax_icon": lead_nwp.get("tmax_icon", lead_nwp["tmax_mmm"]),
@@ -290,7 +371,7 @@ def build_processed_dataset(stations: list[dict[str, Any]] | None = None) -> lis
         print(f"[ERROR] {blocked_msg}", file=sys.stderr)
         blocked_file = ROOT / "BLOCKED.md"
         blocked_file.write_text(
-            f"# Blocked: R11 Bias correction\n\n{blocked_msg}\n\nCheck data downloads and station availability.\n",
+            f"# Blocked: R20.6 Bias correction\n\n{blocked_msg}\n\nCheck data downloads and station availability.\n",
             encoding="utf-8",
         )
         raise RuntimeError(blocked_msg)
@@ -307,9 +388,9 @@ def build_processed_dataset(stations: list[dict[str, Any]] | None = None) -> lis
     return all_rows
 
 
-def load_dataset() -> list[dict[str, Any]]:
+def load_dataset(rebuild: bool = False) -> list[dict[str, Any]]:
     """Load processed dataset from disk or build if missing."""
-    if not PROCESSED_FILE.exists():
+    if rebuild or not PROCESSED_FILE.exists():
         return build_processed_dataset()
 
     rows = []
@@ -321,6 +402,7 @@ def load_dataset() -> list[dict[str, Any]]:
                 if k in parsed and parsed[k]:
                     parsed[k] = int(parsed[k])
             for k in ("doy_sin", "doy_cos", "lat", "lon", "elev", "recent_bias",
+                      "trailing_30d_bias", "persistence_tmax", "climatology_tmax",
                       "tmax_gfs", "tmax_ecmwf", "tmax_icon", "tmax_mmm",
                       "rain_gfs", "rain_ecmwf", "rain_icon", "rain_mmm",
                       "observed_tmax", "observed_rain"):
@@ -330,22 +412,40 @@ def load_dataset() -> list[dict[str, Any]]:
     return rows
 
 
-def get_time_splits(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Partition dataset into train and held-out test blocks with 7-day embargo."""
-    test_start = dt.date.fromisoformat(TEST_START_DATE)
-    embargo_cutoff = test_start - dt.timedelta(days=EMBARGO_DAYS)
+def get_three_way_splits(
+    rows: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Partition dataset into train, validation, and held-out test blocks with 7-day embargo.
 
+    Split dates (Rule S3 / Ticket R20.6):
+    - Train: 2024-02-05 to 2025-05-31
+    - Validation: 2025-06-01 to 2025-10-31
+    - Embargo: 2025-11-01 to 2025-11-07 (7 days)
+    - Held-out Test: 2025-11-08 to 2026-10-31 (12 complete months)
+    """
     train_rows = []
+    val_rows = []
     test_rows = []
 
     for r in rows:
-        d = dt.date.fromisoformat(r["date"])
-        if d >= test_start:
-            test_rows.append(r)
-        elif d <= embargo_cutoff:
+        d = r["date"]
+        if TRAIN_START_DATE <= d <= TRAIN_END_DATE:
             train_rows.append(r)
-        # Any date between embargo_cutoff and test_start is dropped (embargo buffer)
+        elif VAL_START_DATE <= d <= VAL_END_DATE:
+            val_rows.append(r)
+        elif TEST_START_DATE <= d <= TEST_END_DATE:
+            test_rows.append(r)
+        # Any date outside these windows (e.g. before earliest common date or inside embargo) is excluded
 
+    return train_rows, val_rows, test_rows
+
+
+def get_time_splits(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Partition dataset into train and held-out test blocks.
+
+    Enforces 7-day embargo between training/validation window and test block.
+    """
+    train_rows, _, test_rows = get_three_way_splits(rows)
     return train_rows, test_rows
 
 

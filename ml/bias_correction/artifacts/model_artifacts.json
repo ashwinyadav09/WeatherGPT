@@ -1,0 +1,88 @@
+{
+  "model_version": "bias_correction_v2.0",
+  "training_window": "2024-02-05 to 2025-05-31",
+  "validation_window": "2025-06-01 to 2025-10-31",
+  "n_train_samples": 14835,
+  "n_val_samples": 5046,
+  "temperature_features": [
+    "lead_day",
+    "tmax_gfs",
+    "tmax_ecmwf",
+    "tmax_icon",
+    "tmax_mmm",
+    "doy_sin",
+    "doy_cos",
+    "lat",
+    "lon",
+    "elev",
+    "recent_bias",
+    "trailing_30d_bias",
+    "persistence_tmax"
+  ],
+  "rain_features": [
+    "lead_day",
+    "rain_mmm",
+    "log_rain_mmm",
+    "rain_gfs",
+    "rain_ecmwf",
+    "rain_icon",
+    "is_monsoon",
+    "lat",
+    "lon",
+    "elev"
+  ],
+  "models_trained": [
+    "Ridge",
+    "LightGBM"
+  ],
+  "ridge_coefficients": [
+    -0.0928243202217169,
+    -0.10602890531059629,
+    -0.02767719204852086,
+    -0.019554905503507743,
+    -0.04525739732949077,
+    -0.06405682282141593,
+    -0.19258057250333713,
+    -0.026917866000704862,
+    0.005425797317257705,
+    -0.082834271600558,
+    -0.3391376022338149,
+    -0.258570201776799,
+    0.16119967999111443
+  ],
+  "ridge_intercept": 1.3674127501932283,
+  "ridge_p10_offset": -1.5451012737693013,
+  "ridge_p90_offset": 1.5604061985285256,
+  "logistic_coefficients": [
+    -0.03068563995403447,
+    -0.008147277563040348,
+    2.2035217817384107,
+    -0.015227677190799786,
+    -0.005784473751644686,
+    -0.014185626293848905,
+    1.1078301717301586,
+    -0.5234238036573184,
+    0.5762450995591858,
+    -0.2773353892854223
+  ],
+  "logistic_intercept": -6.996202688229679,
+  "validation_performance": {
+    "ridge_mae": 0.9988640908819464,
+    "lgbm_mae": 1.046780303377745,
+    "logistic_rain_brier": 0.1307172016671231,
+    "lgbm_rain_brier": 0.14220386962447448
+  },
+  "gates": {
+    "temperature_2m": {
+      "1": true,
+      "2": true,
+      "3": true
+    },
+    "precipitation": {
+      "1": true,
+      "2": true,
+      "3": true
+    }
+  },
+  "enabled_in_production": true
+}
