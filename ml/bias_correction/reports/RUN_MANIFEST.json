@@ -1,26 +1,38 @@
 {
   "generated_by": "ml/bias_correction/eval.py",
-  "git_sha": "a12f4d4e10de6b7509a5b246ed12a72190521924",
+  "git_sha": "c4c2144ba3b76ccffc2129a33d3f2b0d3a1ae423",
   "provenance": "recorded_real_http",
   "inputs": [
     {
       "path": "ml/bias_correction/data/processed_dataset.csv",
-      "sha256": "9b6f5e0b5a12e42ac07d13a8ed54621cb0679adc3f9b913f7325b06be2930504"
+      "sha256": "e870ac56e55203005f7632f03e7f0b766d80ccff8bbb4caa66ab9ca884781c05"
     }
   ],
-  "evaluation_timestamp": "2026-11-24T12:07:54.594931+00:00",
+  "evaluation_timestamp": "2026-11-25T00:02:31.900396+00:00",
   "test_dataset": {
     "path": "ml/bias_correction/data/processed_dataset.csv",
-    "sha256": "9b6f5e0b5a12e42ac07d13a8ed54621cb0679adc3f9b913f7325b06be2930504",
-    "n_test": 5601,
-    "test_period": "2024-05-01 to 2024-10-31",
+    "sha256": "e870ac56e55203005f7632f03e7f0b766d80ccff8bbb4caa66ab9ca884781c05",
+    "n_test": 11685,
+    "test_period": "2025-11-08 to 2026-10-31",
     "embargo_days": 7
   },
   "headline_metrics": {
-    "mae": 1.0936672022853062,
-    "rmse": 1.404122218225188,
-    "bias": -0.19042135332976262
+    "mae": 0.8357766367137355,
+    "rmse": 1.1759425429654342,
+    "bias": 0.032714591356439886
   },
   "enabled_in_production": true,
-  "note": "Evaluation on held-out test block (Rule S3). Test set evaluated once."
+  "gates": {
+    "temperature_2m": {
+      "1": true,
+      "2": true,
+      "3": true
+    },
+    "precipitation": {
+      "1": true,
+      "2": true,
+      "3": true
+    }
+  },
+  "note": "Evaluation on extended held-out test block (2025-11-08 to 2026-10-31) per Ticket R20.6. Evaluated once."
 }
